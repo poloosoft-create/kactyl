@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arabi Keyboard — Free Arabic Keyboard Online | لوحة المفاتيح العربية</title>
+  <meta name="description" content="Free Arabic keyboard online. Type Arabic from any device without installation. Franco Arab mode, tashkeel, voice typing. لوحة مفاتيح عربية مجانية على الإنترنت.">
+  <meta name="keywords" content="arabic keyboard, arabic keyboard online, arabic keyboard franco mode, type arabic online without installation, clavier arabe en ligne gratuit, clavier arabe avec tachkil, لوحة مفاتيح عربية اونلاين, كتابة عربية بلوحة انجليزية">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+/* ── RESET ── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+button { cursor:pointer; font-family:inherit; border:none; background:none; }
+
+/* ── TOKENS ── */
+:root {
+  --red:     #E8353A;
+  --red-h:   #C42D31;
+  --indigo:  #6366F1;
+  --purple:  #7C3AED;
+  --green:   #059669;
+
+  --bg:      #EDF0F8;
+  --surface: #FFFFFF;
+  --border:  #DDE3EE;
+  --shadow:  rgba(15,23,42,.07);
+
+  --nav:     #0F172A;
+  --nav-txt: #E2E8F0;
+
+  --text:    #1E293B;
+  --muted:   #64748B;
+
+  --key-bg:  #FFFFFF;
+  --key-b:   #D8DEEC;
+  --key-sh:  #B8C3D8;
+  --key-h:   #EEF2FF;
+  --key-hb:  #818CF8;
+
+  --r:  16px;
+  --rs: 10px;
+  --rx: 8px;
+}
+[data-theme="dark"] {
+  --bg:      #0F172A;
+  --surface: #1E293B;
+  --border:  #334155;
+  --shadow:  rgba(0,0,0,.22);
+  --text:    #F1F5F9;
+  --muted:   #94A3B8;
+  --key-bg:  #1E293B;
+  --key-b:   #3D526A;
+  --key-sh:  #0F1E30;
+  --key-h:   #1E1B4B;
+  --key-hb:  #6366F1;
+}
+
+/* ── BASE ── */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background .3s, color .3s;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  height: 88px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  gap: 16px;
+  transition: background .3s, border-color .3s;
+}
+[data-theme="dark"] header { background: var(--nav); border-bottom-color: rgba(255,255,255,.06); }
+
+.logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; }
+.logo-img { height:200px; width:auto; display:block; }
+
+nav { display:flex; align-items:center; gap:4px; }
+
+.nav-link {
+  color: var(--text); text-decoration:none;
+  font-size:14px; font-weight:500;
+  padding:6px 12px; border-radius:6px;
+  transition: background .2s, color .2s;
+  white-space:nowrap;
+}
+.nav-link:hover { background: var(--border); }
+[data-theme="dark"] .nav-link { color: var(--nav-txt); }
+[data-theme="dark"] .nav-link:hover { background: rgba(255,255,255,.1); }
+
+/* Language dropdown */
+.lang-wrap { position:relative; }
+.lang-pill {
+  display:flex; align-items:center; gap:5px;
+  color: var(--text);
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:5px 10px;
+  font-size:13px; font-weight:500;
+  cursor:pointer; transition: border-color .2s;
+}
+.lang-pill:hover { border-color: var(--indigo); }
+[data-theme="dark"] .lang-pill { color: var(--nav-txt); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.14); }
+
+.lang-menu {
+  display:none; position:absolute; top:calc(100% + 6px); right:0;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--rs); box-shadow:0 8px 24px var(--shadow);
+  min-width:140px; overflow:hidden; z-index:400;
+}
+.lang-menu.show { display:block; }
+.lang-opt {
+  display:flex; align-items:center; gap:8px;
+  padding:10px 14px; font-size:13px; font-weight:500;
+  color:var(--text); cursor:pointer; transition: background .15s;
+}
+.lang-opt:hover { background:var(--bg); }
+.lang-opt.active { color:var(--indigo); font-weight:600; }
+
+.theme-wrap { display:flex; align-items:center; gap:7px; cursor:pointer; user-select:none; }
+
+.t-track {
+  width:42px; height:23px;
+  background: var(--border);
+  border:1px solid var(--border);
+  border-radius:12px; position:relative;
+  transition: background .3s;
+}
+.t-track.on { background: var(--indigo); }
+[data-theme="dark"] .t-track { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.25); }
+.t-thumb {
+  position:absolute; top:2px; left:2px;
+  width:17px; height:17px;
+  background:#fff; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:9px;
+  transition: transform .3s;
+}
+.t-thumb.on { transform: translateX(19px); }
+.t-lbl { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; line-height:1.3; text-align:center; }
+
+/* ── MAIN ── */
+main { padding:36px 16px 64px; position:relative; overflow:visible; }
+.wrap { max-width:860px; margin:0 auto; position:relative; z-index:1; }
+.bg-graphic {
+  position:absolute;  top: 300px ; left:50%;
+  transform:translateX(-50%);
+  width:2000px; pointer-events:none; z-index:-1;
+  opacity:.5;
+}
+[data-theme="dark"] .bg-graphic { opacity:.15; }
+
+/* ── SHARE BAR ── */
+.share-bar {
+  display:flex; gap:10px; justify-content:center;
+  flex-wrap:wrap; margin-bottom:22px;
+  font-family:'Poppins',sans-serif;
+}
+.sh-btn {
+  display:flex; align-items:center; gap:9px;
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:50px;
+  padding:9px 18px;
+  box-shadow:0 2px 8px var(--shadow);
+  transition: transform .2s, box-shadow .2s;
+  color: var(--text);
+}
+.sh-btn:hover { transform:translateY(-2px); box-shadow:0 8px 20px var(--shadow); }
+.sh-ic { width:27px; height:27px; border-radius:50%; flex-shrink:0; overflow:visible; display:flex; align-items:center; justify-content:center; }
+.sh-ic img { width:27px; height:27px; object-fit:contain; }
+.sh-txt { display:flex; flex-direction:column; text-align:left; }
+.sh-action { font-size:9px; font-weight:300; text-transform:uppercase; letter-spacing:.5px; color:var(--muted); }
+.sh-name   { font-size:13px; font-weight:500; }
+
+/* ── CARD ── */
+.card {
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: 0 4px 20px var(--shadow);
+  margin-bottom:14px;
+}
+
+/* ── EDITOR ── */
+.editor-card { padding:16px; }
+
+#arabic-text {
+  width:100%; min-height:160px;
+  border:1.5px solid var(--border);
+  border-radius: var(--rs);
+  padding:16px;
+  font-family:'Tajawal',sans-serif;
+  font-size:22px; line-height:1.85;
+  direction:rtl; text-align:right;
+  background: var(--bg);
+  color: var(--text);
+  resize:vertical; outline:none;
+  transition: border-color .2s;
+}
+#arabic-text:focus   { border-color: var(--indigo); }
+#arabic-text::placeholder { color:var(--muted); font-size:16px; }
+
+.editor-bar {
+  display:flex; align-items:center;
+  justify-content:space-between;
+  margin-top:14px; flex-wrap:wrap; gap:10px;
+}
+.bar-stats { font-size:13px; color:var(--muted); display:flex; gap:14px; }
+.bar-stats b { color:var(--indigo); font-weight:700; }
+
+.bar-center {
+  display:flex; align-items:center; gap:8px;
+  flex:1; justify-content:center;
+}
+
+.font-wrap { display:flex; align-items:center; gap:4px; }
+.f-btn {
+  width:27px; height:27px;
+  background:var(--bg); border:1px solid var(--border); border-radius:6px;
+  font-weight:700; font-size:11px; color:var(--text);
+  display:flex; align-items:center; justify-content:center;
+  transition: all .2s;
+}
+.f-btn:hover { background:var(--indigo); color:#fff; border-color:var(--indigo); }
+.f-num { font-size:12px; font-weight:600; color:var(--muted); width:22px; text-align:center; }
+
+/* Flat action buttons */
+.t-btn {
+  display:flex; align-items:center; gap:7px;
+  padding:8px 20px; border-radius:50px;
+  border:1.5px solid var(--border);
+  background:var(--surface);
+  font-size:13px; font-weight:600;
+  transition: all .2s;
+  box-shadow:0 2px 6px var(--shadow);
+}
+.t-btn img { width:18px; height:18px; object-fit:contain; }
+.t-btn span { font-size:13px; font-weight:600; line-height:1; }
+.t-btn:active { transform:translateY(1px); box-shadow:none; }
+.t-dl       { color:#3B82F6; }
+.t-dl:hover { border-color:#3B82F6; background:#EFF6FF; transform:translateY(-1px); }
+.t-cp       { color:#6B7280; }
+.t-cp:hover { border-color:#6B7280; background:#F9FAFB; transform:translateY(-1px); }
+.t-clr      { color:#EF4444; }
+.t-clr:hover{ border-color:#EF4444; background:#FEF2F2; transform:translateY(-1px); }
+[data-theme="dark"] .t-dl:hover { background:rgba(59,130,246,.15); }
+[data-theme="dark"] .t-cp:hover { background:rgba(107,114,128,.15); }
+[data-theme="dark"] .t-clr:hover{ background:rgba(239,68,68,.15); }
+
+/* ── KEYBOARD CARD ── */
+.kb-card { padding:14px 16px 16px; position:relative; }
+
+/* Combined QWERTY + suggestions single row */
+.kb-top {
+  display:flex; align-items:center; gap:10px;
+  margin-bottom:14px; flex-wrap:nowrap;
+}
+.qwerty-left {
+  display:flex; align-items:center; gap:9px;
+  cursor:pointer; user-select:none; flex-shrink:0;
+}
+.qwerty-icon { display:flex; align-items:center; justify-content:center; }
+.qwerty-icon img { width:26px; height:26px; opacity:.65; }
+.qwerty-txt { display:flex; flex-direction:column; }
+.qwerty-title { font-family:'Tajawal',sans-serif; font-size:14px; font-weight:700; color:var(--text); line-height:1.2; }
+.qwerty-sub   { font-size:10px; color:var(--muted); }
+
+/* iOS-style toggle switch */
+.sw-track {
+  width:44px; height:26px; border-radius:13px;
+  background:var(--border); position:relative;
+  transition:background .25s; cursor:pointer; flex-shrink:0;
+}
+.sw-track.on { background:#34C759; }
+.sw-thumb {
+  position:absolute; top:3px; left:3px;
+  width:20px; height:20px;
+  background:#fff; border-radius:50%;
+  box-shadow:0 1px 4px rgba(0,0,0,.25);
+  transition:transform .25s;
+}
+.sw-track.on .sw-thumb { transform:translateX(18px); }
+
+.kb-flex { flex:1; }
+
+/* Inline suggestion pills */
+.sug-pills { display:flex; align-items:center; gap:6px; }
+.sug-pill {
+  padding:5px 14px;
+  background:var(--bg); border:1px solid var(--border); border-radius:50px;
+  font-family:'Tajawal',sans-serif; font-size:14px; color:var(--text);
+  transition: all .2s; white-space:nowrap;
+}
+.sug-pill:hover { background:var(--indigo); color:#fff; border-color:var(--indigo); }
+
+.mic-btn {
+  width:38px; height:38px; border-radius:50%;
+  background:var(--bg); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  transition: all .2s; flex-shrink:0;
+}
+.mic-btn img { width:18px; height:18px; object-fit:contain; }
+.mic-btn:hover   { background:var(--red); border-color:var(--red); }
+.mic-btn:hover img { filter:brightness(0) invert(1); }
+.mic-btn.rec     { background:var(--red); border-color:var(--red); animation:pulse 1.2s infinite; }
+.mic-btn.rec img { filter:brightness(0) invert(1); }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(232,53,58,.4)} 60%{box-shadow:0 0 0 8px rgba(232,53,58,0)} }
+
+/* Tap hint */
+.kb-hint {
+  text-align:center; font-size:12px; color:var(--muted);
+  margin-bottom:10px; letter-spacing:.2px;
+  transition: opacity .4s ease;
+}
+
+/* ── KEYS ── */
+.kb-rows { display:flex; flex-direction:column; gap:7px; }
+.kb-row  { display:flex; gap:5px; justify-content:center; }
+
+.key {
+  min-width:52px; height:52px;
+  background: var(--key-bg);
+  border:1.5px solid var(--key-b);
+  border-radius: var(--rx);
+  box-shadow: 0 3px 0 var(--key-sh);
+  font-family:'Tajawal',sans-serif;
+  font-size:20px; font-weight:500;
+  color: var(--text);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:1px; user-select:none;
+  transition: all .1s; flex-shrink:0;
+}
+.key:hover {
+  background: var(--key-h);
+  border-color: var(--key-hb);
+  box-shadow: 0 3px 0 var(--key-hb);
+  transform: translateY(-1px);
+}
+.key:active { transform:translateY(2px); box-shadow:none; }
+
+/* Franco dual label */
+.fl {
+  font-size:17px; font-family:'Inter',sans-serif; font-weight:700;
+  color:var(--indigo); line-height:1;
+  opacity:0; height:0; overflow:hidden;
+  transition: opacity .2s;
+}
+.franco-on .fl { opacity:1; height:auto; }
+.franco-on .key { height:60px; font-size:14px; }
+.franco-on .key:hover .fl { color: var(--fl-hover); }
+:root {
+  --fl-hover: #4d008b;
+}
+[data-theme="dark"] {
+  --fl-hover: #00ff55;
+}
+
+/* Utility key sizes */
+.k-enter { min-width:52px; font-size:17px; color:var(--muted); }
+.k-bsp   { min-width:52px; font-size:18px; color:var(--muted); }
+.k-slash { min-width:38px; font-size:18px; color:var(--muted); }
+.k-globe { min-width:46px; font-size:18px; background:var(--bg); }
+.k-space { flex:1; min-width:140px; font-size:13px; font-weight:500; color:var(--muted); }
+.k-dot   { min-width:42px; }
+.k-123   { min-width:54px; font-size:14px; font-weight:700; font-family:'Inter',sans-serif; background:var(--bg); }
+
+/* Gradient special keys — prevent generic .key:hover from overriding background */
+.k-emoji {
+  min-width:44px; font-size:20px;
+  background:linear-gradient(135deg,#F59E0B,#F97316) !important;
+  border:none !important; box-shadow:0 3px 0 #B45309; color:#fff;
+}
+.k-emoji:hover { filter:brightness(1.1); box-shadow:0 3px 0 #B45309; transform:translateY(-1px); }
+
+.k-tashkeel {
+  min-width:70px; font-size:11px; font-weight:700;
+  font-family:'Tajawal',sans-serif;
+  background:linear-gradient(135deg,#7C3AED,#A855F7) !important;
+  border:none !important; box-shadow:0 3px 0 #5B21B6; color:#fff;
+}
+.k-tashkeel:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); }
+.k-tashkeel .ks { font-size:9px; opacity:.8; font-weight:400; font-family:'Tajawal',sans-serif; }
+
+.k-franco {
+  min-width:70px; font-size:12px; font-weight:700;
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(135deg,#3B82F6,#6366F1) !important;
+  border:none !important; box-shadow:0 3px 0 #1D4ED8; color:#fff;
+}
+.k-franco:hover  { filter:brightness(1.1); box-shadow:0 3px 0 #1D4ED8; transform:translateY(-1px); }
+.k-franco.active { background:linear-gradient(135deg,#059669,#10B981) !important; box-shadow:0 3px 0 #047857; }
+.k-franco .ks    { font-size:9px; opacity:.8; font-weight:400; font-family:'Tajawal',sans-serif; }
+
+/* Special chars key */
+.k-spec { min-width:46px; font-size:12px; font-weight:700; font-family:'Inter',sans-serif; background:var(--bg); color:var(--muted); line-height:1.2; }
+
+/* Specials popup */
+.spec-popup {
+  position:absolute; bottom:72px; left:14px; width:260px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--rs);
+  box-shadow:0 -4px 20px rgba(0,0,0,.12), 0 8px 24px rgba(0,0,0,.08);
+  padding:12px; z-index:200; display:none; animation:popUp .18s ease;
+}
+.spec-popup.show { display:block; }
+.spec-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; }
+.spec-key {
+  height:40px; background:var(--bg); border:1.5px solid var(--border);
+  border-radius:var(--rx); font-family:'Inter',sans-serif;
+  font-size:16px; font-weight:600; color:var(--text);
+  display:flex; align-items:center; justify-content:center;
+  transition: all .12s;
+}
+.spec-key:hover { background:var(--indigo); color:#fff; border-color:var(--indigo); }
+
+/* ── EMOJI POPUP ── */
+.e-popup, .t-popup {
+  position:absolute;
+  bottom:72px; left:14px;
+  width:300px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--rs);
+  box-shadow:0 -4px 20px rgba(0,0,0,.12), 0 8px 24px rgba(0,0,0,.08);
+  padding:12px;
+  z-index:200; display:none;
+  animation:popUp .18s ease;
+}
+.t-popup { left:94px; width:272px; }
+.e-popup.show, .t-popup.show { display:block; }
+@keyframes popUp { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+
+.pop-hd {
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:10px;
+}
+.pop-title { font-size:12px; font-weight:600; color:var(--muted); }
+.pop-close {
+  width:22px; height:22px;
+  background:var(--bg); border-radius:5px;
+  font-size:13px; color:var(--muted);
+  display:flex; align-items:center; justify-content:center;
+}
+.pop-close:hover { background:var(--border); }
+
+.e-grid {
+  display:grid;
+  grid-template-columns:repeat(8,1fr); gap:4px;
+}
+.e-key {
+  height:34px; background:var(--bg); border-radius:6px;
+  font-size:17px;
+  display:flex; align-items:center; justify-content:center;
+  transition: all .12s;
+}
+.e-key:hover { transform:scale(1.25); background:var(--key-h); }
+
+.t-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:6px;
+}
+.t-key {
+  height:50px; background:var(--bg);
+  border:1.5px solid var(--border); border-radius:var(--rx);
+  font-family:'Tajawal',sans-serif; font-size:18px; color:var(--text);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+  transition: all .12s;
+}
+.t-key .tl { font-size:8px; color:var(--muted); font-family:'Inter',sans-serif; }
+.t-key:hover { background:var(--purple); color:#fff; border-color:var(--purple); }
+.t-key:hover .tl { color:rgba(255,255,255,.75); }
+
+/* ── FRANCO HINT BAR ── */
+.franco-hint {
+  display:none; align-items:center; justify-content:center; gap:6px;
+  margin:8px 0 4px; padding:7px 14px;
+  background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(124,58,237,.1));
+  border:1px solid rgba(99,102,241,.25); border-radius:var(--rs);
+  font-size:12px; color:var(--indigo); font-weight:600; text-align:center;
+}
+.franco-on .franco-hint { display:flex; }
+.franco-hint kbd {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:4px; padding:1px 6px;
+  font-size:11px; font-family:monospace; color:var(--text);
+}
+
+/* ── EMOJI HUB ── */
+.emoji-hub { padding:0 16px 56px; }
+
+.ehub-header { margin-bottom:20px; }
+.ehub-title  { font-size:22px; font-weight:800; color:var(--text); display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.ehub-title .red { color:var(--red); }
+.ehub-title .ar  { font-family:'Tajawal',sans-serif; font-size:17px; font-weight:500; color:var(--muted); }
+.ehub-sub { font-size:13px; color:var(--muted); margin-top:5px; }
+
+.ehub-tabs {
+  display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px;
+}
+.ehub-tab {
+  padding:7px 18px; border-radius:50px;
+  border:1.5px solid var(--border);
+  background:var(--surface); font-size:13px;
+  font-weight:600; color:var(--muted);
+  transition: all .2s; white-space:nowrap;
+}
+.ehub-tab:hover { border-color:var(--indigo); color:var(--indigo); }
+.ehub-tab.active { background:var(--indigo); color:#fff; border-color:var(--indigo); }
+
+.ehub-panel { display:none; }
+.ehub-panel.show { display:block; }
+
+.ehub-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(54px, 1fr));
+  gap:8px; margin-bottom:28px;
+}
+.ehub-emoji {
+  height:54px; background:var(--surface);
+  border:1.5px solid var(--border); border-radius:var(--rx);
+  font-size:26px; display:flex; align-items:center; justify-content:center;
+  cursor:pointer; transition: all .15s; position:relative;
+  box-shadow:0 2px 6px var(--shadow);
+}
+.ehub-emoji:hover {
+  transform:scale(1.2); box-shadow:0 8px 20px var(--shadow);
+  border-color:var(--indigo); background:var(--key-h); z-index:2;
+}
+.ehub-emoji:active { transform:scale(1); }
+
+.combo-title {
+  font-size:16px; font-weight:700; color:var(--text);
+  margin-bottom:14px; display:flex; align-items:center; gap:8px;
+}
+.combo-sub { font-size:12px; font-weight:400; color:var(--muted); }
+
+.combo-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
+  gap:10px;
+}
+.combo-card {
+  background:var(--surface); border:1.5px solid var(--border);
+  border-radius:var(--rs); padding:14px 16px;
+  cursor:pointer; transition: all .2s;
+  box-shadow:0 2px 8px var(--shadow);
+  display:flex; flex-direction:column; gap:6px;
+}
+.combo-card:hover {
+  border-color:var(--indigo); transform:translateY(-2px);
+  box-shadow:0 8px 24px var(--shadow);
+}
+.combo-ar {
+  font-family:'Tajawal',sans-serif; font-size:17px;
+  font-weight:700; color:var(--text); direction:rtl; text-align:right;
+  line-height:1.6;
+}
+.combo-meta {
+  display:flex; align-items:center; justify-content:space-between;
+}
+.combo-label-txt { font-size:11px; color:var(--muted); font-weight:500; }
+.combo-ins { font-size:11px; color:var(--indigo); font-weight:700; }
+
+/* ── BRAND SECTION ── */
+.brand-sec { padding:56px 16px 40px; display:flex; justify-content:center; }
+.brand-card {
+  display:flex; align-items:center; gap:24px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r); padding:28px 96px;
+  box-shadow:0 4px 20px var(--shadow);
+  flex-wrap:wrap; justify-content:center;
+}
+.b-icon {
+  width:220px; height:220px; background:none;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.b-icon img {
+  width:220px; height:220px; object-fit:contain;
+}
+.b-icon svg { width:50px; height:50px; }
+.b-div { width:2px; height:160px; background:var(--border); }
+.b-info { display:flex; flex-direction:column; gap:3px; }
+.b-en { font-size:22px; font-weight:800; color:var(--text); }
+.b-en span { color:var(--red); }
+.b-ar { font-family:'Tajawal',sans-serif; font-size:22px; font-weight:700; color:var(--text); direction:rtl; }
+.b-domain { font-size:12px; color:var(--muted); }
+.b-tag { font-family:'Tajawal',sans-serif; font-size:18px; color:var(--muted); direction:rtl; }
+
+/* ── FAQ ── */
+.faq-sec { padding:0 16px 64px; }
+.faq-hd { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+.faq-hd h2 { font-size:26px; font-weight:800; }
+.faq-list { display:flex; flex-direction:column; gap:7px; max-width:620px; }
+
+.faq-item {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--rx); overflow:hidden;
+  transition: box-shadow .2s;
+}
+.faq-item:hover { box-shadow:0 4px 16px var(--shadow); }
+
+.faq-q {
+  width:100%; padding:15px 18px;
+  text-align:left; background:none;
+  font-family:'Inter',sans-serif; font-size:14px; font-weight:600;
+  color:var(--text);
+  display:flex; align-items:center; justify-content:space-between; gap:8px;
+}
+.faq-q.rtl { font-family:'Tajawal',sans-serif; font-size:16px; direction:rtl; text-align:right; }
+.faq-icon { font-size:20px; color:var(--muted); transition:transform .3s, color .3s; flex-shrink:0; }
+.faq-item.open .faq-icon { transform:rotate(45deg); color:var(--red); }
+
+.faq-a {
+  max-height:0; overflow:hidden;
+  padding:0 18px;
+  font-size:13px; color:var(--muted); line-height:1.75;
+  transition: max-height .32s ease, padding .32s;
+}
+.faq-a.rtl { font-family:'Tajawal',sans-serif; font-size:15px; direction:rtl; text-align:right; }
+.faq-item.open .faq-a { max-height:220px; padding:0 18px 15px; }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--surface); border-top:1px solid var(--border);
+  text-align:center; padding:36px 16px 24px;
+}
+.ft-logo {
+  display:inline-flex; align-items:center; gap:10px;
+  text-decoration:none; margin-bottom:12px;
+}
+.ft-ic {
+  width:38px; height:38px; background:var(--red); border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+}
+.ft-ic svg { width:24px; height:24px; }
+.ft-name { font-size:17px; font-weight:800; color:var(--text); }
+.ft-name .ar { font-family:'Tajawal',sans-serif; background:var(--red); color:#fff; font-size:10px; padding:1px 7px; border-radius:10px; margin:0 3px; vertical-align:middle; }
+.ft-domain { font-size:14px; font-weight:600; color:var(--text); margin-bottom:4px; }
+.ft-tag { font-family:'Tajawal',sans-serif; font-size:13px; color:var(--muted); direction:rtl; margin-bottom:20px; }
+.ft-copy { font-size:12px; color:var(--muted); margin-bottom:10px; }
+.ft-links { display:flex; justify-content:center; gap:4px; flex-wrap:wrap; }
+.ft-links a { font-size:12px; color:var(--muted); text-decoration:none; padding:2px 6px; border-radius:4px; }
+.ft-links a:hover { color:var(--text); }
+.ft-sep { color:var(--border); font-size:12px; }
+
+/* ── TOAST ── */
+.toast {
+  position:fixed; bottom:28px; left:50%;
+  transform:translateX(-50%) translateY(80px);
+  background:#1E293B; color:#fff;
+  padding:10px 24px; border-radius:50px;
+  font-size:13px; white-space:nowrap;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+  transition:transform .32s cubic-bezier(.34,1.56,.64,1);
+  z-index:9999;
+}
+.toast.show { transform:translateX(-50%) translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width:640px) {
+  header { padding:0 14px; height:60px; }
+  .nav-link { display:none; }
+  .sh-btn { padding:7px 11px; }
+  .sh-name { font-size:11px; }
+  .key { min-width:28px; height:44px; font-size:16px; }
+  .franco-on .key { height:52px; font-size:14px; }
+  .k-space { min-width:90px; }
+  .k-enter, .k-bsp { min-width:34px; font-size:15px; }
+  .k-tashkeel, .k-franco { min-width:54px; font-size:10px; }
+  .k-emoji { min-width:36px; }
+  .k-123 { min-width:40px; font-size:12px; }
+  .e-popup, .t-popup { left:6px; right:6px; width:auto; bottom:68px; }
+  .brand-card { padding:20px; }
+  .b-div { width:60px; height:1px; }
+}
+  </style>
+
+<style id="perf-fix">
+/* Scroll perf: lighter blur on header */
+header{background:rgba(255,255,255,.82)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;will-change:transform}
+[data-theme=dark] header{background:rgba(15,23,42,.90)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important}
+.bg-shapes{will-change:transform}
+.top-aura{will-change:transform}
+.s{filter:blur(30px)!important;will-change:transform}
+/* Whiter key buttons */
+:root{--key-bg:rgba(255,255,255,.98)}
+[data-theme=dark]{--key-bg:rgba(255,255,255,.11)}
+/* Fix transparent SPEC and Numbers popup boxes */
+.spec-popup{background:rgba(255,255,255,.97)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.n-popup{background:rgba(255,255,255,.97)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+[data-theme=dark] .spec-popup{background:rgba(15,23,42,.96)!important}
+[data-theme=dark] .n-popup{background:rgba(15,23,42,.96)!important}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#">
+    <img class="logo-img" id="logo-img" src="images/LOGO-Arabickeyboard-online.svg" alt="Arabi Keyboard Logo">
+  </a>
+
+  <nav>
+    <a href="#" class="nav-link">Home</a>
+    <a href="#" class="nav-link">Report Bugs</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <a href="#" class="nav-link">Contact</a>
+    <div class="lang-wrap">
+      <button class="lang-pill" id="lang-btn" onclick="toggleLang()">🇺🇸 English ▾</button>
+      <div class="lang-menu" id="lang-menu">
+        <div class="lang-opt active" onclick="setLang('en','🇺🇸 English')">🇺🇸 English</div>
+        <div class="lang-opt" onclick="setLang('fr','🇫🇷 Français')">🇫🇷 Français</div>
+        <div class="lang-opt" onclick="setLang('ar','🇸🇦 العربية')">🇸🇦 العربية</div>
+      </div>
+    </div>
+    <div class="theme-wrap" onclick="toggleTheme()">
+      <div class="t-track" id="tt">
+        <div class="t-thumb" id="th">☀️</div>
+      </div>
+      <div class="t-lbl" id="tlbl">White<br>Mode</div>
+    </div>
+  </nav>
+</header>
+
+<img class="bg-graphic" src="images/Clavierarab-background.svg" alt="" aria-hidden="true">
+
+<!-- MAIN -->
+<main>
+  <div class="wrap">
+
+    <!-- Share Bar -->
+    <div class="share-bar">
+      <button class="sh-btn" onclick="shareTikTok()">
+        <div class="sh-ic"><img src="images/Icon-TikTok-Clavierarabe-online.svg" alt="TikTok"></div>
+        <div class="sh-txt"><span class="sh-action">Copy to</span><span class="sh-name">TikTok</span></div>
+      </button>
+      <button class="sh-btn" onclick="shareSnapchat()">
+        <div class="sh-ic"><img src="images/Icon-Snapchat-Clavierarabe-online.svg" alt="Snapchat"></div>
+        <div class="sh-txt"><span class="sh-action">Copy to</span><span class="sh-name">Snapchat</span></div>
+      </button>
+      <button class="sh-btn" onclick="searchChatGPT()">
+        <div class="sh-ic"><img src="images/Icon-Chatgpt-Clavierarabe-online.svg" alt="ChatGPT"></div>
+        <div class="sh-txt"><span class="sh-action">Search with</span><span class="sh-name">ChatGPT</span></div>
+      </button>
+      <button class="sh-btn" onclick="shareWhatsApp()">
+        <div class="sh-ic"><img src="images/Icon-Whatsapp-Clavierarabe-online.svg" alt="WhatsApp"></div>
+        <div class="sh-txt"><span class="sh-action">Copy to</span><span class="sh-name">WhatsApp</span></div>
+      </button>
+      <button class="sh-btn" onclick="searchYouTube()">
+        <div class="sh-ic"><img src="images/Icon-Youtube-Clavierarabe-online.svg" alt="YouTube"></div>
+        <div class="sh-txt"><span class="sh-action">Search with</span><span class="sh-name">YouTube</span></div>
+      </button>
+      <button class="sh-btn" onclick="searchGoogle()">
+        <div class="sh-ic"><img src="images/Icon-google-Clavierarabe-online.svg" alt="Google"></div>
+        <div class="sh-txt"><span class="sh-action">Search with</span><span class="sh-name">Google</span></div>
+      </button>
+    </div>
+
+    <!-- Editor -->
+    <div class="card editor-card">
+      <textarea id="arabic-text"
+        placeholder="اكتب هنا... أو انقر على الأحرف أدناه ✍️"
+        oninput="onInput()" spellcheck="false"></textarea>
+
+      <div class="editor-bar">
+        <div class="bar-stats">
+          <span>الأحرف: <b id="cc">0</b></span>
+          <span>الكلمات: <b id="wc">0</b></span>
+        </div>
+        <div class="bar-center">
+          <button class="t-btn t-dl" onclick="dlText()">
+            <img src="images/Icon-Telecharger-Clavierarabe-online.svg" alt="">
+            <span>Download</span>
+          </button>
+          <button class="t-btn t-cp" onclick="cpText()">
+            <img src="images/Icon-Copy-Clavier-arabe-online.svg" alt="">
+            <span>Copy</span>
+          </button>
+          <button class="t-btn t-clr" onclick="clrText()">
+            <img src="images/Icon-Clear-Clavierarabe-enligne.svg" alt="">
+            <span>Clear</span>
+          </button>
+        </div>
+        <div class="font-wrap">
+          <button class="f-btn" onclick="chFont(-2)">A-</button>
+          <span class="f-num" id="fnum">22</span>
+          <button class="f-btn" onclick="chFont(2)">A+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keyboard -->
+    <div class="card kb-card" id="kbc">
+
+      <!-- Specials popup -->
+      <div class="spec-popup" id="spop">
+        <div class="pop-hd">
+          <span class="pop-title"># Special Characters</span>
+          <button class="pop-close" onclick="closeSpec()">✕</button>
+        </div>
+        <div class="spec-grid" id="sgrid"></div>
+      </div>
+
+      <!-- Emoji popup -->
+      <div class="e-popup" id="epop">
+        <div class="pop-hd">
+          <span class="pop-title">😊 Emoji</span>
+          <button class="pop-close" onclick="closeEmoji()">✕</button>
+        </div>
+        <div class="e-grid" id="egrid"></div>
+      </div>
+
+      <!-- Tashkeel popup -->
+      <div class="t-popup" id="tpop">
+        <div class="pop-hd">
+          <span class="pop-title">✨ التشكيل</span>
+          <button class="pop-close" onclick="closeTashkeel()">✕</button>
+        </div>
+        <div class="t-grid" id="tgrid"></div>
+      </div>
+
+      <!-- Combined: QWERTY toggle + suggestions + mic — single row -->
+      <div class="kb-top">
+        <div class="qwerty-left" onclick="toggleQwerty()">
+          <div class="qwerty-icon">
+            <img src="images/clavier-icon-arabikeyboard-enligne.svg" alt="">
+          </div>
+          <div class="qwerty-txt">
+            <span class="qwerty-title">اكتب العربية بلوحة حاسوبك</span>
+            <span class="qwerty-sub">Type Arabic with your PC keyboard</span>
+          </div>
+          <div class="sw-track" id="sw-track">
+            <div class="sw-thumb"></div>
+          </div>
+        </div>
+
+        <div class="kb-flex"></div>
+
+        <div class="sug-pills">
+          <button class="sug-pill" id="s0" onclick="pickSug(0)">المكتب</button>
+          <button class="sug-pill" id="s1" onclick="pickSug(1)">الملك</button>
+          <button class="sug-pill" id="s2" onclick="pickSug(2)">المكان</button>
+        </div>
+
+        <button class="mic-btn" id="micbtn" onclick="toggleVoice()" title="Voice input">
+          <img src="images/Icon-Mic-Clavierarabe-online.svg" alt="Mic">
+        </button>
+      </div>
+
+
+      <!-- Franco hint — visible only when franco mode is active -->
+      <div class="franco-hint" id="franco-hint">
+        ⌨️ Franco mode — type your text, press <kbd>Space</kbd> to convert to Arabic
+      </div>
+
+      <!-- Keys built by JS -->
+      <div class="kb-rows" id="kbrows"></div>
+    </div>
+
+  </div>
+</main>
+
+<!-- EMOJI HUB -->
+<section class="emoji-hub">
+  <div class="wrap">
+
+    <div class="ehub-header">
+      <div class="ehub-title">
+        😊 Arabic <span class="red">Emoji</span> Hub
+        <span class="ar">— إيموجي عربي</span>
+      </div>
+      <div class="ehub-sub">Click any emoji to insert it into your text above — or grab a ready-made Arabic combo for social media</div>
+    </div>
+
+    <!-- Category tabs -->
+    <div class="ehub-tabs">
+      <button class="ehub-tab active" onclick="switchTab(this,'popular')">⭐ Popular</button>
+      <button class="ehub-tab" onclick="switchTab(this,'islamic')">☪️ Islamic</button>
+      <button class="ehub-tab" onclick="switchTab(this,'culture')">🐪 Culture</button>
+      <button class="ehub-tab" onclick="switchTab(this,'flags')">🏳️ Arab Flags</button>
+      <button class="ehub-tab" onclick="switchTab(this,'social')">📱 Social</button>
+    </div>
+
+    <!-- Emoji panels — filled by JS -->
+    <div class="ehub-panel show" id="ep-popular"></div>
+    <div class="ehub-panel" id="ep-islamic"></div>
+    <div class="ehub-panel" id="ep-culture"></div>
+    <div class="ehub-panel" id="ep-flags"></div>
+    <div class="ehub-panel" id="ep-social"></div>
+
+    <!-- Combos -->
+    <div class="combo-title">
+      🎯 Arabic Emoji Combos
+      <span class="combo-sub">— one click to insert into your text</span>
+    </div>
+    <div class="combo-grid" id="combo-grid"></div>
+
+  </div>
+</section>
+
+<!-- BRAND -->
+<section class="brand-sec">
+  <div class="brand-card">
+    <div class="b-icon">
+      <img src="images/LOGO-Footer-Keyboardarabe-online.svg" alt="Arabi Keyboard">
+    </div>
+    <div class="b-div"></div>
+    <div class="b-info">
+      <div class="b-en"><span>Arabi</span> Keyboard &nbsp; <span style="font-family:Tajawal;font-size:20px">عربي كيبورد</span></div>
+      <div class="b-domain">arabikeyboard.com — لوحة مفاتيح عربية مجانية | Free Arabic Keyboard Online</div>
+      <div class="b-tag">اكتب بالعربية من أي جهاز بدون تثبيت أي برنامج</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec" id="faq">
+  <div class="wrap">
+    <div class="faq-hd">
+      <h2>FAQ</h2>
+      <span style="font-size:20px;color:var(--muted)">🔍</span>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="openFaq(this)">
+          Arabic keyboard franco mode <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Franco Arab mode lets you type Arabic with your QWERTY keyboard. Click the blue "Franco" button — each key will show a small Latin hint above the Arabic letter. Press the key or click it to insert the Arabic character. Ideal for Algerian, Moroccan, and Tunisian users.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="openFaq(this)">
+          Type Arabic online without installation <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Arabi Keyboard is 100% browser-based. No download, no account, no installation needed. Works on Windows, Mac, iPhone, Android, and any tablet. Just open the page and start typing Arabic instantly.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="openFaq(this)">
+          Clavier arabe en ligne gratuit <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Arabi Keyboard est un clavier arabe en ligne 100% gratuit. Écrivez en arabe depuis n'importe quel appareil sans installation. Mode franco-arabe, tachkil, saisie vocale inclus. Parfait pour les utilisateurs algériens, marocains et tunisiens résidant en France.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="openFaq(this)">
+          Clavier arabe avec tachkil <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Cliquez sur le bouton violet "تشكيل" pour ouvrir le panneau des voyelles arabes (harakat) : fatha, kasra, damma, sukun, shadda, tanwin et bien plus. Idéal pour écrire le Coran, des textes classiques ou tout texte voyellisé.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q rtl" onclick="openFaq(this)">
+          <span>لوحة مفاتيح عربية اونلاين</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a rtl">
+          لوحة مفاتيح عربية مجانية ومباشرة من المتصفح بدون تثبيت. تعمل على جميع الأجهزة. تدعم وضع الفرانكو، التشكيل، والإدخال الصوتي. انسخ النص وشاركه مباشرة على واتساب، تيك توك، سناب شات أو ابحث به على Google وYouTube.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q rtl" onclick="openFaq(this)">
+          <span>كتابة عربية بلوحة انجليزية</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a rtl">
+          فعّل وضع فرانكو بالنقر على الزر الأزرق أسفل لوحة المفاتيح. ستظهر حروف لاتينية صغيرة فوق كل مفتاح عربي لمساعدتك على الكتابة بالعربية من لوحة إنجليزية. يمكنك أيضاً تفعيل الإدخال الصوتي للكتابة بالصوت مباشرةً.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a class="ft-logo" href="#">
+    <div class="ft-ic">
+      <svg viewBox="0 0 28 22" fill="none">
+        <rect x="1" y="1" width="26" height="20" rx="3.5" stroke="white" stroke-width="1.6"/>
+        <rect x="3.5" y="4.5" width="3" height="2.5" rx=".6" fill="white"/>
+        <rect x="7.5" y="4.5" width="3" height="2.5" rx=".6" fill="white"/>
+        <rect x="11.5" y="4.5" width="3" height="2.5" rx=".6" fill="white"/>
+        <rect x="15.5" y="4.5" width="3" height="2.5" rx=".6" fill="white"/>
+        <rect x="19.5" y="4.5" width="5" height="2.5" rx=".6" fill="white"/>
+        <rect x="3.5" y="9" width="3" height="2.5" rx=".6" fill="white"/>
+        <rect x="7.5" y="9" width="3" height="2.5" rx=".6" fill="white"/>
+        <rect x="11.5" y="9" width="3" height="2.5" rx=".6" fill="white"/>
+        <rect x="15.5" y="9" width="3" height="2.5" rx=".6" fill="white"/>
+        <rect x="19.5" y="9" width="5" height="2.5" rx=".6" fill="white"/>
+        <rect x="3.5" y="14" width="21" height="3" rx=".6" fill="white"/>
+      </svg>
+    </div>
+    <span class="ft-name">arabi <span class="ar">عربي</span> Keyboard</span>
+  </a>
+  <div class="ft-domain">arabikeyboard.com — لوحة مفاتيح عربية مجانية | Free Arabic Keyboard Online</div>
+  <div class="ft-tag">اكتب بالعربية من أي جهاز بدون تثبيت أي برنامج</div>
+  <div class="ft-copy">©2026 Arabikeyboard. All rights reserved.</div>
+  <div class="ft-links">
+    <a href="#">Terms of Use</a><span class="ft-sep">|</span>
+    <a href="#">Privacy Policy</a><span class="ft-sep">|</span>
+    <a href="#">Cookie</a><span class="ft-sep">|</span>
+    <a href="#">Settings</a>
+  </div>
+</footer>
+
+<script>
+/* ── DATA ── */
+const ROWS = [
+  ['ض','ص','ث','ق','ف','غ','ع','ه','خ','ح','ج','د','ENTER'],
+  ['ش','س','ي','ب','ل','ا','ت','ن','م','ك','ط','ظ','SLASH'],
+  ['SPEC','ئ','ء','ؤ','ر','لا','ى','ة','و','ز',',','BSP'],
+  ['N123','EMOJI','TASHKEEL','SPACE','DOT','FRANCO']
+];
+
+const SPEC_CHARS = ['.', '-', '#', '+', '"', '§', '$', '%', '&', '/', '…', '(', ')', '!', '?', '@', '*', '=', '<', '>', '{', '}', '|', '~'];
+
+/* QWERTY → Arabic letter (same key position) */
+const FL = {
+  'ض':'q','ص':'w','ث':'e','ق':'r','ف':'t','غ':'y','ع':'u','ه':'i','خ':'o','ح':'p',
+  'ج':'[','د':']',
+  'ش':'a','س':'s','ي':'d','ب':'f','ل':'g','ا':'h','ت':'j','ن':'k','م':'l','ك':';','ط':"'",
+  'ظ':'/','ئ':'z','ء':'x','ؤ':'c','ر':'v','لا':'b','ى':'n','ة':'m',
+  'و':',','ز':'.', ',':';'
+};
+
+const PHYS = {
+  'q':'ض','w':'ص','e':'ث','r':'ق','t':'ف','y':'غ','u':'ع','i':'ه','o':'خ','p':'ح',
+  '[':'ج',']':'د',
+  'a':'ش','s':'س','d':'ي','f':'ب','g':'ل','h':'ا','j':'ت','k':'ن','l':'م',';':'ك',"'":'ط',
+  'z':'ئ','x':'ء','c':'ؤ','v':'ر','b':'لا','n':'ى','m':'ة',',':'و','.':'ز','/':'ظ','`':'ذ'
+};
+
+const TASH = [
+  {c:'َ',l:'فتحة'},{c:'ً',l:'تنوين فتح'},{c:'ُ',l:'ضمة'},{c:'ٌ',l:'تنوين ضم'},
+  {c:'ِ',l:'كسرة'},{c:'ٍ',l:'تنوين كسر'},{c:'ّ',l:'شدة'},{c:'ْ',l:'سكون'},
+  {c:'أ',l:'أ'},{c:'إ',l:'إ'},{c:'آ',l:'آ'},{c:'ة',l:'ة'},
+  {c:'ى',l:'مقصورة'},{c:'،',l:'فاصلة'},{c:'؟',l:'استفهام'},{c:'؛',l:'منقوطة'},
+];
+
+const EMOJIS = [
+  '❤️','😊','😂','😍','🙏','👍','💪','🎉','✨','🌹',
+  '😭','🤣','💯','🔥','🫶','😘','🥰','💕','👏','🌟',
+  '😅','🤔','💙','🎊','🌺','🤩','😎','😴','🌙','☀️',
+  '🌈','💫','🫂','🎶','📿','🕌','🌿','🤲','💎','👀',
+];
+
+const WORDS = [
+  'السلام','عليكم','مرحبا','شكرا','أحمد','محمد','عربي','كيف','حال',
+  'اليوم','غدا','أمس','صباح','مساء','الخير','نعم','لا','هذا','هذه',
+  'المكتب','المكان','الملك','البيت','الكتاب','القلم','المدرسة','الجامعة',
+  'الله','الحياة','العالم','الناس','الوقت','الأمر','الأمل','النور',
+  'أنا','أنت','هو','هي','نحن','أهلا','وسهلا','تمام','بخير','ماشاء',
+  'أريد','أحب','أعرف','أعتقد','أظن','أفكر','أعمل','أدرس','أسكن',
+  'الكلام','الكلمة','الجملة','النص','الحرف','اللغة','العربية','الفصحى',
+  'الدراسة','العمل','التعليم','الأسرة','الصديق','الحياة','المستقبل',
+  'كثير','قليل','كبير','صغير','جديد','قديم','جميل','رائع','ممتاز',
+  'الجزائر','المغرب','تونس','مصر','فرنسا','العرب','المسلمين',
+  'بسم','الرحمن','الرحيم','الحمد','رب','العالمين','آمين',
+  'لوحة','مفاتيح','عربية','اونلاين','مجانية','انجليزية','فرانكو',
+];
+
+/* ── STATE ── */
+let fontSize = 22, isDark = false, francoOn = false;
+let emojiOpen = false, tashOpen = false, specOpen = false;
+let isRec = false, recog = null;
+let sugs = ['المكتب','الملك','المكان'];
+let qwertyOn = false;
+
+/* ── INIT ── */
+function init() {
+  buildKB(); buildEmoji(); buildTash(); buildSpec(); initEmojiHub();
+  setupPhys(); loadTheme(); updateStats();
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#epop') && !e.target.closest('.k-emoji')) closeEmoji();
+    if (!e.target.closest('#tpop') && !e.target.closest('.k-tashkeel')) closeTashkeel();
+    if (!e.target.closest('#spop') && !e.target.closest('.k-spec')) closeSpec();
+    if (!e.target.closest('#lang-menu') && !e.target.closest('#lang-btn')) closeLang();
+  });
+
+  // Franco transliteration: convert last word on Space/Enter
+  document.getElementById('arabic-text').addEventListener('keydown', function(e) {
+    if (!francoOn) return;
+    if (e.key !== ' ' && e.key !== 'Enter') return;
+    const ta = this;
+    const pos = ta.selectionStart;
+    const before = ta.value.slice(0, pos);
+    const after  = ta.value.slice(pos);
+    const lastBreak = Math.max(before.lastIndexOf(' '), before.lastIndexOf('\n'));
+    const lastWord  = before.slice(lastBreak + 1);
+    if (!lastWord) return;
+    const converted = arabiziToArabic(lastWord);
+    const newBefore = before.slice(0, lastBreak + 1) + converted;
+    e.preventDefault();
+    const sep = e.key === 'Enter' ? '\n' : ' ';
+    ta.value = newBefore + sep + after;
+    ta.selectionStart = ta.selectionEnd = newBefore.length + sep.length;
+    updateStats(); updateSugs();
+  });
+}
+
+/* ── BUILD KEYBOARD ── */
+function buildKB() {
+  const wrap = document.getElementById('kbrows');
+  wrap.innerHTML = '';
+  document.getElementById('kbc').classList.toggle('franco-on', francoOn);
+
+  ROWS.forEach(row => {
+    const rowEl = document.createElement('div');
+    rowEl.className = 'kb-row';
+
+    row.forEach(k => {
+      const btn = document.createElement('button');
+      btn.className = 'key';
+
+      if (k === 'ENTER') {
+        btn.classList.add('k-enter'); btn.textContent = '↵';
+        btn.onclick = () => ins('\n');
+
+      } else if (k === 'BSP') {
+        btn.classList.add('k-bsp'); btn.textContent = '⌫';
+        btn.onclick = bsp;
+
+      } else if (k === 'SLASH') {
+        btn.classList.add('k-slash'); btn.textContent = '/';
+        btn.onclick = () => ins('/');
+
+      } else if (k === 'SPEC') {
+        btn.classList.add('k-spec');
+        btn.innerHTML = '#<br>.-+';
+        btn.onclick = e => { e.stopPropagation(); toggleSpec(); };
+
+      } else if (k === 'SPACE') {
+        btn.classList.add('k-space');
+        btn.innerHTML = '<span style="font-family:Tajawal">مسافة</span>';
+        btn.onclick = () => ins(' ');
+
+      } else if (k === 'DOT') {
+        btn.classList.add('k-dot'); btn.textContent = '.';
+        btn.onclick = () => ins('.');
+
+      } else if (k === 'N123') {
+        btn.classList.add('k-123'); btn.textContent = '123';
+        btn.onclick = () => toast('Numbers — coming soon');
+
+      } else if (k === 'EMOJI') {
+        btn.classList.add('k-emoji'); btn.textContent = '😊';
+        btn.onclick = e => { e.stopPropagation(); toggleEmoji(); };
+
+      } else if (k === 'TASHKEEL') {
+        btn.classList.add('k-tashkeel');
+        btn.innerHTML = '✨ تشكيل<span class="ks">حركات</span>';
+        btn.onclick = e => { e.stopPropagation(); toggleTash(); };
+
+      } else if (k === 'FRANCO') {
+        btn.classList.add('k-franco');
+        if (francoOn) btn.classList.add('active');
+        btn.innerHTML = `Franco<span class="ks">${francoOn ? 'إيقاف' : 'تفعيل'}</span>`;
+        btn.onclick = toggleFranco;
+
+      } else {
+        /* Arabic letter */
+        const hint = FL[k] || '';
+        btn.innerHTML = `<span class="fl">${hint}</span>${k}`;
+        if (k === 'لا') btn.style.fontSize = '15px';
+        btn.onclick = () => ins(k);
+      }
+
+      rowEl.appendChild(btn);
+    });
+    wrap.appendChild(rowEl);
+  });
+}
+
+function buildSpec() {
+  const g = document.getElementById('sgrid');
+  g.innerHTML = '';
+  SPEC_CHARS.forEach(ch => {
+    const b = document.createElement('button');
+    b.className = 'spec-key'; b.textContent = ch;
+    b.onclick = () => ins(ch);
+    g.appendChild(b);
+  });
+}
+
+function buildEmoji() {
+  const g = document.getElementById('egrid');
+  g.innerHTML = '';
+  EMOJIS.forEach(em => {
+    const b = document.createElement('button');
+    b.className = 'e-key'; b.textContent = em;
+    b.onclick = () => ins(em);
+    g.appendChild(b);
+  });
+}
+
+function buildTash() {
+  const g = document.getElementById('tgrid');
+  g.innerHTML = '';
+  TASH.forEach(({c,l}) => {
+    const b = document.createElement('button');
+    b.className = 't-key';
+    b.innerHTML = `${c}<span class="tl">${l}</span>`;
+    b.onclick = () => ins(c);
+    g.appendChild(b);
+  });
+}
+
+/* ── FRANCO ── */
+function toggleFranco() {
+  francoOn = !francoOn;
+  buildKB();
+  toast(francoOn ? '🔤 Franco ON — type & press Space to convert' : '⌨️ Franco OFF');
+}
+
+/* ── POPUPS ── */
+function toggleSpec()    { specOpen = !specOpen; document.getElementById('spop').classList.toggle('show', specOpen); if (specOpen) { closeEmoji(); closeTashkeel(); } }
+function closeSpec()     { specOpen = false; document.getElementById('spop').classList.remove('show'); }
+function toggleEmoji()   { emojiOpen = !emojiOpen; document.getElementById('epop').classList.toggle('show', emojiOpen); if (emojiOpen) { closeTashkeel(); closeSpec(); } }
+function closeEmoji()    { emojiOpen = false; document.getElementById('epop').classList.remove('show'); }
+function toggleTash()    { tashOpen = !tashOpen; document.getElementById('tpop').classList.toggle('show', tashOpen); if (tashOpen) { closeEmoji(); closeSpec(); } }
+function closeTashkeel() { tashOpen = false; document.getElementById('tpop').classList.remove('show'); }
+
+/* ── TEXT OPS ── */
+function ins(ch) {
+  const ta = document.getElementById('arabic-text');
+  const s = ta.selectionStart, e = ta.selectionEnd;
+  ta.value = ta.value.slice(0,s) + ch + ta.value.slice(e);
+  ta.selectionStart = ta.selectionEnd = s + ch.length;
+  ta.focus(); updateStats(); updateSugs();
+}
+
+function bsp() {
+  const ta = document.getElementById('arabic-text');
+  const s = ta.selectionStart, e = ta.selectionEnd;
+  if (s !== e) { ta.value = ta.value.slice(0,s) + ta.value.slice(e); ta.selectionStart = ta.selectionEnd = s; }
+  else if (s > 0) { ta.value = ta.value.slice(0,s-1) + ta.value.slice(s); ta.selectionStart = ta.selectionEnd = s-1; }
+  ta.focus(); updateStats(); updateSugs();
+}
+
+function onInput() { updateStats(); updateSugs(); }
+
+function updateStats() {
+  const v = document.getElementById('arabic-text').value;
+  document.getElementById('cc').textContent = v.length;
+  document.getElementById('wc').textContent = v.trim() ? v.trim().split(/\s+/).length : 0;
+}
+
+/* ── SUGGESTIONS ── */
+function updateSugs() {
+  const v = document.getElementById('arabic-text').value;
+  const parts = v.split(/\s+/).filter(Boolean);
+  const last = parts[parts.length - 1] || '';
+  let res = [];
+
+  if (last.length > 1) {
+    res = WORDS.filter(w => w.startsWith(last) && w !== last).slice(0, 3);
+  }
+  const typed = [...new Set(parts)].reverse().filter(w => w.length > 1 && !res.includes(w));
+  while (res.length < 3) res.push(typed.shift() || ['المكتب','الملك','المكان'][res.length]);
+
+  sugs = res;
+  [0,1,2].forEach(i => { const el = document.getElementById('s'+i); if(el) el.textContent = sugs[i]||''; });
+}
+
+function pickSug(i) {
+  const sug = sugs[i]; if (!sug) return;
+  const ta = document.getElementById('arabic-text');
+  const parts = ta.value.split(/\s+/);
+  const last = parts[parts.length-1] || '';
+  if (last && sug.startsWith(last)) ins(sug.slice(last.length) + ' ');
+  else ins((ta.value && !ta.value.endsWith(' ') ? ' ' : '') + sug + ' ');
+}
+
+/* ── ACTIONS ── */
+function cpText() {
+  const v = document.getElementById('arabic-text').value;
+  if (!v.trim()) { toast('No text to copy'); return; }
+  navigator.clipboard.writeText(v).then(() => toast('✅ Copied!'));
+}
+function clrText() {
+  const ta = document.getElementById('arabic-text');
+  if (!ta.value) return;
+  ta.value = ''; updateStats(); updateSugs(); toast('Cleared');
+}
+function dlText() {
+  const v = document.getElementById('arabic-text').value;
+  if (!v.trim()) { toast('No text to download'); return; }
+  const a = Object.assign(document.createElement('a'), {
+    href: URL.createObjectURL(new Blob([v], {type:'text/plain;charset=utf-8'})),
+    download: 'arabic-text.txt'
+  });
+  a.click(); toast('✅ Downloading...');
+}
+
+function shareTikTok()    { cpAndToast('✅ Copied — paste in TikTok'); }
+function shareSnapchat()  { cpAndToast('✅ Copied — paste in Snapchat'); }
+function searchChatGPT()  { openIfText('https://chat.openai.com/?q='); }
+function shareWhatsApp()  { openIfText('https://wa.me/?text='); }
+function searchYouTube()  { openIfText('https://www.youtube.com/results?search_query='); }
+function searchGoogle()   { openIfText('https://www.google.com/search?q='); }
+
+function cpAndToast(msg) {
+  const v = document.getElementById('arabic-text').value;
+  if (!v.trim()) { toast('Write some text first'); return; }
+  navigator.clipboard.writeText(v).then(() => toast(msg));
+}
+function openIfText(base) {
+  const v = document.getElementById('arabic-text').value;
+  if (!v.trim()) { toast('Write some text first'); return; }
+  window.open(base + encodeURIComponent(v), '_blank');
+}
+
+function chFont(d) {
+  fontSize = Math.min(42, Math.max(14, fontSize+d));
+  document.getElementById('arabic-text').style.fontSize = fontSize+'px';
+  document.getElementById('fnum').textContent = fontSize;
+}
+
+/* ── QWERTY TOGGLE ── */
+function toggleQwerty() {
+  qwertyOn = !qwertyOn;
+  const sw   = document.getElementById('sw-track');
+  sw.classList.toggle('on', qwertyOn);
+  if (qwertyOn) {
+    document.getElementById('arabic-text').focus();
+    toast('✅ QWERTY → Arabic activated');
+  } else {
+    toast('⌨️ Physical keyboard off');
+  }
+}
+
+/* ── PHYSICAL KB ── */
+function setupPhys() {
+  document.addEventListener('keydown', e => {
+    if (!qwertyOn) return;
+    const ta = document.getElementById('arabic-text');
+    if (document.activeElement !== ta || e.ctrlKey || e.metaKey || e.altKey) return;
+    const skip = ['Backspace','Delete','Tab','Enter','Arrow','Home','End'];
+    if (skip.some(s => e.key.startsWith(s))) return;
+    const ch = PHYS[e.key?.toLowerCase()];
+    if (ch) { e.preventDefault(); ins(ch); }
+  });
+}
+
+/* ── VOICE ── */
+function toggleVoice() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) { toast('Voice not supported — use Chrome'); return; }
+  isRec ? stopVoice() : startVoice(SR);
+}
+function startVoice(SR) {
+  recog = new SR(); recog.lang='ar-SA'; recog.continuous=true; recog.interimResults=false;
+  recog.onstart  = () => { isRec=true; document.getElementById('micbtn').classList.add('rec'); toast('🎤 Listening... speak Arabic'); };
+  recog.onresult = e => { for(let i=e.resultIndex;i<e.results.length;i++) if(e.results[i].isFinal) ins(e.results[i][0].transcript); };
+  recog.onerror  = e => { toast('Error: '+e.error); stopVoice(); };
+  recog.onend    = () => { if(isRec) recog.start(); };
+  recog.start();
+}
+function stopVoice() {
+  isRec=false; recog&&recog.stop();
+  document.getElementById('micbtn').classList.remove('rec');
+  toast('⏹️ Voice stopped');
+}
+
+/* ── FAQ ── */
+function openFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const was = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!was) item.classList.add('open');
+}
+
+/* ── LANGUAGE ── */
+function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function closeLang()  { document.getElementById('lang-menu').classList.remove('show'); }
+function setLang(code, label) {
+  document.getElementById('lang-btn').textContent = label + ' ▾';
+  document.querySelectorAll('.lang-opt').forEach(el => el.classList.remove('active'));
+  event.target.classList.add('active');
+  closeLang();
+  toast('Language: ' + label);
+}
+
+/* ── TRANSLITERATION ENGINE ── */
+const ARABIZI = [
+  // Digraphs & number combos — must come BEFORE single chars
+  ["3'", 'غ'], ["6'", 'ظ'], ["7'", 'خ'], ["9'", 'ض'],
+  ['sh', 'ش'], ['SS', 'ص'], ['TT', 'ط'], ['DH', 'ذ'],
+  ['th', 'ث'], ['kh', 'خ'], ['gh', 'غ'], ['dh', 'ذ'],
+  ['ch', 'ش'], ['aa', 'ا'],
+  // Numbers
+  ['2', 'أ'], ['3', 'ع'], ['5', 'خ'],
+  ['6', 'ط'], ['7', 'ح'], ['8', 'غ'], ['9', 'ق'],
+  // Letters
+  ['a', 'ا'], ['b', 'ب'], ['t', 'ت'], ['j', 'ج'],
+  ['d', 'د'], ['r', 'ر'], ['z', 'ز'], ['s', 'س'],
+  ['f', 'ف'], ['q', 'ق'], ['k', 'ك'], ['l', 'ل'],
+  ['m', 'م'], ['n', 'ن'], ['h', 'ه'], ['w', 'و'],
+  ['y', 'ي'], ['e', 'ي'], ['i', 'ي'], ['o', 'و'],
+  ['u', 'و'], ['p', 'ب'], ['c', 'ك'], ['g', 'ج'],
+  ['v', 'ف'], ['x', 'كس'],
+];
+
+
+function arabiziToArabic(text) {
+  let result = '';
+  let i = 0;
+  while (i < text.length) {
+    let matched = false;
+    const remaining = text.slice(i).toLowerCase();
+    for (const [from, to] of ARABIZI) {
+      if (remaining.startsWith(from.toLowerCase())) {
+        result += to;
+        i += from.length;
+        matched = true;
+        break;
+      }
+    }
+    if (!matched) { result += text[i]; i++; }
+  }
+  return result;
+}
+
+
+/* ── EMOJI HUB DATA ── */
+const EMOJI_CATS = {
+  popular: ['❤️','😂','😍','🙏','👍','💪','🎉','✨','🔥','💯','😭','😘','🥰','💕','👏','🌟','😅','🤔','💙','🎊','😎','🥳','🤩','🫶','🤗','😊','🤣','👀','💎','🌹','😤','🥺','💀','🫠','😶‍🌫️','🫡','🤌','💅','👌','✌️'],
+  islamic:  ['🕌','🕋','☪️','🤲','📿','🌙','⭐','🌟','🕊️','📖','🌹','🌿','🌾','💚','🤍','🧎','🧎‍♂️','🙏','🌅','✨','🕯️','🌄','🫶','🌙','🌺','🌸','🤲','🫖','🌊'],
+  culture:  ['🐪','🏜️','🌴','🫖','☕','🥘','🫕','🏺','🌊','🏔️','☀️','🌺','🌸','🦁','🦅','🐎','🎶','🎵','🥁','🪘','🪔','🌅','🏛️','⛵','🗺️','🌍','🎪','🫙','🌻','🐠'],
+  flags:    ['🇩🇿','🇲🇦','🇹🇳','🇱🇾','🇸🇦','🇦🇪','🇶🇦','🇰🇼','🇧🇭','🇯🇴','🇪🇬','🇮🇶','🇸🇾','🇾🇪','🇴🇲','🇵🇸','🇱🇧','🇩🇯','🇸🇩','🇸🇴','🇲🇷','🇫🇷','🇧🇪','🇨🇦','🇩🇪','🇸🇪'],
+  social:   ['❤️‍🔥','🫀','💔','🥺','😤','😈','🙈','🙉','🙊','💀','🤡','🥹','😑','🫠','🫡','🤌','👌','✌️','🤙','☝️','🤏','🫳','🫴','🤝','💅','🫰','🙃','😏','🧢','🔑','💸','🎯']
+};
+
+const EMOJI_COMBOS = [
+  { text:'عيد مبارك 🌙✨🎉🕌',              label:'Eid Mubarak' },
+  { text:'رمضان كريم 🌙⭐🕌🤲',             label:'Ramadan Kareem' },
+  { text:'الحمد لله ❤️🤲✨',                label:'Alhamdulillah' },
+  { text:'ما شاء الله 🌹❤️😍',              label:'MashaAllah' },
+  { text:'صباح الخير ☀️😊🌸',               label:'Good Morning' },
+  { text:'مساء الخير 🌙✨💫',               label:'Good Evening' },
+  { text:'بالتوفيق 💪✨🎯',                 label:'Good Luck' },
+  { text:'أحبك ❤️😘💕',                    label:'I Love You' },
+  { text:'شكراً جزيلاً 🙏❤️😊',             label:'Thank You' },
+  { text:'مرحبا وسهلا 😊👋✨',              label:'Welcome' },
+  { text:'السلام عليكم ورحمة الله 🤲☪️',    label:'As-salamu Alaykum' },
+  { text:'يلا نروح 😎🔥💪',                label:"Yalla (Let's go)" },
+  { text:'كيف حالك؟ 😄👀',                  label:'How are you? (Saudi Arabia)' },
+  { text:'بخير الحمد لله 😌🤲',            label:"I'm good (Maghrebi)" },
+  { text:'بالصح والله 💯🔥',               label:'Exactly! (Franco)' },
+  { text:'اخي انت 🤝❤️',                     label:'Bro (North Africa)' },
+  { text:'تصبح علي خير 😴☀️',                  label:'Good sleep' },
+  { text:'ربي يحفظك 🤲💚',                 label:'God protect you' },
+  { text:'إن شاء الله 🙏✨',               label:'Inshallah' },
+  { text:'يعطيك الصحة 💪❤️',              label:'Bless you (Maghrebi)' },
+];
+
+/* ── EMOJI HUB LOGIC ── */
+function initEmojiHub() {
+  Object.entries(EMOJI_CATS).forEach(([key, emojis]) => {
+    const panel = document.getElementById('ep-' + key);
+    if (!panel) return;
+    const grid = document.createElement('div');
+    grid.className = 'ehub-grid';
+    emojis.forEach(em => {
+      const btn = document.createElement('button');
+      btn.className = 'ehub-emoji';
+      btn.textContent = em;
+      btn.title = em + ' — click to insert';
+      btn.onclick = () => { ins(em); toast(em + ' inserted'); };
+      grid.appendChild(btn);
+    });
+    panel.appendChild(grid);
+  });
+
+  const cg = document.getElementById('combo-grid');
+  if (!cg) return;
+  EMOJI_COMBOS.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'combo-card';
+    card.innerHTML = `
+      <div class="combo-ar">${c.text}</div>
+      <div class="combo-meta">
+        <span class="combo-label-txt">${c.label}</span>
+        <span class="combo-ins">▶ Insert</span>
+      </div>`;
+    card.onclick = () => { ins(c.text + ' '); toast('Combo inserted! ✅'); };
+    cg.appendChild(card);
+  });
+}
+
+function switchTab(btn, key) {
+  document.querySelectorAll('.ehub-panel').forEach(p => p.classList.remove('show'));
+  document.querySelectorAll('.ehub-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('ep-' + key).classList.add('show');
+  btn.classList.add('active');
+}
+
+/* ── THEME ── */
+function toggleTheme() {
+  isDark = !isDark; applyTheme();
+  localStorage.setItem('arabi-theme', isDark ? 'dark' : 'light');
+}
+function applyTheme() {
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : '');
+  const tr=document.getElementById('tt'), th=document.getElementById('th'), lb=document.getElementById('tlbl');
+  tr.classList.toggle('on', isDark); th.classList.toggle('on', isDark);
+  th.textContent = isDark ? '🌙' : '☀️';
+  lb.innerHTML   = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
+  const logo = document.getElementById('logo-img');
+  if (logo) logo.src = isDark ? 'images/LOGO-Dark-Arabickeyboard-online.svg' : 'images/LOGO-Arabickeyboard-online.svg';
+}
+function loadTheme() {
+  isDark = localStorage.getItem('arabi-theme') === 'dark';
+  applyTheme();
+}
+
+/* ── TOAST ── */
+let tTimer;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('show');
+  clearTimeout(tTimer); tTimer = setTimeout(() => el.classList.remove('show'), 2800);
+}
+
+init();
+</script>
+</body>
+</html>

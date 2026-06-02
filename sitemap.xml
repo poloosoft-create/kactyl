@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Root — Arabic keyboard (EN/FR/DE/NL/ES/IT) -->
+  <url>
+    <loc>https://kactyl.com/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kactyl.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kactyl.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://kactyl.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kactyl.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kactyl.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Arabic keyboard — French interface -->
+  <url>
+    <loc>https://kactyl.com/fr/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kactyl.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Arabic keyboard — German interface -->
+  <url>
+    <loc>https://kactyl.com/de/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kactyl.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Arabic keyboard — Dutch interface -->
+  <url>
+    <loc>https://kactyl.com/nl/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://kactyl.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Arabic keyboard — Spanish interface -->
+  <url>
+    <loc>https://kactyl.com/es/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kactyl.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Arabic keyboard — Italian interface -->
+  <url>
+    <loc>https://kactyl.com/it/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kactyl.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Hindi keyboard -->
+  <url>
+    <loc>https://kactyl.com/hindi/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://kactyl.com/hindi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Urdu keyboard -->
+  <url>
+    <loc>https://kactyl.com/urdu/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://kactyl.com/urdu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Bengali keyboard -->
+  <url>
+    <loc>https://kactyl.com/bengali/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://kactyl.com/bengali/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Persian (Farsi) keyboard -->
+  <url>
+    <loc>https://kactyl.com/persian/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://kactyl.com/persian/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Pashto keyboard -->
+  <url>
+    <loc>https://kactyl.com/pashto/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ps" href="https://kactyl.com/pashto/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Sindhi keyboard -->
+  <url>
+    <loc>https://kactyl.com/sindhi/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="sd" href="https://kactyl.com/sindhi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Kurdish keyboard -->
+  <url>
+    <loc>https://kactyl.com/kurdish/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://kactyl.com/kurdish/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Uyghur keyboard -->
+  <url>
+    <loc>https://kactyl.com/uyghur/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ug" href="https://kactyl.com/uyghur/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Marathi keyboard -->
+  <url>
+    <loc>https://kactyl.com/marathi/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://kactyl.com/marathi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Nepali keyboard -->
+  <url>
+    <loc>https://kactyl.com/nepali/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://kactyl.com/nepali/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Punjabi keyboard -->
+  <url>
+    <loc>https://kactyl.com/punjabi/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://kactyl.com/punjabi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Tamil keyboard -->
+  <url>
+    <loc>https://kactyl.com/tamil/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://kactyl.com/tamil/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Turkish keyboard -->
+  <url>
+    <loc>https://kactyl.com/turkish/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kactyl.com/turkish/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Russian keyboard -->
+  <url>
+    <loc>https://kactyl.com/russian/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kactyl.com/russian/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Greek keyboard -->
+  <url>
+    <loc>https://kactyl.com/greek/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="el" href="https://kactyl.com/greek/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Filipino keyboard -->
+  <url>
+    <loc>https://kactyl.com/filipino/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://kactyl.com/filipino/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Somali keyboard -->
+  <url>
+    <loc>https://kactyl.com/somali/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="so" href="https://kactyl.com/somali/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Amazigh keyboard -->
+  <url>
+    <loc>https://kactyl.com/amazigh/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zgh" href="https://kactyl.com/amazigh/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Amharic keyboard -->
+  <url>
+    <loc>https://kactyl.com/amharic/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="am" href="https://kactyl.com/amharic/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Kannada keyboard -->
+  <url>
+    <loc>https://kactyl.com/kannada/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://kactyl.com/kannada/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Telugu keyboard -->
+  <url>
+    <loc>https://kactyl.com/telugu/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="te" href="https://kactyl.com/telugu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Gujarati keyboard -->
+  <url>
+    <loc>https://kactyl.com/gujarati/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://kactyl.com/gujarati/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Malayalam keyboard -->
+  <url>
+    <loc>https://kactyl.com/malayalam/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://kactyl.com/malayalam/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Vietnamese keyboard -->
+  <url>
+    <loc>https://kactyl.com/vietnamese/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://kactyl.com/vietnamese/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Yoruba keyboard -->
+  <url>
+    <loc>https://kactyl.com/yoruba/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="yo" href="https://kactyl.com/yoruba/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Hausa keyboard -->
+  <url>
+    <loc>https://kactyl.com/hausa/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ha" href="https://kactyl.com/hausa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Igbo keyboard -->
+  <url>
+    <loc>https://kactyl.com/igbo/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ig" href="https://kactyl.com/igbo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Tigrinya keyboard -->
+  <url>
+    <loc>https://kactyl.com/tigrinya/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ti" href="https://kactyl.com/tigrinya/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Burmese keyboard -->
+  <url>
+    <loc>https://kactyl.com/burmese/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="my" href="https://kactyl.com/burmese/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Mongolian keyboard -->
+  <url>
+    <loc>https://kactyl.com/mongolian/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://kactyl.com/mongolian/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Thai keyboard -->
+  <url>
+    <loc>https://kactyl.com/thai/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://kactyl.com/thai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Chinese keyboard -->
+  <url>
+    <loc>https://kactyl.com/chinese/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kactyl.com/chinese/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Korean keyboard -->
+  <url>
+    <loc>https://kactyl.com/korean/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kactyl.com/korean/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Japanese keyboard -->
+  <url>
+    <loc>https://kactyl.com/japanese/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kactyl.com/japanese/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kactyl.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/"/>
+  </url>
+
+  <!-- Franco Arab page -->
+  <url>
+    <loc>https://kactyl.com/franco-arab.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://kactyl.com/privacy.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

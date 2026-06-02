@@ -1,0 +1,5 @@
+# Redirect arabikeyboard.com → kactyl.com (301 permanent, SEO-safe)
+https://arabikeyboard.com/* https://kactyl.com/:splat 301!
+https://www.arabikeyboard.com/* https://kactyl.com/:splat 301!
+
+/favicon.ico /images/favicon.svg 200

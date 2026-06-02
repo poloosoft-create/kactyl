@@ -1,0 +1,32 @@
+{
+  "name": "Arabi Keyboard — Arabic Keyboard Online",
+  "short_name": "Arabi Keyboard",
+  "description": "Free Arabic keyboard online. Type Arabic from any device. Franco mode, tashkeel, emoji hub. No download.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EDF0F8",
+  "theme_color": "#0F172A",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Arabic Keyboard",
+      "url": "/",
+      "description": "Open the main Arabic keyboard"
+    },
+    {
+      "name": "Franco Arab Mode",
+      "url": "/franco-arab.html",
+      "description": "Open the Franco Arab keyboard"
+    }
+  ]
+}
