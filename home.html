@@ -496,7 +496,7 @@ nav { display:flex; align-items:center; gap:4px; }
 [data-theme="dark"] .tools-btn { color:var(--nav-txt); }
 [data-theme="dark"] .tools-btn:hover { background:rgba(255,255,255,.1); }
 .tools-drop { display:none; position:absolute; top:100%; right:0; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 6px 6px; min-width:230px; box-shadow:0 8px 28px rgba(0,0,0,.12); z-index:200; flex-direction:column; gap:2px; }
-.tools-wrap:hover .tools-drop { display:flex; }
+.tools-wrap:hover .tools-drop, .tools-wrap.open .tools-drop { display:flex; }
 .tools-item { display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:8px; text-decoration:none; color:var(--text); font-size:13.5px; font-weight:500; transition:background .15s; white-space:nowrap; }
 .tools-item:hover { background:var(--border); }
 .tools-item .t-icon { width:18px; height:18px; flex-shrink:0; display:inline-flex; align-items:center; justify-content:center; }
@@ -1517,6 +1517,7 @@ footer {
   transition:transform .2s, filter .2s;
 }
 .fb-tab img { width:58px; height:58px; display:block; }
+.fb-dismiss { display:none; }
 .fb-tab:hover {
   transform:translateY(-50%) translateX(-4px);
   filter:drop-shadow(-5px 6px 22px rgba(0,104,255,.52));
@@ -1619,6 +1620,7 @@ footer {
 @media (max-width:640px) {
   .fb-tab { top:auto; bottom:80px; transform:translateZ(0); right:0; border-radius:0; filter:drop-shadow(-4px 0 16px rgba(0,104,255,.32)); -webkit-transform:translateZ(0); }
   .fb-tab:hover { transform:translateX(-3px); }
+  .fb-dismiss { display:flex; position:fixed; bottom:132px; right:44px; width:18px; height:18px; border-radius:50%; background:rgba(20,20,20,.6); color:#fff; border:none; font-size:10px; align-items:center; justify-content:center; cursor:pointer; z-index:901; padding:0; line-height:1; }
   .fb-panel { top:auto; bottom:-500px; left:0; right:0 !important; transform:none;
     width:100%; border-radius:20px 20px 0 0;
     transition:bottom .38s cubic-bezier(.34,1.56,.64,1);
@@ -2336,6 +2338,23 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 /* Zalgo card visual */
 .tmc-zalgo { font-size:22px; font-weight:800; color:#fff; line-height:1.9; letter-spacing:4px; text-shadow:0 0 18px rgba(167,139,250,.9),0 0 36px rgba(167,139,250,.4); }
 
+/* Symbols card visual */
+.tmc-symbols { display:flex; flex-direction:column; align-items:center; gap:4px; }
+.tmc-sym-row { font-size:24px; color:#fff; letter-spacing:6px; line-height:1; filter:drop-shadow(0 2px 8px rgba(0,0,0,.18)); }
+
+/* Symbols showcase */
+.sc-symbols { display:flex; flex-direction:column; align-items:center; gap:8px; }
+.sc-sym-r { font-size:28px; color:#fff; letter-spacing:10px; line-height:1; filter:drop-shadow(0 2px 10px rgba(0,0,0,.2)); }
+
+/* Symbols demo grid */
+.sym-cats { display:flex; gap:6px; margin-bottom:14px; flex-wrap:wrap; }
+.sym-cat { padding:6px 14px; border-radius:9px; background:rgba(8,145,178,.08); border:1.5px solid rgba(8,145,178,.18); color:var(--blue); font-size:12px; font-weight:700; cursor:pointer; transition:background .15s,color .15s; }
+.sym-cat.active { background:linear-gradient(135deg,#0891b2,#06b6d4); border-color:transparent; color:#fff; }
+.sym-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; }
+.sym-btn { height:42px; border-radius:9px; background:rgba(8,145,178,.06); border:1.5px solid rgba(8,145,178,.10); font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .12s,transform .12s; color:var(--text); }
+.sym-btn:hover { background:rgba(8,145,178,.15); transform:scale(1.12); border-color:rgba(8,145,178,.3); }
+.sym-btn:active { transform:scale(.93); }
+
 @media(max-width:720px){ .tool-mini-card { width:calc(50% - 7px); } }
 @media(max-width:420px){ .tool-mini-card { width:100%; } .tmc-visual { height:134px; } }
 
@@ -2406,10 +2425,11 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="tools-wrap">
       <button class="tools-btn">Tools ▾</button>
       <div class="tools-drop">
-        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator <span class="tools-coming">SOON</span></a>
-        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji <span class="tools-coming">SOON</span></a>
-        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character <span class="tools-coming">SOON</span></a>
-        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text <span class="tools-coming">SOON</span></a>
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -2517,7 +2537,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
     dropdown.innerHTML = matches.map(function(k) {
       return '<a href="' + k.path + '" class="hp-search-result">' +
-        '<div class="hp-search-result-flag">' + k.flag + '</div>' +
+        '<div class="hp-search-result-flag">' + flagHtml(k) + '</div>' +
         '<div><div class="hp-search-result-name">' + k.name + '</div>' +
         '<div class="hp-search-result-native">' + k.native + '</div></div>' +
         '</a>';
@@ -2631,6 +2651,16 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <div class="tmc-visual" style="background:linear-gradient(135deg,#1E0535,#4C1D95)">
         <div class="tmc-zalgo">Z̷a̸l̴g̷o̶</div>
         <div class="tmc-name">Zalgo Text</div>
+      </div>
+    </a>
+
+    <a href="#tool-symbols" class="tool-mini-card">
+      <div class="tmc-visual" style="background:linear-gradient(135deg,#0891b2,#06b6d4)">
+        <div class="tmc-symbols">
+          <div class="tmc-sym-row">♥ ★ ➔</div>
+          <div class="tmc-sym-row">✿ ✦ ©</div>
+        </div>
+        <div class="tmc-name">Symbols</div>
       </div>
     </a>
 
@@ -2758,11 +2788,41 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   </div>
 </section>
 
+<!-- SYMBOLS SECTION -->
+<section class="tsec" id="tool-symbols" data-sec="symbols">
+  <div class="tsec-inner">
+    <div class="tsec-text">
+      <div class="tsec-showcase" style="background:linear-gradient(135deg,#0891b2,#06b6d4)">
+        <div class="sc-symbols">
+          <div class="sc-sym-r">♥ ★ ➔</div>
+          <div class="sc-sym-r">✿ ✦ ©</div>
+          <div class="sc-sym-r">→ ← ↑ ↓</div>
+        </div>
+      </div>
+      <h2 class="tsec-title">Symbols</h2>
+      <p class="tsec-tagline">Every symbol you'll ever need.</p>
+      <p class="tsec-desc">Hearts ♥ stars ★ arrows → flowers ✿ currency € math ÷ — 500+ copy-paste symbols organized by category. One click to copy, works everywhere.</p>
+      <a href="/symbols/" class="tsec-cta" style="background:linear-gradient(135deg,#0891b2,#06b6d4)">Open Symbols →</a>
+    </div>
+    <div class="tsec-demo">
+      <div class="tsec-demo-float">
+        <div class="sym-cats">
+          <button class="sym-cat active" data-sym-cat="hearts">Hearts</button>
+          <button class="sym-cat" data-sym-cat="stars">Stars</button>
+          <button class="sym-cat" data-sym-cat="arrows">Arrows</button>
+          <button class="sym-cat" data-sym-cat="misc">More</button>
+        </div>
+        <div class="sym-grid" id="sym-grid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <div class="final-cta">
   <div class="final-cta-eyebrow">Kactyl — Free Forever</div>
   <h2 class="final-cta-h">Start typing.<br>Free, forever.</h2>
-  <p class="final-cta-sub">40+ keyboards. 4 text tools. No account, no download, no catch.</p>
+  <p class="final-cta-sub">40+ keyboards. 5 text tools. No account, no download, no catch.</p>
   <div class="final-cta-btns">
     <a href="#fan-carousel" class="final-cta-primary">Open a Keyboard →</a>
     <a href="/fancy-text/" class="final-cta-ghost">Explore Tools</a>
@@ -2855,6 +2915,13 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     });
   });
 
+  // Custom SVG flags — defined here so this script block can access them
+  var SVG_FLAGS_CAROUSEL = {
+    'Kurdish': '/images/flag-kurdish.svg',
+    'Uyghur':  '/images/flag-uyghur.svg',
+    'Amazigh': '/images/flag-amazigh-simple.svg'
+  };
+
   // Render all 40 cards into DOM once
   ALL_KB.forEach(function(k, i) {
     var card = document.createElement('a');
@@ -2863,7 +2930,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     card.dataset.idx = i;
     card.style.setProperty('--card-grad', k.grad);
     card.style.background = k.grad;
-    card.style.backgroundImage = 'url(https://flagcdn.com/w320/' + k.flag + '.png)';
+    card.style.backgroundImage = SVG_FLAGS_CAROUSEL[k.name]
+      ? 'url(' + SVG_FLAGS_CAROUSEL[k.name] + ')'
+      : 'url(https://flagcdn.com/w320/' + k.flag + '.png)';
     card.style.backgroundSize = 'cover';
     card.style.backgroundPosition = 'center center';
     card.style.backgroundRepeat = 'no-repeat';
@@ -3121,6 +3190,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <a href="/invisible-character/">Invisible Char</a>
         <a href="/kaomoji/">Kaomoji</a>
         <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/symbols/">Symbols</a>
       </div>
       <h4 class="ft-h4-gap">Company</h4>
       <div class="ft-legal">
@@ -3157,6 +3227,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 <button class="fb-tab" id="fbTab" onclick="toggleFeedback()" aria-label="Send Feedback">
   <img src="images/Icon-Feedback-Clavierarabe-online.svg" alt="Feedback" loading="lazy">
 </button>
+<button class="fb-dismiss" id="fbDismiss" onclick="dismissFeedbackTab()" aria-label="Dismiss feedback">✕</button>
 <div class="fb-overlay" id="fbOverlay" onclick="closeFeedback()"></div>
 <div class="fb-panel" id="fbPanel">
   <button class="fb-close" onclick="closeFeedback()" aria-label="Close">✕</button>
@@ -4017,7 +4088,7 @@ function toggleVoice() {
   if (isSafari && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({audio:true})
       .then(function(){ startVoice(SR); })
-      .catch(function(){ toast('🎤 Allow microphone in Safari Settings → arabikeyboard.com'); });
+      .catch(function(){ toast('🎤 Allow microphone in Safari Settings → kactyl.com'); });
   } else {
     startVoice(SR);
   }
@@ -4424,9 +4495,11 @@ function closeFeedback() {
 }
 function dismissFeedbackTab() {
   const t = document.getElementById('fbTab');
+  const x = document.getElementById('fbDismiss');
   t.style.transition = 'transform .3s ease, opacity .3s ease';
   t.style.transform = 'translateX(80px)';
   t.style.opacity = '0';
+  if (x) x.style.display = 'none';
   setTimeout(() => { t.style.display = 'none'; }, 320);
 }
 
@@ -4540,16 +4613,28 @@ async function submitFeedback(e) {
     { name:"Amazigh",    native:"ⵜⴰⵎⴰⵣⵉⵖⵜ",      flag:"ma", path:"/amazigh/"   },
   ];
 
+  var SVG_FLAGS = {
+    'Kurdish': '/images/flag-kurdish.svg',
+    'Uyghur':  '/images/flag-uyghur.svg',
+    'Amazigh': '/images/flag-amazigh.svg'
+  };
+
   function flagEmoji(code) {
     return code.toUpperCase().split('').map(function(c) {
       return String.fromCodePoint(0x1F1E6 + c.charCodeAt(0) - 65);
     }).join('');
   }
 
+  function flagHtml(k) {
+    var s = SVG_FLAGS[k.name];
+    if (s) return '<img src="' + s + '" style="height:1.2em;width:auto;border-radius:3px;vertical-align:middle" alt="' + k.name + '">';
+    return flagEmoji(k.flag);
+  }
+
   function render(list) {
     gridEl.innerHTML = list.map(function(k) {
       return '<a href="' + k.path + '" class="hp-kb-card">' +
-        '<div class="hp-kb-flag">' + flagEmoji(k.flag) + '</div>' +
+        '<div class="hp-kb-flag">' + flagHtml(k) + '</div>' +
         '<div class="hp-kb-native">' + k.native + '</div>' +
         '<div class="hp-kb-en">' + k.name + '</div>' +
         '</a>';
@@ -4744,7 +4829,63 @@ async function submitFeedback(e) {
     });
   }
 })();
+
+/* ── Symbols ─────────────────────────────────────────────────────────────── */
+(function(){
+  var SYMS = {
+    hearts: ['♥','❤','♡','💕','❣','💗','💓','💞','💘','💝','🩷','♾'],
+    stars:  ['★','☆','✦','✧','✩','✪','✫','✬','✭','✮','⭐','🌟'],
+    arrows: ['→','←','↑','↓','↗','↘','↙','↖','↔','↕','⇒','⇐'],
+    misc:   ['✿','❀','✽','©','®','™','°','§','¶','†','‡','•']
+  };
+  var grid = document.getElementById('sym-grid');
+  var tabs = document.querySelectorAll('.sym-cat');
+  var cur  = 'hearts';
+
+  function render(cat) {
+    if (!grid) return;
+    grid.innerHTML = '';
+    (SYMS[cat] || []).forEach(function(s) {
+      var b = document.createElement('button');
+      b.className = 'sym-btn'; b.textContent = s;
+      b.onclick = function() {
+        navigator.clipboard.writeText(s).catch(function(){});
+        b.style.background = 'rgba(8,145,178,.3)';
+        setTimeout(function(){ b.style.background = ''; }, 600);
+      };
+      grid.appendChild(b);
+    });
+  }
+
+  tabs.forEach(function(t) {
+    t.addEventListener('click', function() {
+      tabs.forEach(function(x){ x.classList.remove('active'); });
+      t.classList.add('active');
+      cur = t.dataset.symCat;
+      render(cur);
+    });
+  });
+
+  render(cur);
+})();
 </script>
 
+<script>
+(function(){
+  var btns = document.querySelectorAll('.tools-btn');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var wrap = btn.closest('.tools-wrap');
+      var isOpen = wrap.classList.contains('open');
+      document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
+      if (!isOpen) wrap.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
+  });
+})();
+</script>
 </body>
 </html>

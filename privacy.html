@@ -1,352 +1,371 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — Arabi Keyboard</title>
-  <meta name="description" content="Privacy Policy for arabikeyboard.com — how we collect, use, and protect your data.">
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <link rel="apple-touch-icon" href="/images/favicon.svg">
-  <link rel="canonical" href="https://arabikeyboard.com/privacy.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { overflow-x:hidden; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy | Kactyl</title>
+<meta name="description" content="Kactyl Privacy Policy. We collect no personal data. localStorage only for preferences — no ads, no tracking.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://kactyl.com/privacy.html">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="apple-touch-icon" href="images/favicon.svg">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:title" content="Privacy Policy | Kactyl">
+<meta property="og:description" content="Kactyl Privacy Policy. We collect no personal data. localStorage only for preferences — no ads, no tracking.">
+<meta property="og:url" content="https://kactyl.com/privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kactyl">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0068ff;--bg:#ffffff;--surface:#fff;--text:#1E293B;--muted:#64748B;
+  --border:#E2E8F0;--shadow:rgba(0,0,0,.07);--nav-bg:rgba(255,255,255,.38);
+  --nav-txt:#1E293B;
+}
+[data-theme="dark"]{
+  --bg:#0F172A;--surface:#1E293B;--text:#F1F5F9;--muted:#94A3B8;
+  --border:rgba(255,255,255,.09);--shadow:rgba(0,0,0,.35);
+  --nav-bg:rgba(15,23,42,.65);--nav-txt:#F1F5F9;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
 
-    :root {
-      --red:     #E8353A;
-      --indigo:  #6366F1;
-      --bg:      #EDF0F8;
-      --surface: #FFFFFF;
-      --border:  #DDE3EE;
-      --shadow:  rgba(15,23,42,.07);
-      --nav:     #0F172A;
-      --text:    #1E293B;
-      --muted:   #64748B;
-      --r:       16px;
-    }
+/* Header */
+header{position:sticky;top:0;z-index:300;
+  background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+  border-bottom:1px solid rgba(255,255,255,.4);
+  display:flex;align-items:center;padding:0 28px;height:88px;gap:16px;
+  transition:background .3s,border-color .3s}
+[data-theme="dark"] header{background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-img{height:200px;width:auto;display:block}
+nav{display:flex;align-items:center;gap:4px;margin-left:auto;flex-wrap:wrap}
+.nav-link{padding:7px 13px;border-radius:8px;text-decoration:none;color:var(--nav-txt);
+  font-size:14px;font-weight:500;transition:background .15s}
+.nav-link:hover{background:rgba(0,0,0,.06)}
+[data-theme="dark"] .nav-link:hover{background:rgba(255,255,255,.08)}
+.tools-wrap{position:relative}
+.tools-btn{cursor:pointer;border:none;background:none;font:inherit;color:var(--text);
+  font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;
+  transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.tools-btn:hover{background:var(--border)}
+[data-theme="dark"] .tools-btn{color:var(--nav-txt)}
+[data-theme="dark"] .tools-btn:hover{background:rgba(255,255,255,.1)}
+.tools-drop{display:none;position:absolute;top:100%;right:0;
+  background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  padding:12px 6px 6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);
+  z-index:200;flex-direction:column;gap:2px}
+.tools-wrap:hover .tools-drop,.tools-wrap.open .tools-drop{display:flex}
+.tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;
+  text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;
+  transition:background .15s;white-space:nowrap}
+.tools-item:hover{background:var(--border)}
+.t-icon{width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center}
+.theme-wrap{display:flex;align-items:center;gap:8px;margin-left:8px;cursor:pointer;flex-shrink:0}
+.t-track{width:42px;height:24px;background:var(--border);border-radius:99px;position:relative;
+  transition:background .2s;display:flex;align-items:center}
+[data-theme="dark"] .t-track{background:#334155}
+.t-thumb{width:20px;height:20px;background:#fff;border-radius:50%;position:absolute;left:2px;
+  transition:transform .2s;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 1px 4px rgba(0,0,0,.2)}
+[data-theme="dark"] .t-thumb{transform:translateX(18px);background:var(--blue)}
+.t-lbl{font-size:11px;font-weight:600;color:var(--muted);line-height:1.1;white-space:nowrap}
+@media(max-width:600px){
+  header{padding:0 12px}
+  .logo-img{height:140px}
+  .nav-link{padding:6px 8px;font-size:13px}
+  .t-lbl{display:none}
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
+/* Page hero */
+.page-hero{text-align:center;padding:64px 24px 48px;max-width:760px;margin:0 auto}
+.page-hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;letter-spacing:-1.5px;
+  line-height:1.1;margin-bottom:16px}
+.page-hero p{font-size:18px;color:var(--muted);line-height:1.6}
+.page-badge{display:inline-block;background:rgba(0,104,255,.08);border:1px solid rgba(0,104,255,.15);
+  color:var(--blue);border-radius:99px;padding:5px 16px;font-size:13px;font-weight:600;
+  margin-bottom:20px}
+@media(max-width:600px){.page-hero{padding:40px 16px 32px}}
 
-    /* ── HEADER ── */
-    header {
-      background: var(--nav);
-      height: 64px;
-      display: flex;
-      align-items: center;
-      padding: 0 24px;
-      justify-content: space-between;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-    .logo-ic {
-      width: 36px; height: 36px;
-      background: var(--red);
-      border-radius: 9px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .logo-ic svg { width: 22px; height: 22px; }
-    .logo-name {
-      font-size: 16px; font-weight: 800;
-      color: #fff; letter-spacing: -.3px;
-    }
-    .logo-name .ar {
-      font-family: 'Tajawal', sans-serif;
-      background: var(--red); color: #fff;
-      font-size: 10px; padding: 1px 7px;
-      border-radius: 10px; margin: 0 3px;
-      vertical-align: middle;
-    }
-    .back-link {
-      font-size: 13px; font-weight: 600;
-      color: #94A3B8; text-decoration: none;
-      display: flex; align-items: center; gap: 6px;
-      transition: color .2s;
-    }
-    .back-link:hover { color: #fff; }
+/* Content */
+.page-body{max-width:760px;margin:0 auto;padding:0 24px 80px}
+.page-body h2{font-size:20px;font-weight:800;margin:40px 0 14px;letter-spacing:-.3px}
+.page-body h3{font-size:16px;font-weight:700;margin:28px 0 10px;color:var(--text)}
+.page-body p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+.page-body ul,.page-body ol{padding-left:20px;margin-bottom:14px}
+.page-body li{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:4px}
+.page-body a{color:var(--blue);text-decoration:none}
+.page-body a:hover{text-decoration:underline}
+.divider{border:none;border-top:1px solid var(--border);margin:40px 0}
+.legal-date{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:32px}
 
-    /* ── MAIN ── */
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
+/* Stats (About) */
+.stats-row{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;
+  margin:0 auto 48px;max-width:700px;padding:0 24px}
+.stat-card{flex:1;min-width:140px;background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;padding:24px 20px;text-align:center}
+.stat-card .num{font-size:36px;font-weight:900;color:var(--blue);display:block;line-height:1}
+.stat-card .lbl{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.5px;margin-top:6px;display:block}
 
-    /* ── PAGE HEADER ── */
-    .page-hd {
-      margin-bottom: 40px;
-    }
-    .page-hd .badge {
-      display: inline-block;
-      background: rgba(99,102,241,.1);
-      color: var(--indigo);
-      font-size: 12px; font-weight: 700;
-      padding: 4px 14px; border-radius: 20px;
-      letter-spacing: .5px; text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    .page-hd h1 {
-      font-size: 36px; font-weight: 800;
-      color: var(--text); letter-spacing: -.8px;
-      line-height: 1.15; margin-bottom: 12px;
-    }
-    .page-hd .meta {
-      font-size: 13px; color: var(--muted);
-    }
-    .page-hd .meta b { color: var(--text); }
+/* Contact cards */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;margin:24px 0}
+.contact-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;
+  padding:24px;display:flex;flex-direction:column;gap:10px}
+.contact-card .cc-icon{font-size:28px}
+.contact-card h3{font-size:15px;font-weight:700}
+.contact-card p,.contact-card a{font-size:14px;color:var(--muted);text-decoration:none;line-height:1.6}
+.contact-card a:hover{color:var(--blue)}
 
-    /* ── CARD ── */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      padding: 32px 36px;
-      box-shadow: 0 4px 24px var(--shadow);
-      margin-bottom: 16px;
-    }
-
-    /* ── SECTION ── */
-    .section { margin-bottom: 32px; }
-    .section:last-child { margin-bottom: 0; }
-
-    h2 {
-      font-size: 17px; font-weight: 700;
-      color: var(--text); margin-bottom: 10px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    h2 .num {
-      width: 26px; height: 26px;
-      background: var(--indigo);
-      color: #fff; border-radius: 50%;
-      font-size: 12px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-
-    p { font-size: 15px; color: var(--muted); margin-bottom: 10px; }
-    p:last-child { margin-bottom: 0; }
-
-    ul {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 6px;
-      margin-bottom: 10px;
-    }
-    ul li {
-      font-size: 15px; color: var(--muted);
-      padding-left: 18px; position: relative;
-    }
-    ul li::before {
-      content: '•';
-      position: absolute; left: 0;
-      color: var(--indigo); font-weight: 700;
-    }
-
-    a { color: var(--indigo); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .highlight-box {
-      background: rgba(99,102,241,.06);
-      border: 1px solid rgba(99,102,241,.2);
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin-top: 10px;
-    }
-    .highlight-box p { margin-bottom: 0; font-size: 14px; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--nav);
-      text-align: center;
-      padding: 28px 16px;
-      font-size: 13px;
-      color: #64748B;
-    }
-    footer a { color: #94A3B8; }
-
-    @media (max-width: 640px) {
-      .card { padding: 22px 20px; }
-      .page-hd h1 { font-size: 26px; }
-    }
-  </style>
-
-<style id="perf-fix">
-/* Scroll perf: lighter blur on header */
-header{background:rgba(255,255,255,.82)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;will-change:transform}
-[data-theme=dark] header{background:rgba(15,23,42,.90)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important}
-.bg-shapes{will-change:transform}
-.top-aura{will-change:transform}
-.s{filter:blur(30px)!important;will-change:transform}
-/* Whiter key buttons */
-:root{--key-bg:rgba(255,255,255,.98)}
-[data-theme=dark]{--key-bg:rgba(255,255,255,.11)}
-/* Fix transparent SPEC and Numbers popup boxes */
-.spec-popup{background:rgba(255,255,255,.97)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.n-popup{background:rgba(255,255,255,.97)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-[data-theme=dark] .spec-popup{background:rgba(15,23,42,.96)!important}
-[data-theme=dark] .n-popup{background:rgba(15,23,42,.96)!important}
+/* Footer */
+footer{background:#07091A;padding:0;position:relative;z-index:1}
+.ft-inner{max-width:1000px;margin:0 auto;padding:56px 28px 44px;
+  display:grid;grid-template-columns:200px 1fr 150px 130px;gap:40px;align-items:start}
+.ft-brand{display:flex;flex-direction:column;gap:14px}
+.ft-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.ft-ic{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-ic img{width:48px;height:48px;opacity:1}
+.ft-name{font-size:15px;font-weight:800;color:#F1F5F9}
+.ft-tagline{font-size:13px;color:#94A3B8;line-height:1.7}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ft-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;
+  letter-spacing:.3px;text-transform:uppercase}
+.ft-badge.g{background:rgba(5,150,105,.12);color:#34D399;border:1px solid rgba(5,150,105,.18)}
+.ft-badge.b{background:rgba(0,104,255,.12);color:#60A5FA;border:1px solid rgba(0,104,255,.18)}
+.ft-social{display:flex;gap:8px;margin-top:2px}
+.ft-soc-link{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;
+  color:#94A3B8;text-decoration:none;transition:background .2s,color .2s}
+.ft-soc-link:hover{background:rgba(0,104,255,.20);border-color:rgba(0,104,255,.40);color:#60A5FA}
+.ft-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;
+  color:#64748B;margin-bottom:14px}
+.ft-col h4.ft-h4-gap{margin-top:22px}
+.ft-kb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}
+.ft-kb-grid a,.ft-legal a{font-size:13px;color:#CBD5E1;text-decoration:none;
+  padding:5px 0;display:block;transition:color .15s}
+.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}
+.ft-legal{display:flex;flex-direction:column}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding:16px 28px;
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1000px;margin:0 auto;gap:12px}
+.ft-copy{font-size:11px;color:#64748B}
+.ft-bottom-links{display:flex;align-items:center;gap:16px}
+.ft-bottom-links a{font-size:11px;color:#64748B;text-decoration:none;transition:color .15s}
+.ft-bottom-links a:hover{color:#94A3B8}
+@media(max-width:860px){
+  .ft-inner{grid-template-columns:200px 1fr 130px}
+  .ft-inner .ft-col:last-child{grid-column:2;grid-row:2}
+}
+@media(max-width:640px){
+  .ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px}
+  .ft-brand{grid-column:1/-1}
+  .ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px}
+  .ft-bottom-links{flex-wrap:wrap;justify-content:center}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <a class="logo" href="/">
-    <div class="logo-ic">
-      <svg viewBox="0 0 24 24" fill="none">
-        <rect x="2" y="5" width="20" height="14" rx="3" fill="white" opacity=".15"/>
-        <rect x="2" y="5" width="20" height="14" rx="3" stroke="white" stroke-width="1.5"/>
-        <rect x="5" y="8.5" width="2.5" height="2.5" rx=".6" fill="white"/>
-        <rect x="9" y="8.5" width="2.5" height="2.5" rx=".6" fill="white"/>
-        <rect x="13" y="8.5" width="2.5" height="2.5" rx=".6" fill="white"/>
-        <rect x="17" y="8.5" width="2" height="2.5" rx=".6" fill="white"/>
-        <rect x="5" y="13" width="14" height="2.5" rx=".6" fill="white"/>
-      </svg>
-    </div>
-    <span class="logo-name">arabi <span class="ar">عربي</span> Keyboard</span>
+  <a class="logo" href="/home.html">
+    <img class="logo-img" id="logo-img" src="images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
-  <a class="back-link" href="/">← Back to keyboard</a>
+                      <nav>
+    <a href="/home.html" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+    <div class="tools-wrap">
+      <button class="tools-btn">Tools &#9662;</button>
+      <div class="tools-drop">
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+      </div>
+    </div>
+    <div class="theme-wrap" onclick="toggleTheme()">
+      <div class="t-track" id="tt">
+        <div class="t-thumb" id="th"><img id="theme-icon" src="images/Icon-white mode-Clavierarabe-enligne.svg" alt="" width="13" height="13"></div>
+      </div>
+      <div class="t-lbl" id="tlbl">White<br>Mode</div>
+    </div>
+  </nav>
 </header>
 
-<main>
+<div class="page-hero">
+  <span class="page-badge">Legal</span>
+  <h1>Privacy Policy</h1>
+  <p>Your data stays yours. No personal data collected, no advertising, no tracking.</p>
+</div>
 
-  <div class="page-hd">
-    <span class="badge">Legal</span>
-    <h1>Privacy Policy</h1>
-    <p class="meta">
-      <b>arabikeyboard.com</b> &nbsp;·&nbsp; Last updated: <b>May 2, 2026</b>
-    </p>
-  </div>
+<div class="page-body">
+  <p class="legal-date">Last updated: June 2026</p>
 
-  <div class="card">
+  <p>Welcome to <strong>kactyl.com</strong> (&#8220;we&#8221;, &#8220;our&#8221;, or &#8220;the site&#8221;). This Privacy Policy explains what information we collect when you use our free multilingual keyboard and Unicode tools platform, how we use it, and your rights.</p>
 
-    <div class="section">
-      <p>
-        Welcome to <b>arabikeyboard.com</b> ("we", "our", or "the site"). This Privacy Policy explains what information we collect when you use our free online Arabic keyboard tool, how we use it, and your rights. By using arabikeyboard.com you agree to the practices described below.
-      </p>
-    </div>
+  <h2>1. Information We Collect</h2>
+  <p>We do not collect personally identifiable information such as your name, email address, or phone number. The information collected falls into two categories:</p>
+  <ul>
+    <li><strong>Usage data:</strong> anonymous data collected automatically by our hosting provider, including your IP address, browser type, device type, pages visited, and time spent on the site.</li>
+    <li><strong>Local storage data:</strong> your theme preference (light/dark), saved favorite styles, and saved kaomoji are stored locally in your browser&#8217;s localStorage — this data never leaves your device and we cannot access it.</li>
+  </ul>
 
-    <div class="section">
-      <h2><span class="num">1</span> Information We Collect</h2>
-      <p>We do not collect personally identifiable information such as your name, email address, or phone number. The information collected falls into two categories:</p>
-      <ul>
-        <li><b>Usage data:</b> anonymous data collected automatically by our hosting provider and Google Analytics (if enabled), including your IP address, browser type, device type, pages visited, and time spent on the site.</li>
-        <li><b>Local storage data:</b> the text you type and your word-frequency preferences are saved locally in your browser's localStorage — this data never leaves your device and we cannot access it.</li>
-      </ul>
-    </div>
+  <h2>2. Cookies &amp; Local Storage</h2>
+  <p>Kactyl uses your browser&#8217;s <strong>localStorage</strong> — not HTTP cookies — to remember your preferences. Specifically:</p>
+  <ul>
+    <li><strong>kactyl_theme</strong> — your light/dark mode preference</li>
+    <li><strong>ft_favs</strong> — your saved Fancy Text Generator styles</li>
+    <li><strong>km_favs</strong> — your saved kaomoji favorites</li>
+  </ul>
+  <p>This data is stored entirely in your browser and is never transmitted to our servers. We currently use <strong>no advertising or analytics tracking cookies</strong>.</p>
+  <p>For more details, see our <a href="/cookies.html">Cookie Policy</a>.</p>
 
-    <div class="section">
-      <h2><span class="num">2</span> Cookies</h2>
-      <p>We use cookies and similar tracking technologies for the following purposes:</p>
-      <ul>
-        <li><b>Analytics cookies:</b> to understand how visitors use the site (e.g. Google Analytics).</li>
-        <li><b>Advertising cookies:</b> to serve relevant ads through Google AdSense. Google may use the DoubleClick DART cookie to serve ads based on your visits to this site and other sites on the internet.</li>
-        <li><b>Functional cookies:</b> to remember your preferences (language, dark/light mode, font size).</li>
-      </ul>
-      <div class="highlight-box">
-        <p>You can opt out of Google's use of the DART cookie by visiting <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's Ads Settings</a>. You can also opt out of third-party cookies via the <a href="https://www.networkadvertising.org/choices/" target="_blank" rel="noopener">Network Advertising Initiative opt-out page</a>.</p>
-      </div>
-    </div>
+  <h2>3. Third-Party Services</h2>
+  <p>kactyl.com integrates the following third-party services:</p>
+  <ul>
+    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Fonts</a> — loads the Inter typeface from Google&#8217;s CDN. Google may log your IP address when serving font files.</li>
+  </ul>
+  <p>We are not responsible for the privacy practices of these third parties.</p>
 
-    <div class="section">
-      <h2><span class="num">3</span> Google AdSense & Advertising</h2>
-      <p>
-        We use Google AdSense to display advertisements. Google AdSense is a third-party ad network operated by Google LLC. As a third-party vendor, Google uses cookies to serve ads on our site based on a user's prior visits to our website or other websites.
-      </p>
-      <p>
-        Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to arabikeyboard.com and/or other sites on the internet. For more information about how Google collects and uses data, please visit <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
-      </p>
-    </div>
+  <h2>4. How We Use Your Information</h2>
+  <p>The anonymous usage data our hosting provider collects is used exclusively to:</p>
+  <ul>
+    <li>Monitor site performance and fix technical issues</li>
+    <li>Understand which features and pages are most used</li>
+    <li>Comply with legal obligations</li>
+  </ul>
+  <p>We do not sell, trade, or rent any user data to third parties.</p>
 
-    <div class="section">
-      <h2><span class="num">4</span> How We Use Your Information</h2>
-      <p>The anonymous data we collect is used exclusively to:</p>
-      <ul>
-        <li>Understand which features are most used and improve the tool accordingly</li>
-        <li>Monitor site performance and fix technical issues</li>
-        <li>Serve relevant advertisements through Google AdSense</li>
-        <li>Comply with legal obligations</li>
-      </ul>
-      <p>We do not sell, trade, or rent any user data to third parties.</p>
-    </div>
+  <h2>5. Children&#8217;s Privacy</h2>
+  <p>kactyl.com is a free typing tool accessible to all ages. We do not knowingly collect any personal information from children under 13. If you believe a child has provided personal information to us, please contact us and we will delete it immediately.</p>
 
-    <div class="section">
-      <h2><span class="num">5</span> Third-Party Services</h2>
-      <p>arabikeyboard.com integrates the following third-party services, each governed by their own privacy policies:</p>
-      <ul>
-        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google AdSense / Google LLC</a> — advertising</li>
-        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Fonts</a> — typography (Inter, Tajawal fonts)</li>
-        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Analytics</a> — anonymous usage analytics</li>
-      </ul>
-      <p>We are not responsible for the privacy practices of these third parties.</p>
-    </div>
+  <h2>6. Your Rights</h2>
+  <p>Depending on your location, you may have the following rights:</p>
+  <ul>
+    <li>The right to access any personal data we hold about you</li>
+    <li>The right to request deletion of your data</li>
+    <li>The right to clear your locally stored preferences by clearing your browser&#8217;s localStorage</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <a href="mailto:hello@kactyl.com">hello@kactyl.com</a>.</p>
 
-    <div class="section">
-      <h2><span class="num">6</span> Children's Privacy</h2>
-      <p>
-        arabikeyboard.com is a free typing tool accessible to all ages. We do not knowingly collect any personal information from children under the age of 13. If you believe a child has provided personal information to us, please contact us and we will delete it immediately.
-      </p>
-    </div>
+  <h2>7. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. Continued use of kactyl.com after any changes constitutes your acceptance of the new policy.</p>
 
-    <div class="section">
-      <h2><span class="num">7</span> Your Rights</h2>
-      <p>Depending on your location, you may have the following rights regarding your data:</p>
-      <ul>
-        <li>The right to access the personal data we hold about you</li>
-        <li>The right to request deletion of your data</li>
-        <li>The right to opt out of advertising cookies at any time</li>
-        <li>The right to clear your locally stored preferences by clearing your browser's localStorage</li>
-      </ul>
-      <p>To exercise any of these rights, contact us at the email below.</p>
-    </div>
-
-    <div class="section">
-      <h2><span class="num">8</span> Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. Continued use of arabikeyboard.com after any changes constitutes your acceptance of the new policy.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2><span class="num">9</span> Contact Us</h2>
-      <p>If you have any questions about this Privacy Policy, you can reach us at:</p>
-      <div class="highlight-box">
-        <p>
-          <b>Email:</b> <a href="mailto:poloosoft@gmail.com">poloosoft@gmail.com</a><br>
-          <b>Website:</b> <a href="https://arabikeyboard.com">arabikeyboard.com</a>
-        </p>
-      </div>
-    </div>
-
-  </div>
-
-</main>
+  <h2>8. Contact Us</h2>
+  <p>Questions about this Privacy Policy? Reach us at <a href="mailto:hello@kactyl.com">hello@kactyl.com</a> or visit our <a href="/contact/">Contact page</a>.</p>
+</div>
 
 <footer>
-  <p>© 2026 arabikeyboard.com — <a href="/">Back to keyboard</a></p>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a class="ft-logo" href="/">
+        <div class="ft-ic"><img loading="lazy" src="images/favicon.svg" alt="Kactyl" width="36" height="36"></div>
+        <span class="ft-name">Kactyl</span>
+      </a>
+      <div class="ft-tagline">Type any language from any device.<br>No download. No account.</div>
+      <div class="ft-badges">
+        <span class="ft-badge g">✓ 100% Free</span>
+        <span class="ft-badge b">⚡ No Install</span>
+      </div>
+      <div class="ft-social">
+        <a href="https://x.com/kactyl" class="ft-soc-link" aria-label="X / Twitter" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
+        <a href="https://instagram.com/kactyl" class="ft-soc-link" aria-label="Instagram" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://youtube.com/@kactyl" class="ft-soc-link" aria-label="YouTube" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://tiktok.com/@kactyl" class="ft-soc-link" aria-label="TikTok" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Keyboards</h4>
+      <div class="ft-kb-grid">
+        <a href="/">Arabic</a><a href="/hindi/">Hindi</a>
+        <a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a>
+        <a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
+        <a href="/japanese/">Japanese</a><a href="/chinese/">Chinese</a>
+        <a href="/turkish/">Turkish</a><a href="/russian/">Russian</a>
+        <a href="/greek/">Greek</a><a href="/amharic/">Amharic</a>
+        <a href="/punjabi/">Punjabi</a><a href="/kannada/">Kannada</a>
+        <a href="/gujarati/">Gujarati</a><a href="/malayalam/">Malayalam</a>
+        <a href="/nepali/">Nepali</a><a href="/marathi/">Marathi</a>
+        <a href="/thai/">Thai</a><a href="/vietnamese/">Vietnamese</a>
+        <a href="/burmese/">Burmese</a><a href="/somali/">Somali</a>
+        <a href="/keyboards/">All Keyboards</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Tools</h4>
+      <div class="ft-legal">
+        <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+      </div>
+      <h4 class="ft-h4-gap">Company</h4>
+      <div class="ft-legal">
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Legal</h4>
+      <div class="ft-legal">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
+        <a href="/cookies.html">Cookie Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">&copy; 2026 Kactyl. All rights reserved.</span>
+    <div class="ft-bottom-links">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/cookies.html">Cookies</a>
+      <a href="/sitemap.xml">Sitemap</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-// Dynamic header — hide on scroll down, show on scroll up
+function toggleTheme() {
+  const isDark = document.documentElement.dataset.theme === 'dark';
+  document.documentElement.dataset.theme = isDark ? 'light' : 'dark';
+  localStorage.setItem('kactyl_theme', isDark ? 'light' : 'dark');
+  updateThemeUI(isDark ? 'light' : 'dark');
+}
+function updateThemeUI(t) {
+  const lbl  = document.getElementById('tlbl');
+  const icon = document.getElementById('theme-icon');
+  if (lbl)  lbl.innerHTML  = t === 'dark' ? 'Dark<br>Mode' : 'White<br>Mode';
+  if (icon) icon.src = t === 'dark'
+    ? 'images/Icon-dark mode-Clavierarabe-enligne.svg'
+    : 'images/Icon-white mode-Clavierarabe-enligne.svg';
+}
 (function() {
-  const hdr = document.querySelector('header');
-  const getY = () => window.pageYOffset || document.documentElement.scrollTop || 0;
-  let lastY = getY();
-  document.addEventListener('scroll', function() {
-    const y = getY();
-    if (y > lastY && y > 10) hdr.classList.add('hdr-hidden');
-    else hdr.classList.remove('hdr-hidden');
-    lastY = y;
-  }, { passive: true });
+  var saved = localStorage.getItem('kactyl_theme');
+  if (saved) { document.documentElement.dataset.theme = saved; updateThemeUI(saved); }
+})();
+(function() {
+  var btns = document.querySelectorAll('.tools-btn');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var wrap = btn.closest('.tools-wrap');
+      var isOpen = wrap.classList.contains('open');
+      document.querySelectorAll('.tools-wrap.open').forEach(function(w) { w.classList.remove('open'); });
+      if (!isOpen) wrap.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.tools-wrap.open').forEach(function(w) { w.classList.remove('open'); });
+  });
 })();
 </script>
 </body>

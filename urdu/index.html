@@ -75,7 +75,7 @@
         "name": "What is the best free online Urdu keyboard?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Arabi Keyboard offers a 100% free online Urdu keyboard at arabikeyboard.com/urdu/. No download or installation needed. Works on iPhone, Android, and PC. Supports Urdu tashkeel, Roman Urdu mode, and voice typing."
+          "text": "Arabi Keyboard offers a 100% free online Urdu keyboard at kactyl.com/urdu/. No download or installation needed. Works on iPhone, Android, and PC. Supports Urdu tashkeel, Roman Urdu mode, and voice typing."
         }
       },
       {
@@ -83,7 +83,7 @@
         "name": "How do I type Urdu online without installation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Open arabikeyboard.com/urdu/ in any browser on your phone or computer. Click the Urdu letters to type. Then click Copy and paste into WhatsApp, TikTok, Instagram or any other app."
+          "text": "Open kactyl.com/urdu/ in any browser on your phone or computer. Click the Urdu letters to type. Then click Copy and paste into WhatsApp, TikTok, Instagram or any other app."
         }
       },
       {
@@ -91,7 +91,7 @@
         "name": "How do I type Urdu on WhatsApp?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Type your Urdu message on arabikeyboard.com/urdu/, click Copy, open WhatsApp and long-press the text field to paste. Works on iPhone and Android without changing language settings."
+          "text": "Type your Urdu message on kactyl.com/urdu/, click Copy, open WhatsApp and long-press the text field to paste. Works on iPhone and Android without changing language settings."
         }
       },
       {
@@ -99,7 +99,7 @@
         "name": "How do I type Urdu on iPhone or Android?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Open arabikeyboard.com/urdu/ in your mobile browser (Safari or Chrome). Tap the Urdu letters on the virtual keyboard. No app needed. Tap Copy and paste into WhatsApp, Instagram or any other app."
+          "text": "Open kactyl.com/urdu/ in your mobile browser (Safari or Chrome). Tap the Urdu letters on the virtual keyboard. No app needed. Tap Copy and paste into WhatsApp, Instagram or any other app."
         }
       },
       {
@@ -115,7 +115,7 @@
         "name": "How do I type Urdu on TikTok?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Type your Urdu text on arabikeyboard.com/urdu/, click Copy, open TikTok and paste into the caption or comments. Use Roman Urdu mode if you prefer typing with your English keyboard."
+          "text": "Type your Urdu text on kactyl.com/urdu/, click Copy, open TikTok and paste into the caption or comments. Use Roman Urdu mode if you prefer typing with your English keyboard."
         }
       },
       {
@@ -139,7 +139,7 @@
         "name": "How do I type Urdu on Instagram?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Type your text on arabikeyboard.com/urdu/ → Copy → open Instagram → edit your bio or create a post → long-press and paste. Urdu text displays right-to-left on Instagram."
+          "text": "Type your text on kactyl.com/urdu/ → Copy → open Instagram → edit your bio or create a post → long-press and paste. Urdu text displays right-to-left on Instagram."
         }
       },
       {
@@ -337,7 +337,7 @@ nav { display:flex; align-items:center; gap:4px; }
 [data-theme="dark"] .tools-btn { color:var(--nav-txt); }
 [data-theme="dark"] .tools-btn:hover { background:rgba(255,255,255,.1); }
 .tools-drop { display:none; position:absolute; top:100%; right:0; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 6px 6px; min-width:230px; box-shadow:0 8px 28px rgba(0,0,0,.12); z-index:200; flex-direction:column; gap:2px; }
-.tools-wrap:hover .tools-drop { display:flex; }
+.tools-wrap:hover .tools-drop, .tools-wrap.open .tools-drop { display:flex; }
 .tools-item { display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:8px; text-decoration:none; color:var(--text); font-size:13.5px; font-weight:500; transition:background .15s; white-space:nowrap; }
 .tools-item:hover { background:var(--border); }
 .tools-item .t-icon { width:18px; height:18px; flex-shrink:0; display:inline-flex; align-items:center; justify-content:center; }
@@ -1508,6 +1508,7 @@ footer {
   transition:transform .2s, filter .2s;
 }
 .fb-tab img { width:58px; height:58px; display:block; }
+.fb-dismiss { display:none; }
 .fb-tab:hover {
   transform:translateY(-50%) translateX(-4px);
   filter:drop-shadow(-5px 6px 22px rgba(0,104,255,.52));
@@ -1607,6 +1608,7 @@ footer {
 @media (max-width:640px) {
   .fb-tab { top:auto; bottom:80px; transform:translateZ(0); right:0; border-radius:0; filter:drop-shadow(-4px 0 16px rgba(0,104,255,.32)); -webkit-transform:translateZ(0); }
   .fb-tab:hover { transform:translateX(-3px); }
+  .fb-dismiss { display:flex; position:fixed; bottom:132px; right:44px; width:18px; height:18px; border-radius:50%; background:rgba(20,20,20,.6); color:#fff; border:none; font-size:10px; align-items:center; justify-content:center; cursor:pointer; z-index:901; padding:0; line-height:1; }
   .fb-panel { top:auto; bottom:-500px; left:0; right:0 !important; transform:none;
     width:100%; border-radius:20px 20px 0 0;
     transition:bottom .38s cubic-bezier(.34,1.56,.64,1);
@@ -1751,21 +1753,22 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="#">
+  <a class="logo" href="/home.html">
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
-  <nav>
-    <a href="../home.html" class="nav-link" data-i18n="nav.home">Home</a>
+                                    <nav>
+    <a href="/home.html" class="nav-link">Home</a>
     <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
-    <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
+    <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
-      <button class="tools-btn">Tools ▾</button>
+      <button class="tools-btn">Tools &#9662;</button>
       <div class="tools-drop">
-        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator <span class="tools-coming">SOON</span></a>
-        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji <span class="tools-coming">SOON</span></a>
-        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character <span class="tools-coming">SOON</span></a>
-        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text <span class="tools-coming">SOON</span></a>
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -1913,7 +1916,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
                 <span class="lo-flag">🇧🇩</span> Bengali
               </div>
               <div class="lang-opt" onclick="location.href='../burmese/index.html'"><span class="lo-flag">🇲🇲</span> Burmese</div>
-              <div class="lang-opt" onclick="location.href='../chinese/index.html'"><span class="lo-flag">🇨🇳</span> Chinese</div>
+              <div class="lang-opt" onclick="location.href='../chinese/index.html'"><span class="lo-flag"><img loading="lazy" src="../images/flag-uyghur.svg" alt="East Turkestan" style="height:1.1em;width:auto;vertical-align:middle;border-radius:2px;display:inline-block"></span> Chinese</div>
               <div class="lang-opt" onclick="location.href='../filipino/index.html'">
                 <span class="lo-flag">🇵🇭</span> Filipino
               </div>
@@ -1932,7 +1935,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
               </div>
               <div class="lang-opt" onclick="location.href='../korean/index.html'"><span class="lo-flag">🇰🇷</span> Korean</div>
               <div class="lang-opt" onclick="location.href='../kurdish/index.html'">
-                <span class="lo-flag">🇮🇶</span> Kurdish
+                <span class="lo-flag"><img loading="lazy" src="../images/flag-kurdish.svg" alt="Kurdistan" style="height:1.1em;width:auto;vertical-align:middle;border-radius:2px;display:inline-block"></span> Kurdish
               </div>
               <div class="lang-opt" onclick="location.href='../malayalam/index.html'"><span class="lo-flag">🇮🇳</span> Malayalam</div>
               <div class="lang-opt" onclick="location.href='../marathi/index.html'">
@@ -1969,7 +1972,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
               <div class="lang-opt" onclick="location.href='../thai/index.html'"><span class="lo-flag">🇹🇭</span> Thai</div>
               <div class="lang-opt" onclick="location.href='../tigrinya/index.html'"><span class="lo-flag">🇪🇷</span> Tigrinya</div>
               <div class="lang-opt" onclick="location.href='../turkish/index.html'"><span class="lo-flag">🇹🇷</span> Turkish</div>
-              <div class="lang-opt" onclick="location.href='../uyghur/index.html'"><span class="lo-flag">🇨🇳</span> Uyghur</div>
+              <div class="lang-opt" onclick="location.href='../uyghur/index.html'"><span class="lo-flag"><img loading="lazy" src="../images/flag-uyghur.svg" alt="East Turkestan" style="height:1.1em;width:auto;vertical-align:middle;border-radius:2px;display:inline-block"></span> Uyghur</div>
               <div class="lang-opt" onclick="location.href='../vietnamese/index.html'"><span class="lo-flag">🇻🇳</span> Vietnamese</div>
               <div class="lang-opt" onclick="location.href='../yoruba/index.html'"><span class="lo-flag">🇳🇬</span> Yoruba</div>
             </div>
@@ -2218,7 +2221,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <span><span class="b-en-word">Arabi</span> Keyboard</span>
         <span class="b-ar-word">عربي كيبورد</span>
       </div>
-      <div class="b-domain">arabikeyboard.com _ Free Arabic Keyboard Online</div>
+      <div class="b-domain">kactyl.com</div>
       <div class="b-tag" data-i18n="brand.tag">اكتب بالعربية من أي جهاز بدون تثبيت أي برنامج</div>
       <div class="b-badges">
         <span class="b-badge green" data-i18n="brand.badge1">✓ 100% Free</span>
@@ -2242,7 +2245,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <p>The <strong>Roman Urdu keyboard mode</strong> is the most searched feature — type Urdu using English letters and they convert to Urdu script automatically when you press Space. Type <em>shukriya</em> → شکریہ, <em>mohabbat</em> → محبت, <em>zindagi</em> → زندگی. This is the fastest Urdu typing method online — perfect for anyone who grew up writing Roman Urdu. The keyboard also includes tashkeel (vowel marks), a full Urdu character panel, and word suggestions for common Urdu words.</p>
     <p>This Urdu typing keyboard is used daily for <strong>WhatsApp</strong> Urdu messages, <strong>TikTok</strong> Urdu captions, <strong>Instagram</strong> bios, Facebook posts, and social media across Pakistan and the global Pakistani diaspora. Works on iPhone, Android, Windows PC, and Mac — no language settings change needed. The Urdu keyboard for PC works directly in your browser, no download required.</p>
     <h3>How to Type Urdu Online Without Installation</h3>
-    <p>Open arabikeyboard.com/urdu/ in any browser on your phone or PC. Enable Roman Urdu mode for the fastest Urdu typing online — type English letters and they convert to Urdu instantly. Or click Urdu letters directly on the virtual keyboard. Add tashkeel, use voice typing, and access emoji combos for Pakistani and Islamic culture. Copy and paste into any app, completely free. Works offline once the page is loaded.</p>
+    <p>Open kactyl.com/urdu/ in any browser on your phone or PC. Enable Roman Urdu mode for the fastest Urdu typing online — type English letters and they convert to Urdu instantly. Or click Urdu letters directly on the virtual keyboard. Add tashkeel, use voice typing, and access emoji combos for Pakistani and Islamic culture. Copy and paste into any app, completely free. Works offline once the page is loaded.</p>
   </div>
 </section>
     </div>
@@ -2272,7 +2275,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
           What is the best free online Urdu keyboard? <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          Arabi Keyboard's Urdu Keyboard (arabikeyboard.com/urdu/) is 100% free with no installation. It features Roman Urdu mode (type English, get Urdu script instantly), tashkeel panel, voice typing, and Urdu emoji combos. Used by millions across Pakistan, India, and the global Urdu diaspora.
+          Arabi Keyboard's Urdu Keyboard (kactyl.com/urdu/) is 100% free with no installation. It features Roman Urdu mode (type English, get Urdu script instantly), tashkeel panel, voice typing, and Urdu emoji combos. Used by millions across Pakistan, India, and the global Urdu diaspora.
         </div>
       </div>
       <div class="faq-item">
@@ -2280,7 +2283,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
           How do I type Urdu online without installation? <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          Open arabikeyboard.com/urdu/ in any browser — no download, no app, no account. Click Urdu letters on the on-screen keyboard or use Roman Urdu mode to type with your QWERTY keyboard. Works on Windows, Mac, iPhone, Android, and any tablet.
+          Open kactyl.com/urdu/ in any browser — no download, no app, no account. Click Urdu letters on the on-screen keyboard or use Roman Urdu mode to type with your QWERTY keyboard. Works on Windows, Mac, iPhone, Android, and any tablet.
         </div>
       </div>
       <div class="faq-item">
@@ -2296,7 +2299,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
           How do I type Urdu on iPhone or Android? <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          Open arabikeyboard.com/urdu/ in your phone browser (Safari or Chrome). Tap the Urdu letters on the virtual keyboard. Fully optimized for mobile — no app needed. Tap "Copy" and paste your Urdu text into WhatsApp, TikTok, or Instagram. No language settings change required.
+          Open kactyl.com/urdu/ in your phone browser (Safari or Chrome). Tap the Urdu letters on the virtual keyboard. Fully optimized for mobile — no app needed. Tap "Copy" and paste your Urdu text into WhatsApp, TikTok, or Instagram. No language settings change required.
         </div>
       </div>
       <div class="faq-item">
@@ -2312,7 +2315,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
           How do I type Urdu on WhatsApp? <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          Type your Urdu message on arabikeyboard.com/urdu/ using the on-screen keyboard or Roman Urdu mode, then tap Copy. Switch to WhatsApp, long-press the chat box and tap Paste. Your Urdu message appears right-to-left perfectly — no settings change needed.
+          Type your Urdu message on kactyl.com/urdu/ using the on-screen keyboard or Roman Urdu mode, then tap Copy. Switch to WhatsApp, long-press the chat box and tap Paste. Your Urdu message appears right-to-left perfectly — no settings change needed.
         </div>
       </div>
       <div class="faq-item">
@@ -2337,7 +2340,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
           <span>اردو کیبورڈ آن لائن کیسے استعمال کریں؟</span><span class="faq-icon">+</span>
         </button>
         <div class="faq-a rtl">
-          arabikeyboard.com/urdu/ کو کسی بھی براؤزر میں کھولیں۔ اردو حروف پر کلک کریں یا رومن اردو موڈ میں انگریزی حروف ٹائپ کریں اور اسپیس دبائیں — فوری اردو رسم الخط میں تبدیل ہو جائے گا۔ کاپی کریں اور واٹس ایپ، ٹک ٹاک، انسٹاگرام میں پیسٹ کریں۔
+          kactyl.com/urdu/ کو کسی بھی براؤزر میں کھولیں۔ اردو حروف پر کلک کریں یا رومن اردو موڈ میں انگریزی حروف ٹائپ کریں اور اسپیس دبائیں — فوری اردو رسم الخط میں تبدیل ہو جائے گا۔ کاپی کریں اور واٹس ایپ، ٹک ٹاک، انسٹاگرام میں پیسٹ کریں۔
         </div>
       </div>
       <div class="faq-item">
@@ -2353,7 +2356,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
           <span>کیا یہ اردو کیبورڈ موبائل پر کام کرتا ہے؟</span><span class="faq-icon">+</span>
         </button>
         <div class="faq-a rtl">
-          جی ہاں، arabikeyboard.com/urdu/ آئی فون، اینڈروئیڈ اور تمام ٹیبلٹس پر مکمل طور پر کام کرتا ہے۔ کوئی ایپ ڈاؤن لوڈ کرنے کی ضرورت نہیں۔ اپنے موبائل براؤزر میں کھولیں اور فوری اردو ٹائپنگ شروع کریں۔
+          جی ہاں، kactyl.com/urdu/ آئی فون، اینڈروئیڈ اور تمام ٹیبلٹس پر مکمل طور پر کام کرتا ہے۔ کوئی ایپ ڈاؤن لوڈ کرنے کی ضرورت نہیں۔ اپنے موبائل براؤزر میں کھولیں اور فوری اردو ٹائپنگ شروع کریں۔
         </div>
       </div>
 
@@ -2491,6 +2494,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <a href="/invisible-character/">Invisible Char</a>
         <a href="/kaomoji/">Kaomoji</a>
         <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/symbols/">Symbols</a>
       </div>
       <h4 class="ft-h4-gap">Company</h4>
       <div class="ft-legal">
@@ -3211,7 +3215,7 @@ function toggleVoice() {
   if (isSafari && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({audio:true})
       .then(function(){ startVoice(SR); })
-      .catch(function(){ toast('🎤 Allow microphone in Safari Settings → arabikeyboard.com'); });
+      .catch(function(){ toast('🎤 Allow microphone in Safari Settings → kactyl.com'); });
   } else {
     startVoice(SR);
   }
@@ -3594,9 +3598,11 @@ function closeFeedback() {
 }
 function dismissFeedbackTab() {
   const t = document.getElementById('fbTab');
+  const x = document.getElementById('fbDismiss');
   t.style.transition = 'transform .3s ease, opacity .3s ease';
   t.style.transform = 'translateX(80px)';
   t.style.opacity = '0';
+  if (x) x.style.display = 'none';
   setTimeout(() => { t.style.display = 'none'; }, 320);
 }
 /* swipe-right on mobile to dismiss */
@@ -3675,6 +3681,7 @@ async function submitFeedback(e) {
 <button class="fb-tab" id="fbTab" onclick="toggleFeedback()" aria-label="Send Feedback">
   <img loading="lazy" src="../images/Icon-Feedback-Clavierarabe-online.svg" alt="Feedback">
 </button>
+<button class="fb-dismiss" id="fbDismiss" onclick="dismissFeedbackTab()" aria-label="Dismiss feedback">✕</button>
 <div class="fb-overlay" id="fbOverlay" onclick="closeFeedback()"></div>
 <div class="fb-panel" id="fbPanel">
   <button class="fb-close" onclick="closeFeedback()" aria-label="Close">✕</button>
@@ -3705,5 +3712,22 @@ async function submitFeedback(e) {
     <button class="fb-close-btn" onclick="closeFeedback()">Close</button>
   </div>
 </div>
+<script>
+(function(){
+  var btns = document.querySelectorAll('.tools-btn');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var wrap = btn.closest('.tools-wrap');
+      var isOpen = wrap.classList.contains('open');
+      document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
+      if (!isOpen) wrap.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
+  });
+})();
+</script>
 </body>
 </html>

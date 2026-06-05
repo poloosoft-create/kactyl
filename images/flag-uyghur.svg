@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- East Turkestan / Uyghur flag: sky blue + white crescent and star -->
+  <rect width="900" height="600" fill="#1B75BB"/>
+  <!-- White crescent (outer white circle masked by offset inner circle) -->
+  <defs>
+    <mask id="cm">
+      <circle cx="295" cy="300" r="132" fill="white"/>
+      <circle cx="365" cy="300" r="110" fill="black"/>
+    </mask>
+  </defs>
+  <circle cx="295" cy="300" r="132" fill="white" mask="url(#cm)"/>
+  <!-- White 5-pointed star (circumradius 52, inner radius 21, center 478,300) -->
+  <polygon fill="white" points="
+    478,248
+    487.6,282.0
+    523.5,283.0
+    495.1,305.5
+    505.5,340.5
+    478,319
+    450.5,340.5
+    460.9,305.5
+    432.5,283.0
+    468.4,282.0
+  "/>
+</svg>

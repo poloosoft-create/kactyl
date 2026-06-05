@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fancy Text Generator ✦ 28 Font Styles — Copy &amp; Paste | Kactyl</title>
+<meta name="description" content="Generate fancy text in 28+ Unicode styles instantly — bold, italic, cursive, gothic, circled, strikethrough &amp; more. Free copy &amp; paste for Instagram, TikTok, WhatsApp.">
+<link rel="canonical" href="https://kactyl.com/fancy-text/">
+<meta property="og:title" content="Fancy Text Generator — 28 Font Styles">
+<meta property="og:description" content="Transform any text into 28+ beautiful Unicode font styles instantly. Free, no account needed.">
+<meta property="og:url" content="https://kactyl.com/fancy-text/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Fancy Text Generator",
+  "description":"Convert text to 28+ Unicode font styles for free.",
+  "url":"https://kactyl.com/fancy-text/",
+  "breadcrumb":{
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://kactyl.com/"},
+      {"@type":"ListItem","position":2,"name":"Fancy Text Generator","item":"https://kactyl.com/fancy-text/"}
+    ]
+  }
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0068ff;--bg:#fff;--surface:#fff;--text:#1E293B;--muted:#64748B;
+  --border:#E2E8F0;--shadow:rgba(0,0,0,.07);--nav-bg:rgba(237,240,248,.88);
+  --nav-txt:#1E293B;--card-bg:#fff;
+  --purple:#7c3aed;--purple-2:#a855f7;--purple-glow:rgba(124,58,237,.15);
+}
+[data-theme="dark"]{
+  --bg:#0F172A;--surface:#1E293B;--text:#F1F5F9;--muted:#94A3B8;
+  --border:rgba(255,255,255,.09);--shadow:rgba(0,0,0,.35);
+  --nav-bg:rgba(15,23,42,.88);--nav-txt:#F1F5F9;--card-bg:#1E293B;
+  --purple-glow:rgba(168,85,247,.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+
+/* ── Background ── */
+.bg-shapes{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bg-shapes .s{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35}
+[data-theme="dark"] .bg-shapes .s{opacity:.18}
+.s1{width:600px;height:600px;background:radial-gradient(circle,#7c3aed,transparent 70%);top:-200px;right:-100px}
+.s2{width:500px;height:500px;background:radial-gradient(circle,#2563eb,transparent 70%);bottom:-150px;left:-100px}
+.s3{width:350px;height:350px;background:radial-gradient(circle,#a855f7,transparent 70%);top:40%;left:40%}
+
+/* ── Header ── */
+header{background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s}
+header.hdr-hidden{transform:translateY(-100%)}
+[data-theme="dark"] header{background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-img{height:200px;width:auto;display:block}
+nav{display:flex;align-items:center;gap:4px}
+.nav-link{padding:6px 12px;border-radius:6px;text-decoration:none;color:var(--text);
+  font-size:14px;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
+.nav-link:hover{background:var(--border)}
+[data-theme="dark"] .nav-link{color:var(--nav-txt)}
+[data-theme="dark"] .nav-link:hover{background:rgba(255,255,255,.1)}
+.tools-wrap{position:relative}
+.tools-btn{cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.tools-btn:hover{background:var(--border)}
+[data-theme="dark"] .tools-btn{color:var(--nav-txt)}
+[data-theme="dark"] .tools-btn:hover{background:rgba(255,255,255,.1)}
+.tools-drop{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 6px 6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px}
+.tools-wrap:hover .tools-drop,.tools-wrap.open .tools-drop{display:flex}
+.tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;
+  text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s;white-space:nowrap}
+.tools-item:hover{background:var(--border)}
+.tools-item.active-tool{background:rgba(124,58,237,.08);color:var(--purple)}
+.tools-item .t-icon{width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center}
+.theme-wrap{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
+.t-track{width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s}
+.t-track.on{background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12)}
+.t-thumb{width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center}
+.t-thumb.on{left:21px}
+.t-lbl{font-size:11px;font-weight:600;color:var(--muted);line-height:1.1;white-space:nowrap}
+.lang-wrap{position:relative}
+.lang-pill{display:flex;align-items:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s}
+.lang-pill:hover{border-color:var(--blue)}
+[data-theme="dark"] .lang-pill{color:var(--nav-txt);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+.lang-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px var(--shadow);min-width:140px;overflow:hidden;z-index:400}
+.lang-menu.show{display:block}
+.lang-opt{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s}
+.lang-opt:hover{background:var(--bg)}
+.lang-opt.active{color:var(--blue);font-weight:600}
+@media(max-width:600px){
+  header{padding:0 12px}
+  .logo-img{height:140px}
+  .nav-link{padding:6px 8px;font-size:13px}
+  .t-lbl{display:none}
+}
+
+/* ── Hero ── */
+.hero{position:relative;z-index:1;text-align:center;padding:64px 24px 0}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(124,58,237,.1);
+  border:1px solid rgba(124,58,237,.2);color:var(--purple);border-radius:99px;
+  padding:5px 14px;font-size:13px;font-weight:600;margin-bottom:20px}
+.hero h1{font-size:clamp(36px,6vw,68px);font-weight:900;letter-spacing:-2px;line-height:1.05;
+  background:linear-gradient(135deg,var(--text) 0%,var(--purple) 50%,var(--purple-2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:16px}
+.hero-sub{font-size:18px;color:var(--muted);max-width:540px;margin:0 auto 10px;line-height:1.6}
+.hero-apps{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.app-pill{background:var(--surface);border:1px solid var(--border);border-radius:99px;
+  padding:5px 14px;font-size:13px;font-weight:500;color:var(--muted)}
+
+/* ── Input Area ── */
+.input-wrap{position:relative;z-index:1;max-width:760px;margin:0 auto 0}
+.inp-box{position:relative;background:var(--surface);border:2px solid var(--border);
+  border-radius:20px;box-shadow:0 8px 40px var(--shadow);transition:border-color .2s,box-shadow .2s;
+  overflow:hidden}
+.inp-box:focus-within{border-color:var(--purple);box-shadow:0 0 0 4px var(--purple-glow),0 8px 40px var(--shadow)}
+#inp{width:100%;min-height:120px;padding:24px;background:transparent;border:none;outline:none;
+  font-family:'Inter',sans-serif;font-size:20px;font-weight:500;color:var(--text);
+  resize:none;line-height:1.5}
+#inp::placeholder{color:var(--muted);font-weight:400}
+.inp-footer{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;
+  border-top:1px solid var(--border);background:rgba(124,58,237,.02)}
+#char-count{font-size:12px;color:var(--muted);font-weight:500}
+#char-count.warn{color:#f59e0b}
+#char-count.over{color:#ef4444}
+.inp-btns{display:flex;gap:8px}
+.btn-ghost{background:none;border:1px solid var(--border);border-radius:9px;padding:7px 14px;
+  font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;color:var(--muted);
+  transition:all .15s}
+.btn-ghost:hover{background:var(--border);color:var(--text)}
+.btn-primary{background:linear-gradient(135deg,var(--purple),var(--purple-2));
+  border:none;border-radius:9px;padding:7px 16px;font-size:13px;font-weight:700;
+  font-family:inherit;cursor:pointer;color:#fff;transition:all .15s;
+  box-shadow:0 2px 12px rgba(124,58,237,.3)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(124,58,237,.4)}
+.btn-primary:active{transform:none}
+
+/* ── Filter Bar ── */
+.filter-bar{position:relative;z-index:1;max-width:1100px;margin:40px auto 0;padding:0 24px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.cat-tabs{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+.cat-tab{background:var(--surface);border:1px solid var(--border);border-radius:99px;
+  padding:7px 15px;font-size:13px;font-weight:600;cursor:pointer;color:var(--muted);
+  font-family:inherit;transition:all .15s;white-space:nowrap}
+.cat-tab .cnt{background:var(--border);border-radius:99px;padding:1px 7px;
+  font-size:11px;margin-left:5px}
+.cat-tab:hover{border-color:var(--purple);color:var(--purple)}
+.cat-tab.active{background:linear-gradient(135deg,var(--purple),var(--purple-2));
+  border-color:transparent;color:#fff}
+.cat-tab.active .cnt{background:rgba(255,255,255,.25)}
+.search-wrap{position:relative}
+#search{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  padding:8px 14px 8px 36px;font-size:14px;font-family:inherit;color:var(--text);
+  outline:none;width:190px;transition:border-color .2s}
+#search:focus{border-color:var(--purple)}
+.search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);
+  color:var(--muted);pointer-events:none;font-size:14px}
+.results-meta{width:100%;font-size:13px;color:var(--muted);font-weight:500;
+  padding:10px 0 0}
+
+/* ── Results Grid ── */
+.results-grid{position:relative;z-index:1;max-width:1100px;margin:16px auto 0;
+  padding:0 24px 80px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:700px){
+  .results-grid{grid-template-columns:1fr;padding:0 16px 60px}
+  .filter-bar{padding:0 16px}
+  .hero{padding:40px 16px 0}
+  .input-wrap{padding:0 16px}
+  #search{width:140px}
+}
+
+/* ── Style Card ── */
+.style-card{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;
+  padding:20px;transition:all .2s;cursor:default;position:relative;overflow:hidden}
+.style-card::before{content:'';position:absolute;inset:0;border-radius:18px;
+  background:linear-gradient(135deg,var(--purple),var(--purple-2));opacity:0;
+  transition:opacity .2s}
+.style-card:hover{border-color:rgba(124,58,237,.3);box-shadow:0 8px 32px rgba(124,58,237,.12);
+  transform:translateY(-2px)}
+.style-card:hover::before{opacity:.03}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;position:relative;z-index:1}
+.cat-chip{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  padding:3px 10px;border-radius:99px;background:rgba(124,58,237,.08);color:var(--purple)}
+.cat-chip.bold{background:rgba(0,104,255,.08);color:var(--blue)}
+.cat-chip.symbols{background:rgba(5,150,105,.08);color:#059669}
+.cat-chip.special{background:rgba(245,158,11,.08);color:#d97706}
+.card-actions{display:flex;gap:6px}
+.fav-btn{background:none;border:none;cursor:pointer;padding:5px;border-radius:7px;
+  font-size:16px;line-height:1;color:var(--muted);transition:all .15s}
+.fav-btn:hover,.fav-btn.active{color:#ef4444;transform:scale(1.15)}
+.card-text{font-size:clamp(16px,2vw,22px);line-height:1.5;word-break:break-word;
+  min-height:54px;color:var(--text);position:relative;z-index:1;
+  letter-spacing:.5px}
+.card-text.empty{color:var(--muted);font-size:14px;font-style:italic}
+.card-bottom{display:flex;align-items:center;justify-content:space-between;
+  margin-top:14px;position:relative;z-index:1}
+.style-name{font-size:13px;font-weight:600;color:var(--muted)}
+.copy-btn{background:linear-gradient(135deg,var(--purple),var(--purple-2));
+  border:none;border-radius:9px;padding:7px 18px;font-size:13px;font-weight:700;
+  font-family:inherit;cursor:pointer;color:#fff;transition:all .15s;
+  box-shadow:0 2px 10px rgba(124,58,237,.25)}
+.copy-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(124,58,237,.38)}
+.copy-btn:active{transform:none}
+.copy-btn.copied{background:linear-gradient(135deg,#059669,#10b981)!important;
+  box-shadow:0 2px 10px rgba(5,150,105,.3)!important}
+.style-card.flashed{animation:flash .4s ease}
+@keyframes flash{0%,100%{background:var(--card-bg)}50%{background:rgba(124,58,237,.06)}}
+
+/* ── No results ── */
+.no-results{grid-column:1/-1;text-align:center;padding:60px 24px;color:var(--muted)}
+.no-results h3{font-size:20px;margin-bottom:8px}
+
+/* ── SEO section ── */
+.seo-sec{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 24px 80px}
+.seo-sec h2{font-size:22px;font-weight:800;margin-bottom:12px;color:var(--text)}
+.seo-sec p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+
+/* ── Toast ── */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:#1E293B;color:#fff;padding:12px 24px;border-radius:12px;font-size:14px;
+  font-weight:600;z-index:9999;pointer-events:none;opacity:0;
+  transition:all .25s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;
+  box-shadow:0 8px 32px rgba(0,0,0,.25)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── Footer ── */
+footer{background:#07091A;border-top:none;padding:0}
+.ft-inner{max-width:1000px;margin:0 auto;padding:56px 28px 44px;display:grid;grid-template-columns:200px 1fr 150px 130px;gap:40px;align-items:start}
+.ft-brand{display:flex;flex-direction:column;gap:14px}
+.ft-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.ft-ic{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-ic img{width:48px;height:48px;opacity:1;filter:drop-shadow(0 0 14px rgba(255,23,54,.5)) drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+.ft-name{font-size:15px;font-weight:800;color:#F1F5F9}
+.ft-tagline{font-size:13px;color:#94A3B8;line-height:1.7}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ft-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
+.ft-badge.g{background:rgba(5,150,105,.12);color:#34D399;border:1px solid rgba(5,150,105,.18)}
+.ft-badge.b{background:rgba(0,104,255,.12);color:#60A5FA;border:1px solid rgba(0,104,255,.18)}
+.ft-social{display:flex;gap:8px;margin-top:2px}
+.ft-soc-link{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;color:#94A3B8;text-decoration:none;transition:background .2s,color .2s}
+.ft-soc-link:hover{background:rgba(0,104,255,.20);border-color:rgba(0,104,255,.40);color:#60A5FA}
+.ft-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:#64748B;margin-bottom:14px}
+.ft-col h4.ft-h4-gap{margin-top:22px}
+.ft-kb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}
+.ft-kb-grid a,.ft-legal a{font-size:13px;color:#CBD5E1;text-decoration:none;padding:5px 0;display:block;transition:color .15s}
+.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}
+.ft-legal{display:flex;flex-direction:column}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;gap:12px}
+.ft-copy{font-size:11px;color:#64748B}
+.ft-bottom-links{display:flex;align-items:center;gap:16px}
+.ft-bottom-links a{font-size:11px;color:#64748B;text-decoration:none;transition:color .15s}
+.ft-bottom-links a:hover{color:#94A3B8}
+</style>
+</head>
+<body>
+
+<div class="bg-shapes" aria-hidden="true">
+  <div class="s s1"></div><div class="s s2"></div><div class="s s3"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<header>
+  <a class="logo" href="/home.html">
+    <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
+  </a>
+    <nav>
+    <a href="/home.html" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+    <div class="tools-wrap">
+      <button class="tools-btn">Tools &#9662;</button>
+      <div class="tools-drop">
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+      </div>
+    </div>
+    <div class="lang-wrap">
+      <button class="lang-pill" id="lang-btn" onclick="toggleLang()">🇺🇸 English ▾</button>
+      <div class="lang-menu" id="lang-menu">
+        <div class="lang-opt active">🇺🇸 English</div>
+        <div class="lang-opt">🇫🇷 Français</div>
+        <div class="lang-opt">🇸🇦 العربية</div>
+      </div>
+    </div>
+    <div class="theme-wrap" onclick="toggleTheme()">
+      <div class="t-track" id="tt">
+        <div class="t-thumb" id="th"><img id="theme-icon" src="../images/Icon-white mode-Clavierarabe-enligne.svg" alt="" width="13" height="13"></div>
+      </div>
+      <div class="t-lbl" id="tlbl">White<br>Mode</div>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✦ 28 Font Styles &nbsp;·&nbsp; 1-Click Copy</div>
+  <h1>Fancy Text Generator</h1>
+  <p class="hero-sub">Type anything — instantly transform into beautiful Unicode font styles</p>
+  <div class="hero-apps">
+    <span class="app-pill">📸 Instagram</span>
+    <span class="app-pill">🎵 TikTok</span>
+    <span class="app-pill">💬 WhatsApp</span>
+    <span class="app-pill">🎮 Discord</span>
+    <span class="app-pill">🐦 Twitter/X</span>
+  </div>
+</section>
+
+<!-- INPUT -->
+<div class="input-wrap" style="padding:0 24px;margin-bottom:0">
+  <div class="inp-box">
+    <textarea id="inp" maxlength="200" placeholder="Type your text here… e.g. Hello World ✨" spellcheck="false" autofocus></textarea>
+    <div class="inp-footer">
+      <span id="char-count">0 / 200</span>
+      <div class="inp-btns">
+        <button class="btn-ghost" onclick="clearInput()">✕ Clear</button>
+        <button class="btn-primary" id="copy-all-btn" onclick="copyAll()">📋 Copy All</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="cat-tabs" id="cat-tabs">
+    <button class="cat-tab active" data-cat="all">All <span class="cnt" id="cnt-all">28</span></button>
+    <button class="cat-tab" data-cat="cursive">Cursive <span class="cnt">5</span></button>
+    <button class="cat-tab" data-cat="bold">Bold &amp; Italic <span class="cnt">8</span></button>
+    <button class="cat-tab" data-cat="symbols">Symbols <span class="cnt">5</span></button>
+    <button class="cat-tab" data-cat="special">Special FX <span class="cnt">10</span></button>
+    <button class="cat-tab" data-cat="favs">★ Favorites <span class="cnt" id="cnt-favs">0</span></button>
+  </div>
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search" placeholder="Search styles…" oninput="renderAll()">
+  </div>
+  <div class="results-meta" id="results-meta"></div>
+</div>
+
+<!-- RESULTS -->
+<div class="results-grid" id="results-grid"></div>
+
+<!-- SEO TEXT -->
+<section class="seo-sec">
+  <h2>What is a Fancy Text Generator?</h2>
+  <p>A fancy text generator converts your regular text into special Unicode characters that look like different fonts — bold, italic, cursive, gothic, circled, and more. These characters work in any app that supports Unicode: Instagram bios, TikTok captions, WhatsApp messages, Discord usernames, and Twitter/X posts.</p>
+  <p>Unlike regular fonts that only change how text looks on your device, Unicode font styles are encoded as actual characters. That means when you copy and paste 𝓗𝓮𝓵𝓵𝓸 𝓦𝓸𝓻𝓵𝓭, everyone sees the same beautiful style — no font installation needed.</p>
+  <h2 style="margin-top:24px">How to use it</h2>
+  <p>Type or paste your text in the box above. All 28 styles update instantly. Click the <strong>Copy</strong> button on any style to copy it to your clipboard, then paste it anywhere. Use the category tabs to filter styles, or search by name.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a class="ft-logo" href="/"><div class="ft-ic"><img loading="lazy" src="../images/favicon.svg" alt="Kactyl" width="36" height="36"></div><span class="ft-name">Kactyl</span></a>
+      <div class="ft-tagline">Type any language from any device.<br>No download. No account.</div>
+      <div class="ft-badges"><span class="ft-badge g">✓ 100% Free</span><span class="ft-badge b">⚡ No Install</span></div>
+      <div class="ft-social">
+        <a href="https://x.com/kactyl" class="ft-soc-link" aria-label="X" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
+        <a href="https://instagram.com/kactyl" class="ft-soc-link" aria-label="Instagram" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Keyboards</h4>
+      <div class="ft-kb-grid">
+        <a href="/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
+        <a href="/japanese/">Japanese</a><a href="/chinese/">Chinese</a><a href="/turkish/">Turkish</a><a href="/russian/">Russian</a>
+        <a href="/greek/">Greek</a><a href="/thai/">Thai</a><a href="/vietnamese/">Vietnamese</a><a href="/amharic/">Amharic</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Tools</h4>
+      <div class="ft-legal">
+        <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+      </div>
+      <h4 class="ft-h4-gap">Company</h4>
+      <div class="ft-legal">
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Legal</h4>
+      <div class="ft-legal">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
+        <a href="/cookies.html">Cookie Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2026 Kactyl. All rights reserved.</span>
+    <div class="ft-bottom-links">
+      <a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a>
+      <a href="/cookies.html">Cookies</a><a href="/sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Style data ────────────────────────────────────────────────────────────────
+const STYLES = [
+  {id:'bold-script',name:'Bold Script',cat:'cursive',upper:'𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩',lower:'𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃'},
+  {id:'script',name:'Script',cat:'cursive',upper:'𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵',lower:'𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏'},
+  {id:'fraktur',name:'Gothic Fraktur',cat:'cursive',upper:'𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ',lower:'𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷'},
+  {id:'bold-fraktur',name:'Bold Gothic',cat:'cursive',upper:'𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅',lower:'𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟'},
+  {id:'double-struck',name:'Double Struck',cat:'cursive',upper:'𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ',lower:'𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫',digits:'𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡'},
+  {id:'bold-serif',name:'Bold Serif',cat:'bold',upper:'𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙',lower:'𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳',digits:'𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗'},
+  {id:'italic-serif',name:'Italic',cat:'bold',upper:'𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍',lower:'𝑎𝑏𝑐𝑑ℯ𝑓ℊℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧'},
+  {id:'bold-italic',name:'Bold Italic',cat:'bold',upper:'𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁',lower:'𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛'},
+  {id:'sans',name:'Sans Serif',cat:'bold',upper:'𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖩𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹',lower:'𝖺𝖻𝖼𝖽𝖾𝖿𝗀𝗁𝗂𝗃𝗄𝗅𝗆𝗇𝗈𝗉𝗊𝗋𝗌𝗍𝗎𝗏𝗐𝗑𝗒𝗓',digits:'𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫'},
+  {id:'sans-bold',name:'Sans Bold',cat:'bold',upper:'𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭',lower:'𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇',digits:'𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵'},
+  {id:'sans-italic',name:'Sans Italic',cat:'bold',upper:'𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡',lower:'𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻'},
+  {id:'sans-bi',name:'Sans Bold Italic',cat:'bold',upper:'𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕',lower:'𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯'},
+  {id:'monospace',name:'Monospace',cat:'bold',upper:'𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉',lower:'𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣',digits:'𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿'},
+  {id:'circled',name:'Circled',cat:'symbols',upper:'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',lower:'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ',digits:'⓪①②③④⑤⑥⑦⑧⑨'},
+  {id:'neg-circled',name:'Neg. Circled',cat:'symbols',upper:'🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',lower:'🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',upperOnly:true},
+  {id:'squared',name:'Squared',cat:'symbols',upper:'🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',lower:'🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',upperOnly:true},
+  {id:'neg-squared',name:'Neg. Squared',cat:'symbols',upper:'🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉',lower:'🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉',upperOnly:true},
+  {id:'fullwidth',name:'Full Width',cat:'symbols',upper:'ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ',lower:'ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ',digits:'０１２３４５６７８９'},
+  {id:'strikethrough',name:'Strikethrough',cat:'special',transform:'combining:̶'},
+  {id:'double-strike',name:'Double Strike',cat:'special',transform:'combining:̷'},
+  {id:'underline',name:'Underline',cat:'special',transform:'combining:̲'},
+  {id:'double-under',name:'Double Underline',cat:'special',transform:'combining:̳'},
+  {id:'overline',name:'Overline',cat:'special',transform:'combining:̅'},
+  {id:'small-caps',name:'Small Caps',cat:'special',transform:'small-caps'},
+  {id:'superscript',name:'Superscript',cat:'special',transform:'superscript'},
+  {id:'wide',name:'Wide Spaces',cat:'special',transform:'wide'},
+  {id:'upside-down',name:'Upside Down',cat:'special',transform:'upside-down'},
+  {id:'reverse',name:'Reversed',cat:'special',transform:'reverse'}
+];
+
+// ── Special transform tables ──────────────────────────────────────────────────
+const SMALL_CAPS = {
+  a:'ᴀ',b:'ʙ',c:'ᴄ',d:'ᴅ',e:'ᴇ',f:'ꜰ',g:'ɢ',h:'ʜ',i:'ɪ',j:'ᴊ',
+  k:'ᴋ',l:'ʟ',m:'ᴍ',n:'ɴ',o:'ᴏ',p:'ᴘ',q:'q',r:'ʀ',s:'ꜱ',t:'ᴛ',
+  u:'ᴜ',v:'ᴠ',w:'ᴡ',x:'x',y:'ʏ',z:'ᴢ',
+  A:'ᴀ',B:'ʙ',C:'ᴄ',D:'ᴅ',E:'ᴇ',F:'ꜰ',G:'ɢ',H:'ʜ',I:'ɪ',J:'ᴊ',
+  K:'ᴋ',L:'ʟ',M:'ᴍ',N:'ɴ',O:'ᴏ',P:'ᴘ',Q:'q',R:'ʀ',S:'ꜱ',T:'ᴛ',
+  U:'ᴜ',V:'ᴠ',W:'ᴡ',X:'x',Y:'ʏ',Z:'ᴢ'
+};
+
+const SUPER_MAP = {
+  a:'ᵃ',b:'ᵇ',c:'ᶜ',d:'ᵈ',e:'ᵉ',f:'ᶠ',g:'ᵍ',h:'ʰ',i:'ⁱ',j:'ʲ',
+  k:'ᵏ',l:'ˡ',m:'ᵐ',n:'ⁿ',o:'ᵒ',p:'ᵖ',q:'q',r:'ʳ',s:'ˢ',t:'ᵗ',
+  u:'ᵘ',v:'ᵛ',w:'ʷ',x:'ˣ',y:'ʸ',z:'ᶻ',
+  A:'ᴬ',B:'ᴮ',C:'ᶜ',D:'ᴰ',E:'ᴱ',F:'ᶠ',G:'ᴳ',H:'ᴴ',I:'ᴵ',J:'ᴶ',
+  K:'ᴷ',L:'ᴸ',M:'ᴹ',N:'ᴺ',O:'ᴼ',P:'ᴾ',Q:'Q',R:'ᴿ',S:'ˢ',T:'ᵀ',
+  U:'ᵁ',V:'ᵛ',W:'ᵂ',X:'ˣ',Y:'ʸ',Z:'ᶻ',
+  '0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹'
+};
+
+const FLIP_MAP = {
+  a:'ɐ',b:'q',c:'ɔ',d:'p',e:'ǝ',f:'ɟ',g:'ƃ',h:'ɥ',i:'ᴉ',j:'ɾ',
+  k:'ʞ',l:'l',m:'ɯ',n:'u',o:'o',p:'d',q:'b',r:'ɹ',s:'s',t:'ʇ',
+  u:'n',v:'ʌ',w:'ʍ',x:'x',y:'ʎ',z:'z',
+  A:'∀',B:'ᗺ',C:'Ɔ',D:'ᗡ',E:'Ǝ',F:'Ⅎ',G:'⅁',H:'H',I:'I',J:'ᒋ',
+  K:'ꓘ',L:'⅂',M:'W',N:'N',O:'O',P:'ᑫ',Q:'ᕋ',R:'ᴚ',S:'S',T:'⊥',
+  U:'∩',V:'Λ',W:'M',X:'X',Y:'⅄',Z:'Z',
+  '0':'0','1':'⇂','2':'ᄅ','3':'Ɛ','4':'ᔭ','5':'5','6':'9','7':'ㄥ','8':'8','9':'6',
+  '.':'˙',',':''','?':'¿','!':'¡'
+};
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let curCat   = 'all';
+let favs     = JSON.parse(localStorage.getItem('ft_favs') || '[]');
+let toastTmr = null;
+const PLACEHOLDER = 'Hello World';
+
+// ── Convert ───────────────────────────────────────────────────────────────────
+function convertChar(ch, style) {
+  if (style.transform) {
+    const [type, arg] = style.transform.split(':');
+    if (type === 'combining') return ch + arg;
+    if (type === 'small-caps') return SMALL_CAPS[ch] || ch;
+    if (type === 'superscript') return SUPER_MAP[ch] || ch;
+    if (type === 'upside-down') return FLIP_MAP[ch] || ch;
+    return ch;
+  }
+  const upper = [...style.upper];
+  const lower = style.lower ? [...style.lower] : upper;
+  const digs  = style.digits ? [...style.digits] : null;
+  if (ch >= 'A' && ch <= 'Z') { const i=ch.charCodeAt(0)-65; return upper[i]||ch; }
+  if (ch >= 'a' && ch <= 'z') {
+    if (style.upperOnly) { const i=ch.charCodeAt(0)-97; return upper[i]||ch; }
+    const i=ch.charCodeAt(0)-97; return lower[i]||ch;
+  }
+  if (ch >= '0' && ch <= '9' && digs) { return digs[ch.charCodeAt(0)-48]||ch; }
+  return ch;
+}
+
+function convertText(text, style) {
+  if (!text) return '';
+  const chars = [...text];
+  let result = '';
+  if (style.transform === 'wide')       return chars.join(' ');
+  if (style.transform === 'reverse')    return chars.reverse().join('');
+  if (style.transform === 'upside-down') return chars.map(c=>FLIP_MAP[c]||c).reverse().join('');
+  return chars.map(c => convertChar(c, style)).join('');
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function renderAll() {
+  const raw     = document.getElementById('inp').value;
+  const text    = raw.trim();
+  const display = text || PLACEHOLDER;
+  const query   = document.getElementById('search').value.toLowerCase();
+  const grid    = document.getElementById('results-grid');
+
+  let visible = 0;
+  let html = '';
+
+  STYLES.forEach(s => {
+    const inCat = curCat === 'all' || s.cat === curCat ||
+                  (curCat === 'favs' && favs.includes(s.id));
+    const inSearch = !query || s.name.toLowerCase().includes(query) || s.cat.toLowerCase().includes(query);
+    if (!inCat || !inSearch) return;
+    visible++;
+
+    const converted = convertText(display, s);
+    const isFav     = favs.includes(s.id);
+    const isEmpty   = !text;
+    const chipClass = s.cat === 'bold' ? 'bold' : s.cat === 'symbols' ? 'symbols' : s.cat === 'special' ? 'special' : '';
+
+    html += `
+    <div class="style-card" id="card-${s.id}">
+      <div class="card-top">
+        <span class="cat-chip ${chipClass}">${s.cat}</span>
+        <div class="card-actions">
+          <button class="fav-btn ${isFav?'active':''}" onclick="toggleFav('${s.id}')" title="Favorite">
+            ${isFav?'♥':'♡'}
+          </button>
+        </div>
+      </div>
+      <div class="card-text ${isEmpty?'empty':''}" id="text-${s.id}">${converted}</div>
+      <div class="card-bottom">
+        <span class="style-name">${s.name}</span>
+        <button class="copy-btn" id="btn-${s.id}" onclick="copyStyle('${s.id}')">Copy</button>
+      </div>
+    </div>`;
+  });
+
+  if (visible === 0) {
+    html = `<div class="no-results"><h3>No styles found</h3><p>Try a different search or category.</p></div>`;
+  }
+
+  grid.innerHTML = html;
+  document.getElementById('results-meta').textContent =
+    visible + ' style' + (visible !== 1 ? 's' : '') + (query ? ' matching "' + query + '"' : '');
+  document.getElementById('cnt-favs').textContent = favs.length;
+}
+
+// ── Input events ──────────────────────────────────────────────────────────────
+document.getElementById('inp').addEventListener('input', function() {
+  const len = this.value.length;
+  const el  = document.getElementById('char-count');
+  el.textContent = len + ' / 200';
+  el.className   = len > 190 ? 'over' : len > 150 ? 'warn' : '';
+  renderAll();
+});
+
+// ── Category tabs ─────────────────────────────────────────────────────────────
+document.getElementById('cat-tabs').addEventListener('click', function(e) {
+  const btn = e.target.closest('.cat-tab');
+  if (!btn) return;
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  curCat = btn.dataset.cat;
+  renderAll();
+});
+
+// ── Copy ──────────────────────────────────────────────────────────────────────
+function copyStyle(id) {
+  const el  = document.getElementById('text-' + id);
+  const btn = document.getElementById('btn-' + id);
+  const card = document.getElementById('card-' + id);
+  if (!el) return;
+  const text = el.textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    card.classList.add('flashed');
+    showToast('Copied: ' + text.slice(0, 24) + (text.length > 24 ? '…' : ''));
+    setTimeout(function() {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+      card.classList.remove('flashed');
+    }, 1500);
+  }).catch(function() {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('Copied!');
+  });
+}
+
+function copyAll() {
+  const raw  = document.getElementById('inp').value.trim();
+  const text = raw || PLACEHOLDER;
+  const lines = STYLES
+    .filter(s => curCat === 'all' || s.cat === curCat)
+    .map(s => s.name + ': ' + convertText(text, s));
+  navigator.clipboard.writeText(lines.join('\n')).then(function() {
+    showToast('Copied all ' + lines.length + ' styles!');
+  });
+}
+
+function clearInput() {
+  document.getElementById('inp').value = '';
+  document.getElementById('char-count').textContent = '0 / 200';
+  document.getElementById('char-count').className = '';
+  renderAll();
+}
+
+// ── Favorites ─────────────────────────────────────────────────────────────────
+function toggleFav(id) {
+  const idx = favs.indexOf(id);
+  if (idx === -1) favs.push(id);
+  else favs.splice(idx, 1);
+  localStorage.setItem('ft_favs', JSON.stringify(favs));
+  renderAll();
+}
+
+// ── Toast ─────────────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTmr);
+  toastTmr = setTimeout(function() { t.classList.remove('show'); }, 2000);
+}
+
+// ── Language dropdown ─────────────────────────────────────────────────────────
+function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
+
+// ── Theme ─────────────────────────────────────────────────────────────────────
+function toggleTheme() {
+  const isDark = document.documentElement.dataset.theme === 'dark';
+  document.documentElement.dataset.theme = isDark ? 'light' : 'dark';
+  localStorage.setItem('kactyl_theme', isDark ? 'light' : 'dark');
+  updateThemeUI(isDark ? 'light' : 'dark');
+}
+function updateThemeUI(t) {
+  const isDark = t === 'dark';
+  const lbl  = document.getElementById('tlbl');
+  const icon = document.getElementById('theme-icon');
+  const tr   = document.getElementById('tt');
+  const th   = document.getElementById('th');
+  if (lbl)  lbl.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
+  if (icon) icon.src = isDark
+    ? '../images/Icon-dark mode-Clavierarabe-enligne.svg'
+    : '../images/Icon-white mode-Clavierarabe-enligne.svg';
+  if (tr) tr.classList.toggle('on', isDark);
+  if (th) th.classList.toggle('on', isDark);
+}
+(function() {
+  const saved = localStorage.getItem('kactyl_theme');
+  if (saved) {
+    document.documentElement.dataset.theme = saved;
+    updateThemeUI(saved);
+  }
+})();
+
+// ── Mobile tools dropdown ─────────────────────────────────────────────────────
+(function() {
+  var btns = document.querySelectorAll('.tools-btn');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var wrap = btn.closest('.tools-wrap');
+      var isOpen = wrap.classList.contains('open');
+      document.querySelectorAll('.tools-wrap.open').forEach(function(w) { w.classList.remove('open'); });
+      if (!isOpen) wrap.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.tools-wrap.open').forEach(function(w) { w.classList.remove('open'); });
+  });
+})();
+
+// ── Scroll-hide header ────────────────────────────────────────────────────────
+(function() {
+  var hdr = document.querySelector('header'), lastY = window.scrollY;
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if(y > lastY && y > 10) hdr.classList.add('hdr-hidden');
+    else hdr.classList.remove('hdr-hidden');
+    lastY = y;
+  });
+})();
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+renderAll();
+</script>
+</body>
+</html>
