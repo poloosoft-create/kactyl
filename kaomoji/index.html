@@ -68,7 +68,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:auto;flex-wrap:wrap}
   background:var(--surface);border:1px solid var(--border);border-radius:14px;
   padding:8px;min-width:210px;flex-direction:column;gap:2px;
   box-shadow:0 12px 40px var(--shadow);z-index:200}
-.tools-wrap:hover .tools-drop,.tools-wrap.open .tools-drop{display:flex}
+@media(hover:hover){.tools-wrap:hover .tools-drop{display:flex}}.tools-wrap.open .tools-drop{display:flex}
 .tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;
   text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:background .15s}
 .tools-item:hover{background:var(--border)}
