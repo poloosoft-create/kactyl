@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-13B2Z80B92"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-13B2Z80B92');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="apple-touch-icon" href="/images/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <title>Invisible Character Copy Paste ⬜ Blank Text for Any Platform</title>
+  <meta name="description" content="Copy invisible characters and blank text for WhatsApp, Discord, PUBG, Free Fire, Roblox, and more. Zero-width spaces, Hangul filler, and blank Unicode chars. Click to copy instantly.">
+  <link rel="canonical" href="https://kactyl.com/invisible-character/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kactyl.com/invisible-character/">
+  <meta property="og:title" content="Invisible Character Copy Paste — Blank Text for Any Platform">
+  <meta property="og:description" content="Copy invisible characters and blank text for WhatsApp, Discord, PUBG, Free Fire, Roblox, and more.">
+  <meta property="og:image" content="https://kactyl.com/images/og-preview.png">
+  <meta property="og:site_name" content="Kactyl">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Invisible Character Copy Paste">
+  <meta name="twitter:description" content="Copy invisible characters for WhatsApp, Discord, PUBG, Free Fire, Roblox and more.">
+  <meta name="twitter:image" content="https://kactyl.com/images/og-preview.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Invisible Character Copy Paste","description":"Copy invisible characters and blank text for WhatsApp, Discord, PUBG, Free Fire, Roblox, and more.","url":"https://kactyl.com/invisible-character/","publisher":{"@type":"Organization","name":"Kactyl","url":"https://kactyl.com"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kactyl.com/"},{"@type":"ListItem","position":2,"name":"Invisible Character","item":"https://kactyl.com/invisible-character/"}]}
+  </script>
+  <style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { overflow-x:clip; max-width:100%; }
+button { cursor:pointer; font-family:inherit; border:none; background:none; }
+:root {
+  --blue:#0068ff; --purple:#7C3AED; --green:#059669; --teal:#0891b2;
+  --bg:#EDF0F8; --surface:#FFFFFF; --border:#DDE3EE; --shadow:rgba(15,23,42,.07);
+  --nav:#0F172A; --text:#1E293B; --muted:#64748B; --r:16px; --rs:10px;
+}
+[data-theme="dark"] { --bg:#0F172A; --surface:#1E293B; --border:#334155; --shadow:rgba(0,0,0,.22); --text:#F1F5F9; --muted:#94A3B8; }
+body { font-family:'Inter',sans-serif; background:#fff; color:var(--text); min-height:100vh; transition:background .3s,color .3s; overflow-x:clip; }
+[data-theme="dark"] body { background:#07091A; }
+a { color:inherit; text-decoration:none; }
+.bg-shapes { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+.s { position:absolute; border-radius:50%; filter:blur(60px); }
+header { background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s; }
+header.hdr-hidden { transform:translateY(-100%); }
+[data-theme="dark"] header { background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06); }
+.logo { display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0; }
+.logo-img { height:200px;width:auto;display:block; }
+nav { display:flex;align-items:center;gap:4px; }
+.nav-link { color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s; }
+.nav-link:hover { background:var(--border); }
+[data-theme="dark"] .nav-link { color:#E2E8F0; }
+.tools-wrap { position:relative; }
+.tools-btn { cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;display:flex;align-items:center;gap:4px; }
+.tools-btn:hover { background:var(--border); }
+[data-theme="dark"] .tools-btn { color:#E2E8F0; }
+.tools-drop { display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 6px 6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px; }
+.tools-wrap.open .tools-drop { display:flex; }
+.tools-item { display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s; }
+.tools-item:hover { background:var(--border); }
+.tools-item .t-icon { width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center; }
+.tools-coming { font-size:10px;font-weight:700;color:#fff;background:var(--blue);border-radius:4px;padding:1px 5px;margin-left:auto;flex-shrink:0; }
+.theme-wrap { display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none; }
+.t-track { width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s; }
+.t-track.on { background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12); }
+.t-thumb { width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center; }
+.t-thumb.on { left:21px; }
+.t-lbl { font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap; }
+.wrap { max-width:860px;margin:0 auto;padding:0 24px;position:relative;z-index:1; }
+.page-hero { padding:56px 0 40px;text-align:center; }
+.hero-badge { display:inline-flex;align-items:center;gap:7px;border:1px solid;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.3px; }
+.page-hero h1 { font-size:clamp(28px,4.5vw,52px);font-weight:800;letter-spacing:-.8px;line-height:1.12;background:linear-gradient(180deg,#0A0A0A 0%,#64748B 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px; }
+[data-theme="dark"] .page-hero h1 { background:linear-gradient(180deg,#F1F5F9 0%,#94A3B8 100%);-webkit-background-clip:text;background-clip:text; }
+.hero-sub { font-size:16px;color:var(--muted);max-width:520px;margin:0 auto; }
+/* Tool card */
+.tool-about { padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:32px; }
+[data-theme="dark"] .tool-about { background:rgba(255,255,255,.04); }
+.tool-about h2 { font-size:18px;font-weight:700;margin-bottom:14px; }
+.tool-about p { font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:10px; }
+.tool-about p:last-child { margin-bottom:0; }
+.tool-about p strong { color:var(--text); }
+/* FAQ */
+.tool-faq { margin-bottom:48px; }
+.tool-faq > h2 { font-size:18px;font-weight:700;margin-bottom:16px; }
+.tool-faq details { border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden; }
+.tool-faq details summary { padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center; }
+.tool-faq details summary::-webkit-details-marker { display:none; }
+.tool-faq details summary::after { content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s; }
+.tool-faq details[open] summary::after { transform:rotate(45deg); }
+.tool-faq details[open] summary { color:var(--accent); }
+.tool-faq .faq-ans { padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted); }
+/* Toast */
+.toast { position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#1E293B;color:#fff;font-size:14px;font-weight:600;padding:10px 22px;border-radius:99px;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;z-index:999; }
+[data-theme="dark"] .toast { background:#F1F5F9;color:#0F172A; }
+.toast.show { opacity:1;transform:translateX(-50%) translateY(0); }
+/* Footer */
+footer { background:var(--nav);color:#94A3B8;padding:56px 28px 32px;margin-top:80px; }
+.ft-inner { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px; }
+.ft-brand { display:flex;flex-direction:column;gap:14px; }
+.ft-logo { display:flex;align-items:center;gap:10px; }
+.ft-ic { width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center; }
+.ft-name { font-size:17px;font-weight:800;color:#F1F5F9; }
+.ft-tagline { font-size:13px;line-height:1.6; }
+.ft-badges { display:flex;gap:8px;flex-wrap:wrap; }
+.ft-badge { font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px; }
+.ft-badge.g { background:rgba(5,150,105,.2);color:#34D399; }
+.ft-badge.b { background:rgba(0,104,255,.2);color:#60A5FA; }
+.ft-col h4 { font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748B;margin-bottom:12px; }
+.ft-h4-gap { margin-top:24px; }
+.ft-legal { display:flex;flex-direction:column;gap:8px; }
+.ft-legal a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-legal a:hover { color:#F1F5F9; }
+.ft-kb-grid { display:grid;grid-template-columns:1fr 1fr;gap:6px 16px; }
+.ft-kb-grid a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-kb-grid a:hover { color:#F1F5F9; }
+.ft-bottom { max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px; }
+.ft-copy { font-size:12px;color:#475569; }
+@media(max-width:700px) { .ft-inner{grid-template-columns:1fr} header{height:60px;padding:0 16px} .logo-img{height:140px} .t-lbl{display:none} nav .nav-link{display:none} }
+:root { --accent:#7C3AED; --accent-glow:rgba(124,58,237,.08); }
+.s1 { width:600px;height:600px;background:rgba(124,58,237,.12);top:10%;left:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+.s2 { width:500px;height:500px;background:rgba(99,102,241,.10);top:40%;right:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+[data-theme="dark"] .s1 { background:rgba(124,58,237,.28); }
+[data-theme="dark"] .s2 { background:rgba(99,102,241,.24); }
+.hero-badge { background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#7C3AED; }
+[data-theme="dark"] .hero-badge { background:rgba(124,58,237,.18);color:#a78bfa; }
+
+/* Main copy box */
+.inv-main { background:var(--surface);border:2px solid rgba(124,58,237,.25);border-radius:20px;padding:40px;text-align:center;margin-bottom:40px;transition:border-color .2s; }
+.inv-main:hover { border-color:rgba(124,58,237,.5); }
+[data-theme="dark"] .inv-main { background:rgba(255,255,255,.04); }
+.inv-main-label { font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px; }
+.inv-main-btn { display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#7C3AED,#a855f7);color:#fff;font-size:18px;font-weight:700;padding:18px 40px;border-radius:14px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 20px rgba(124,58,237,.35); }
+.inv-main-btn:hover { transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,58,237,.45); }
+.inv-main-btn:active { transform:scale(.97); }
+.inv-main-sub { font-size:13px;color:var(--muted);margin-top:14px; }
+
+/* Generator */
+.inv-gen { background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:40px; }
+[data-theme="dark"] .inv-gen { background:rgba(255,255,255,.04); }
+.inv-gen h2 { font-size:16px;font-weight:700;margin-bottom:16px; }
+.inv-gen-row { display:flex;gap:12px;align-items:center;flex-wrap:wrap; }
+.inv-gen-row label { font-size:14px;color:var(--muted);font-weight:500; }
+.inv-count-input { width:90px;padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-weight:600;background:var(--bg);color:var(--text);text-align:center;transition:border-color .2s; }
+.inv-count-input:focus { outline:none;border-color:#7C3AED; }
+[data-theme="dark"] .inv-count-input { background:rgba(255,255,255,.06); }
+.inv-gen-btn { background:#7C3AED;color:#fff;font-size:14px;font-weight:700;padding:10px 22px;border-radius:10px;border:none;cursor:pointer;transition:background .15s; }
+.inv-gen-btn:hover { background:#6d28d9; }
+.inv-char-select { padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;background:var(--bg);color:var(--text);cursor:pointer; }
+[data-theme="dark"] .inv-char-select { background:rgba(255,255,255,.06); }
+
+/* Character grid */
+.inv-grid-wrap h2 { font-size:18px;font-weight:700;margin-bottom:16px; }
+.inv-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:40px; }
+.inv-card { background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:18px;cursor:pointer;transition:border-color .18s,transform .15s,box-shadow .15s;display:flex;flex-direction:column;gap:8px; }
+.inv-card:hover { border-color:#7C3AED;transform:translateY(-2px);box-shadow:0 6px 20px rgba(124,58,237,.12); }
+[data-theme="dark"] .inv-card { background:rgba(255,255,255,.04); }
+.inv-card-name { font-size:14px;font-weight:700;color:var(--text); }
+.inv-card-code { font-size:12px;font-family:monospace;color:#7C3AED;font-weight:600; }
+.inv-card-works { font-size:12px;color:var(--muted);line-height:1.5; }
+.inv-card-copy { font-size:12px;font-weight:700;color:#7C3AED;margin-top:4px; }
+
+/* Use-case badges */
+.use-cases { display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px; }
+.uc-badge { display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.15);border-radius:99px;padding:7px 14px;font-size:13px;font-weight:600;color:#7C3AED; }
+
+@media(max-width:600px) { .inv-main-btn{ font-size:15px;padding:14px 28px; } .inv-gen-row{ flex-direction:column;align-items:flex-start; } }
+  
+/* ── Canonical Header CSS ── */
+header{background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s}
+header.hdr-hidden{transform:translateY(-100%)}
+[data-theme="dark"] header{background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-img{height:200px;width:auto;display:block}
+nav{display:flex;align-items:center;gap:4px}
+.nav-link{padding:6px 12px;border-radius:6px;text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
+.nav-link:hover{background:var(--border)}
+[data-theme="dark"] .nav-link{color:var(--nav-txt)}
+[data-theme="dark"] .nav-link:hover{background:rgba(255,255,255,.1)}
+.tools-wrap{position:relative}
+.tools-btn{cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.tools-btn:hover{background:var(--border)}
+[data-theme="dark"] .tools-btn{color:var(--nav-txt)}
+[data-theme="dark"] .tools-btn:hover{background:rgba(255,255,255,.1)}
+.tools-drop{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 6px 6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px}
+.tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
+.tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s;white-space:nowrap}
+.tools-item:hover{background:var(--border)}
+.tools-item .t-icon{width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center}
+.theme-wrap{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
+.t-track{width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s}
+.t-track.on{background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12)}
+.t-thumb{width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center}
+.t-thumb.on{left:21px}
+.t-lbl{font-size:11px;font-weight:600;color:var(--muted);line-height:1.1;white-space:nowrap}
+.lang-wrap{position:relative}
+.lang-pill{display:flex;align-items:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s}
+.lang-pill:hover{border-color:var(--blue)}
+[data-theme="dark"] .lang-pill{color:var(--nav-txt);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+.lang-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px var(--shadow);min-width:140px;overflow:hidden;z-index:400}
+.lang-menu.show{display:block}
+.lang-opt{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s}
+.lang-opt:hover{background:var(--bg)}
+.lang-opt.active{color:var(--blue);font-weight:600}
+@media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+/* ── Canonical Footer CSS ── */
+footer{background:#07091A;border-top:none;padding:0}
+.ft-inner{max-width:1000px;margin:0 auto;padding:56px 28px 44px;display:grid;grid-template-columns:200px 1fr 150px 130px;gap:40px;align-items:start}
+.ft-brand{display:flex;flex-direction:column;gap:14px}
+.ft-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.ft-ic{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-ic img{width:48px;height:48px;opacity:1;filter:drop-shadow(0 0 14px rgba(255,23,54,.5)) drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+.ft-name{font-size:15px;font-weight:800;color:#F1F5F9}
+.ft-tagline{font-size:13px;color:#94A3B8;line-height:1.7}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ft-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
+.ft-badge.g{background:rgba(5,150,105,.12);color:#34D399;border:1px solid rgba(5,150,105,.18)}
+.ft-badge.b{background:rgba(0,104,255,.12);color:#60A5FA;border:1px solid rgba(0,104,255,.18)}
+.ft-social{display:flex;gap:8px;margin-top:2px}
+.ft-soc-link{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;color:#94A3B8;text-decoration:none;transition:background .2s,color .2s}
+.ft-soc-link:hover{background:rgba(0,104,255,.20);border-color:rgba(0,104,255,.40);color:#60A5FA}
+.ft-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:#64748B;margin-bottom:14px}
+.ft-col h4.ft-h4-gap{margin-top:22px}
+.ft-kb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}
+.ft-kb-grid a,.ft-legal a{font-size:13px;color:#CBD5E1;text-decoration:none;padding:5px 0;display:block;transition:color .15s}
+.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}
+.ft-legal{display:flex;flex-direction:column}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;gap:12px}
+.ft-copy{font-size:11px;color:#64748B}
+.ft-bottom-links{display:flex;align-items:center;gap:16px}
+.ft-bottom-links a{font-size:11px;color:#64748B;text-decoration:none;transition:color .15s}
+.ft-bottom-links a:hover{color:#94A3B8}
+@media(max-width:860px){.ft-inner{grid-template-columns:200px 1fr 130px}.ft-inner .ft-col:last-child{grid-column:2;grid-row:2}}
+@media(max-width:640px){.ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px}.ft-brand{grid-column:1/-1}.ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px}.ft-bottom-links{flex-wrap:wrap;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="bg-shapes"><div class="s1"></div><div class="s2"></div></div>
+
+<header>
+  <a class="logo" href="/home.html">
+    <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
+  </a>
+  <nav>
+    <a href="/home.html" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+    <div class="tools-wrap">
+      <button class="tools-btn">Tools &#9662;</button>
+      <div class="tools-drop">
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+      </div>
+    </div>
+    <div class="lang-wrap">
+      <button class="lang-pill" id="lang-btn" onclick="toggleLang()">🇺🇸 English ▾</button>
+      <div class="lang-menu" id="lang-menu">
+        <div class="lang-opt active">🇺🇸 English</div>
+        <div class="lang-opt">🇫🇷 Français</div>
+        <div class="lang-opt">🇸🇦 العربية</div>
+      </div>
+    </div>
+    <div class="theme-wrap" onclick="toggleTheme()">
+      <div class="t-track" id="tt">
+        <div class="t-thumb" id="th"><img id="theme-icon" src="../images/Icon-white mode-Clavierarabe-enligne.svg" alt="" width="13" height="13"></div>
+      </div>
+      <div class="t-lbl" id="tlbl">White<br>Mode</div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-hero">
+      <div class="hero-badge">⬜ Invisible Character</div>
+      <h1>Invisible Character<br>Copy & Paste</h1>
+      <p class="hero-sub">Copy blank invisible text for WhatsApp, Discord, PUBG, Free Fire, Roblox, and any platform. Click once — it's on your clipboard.</p>
+    </div>
+
+    <!-- Main copy button -->
+    <div class="inv-main">
+      <div class="inv-main-label">Most Compatible — Hangul Filler (U+3164)</div>
+      <button class="inv-main-btn" onclick="copyMain()">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="8" y="8" width="11" height="11" rx="2.5" stroke="white" stroke-width="1.8"/><path d="M5 14H4a1 1 0 01-1-1V4a1 1 0 011-1h9a1 1 0 011 1v1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Copy Invisible Character
+      </button>
+      <div class="inv-main-sub">Works on WhatsApp · Discord · PUBG · Free Fire · Roblox · Instagram · TikTok</div>
+    </div>
+
+    <!-- Generator -->
+    <div class="inv-gen">
+      <h2>Generate Multiple Invisible Characters</h2>
+      <div class="inv-gen-row">
+        <label for="inv-count">How many:</label>
+        <input class="inv-count-input" type="number" id="inv-count" value="10" min="1" max="5000">
+        <label for="inv-type">Type:</label>
+        <select class="inv-char-select" id="inv-type">
+          <option value="&#x3164;">Hangul Filler (recommended)</option>
+          <option value="&#x200B;">Zero Width Space</option>
+          <option value="&#x2800;">Braille Blank</option>
+          <option value="&#x00A0;">Non-Breaking Space</option>
+        </select>
+        <button class="inv-gen-btn" onclick="generateAndCopy()">Generate & Copy</button>
+      </div>
+    </div>
+
+    <!-- Use cases -->
+    <div class="use-cases">
+      <span class="uc-badge">💬 Blank WhatsApp message</span>
+      <span class="uc-badge">🎮 Invisible PUBG name</span>
+      <span class="uc-badge">🔥 Free Fire blank username</span>
+      <span class="uc-badge">🟦 Discord blank nickname</span>
+      <span class="uc-badge">🎲 Roblox invisible name</span>
+      <span class="uc-badge">📱 Instagram blank bio line</span>
+      <span class="uc-badge">🎵 TikTok blank username</span>
+    </div>
+
+    <!-- Character types grid -->
+    <div class="inv-grid-wrap">
+      <h2>All Invisible Character Types</h2>
+      <div class="inv-grid">
+        <div class="inv-card" onclick="copyChar('&#x3164;','Hangul Filler')">
+          <div class="inv-card-name">Hangul Filler</div>
+          <div class="inv-card-code">U+3164</div>
+          <div class="inv-card-works">Best for gaming usernames. Works in PUBG Mobile, Free Fire, Roblox. Renders as a full-width blank space.</div>
+          <div class="inv-card-copy">↗ Click to copy</div>
+        </div>
+        <div class="inv-card" onclick="copyChar('&#x200B;','Zero Width Space')">
+          <div class="inv-card-name">Zero Width Space</div>
+          <div class="inv-card-code">U+200B</div>
+          <div class="inv-card-works">Takes no visible space. Works in Discord, Telegram, Twitter. Used for invisible line breaks and separators.</div>
+          <div class="inv-card-copy">↗ Click to copy</div>
+        </div>
+        <div class="inv-card" onclick="copyChar('&#x2800;','Braille Pattern Blank')">
+          <div class="inv-card-name">Braille Pattern Blank</div>
+          <div class="inv-card-code">U+2800</div>
+          <div class="inv-card-works">Looks blank but is a real Braille character. Popular on TikTok usernames and Instagram bios.</div>
+          <div class="inv-card-copy">↗ Click to copy</div>
+        </div>
+        <div class="inv-card" onclick="copyChar('&#x00A0;','Non-Breaking Space')">
+          <div class="inv-card-name">Non-Breaking Space</div>
+          <div class="inv-card-code">U+00A0</div>
+          <div class="inv-card-works">Standard invisible space from HTML. Works for blank WhatsApp messages and empty lines in bios.</div>
+          <div class="inv-card-copy">↗ Click to copy</div>
+        </div>
+        <div class="inv-card" onclick="copyChar('&#x200C;','Zero Width Non-Joiner')">
+          <div class="inv-card-name">Zero Width Non-Joiner</div>
+          <div class="inv-card-code">U+200C</div>
+          <div class="inv-card-works">Used in Arabic and Persian typography to prevent letter joining. Also functions as invisible filler text.</div>
+          <div class="inv-card-copy">↗ Click to copy</div>
+        </div>
+        <div class="inv-card" onclick="copyChar('&#x2060;','Word Joiner')">
+          <div class="inv-card-name">Word Joiner</div>
+          <div class="inv-card-code">U+2060</div>
+          <div class="inv-card-works">Invisible, zero-width, and prevents line breaks. Safe in most modern apps and messaging platforms.</div>
+          <div class="inv-card-copy">↗ Click to copy</div>
+        </div>
+        <div class="inv-card" onclick="copyChar('&#x200D;','Zero Width Joiner')">
+          <div class="inv-card-name">Zero Width Joiner</div>
+          <div class="inv-card-code">U+200D</div>
+          <div class="inv-card-works">Used to combine emoji (skin tones, family emoji). As standalone text, renders invisibly in most contexts.</div>
+          <div class="inv-card-copy">↗ Click to copy</div>
+        </div>
+        <div class="inv-card" onclick="copyChar('&#xFEFF;','Zero Width No-Break Space')">
+          <div class="inv-card-name">Zero Width No-Break Space</div>
+          <div class="inv-card-code">U+FEFF</div>
+          <div class="inv-card-works">Originally the Byte Order Mark (BOM). As standalone text, renders as an invisible zero-width character.</div>
+          <div class="inv-card-copy">↗ Click to copy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="tool-about">
+      <h2>About Invisible Characters</h2>
+      <p>Invisible characters are real Unicode characters that take up space (or no space) in text but render as completely blank to the human eye. They're not spaces — they're distinct Unicode codepoints with specific technical purposes, which is why they bypass filters that block regular spaces in usernames, bios, and message fields.</p>
+      <p>The most popular invisible character for gaming is the <strong>Hangul Filler (U+3164)</strong> — a full-width blank character from the Korean Hangul Unicode block that was originally used as a placeholder in Korean text processing. Games like PUBG Mobile, Free Fire, and Roblox allow Hangul Filler in usernames because it passes their character validation as a legitimate Unicode character, making your name appear completely blank to other players.</p>
+      <p>For messaging apps like WhatsApp and Telegram, a <strong>Non-Breaking Space (U+00A0)</strong> or <strong>Zero Width Space (U+200B)</strong> sends a "blank" message that doesn't trigger the empty-message check. For Instagram and TikTok bios, the <strong>Braille Pattern Blank (U+2800)</strong> creates invisible line spacing without the platform collapsing the empty lines. Each platform has quirks — which character works depends on how the platform validates input.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="tool-faq">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>How do I send a blank WhatsApp message?</summary>
+        <div class="faq-ans">Copy the Non-Breaking Space (U+00A0) or the Hangul Filler (U+3164) from this page, paste it into your WhatsApp message field, and send. WhatsApp checks that a message isn't "empty" using its own logic — these Unicode characters register as content, bypassing that check. The recipient sees a blank message.</div>
+      </details>
+      <details>
+        <summary>Which invisible character works for PUBG and Free Fire names?</summary>
+        <div class="faq-ans">The Hangul Filler (U+3164) is the most reliable for PUBG Mobile, Free Fire, and similar mobile games. Copy it from the main button at the top of this page. Some games require multiple copies — use the generator to create 3–5 characters and paste them as your username. If one character type doesn't work, try the Braille Pattern Blank (U+2800) as an alternative.</div>
+      </details>
+      <details>
+        <summary>Is using invisible characters allowed in games?</summary>
+        <div class="faq-ans">Most games don't explicitly ban invisible character usernames, since they pass standard character validation. However, game policies vary — some games may reset blank usernames in future updates. Using invisible characters in usernames is widespread and generally tolerated, but check your specific game's terms of service if you're concerned.</div>
+      </details>
+      <details>
+        <summary>Why doesn't copy-paste work when I try to copy an invisible character manually?</summary>
+        <div class="faq-ans">Invisible characters can't be selected by eye — you can't see where they are to double-click them. Clicking any card on this page programmatically copies the exact Unicode character to your clipboard using the Clipboard API, ensuring you get the right character without accidentally copying surrounding content or missing the character entirely.</div>
+      </details>
+      <details>
+        <summary>What is the difference between a space (U+0020) and an invisible character?</summary>
+        <div class="faq-ans">A regular space (U+0020 Space) is filtered out by most platforms' "field is empty" checks — you can't send a WhatsApp message with only spaces, and most games reject usernames with only spaces. Invisible Unicode characters like U+3164 and U+200B are different codepoints that pass these filters because the platform doesn't recognize them as "space." They look identical to spaces but behave differently technically.</div>
+      </details>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a class="ft-logo" href="/"><div class="ft-ic"><img loading="lazy" src="../images/favicon.svg" alt="Kactyl" width="36" height="36"></div><span class="ft-name">Kactyl</span></a>
+      <div class="ft-tagline">Type any language from any device.<br>No download. No account.</div>
+      <div class="ft-badges"><span class="ft-badge g">✓ 100% Free</span><span class="ft-badge b">⚡ No Install</span></div>
+      <div class="ft-social">
+        <a href="https://x.com/kactyl" class="ft-soc-link" aria-label="X / Twitter" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
+        <a href="https://instagram.com/kactyl" class="ft-soc-link" aria-label="Instagram" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://youtube.com/@kactyl" class="ft-soc-link" aria-label="YouTube" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://tiktok.com/@kactyl" class="ft-soc-link" aria-label="TikTok" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Keyboards</h4>
+      <div class="ft-kb-grid">
+        <a href="/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
+        <a href="/japanese/">Japanese</a><a href="/chinese/">Chinese</a><a href="/turkish/">Turkish</a><a href="/russian/">Russian</a>
+        <a href="/greek/">Greek</a><a href="/thai/">Thai</a><a href="/vietnamese/">Vietnamese</a><a href="/amharic/">Amharic</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Tools</h4>
+      <div class="ft-legal">
+        <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+      </div>
+      <h4 class="ft-h4-gap">Company</h4>
+      <div class="ft-legal">
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Legal</h4>
+      <div class="ft-legal">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
+        <a href="/cookies.html">Cookie Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2026 Kactyl. All rights reserved.</span>
+    <div class="ft-bottom-links">
+      <a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a>
+      <a href="/cookies.html">Cookies</a><a href="/sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+const MAIN_CHAR = '\u3164';
+
+function copyMain() {
+  copyText(MAIN_CHAR);
+}
+
+function copyChar(ch, name) {
+  copyText(ch);
+}
+
+function generateAndCopy() {
+  const count = Math.min(5000, Math.max(1, parseInt(document.getElementById('inv-count').value) || 1));
+  const type = document.getElementById('inv-type').value;
+  copyText(type.repeat(count));
+}
+
+
+function loadTheme(){const t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){if(t==='dark'){tr.classList.add('on');th.classList.add('on');}}}
+function toggleTheme(){const cur=document.documentElement.getAttribute('data-theme')||'light';const next=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('theme',next);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){tr.classList.toggle('on',next==='dark');th.classList.toggle('on',next==='dark');}}
+function showToast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
+function copyText(text){navigator.clipboard.writeText(text).then(()=>showToast('Copied!')).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('Copied!');});}
+(function(){
+  const hdr=document.querySelector('header');
+  let last=0;
+  window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>last&&y>80)hdr.classList.add('hdr-hidden');else hdr.classList.remove('hdr-hidden');last=y;},{passive:true});
+  document.querySelectorAll('.tools-btn').forEach(btn=>{
+    btn.addEventListener('click',e=>{e.stopPropagation();btn.closest('.tools-wrap').classList.toggle('open');});
+  });
+  document.addEventListener('click',()=>document.querySelectorAll('.tools-wrap.open').forEach(w=>w.classList.remove('open')));
+})();
+loadTheme();
+</script>
+</body>
+</html>
