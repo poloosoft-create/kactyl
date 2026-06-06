@@ -130,10 +130,24 @@ nav { display:flex;align-items:center;gap:4px; }
 [data-theme="dark"] .sym-btn { background:rgba(8,145,178,.10);border-color:rgba(8,145,178,.22); }
 [data-theme="dark"] .sym-btn:hover { background:rgba(8,145,178,.25);border-color:rgba(8,145,178,.45); }
 
-/* SEO block */
-.seo-block { padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:40px; }
-[data-theme="dark"] .seo-block { background:rgba(255,255,255,.04); }
-.seo-block p { font-size:15px;color:var(--muted);line-height:1.75; }
+/* About section */
+.sym-about{padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:40px}
+[data-theme="dark"] .sym-about{background:rgba(255,255,255,.04)}
+.sym-about h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.sym-about p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+.sym-about p:last-child{margin-bottom:0}
+.sym-about p strong{color:var(--text)}
+/* FAQ section */
+.sym-faq{margin-bottom:48px}
+.sym-faq>h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.sym-faq details{border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.sym-faq details summary{padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center}
+.sym-faq details summary::-webkit-details-marker{display:none}
+.sym-faq details summary::after{content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s}
+.sym-faq details[open] summary::after{transform:rotate(45deg)}
+.sym-faq details[open] summary{color:#0891b2}
+.sym-faq .faq-ans{padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted)}
+[data-theme="dark"] .sym-faq details{background:rgba(255,255,255,.02)}
 
 /* Related */
 .related-sec { margin-bottom:60px; }
@@ -239,7 +253,7 @@ footer { background:#07091A;border-top:none;padding:0; }
 @media(max-width:860px) { .sym-grid{grid-template-columns:repeat(6,1fr)} .hub-grid{grid-template-columns:repeat(3,1fr)} .ft-inner{grid-template-columns:200px 1fr 130px} .ft-inner .ft-col:last-child{grid-column:2;grid-row:2} }
 @media(max-width:640px) { .sym-grid{grid-template-columns:repeat(5,1fr)} .hub-grid{grid-template-columns:repeat(2,1fr)} .related-grid{grid-template-columns:repeat(2,1fr)} .ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px} .ft-brand{grid-column:1/-1} .ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px} .ft-bottom-links{flex-wrap:wrap;justify-content:center} }
 @media(max-width:420px) { .sym-grid{grid-template-columns:repeat(4,1fr)} .sym-btn{height:48px;font-size:20px} }
-  @media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+@media(max-width:640px){header{padding:0 12px}.nav-link{display:none}.t-lbl{display:none}}
   </style>
 </head>
 <body>
@@ -247,20 +261,20 @@ footer { background:#07091A;border-top:none;padding:0; }
 <div class="top-aura"></div>
 
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
-            <nav>
-    <a href="/home.html" class="nav-link">Home</a>
-    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+  <nav>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link">Keyboards</a>
     <div class="tools-wrap">
-      <button class="tools-btn">Tools &#9662;</button>
+      <button class="tools-btn">Tools ▾</button>
       <div class="tools-drop">
         <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
-        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
-        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
-        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
-        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text <span class="tools-coming">SOON</span></a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji <span class="tools-coming">SOON</span></a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Invisible Char <span class="tools-coming">SOON</span></a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Zalgo Text <span class="tools-coming">SOON</span></a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -365,9 +379,12 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </div>
 
-    <div class="seo-block">
-      <p>Heart symbols and love symbols for copy and paste. These heart text symbols work on every platform — WhatsApp, Instagram, TikTok, Twitter, and in usernames. From the classic Unicode heart ♥ to emoji hearts 💕, click any symbol to instantly copy it to your clipboard.</p>
-    </div>
+    <section class="sym-about">
+      <h2>About Heart Symbol</h2>
+      <p>The heart shape has symbolized love and emotion for centuries, but its Unicode journey began in 1993 with the first Unicode standard. The fundamental heart suit ♥ (U+2665) originated from the Playing Cards block — the same character used in card games worldwide. It was followed by the decorative Dingbats hearts: ❤ (U+2764 Heavy Black Heart), ❥ (U+2765 Rotated Heavy Black Heart Bullet), and the ornamental ❦ (U+2766 Floral Heart), designed as typographic flourishes for use in printed books.</p>
+      <p>Modern platforms have expanded heart language dramatically. Each color variant carries a distinct emotional signal — red ❤ for passionate love, orange 🧡 for warmth and friendship, yellow 💛 for happiness, green 💚 for envy or nature, blue 💙 for trust, purple 💜 for spirituality, black 🖤 for dark aesthetics, and the broken heart 💔 for loss. This color system developed organically through social media use, not official Unicode intent.</p>
+      <p>Unlike emoji hearts that depend on each platform's renderer (Apple, Google, and Samsung all draw them differently), the classic Unicode text hearts ♥ ♡ render using your device's system font — making them consistent across every operating system, browser, and app. This makes them especially reliable for usernames, bios, and decorative text where visual consistency matters.</p>
+    </section>
 
     <div class="uref-wrap">
       <h2>Heart Symbol Unicode Codes</h2>
@@ -382,6 +399,26 @@ footer { background:#07091A;border-top:none;padding:0; }
         </tbody>
       </table>
     </div>
+
+    <section class="sym-faq">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>What is the difference between ♥ and ❤?</summary>
+        <div class="faq-ans">♥ (U+2665) is a text symbol from the Playing Cards Unicode block — it renders as a solid heart in your system's current font. ❤ (U+2764) is the Heavy Black Heart from the Dingbats block, slightly larger and bolder. On most platforms ❤ also has a red emoji variant (❤️ with variation selector U+FE0F), while ♥ remains a pure text character.</div>
+      </details>
+      <details>
+        <summary>Can I use heart symbols in usernames and social media bios?</summary>
+        <div class="faq-ans">Yes. Unicode heart symbols like ♥ ♡ work in Instagram bios, Twitter bios, TikTok usernames, Discord usernames, and most platforms. The classic ♥ and ♡ are the safest — they're part of the base Unicode standard supported everywhere. Some platforms filter emoji but allow text symbols.</div>
+      </details>
+      <details>
+        <summary>How do I type a heart symbol on a keyboard?</summary>
+        <div class="faq-ans">On Windows, press Win + . to open the emoji panel and search "heart," or hold Alt and type 3 on the numpad for ♥. On Mac, press Ctrl + Cmd + Space to open Character Viewer and search "heart." The fastest method is to bookmark this page and click any symbol to copy it instantly.</div>
+      </details>
+      <details>
+        <summary>Why does the red heart emoji look different on iPhone vs Android?</summary>
+        <div class="faq-ans">❤️ is rendered by each platform's own emoji font — Apple, Google, and Samsung all designed their own version of the same Unicode codepoint (U+2764 + U+FE0F). The underlying character is identical; only the visual rendering differs. Text hearts like ♥ avoid this issue since they use your system's body font.</div>
+      </details>
+    </section>
 
     <section class="related-sec">
       <h2>Related Symbols</h2>
@@ -548,9 +585,6 @@ document.querySelectorAll('.sym-btn').forEach(function(b) {
     lastY = y;
   }, { passive: true });
 })();
-loadTheme();
-</script>
-<script>
 (function(){
   var btns = document.querySelectorAll('.tools-btn');
   btns.forEach(function(btn){
@@ -566,6 +600,7 @@ loadTheme();
     document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
   });
 })();
+loadTheme();
 </script>
 </body>
 </html>

@@ -130,10 +130,24 @@ nav { display:flex;align-items:center;gap:4px; }
 [data-theme="dark"] .sym-btn { background:rgba(8,145,178,.10);border-color:rgba(8,145,178,.22); }
 [data-theme="dark"] .sym-btn:hover { background:rgba(8,145,178,.25);border-color:rgba(8,145,178,.45); }
 
-/* SEO block */
-.seo-block { padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:40px; }
-[data-theme="dark"] .seo-block { background:rgba(255,255,255,.04); }
-.seo-block p { font-size:15px;color:var(--muted);line-height:1.75; }
+/* About section */
+.sym-about{padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:40px}
+[data-theme="dark"] .sym-about{background:rgba(255,255,255,.04)}
+.sym-about h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.sym-about p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+.sym-about p:last-child{margin-bottom:0}
+.sym-about p strong{color:var(--text)}
+/* FAQ section */
+.sym-faq{margin-bottom:48px}
+.sym-faq>h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.sym-faq details{border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.sym-faq details summary{padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center}
+.sym-faq details summary::-webkit-details-marker{display:none}
+.sym-faq details summary::after{content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s}
+.sym-faq details[open] summary::after{transform:rotate(45deg)}
+.sym-faq details[open] summary{color:#0891b2}
+.sym-faq .faq-ans{padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted)}
+[data-theme="dark"] .sym-faq details{background:rgba(255,255,255,.02)}
 
 /* Related */
 .related-sec { margin-bottom:60px; }
@@ -239,7 +253,7 @@ footer { background:#07091A;border-top:none;padding:0; }
 @media(max-width:860px) { .sym-grid{grid-template-columns:repeat(6,1fr)} .hub-grid{grid-template-columns:repeat(3,1fr)} .ft-inner{grid-template-columns:200px 1fr 130px} .ft-inner .ft-col:last-child{grid-column:2;grid-row:2} }
 @media(max-width:640px) { .sym-grid{grid-template-columns:repeat(5,1fr)} .hub-grid{grid-template-columns:repeat(2,1fr)} .related-grid{grid-template-columns:repeat(2,1fr)} .ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px} .ft-brand{grid-column:1/-1} .ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px} .ft-bottom-links{flex-wrap:wrap;justify-content:center} }
 @media(max-width:420px) { .sym-grid{grid-template-columns:repeat(4,1fr)} .sym-btn{height:48px;font-size:20px} }
-  @media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+@media(max-width:640px){header{padding:0 12px}.nav-link{display:none}.t-lbl{display:none}}
   </style>
 </head>
 <body>
@@ -247,20 +261,20 @@ footer { background:#07091A;border-top:none;padding:0; }
 <div class="top-aura"></div>
 
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
-            <nav>
-    <a href="/home.html" class="nav-link">Home</a>
-    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+  <nav>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link">Keyboards</a>
     <div class="tools-wrap">
-      <button class="tools-btn">Tools &#9662;</button>
+      <button class="tools-btn">Tools ▾</button>
       <div class="tools-drop">
         <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
-        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
-        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
-        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
-        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text <span class="tools-coming">SOON</span></a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji <span class="tools-coming">SOON</span></a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Invisible Char <span class="tools-coming">SOON</span></a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Zalgo Text <span class="tools-coming">SOON</span></a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -350,9 +364,12 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </div>
 
-    <div class="seo-block">
-      <p>All 12 zodiac astrology symbols for copy and paste. Aries ♈, Taurus ♉, Gemini ♊, Cancer ♋, Leo ♌, Virgo ♍, Libra ♎, Scorpio ♏, Sagittarius ♐, Capricorn ♑, Aquarius ♒, Pisces ♓. Plus Ophiuchus ⛎.</p>
-    </div>
+    <section class="sym-about">
+      <h2>About Zodiac Symbols</h2>
+      <p>The twelve zodiac symbols — ♈ through ♓ — come from the Miscellaneous Symbols block (U+2648–U+2653), encoded in the first Unicode standard. Each symbol is a stylized representation of the mythological creature or figure associated with that sign: ♈ Aries (ram), ♉ Taurus (bull), ♊ Gemini (twins), ♋ Cancer (crab), ♌ Leo (lion), ♍ Virgo (maiden), ♎ Libra (scales), ♏ Scorpio (scorpion), ♐ Sagittarius (archer), ♑ Capricorn (sea-goat), ♒ Aquarius (water-bearer), ♓ Pisces (fish). These symbols originate from the Babylonian astronomical tradition over 2,000 years ago.</p>
+      <p>The 13th sign ⛎ Ophiuchus (U+26CE) represents the Serpent Bearer — a constellation through which the ecliptic passes that was historically excluded from the Western zodiac to maintain 12 equal 30-degree sections. Ophiuchus was added to Unicode 5.2 (2009). While traditional Western astrology maintains 12 signs, some modern astrologers acknowledge Ophiuchus as a '13th sign' for people born approximately November 29 – December 17.</p>
+      <p>Astrology content generates enormous social media traffic — horoscope posts, birth chart screenshots, and compatibility discussions are consistently high-performing content formats. The zodiac symbols function as instant identification markers: users add their sign to bios (♎ for Libra), use them in posts about compatibility, and create aesthetic graphics around their birth chart. Each of the 12 symbols has a deeply embedded visual identity and personality archetype in popular culture.</p>
+    </section>
 
     <div class="uref-wrap">
       <h2>Zodiac Symbols Unicode Codes</h2>
@@ -367,6 +384,26 @@ footer { background:#07091A;border-top:none;padding:0; }
         </tbody>
       </table>
     </div>
+
+    <section class="sym-faq">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>What are all 12 zodiac symbols in order?</summary>
+        <div class="faq-ans">♈ Aries (Mar 21–Apr 19) • ♉ Taurus (Apr 20–May 20) • ♊ Gemini (May 21–Jun 20) • ♋ Cancer (Jun 21–Jul 22) • ♌ Leo (Jul 23–Aug 22) • ♍ Virgo (Aug 23–Sep 22) • ♎ Libra (Sep 23–Oct 22) • ♏ Scorpio (Oct 23–Nov 21) • ♐ Sagittarius (Nov 22–Dec 21) • ♑ Capricorn (Dec 22–Jan 19) • ♒ Aquarius (Jan 20–Feb 18) • ♓ Pisces (Feb 19–Mar 20).</div>
+      </details>
+      <details>
+        <summary>How do I type my zodiac symbol?</summary>
+        <div class="faq-ans">Unicode zodiac symbols aren't on standard keyboards. Copy your sign from this page and paste it anywhere — they work on all social media platforms, in bios, usernames, and posts. Alternatively, on Windows, Win + . opens the emoji panel where you can search your sign's name to find the colored emoji version.</div>
+      </details>
+      <details>
+        <summary>What is the Ophiuchus symbol ⛎ and is it a real zodiac sign?</summary>
+        <div class="faq-ans">⛎ (U+26CE) represents Ophiuchus, the Serpent Bearer constellation. The sun passes through it each year approximately November 29 – December 17. Traditional Western astrology divides the zodiac into 12 equal 30° signs and doesn't include Ophiuchus. Some modern astrologers recognize it as a 13th sign. The zodiac signs and their date ranges are fixed to the calendar, not the actual astronomical positions of constellations today.</div>
+      </details>
+      <details>
+        <summary>Are zodiac symbols safe to use in usernames?</summary>
+        <div class="faq-ans">Yes. All 12 zodiac symbols ♈–♓ plus ⛎ work in Instagram, TikTok, Twitter, Discord, and most social platform usernames and bios. They're plain text characters from the Miscellaneous Symbols block with broad Unicode support. They render consistently across devices since their shapes are simple glyphs, not colored emoji.</div>
+      </details>
+    </section>
 
     <section class="related-sec">
       <h2>Related Symbols</h2>
@@ -533,9 +570,6 @@ document.querySelectorAll('.sym-btn').forEach(function(b) {
     lastY = y;
   }, { passive: true });
 })();
-loadTheme();
-</script>
-<script>
 (function(){
   var btns = document.querySelectorAll('.tools-btn');
   btns.forEach(function(btn){
@@ -551,6 +585,7 @@ loadTheme();
     document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
   });
 })();
+loadTheme();
 </script>
 </body>
 </html>

@@ -130,10 +130,24 @@ nav { display:flex;align-items:center;gap:4px; }
 [data-theme="dark"] .sym-btn { background:rgba(8,145,178,.10);border-color:rgba(8,145,178,.22); }
 [data-theme="dark"] .sym-btn:hover { background:rgba(8,145,178,.25);border-color:rgba(8,145,178,.45); }
 
-/* SEO block */
-.seo-block { padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:40px; }
-[data-theme="dark"] .seo-block { background:rgba(255,255,255,.04); }
-.seo-block p { font-size:15px;color:var(--muted);line-height:1.75; }
+/* About section */
+.sym-about{padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:40px}
+[data-theme="dark"] .sym-about{background:rgba(255,255,255,.04)}
+.sym-about h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.sym-about p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+.sym-about p:last-child{margin-bottom:0}
+.sym-about p strong{color:var(--text)}
+/* FAQ section */
+.sym-faq{margin-bottom:48px}
+.sym-faq>h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.sym-faq details{border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.sym-faq details summary{padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center}
+.sym-faq details summary::-webkit-details-marker{display:none}
+.sym-faq details summary::after{content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s}
+.sym-faq details[open] summary::after{transform:rotate(45deg)}
+.sym-faq details[open] summary{color:#0891b2}
+.sym-faq .faq-ans{padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted)}
+[data-theme="dark"] .sym-faq details{background:rgba(255,255,255,.02)}
 
 /* Related */
 .related-sec { margin-bottom:60px; }
@@ -239,7 +253,7 @@ footer { background:#07091A;border-top:none;padding:0; }
 @media(max-width:860px) { .sym-grid{grid-template-columns:repeat(6,1fr)} .hub-grid{grid-template-columns:repeat(3,1fr)} .ft-inner{grid-template-columns:200px 1fr 130px} .ft-inner .ft-col:last-child{grid-column:2;grid-row:2} }
 @media(max-width:640px) { .sym-grid{grid-template-columns:repeat(5,1fr)} .hub-grid{grid-template-columns:repeat(2,1fr)} .related-grid{grid-template-columns:repeat(2,1fr)} .ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px} .ft-brand{grid-column:1/-1} .ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px} .ft-bottom-links{flex-wrap:wrap;justify-content:center} }
 @media(max-width:420px) { .sym-grid{grid-template-columns:repeat(4,1fr)} .sym-btn{height:48px;font-size:20px} }
-  @media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+@media(max-width:640px){header{padding:0 12px}.nav-link{display:none}.t-lbl{display:none}}
   </style>
 </head>
 <body>
@@ -247,20 +261,20 @@ footer { background:#07091A;border-top:none;padding:0; }
 <div class="top-aura"></div>
 
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
-            <nav>
-    <a href="/home.html" class="nav-link">Home</a>
-    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+  <nav>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link">Keyboards</a>
     <div class="tools-wrap">
-      <button class="tools-btn">Tools &#9662;</button>
+      <button class="tools-btn">Tools ▾</button>
       <div class="tools-drop">
         <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
-        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
-        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
-        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
-        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text <span class="tools-coming">SOON</span></a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji <span class="tools-coming">SOON</span></a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Invisible Char <span class="tools-coming">SOON</span></a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Zalgo Text <span class="tools-coming">SOON</span></a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -355,9 +369,12 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </div>
 
-    <div class="seo-block">
-      <p>Smiley face symbols and emotion characters for copy and paste. From the classic Unicode smiley ☺ to modern emoji faces 😊😂, these symbols express emotions in text messages, social media, and online communication.</p>
-    </div>
+    <section class="sym-about">
+      <h2>About Smiley Face Symbol</h2>
+      <p>Unicode smiley symbols have a fascinating parallel history to ASCII emoticons. The White Smiling Face ☺ (U+263A) and its filled variant ☻ (U+263B Black Smiling Face) are among the oldest smiley characters in digital computing — ☺ appeared in IBM's PC-DOS Code Page 437 in 1981 as character #1, making it literally the first special character on the original IBM PC. Before emoji, before the public internet, the smiley face was character number one on the first mass-market personal computer.</p>
+      <p>The modern emoji face collection began with Japanese mobile carriers (NTT DoCoMo, au, SoftBank) in 1999, who created proprietary emoji sets for Japanese cell phones. When Apple released iPhone in 2007 with an emoji keyboard for Japan, emoji faces spread globally. By 2010 Unicode had formally encoded the original Japanese carrier emoji as Unicode characters — bringing 🙂 😊 😀 and hundreds more into the universal standard. This is why many basic face emoji have Japanese cultural origins despite their global use.</p>
+      <p>The emoji face vocabulary has become a sophisticated emotional communication layer in digital text. Studies show that 😂 (Face With Tears of Joy) was consistently the most-used emoji globally for years. The meanings of face emoji drift over time and across cultures — 🙂 reads as neutral-to-positive in American English but can signal passive aggression or sarcasm in British English contexts. Understanding these nuances has become a genuine aspect of digital literacy in the 2020s.</p>
+    </section>
 
     <div class="uref-wrap">
       <h2>Smiley Face Symbol Unicode Codes</h2>
@@ -372,6 +389,26 @@ footer { background:#07091A;border-top:none;padding:0; }
         </tbody>
       </table>
     </div>
+
+    <section class="sym-faq">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>What is the oldest smiley symbol?</summary>
+        <div class="faq-ans">☺ (U+263A White Smiling Face) appeared as Character #1 in the IBM PC's original Code Page 437 character set in 1981 — before the public internet, before Windows, before the World Wide Web. It was placed first in the extended ASCII set (after control characters) because it was considered a universally positive symbol. Its filled variant ☻ was Character #2. These two characters have the longest continuous digital history of any smiley representation.</div>
+      </details>
+      <details>
+        <summary>What does 🙂 actually mean?</summary>
+        <div class="faq-ans">In American English, 🙂 typically signals a genuine but mild smile — neutral to positive. However, in British English digital contexts and increasingly in American English, 🙂 has taken on a passive-aggressive or even ominous undertone. Messages ending with 🙂 can feel cold or threatening to some receivers. Emoji meaning is deeply cultural and generational — the same symbol carries different weight across demographics.</div>
+      </details>
+      <details>
+        <summary>What is the difference between ☺ and 🙂?</summary>
+        <div class="faq-ans">☺ (U+263A) is a plain text smiley face from the Miscellaneous Symbols block — it renders in your system's text font as a simple outlined face, consistent across all devices. 🙂 (U+1F642 Slightly Smiling Face) is an emoji that renders as a colored, stylized face image — different on iOS vs Android vs Windows. Use ☺ for consistent appearance across all devices; use 🙂 for messages where the emoji aesthetic is expected.</div>
+      </details>
+      <details>
+        <summary>What is the most popular emoji in the world?</summary>
+        <div class="faq-ans">According to Unicode Consortium emoji frequency tracking and multiple social media analytics studies, 😂 (Face With Tears of Joy, U+1F602) held the #1 spot for most years. As of 2022–2023, ❤️ (Red Heart) surpassed 😂 on some platforms. Rankings vary significantly by platform, country, and demographic — 😂 dominates in the US, while 🥰 and 💕 rank higher in East Asian markets.</div>
+      </details>
+    </section>
 
     <section class="related-sec">
       <h2>Related Symbols</h2>
@@ -538,9 +575,6 @@ document.querySelectorAll('.sym-btn').forEach(function(b) {
     lastY = y;
   }, { passive: true });
 })();
-loadTheme();
-</script>
-<script>
 (function(){
   var btns = document.querySelectorAll('.tools-btn');
   btns.forEach(function(btn){
@@ -556,6 +590,7 @@ loadTheme();
     document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
   });
 })();
+loadTheme();
 </script>
 </body>
 </html>

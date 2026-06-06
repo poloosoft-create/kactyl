@@ -496,7 +496,7 @@ nav { display:flex; align-items:center; gap:4px; }
 [data-theme="dark"] .tools-btn { color:var(--nav-txt); }
 [data-theme="dark"] .tools-btn:hover { background:rgba(255,255,255,.1); }
 .tools-drop { display:none; position:absolute; top:100%; right:0; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 6px 6px; min-width:230px; box-shadow:0 8px 28px rgba(0,0,0,.12); z-index:200; flex-direction:column; gap:2px; }
-.tools-wrap.open .tools-drop{display:flex}
+.tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
 .tools-item { display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:8px; text-decoration:none; color:var(--text); font-size:13.5px; font-weight:500; transition:background .15s; white-space:nowrap; }
 .tools-item:hover { background:var(--border); }
 .tools-item .t-icon { width:18px; height:18px; flex-shrink:0; display:inline-flex; align-items:center; justify-content:center; }
@@ -2175,12 +2175,12 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 /* ── TOOL SECTIONS (CINEMATIC) ───────────────────────────── */
 .tsec { padding:100px 24px; position:relative; overflow:hidden; }
-.tsec[data-sec="fancy"]     { background:radial-gradient(ellipse 55% 65% at 88% 20%,rgba(0,104,255,.07) 0%,transparent 60%),#FFFFFF; padding-top:52px; }
+.tsec[data-sec="fancy"]     { background:radial-gradient(ellipse 55% 65% at 88% 20%,rgba(124,58,237,.07) 0%,transparent 60%),#FFFFFF; padding-top:52px; }
 .tsec[data-sec="invisible"] { background:radial-gradient(ellipse 55% 60% at 28% 55%,rgba(124,58,237,.32) 0%,transparent 62%),#070B18; }
-.tsec[data-sec="kaomoji"]   { background:radial-gradient(ellipse 55% 65% at 88% 50%,rgba(245,158,11,.10) 0%,transparent 62%),#FFFCF5; }
+.tsec[data-sec="kaomoji"]   { background:radial-gradient(ellipse 55% 65% at 88% 50%,rgba(219,39,119,.08) 0%,transparent 62%),#FFF5F8; }
 .tsec[data-sec="zalgo"]     { background:radial-gradient(ellipse 50% 55% at 22% 52%,rgba(139,92,246,.38) 0%,transparent 58%),#07091A; }
-[data-theme="dark"] .tsec[data-sec="fancy"]   { background:radial-gradient(ellipse 55% 65% at 88% 20%,rgba(0,104,255,.20) 0%,transparent 60%),#080D1C; }
-[data-theme="dark"] .tsec[data-sec="kaomoji"] { background:radial-gradient(ellipse 55% 65% at 88% 50%,rgba(245,158,11,.20) 0%,transparent 62%),#0C0904; }
+[data-theme="dark"] .tsec[data-sec="fancy"]   { background:radial-gradient(ellipse 55% 65% at 88% 20%,rgba(124,58,237,.20) 0%,transparent 60%),#080D1C; }
+[data-theme="dark"] .tsec[data-sec="kaomoji"] { background:radial-gradient(ellipse 55% 65% at 88% 50%,rgba(219,39,119,.18) 0%,transparent 62%),#0F172A; }
 
 .tsec-inner { max-width:1080px; margin:0 auto; display:flex; align-items:center; gap:80px; }
 .tsec-text  { flex:1; min-width:0; }
@@ -2258,7 +2258,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 .fancy-lbl { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.4px; width:48px; flex-shrink:0; }
 .fancy-val { flex:1; font-size:15px; color:var(--text); overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
 .fancy-cp { width:28px; height:28px; border-radius:7px; background:var(--border); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--muted); transition:background .15s,color .15s; }
-.fancy-cp:hover { background:var(--blue); color:#fff; }
+.fancy-cp:hover { background:#7c3aed; color:#fff; }
 
 /* Invisible Character */
 .invis-preview { text-align:center; margin-bottom:20px; }
@@ -2276,12 +2276,12 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 /* Kaomoji */
 .kao-tabs { display:flex; gap:5px; margin-bottom:14px; }
 .kao-tab { flex:1; padding:8px 4px; border:none; border-radius:9px; background:rgba(15,23,42,.06); color:var(--muted); font-size:12px; font-weight:700; cursor:pointer; transition:background .15s,color .15s; }
-.kao-tab.active { background:linear-gradient(135deg,#f59e0b,#f97316); color:#fff; }
+.kao-tab.active { background:linear-gradient(135deg,#db2777,#ec4899); color:#fff; }
 [data-theme="dark"] .kao-tab { background:rgba(255,255,255,.06); }
 .kao-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; max-height:196px; overflow-y:auto; scrollbar-width:none; }
 .kao-grid::-webkit-scrollbar { display:none; }
 .kao-item { padding:9px 10px; border-radius:9px; background:rgba(15,23,42,.05); font-size:13px; color:var(--text); cursor:pointer; text-align:center; border:none; transition:background .12s,transform .12s; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.kao-item:hover { background:rgba(245,158,11,.15); transform:scale(1.03); }
+.kao-item:hover { background:rgba(219,39,119,.12); transform:scale(1.03); }
 .kao-item:active { transform:scale(.96); }
 [data-theme="dark"] .kao-item { background:rgba(255,255,255,.05); }
 
@@ -2671,7 +2671,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 <section class="tsec" id="tool-fancy" data-sec="fancy">
   <div class="tsec-inner">
     <div class="tsec-text">
-      <div class="tsec-showcase" style="background:linear-gradient(135deg,#0068ff,#5E5CE6)">
+      <div class="tsec-showcase" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">
         <div class="sc-fancy">
           <div class="sc-f1">𝗙𝗮𝗻𝗰𝘆 𝗧𝗲𝘅𝘁</div>
           <div class="sc-f2">𝑭𝒂𝒏𝒄𝒚 𝑻𝒆𝒙𝒕</div>
@@ -2681,7 +2681,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <h2 class="tsec-title">Fancy Text</h2>
       <p class="tsec-tagline">Make your text stand out everywhere.</p>
       <p class="tsec-desc">Real Unicode fonts that work on Instagram, TikTok, Twitter and any platform — no special apps, no tricks, just copy and paste.</p>
-      <a href="/fancy-text/" class="tsec-cta" style="background:linear-gradient(135deg,#0068ff,#5E5CE6)">Open Fancy Text →</a>
+      <a href="/fancy-text/" class="tsec-cta" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">Open Fancy Text →</a>
     </div>
     <div class="tsec-demo">
       <div class="tsec-demo-float">
@@ -2732,13 +2732,13 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 <section class="tsec" id="tool-kaomoji" data-sec="kaomoji">
   <div class="tsec-inner">
     <div class="tsec-text">
-      <div class="tsec-showcase" style="background:linear-gradient(135deg,#f59e0b,#f97316)">
+      <div class="tsec-showcase" style="background:linear-gradient(135deg,#db2777,#ec4899)">
         <div class="sc-kao">ʕ•ᴥ•ʔ</div>
       </div>
       <h2 class="tsec-title">Kaomoji</h2>
       <p class="tsec-tagline">Japanese emoticons the world loves.</p>
       <p class="tsec-desc">48+ hand-picked kaomoji organized by mood. Click any to copy instantly. The original text emoticons — before emoji existed, these ruled the internet.</p>
-      <a href="/kaomoji/" class="tsec-cta" style="background:linear-gradient(135deg,#f59e0b,#f97316)">Open Kaomoji →</a>
+      <a href="/kaomoji/" class="tsec-cta" style="background:linear-gradient(135deg,#db2777,#ec4899)">Open Kaomoji →</a>
     </div>
     <div class="tsec-demo">
       <div class="tsec-demo-float">

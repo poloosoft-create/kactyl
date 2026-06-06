@@ -130,10 +130,24 @@ nav { display:flex;align-items:center;gap:4px; }
 [data-theme="dark"] .sym-btn { background:rgba(8,145,178,.10);border-color:rgba(8,145,178,.22); }
 [data-theme="dark"] .sym-btn:hover { background:rgba(8,145,178,.25);border-color:rgba(8,145,178,.45); }
 
-/* SEO block */
-.seo-block { padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:40px; }
-[data-theme="dark"] .seo-block { background:rgba(255,255,255,.04); }
-.seo-block p { font-size:15px;color:var(--muted);line-height:1.75; }
+/* About section */
+.sym-about{padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:40px}
+[data-theme="dark"] .sym-about{background:rgba(255,255,255,.04)}
+.sym-about h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.sym-about p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+.sym-about p:last-child{margin-bottom:0}
+.sym-about p strong{color:var(--text)}
+/* FAQ section */
+.sym-faq{margin-bottom:48px}
+.sym-faq>h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.sym-faq details{border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.sym-faq details summary{padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center}
+.sym-faq details summary::-webkit-details-marker{display:none}
+.sym-faq details summary::after{content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s}
+.sym-faq details[open] summary::after{transform:rotate(45deg)}
+.sym-faq details[open] summary{color:#0891b2}
+.sym-faq .faq-ans{padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted)}
+[data-theme="dark"] .sym-faq details{background:rgba(255,255,255,.02)}
 
 /* Related */
 .related-sec { margin-bottom:60px; }
@@ -239,7 +253,7 @@ footer { background:#07091A;border-top:none;padding:0; }
 @media(max-width:860px) { .sym-grid{grid-template-columns:repeat(6,1fr)} .hub-grid{grid-template-columns:repeat(3,1fr)} .ft-inner{grid-template-columns:200px 1fr 130px} .ft-inner .ft-col:last-child{grid-column:2;grid-row:2} }
 @media(max-width:640px) { .sym-grid{grid-template-columns:repeat(5,1fr)} .hub-grid{grid-template-columns:repeat(2,1fr)} .related-grid{grid-template-columns:repeat(2,1fr)} .ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px} .ft-brand{grid-column:1/-1} .ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px} .ft-bottom-links{flex-wrap:wrap;justify-content:center} }
 @media(max-width:420px) { .sym-grid{grid-template-columns:repeat(4,1fr)} .sym-btn{height:48px;font-size:20px} }
-  @media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+@media(max-width:640px){header{padding:0 12px}.nav-link{display:none}.t-lbl{display:none}}
   </style>
 </head>
 <body>
@@ -247,20 +261,20 @@ footer { background:#07091A;border-top:none;padding:0; }
 <div class="top-aura"></div>
 
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
-            <nav>
-    <a href="/home.html" class="nav-link">Home</a>
-    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+  <nav>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link">Keyboards</a>
     <div class="tools-wrap">
-      <button class="tools-btn">Tools &#9662;</button>
+      <button class="tools-btn">Tools ▾</button>
       <div class="tools-drop">
         <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
-        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
-        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
-        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
-        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text <span class="tools-coming">SOON</span></a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji <span class="tools-coming">SOON</span></a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Invisible Char <span class="tools-coming">SOON</span></a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Zalgo Text <span class="tools-coming">SOON</span></a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -356,9 +370,12 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </div>
 
-    <div class="seo-block">
-      <p>The infinity symbol ∞ and related mathematical symbols for copy and paste. The infinity sign represents endlessness and is widely used in tattoo designs, jewelry, relationships, and social media bios. Works everywhere.</p>
-    </div>
+    <section class="sym-about">
+      <h2>About Infinity Symbol</h2>
+      <p>The infinity symbol ∞ (U+221E) was introduced to mathematics by John Wallis in 1655 in his work <em>De sectionibus conicis</em>. Wallis likely derived the shape from the Roman numeral M (meaning 'many'), or possibly from the Ouroboros — the ancient symbol of a snake consuming its own tail. The lemniscate form, as the shape is technically called, now appears across mathematics, physics, metaphysics, and popular culture.</p>
+      <p>In Unicode, ∞ belongs to the Mathematical Operators block (U+2200–U+22FF), which was designed to encode the complete set of symbols used in formal mathematics. Despite visual similarity, ∞ is a distinct character from ∞-like shapes such as ∾ (U+223E Inverted Lazy S, used in geometric contexts) and ♾ (U+267E Permanent Paper Sign, an infinity mark used in library cataloging for acid-free archival paper).</p>
+      <p>Culturally, the infinity symbol has moved far beyond mathematics. It's one of the most popular tattoo designs worldwide, used to represent eternal love, endless possibilities, and limitlessness. On social media, ∞ appears in couple bios, motivational content, and brand identities. The compact, symmetrical lemniscate shape makes it particularly effective as a logo element and decorative character in any text field.</p>
+    </section>
 
     <div class="uref-wrap">
       <h2>Infinity Symbol Unicode Codes</h2>
@@ -373,6 +390,26 @@ footer { background:#07091A;border-top:none;padding:0; }
         </tbody>
       </table>
     </div>
+
+    <section class="sym-faq">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>How do I type the infinity symbol on keyboard?</summary>
+        <div class="faq-ans">On Windows, hold Alt and type 236 on the numpad for ∞. On Mac, hold Option and press 5. On mobile, most keyboards don't include it — the fastest way is to copy it from this page. In HTML use &infin; or &#x221E;. In LaTeX use \infty.</div>
+      </details>
+      <details>
+        <summary>What does the infinity symbol mean in math?</summary>
+        <div class="faq-ans">In calculus and analysis, ∞ represents an unbounded limit — not a number, but the concept that a value grows without bound. In set theory, there are multiple infinities of different 'sizes' (Georg Cantor's transfinite numbers ℵ₀, ℵ₁, etc.). In everyday algebra, ∞ appears in interval notation: (-∞, ∞) means all real numbers.</div>
+      </details>
+      <details>
+        <summary>What is the difference between ∞ and ♾?</summary>
+        <div class="faq-ans">∞ (U+221E) is the mathematical infinity operator from the Mathematical Operators block. ♾ (U+267E) is the Permanent Paper Sign used in library and archival contexts to indicate acid-free paper — added to Unicode specifically for library cataloging standards. They look similar but serve completely different purposes and belong to different Unicode blocks.</div>
+      </details>
+      <details>
+        <summary>Is the infinity symbol good for a tattoo or jewelry design?</summary>
+        <div class="faq-ans">The lemniscate is popular for tattoos because it's symmetrical, compact, and universally meaningful. Common variations: double infinity (∞ interlocked with another ∞), infinity heart (looped with a heart shape), and infinity with words inside the loops. For digital design, the Unicode ∞ character is clean at all sizes, though custom vector versions are better for large-format print.</div>
+      </details>
+    </section>
 
     <section class="related-sec">
       <h2>Related Symbols</h2>
@@ -539,9 +576,6 @@ document.querySelectorAll('.sym-btn').forEach(function(b) {
     lastY = y;
   }, { passive: true });
 })();
-loadTheme();
-</script>
-<script>
 (function(){
   var btns = document.querySelectorAll('.tools-btn');
   btns.forEach(function(btn){
@@ -557,6 +591,7 @@ loadTheme();
     document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
   });
 })();
+loadTheme();
 </script>
 </body>
 </html>

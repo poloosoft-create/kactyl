@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arabikeyboard.com/sitemap.xml
+Sitemap: https://kactyl.com/sitemap.xml
