@@ -1,4 +1,8 @@
-# Redirect arabikeyboard.com → kactyl.com (301 permanent, SEO-safe)
+# Redirect arabikeyboard.com root → kactyl.com/arabic/ (preserves Arabic keyboard SEO)
+https://arabikeyboard.com/ https://kactyl.com/arabic/ 301!
+https://www.arabikeyboard.com/ https://kactyl.com/arabic/ 301!
+
+# Redirect all other arabikeyboard.com pages → kactyl.com
 https://arabikeyboard.com/* https://kactyl.com/:splat 301!
 https://www.arabikeyboard.com/* https://kactyl.com/:splat 301!
 

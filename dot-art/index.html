@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dot Art &amp; Braille Art Generator — Copy &amp; Paste | Kactyl</title>
+<meta name="description" content="Free Braille art generator — draw or upload any image, get instant Unicode dot art. Plus 240+ ready-made pieces: hearts, cats, roses, skulls &amp; more. Click to copy, works on Discord, TikTok &amp; WhatsApp.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://kactyl.com/dot-art/">
+<link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-circle.svg">
+<meta property="og:title" content="Dot Art &amp; Braille Art Generator — Copy &amp; Paste | Kactyl">
+<meta property="og:description" content="Free Braille art generator — draw or upload any image for instant Unicode dot art. Plus 240+ copy-paste pieces for Discord, TikTok &amp; WhatsApp.">
+<meta property="og:url" content="https://kactyl.com/dot-art/">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="en" href="https://kactyl.com/dot-art/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--blue:#0068ff;--bg:#fff;--surface:#fff;--text:#1E293B;--muted:#64748B;
+  --border:#E2E8F0;--shadow:rgba(0,0,0,.07);--nav-bg:rgba(255,255,255,.88);--nav-txt:#1E293B}
+[data-theme="dark"]{--bg:#0F172A;--surface:#1E293B;--text:#F1F5F9;--muted:#94A3B8;
+  --border:rgba(255,255,255,.09);--shadow:rgba(0,0,0,.35);
+  --nav-bg:rgba(15,23,42,.88);--nav-txt:#F1F5F9}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+.bg-shapes{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.s{position:absolute;border-radius:50%}
+header{background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px}
+[data-theme="dark"] header{background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-img{height:200px;width:auto;display:block}
+nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
+.nav-link{padding:6px 12px;border-radius:6px;text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:background .2s;white-space:nowrap}
+.nav-link:hover{background:var(--border)}
+[data-theme="dark"] .nav-link{color:var(--nav-txt)}
+.tools-wrap{position:relative}
+.tools-btn{cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.tools-btn:hover{background:var(--border)}
+[data-theme="dark"] .tools-btn{color:var(--nav-txt)}
+.tools-drop{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:8px 6px;min-width:200px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px}
+.tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
+.tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s,color .18s;white-space:nowrap}
+.tools-item:hover{background:var(--border)}
+.tools-item.active-tool{color:var(--accent)!important;font-weight:600;background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.t-icon{font-size:14px;flex-shrink:0}
+.theme-wrap{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
+.t-track{width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s}
+.t-track.on{background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12)}
+.t-thumb{width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center}
+.t-thumb.on{left:21px}
+.t-lbl{font-size:11px;font-weight:600;color:var(--muted);line-height:1.1;white-space:nowrap}
+.lang-wrap{position:relative}
+.lang-pill{display:flex;align-items:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s}
+.lang-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px var(--shadow);min-width:140px;overflow:hidden;z-index:400}
+.lang-menu.show{display:block}
+.lang-opt{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s}
+.lang-opt:hover{background:var(--bg)}
+.lang-opt.active{color:var(--blue);font-weight:600}
+@media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--bg);font-size:13px;font-weight:600;padding:10px 22px;border-radius:99px;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.18)}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+footer{background:#07091A;padding:0}
+.ft-inner{max-width:1000px;margin:0 auto;padding:56px 28px 44px;display:grid;grid-template-columns:200px 1fr 150px 130px;gap:40px;align-items:start}
+.ft-brand{display:flex;flex-direction:column;gap:14px}
+.ft-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.ft-ic{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-ic img{width:48px;height:48px}
+.ft-name{font-size:15px;font-weight:800;color:#F1F5F9}
+.ft-tagline{font-size:13px;color:#94A3B8;line-height:1.7}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ft-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
+.ft-badge.g{background:rgba(5,150,105,.12);color:#34D399;border:1px solid rgba(5,150,105,.18)}
+.ft-badge.b{background:rgba(0,104,255,.12);color:#60A5FA;border:1px solid rgba(0,104,255,.18)}
+.ft-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:#64748B;margin-bottom:14px}
+.ft-col h4.ft-h4-gap{margin-top:22px}
+.ft-kb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}
+.ft-kb-grid a,.ft-legal a{font-size:13px;color:#CBD5E1;text-decoration:none;padding:5px 0;display:block;transition:color .15s}
+.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}
+.ft-legal{display:flex;flex-direction:column}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;gap:12px}
+.ft-copy{font-size:11px;color:#64748B}
+.ft-bottom-links{display:flex;align-items:center;gap:16px}
+.ft-bottom-links a{font-size:11px;color:#64748B;text-decoration:none}
+@media(max-width:860px){.ft-inner{grid-template-columns:200px 1fr 130px}.ft-inner .ft-col:last-child{grid-column:2;grid-row:2}}
+@media(max-width:640px){.ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px}.ft-brand{grid-column:1/-1}.ft-bottom{flex-direction:column;gap:8px;text-align:center}}
+
+.s1{width:600px;height:600px;background:rgba(0,104,255,.08);top:10%;left:-180px;filter:blur(80px)}
+.s2{width:500px;height:500px;background:rgba(124,58,237,.06);top:50%;right:-180px;filter:blur(80px)}
+[data-theme="dark"] .s1{background:rgba(0,104,255,.18)}
+[data-theme="dark"] .s2{background:rgba(124,58,237,.16)}
+.hero{position:relative;z-index:1;text-align:center;padding:64px 24px 40px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,104,255,.08);border:1px solid rgba(0,104,255,.18);color:var(--blue);border-radius:99px;padding:6px 18px;font-size:13px;font-weight:600;margin-bottom:20px}
+.hero h1{font-size:clamp(36px,5.5vw,64px);font-weight:900;letter-spacing:-2.5px;line-height:1.05;background:linear-gradient(135deg,var(--text) 0%,#0068ff 50%,#0068ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px}
+.hero-sub{font-size:17px;color:var(--muted);max-width:560px;margin:0 auto 32px;line-height:1.6}
+.stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-n{font-size:28px;font-weight:900;color:var(--text);letter-spacing:-1px}
+.stat-l{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.hub-grid{position:relative;z-index:1;max-width:960px;margin:48px auto 0;padding:0 24px 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:640px){.hub-grid{grid-template-columns:repeat(2,1fr)}}
+.hub-card{background:rgba(255,255,255,.78);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.92);border-radius:22px;overflow:hidden;text-decoration:none;color:var(--text);transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column;position:relative}
+.hub-card::after{content:'';position:absolute;inset:0;border-radius:22px;background:linear-gradient(135deg,rgba(0,104,255,.07) 0%,transparent 60%);opacity:0;transition:opacity .22s;pointer-events:none}
+.hub-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,104,255,.18),0 4px 18px rgba(0,0,0,.07);border-color:rgba(0,104,255,.38)}
+.hub-card:hover::after{opacity:1}
+[data-theme="dark"] .hub-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+[data-theme="dark"] .hub-card:hover{box-shadow:0 24px 56px rgba(0,104,255,.22),0 4px 18px rgba(0,0,0,.3)}
+.hub-preview{background:linear-gradient(145deg,rgba(0,104,255,.06) 0%,rgba(37,99,235,.04) 100%);display:flex;align-items:center;justify-content:center;padding:20px 16px 16px;min-height:100px;border-bottom:1px solid rgba(0,104,255,.08);position:relative}
+[data-theme="dark"] .hub-preview{background:linear-gradient(145deg,rgba(0,104,255,.12) 0%,rgba(37,99,235,.06) 100%);border-bottom-color:rgba(0,104,255,.14)}
+.hub-body{padding:14px 18px 18px;display:flex;flex-direction:column;gap:5px;flex:1}
+.hub-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
+.hub-emoji{font-size:18px;line-height:1}
+.hub-name{font-size:16px;font-weight:800;color:var(--text);letter-spacing:-.3px}
+.hub-sub{font-size:12px;color:var(--muted);line-height:1.4}
+.hub-count{font-size:10.5px;font-weight:700;color:var(--blue);background:rgba(0,104,255,.10);border:1px solid rgba(0,104,255,.18);padding:3px 10px;border-radius:99px;letter-spacing:.2px;white-space:nowrap}
+.hub-arrow{position:absolute;bottom:17px;right:18px;font-size:16px;font-weight:700;color:var(--blue);opacity:0;transform:translateX(-5px);transition:opacity .2s,transform .2s}
+.hub-card:hover .hub-arrow{opacity:1;transform:translateX(0)}
+
+:root {--accent:#0068ff}
+
+/* Use-case badges */
+.use-cases{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px;margin-bottom:4px}
+.uc-badge{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700}
+.uc-badge svg{flex-shrink:0}
+/* How-to section */
+.how-sec{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:32px;max-width:1100px;margin:0 auto 32px;position:relative;z-index:1}
+[data-theme="dark"] .how-sec{background:rgba(255,255,255,.04)}
+.how-head{font-size:clamp(20px,2.5vw,26px);font-weight:800;margin-bottom:24px;letter-spacing:-.4px}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.how-num-bg{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.how-step-title{font-size:14px;font-weight:700;color:var(--text)}
+.how-step-desc{font-size:13px;color:var(--muted);line-height:1.6}
+@media(max-width:600px){.how-steps{grid-template-columns:1fr}}
+/* Standard FAQ */
+.tool-faq{max-width:1100px;margin:0 auto 48px;padding:0 24px;position:relative;z-index:1}
+.tool-faq>h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px}
+.tool-faq details{border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.tool-faq details summary{padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center}
+.tool-faq details summary::-webkit-details-marker{display:none}
+.tool-faq details summary::after{content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s}
+.tool-faq details[open] summary::after{transform:rotate(45deg)}
+.tool-faq details[open] summary{color:var(--accent,#0068ff)}
+.tool-faq .faq-ans{padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted)}
+[data-theme="dark"] .tool-faq details{background:rgba(255,255,255,.03)}
+
+[data-theme="dark"] .uc-badge{background:rgba(0,104,255,.15)}
+
+
+/* ═══════════════════════════ BRAILLE GENERATOR ════════════════════════════ */
+.gen-outer{position:relative;z-index:1;padding:56px 20px 20px;max-width:1100px;margin:0 auto}
+.gen-wrap{background:linear-gradient(145deg,#080c1a 0%,#0c1128 55%,#10092a 100%);border-radius:24px;padding:36px 28px 28px;border:1px solid rgba(255,255,255,.06);box-shadow:0 24px 80px rgba(0,0,0,.55),0 0 0 1px rgba(100,140,255,.07)}
+.gen-hd{text-align:center;padding:0 0 32px}
+.gen-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,104,255,.12);border:1px solid rgba(0,104,255,.25);color:#70a4ff;border-radius:99px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.gen-hd h2{font-size:clamp(26px,4vw,44px);font-weight:900;letter-spacing:-1.5px;line-height:1.05;background:linear-gradient(135deg,#fff 0%,#70a4ff 50%,#a78bfa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+.gen-hd p{font-size:14px;color:#8899cc;max-width:420px;margin:0 auto;line-height:1.65}
+.gen-layout{display:grid;grid-template-columns:3fr 2fr;gap:12px;align-items:stretch}
+.gen-panel{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.gen-out-bg{flex:1}
+.gen-panel.glow{box-shadow:0 0 0 1px rgba(0,104,255,.2),0 4px 24px rgba(0,104,255,.08)}
+.gen-phd{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.06)}
+.gen-plbl{font-size:10.5px;font-weight:700;color:#667799;letter-spacing:.1em;text-transform:uppercase}
+.gen-phint{font-size:11px;color:#445566;opacity:.9}
+.gen-tb{display:flex;align-items:center;gap:5px;padding:9px 11px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.05);background:rgba(0,0,0,.25)}
+.gb{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:7px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#8899cc;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap;font-family:inherit;line-height:1}
+.gb:hover{border-color:rgba(100,160,255,.45);color:#70a4ff;background:rgba(0,104,255,.1)}
+.gb.act{background:linear-gradient(135deg,#0068ff,#3a70ed);border-color:transparent;color:#fff!important;box-shadow:0 2px 12px rgba(0,104,255,.35)}
+.gb-sep{width:1px;height:20px;background:rgba(255,255,255,.08);flex-shrink:0;margin:0 2px}
+.gb-sel{padding:5px 9px;border-radius:7px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#c8d4f0;font-size:12px;font-weight:600;cursor:pointer;outline:none;font-family:inherit;transition:border-color .15s}
+.gb-sel:hover,.gb-sel:focus{border-color:rgba(100,160,255,.5);color:#70a4ff}
+.gb-sel option{background:#0d1128;color:#c8d4f0}
+.gen-cv-bg{background:#040610;line-height:0;overflow:hidden}
+#gen-cv{cursor:crosshair;image-rendering:pixelated;image-rendering:crisp-edges;display:block;width:100%}
+.gen-upl{margin:9px 12px 11px;border:1.5px dashed rgba(100,140,255,.2);border-radius:11px;padding:13px 10px;text-align:center;cursor:pointer;transition:all .2s;position:relative;background:rgba(0,0,0,.2)}
+.gen-upl:hover,.gen-upl.dov{border-color:rgba(0,104,255,.6);background:rgba(0,104,255,.06);border-style:solid}
+.gen-upl-icon{margin:0 auto 6px;opacity:.3;display:block;color:#70a4ff}
+.gen-upl p{font-size:12.5px;color:#7788aa;margin:0 0 3px;pointer-events:none}
+.gen-upl p strong{color:#8899cc}
+.gen-upl span{font-size:11px;color:#445566;opacity:.9;pointer-events:none}
+.gen-upl input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.thresh-row{display:none;align-items:center;gap:8px;padding:4px 12px 10px;font-size:11px;color:#7788aa}
+.thresh-row.show{display:flex}
+.thresh-row input[type=range]{flex:1;accent-color:#0068ff;cursor:pointer}
+.thresh-row span{min-width:26px;text-align:right}
+.gen-out-bg{background:#020408;overflow:auto;max-height:300px;min-height:200px;padding:14px 15px;scrollbar-width:thin;scrollbar-color:rgba(100,140,255,.15) transparent}
+pre#gen-out{font-family:'Courier New',monospace;font-size:11px;line-height:1.25;color:#9ec4ff;margin:0;white-space:pre;user-select:all;letter-spacing:.02em}
+.gen-out-foot{padding:10px 12px 13px;border-top:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;gap:7px}
+.gen-out-acts{display:flex;gap:6px}
+.btn-act{flex:1;padding:7px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#8899cc;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;font-family:inherit;white-space:nowrap}
+.btn-act:hover{border-color:rgba(100,160,255,.4);color:#70a4ff;background:rgba(0,104,255,.08)}
+.gen-count{font-size:11px;color:#445566;text-align:right;padding:0 2px}
+.btn-copy{width:100%;padding:13px;border-radius:11px;border:none;background:linear-gradient(135deg,#0068ff 0%,#0068ff 100%);color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .15s,background .3s;font-family:inherit;letter-spacing:.01em;box-shadow:0 2px 18px rgba(0,104,255,.35)}
+.btn-copy:hover{opacity:.88}
+.btn-copy.ok{background:linear-gradient(135deg,#059669 0%,#0d9488 100%);box-shadow:0 2px 18px rgba(5,150,105,.3)}
+.coll-hd{position:relative;z-index:1;max-width:960px;margin:60px auto 0;padding:0 24px 6px;display:flex;align-items:flex-end;justify-content:space-between}
+.coll-hd h3{font-size:clamp(18px,2.5vw,24px);font-weight:800;letter-spacing:-.5px}
+.coll-hd p{font-size:13px;color:var(--muted)}
+@media(max-width:760px){.gen-layout{grid-template-columns:1fr}.gen-out-bg{max-height:160px}.gen-wrap{padding:24px 14px 18px}.gen-outer{padding:40px 12px 16px}}
+@media(max-width:480px){.gen-hd h2{letter-spacing:-.8px}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Dot Art — Copy & Paste","description":"Copy and paste 240+ dot art pieces. Emoji pixel art and block character designs. Click any piece to copy instantly.","url":"https://kactyl.com/dot-art/","publisher":{"@type":"Organization","name":"Kactyl","url":"https://kactyl.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kactyl.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://kactyl.com/tools/"},{"@type":"ListItem","position":3,"name":"Dot Art","item":"https://kactyl.com/dot-art/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Braille Art Generator &amp; Dot Art Copy Paste","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://kactyl.com/dot-art/","description":"Free Braille art generator — draw on a pixel canvas or upload any image to convert it to Unicode Braille dot art instantly. Plus 240+ ready-made dot art pieces across 14 categories.","featureList":["Braille art generator with pixel canvas","Image upload with Floyd-Steinberg dithering","240+ dot art pieces","14 categories","One-click copy","Works on Discord, TikTok, WhatsApp"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Copy Dot Art","totalTime":"PT1M","step":[{"@type":"HowToStep","position":1,"name":"Browse Categories","text":"Pick a category from hearts, animals, food, or any of the 14 themes."},{"@type":"HowToStep","position":2,"name":"Click Any Piece","text":"Click any dot art piece to instantly copy it to your clipboard."},{"@type":"HowToStep","position":3,"name":"Paste Anywhere","text":"Paste into Discord, TikTok, WhatsApp, Instagram, or any chat."}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is dot art?","acceptedAnswer":{"@type":"Answer","text":"Dot art uses Unicode Braille patterns (U+2800–U+28FF) and block characters to create pixel-style images made of dots. Each Braille character represents an 8-dot 2x4 grid."}},{"@type":"Question","name":"Where can I use dot art?","acceptedAnswer":{"@type":"Answer","text":"Discord messages, TikTok bios, WhatsApp statuses, Instagram bios, Twitter/X posts, Reddit posts, and most social platform bios."}},{"@type":"Question","name":"Why does dot art look wrong on some phones?","acceptedAnswer":{"@type":"Answer","text":"Braille and block Unicode characters render differently across fonts. Most modern phones (iOS 14+, Android 10+) display them correctly. Heart and flower pieces tend to render most consistently."}},{"@type":"Question","name":"Does dot art work in Discord?","acceptedAnswer":{"@type":"Answer","text":"Yes. Discord supports dot art in messages and server nicknames. Single-line pieces work best in nicknames, multi-row pieces in messages."}},{"@type":"Question","name":"Can I use dot art in TikTok bios?","acceptedAnswer":{"@type":"Answer","text":"Yes. TikTok bios and comments fully support dot art. Multi-line pieces look especially striking as miniature pixel art banners in TikTok bios."}}]}
+</script>
+</head>
+<body>
+<div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div></div>
+<header>
+  <a class="logo" href="/home.html"><img class="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo"></a>
+        <nav>
+    <a href="/home.html" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+    <div class="tools-wrap">
+      <button class="tools-btn">Tools &#9662;</button>
+      <div class="tools-drop">
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="currentColor"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="currentColor" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="currentColor"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="currentColor"/><circle cx="11.5" cy="7.5" r="1.4" fill="currentColor"/><path d="M5.5 11Q9 14 12.5 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
+        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="currentColor" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="currentColor"/><circle cx="14" cy="4.5" r="2" fill="currentColor" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="currentColor"/><circle cx="9" cy="9.5" r="2" fill="currentColor" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="currentColor"/><circle cx="4" cy="14.5" r="2" fill="currentColor" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="currentColor" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="currentColor"/></svg></span> Dot Art</a>
+        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="currentColor" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="currentColor"/><circle cx="13" cy="10.5" r="0.85" fill="currentColor"/></svg></span> FF &amp; PUBG Names</a>
+      </div>
+    </div>
+    <div class="lang-wrap">
+      <button class="lang-pill" id="lang-btn" onclick="toggleLang()">🇺🇸 English ▾</button>
+      <div class="lang-menu" id="lang-menu">
+        <div class="lang-opt active">🇺🇸 English</div>
+        <div class="lang-opt">🇫🇷 Français</div>
+        <div class="lang-opt">🇸🇦 العربية</div>
+      </div>
+    </div>
+    <div class="theme-wrap" onclick="toggleTheme()">
+      <div class="t-track" id="tt"><div class="t-thumb" id="th"><img src="../images/Icon-white mode-Clavierarabe-enligne.svg" alt="" width="13" height="13"></div></div>
+      <div class="t-lbl" id="tlbl">White<br>Mode</div>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">⣿ Dot Art &nbsp;·&nbsp; Copy &amp; Paste</div>
+  <h1>Dot Art</h1>
+  <p class="hero-sub">Emoji pixel art, ASCII art and block character designs. Click any piece to copy instantly — works on Discord, TikTok, WhatsApp and everywhere.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-n">240+</div><div class="stat-l">Art Pieces</div></div>
+    <div class="stat"><div class="stat-n">14</div><div class="stat-l">Categories</div></div>
+    <div class="stat"><div class="stat-n">1-Click</div><div class="stat-l">Copy</div></div>
+  </div>
+</section>
+
+
+<div class="gen-outer">
+<div class="gen-wrap">
+  <div class="gen-hd">
+    <div class="gen-badge">&#10303; Live Generator</div>
+    <h2>Braille Art Generator</h2>
+    <p>Draw pixel art &middot; Upload any image &middot; Get instant Unicode Braille to share on Discord, Twitter &amp; anywhere</p>
+  </div>
+  <div class="gen-layout">
+    <div class="gen-panel glow">
+      <div class="gen-phd">
+        <span class="gen-plbl">Draw Canvas</span>
+        <span class="gen-phint">Click &amp; drag &middot; 2&times;4 pixels = 1 Braille char</span>
+      </div>
+      <div class="gen-tb">
+        <button class="gb act" data-tool="draw">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor"><path d="M8.5 1.5a1.5 1.5 0 012 2L4 10l-3 1 1-3 6.5-6.5z"/></svg>
+          Draw
+        </button>
+        <button class="gb" data-tool="erase">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 9H3M2 7.5l3-5L7 4l-3 5L2 7.5zM7 4l2 1.5"/></svg>
+          Erase
+        </button>
+        <button class="gb" data-tool="fill">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor"><path d="M2 9.5C2 8.7 2.7 8 3.5 8c.3 0 .5.1.7.2l.8.8c.4.4 1 .4 1.4 0L9.5 6 6 2.5 2.5 6c-.3.3-.5.7-.5 1V9.5z"/><circle cx="9.5" cy="9.5" r="1.5"/></svg>
+          Fill
+        </button>
+        <div class="gb-sep"></div>
+        <select class="gb-sel" id="gen-size">
+          <option value="32x16">Tiny 16&times;4</option>
+          <option value="64x32" selected>Small 32&times;8</option>
+          <option value="96x48">Medium 48&times;12</option>
+          <option value="128x64">Large 64&times;16</option>
+          <option value="160x80">XL 80&times;20</option>
+          <option value="192x96">XXL 96&times;24</option>
+        </select>
+        <div class="gb-sep"></div>
+        <button class="gb" id="btn-clean">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10l2-2m0 0l6-6M4 8l1-1m1-1l4-4M3 9l1-1"/><circle cx="9" cy="3" r="1.5" fill="currentColor" stroke="none"/></svg>
+          Clean
+        </button>
+        <div class="gb-sep"></div>
+        <button class="gb" id="btn-clear">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M2 3h8M5 3V2h2v1M9.5 3L9 10H3L2.5 3"/></svg>
+          Clear
+        </button>
+      </div>
+      <div class="gen-cv-bg">
+        <canvas id="gen-cv"></canvas>
+      </div>
+      <label class="gen-upl" id="gen-upl">
+        <svg class="gen-upl-icon" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V8M10 12l4-4 4 4"/><path d="M6 22h16"/><path d="M22 14v3a3 3 0 01-3 3H9a3 3 0 01-3-3v-3"/></svg>
+        <p>Drop an image or <strong>click to upload</strong></p>
+        <span>PNG &middot; JPG &middot; GIF &mdash; auto Floyd-Steinberg dithering</span>
+        <input type="file" id="gen-file" accept="image/*">
+      </label>
+      <div class="thresh-row" id="thresh-row">
+        <span style="white-space:nowrap">Threshold</span>
+        <input type="range" id="thresh" min="20" max="235" value="128">
+        <span id="thresh-val">128</span>
+      </div>
+    </div>
+    <div class="gen-panel">
+      <div class="gen-phd">
+        <span class="gen-plbl">Live Output</span>
+        <button class="btn-act" id="btn-inv">&#8644; Invert</button>
+      </div>
+      <div class="gen-out-bg">
+        <pre id="gen-out">&#10240;</pre>
+      </div>
+      <div class="gen-out-foot">
+        <div class="gen-count" id="gen-count">32&times;8 chars</div>
+        <div class="gen-out-acts">
+          <button class="btn-act" id="btn-dl">&#8595; .txt</button>
+        </div>
+        <button class="btn-copy" id="btn-copy">&#10303; Copy Braille Art</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="coll-hd">
+  <h3>Browse Collections</h3>
+  <p>Click any piece to copy</p>
+</div>
+<div class="hub-grid">
+<a class="hub-card" href="/dot-art/heart/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="5" r="3.8" fill="#0068ff"/><circle cx="45" cy="5" r="3.8" fill="#0068ff"/><circle cx="55" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="5" r="3.8" fill="#0068ff"/><circle cx="85" cy="5" r="3.8" fill="#0068ff"/><circle cx="95" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="15" r="3.8" fill="#0068ff"/><circle cx="35" cy="15" r="3.8" fill="#0068ff"/><circle cx="45" cy="15" r="3.8" fill="#0068ff"/><circle cx="55" cy="15" r="3.8" fill="#0068ff"/><circle cx="65" cy="15" r="3.8" fill="#0068ff"/><circle cx="75" cy="15" r="3.8" fill="#0068ff"/><circle cx="85" cy="15" r="3.8" fill="#0068ff"/><circle cx="95" cy="15" r="3.8" fill="#0068ff"/><circle cx="105" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="25" r="3.8" fill="#0068ff"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="3.8" fill="#0068ff"/><circle cx="65" cy="25" r="3.8" fill="#0068ff"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="3.8" fill="#0068ff"/><circle cx="105" cy="25" r="3.8" fill="#0068ff"/><circle cx="115" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="35" r="3.8" fill="#0068ff"/><circle cx="15" cy="35" r="3.8" fill="#0068ff"/><circle cx="25" cy="35" r="3.8" fill="#0068ff"/><circle cx="35" cy="35" r="3.8" fill="#0068ff"/><circle cx="45" cy="35" r="3.8" fill="#0068ff"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="3.8" fill="#0068ff"/><circle cx="75" cy="35" r="3.8" fill="#0068ff"/><circle cx="85" cy="35" r="3.8" fill="#0068ff"/><circle cx="95" cy="35" r="3.8" fill="#0068ff"/><circle cx="105" cy="35" r="3.8" fill="#0068ff"/><circle cx="115" cy="35" r="3.8" fill="#0068ff"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="45" r="3.8" fill="#0068ff"/><circle cx="25" cy="45" r="3.8" fill="#0068ff"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="3.8" fill="#0068ff"/><circle cx="95" cy="45" r="3.8" fill="#0068ff"/><circle cx="105" cy="45" r="3.8" fill="#0068ff"/><circle cx="115" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="55" r="3.8" fill="#0068ff"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="3.8" fill="#0068ff"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="3.8" fill="#0068ff"/><circle cx="95" cy="55" r="3.8" fill="#0068ff"/><circle cx="105" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="65" r="3.8" fill="#0068ff"/><circle cx="45" cy="65" r="3.8" fill="#0068ff"/><circle cx="55" cy="65" r="3.8" fill="#0068ff"/><circle cx="65" cy="65" r="3.8" fill="#0068ff"/><circle cx="75" cy="65" r="3.8" fill="#0068ff"/><circle cx="85" cy="65" r="3.8" fill="#0068ff"/><circle cx="95" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="75" r="3.8" fill="#0068ff"/><circle cx="55" cy="75" r="3.8" fill="#0068ff"/><circle cx="65" cy="75" r="3.8" fill="#0068ff"/><circle cx="75" cy="75" r="3.8" fill="#0068ff"/><circle cx="85" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🖤</span><span class="hub-count">15 pieces</span></div><div class="hub-name">Heart</div><div class="hub-sub">Pixel love hearts</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/dot-art/cat/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="3.8" fill="#0068ff"/><circle cx="15" cy="5" r="3.8" fill="#0068ff"/><circle cx="25" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="5" r="3.8" fill="#0068ff"/><circle cx="125" cy="5" r="3.8" fill="#0068ff"/><circle cx="5" cy="15" r="3.8" fill="#0068ff"/><circle cx="15" cy="15" r="3.8" fill="#0068ff"/><circle cx="25" cy="15" r="3.8" fill="#0068ff"/><circle cx="35" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="15" r="3.8" fill="#0068ff"/><circle cx="115" cy="15" r="3.8" fill="#0068ff"/><circle cx="125" cy="15" r="3.8" fill="#0068ff"/><circle cx="5" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="25" r="3.8" fill="#0068ff"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="3.8" fill="#0068ff"/><circle cx="65" cy="25" r="3.8" fill="#0068ff"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="3.8" fill="#0068ff"/><circle cx="105" cy="25" r="3.8" fill="#0068ff"/><circle cx="115" cy="25" r="3.8" fill="#0068ff"/><circle cx="125" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="35" r="3.8" fill="#0068ff"/><circle cx="25" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="35" r="3.8" fill="#0068ff"/><circle cx="55" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="35" r="3.8" fill="#0068ff"/><circle cx="95" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="35" r="3.8" fill="#0068ff"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="45" r="3.8" fill="#0068ff"/><circle cx="25" cy="45" r="3.8" fill="#0068ff"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="3.8" fill="#0068ff"/><circle cx="95" cy="45" r="3.8" fill="#0068ff"/><circle cx="105" cy="45" r="3.8" fill="#0068ff"/><circle cx="115" cy="45" r="3.8" fill="#0068ff"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="55" r="3.8" fill="#0068ff"/><circle cx="25" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="55" r="3.8" fill="#0068ff"/><circle cx="105" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="55" r="3.8" fill="#0068ff"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="65" r="3.8" fill="#0068ff"/><circle cx="35" cy="65" r="3.8" fill="#0068ff"/><circle cx="45" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="65" r="3.8" fill="#0068ff"/><circle cx="65" cy="65" r="3.8" fill="#0068ff"/><circle cx="75" cy="65" r="3.8" fill="#0068ff"/><circle cx="85" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="65" r="3.8" fill="#0068ff"/><circle cx="105" cy="65" r="3.8" fill="#0068ff"/><circle cx="115" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🐱</span><span class="hub-count">27 pieces</span></div><div class="hub-name">Cat</div><div class="hub-sub">Cat face pixel art</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/dot-art/rose/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="5" r="3.8" fill="#0068ff"/><circle cx="65" cy="5" r="3.8" fill="#0068ff"/><circle cx="75" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="15" r="3.8" fill="#0068ff"/><circle cx="55" cy="15" r="3.8" fill="#0068ff"/><circle cx="65" cy="15" r="3.8" fill="#0068ff"/><circle cx="75" cy="15" r="3.8" fill="#0068ff"/><circle cx="85" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="35" r="3.8" fill="#0068ff"/><circle cx="35" cy="35" r="3.8" fill="#0068ff"/><circle cx="45" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="3.8" fill="#0068ff"/><circle cx="75" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="35" r="3.8" fill="#0068ff"/><circle cx="95" cy="35" r="3.8" fill="#0068ff"/><circle cx="105" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="45" r="3.8" fill="#0068ff"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="3.8" fill="#0068ff"/><circle cx="95" cy="45" r="3.8" fill="#0068ff"/><circle cx="105" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="3.8" fill="#0068ff"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="3.8" fill="#0068ff"/><circle cx="95" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="65" r="3.8" fill="#0068ff"/><circle cx="65" cy="65" r="3.8" fill="#0068ff"/><circle cx="75" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="3.8" fill="#0068ff"/><circle cx="45" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="75" r="3.8" fill="#0068ff"/><circle cx="65" cy="75" r="3.8" fill="#0068ff"/><circle cx="75" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="75" r="3.8" fill="#0068ff"/><circle cx="95" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🌹</span><span class="hub-count">12 pieces</span></div><div class="hub-name">Rose</div><div class="hub-sub">Floral dot designs</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/dot-art/skull/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="5" r="3.8" fill="#0068ff"/><circle cx="35" cy="5" r="3.8" fill="#0068ff"/><circle cx="45" cy="5" r="3.8" fill="#0068ff"/><circle cx="55" cy="5" r="3.8" fill="#0068ff"/><circle cx="65" cy="5" r="3.8" fill="#0068ff"/><circle cx="75" cy="5" r="3.8" fill="#0068ff"/><circle cx="85" cy="5" r="3.8" fill="#0068ff"/><circle cx="95" cy="5" r="3.8" fill="#0068ff"/><circle cx="105" cy="5" r="3.8" fill="#0068ff"/><circle cx="115" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="15" r="3.8" fill="#0068ff"/><circle cx="25" cy="15" r="3.8" fill="#0068ff"/><circle cx="35" cy="15" r="3.8" fill="#0068ff"/><circle cx="45" cy="15" r="3.8" fill="#0068ff"/><circle cx="55" cy="15" r="3.8" fill="#0068ff"/><circle cx="65" cy="15" r="3.8" fill="#0068ff"/><circle cx="75" cy="15" r="3.8" fill="#0068ff"/><circle cx="85" cy="15" r="3.8" fill="#0068ff"/><circle cx="95" cy="15" r="3.8" fill="#0068ff"/><circle cx="105" cy="15" r="3.8" fill="#0068ff"/><circle cx="115" cy="15" r="3.8" fill="#0068ff"/><circle cx="125" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="25" r="3.8" fill="#0068ff"/><circle cx="15" cy="25" r="3.8" fill="#0068ff"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="3.8" fill="#0068ff"/><circle cx="65" cy="25" r="3.8" fill="#0068ff"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="3.8" fill="#0068ff"/><circle cx="105" cy="25" r="3.8" fill="#0068ff"/><circle cx="115" cy="25" r="3.8" fill="#0068ff"/><circle cx="125" cy="25" r="3.8" fill="#0068ff"/><circle cx="5" cy="35" r="3.8" fill="#0068ff"/><circle cx="15" cy="35" r="3.8" fill="#0068ff"/><circle cx="25" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="35" r="3.8" fill="#0068ff"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="3.8" fill="#0068ff"/><circle cx="75" cy="35" r="3.8" fill="#0068ff"/><circle cx="85" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="35" r="3.8" fill="#0068ff"/><circle cx="115" cy="35" r="3.8" fill="#0068ff"/><circle cx="125" cy="35" r="3.8" fill="#0068ff"/><circle cx="5" cy="45" r="3.8" fill="#0068ff"/><circle cx="15" cy="45" r="3.8" fill="#0068ff"/><circle cx="25" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="45" r="3.8" fill="#0068ff"/><circle cx="115" cy="45" r="3.8" fill="#0068ff"/><circle cx="125" cy="45" r="3.8" fill="#0068ff"/><circle cx="5" cy="55" r="3.8" fill="#0068ff"/><circle cx="15" cy="55" r="3.8" fill="#0068ff"/><circle cx="25" cy="55" r="3.8" fill="#0068ff"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="3.8" fill="#0068ff"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="3.8" fill="#0068ff"/><circle cx="95" cy="55" r="3.8" fill="#0068ff"/><circle cx="105" cy="55" r="3.8" fill="#0068ff"/><circle cx="115" cy="55" r="3.8" fill="#0068ff"/><circle cx="125" cy="55" r="3.8" fill="#0068ff"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="3.8" fill="#0068ff"/><circle cx="25" cy="65" r="3.8" fill="#0068ff"/><circle cx="35" cy="65" r="3.8" fill="#0068ff"/><circle cx="45" cy="65" r="3.8" fill="#0068ff"/><circle cx="55" cy="65" r="3.8" fill="#0068ff"/><circle cx="65" cy="65" r="3.8" fill="#0068ff"/><circle cx="75" cy="65" r="3.8" fill="#0068ff"/><circle cx="85" cy="65" r="3.8" fill="#0068ff"/><circle cx="95" cy="65" r="3.8" fill="#0068ff"/><circle cx="105" cy="65" r="3.8" fill="#0068ff"/><circle cx="115" cy="65" r="3.8" fill="#0068ff"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="3.8" fill="#0068ff"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="3.8" fill="#0068ff"/><circle cx="45" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="75" r="3.8" fill="#0068ff"/><circle cx="65" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="75" r="3.8" fill="#0068ff"/><circle cx="85" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="75" r="3.8" fill="#0068ff"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="3.8" fill="#0068ff"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">💀</span><span class="hub-count">12 pieces</span></div><div class="hub-name">Skull</div><div class="hub-sub">Skull pixel art</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/dot-art/butterfly/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="3.8" fill="#0068ff"/><circle cx="15" cy="5" r="3.8" fill="#0068ff"/><circle cx="25" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="5" r="3.8" fill="#0068ff"/><circle cx="125" cy="5" r="3.8" fill="#0068ff"/><circle cx="5" cy="15" r="3.8" fill="#0068ff"/><circle cx="15" cy="15" r="3.8" fill="#0068ff"/><circle cx="25" cy="15" r="3.8" fill="#0068ff"/><circle cx="35" cy="15" r="3.8" fill="#0068ff"/><circle cx="45" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="15" r="3.8" fill="#0068ff"/><circle cx="105" cy="15" r="3.8" fill="#0068ff"/><circle cx="115" cy="15" r="3.8" fill="#0068ff"/><circle cx="125" cy="15" r="3.8" fill="#0068ff"/><circle cx="5" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="25" r="3.8" fill="#0068ff"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="3.8" fill="#0068ff"/><circle cx="105" cy="25" r="3.8" fill="#0068ff"/><circle cx="115" cy="25" r="3.8" fill="#0068ff"/><circle cx="125" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="35" r="3.8" fill="#0068ff"/><circle cx="35" cy="35" r="3.8" fill="#0068ff"/><circle cx="45" cy="35" r="3.8" fill="#0068ff"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="35" r="3.8" fill="#0068ff"/><circle cx="85" cy="35" r="3.8" fill="#0068ff"/><circle cx="95" cy="35" r="3.8" fill="#0068ff"/><circle cx="105" cy="35" r="3.8" fill="#0068ff"/><circle cx="115" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="3.8" fill="#0068ff"/><circle cx="95" cy="45" r="3.8" fill="#0068ff"/><circle cx="105" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="55" r="3.8" fill="#0068ff"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="3.8" fill="#0068ff"/><circle cx="95" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="65" r="3.8" fill="#0068ff"/><circle cx="45" cy="65" r="3.8" fill="#0068ff"/><circle cx="55" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="65" r="3.8" fill="#0068ff"/><circle cx="75" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="65" r="3.8" fill="#0068ff"/><circle cx="95" cy="65" r="3.8" fill="#0068ff"/><circle cx="105" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="75" r="3.8" fill="#0068ff"/><circle cx="75" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🦋</span><span class="hub-count">12 pieces</span></div><div class="hub-name">Butterfly</div><div class="hub-sub">Butterfly dot designs</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/dot-art/bear/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="3.8" fill="#0068ff"/><circle cx="15" cy="5" r="3.8" fill="#0068ff"/><circle cx="25" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="5" r="3.8" fill="#0068ff"/><circle cx="45" cy="5" r="3.8" fill="#0068ff"/><circle cx="55" cy="5" r="3.8" fill="#0068ff"/><circle cx="65" cy="5" r="3.8" fill="#0068ff"/><circle cx="75" cy="5" r="3.8" fill="#0068ff"/><circle cx="85" cy="5" r="3.8" fill="#0068ff"/><circle cx="95" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="5" r="3.8" fill="#0068ff"/><circle cx="125" cy="5" r="3.8" fill="#0068ff"/><circle cx="5" cy="15" r="3.8" fill="#0068ff"/><circle cx="15" cy="15" r="3.8" fill="#0068ff"/><circle cx="25" cy="15" r="3.8" fill="#0068ff"/><circle cx="35" cy="15" r="3.8" fill="#0068ff"/><circle cx="45" cy="15" r="3.8" fill="#0068ff"/><circle cx="55" cy="15" r="3.8" fill="#0068ff"/><circle cx="65" cy="15" r="3.8" fill="#0068ff"/><circle cx="75" cy="15" r="3.8" fill="#0068ff"/><circle cx="85" cy="15" r="3.8" fill="#0068ff"/><circle cx="95" cy="15" r="3.8" fill="#0068ff"/><circle cx="105" cy="15" r="3.8" fill="#0068ff"/><circle cx="115" cy="15" r="3.8" fill="#0068ff"/><circle cx="125" cy="15" r="3.8" fill="#0068ff"/><circle cx="5" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="25" r="3.8" fill="#0068ff"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="3.8" fill="#0068ff"/><circle cx="65" cy="25" r="3.8" fill="#0068ff"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="3.8" fill="#0068ff"/><circle cx="105" cy="25" r="3.8" fill="#0068ff"/><circle cx="115" cy="25" r="3.8" fill="#0068ff"/><circle cx="125" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="35" r="3.8" fill="#0068ff"/><circle cx="25" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="35" r="3.8" fill="#0068ff"/><circle cx="55" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="35" r="3.8" fill="#0068ff"/><circle cx="95" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="35" r="3.8" fill="#0068ff"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="45" r="3.8" fill="#0068ff"/><circle cx="25" cy="45" r="3.8" fill="#0068ff"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="45" r="3.8" fill="#0068ff"/><circle cx="105" cy="45" r="3.8" fill="#0068ff"/><circle cx="115" cy="45" r="3.8" fill="#0068ff"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="55" r="3.8" fill="#0068ff"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="3.8" fill="#0068ff"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="3.8" fill="#0068ff"/><circle cx="95" cy="55" r="3.8" fill="#0068ff"/><circle cx="105" cy="55" r="3.8" fill="#0068ff"/><circle cx="115" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="65" r="3.8" fill="#0068ff"/><circle cx="45" cy="65" r="3.8" fill="#0068ff"/><circle cx="55" cy="65" r="3.8" fill="#0068ff"/><circle cx="65" cy="65" r="3.8" fill="#0068ff"/><circle cx="75" cy="65" r="3.8" fill="#0068ff"/><circle cx="85" cy="65" r="3.8" fill="#0068ff"/><circle cx="95" cy="65" r="3.8" fill="#0068ff"/><circle cx="105" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🐻</span><span class="hub-count">27 pieces</span></div><div class="hub-name">Bear</div><div class="hub-sub">Bear pixel art</div></div><span class="hub-arrow">→</span></a>
+
+
+<a class="hub-card" href="/dot-art/star/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="5" r="3.8" fill="#0068ff"/><circle cx="65" cy="5" r="3.8" fill="#0068ff"/><circle cx="75" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="15" r="3.8" fill="#0068ff"/><circle cx="65" cy="15" r="3.8" fill="#0068ff"/><circle cx="75" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="25" r="3.8" fill="#0068ff"/><circle cx="15" cy="25" r="3.8" fill="#0068ff"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="3.8" fill="#0068ff"/><circle cx="65" cy="25" r="3.8" fill="#0068ff"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="3.8" fill="#0068ff"/><circle cx="105" cy="25" r="3.8" fill="#0068ff"/><circle cx="115" cy="25" r="3.8" fill="#0068ff"/><circle cx="125" cy="25" r="3.8" fill="#0068ff"/><circle cx="5" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="35" r="3.8" fill="#0068ff"/><circle cx="35" cy="35" r="3.8" fill="#0068ff"/><circle cx="45" cy="35" r="3.8" fill="#0068ff"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="3.8" fill="#0068ff"/><circle cx="75" cy="35" r="3.8" fill="#0068ff"/><circle cx="85" cy="35" r="3.8" fill="#0068ff"/><circle cx="95" cy="35" r="3.8" fill="#0068ff"/><circle cx="105" cy="35" r="3.8" fill="#0068ff"/><circle cx="115" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="3.8" fill="#0068ff"/><circle cx="95" cy="45" r="3.8" fill="#0068ff"/><circle cx="105" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="55" r="3.8" fill="#0068ff"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="55" r="3.8" fill="#0068ff"/><circle cx="105" cy="55" r="3.8" fill="#0068ff"/><circle cx="115" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="3.8" fill="#0068ff"/><circle cx="25" cy="65" r="3.8" fill="#0068ff"/><circle cx="35" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="65" r="3.8" fill="#0068ff"/><circle cx="75" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="65" r="3.8" fill="#0068ff"/><circle cx="115" cy="65" r="3.8" fill="#0068ff"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="3.8" fill="#0068ff"/><circle cx="15" cy="75" r="3.8" fill="#0068ff"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="75" r="3.8" fill="#0068ff"/><circle cx="75" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="3.8" fill="#0068ff"/><circle cx="125" cy="75" r="3.8" fill="#0068ff"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">★</span><span class="hub-count">15 pieces</span></div><div class="hub-name">Star</div><div class="hub-sub">Star pixel shapes</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/dot-art/moon/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="5" r="3.8" fill="#0068ff"/><circle cx="35" cy="5" r="3.8" fill="#0068ff"/><circle cx="45" cy="5" r="3.8" fill="#0068ff"/><circle cx="55" cy="5" r="3.8" fill="#0068ff"/><circle cx="65" cy="5" r="3.8" fill="#0068ff"/><circle cx="75" cy="5" r="3.8" fill="#0068ff"/><circle cx="85" cy="5" r="3.8" fill="#0068ff"/><circle cx="95" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="15" r="3.8" fill="#0068ff"/><circle cx="25" cy="15" r="3.8" fill="#0068ff"/><circle cx="35" cy="15" r="3.8" fill="#0068ff"/><circle cx="45" cy="15" r="3.8" fill="#0068ff"/><circle cx="55" cy="15" r="3.8" fill="#0068ff"/><circle cx="65" cy="15" r="3.8" fill="#0068ff"/><circle cx="75" cy="15" r="3.8" fill="#0068ff"/><circle cx="85" cy="15" r="3.8" fill="#0068ff"/><circle cx="95" cy="15" r="3.8" fill="#0068ff"/><circle cx="105" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="25" r="3.8" fill="#0068ff"/><circle cx="15" cy="25" r="3.8" fill="#0068ff"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="3.8" fill="#0068ff"/><circle cx="65" cy="25" r="3.8" fill="#0068ff"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="35" r="3.8" fill="#0068ff"/><circle cx="15" cy="35" r="3.8" fill="#0068ff"/><circle cx="25" cy="35" r="3.8" fill="#0068ff"/><circle cx="35" cy="35" r="3.8" fill="#0068ff"/><circle cx="45" cy="35" r="3.8" fill="#0068ff"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="3.8" fill="#0068ff"/><circle cx="75" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="3.8" fill="#0068ff"/><circle cx="15" cy="45" r="3.8" fill="#0068ff"/><circle cx="25" cy="45" r="3.8" fill="#0068ff"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="3.8" fill="#0068ff"/><circle cx="15" cy="55" r="3.8" fill="#0068ff"/><circle cx="25" cy="55" r="3.8" fill="#0068ff"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="3.8" fill="#0068ff"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="3.8" fill="#0068ff"/><circle cx="25" cy="65" r="3.8" fill="#0068ff"/><circle cx="35" cy="65" r="3.8" fill="#0068ff"/><circle cx="45" cy="65" r="3.8" fill="#0068ff"/><circle cx="55" cy="65" r="3.8" fill="#0068ff"/><circle cx="65" cy="65" r="3.8" fill="#0068ff"/><circle cx="75" cy="65" r="3.8" fill="#0068ff"/><circle cx="85" cy="65" r="3.8" fill="#0068ff"/><circle cx="95" cy="65" r="3.8" fill="#0068ff"/><circle cx="105" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="75" r="3.8" fill="#0068ff"/><circle cx="35" cy="75" r="3.8" fill="#0068ff"/><circle cx="45" cy="75" r="3.8" fill="#0068ff"/><circle cx="55" cy="75" r="3.8" fill="#0068ff"/><circle cx="65" cy="75" r="3.8" fill="#0068ff"/><circle cx="75" cy="75" r="3.8" fill="#0068ff"/><circle cx="85" cy="75" r="3.8" fill="#0068ff"/><circle cx="95" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🌙</span><span class="hub-count">15 pieces</span></div><div class="hub-name">Moon</div><div class="hub-sub">Crescent pixel art</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/dot-art/anime/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="5" r="3.8" fill="#0068ff"/><circle cx="45" cy="5" r="3.8" fill="#0068ff"/><circle cx="55" cy="5" r="3.8" fill="#0068ff"/><circle cx="65" cy="5" r="3.8" fill="#0068ff"/><circle cx="75" cy="5" r="3.8" fill="#0068ff"/><circle cx="85" cy="5" r="3.8" fill="#0068ff"/><circle cx="95" cy="5" r="3.8" fill="#0068ff"/><circle cx="105" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="15" r="3.8" fill="#0068ff"/><circle cx="35" cy="15" r="3.8" fill="#0068ff"/><circle cx="45" cy="15" r="3.8" fill="#0068ff"/><circle cx="55" cy="15" r="3.8" fill="#0068ff"/><circle cx="65" cy="15" r="3.8" fill="#0068ff"/><circle cx="75" cy="15" r="3.8" fill="#0068ff"/><circle cx="85" cy="15" r="3.8" fill="#0068ff"/><circle cx="95" cy="15" r="3.8" fill="#0068ff"/><circle cx="105" cy="15" r="3.8" fill="#0068ff"/><circle cx="115" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="25" r="3.8" fill="#0068ff"/><circle cx="25" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="3.8" fill="#0068ff"/><circle cx="65" cy="25" r="3.8" fill="#0068ff"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="25" r="3.8" fill="#0068ff"/><circle cx="115" cy="25" r="3.8" fill="#0068ff"/><circle cx="125" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="35" r="3.8" fill="#0068ff"/><circle cx="25" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="35" r="3.8" fill="#0068ff"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="3.8" fill="#0068ff"/><circle cx="75" cy="35" r="3.8" fill="#0068ff"/><circle cx="85" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="35" r="3.8" fill="#0068ff"/><circle cx="115" cy="35" r="3.8" fill="#0068ff"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="45" r="3.8" fill="#0068ff"/><circle cx="25" cy="45" r="3.8" fill="#0068ff"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="3.8" fill="#0068ff"/><circle cx="95" cy="45" r="3.8" fill="#0068ff"/><circle cx="105" cy="45" r="3.8" fill="#0068ff"/><circle cx="115" cy="45" r="3.8" fill="#0068ff"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="55" r="3.8" fill="#0068ff"/><circle cx="25" cy="55" r="3.8" fill="#0068ff"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="3.8" fill="#0068ff"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="3.8" fill="#0068ff"/><circle cx="95" cy="55" r="3.8" fill="#0068ff"/><circle cx="105" cy="55" r="3.8" fill="#0068ff"/><circle cx="115" cy="55" r="3.8" fill="#0068ff"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="65" r="3.8" fill="#0068ff"/><circle cx="35" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="65" r="3.8" fill="#0068ff"/><circle cx="105" cy="65" r="3.8" fill="#0068ff"/><circle cx="115" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="3.8" fill="#0068ff"/><circle cx="45" cy="75" r="3.8" fill="#0068ff"/><circle cx="55" cy="75" r="3.8" fill="#0068ff"/><circle cx="65" cy="75" r="3.8" fill="#0068ff"/><circle cx="75" cy="75" r="3.8" fill="#0068ff"/><circle cx="85" cy="75" r="3.8" fill="#0068ff"/><circle cx="95" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🎌</span><span class="hub-count">15 pieces</span></div><div class="hub-name">Anime</div><div class="hub-sub">Anime pixel scenes</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/dot-art/pokemon/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="5" r="3.8" fill="#0068ff"/><circle cx="35" cy="5" r="3.8" fill="#0068ff"/><circle cx="45" cy="5" r="3.8" fill="#0068ff"/><circle cx="55" cy="5" r="3.8" fill="#0068ff"/><circle cx="65" cy="5" r="3.8" fill="#0068ff"/><circle cx="75" cy="5" r="3.8" fill="#0068ff"/><circle cx="85" cy="5" r="3.8" fill="#0068ff"/><circle cx="95" cy="5" r="3.8" fill="#0068ff"/><circle cx="105" cy="5" r="3.8" fill="#0068ff"/><circle cx="115" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="15" r="3.8" fill="#0068ff"/><circle cx="25" cy="15" r="3.8" fill="#0068ff"/><circle cx="35" cy="15" r="3.8" fill="#0068ff"/><circle cx="45" cy="15" r="3.8" fill="#0068ff"/><circle cx="55" cy="15" r="3.8" fill="#0068ff"/><circle cx="65" cy="15" r="3.8" fill="#0068ff"/><circle cx="75" cy="15" r="3.8" fill="#0068ff"/><circle cx="85" cy="15" r="3.8" fill="#0068ff"/><circle cx="95" cy="15" r="3.8" fill="#0068ff"/><circle cx="105" cy="15" r="3.8" fill="#0068ff"/><circle cx="115" cy="15" r="3.8" fill="#0068ff"/><circle cx="125" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="25" r="3.8" fill="#0068ff"/><circle cx="15" cy="25" r="3.8" fill="#0068ff"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="3.8" fill="#0068ff"/><circle cx="65" cy="25" r="3.8" fill="#0068ff"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="3.8" fill="#0068ff"/><circle cx="105" cy="25" r="3.8" fill="#0068ff"/><circle cx="115" cy="25" r="3.8" fill="#0068ff"/><circle cx="125" cy="25" r="3.8" fill="#0068ff"/><circle cx="5" cy="35" r="3.8" fill="#0068ff"/><circle cx="15" cy="35" r="3.8" fill="#0068ff"/><circle cx="25" cy="35" r="3.8" fill="#0068ff"/><circle cx="35" cy="35" r="3.8" fill="#0068ff"/><circle cx="45" cy="35" r="3.8" fill="#0068ff"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="3.8" fill="#0068ff"/><circle cx="75" cy="35" r="3.8" fill="#0068ff"/><circle cx="85" cy="35" r="3.8" fill="#0068ff"/><circle cx="95" cy="35" r="3.8" fill="#0068ff"/><circle cx="105" cy="35" r="3.8" fill="#0068ff"/><circle cx="115" cy="35" r="3.8" fill="#0068ff"/><circle cx="125" cy="35" r="3.8" fill="#0068ff"/><circle cx="5" cy="45" r="3.8" fill="#0068ff"/><circle cx="15" cy="45" r="3.8" fill="#0068ff"/><circle cx="25" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="45" r="3.8" fill="#0068ff"/><circle cx="125" cy="45" r="3.8" fill="#0068ff"/><circle cx="5" cy="55" r="3.8" fill="#0068ff"/><circle cx="15" cy="55" r="3.8" fill="#0068ff"/><circle cx="25" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="55" r="3.8" fill="#0068ff"/><circle cx="125" cy="55" r="3.8" fill="#0068ff"/><circle cx="5" cy="65" r="3.8" fill="#0068ff"/><circle cx="15" cy="65" r="3.8" fill="#0068ff"/><circle cx="25" cy="65" r="3.8" fill="#0068ff"/><circle cx="35" cy="65" r="3.8" fill="#0068ff"/><circle cx="45" cy="65" r="3.8" fill="#0068ff"/><circle cx="55" cy="65" r="3.8" fill="#0068ff"/><circle cx="65" cy="65" r="3.8" fill="#0068ff"/><circle cx="75" cy="65" r="3.8" fill="#0068ff"/><circle cx="85" cy="65" r="3.8" fill="#0068ff"/><circle cx="95" cy="65" r="3.8" fill="#0068ff"/><circle cx="105" cy="65" r="3.8" fill="#0068ff"/><circle cx="115" cy="65" r="3.8" fill="#0068ff"/><circle cx="125" cy="65" r="3.8" fill="#0068ff"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="3.8" fill="#0068ff"/><circle cx="25" cy="75" r="3.8" fill="#0068ff"/><circle cx="35" cy="75" r="3.8" fill="#0068ff"/><circle cx="45" cy="75" r="3.8" fill="#0068ff"/><circle cx="55" cy="75" r="3.8" fill="#0068ff"/><circle cx="65" cy="75" r="3.8" fill="#0068ff"/><circle cx="75" cy="75" r="3.8" fill="#0068ff"/><circle cx="85" cy="75" r="3.8" fill="#0068ff"/><circle cx="95" cy="75" r="3.8" fill="#0068ff"/><circle cx="105" cy="75" r="3.8" fill="#0068ff"/><circle cx="115" cy="75" r="3.8" fill="#0068ff"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">⚡</span><span class="hub-count">15 pieces</span></div><div class="hub-name">Pokémon</div><div class="hub-sub">Pokémon pixel art</div></div><span class="hub-arrow">→</span></a>
+
+<a class="hub-card" href="/dot-art/hello-kitty/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="5" r="3.8" fill="#0068ff"/><circle cx="55" cy="5" r="3.8" fill="#0068ff"/><circle cx="65" cy="5" r="3.8" fill="#0068ff"/><circle cx="75" cy="5" r="3.8" fill="#0068ff"/><circle cx="85" cy="5" r="3.8" fill="#0068ff"/><circle cx="95" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="15" r="3.8" fill="#0068ff"/><circle cx="45" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="15" r="3.8" fill="#0068ff"/><circle cx="105" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="25" r="3.8" fill="#0068ff"/><circle cx="115" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="35" r="3.8" fill="#0068ff"/><circle cx="35" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="3.8" fill="#0068ff"/><circle cx="75" cy="35" r="3.8" fill="#0068ff"/><circle cx="85" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="35" r="3.8" fill="#0068ff"/><circle cx="115" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="45" r="3.8" fill="#0068ff"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="3.8" fill="#0068ff"/><circle cx="95" cy="45" r="3.8" fill="#0068ff"/><circle cx="105" cy="45" r="3.8" fill="#0068ff"/><circle cx="115" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="3.8" fill="#0068ff"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="3.8" fill="#0068ff"/><circle cx="95" cy="55" r="3.8" fill="#0068ff"/><circle cx="105" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="3.8" fill="#0068ff"/><circle cx="25" cy="65" r="3.8" fill="#0068ff"/><circle cx="35" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="65" r="3.8" fill="#0068ff"/><circle cx="55" cy="65" r="3.8" fill="#0068ff"/><circle cx="65" cy="65" r="3.8" fill="#0068ff"/><circle cx="75" cy="65" r="3.8" fill="#0068ff"/><circle cx="85" cy="65" r="3.8" fill="#0068ff"/><circle cx="95" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="65" r="3.8" fill="#0068ff"/><circle cx="115" cy="65" r="3.8" fill="#0068ff"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="3.8" fill="#0068ff"/><circle cx="15" cy="75" r="3.8" fill="#0068ff"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="3.8" fill="#0068ff"/><circle cx="125" cy="75" r="3.8" fill="#0068ff"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🎀</span><span class="hub-count">14 pieces</span></div><div class="hub-name">Hello Kitty</div><div class="hub-sub">Kawaii pixel art</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/dot-art/frog/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="5" r="3.8" fill="#0068ff"/><circle cx="25" cy="5" r="3.8" fill="#0068ff"/><circle cx="35" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="5" r="3.8" fill="#0068ff"/><circle cx="115" cy="5" r="3.8" fill="#0068ff"/><circle cx="125" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="15" r="3.8" fill="#0068ff"/><circle cx="15" cy="15" r="3.8" fill="#0068ff"/><circle cx="25" cy="15" r="3.8" fill="#0068ff"/><circle cx="35" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="15" r="3.8" fill="#0068ff"/><circle cx="115" cy="15" r="3.8" fill="#0068ff"/><circle cx="125" cy="15" r="3.8" fill="#0068ff"/><circle cx="5" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="25" r="3.8" fill="#0068ff"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="3.8" fill="#0068ff"/><circle cx="65" cy="25" r="3.8" fill="#0068ff"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="3.8" fill="#0068ff"/><circle cx="105" cy="25" r="3.8" fill="#0068ff"/><circle cx="115" cy="25" r="3.8" fill="#0068ff"/><circle cx="125" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="35" r="3.8" fill="#0068ff"/><circle cx="25" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="35" r="3.8" fill="#0068ff"/><circle cx="45" cy="35" r="3.8" fill="#0068ff"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="3.8" fill="#0068ff"/><circle cx="75" cy="35" r="3.8" fill="#0068ff"/><circle cx="85" cy="35" r="3.8" fill="#0068ff"/><circle cx="95" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="35" r="3.8" fill="#0068ff"/><circle cx="115" cy="35" r="3.8" fill="#0068ff"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="45" r="3.8" fill="#0068ff"/><circle cx="25" cy="45" r="3.8" fill="#0068ff"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="3.8" fill="#0068ff"/><circle cx="95" cy="45" r="3.8" fill="#0068ff"/><circle cx="105" cy="45" r="3.8" fill="#0068ff"/><circle cx="115" cy="45" r="3.8" fill="#0068ff"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="55" r="3.8" fill="#0068ff"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="3.8" fill="#0068ff"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="3.8" fill="#0068ff"/><circle cx="95" cy="55" r="3.8" fill="#0068ff"/><circle cx="105" cy="55" r="3.8" fill="#0068ff"/><circle cx="115" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="65" r="3.8" fill="#0068ff"/><circle cx="45" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="65" r="3.8" fill="#0068ff"/><circle cx="105" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="3.8" fill="#0068ff"/><circle cx="45" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="75" r="3.8" fill="#0068ff"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🐸</span><span class="hub-count">15 pieces</span></div><div class="hub-name">Frog</div><div class="hub-sub">Frog dot designs</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/dot-art/flower/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="5" r="3.8" fill="#0068ff"/><circle cx="65" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="15" r="3.8" fill="#0068ff"/><circle cx="45" cy="15" r="3.8" fill="#0068ff"/><circle cx="55" cy="15" r="3.8" fill="#0068ff"/><circle cx="65" cy="15" r="3.8" fill="#0068ff"/><circle cx="75" cy="15" r="3.8" fill="#0068ff"/><circle cx="85" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="3.8" fill="#0068ff"/><circle cx="65" cy="25" r="3.8" fill="#0068ff"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="25" r="3.8" fill="#0068ff"/><circle cx="125" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="35" r="3.8" fill="#0068ff"/><circle cx="25" cy="35" r="3.8" fill="#0068ff"/><circle cx="35" cy="35" r="3.8" fill="#0068ff"/><circle cx="45" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="35" r="3.8" fill="#0068ff"/><circle cx="85" cy="35" r="3.8" fill="#0068ff"/><circle cx="95" cy="35" r="3.8" fill="#0068ff"/><circle cx="105" cy="35" r="3.8" fill="#0068ff"/><circle cx="115" cy="35" r="3.8" fill="#0068ff"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="45" r="3.8" fill="#0068ff"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="3.8" fill="#0068ff"/><circle cx="95" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="45" r="3.8" fill="#0068ff"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="3.8" fill="#0068ff"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="65" r="3.8" fill="#0068ff"/><circle cx="65" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="55" cy="75" r="3.8" fill="#0068ff"/><circle cx="65" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="75" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🌸</span><span class="hub-count">15 pieces</span></div><div class="hub-name">Flower</div><div class="hub-sub">Flower dot art</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/dot-art/strawberry/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="5" r="3.8" fill="#0068ff"/><circle cx="45" cy="5" r="3.8" fill="#0068ff"/><circle cx="55" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="65" cy="5" r="3.8" fill="#0068ff"/><circle cx="75" cy="5" r="3.8" fill="#0068ff"/><circle cx="85" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="15" r="3.8" fill="#0068ff"/><circle cx="55" cy="15" r="3.8" fill="#0068ff"/><circle cx="65" cy="15" r="3.8" fill="#0068ff"/><circle cx="75" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="25" r="3.8" fill="#0068ff"/><circle cx="35" cy="25" r="3.8" fill="#0068ff"/><circle cx="45" cy="25" r="3.8" fill="#0068ff"/><circle cx="55" cy="25" r="3.8" fill="#0068ff"/><circle cx="65" cy="25" r="3.8" fill="#0068ff"/><circle cx="75" cy="25" r="3.8" fill="#0068ff"/><circle cx="85" cy="25" r="3.8" fill="#0068ff"/><circle cx="95" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="25" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="35" r="3.8" fill="#0068ff"/><circle cx="25" cy="35" r="3.8" fill="#0068ff"/><circle cx="35" cy="35" r="3.8" fill="#0068ff"/><circle cx="45" cy="35" r="3.8" fill="#0068ff"/><circle cx="55" cy="35" r="3.8" fill="#0068ff"/><circle cx="65" cy="35" r="3.8" fill="#0068ff"/><circle cx="75" cy="35" r="3.8" fill="#0068ff"/><circle cx="85" cy="35" r="3.8" fill="#0068ff"/><circle cx="95" cy="35" r="3.8" fill="#0068ff"/><circle cx="105" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="45" r="3.8" fill="#0068ff"/><circle cx="25" cy="45" r="3.8" fill="#0068ff"/><circle cx="35" cy="45" r="3.8" fill="#0068ff"/><circle cx="45" cy="45" r="3.8" fill="#0068ff"/><circle cx="55" cy="45" r="3.8" fill="#0068ff"/><circle cx="65" cy="45" r="3.8" fill="#0068ff"/><circle cx="75" cy="45" r="3.8" fill="#0068ff"/><circle cx="85" cy="45" r="3.8" fill="#0068ff"/><circle cx="95" cy="45" r="3.8" fill="#0068ff"/><circle cx="105" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="55" r="3.8" fill="#0068ff"/><circle cx="35" cy="55" r="3.8" fill="#0068ff"/><circle cx="45" cy="55" r="3.8" fill="#0068ff"/><circle cx="55" cy="55" r="3.8" fill="#0068ff"/><circle cx="65" cy="55" r="3.8" fill="#0068ff"/><circle cx="75" cy="55" r="3.8" fill="#0068ff"/><circle cx="85" cy="55" r="3.8" fill="#0068ff"/><circle cx="95" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="65" r="3.8" fill="#0068ff"/><circle cx="45" cy="65" r="3.8" fill="#0068ff"/><circle cx="55" cy="65" r="3.8" fill="#0068ff"/><circle cx="65" cy="65" r="3.8" fill="#0068ff"/><circle cx="75" cy="65" r="3.8" fill="#0068ff"/><circle cx="85" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="45" cy="75" r="3.8" fill="#0068ff"/><circle cx="55" cy="75" r="3.8" fill="#0068ff"/><circle cx="65" cy="75" r="3.8" fill="#0068ff"/><circle cx="75" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(0,104,255,.13)"/></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🍓</span><span class="hub-count">15 pieces</span></div><div class="hub-name">Strawberry</div><div class="hub-sub">Fruit pixel art</div></div><span class="hub-arrow">→</span></a>
+</div>
+
+
+
+
+    <div class="how-sec">
+      <div class="how-head">How to <span style="color:#0068ff;-webkit-text-fill-color:#0068ff">Use</span></div>
+      <div class="how-steps">
+        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#0068ff,#0068ff)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/></svg></div><div class="how-step-title">1. Browse Categories</div><div class="how-step-desc">Pick a category — hearts, animals, food, or any of the 14 themes.</div></div>
+        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#0068ff,#0068ff)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 3L6 18L10 14L13 21L15 20L12 13L18 13Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" fill="none"/></svg></div><div class="how-step-title">2. Click Any Piece</div><div class="how-step-desc">Click any dot art piece to instantly copy it to your clipboard.</div></div>
+        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#0068ff,#0068ff)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="2" stroke="#fff" stroke-width="1.8" fill="none"/><path d="M9 3v3h6V3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="13" x2="15" y2="13" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><line x1="9" y1="17" x2="13" y2="17" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="how-step-title">3. Paste Anywhere</div><div class="how-step-desc">Paste into Discord, TikTok, WhatsApp, Instagram, or any chat.</div></div>
+      </div>
+    </div>
+
+    <section class="tool-faq">
+      <h2>Frequently Asked <span style="color:#0068ff;-webkit-text-fill-color:#0068ff">Questions</span></h2>
+      <details>
+        <summary>What is dot art?</summary>
+        <div class="faq-ans">Dot art uses Unicode Braille patterns (U+2800–U+28FF) and block characters to create pixel-style images made of dots. Each Braille character represents up to 8 dots in a 2×4 grid — giving fine resolution in pure text.</div>
+      </details>
+      <details>
+        <summary>Where can I use dot art?</summary>
+        <div class="faq-ans">Dot art works in Discord messages, TikTok bios and comments, WhatsApp statuses, Instagram bios and captions, Twitter/X posts, Reddit posts, and most social media bios. Shorter pieces work best for name and bio fields.</div>
+      </details>
+      <details>
+        <summary>Why does dot art look wrong on some phones?</summary>
+        <div class="faq-ans">Braille and block Unicode characters render differently across fonts. Most modern phones (iOS 14+, Android 10+) display them correctly. Heart and flower pieces tend to be the most consistent across all devices.</div>
+      </details>
+      <details>
+        <summary>Does dot art work in Discord?</summary>
+        <div class="faq-ans">Yes — Discord fully supports Braille and block Unicode in messages and nicknames. Multi-row pieces look great in messages. Single-line pieces work best in nicknames.</div>
+      </details>
+      <details>
+        <summary>Does dot art work on TikTok?</summary>
+        <div class="faq-ans">Yes. TikTok bios and comments fully support dot art. Multi-line pieces create striking pixel art banners in TikTok bios.</div>
+      </details>
+      <details>
+        <summary>What characters are used in dot art?</summary>
+        <div class="faq-ans">Most pieces use Braille patterns (U+2800–U+28FF), block elements (█ ▀ ▄ ▌ ▐), and circle characters (●○). Braille gives the finest resolution — each character represents 8 dots in a 2×4 grid.</div>
+      </details>
+      <details>
+        <summary>Can I use dot art in WhatsApp Status?</summary>
+        <div class="faq-ans">Yes. WhatsApp Status and messages support all Unicode including Braille and block characters. Copy any piece and paste directly — it works on both iOS and Android.</div>
+      </details>
+      <details>
+        <summary>How is dot art different from text art?</summary>
+        <div class="faq-ans">Dot art uses Braille and block Unicode to build pixel-like images from dots. Text art uses keyboard characters to create shapes. Dot art tends to look more like pixel art; text art has more variety in line-drawn designs.</div>
+      </details>
+    </section>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a class="ft-logo" href="/"><div class="ft-ic"><img loading="lazy" src="../images/favicon.svg" alt="Kactyl" width="36" height="36"></div><span class="ft-name">Kactyl</span></a>
+      <div class="ft-tagline">Type any language from any device.<br>No download. No account.</div>
+      <div class="ft-badges"><span class="ft-badge g">✓ 100% Free</span><span class="ft-badge b">⚡ No Install</span></div>
+    </div>
+    <div class="ft-col">
+      <h4>Keyboards</h4>
+      <div class="ft-kb-grid">
+        <a href="/arabic/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
+      </div>
+    </div>
+        <div class="ft-col">
+      <h4>Tools</h4>
+      <div class="ft-legal">
+        <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/text-art/">Text Art</a>
+        <a href="/dot-art/">Dot Art</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
+      </div>
+      <h4 class="ft-h4-gap">Company</h4>
+      <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
+    </div>
+    <div class="ft-col">
+      <h4>Legal</h4>
+      <div class="ft-legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/sitemap.xml">Sitemap</a></div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2025 Kactyl. All rights reserved.</span>
+    <div class="ft-bottom-links"><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms</a></div>
+  </div>
+</footer>
+<script>
+let toastTmr;
+function copyArt(card){
+  const pre=card.querySelector('.da-art');
+  const text=pre.textContent.trim();
+  navigator.clipboard.writeText(text).catch(()=>{
+    const ta=document.createElement('textarea');
+    ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+  });
+  card.classList.add('flashed');
+  setTimeout(()=>card.classList.remove('flashed'),400);
+  showToast('Copied!');
+}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(toastTmr);
+  toastTmr=setTimeout(()=>t.classList.remove('show'),1800);
+}
+function toggleTheme(){
+  const d=document.documentElement;
+  const dark=d.getAttribute('data-theme')==='dark';
+  d.setAttribute('data-theme',dark?'light':'dark');
+  localStorage.setItem('theme',dark?'light':'dark');
+  updateThemeUI();
+}
+function updateThemeUI(){
+  const dark=document.documentElement.getAttribute('data-theme')==='dark';
+  const tt=document.getElementById('tt');const th=document.getElementById('th');const tlbl=document.getElementById('tlbl');
+  if(tt){dark?tt.classList.add('on'):tt.classList.remove('on');}
+  if(th){dark?th.classList.add('on'):th.classList.remove('on');}
+  if(tlbl)tlbl.innerHTML=dark?'Dark<br>Mode':'White<br>Mode';
+}
+(function(){const t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);updateThemeUI();})();
+function toggleLang(){const m=document.getElementById('lang-menu');if(m)m.classList.toggle('show');}
+document.addEventListener('click',function(e){const lw=e.target.closest('.lang-wrap');if(!lw){const m=document.getElementById('lang-menu');if(m)m.classList.remove('show');}});
+</script>
+<style>header{transition:transform .35s ease}header.hdr-hidden{transform:translateY(-100%)}</style>
+
+<script>
+// Dynamic header — hide on scroll down, show on scroll up
+(function() {
+  var hdr = document.querySelector('header');
+  if (!hdr) return;
+  var lastY = window.scrollY;
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y > lastY && y > 10) hdr.classList.add('hdr-hidden');
+    else hdr.classList.remove('hdr-hidden');
+    lastY = y;
+  }, { passive: true });
+})();
+</script>
+
+
+<script>
+/* ═══════════════ BRAILLE ART GENERATOR ═══════════════ */
+(function(){
+  var DOT=[[0x01,0x08],[0x02,0x10],[0x04,0x20],[0x40,0x80]];
+  var W=64,H=32,PX=7;
+  var pixels=new Uint8Array(W*H);
+  var tool='draw',painting=false,lastIdx=-1;
+  var cv=document.getElementById('gen-cv');
+  var ctx=cv.getContext('2d');
+  var outEl=document.getElementById('gen-out');
+  var countEl=document.getElementById('gen-count');
+  var copyBtn=document.getElementById('btn-copy');
+  var sizeEl=document.getElementById('gen-size');
+  var threshRow=document.getElementById('thresh-row');
+  var threshEl=document.getElementById('thresh');
+  var threshVal=document.getElementById('thresh-val');
+  var storedGray=null;
+  var storedSrc=null;
+  var inverted=false;
+
+  function init(){
+    var p=sizeEl.value.split('x');W=+p[0];H=+p[1];
+    PX=Math.max(4,Math.floor(Math.min(560/W,300/H)));
+    pixels=new Uint8Array(W*H);storedGray=null;inverted=false;
+    cv.width=W*PX;cv.height=H*PX;
+    if(storedSrc){threshRow.classList.add('show');processImg(storedSrc);}
+    else{threshRow.classList.remove('show');render();}
+  }
+
+  function render(){
+    ctx.fillStyle='#040610';
+    ctx.fillRect(0,0,cv.width,cv.height);
+    // Empty cell dots — visible but subtle
+    ctx.fillStyle='rgba(80,120,220,0.13)';
+    for(var ey=0;ey<H;ey++) for(var ex=0;ex<W;ex++)
+      if(!pixels[ey*W+ex]) ctx.fillRect(ex*PX+2,ey*PX+2,PX-3,PX-3);
+    // Lit pixels with glow
+    for(var i=0;i<W*H;i++){
+      if(!pixels[i]) continue;
+      var px=i%W,py=Math.floor(i/W);
+      ctx.fillStyle='rgba(100,160,255,0.2)';
+      ctx.fillRect(px*PX,py*PX,PX+1,PX+1);
+      ctx.fillStyle='#a8ccff';
+      ctx.fillRect(px*PX+1,py*PX+1,PX-1,PX-1);
+    }
+    // Braille cell separators — internal lines only (skip 0 and W/H edges to avoid clipping artifacts)
+    ctx.strokeStyle='rgba(0,104,255,0.2)';ctx.lineWidth=0.5;
+    for(var gx=2;gx<W;gx+=2){ctx.beginPath();ctx.moveTo(gx*PX,0);ctx.lineTo(gx*PX,cv.height);ctx.stroke();}
+    for(var gy=4;gy<H;gy+=4){ctx.beginPath();ctx.moveTo(0,gy*PX);ctx.lineTo(cv.width,gy*PX);ctx.stroke();}
+    // Sub-pixel dividers — ultra faint
+    ctx.strokeStyle='rgba(255,255,255,0.03)';
+    for(var gx=1;gx<W;gx++){if(gx%2){ctx.beginPath();ctx.moveTo(gx*PX,0);ctx.lineTo(gx*PX,cv.height);ctx.stroke();}}
+    for(var gy=1;gy<H;gy++){if(gy%4){ctx.beginPath();ctx.moveTo(0,gy*PX);ctx.lineTo(cv.width,gy*PX);ctx.stroke();}}
+    toBraille();
+  }
+
+  function toBraille(){
+    var cw=W>>1,rh=H>>2,out='';
+    for(var row=0;row<rh;row++){
+      for(var col=0;col<cw;col++){
+        var code=0x2800;
+        for(var dr=0;dr<4;dr++) for(var dc=0;dc<2;dc++){
+          var on=pixels[(row*4+dr)*W+(col*2+dc)];
+          if(inverted?(on===0):(on!==0)) code|=DOT[dr][dc];
+        }
+        out+=String.fromCodePoint(code);
+      }
+      if(row<rh-1) out+='\n';
+    }
+    outEl.textContent=out;
+    countEl.textContent=(W>>1)+'x'+(H>>2)+' chars';
+  }
+
+  function pxAt(e){
+    var r=cv.getBoundingClientRect(),sx=cv.width/r.width,sy=cv.height/r.height;
+    var src=(e.touches&&e.touches[0])||e;
+    var x=Math.floor((src.clientX-r.left)*sx/PX),y=Math.floor((src.clientY-r.top)*sy/PX);
+    return(x>=0&&x<W&&y>=0&&y<H)?y*W+x:-1;
+  }
+
+  function applyTool(idx){
+    if(idx<0||idx===lastIdx) return;lastIdx=idx;
+    if(tool==='draw')pixels[idx]=1;
+    else if(tool==='erase')pixels[idx]=0;
+    else if(tool==='fill'){
+      var fv=pixels[idx],tv=1-fv,stack=[idx];
+      while(stack.length){var i=stack.pop();if(i<0||i>=W*H||pixels[i]!==fv)continue;pixels[i]=tv;var xi=i%W,yi=Math.floor(i/W);if(xi>0)stack.push(i-1);if(xi<W-1)stack.push(i+1);if(yi>0)stack.push(i-W);if(yi<H-1)stack.push(i+W);}
+    }
+    render();
+  }
+
+  cv.addEventListener('mousedown',function(e){painting=true;lastIdx=-1;applyTool(pxAt(e));});
+  cv.addEventListener('mousemove',function(e){if(painting)applyTool(pxAt(e));});
+  document.addEventListener('mouseup',function(){painting=false;lastIdx=-1;});
+  cv.addEventListener('touchstart',function(e){e.preventDefault();painting=true;lastIdx=-1;applyTool(pxAt(e));},{passive:false});
+  cv.addEventListener('touchmove',function(e){e.preventDefault();if(painting)applyTool(pxAt(e));},{passive:false});
+  document.addEventListener('touchend',function(){painting=false;lastIdx=-1;});
+
+  document.querySelectorAll('.gb[data-tool]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      tool=btn.dataset.tool;
+      document.querySelectorAll('.gb[data-tool]').forEach(function(b){b.classList.remove('act');});
+      btn.classList.add('act');
+      cv.style.cursor=tool==='fill'?'cell':'crosshair';
+    });
+  });
+
+  document.getElementById('btn-clean').addEventListener('click',function(){
+    var next=new Uint8Array(W*H);
+    for(var i=0;i<W*H;i++){
+      if(!pixels[i]) continue;
+      var x=i%W,y=Math.floor(i/W),n=0;
+      for(var dy=-1;dy<=1;dy++) for(var dx=-1;dx<=1;dx++){
+        if(!dx&&!dy) continue;
+        var nx=x+dx,ny=y+dy;
+        if(nx>=0&&nx<W&&ny>=0&&ny<H&&pixels[ny*W+nx]) n++;
+      }
+      if(n>=2) next[i]=1;
+    }
+    pixels=next;render();
+  });
+  document.getElementById('btn-clear').addEventListener('click',function(){pixels.fill(0);storedGray=null;storedSrc=null;threshRow.classList.remove('show');render();});
+  document.getElementById('btn-inv').addEventListener('click',function(){
+    inverted=!inverted;
+    this.style.color=inverted?'#70a4ff':'#8899cc';
+    this.style.borderColor=inverted?'rgba(0,104,255,.4)':'rgba(255,255,255,.1)';
+    toBraille();
+  });
+  sizeEl.addEventListener('change',init);
+
+  copyBtn.addEventListener('click',function(){
+    var txt=outEl.textContent;
+    (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(function(){ok();}).catch(function(){
+      try{var s=window.getSelection(),r=document.createRange();r.selectNodeContents(outEl);s.removeAllRanges();s.addRange(r);document.execCommand('copy');ok();}catch(e){}
+    });
+    function ok(){copyBtn.textContent='Copied!';copyBtn.classList.add('ok');setTimeout(function(){copyBtn.innerHTML='&#10303; Copy Braille Art';copyBtn.classList.remove('ok');},2400);}
+  });
+
+  document.getElementById('btn-dl').addEventListener('click',function(){
+    var b=new Blob([outEl.textContent],{type:'text/plain'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='braille-art.txt';a.click();URL.revokeObjectURL(a.href);
+  });
+
+  function processImg(src){
+    var img=new Image();
+    img.onload=function(){
+      var tmp=document.createElement('canvas');tmp.width=W;tmp.height=H;
+      var tc=tmp.getContext('2d');
+      // Fit image within canvas preserving aspect ratio (letterbox with white bg)
+      var scale=Math.min(W/img.width,H/img.height);
+      var dw=Math.round(img.width*scale),dh=Math.round(img.height*scale);
+      var dx=Math.floor((W-dw)/2),dy=Math.floor((H-dh)/2);
+      tc.fillStyle='#fff';tc.fillRect(0,0,W,H);
+      tc.drawImage(img,dx,dy,dw,dh);
+      var d=tc.getImageData(0,0,W,H).data;
+      var g=new Float32Array(W*H);
+      for(var i=0;i<W*H;i++) g[i]=d[i*4]*.299+d[i*4+1]*.587+d[i*4+2]*.114;
+      storedGray=g;dither(g,+threshEl.value);threshRow.classList.add('show');
+    };img.src=src;
+  }
+
+  function loadImg(file){
+    var reader=new FileReader();
+    reader.onload=function(ev){storedSrc=ev.target.result;processImg(storedSrc);};
+    reader.readAsDataURL(file);
+  }
+
+  function dither(g,thr){
+    var buf=new Float32Array(g);
+    for(var y=0;y<H;y++) for(var x=0;x<W;x++){
+      var i=y*W+x,old=buf[i],nv=old>=thr?255:0;buf[i]=nv;var e=old-nv;
+      if(x+1<W)buf[i+1]+=e*7/16;
+      if(y+1<H){if(x>0)buf[(y+1)*W+x-1]+=e*3/16;buf[(y+1)*W+x]+=e*5/16;if(x+1<W)buf[(y+1)*W+x+1]+=e/16;}
+    }
+    for(var i=0;i<W*H;i++)pixels[i]=buf[i]<128?1:0;
+    render();
+  }
+
+  threshEl.addEventListener('input',function(){threshVal.textContent=threshEl.value;if(storedGray)dither(storedGray,+threshEl.value);});
+  var fileInput=document.getElementById('gen-file');
+  fileInput.addEventListener('change',function(e){
+    if(e.target.files[0]){loadImg(e.target.files[0]);}
+    fileInput.value=''; // reset so same file can be picked again
+  });
+  var upl=document.getElementById('gen-upl');
+  upl.addEventListener('dragover',function(e){e.preventDefault();upl.classList.add('dov');});
+  upl.addEventListener('dragleave',function(){upl.classList.remove('dov');});
+  upl.addEventListener('drop',function(e){e.preventDefault();upl.classList.remove('dov');if(e.dataTransfer.files[0])loadImg(e.dataTransfer.files[0]);});
+  init();
+})();
+/* ═══════════════════════════════════════════════════════ */
+</script>
+<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+</body>
+</html>

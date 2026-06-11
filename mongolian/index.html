@@ -21,7 +21,7 @@
   <!-- Favicon -->
     <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <link rel="apple-touch-icon" href="/images/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-circle.svg">
 
   <!-- Canonical & hreflang -->
   <link rel="canonical" href="https://kactyl.com/mongolian/">
@@ -1006,7 +1006,9 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   position:absolute;
   bottom:72px; left:14px;
   width:340px;
-  background:rgba(255,255,255,0.82);
+  max-height:min(320px, calc(100dvh - 260px));
+  overflow:hidden;
+  background:rgba(255,255,255,0.92);
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
   border:1px solid var(--border);
@@ -1021,9 +1023,9 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   background:rgba(15,23,42,0.88);
 }
 .e-cats {
-  display:flex; gap:4px; overflow-x:auto; padding-bottom:8px; margin-bottom:6px;
+  display:flex; gap:4px; overflow-x:auto; padding-bottom:8px;
   border-bottom:1px solid var(--border);
-  margin-bottom:48px; scrollbar-width:none;
+  margin-bottom:8px; scrollbar-width:none;
 }
 .e-cats::-webkit-scrollbar { display:none; }
 .e-cat-btn {
@@ -1034,7 +1036,9 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 }
 .e-cat-btn:hover { background:var(--border); }
 .e-cat-btn.active { background:var(--blue); filter:none; }
-.e-grid { max-height:200px; overflow-y:auto; }
+.e-grid { max-height:180px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--border) transparent; }
+.e-grid::-webkit-scrollbar { width:4px; }
+.e-grid::-webkit-scrollbar-thumb { background:var(--border); border-radius:4px; }
 .t-popup { left:94px; width:272px; }
 .e-popup.show, .t-popup.show { display:block; }
 @keyframes popUp { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
@@ -1057,12 +1061,14 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   grid-template-columns:repeat(8,1fr); gap:4px;
 }
 .e-key {
-  height:34px; background:var(--bg); border-radius:6px;
-  font-size:17px;
+  height:36px; background:var(--bg); border-radius:6px;
+  font-size:18px;
   display:flex; align-items:center; justify-content:center;
-  transition: all .12s;
+  transition: background .1s, box-shadow .1s;
+  border:1.5px solid transparent;
 }
-.e-key:hover { transform:scale(1.25); background:var(--key-h); }
+.e-key:hover { background:var(--key-h); border-color:var(--indigo); box-shadow:0 0 0 2px rgba(99,102,241,.18); }
+.e-key:active { background:rgba(99,102,241,.15); }
 
 .t-grid {
   display:grid; grid-template-columns:repeat(4,1fr); gap:6px;
@@ -1092,6 +1098,7 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 /* ── NUMBERS POPUP ── */
 .n-popup {
   position:absolute; bottom:72px; right:14px; width:260px;
+  max-height:min(300px, calc(100dvh - 260px)); overflow-y:auto;
   background:rgba(255,255,255,.96); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid var(--border);
   border-radius:var(--rs);
   box-shadow:0 -4px 20px rgba(0,0,0,.12), 0 8px 24px rgba(0,0,0,.08);
@@ -1486,6 +1493,7 @@ footer {
   header { padding:0 12px; height:60px; }
   .nav-link { display:none; }
   .logo-img { height:140px; }
+  .t-lbl { display:none; }
 
     /* Share bar — horizontal scroll on mobile */
   .share-bar { gap:5px; padding:4px 0 32px; margin:16px 0 -10px; }
@@ -1549,8 +1557,8 @@ footer {
   .k-globe   { flex:1;   min-width:0 !important; font-size:14px; }
 
   /* Popups */
-  .e-popup, .t-popup, .spec-popup { left:6px; right:6px; width:auto; bottom:68px; }
-  .n-popup { right:6px; left:6px; width:auto; bottom:68px; }
+  .e-popup, .t-popup, .spec-popup { left:6px; right:6px; width:auto; bottom:68px; max-height:min(280px,48vh); }
+  .n-popup { right:6px; left:6px; width:auto; bottom:68px; max-height:min(280px,48vh); overflow-y:auto; }
 
   /* Apps */
   .apps-grid { grid-template-columns: 1fr; }
@@ -1832,18 +1840,21 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
-                                    <nav>
+                                          <nav>
     <a href="/home.html" class="nav-link">Home</a>
     <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
       <button class="tools-btn">Tools &#9662;</button>
       <div class="tools-drop">
-        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
-        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
-        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
-        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
-        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="currentColor"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="currentColor" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="currentColor"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="currentColor"/><circle cx="11.5" cy="7.5" r="1.4" fill="currentColor"/><path d="M5.5 11Q9 14 12.5 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
+        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="currentColor" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="currentColor"/><circle cx="14" cy="4.5" r="2" fill="currentColor" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="currentColor"/><circle cx="9" cy="9.5" r="2" fill="currentColor" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="currentColor"/><circle cx="4" cy="14.5" r="2" fill="currentColor" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="currentColor" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="currentColor"/></svg></span> Dot Art</a>
+        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="currentColor" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="currentColor"/><circle cx="13" cy="10.5" r="0.85" fill="currentColor"/></svg></span> FF &amp; PUBG Names</a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -1978,7 +1989,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
               <span class="lang-arrow">▾</span>
             </button>
                                                 <div class="lang-dropdown" id="langDropdown">
-              <div class="lang-opt" onclick="location.href='../index.html'">
+              <div class="lang-opt" onclick="location.href='/arabic/'">
                 <span class="lo-flag">🇸🇦</span> Arabic
               </div>
               <div class="lang-opt" onclick="location.href='../amazigh/index.html'">
@@ -2537,7 +2548,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 <div class="more-kbs">
   <p class="more-kbs-title">More Free Online Keyboards</p>
   <div class="more-kbs-grid">
-      <a href="../" class="kb-chip"><span class="kb-chip-name">Arabic</span><span class="kb-chip-native">العربية</span></a>
+      <a href="/arabic/" class="kb-chip"><span class="kb-chip-name">Arabic</span><span class="kb-chip-native">العربية</span></a>
       <a href="../amazigh/" class="kb-chip"><span class="kb-chip-name">Amazigh</span><span class="kb-chip-native">ⵜⴰⵎⴰⵣⵉⵖⵜ</span></a>
       <a href="../amharic/" class="kb-chip"><span class="kb-chip-name">Amharic</span><span class="kb-chip-native">አማርኛ</span></a>
       <a href="../bengali/" class="kb-chip"><span class="kb-chip-name">Bengali</span><span class="kb-chip-native">বাংলা</span></a>
@@ -2615,7 +2626,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="ft-col">
       <h4>Keyboards</h4>
       <div class="ft-kb-grid">
-        <a href="/">Arabic</a>
+        <a href="/arabic/">Arabic</a>
         <a href="/hindi/">Hindi</a>
         <a href="/persian/">Persian</a>
         <a href="/urdu/">Urdu</a>
@@ -2654,21 +2665,20 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     </div>
 
     <!-- Tools & Company -->
-    <div class="ft-col">
+        <div class="ft-col">
       <h4>Tools</h4>
       <div class="ft-legal">
-        <a href="/fancy-text/">Fancy Text</a>
-        <a href="/invisible-character/">Invisible Char</a>
-        <a href="/kaomoji/">Kaomoji</a>
-        <a href="/zalgo-text/">Zalgo Text</a>
         <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/text-art/">Text Art</a>
+        <a href="/dot-art/">Dot Art</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
       </div>
       <h4 class="ft-h4-gap">Company</h4>
-      <div class="ft-legal">
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-        <a href="/contact/">Contact</a>
-      </div>
+      <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
     </div>
 
     <!-- Legal -->
@@ -2987,6 +2997,8 @@ function buildEmoji() {
   try {
     const saved = JSON.parse(localStorage.getItem('arabi-recent') || '[]');
     EMOJI_CATS_DATA['🕐'].emojis = saved;
+    /* default to Faces on first visit (no recent yet) */
+    if (!saved.length) eCurCat = '😀';
   } catch(e) {}
 
   /* build category tabs once */
@@ -3744,5 +3756,21 @@ async function submitFeedback(e) {
   });
 })();
 </script>
+
+<script>
+// Dynamic header — hide on scroll down, show on scroll up
+(function() {
+  var hdr = document.querySelector('header');
+  if (!hdr) return;
+  var lastY = window.scrollY;
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y > lastY && y > 10) hdr.classList.add('hdr-hidden');
+    else hdr.classList.remove('hdr-hidden');
+    lastY = y;
+  }, { passive: true });
+})();
+</script>
+<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
 </body>
 </html>

@@ -16,7 +16,7 @@
   <meta name="description" content="Copy and paste symbols from 20 categories: hearts ♥, stars ★, arrows →, cool symbols ツ, and 671+ more. Click any symbol to copy instantly.">
   <link rel="canonical" href="https://kactyl.com/symbols/">
   <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
-  <link rel="apple-touch-icon" href="../images/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-circle.svg">
   <link rel="manifest" href="/manifest.json">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kactyl.com/symbols/">
@@ -85,9 +85,9 @@ nav { display:flex;align-items:center;gap:4px; }
 [data-theme="dark"] .tools-btn { color:var(--nav-txt); }
 [data-theme="dark"] .tools-btn:hover { background:rgba(255,255,255,.1); }
 .tools-drop { display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 6px 6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px; }
-.tools-wrap.open .tools-drop{display:flex}
-.tools-item { display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s;white-space:nowrap; }
-.tools-item:hover { background:var(--border); }
+.tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
+.tools-item { display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s,color .18s;white-space:nowrap; }
+.tools-item:hover { background:var(--border); }.tools-item.active-tool{color:var(--accent)!important;font-weight:600;background:color-mix(in srgb,var(--accent) 8%,transparent)}
 .tools-item .t-icon { width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center; }
 .tools-coming { font-size:10px;font-weight:700;color:#fff;background:var(--blue);border-radius:4px;padding:1px 5px;margin-left:auto;flex-shrink:0; }
 .lang-wrap { position:relative; }
@@ -259,27 +259,73 @@ footer { background:#07091A;border-top:none;padding:0; }
 @media(max-width:640px) { .sym-grid{grid-template-columns:repeat(5,1fr)} .hub-grid{grid-template-columns:repeat(2,1fr)} .related-grid{grid-template-columns:repeat(2,1fr)} .ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px} .ft-brand{grid-column:1/-1} .ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px} .ft-bottom-links{flex-wrap:wrap;justify-content:center} }
 @media(max-width:420px) { .sym-grid{grid-template-columns:repeat(4,1fr)} .sym-btn{height:48px;font-size:20px} }
 @media(max-width:640px){header{padding:0 12px}.nav-link{display:none}.t-lbl{display:none}}
-  </style>
+  .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+:root {--accent:#0891b2}
+
+/* Use-case badges */
+.use-cases{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px;margin-bottom:4px}
+.uc-badge{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700}
+.uc-badge svg{flex-shrink:0}
+/* How-to section */
+.how-sec{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:32px;max-width:1100px;margin:0 auto 32px;position:relative;z-index:1}
+[data-theme="dark"] .how-sec{background:rgba(255,255,255,.04)}
+.how-head{font-size:clamp(20px,2.5vw,26px);font-weight:800;margin-bottom:24px;letter-spacing:-.4px}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.how-num-bg{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.how-step-title{font-size:14px;font-weight:700;color:var(--text)}
+.how-step-desc{font-size:13px;color:var(--muted);line-height:1.6}
+@media(max-width:600px){.how-steps{grid-template-columns:1fr}}
+/* Standard FAQ */
+.tool-faq{max-width:1100px;margin:0 auto 48px;padding:0 24px;position:relative;z-index:1}
+.tool-faq>h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px}
+.tool-faq details{border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.tool-faq details summary{padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center}
+.tool-faq details summary::-webkit-details-marker{display:none}
+.tool-faq details summary::after{content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s}
+.tool-faq details[open] summary::after{transform:rotate(45deg)}
+.tool-faq details[open] summary{color:var(--accent,#0068ff)}
+.tool-faq .faq-ans{padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted)}
+[data-theme="dark"] .tool-faq details{background:rgba(255,255,255,.03)}
+
+[data-theme="dark"] .uc-badge{background:rgba(8,145,178,.15)}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kactyl.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://kactyl.com/tools/"},{"@type":"ListItem","position":3,"name":"Symbols","item":"https://kactyl.com/symbols/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Symbols Copy Paste","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://kactyl.com/symbols/","description":"Copy and paste 671+ symbols in 20 categories. Hearts, stars, arrows, math symbols, currency, and more.","featureList":["671+ symbols","20 categories","One-click copy","All Unicode symbols"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Copy Symbols","totalTime":"PT30S","step":[{"@type":"HowToStep","position":1,"name":"Find Your Symbol","text":"Browse the grid or pick a category like Hearts, Stars, or Arrows."},{"@type":"HowToStep","position":2,"name":"Click to Copy","text":"Click any symbol to copy it instantly to your clipboard."},{"@type":"HowToStep","position":3,"name":"Paste Anywhere","text":"Paste the symbol into Discord, Instagram bio, Twitter, WhatsApp, or any text field."}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are Unicode symbols?","acceptedAnswer":{"@type":"Answer","text":"Unicode symbols are standardized characters that work on every device and platform. Unlike images, they paste as text — so they appear in any font and work in usernames, bios, and messages everywhere."}},{"@type":"Question","name":"Do symbols work on Instagram?","acceptedAnswer":{"@type":"Answer","text":"Yes. All symbols on this site are Unicode characters that work in Instagram bios, captions, and DMs on both iOS and Android."}},{"@type":"Question","name":"Will symbols work in Discord usernames?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most Unicode symbols work in Discord nicknames and display names. A few very rare Unicode characters may not render on all clients, but all symbols in our collection are widely supported."}},{"@type":"Question","name":"Do symbols show on all phones?","acceptedAnswer":{"@type":"Answer","text":"Yes. Modern iOS (12+) and Android (9+) phones support all common Unicode symbols. Very old devices may show a box instead of the symbol, but this is rare with modern phones."}}]}
+</script>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
 <div class="top-aura"></div>
 
 <header>
-  <a class="logo" href="/">
+  <a class="logo" href="/home.html">
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
-  <nav>
-    <a href="/" class="nav-link">Home</a>
-    <a href="/keyboards/" class="nav-link">Keyboards</a>
+        <nav>
+    <a href="/home.html" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <div class="tools-wrap">
-      <button class="tools-btn">Tools ▾</button>
+      <button class="tools-btn">Tools &#9662;</button>
       <div class="tools-drop">
-        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
-        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text</a>
-        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
-        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Invisible Char</a>
-        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Zalgo Text</a>
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="currentColor"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="currentColor" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="currentColor"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="currentColor"/><circle cx="11.5" cy="7.5" r="1.4" fill="currentColor"/><path d="M5.5 11Q9 14 12.5 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
+        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="currentColor" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="currentColor"/><circle cx="14" cy="4.5" r="2" fill="currentColor" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="currentColor"/><circle cx="9" cy="9.5" r="2" fill="currentColor" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="currentColor"/><circle cx="4" cy="14.5" r="2" fill="currentColor" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="currentColor" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="currentColor"/></svg></span> Dot Art</a>
+        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="currentColor" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="currentColor"/><circle cx="13" cy="10.5" r="0.85" fill="currentColor"/></svg></span> FF &amp; PUBG Names</a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -307,6 +353,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       <div class="hero-badge">1-Click Copy</div>
       <h1>Symbols — Copy &amp; Paste</h1>
       <p class="hero-sub">All symbols in one place. Click any symbol to instantly copy it.</p>
+
       <div class="hero-stats">
         <div class="hs-item"><div class="hs-num">671+</div><div class="hs-lbl">Symbols</div></div>
         <div class="hs-item"><div class="hs-num">20</div><div class="hs-lbl">Categories</div></div>
@@ -316,7 +363,7 @@ footer { background:#07091A;border-top:none;padding:0; }
 
     <section style="margin-bottom:48px">
       <div class="sym-section-head" style="margin-bottom:16px">
-        <h2>Popular Symbols</h2>
+        <h2 style="font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.4px;margin-bottom:16px;color:var(--text)">Popular <span class="sec-grad">Symbols</span></h2>
         <span class="sym-count">Quick copy</span>
       </div>
       <div class="sym-grid" id="sym-grid">
@@ -348,7 +395,7 @@ footer { background:#07091A;border-top:none;padding:0; }
     </section>
 
     <section style="margin-bottom:60px">
-      <h2 style="font-size:18px;font-weight:700;margin-bottom:20px">All Categories</h2>
+      <h2 style="font-size:clamp(26px,3.5vw,38px);font-weight:900;letter-spacing:-.5px;margin-bottom:24px;color:var(--text)">All <span style="background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Categories</span></h2>
       <div class="hub-grid">
         <a class="hub-cat-card" href="/symbols/heart/">
           <div class="hub-cat-preview">♥ ❤ ♡ ❥</div>
@@ -453,6 +500,30 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
   </div>
+
+
+
+    <div class="how-sec">
+      <div class="how-head">How to <span style="background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Use</span></div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-num-bg" style="background:linear-gradient(135deg,#0891b2,#06b6d4)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/></svg></div>
+          <div class="how-step-title">1. Find Your Symbol</div>
+          <div class="how-step-desc">Browse the grid or pick a category — Hearts, Stars, Arrows, and 17 more.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-num-bg" style="background:linear-gradient(135deg,#0891b2,#06b6d4)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 3L6 18L10 14L13 21L15 20L12 13L18 13Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" fill="none"/></svg></div>
+          <div class="how-step-title">2. Click to Copy</div>
+          <div class="how-step-desc">Click any symbol to copy it to your clipboard instantly.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-num-bg" style="background:linear-gradient(135deg,#0891b2,#06b6d4)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="2" stroke="#fff" stroke-width="1.8" fill="none"/><path d="M9 3v3h6V3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="13" x2="15" y2="13" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><line x1="9" y1="17" x2="13" y2="17" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <div class="how-step-title">3. Paste Anywhere</div>
+          <div class="how-step-desc">Paste into Instagram bio, Discord, WhatsApp, TikTok, or any text field.</div>
+        </div>
+      </div>
+    </div>
+
 </main>
 
 <footer>
@@ -465,7 +536,7 @@ footer { background:#07091A;border-top:none;padding:0; }
     <div class="ft-col">
       <h4>Keyboards</h4>
       <div class="ft-kb-grid">
-        <a href="/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/arabic/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
         <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
         <a href="/japanese/">Japanese</a><a href="/chinese/">Chinese</a><a href="/turkish/">Turkish</a><a href="/russian/">Russian</a>
       </div>
@@ -473,8 +544,14 @@ footer { background:#07091A;border-top:none;padding:0; }
     <div class="ft-col">
       <h4>Tools</h4>
       <div class="ft-legal">
-        <a href="/symbols/">Symbols</a><a href="/fancy-text/">Fancy Text</a>
-        <a href="/kaomoji/">Kaomoji</a><a href="/invisible-character/">Invisible Char</a><a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/text-art/">Text Art</a>
+        <a href="/dot-art/">Dot Art</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
       </div>
       <h4 class="ft-h4-gap">Company</h4>
       <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
@@ -603,5 +680,6 @@ document.querySelectorAll('.sym-btn').forEach(function(b) {
 })();
 loadTheme();
 </script>
+<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
 </body>
 </html>

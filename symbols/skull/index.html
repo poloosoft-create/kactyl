@@ -19,7 +19,7 @@
   <link rel="alternate" hreflang="ar" href="https://kactyl.com/symbols/skull/">
   <link rel="alternate" hreflang="x-default" href="https://kactyl.com/symbols/skull/">
   <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
-  <link rel="apple-touch-icon" href="../../images/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-circle.svg">
   <link rel="manifest" href="/manifest.json">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kactyl.com/symbols/skull/">
@@ -91,9 +91,9 @@ nav { display:flex;align-items:center;gap:4px; }
 [data-theme="dark"] .tools-btn { color:var(--nav-txt); }
 [data-theme="dark"] .tools-btn:hover { background:rgba(255,255,255,.1); }
 .tools-drop { display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 6px 6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px; }
-.tools-wrap.open .tools-drop{display:flex}
-.tools-item { display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s;white-space:nowrap; }
-.tools-item:hover { background:var(--border); }
+.tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
+.tools-item { display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s,color .18s;white-space:nowrap; }
+.tools-item:hover { background:var(--border); }.tools-item.active-tool{color:var(--accent)!important;font-weight:600;background:color-mix(in srgb,var(--accent) 8%,transparent)}
 .tools-item .t-icon { width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center; }
 .tools-coming { font-size:10px;font-weight:700;color:#fff;background:var(--blue);border-radius:4px;padding:1px 5px;margin-left:auto;flex-shrink:0; }
 .lang-wrap { position:relative; }
@@ -131,7 +131,7 @@ nav { display:flex;align-items:center;gap:4px; }
 /* Symbol grid */
 .sym-section { padding:0 0 48px; }
 .sym-section-head { display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px; }
-.sym-section-head h2 { font-size:18px;font-weight:700;color:var(--text); }
+.sym-section-head h2 { font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);letter-spacing:-.4px; }
 .sym-count { font-size:12px;color:var(--muted);font-weight:600;background:var(--bg);border:1px solid var(--border);padding:4px 10px;border-radius:20px; }
 [data-theme="dark"] .sym-count { background:rgba(255,255,255,.06); }
 .sym-grid { display:grid;grid-template-columns:repeat(8,1fr);gap:8px; }
@@ -144,13 +144,13 @@ nav { display:flex;align-items:center;gap:4px; }
 /* About section */
 .sym-about{padding:32px;background:rgba(255,255,255,.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:var(--r);border:1px solid rgba(255,255,255,.8);box-shadow:0 4px 28px rgba(0,0,0,.06);margin-bottom:40px}
 [data-theme="dark"] .sym-about{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.09);box-shadow:0 4px 28px rgba(0,0,0,.22)}
-.sym-about h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.sym-about h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px}
 .sym-about p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px}
 .sym-about p:last-child{margin-bottom:0}
 .sym-about p strong{color:var(--text)}
 /* FAQ section */
 .sym-faq{margin-bottom:48px}
-.sym-faq>h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.sym-faq>h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px}
 .sym-faq details{background:rgba(255,255,255,.60);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.75);border-radius:12px;margin-bottom:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.04)}
 .sym-faq details summary{padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center}
 .sym-faq details summary::-webkit-details-marker{display:none}
@@ -281,27 +281,32 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sym-ar details[open] summary{color:#0891b2}
 .sym-ar .faq-ans{padding:0 18px 16px;font-size:14px;line-height:1.85;color:var(--muted)}
 
+.sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does ☠ mean vs 💀?", "acceptedAnswer": {"@type": "Answer", "text": "☠ (U+2620 Skull And Crossbones) emphasizes danger, piracy, or death in a literal or serious sense — it's the same symbol used on hazardous materials. 💀 (U+1F480 Skull emoji) has largely become an ironic expression online — 'I'm 💀' means something was so funny or embarrassing that the speaker metaphorically died. Context determines meaning: ☠ on a chemical label means danger; 💀 in a TikTok comment means laughter."}}, {"@type": "Question", "name": "Can I use ☠ in a Discord or gaming username?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ☠ and 💀 work in Discord usernames, nicknames, and server names. They're popular in gaming communities, horror-themed servers, and edgy aesthetic contexts. ☠ is a text character (consistent rendering); 💀 is an emoji (varies slightly between platforms). Both are widely supported on all major gaming and social platforms."}}, {"@type": "Question", "name": "What is the ☣ biohazard symbol?", "acceptedAnswer": {"@type": "Answer", "text": "☣ (U+2623) is the International Biohazard Symbol, designed by Dow Chemical in 1966 specifically to be distinctive, memorable, and non-culturally specific. It's used on biological samples, lab equipment, and medical waste containers. Like ☠, it appears in Unicode's Miscellaneous Symbols block and has been adopted by internet culture for aesthetic purposes beyond its original hazard meaning."}}, {"@type": "Question", "name": "What Halloween symbols are in Unicode?", "acceptedAnswer": {"@type": "Answer", "text": "Key Halloween Unicode symbols: ☠ Skull and Crossbones (U+2620), 💀 Skull (U+1F480), 🎃 Jack-O-Lantern (U+1F383), 👻 Ghost (U+1F47B), 🦇 Bat (U+1F987), 🕸 Spider Web (U+1F578), 🕷 Spider (U+1F577), 🧟 Zombie (U+1F9DF), 🩸 Drop of Blood (U+1FA78), ⚰ Coffin (U+26B0). The 🎃 jack-o-lantern is the most universally recognized Halloween symbol in digital communication."}}]}</script>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
 <div class="top-aura"></div>
 
 <header>
-  <a class="logo" href="/">
+  <a class="logo" href="/home.html">
     <img class="logo-img" id="logo-img" src="../../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
-  <nav>
-    <a href="/" class="nav-link">Home</a>
-    <a href="/keyboards/" class="nav-link">Keyboards</a>
+        <nav>
+    <a href="/home.html" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <div class="tools-wrap">
-      <button class="tools-btn">Tools ▾</button>
+      <button class="tools-btn">Tools &#9662;</button>
       <div class="tools-drop">
-        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
-        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text</a>
-        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
-        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Invisible Char</a>
-        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Zalgo Text</a>
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="currentColor"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="currentColor" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="currentColor"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="currentColor"/><circle cx="11.5" cy="7.5" r="1.4" fill="currentColor"/><path d="M5.5 11Q9 14 12.5 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
+        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="currentColor" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="currentColor"/><circle cx="14" cy="4.5" r="2" fill="currentColor" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="currentColor"/><circle cx="9" cy="9.5" r="2" fill="currentColor" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="currentColor"/><circle cx="4" cy="14.5" r="2" fill="currentColor" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="currentColor" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="currentColor"/></svg></span> Dot Art</a>
+        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="currentColor" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="currentColor"/><circle cx="13" cy="10.5" r="0.85" fill="currentColor"/></svg></span> FF &amp; PUBG Names</a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -338,7 +343,7 @@ footer { background:#07091A;border-top:none;padding:0; }
 
     <section class="sym-section">
       <div class="sym-section-head">
-        <h2>All Skull Symbols</h2>
+        <h2>All Skull <span class="sec-grad">Symbols</span></h2>
         <span class="sym-count">20+ symbols</span>
       </div>
       <div class="sym-grid" id="sym-grid">
@@ -387,14 +392,14 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-about">
-      <h2>About Skull Symbol</h2>
+      <h2>About Skull <span class="sec-grad">Symbol</span></h2>
       <p>The Skull and Crossbones ☠ (U+2620) is one of the most culturally layered symbols in Unicode. Originating as a pirate flag symbol (the Jolly Roger) in the early 18th century, the skull-and-crossbones was adopted by military units as a death symbol, then by poison and hazard labeling systems, then by counter-culture fashion, and finally by gaming and internet culture. Unicode includes it in the Miscellaneous Symbols block alongside other hazard and warning symbols.</p>
       <p>In hazard communication, the skull and crossbones is a standardized warning symbol under the Globally Harmonized System (GHS) of chemical classification — an international standard used on chemical labels and safety data sheets worldwide. The GHS-defined skull pictogram indicates acute toxicity at the highest severity levels (immediate danger to health). This gives ☠ a legally defined meaning in chemistry and workplace safety that coexists with its cultural and aesthetic uses.</p>
       <p>In gaming and internet culture, the skull has become a shorthand for 'dead,' 'eliminated,' or ironic commentary. 💀 (U+1F480 Skull emoji) is used extensively in gaming streams and social media to mean 'I'm dying (laughing)' or 'that destroyed me' — a complete semantic reversal from its hazard warning origins. This dual meaning — literal danger signal and ironic comedy marker — makes the skull one of the most semantically complex symbols in digital communication today.</p>
     </section>
 
     <div class="uref-wrap">
-      <h2>Skull Symbol Unicode Codes</h2>
+      <h2>Skull Symbol Unicode <span class="sec-grad">Codes</span></h2>
       <table class="uref-table">
         <thead><tr><th>Symbol</th><th>Name</th><th>Unicode</th><th>HTML Code</th></tr></thead>
         <tbody>
@@ -408,7 +413,7 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
-      <h2>Frequently Asked Questions</h2>
+      <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What does ☠ mean vs 💀?</summary>
         <div class="faq-ans">☠ (U+2620 Skull And Crossbones) emphasizes danger, piracy, or death in a literal or serious sense — it's the same symbol used on hazardous materials. 💀 (U+1F480 Skull emoji) has largely become an ironic expression online — 'I'm 💀' means something was so funny or embarrassing that the speaker metaphorically died. Context determines meaning: ☠ on a chemical label means danger; 💀 in a TikTok comment means laughter.</div>
@@ -428,7 +433,7 @@ footer { background:#07091A;border-top:none;padding:0; }
     </section>
 
     <section class="related-sec">
-      <h2>Related Symbols</h2>
+      <h2>Related <span class="sec-grad">Symbols</span></h2>
       <div class="related-grid">
         <a class="rel-card" href="/symbols/cross/">
           <div class="rel-preview">✝ ✞ ✟ ☩</div>
@@ -470,27 +475,26 @@ footer { background:#07091A;border-top:none;padding:0; }
     <div class="ft-col">
       <h4>Keyboards</h4>
       <div class="ft-kb-grid">
-        <a href="/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/arabic/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
         <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
         <a href="/japanese/">Japanese</a><a href="/chinese/">Chinese</a><a href="/turkish/">Turkish</a><a href="/russian/">Russian</a>
         <a href="/greek/">Greek</a><a href="/thai/">Thai</a><a href="/vietnamese/">Vietnamese</a><a href="/amharic/">Amharic</a>
       </div>
     </div>
-    <div class="ft-col">
+        <div class="ft-col">
       <h4>Tools</h4>
       <div class="ft-legal">
         <a href="/symbols/">Symbols</a>
         <a href="/fancy-text/">Fancy Text</a>
         <a href="/kaomoji/">Kaomoji</a>
+        <a href="/text-art/">Text Art</a>
+        <a href="/dot-art/">Dot Art</a>
         <a href="/invisible-character/">Invisible Char</a>
         <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
       </div>
       <h4 class="ft-h4-gap">Company</h4>
-      <div class="ft-legal">
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-        <a href="/contact/">Contact</a>
-      </div>
+      <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
     </div>
     <div class="ft-col">
       <h4>Legal</h4>
@@ -618,5 +622,6 @@ document.querySelectorAll('.sym-btn').forEach(function(b) {
 })();
 loadTheme();
 </script>
+<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
 </body>
 </html>
