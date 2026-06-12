@@ -1111,7 +1111,7 @@ main { padding:20px 16px 64px; position:relative; overflow-x:clip; }
   position:absolute;
   bottom:72px; left:14px;
   width:340px;
-  background:rgba(255,255,255,0.82);
+  background:rgba(255,255,255,0.92);
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
   border:1px solid var(--border);
@@ -1120,15 +1120,16 @@ main { padding:20px 16px 64px; position:relative; overflow-x:clip; }
   padding:12px;
   z-index:200; display:none;
   animation:popUp .18s ease;
+  max-height:min(320px, calc(100dvh - 260px)); overflow:hidden;
 }
 [data-theme="dark"] .e-popup,
 [data-theme="dark"] .t-popup {
   background:rgba(15,23,42,0.88);
 }
 .e-cats {
-  display:flex; gap:4px; overflow-x:auto; padding-bottom:8px; margin-bottom:6px;
+  display:flex; gap:4px; overflow-x:auto; padding-bottom:8px;
   border-bottom:1px solid var(--border);
-  margin-bottom:48px; scrollbar-width:none;
+  margin-bottom:8px; scrollbar-width:none;
 }
 .e-cats::-webkit-scrollbar { display:none; }
 .e-cat-btn {
@@ -1139,7 +1140,9 @@ main { padding:20px 16px 64px; position:relative; overflow-x:clip; }
 }
 .e-cat-btn:hover { background:var(--border); }
 .e-cat-btn.active { background:var(--blue); filter:none; }
-.e-grid { max-height:200px; overflow-y:auto; }
+.e-grid { max-height:180px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--border) transparent; }
+.e-grid::-webkit-scrollbar { width:4px; }
+.e-grid::-webkit-scrollbar-thumb { background:var(--border); border-radius:4px; }
 .t-popup { left:94px; width:272px; }
 .e-popup.show, .t-popup.show { display:block; }
 @keyframes popUp { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
@@ -1162,12 +1165,14 @@ main { padding:20px 16px 64px; position:relative; overflow-x:clip; }
   grid-template-columns:repeat(8,1fr); gap:4px;
 }
 .e-key {
-  height:34px; background:var(--bg); border-radius:6px;
-  font-size:17px;
+  height:36px; background:var(--bg); border-radius:6px;
+  font-size:18px;
   display:flex; align-items:center; justify-content:center;
-  transition: all .12s;
+  transition: background .1s, box-shadow .1s;
+  border:1.5px solid transparent;
 }
-.e-key:hover { transform:scale(1.25); background:var(--key-h); }
+.e-key:hover { background:var(--key-h); border-color:var(--indigo); box-shadow:0 0 0 2px rgba(99,102,241,.18); }
+.e-key:active { background:rgba(99,102,241,.15); }
 
 .t-grid {
   display:grid; grid-template-columns:repeat(4,1fr); gap:6px;
@@ -1781,8 +1786,8 @@ footer {
   .k-globe   { flex:1;   min-width:0 !important; font-size:14px; }
 
   /* Popups */
-  .e-popup, .t-popup, .spec-popup { left:6px; right:6px; width:auto; bottom:68px; }
-  .n-popup { right:6px; left:6px; width:auto; bottom:68px; }
+  .e-popup, .t-popup, .spec-popup { left:6px; right:6px; width:auto; bottom:68px; max-height:min(280px,48vh); }
+  .n-popup { right:6px; left:6px; width:auto; bottom:68px; max-height:min(280px,48vh); overflow-y:auto; }
 
   /* Apps */
   .apps-grid { grid-template-columns: 1fr; }
@@ -2427,7 +2432,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   </a>
 
   <nav>
-    <a href="home.html" class="nav-link" data-i18n="nav.home">Home</a>
+    <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
     <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
@@ -3748,6 +3753,7 @@ function buildEmoji() {
   try {
     const saved = JSON.parse(localStorage.getItem('arabi-recent') || '[]');
     EMOJI_CATS_DATA['🕐'].emojis = saved;
+    if (!saved.length) eCurCat = '😀';
   } catch(e) {}
 
   /* build category tabs once */

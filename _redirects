@@ -6,4 +6,11 @@ https://www.arabikeyboard.com/ https://kactyl.com/arabic/ 301!
 https://arabikeyboard.com/* https://kactyl.com/:splat 301!
 https://www.arabikeyboard.com/* https://kactyl.com/:splat 301!
 
+# Serve homepage at / (no URL change)
+/   /home.html   200!
+
 /favicon.ico /images/favicon.svg 200
+
+/fancy-text/tiktok-fonts/     /tiktok-fonts/     301
+/fancy-text/discord-fonts/    /discord-fonts/    301
+/fancy-text/instagram-fonts/  /instagram-fonts/  301
