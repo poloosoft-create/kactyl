@@ -6,6 +6,9 @@ https://www.arabikeyboard.com/ https://kactyl.com/arabic/ 301!
 https://arabikeyboard.com/* https://kactyl.com/:splat 301!
 https://www.arabikeyboard.com/* https://kactyl.com/:splat 301!
 
+# Redirect /home.html → / so Bing/Google index root URL, not /home.html
+/home.html  /  301!
+
 # Serve homepage at / (no URL change)
 /   /home.html   200!
 
