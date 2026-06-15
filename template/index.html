@@ -1675,6 +1675,76 @@ footer {
 .bgl-title{font-size:14px;font-weight:700;color:var(--text);}
 .bgl-sub{font-size:12px;color:var(--muted);}
 
+/* ══════════════════════════════════════════
+   MODERN DESIGN AUDIT — APPLIED FIXES
+   ══════════════════════════════════════════ */
+
+/* 1 · Background — off-white, not blue-tinted */
+:root { --bg: #F8FAFC; }
+body { background: #F8FAFC; }
+
+/* 2 · Header — 88px is too tall. 60px is the standard */
+header { height: 60px !important; padding: 0 20px !important; }
+
+/* 3 · Logo — width:140px, not height:200px */
+.logo-img { height: auto !important; width: 140px !important; }
+
+/* 4 · Background blobs — 3 competing blobs is noise. Keep 1, hide s2 */
+.s1 { background: rgba(0,104,255,.08) !important; width: 700px !important; height: 700px !important; }
+.s2 { display: none !important; }
+.s3 { display: none !important; }
+[data-theme="dark"] .s1 { background: rgba(0,104,255,.30) !important; }
+
+/* 5 · H1 script text — clean 2-color gradient, no rainbow animation */
+.h1-arabic {
+  background: linear-gradient(120deg, #0068ff 0%, #6366F1 55%, #8B5CF6 100%) !important;
+  background-size: 100% auto !important;
+  animation: none !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+[data-theme="dark"] .h1-arabic {
+  background: linear-gradient(120deg, #60A5FA 0%, #818CF8 55%, #A78BFA 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  animation: none !important;
+}
+
+/* 6 · Hero H1 main — stronger contrast */
+.hero-hd h1 { background: linear-gradient(180deg, #0F172A 0%, #64748B 100%) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; }
+[data-theme="dark"] .hero-hd h1 { background: linear-gradient(180deg, #F8FAFC 0%, #94A3B8 100%) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; }
+
+/* 7 · Hero sub — 17px is too large, loses hierarchy */
+.hero-sub { font-size: 15px !important; color: #64748B !important; font-weight: 400 !important; }
+
+/* 8 · Hero stats — numbers should impress */
+.hs-num { font-size: 28px !important; letter-spacing: -1px !important; }
+.hs-label { font-size: 11px !important; }
+.hero-stat { padding: 0 32px !important; }
+
+/* 9 · Nav chevron — smooth rotation on open */
+.tools-chevron { transition: transform .2s; flex-shrink: 0; }
+.tools-wrap.open .tools-chevron { transform: rotate(180deg); }
+@media(pointer:fine){ .tools-wrap:hover .tools-chevron { transform: rotate(180deg); } }
+
+/* 10 · Share bar copy label — tighter, less loud */
+.sh-action { font-size: 9px !important; letter-spacing: .04em !important; opacity: .42 !important; text-transform: uppercase !important; }
+
+/* 11 · Editor card — larger radius = more modern */
+.editor-card { border-radius: 20px !important; }
+
+/* 12 · FAQ — modernize + icon */
+.faq-q { font-size: 15px !important; font-weight: 600 !important; }
+.faq-icon { color: var(--blue) !important; font-weight: 300 !important; font-size: 20px !important; }
+.faq-a { font-size: 14px !important; line-height: 1.7 !important; color: var(--muted) !important; }
+
+/* 13 · How-it-works step cards — slightly more breathing room */
+.how-step { border-radius: 18px !important; padding: 36px 24px !important; }
+
+/* ══════════════════════════════════════════ */
+
 /* ── EMOJI HUB — clean emoji row + premium combos ── */
 .emoji-hub { padding: 48px 20px 56px !important; background: transparent !important; }
 .ehub-header { display: none !important; }
@@ -1801,7 +1871,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
-      <button class="tools-btn">Tools &#9662;</button>
+      <button class="tools-btn">Tools <svg class="tools-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="tools-drop">
         <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
         <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
