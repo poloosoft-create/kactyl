@@ -35,7 +35,7 @@
   <meta property="og:url"         content="https://kactyl.com/amazigh/">
   <meta property="og:title"       content="Amazigh Keyboard Online — Free Tifinagh &amp; Transliteration | ⴰⵎⴰⵣⵉⵖ">
   <meta property="og:description" content="Type Amazigh (Tamazight) from your phone or PC — no app, no download. Amazigh keyboard for WhatsApp, TikTok, Instagram. Latin mode converts English letters to Tifinagh instantly.">
-  <meta property="og:image"       content="https://kactyl.com/images/OG-Image-Amazigh-Keyboard-Online.webp">
+  <meta property="og:image"       content="https://kactyl.com/images/og-images/amazigh.png">
   <meta property="og:locale"      content="zgh">
   <meta property="og:site_name"   content="Kactyl">
 
@@ -43,7 +43,7 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Amazigh Keyboard Online — Tifinagh Typing, Latin Mode & Voice Free | ⴰⵎⴰⵣⵉⵖ ⴰⵙⴻⵍⴽⵉⵎ">
   <meta name="twitter:description" content="Free Amazigh keyboard — Tifinagh script, Latin transliteration mode. Type Tamazight for WhatsApp & TikTok. No download, works on all devices.">
-  <meta name="twitter:image"       content="https://kactyl.com/images/OG-Image-Amazigh-Keyboard-Online.webp">
+  <meta name="twitter:image"       content="https://kactyl.com/images/og-images/amazigh.png">
 
   <!-- Schema.org structured data -->
   <script type="application/ld+json">
@@ -1726,7 +1726,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
-                                                <nav>
+                                                  <nav>
     <a href="/home.html" class="nav-link">Home</a>
     <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
     <a href="#faq" class="nav-link">FAQ</a>
@@ -3234,10 +3234,10 @@ function toggleVoice() {
   }
 }
 function startVoice(SR) {
-  recog = new SR(); recog.lang='fr-MA'; recog.continuous=true; recog.interimResults=false;
-  recog.onstart  = () => { isRec=true; document.getElementById('micbtn').classList.add('rec'); toast('🎤 Listening... speak Amazigh'); };
+  isRec=true; recog = new SR(); recog.lang='fr-MA'; recog.continuous=true; recog.interimResults=false;
+  recog.onstart  = () => { document.getElementById('micbtn').classList.add('rec'); toast('🎤 Listening... speak Amazigh'); };
   recog.onresult = e => { for(let i=e.resultIndex;i<e.results.length;i++) if(e.results[i].isFinal) ins(e.results[i][0].transcript); };
-  recog.onerror  = e => { toast('Error: '+e.error); stopVoice(); };
+  recog.onerror  = e => { const msgs={'not-allowed':'🎤 Microphone access denied','no-speech':'🎤 No speech detected — try again','network':'🎤 Network error','aborted':null}; if(msgs[e.error]!==null) toast(msgs[e.error]||'Error: '+e.error); stopVoice(); };
   recog.onend    = () => { if(isRec) recog.start(); };
   recog.start();
 }

@@ -35,7 +35,7 @@
   <meta property="og:url"         content="https://kactyl.com/bengali/">
   <meta property="og:title"       content="Bengali Keyboard Online — Free Phonetic Typing | বাংলা কীবোর্ড">
   <meta property="og:description" content="Type Bengali from your phone or PC — no app, no download. Bengali keyboard for WhatsApp, TikTok, Instagram. Banglish mode converts English letters to Bengali instantly.">
-  <meta property="og:image"       content="https://kactyl.com/images/OG-Image-বাংলা কীবোর্ড অনলাইন.webp">
+  <meta property="og:image"       content="https://kactyl.com/images/og-images/bengali.png">
   <meta property="og:locale"      content="bn_BD">
   <meta property="og:site_name"   content="Kactyl">
 
@@ -43,7 +43,7 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Bengali Keyboard Online — Banglish Typing, Matras & Voice Free | বাংলা কীবোর্ড">
   <meta name="twitter:description" content="Free Bengali keyboard — Banglish mode, matras & voice typing. Type Bengali for WhatsApp & TikTok. No download, works on all devices.">
-  <meta name="twitter:image"       content="https://kactyl.com/images/OG-Image-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%20%E0%A6%95%E0%A7%80%E0%A6%AC%E0%A7%8B%E0%A6%B0%E0%A7%8D%E0%A6%A1%20%E0%A6%85%E0%A6%A8%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%A8.webp">
+  <meta name="twitter:image"       content="https://kactyl.com/images/og-images/bengali.png">
 
   <!-- Schema.org structured data -->
   <script type="application/ld+json">
@@ -1716,7 +1716,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
-                                                <nav>
+                                                  <nav>
     <a href="/home.html" class="nav-link">Home</a>
     <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
     <a href="#faq" class="nav-link">FAQ</a>
@@ -3214,10 +3214,10 @@ function toggleVoice() {
   }
 }
 function startVoice(SR) {
-  recog = new SR(); recog.lang='bn-BD'; recog.continuous=true; recog.interimResults=false;
-  recog.onstart  = () => { isRec=true; document.getElementById('micbtn').classList.add('rec'); toast('🎤 Listening... speak Bengali'); };
+  isRec=true; recog = new SR(); recog.lang='bn-BD'; recog.continuous=true; recog.interimResults=false;
+  recog.onstart  = () => { document.getElementById('micbtn').classList.add('rec'); toast('🎤 Listening... speak Bengali'); };
   recog.onresult = e => { for(let i=e.resultIndex;i<e.results.length;i++) if(e.results[i].isFinal) ins(e.results[i][0].transcript); };
-  recog.onerror  = e => { toast('Error: '+e.error); stopVoice(); };
+  recog.onerror  = e => { const msgs={'not-allowed':'🎤 Microphone access denied','no-speech':'🎤 No speech detected — try again','network':'🎤 Network error','aborted':null}; if(msgs[e.error]!==null) toast(msgs[e.error]||'Error: '+e.error); stopVoice(); };
   recog.onend    = () => { if(isRec) recog.start(); };
   recog.start();
 }

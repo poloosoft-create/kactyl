@@ -4120,10 +4120,10 @@ function toggleVoice() {
   }
 }
 function startVoice(SR) {
-  recog = new SR(); recog.lang='ar-SA'; recog.continuous=true; recog.interimResults=false;
-  recog.onstart  = () => { isRec=true; document.getElementById('micbtn').classList.add('rec'); toast('🎤 Listening... speak Arabic'); };
+  isRec=true; recog = new SR(); recog.lang='ar-SA'; recog.continuous=true; recog.interimResults=false;
+  recog.onstart  = () => { document.getElementById('micbtn').classList.add('rec'); toast('🎤 Listening... speak Arabic'); };
   recog.onresult = e => { for(let i=e.resultIndex;i<e.results.length;i++) if(e.results[i].isFinal) ins(e.results[i][0].transcript); };
-  recog.onerror  = e => { toast('Error: '+e.error); stopVoice(); };
+  recog.onerror  = e => { const msgs={'not-allowed':'🎤 Microphone access denied','no-speech':'🎤 No speech detected — try again','network':'🎤 Network error','aborted':null}; if(msgs[e.error]!==null) toast(msgs[e.error]||'Error: '+e.error); stopVoice(); };
   recog.onend    = () => { if(isRec) recog.start(); };
   recog.start();
 }

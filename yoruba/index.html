@@ -35,7 +35,7 @@
   <meta property="og:url"         content="https://kactyl.com/yoruba/">
   <meta property="og:title"       content="Yoruba Keyboard Online — àáẹọṣ Tone Marks Free | Yorùbá">
   <meta property="og:description" content="Type Yoruba from your phone or PC — no app, no download. Yoruba keyboard for WhatsApp, TikTok, Instagram. Yoruba mode converts English letters to Yoruba instantly.">
-  <meta property="og:image"       content="https://kactyl.com/images/OG-Image-Yoruba-Keyboard-Online.webp">
+  <meta property="og:image"       content="https://kactyl.com/images/og-images/yoruba.png">
   <meta property="og:locale"      content="yo_NG">
   <meta property="og:site_name"   content="Kactyl">
 
@@ -43,7 +43,7 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Yoruba Keyboard Online — Free Yorùbá Keyboard | ArabiKeyboard">
   <meta name="twitter:description" content="Free Yoruba keyboard — Yoruba mode, vowel signs &amp; voice typing. Type Yoruba for WhatsApp &amp; TikTok. No download, works on all devices.">
-  <meta name="twitter:image"       content="https://kactyl.com/images/OG-Image-Yoruba-Keyboard-Online.webp">
+  <meta name="twitter:image"       content="https://kactyl.com/images/og-images/yoruba.png">
 
   <!-- Schema.org structured data -->
   <script type="application/ld+json">
@@ -1840,7 +1840,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
-                                                <nav>
+                                                  <nav>
     <a href="/home.html" class="nav-link">Home</a>
     <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
     <a href="#faq" class="nav-link">FAQ</a>
@@ -3355,10 +3355,10 @@ function toggleVoice() {
   }
 }
 function startVoice(SR) {
-  recog = new SR(); recog.lang='yo-NG'; recog.continuous=true; recog.interimResults=false;
-  recog.onstart  = () => { isRec=true; document.getElementById('micbtn').classList.add('rec'); toast('🎤 Listening... speak Yoruba'); };
+  isRec=true; recog = new SR(); recog.lang='yo-NG'; recog.continuous=true; recog.interimResults=false;
+  recog.onstart  = () => { document.getElementById('micbtn').classList.add('rec'); toast('🎤 Listening... speak Yoruba'); };
   recog.onresult = e => { for(let i=e.resultIndex;i<e.results.length;i++) if(e.results[i].isFinal) ins(e.results[i][0].transcript); };
-  recog.onerror  = e => { toast('Error: '+e.error); stopVoice(); };
+  recog.onerror  = e => { const msgs={'not-allowed':'🎤 Microphone access denied','no-speech':'🎤 No speech detected — try again','network':'🎤 Network error','aborted':null}; if(msgs[e.error]!==null) toast(msgs[e.error]||'Error: '+e.error); stopVoice(); };
   recog.onend    = () => { if(isRec) recog.start(); };
   recog.start();
 }
