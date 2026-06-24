@@ -403,6 +403,7 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   100% { background-position: 300% center; }
 }
 @media(max-width:640px){
+  main { padding-left:8px; padding-right:8px; }
   .hero-hd h1 { font-size:clamp(22px, 6.5vw, 32px); }
   .h1-arabic  { font-size:clamp(26px, 7.5vw, 38px); }
 }
@@ -492,8 +493,8 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   display:flex; gap:8px;
   flex-wrap:nowrap;
   overflow-x:auto;
-  padding:5px 0 44px;
-  margin:20px 0 -22px;
+  padding:5px 0 20px;
+  margin:12px 0 -10px;
   scrollbar-width:none;
   font-family:'Inter',sans-serif;
   -webkit-overflow-scrolling:touch;
@@ -543,7 +544,9 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* ── CARD ── */
 .card {
-  background: rgba(255,255,255,.82);
+  background: rgba(255,255,255,.48);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
   border: 1px solid rgba(255,255,255,.95);
   border-radius: var(--r);
   box-shadow:
@@ -554,7 +557,9 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   margin-bottom:14px;
 }
 [data-theme="dark"] .card {
-  background: rgba(15,23,42,.85);
+  background: rgba(15,23,42,.68);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-color: rgba(255,255,255,.09);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.06),
@@ -588,8 +593,28 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   justify-content:space-between;
   margin-top:14px; flex-wrap:wrap; gap:10px;
 }
-.bar-stats { font-size:13px; color:var(--muted); display:flex; gap:14px; }
-.bar-stats b { color:var(--indigo); font-weight:700; }
+/* char counter */
+.textarea-wrap { position:relative; }
+.char-num {
+  position:absolute; bottom:10px; right:12px;
+  font-size:11px; font-weight:500; letter-spacing:.3px;
+  color:var(--muted); opacity:.5;
+  background:rgba(245,248,252,.85); backdrop-filter:blur(4px);
+  padding:2px 7px; border-radius:5px;
+  pointer-events:none; transition:color .3s, opacity .3s;
+}
+[data-theme="dark"] .char-num { background:rgba(30,41,59,.85); }
+.char-num.near { color:#f59e0b; opacity:.9; }
+.char-num.over { color:var(--red); opacity:1; }
+.char-progress {
+  position:absolute; bottom:0; left:0;
+  height:2px; width:0%;
+  background:linear-gradient(90deg,var(--blue),var(--indigo));
+  border-radius:0 0 var(--rs) var(--rs);
+  transition:width .25s ease, background .3s; pointer-events:none;
+}
+.char-progress.near { background:linear-gradient(90deg,#f59e0b,#f97316); }
+.char-progress.over { background:var(--red); }
 
 .bar-center {
   display:flex; align-items:center; gap:8px;
@@ -607,28 +632,29 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 .f-btn:hover { background:var(--indigo); color:#fff; border-color:var(--indigo); }
 .f-num { font-size:12px; font-weight:600; color:var(--muted); width:22px; text-align:center; }
 
-/* Flat action buttons */
+/* Pill action buttons — Arabic page style */
 .t-btn {
   display:flex; align-items:center; gap:7px;
   padding:8px 20px; border-radius:50px;
   border:1.5px solid var(--border);
   background:transparent;
   font-size:13px; font-weight:600;
-  transition: all .2s;
+  transition:all .2s;
   box-shadow:0 2px 6px var(--shadow);
 }
 .t-btn img { width:18px; height:18px; object-fit:contain; }
 .t-btn span { font-size:13px; font-weight:600; line-height:1; }
 .t-btn:active { transform:translateY(1px); box-shadow:none; }
+.btn-inactive { opacity:.35; pointer-events:none; transition:opacity .2s; }
 .t-dl       { color:#3B82F6; }
 .t-dl:hover { border-color:#3B82F6; background:#EFF6FF; transform:translateY(-1px); }
-.t-cp       { color:#1f1f22; }
-.t-cp:hover { border-color:#22242a; background:#F9FAFB; transform:translateY(-1px); }
+.t-cp       { color:var(--text); }
+.t-cp:hover { border-color:var(--text); background:var(--bg); transform:translateY(-1px); }
 .t-clr      { color:#EF4444; }
 .t-clr:hover{ border-color:#EF4444; background:#FEF2F2; transform:translateY(-1px); }
-[data-theme="dark"] .t-dl:hover { background:rgba(59,130,246,.15); }
-[data-theme="dark"] .t-cp:hover { background:rgba(107,114,128,.15); }
-[data-theme="dark"] .t-clr:hover{ background:rgba(239,68,68,.15); }
+[data-theme="dark"] .t-dl:hover  { background:rgba(59,130,246,.15); }
+[data-theme="dark"] .t-cp:hover  { background:rgba(5,150,105,.20); }
+[data-theme="dark"] .t-clr:hover { background:rgba(239,68,68,.15); }
 
 /* ── KEYBOARD CARD ── */
 .kb-card { padding:14px 16px 16px; position:relative; }
@@ -639,36 +665,46 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   display:flex; align-items:center; gap:10px;
   margin-bottom:14px; flex-wrap:nowrap;
 }
-.qwerty-left {
-  display:flex; align-items:center; gap:9px;
-  cursor:pointer; user-select:none; flex-shrink:0;
+/* PC keyboard icon toggle */
+.pc-btn {
+  position:relative; width:38px; height:38px; border-radius:50%;
+  background:var(--bg); border:1.5px solid #B8C4D8;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; flex-shrink:0; user-select:none;
+  color:var(--muted); opacity:.45; transition:all .25s;
 }
-.qwerty-icon { display:flex; align-items:center; justify-content:center; }
-.qwerty-icon img { width:30px; height:30px; opacity:6; }
-.qwerty-txt { display:flex; flex-direction:column; }
-.qwerty-title { font-family:'Tajawal',sans-serif; font-size:14px; font-weight:700; color:var(--text); line-height:1.2; }
-.qwerty-sub   { font-size:10px; color:var(--muted); }
-
-/* iOS-style toggle switch */
-.sw-track {
-  width:44px; height:26px; border-radius:13px;
-  background:var(--border); position:relative;
-  transition:background .25s; cursor:pointer; flex-shrink:0;
+.pc-btn svg { width:22px; height:22px; }
+.pc-btn:hover { opacity:.75; }
+.pc-btn.on {
+  color:var(--blue); opacity:1;
+  background:rgba(0,104,255,.10);
+  box-shadow:0 0 0 3px rgba(0,104,255,.14), 0 2px 14px rgba(0,104,255,.18);
 }
-.sw-track.on { background:#34C759; }
-.sw-thumb {
-  position:absolute; top:3px; left:3px;
-  width:20px; height:20px;
-  background:#fff; border-radius:50%;
-  box-shadow:0 1px 4px rgba(0,0,0,.25);
-  transition:transform .25s;
+[data-theme="dark"] .pc-btn {
+  border-color:rgba(255,255,255,.18);
+  color:rgba(255,255,255,.5);
 }
-.sw-track.on .sw-thumb { transform:translateX(18px); }
+[data-theme="dark"] .pc-btn.on {
+  background:rgba(0,104,255,.16);
+  border-color:rgba(0,104,255,.40);
+  box-shadow:0 0 0 3px rgba(0,104,255,.20), 0 2px 18px rgba(0,104,255,.28);
+}
+.pc-btn::after {
+  content:'Type with PC keyboard';
+  position:absolute; top:calc(100% + 7px); left:50%;
+  transform:translateX(-50%) scale(.92);
+  background:var(--nav); color:var(--nav-txt);
+  font-size:11px; font-weight:500; padding:4px 9px; border-radius:5px;
+  white-space:nowrap; pointer-events:none;
+  opacity:0; transition:opacity .15s, transform .15s;
+}
+.pc-btn:hover::after { opacity:1; transform:translateX(-50%) scale(1); }
 
 .kb-flex { flex:1; }
 
 /* Inline suggestion pills */
-.sug-pills { display:flex; align-items:center; gap:0; border:1px solid var(--border); border-radius:50px; overflow:hidden; background:var(--bg); }
+.sug-pills { display:flex; align-items:center; gap:0; border:1px solid rgba(0,104,255,.14); border-radius:50px; overflow:hidden; background:rgba(255,255,255,.75); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); box-shadow:0 2px 12px rgba(0,104,255,.06); }
+[data-theme="dark"] .sug-pills { background:rgba(30,41,59,.70); border-color:rgba(99,102,241,.20); }
 .sug-pill {
   flex:1; padding:6px 18px;
   background:transparent; border:none; border-radius:0;
@@ -688,16 +724,17 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 .mic-btn {
   width:38px; height:38px; border-radius:50%;
-  background:var(--bg); border:1px solid var(--border);
+  background:var(--bg); border:1.5px solid #B8C4D8;
   display:flex; align-items:center; justify-content:center;
   transition: all .2s; flex-shrink:0;
+  opacity:.45;
 }
 .mic-btn img { width:18px; height:18px; object-fit:contain; transition: filter .2s; }
+[data-theme="dark"] .mic-btn { border-color:rgba(255,255,255,.18); }
 [data-theme="dark"] .mic-btn img { filter: brightness(0) invert(1) opacity(.75); }
-.mic-btn:hover   { background:var(--blue); border-color:var(--blue); }
-.mic-btn:hover img { filter:brightness(0) invert(1); }
-.mic-btn.rec     { background:var(--blue); border-color:var(--blue); animation:pulse 1.2s infinite; }
-.mic-btn.rec img { filter:brightness(0) invert(1); }
+.mic-btn:hover   { background:rgba(0,104,255,.06); border-color:rgba(0,104,255,.25); opacity:.75; }
+.mic-btn.rec     { background:rgba(0,104,255,.10); border-color:rgba(0,104,255,.35); opacity:1; box-shadow:0 0 0 3px rgba(0,104,255,.14), 0 2px 14px rgba(0,104,255,.18); animation:pulse 1.2s infinite; }
+.mic-btn.rec img { filter:none; }
 @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(0,104,255,.4)} 60%{box-shadow:0 0 0 8px rgba(0,104,255,0)} }
 
 /* Tap hint */
@@ -713,18 +750,19 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   position:relative;
 }
 .lang-sel-btn {
-  display:flex; align-items:center; gap:41px;
+  display:flex; align-items:center; gap:8px;
   background:linear-gradient(135deg,#0068ff,#2459d8); border:1.5px solid var(--key-b);
   border-radius:20px; padding:6px 10px;
   font-size:13px; font-weight:600; color:#fff;
   cursor:pointer; transition:border-color .2s, box-shadow .2s;
-  height:36px;
+  height:36px; gap:41px;
   box-shadow:0 2px 8px rgba(0,0,0,.10), 0 1px 2px rgba(0,0,0,.06);
 }
 .lang-sel-btn:hover { border-color:var(--blue); box-shadow:0 4px 16px rgba(37,99,235,.18), 0 1px 4px rgba(0,0,0,.10); }
 .lang-sel-btn img { width:18px; height:18px; object-fit:contain; }
-.lang-sel-btn .lang-arrow { font-size:10px; color:#ffffff; margin-left:2px; transition:transform .2s; }
+.lang-sel-btn .lang-arrow { font-size:10px; color:#fff; margin-left:4px; transition:transform .2s; }
 .lang-sel-btn.open .lang-arrow { transform:rotate(180deg); }
+.lang-sel-btn.open { border-color:var(--blue); }
 
 .lang-dropdown {
   display:none; position:absolute; top:calc(100% + 6px); left:50%; transform:translateX(-50%);
@@ -762,7 +800,7 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 .key {
   min-width:52px; height:56px;
-  background: linear-gradient(180deg, rgba(255,255,255,.98) 0%, var(--key-bg) 100%);
+  background: linear-gradient(180deg, rgba(248,250,255,.99) 0%, var(--key-bg) 100%);
   border:1.5px solid var(--key-b);
   border-radius: var(--rx);
   box-shadow:
@@ -827,8 +865,9 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 }
 
 /* Utility key sizes */
-.k-enter { min-width:52px; font-size:17px; background:var(--bg); color:var(--text); font-family:\'Inter\',sans-serif;; }
-.k-bsp   { min-width:52px; font-size:18px; color:var(--muted); }
+.k-enter { min-width:52px; font-size:17px; background:rgba(110,122,145,.18); color:var(--text); font-family:\'Inter\',sans-serif; }
+.k-bsp   { min-width:52px; font-size:18px; background:rgba(110,122,145,.18); color:var(--muted); }
+[data-theme="dark"] .k-enter, [data-theme="dark"] .k-bsp { background:rgba(255,255,255,.10); }
 .k-slash { min-width:38px; font-size:18px; color:var(--muted); }
 .k-globe { min-width:46px; font-size:18px; background:var(--bg); }
 .k-space { flex:1; min-width:140px; font-size:13px; font-weight:500; color:var(--muted); }
@@ -860,18 +899,24 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 }
 .k-franco:hover  { filter:brightness(1.1); box-shadow:0 3px 0 #1D4ED8; transform:translateY(-1px); }
 .k-franco.active { background:linear-gradient(135deg,#059669,#10B981) !important; box-shadow:0 3px 0 #047857; }
-.k-franco .ks    { font-size:9px; opacity:.5; font-weight:400; font-family:'Tajawal',sans-serif; }
+.k-franco .ks    { font-size:9px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
 
 /* Special chars key */
-.k-spec { min-width:46px; font-size:12px; font-weight:700; font-family:'Inter',sans-serif; background:var(--bg); color:var(--muted); line-height:1.2; }
-.k-shift { min-width:62px; font-size:18px; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); }
+.k-spec { min-width:46px; font-size:12px; font-weight:700; font-family:'Inter',sans-serif; background:var(--bg); color:var(--muted); line-height:1.2; position:relative; }
+.k-spec::after { content:''; position:absolute; top:5px; right:5px; width:5px; height:5px; background:var(--blue); border-radius:50%; opacity:.45; }
+.k-123 { position:relative; }
+.k-123::after  { content:''; position:absolute; top:5px; right:5px; width:5px; height:5px; background:var(--blue); border-radius:50%; opacity:.45; }
+.k-shift { min-width:62px; font-size:18px; font-family:'Inter',sans-serif; background:rgba(110,122,145,.18); color:var(--text); }
+[data-theme="dark"] .k-shift { background:rgba(255,255,255,.10); }
 .k-shift.active { background: var(--blue); color:#fff; border-color:var(--blue); box-shadow: 0 4px 0 #0050cc; }
-.k-bsp  { min-width:62px; font-size:18px; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); }
+.k-bsp  { min-width:62px; font-size:18px; font-family:'Inter',sans-serif; background:rgba(110,122,145,.18); color:var(--text); }
 
 /* Specials popup */
+.spec-popup, .e-popup, .t-popup, .n-popup { background:rgba(245,247,252,.96) !important; backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border:1px solid rgba(255,255,255,.80) !important; box-shadow:0 8px 32px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.06) !important; }
+[data-theme=dark] .spec-popup,[data-theme=dark] .e-popup,[data-theme=dark] .t-popup,[data-theme=dark] .n-popup { background:rgba(15,23,42,.90) !important; border-color:rgba(255,255,255,.10) !important; }
 .spec-popup {
   position:absolute; bottom:72px; left:14px; width:260px;
-  background:rgba(255,255,255,.96); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid var(--border);
+  background:rgba(255,255,255,.52); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border:1px solid rgba(255,255,255,.70);
   border-radius:var(--rs);
   box-shadow:0 -4px 20px rgba(0,0,0,.12), 0 8px 24px rgba(0,0,0,.08);
   padding:12px; z-index:200; display:none; animation:popUp .18s ease;
@@ -885,7 +930,7 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   display:flex; align-items:center; justify-content:center;
   transition: all .12s;
 }
-.spec-key:hover { background:var(--indigo); color:#fff; border-color:var(--indigo); }
+.spec-key:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
 
 /* ── EMOJI POPUP ── */
 .e-popup, .t-popup {
@@ -894,10 +939,10 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   width:340px;
   max-height:min(320px, calc(100dvh - 260px));
   overflow:hidden;
-  background:rgba(255,255,255,0.92);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-  border:1px solid var(--border);
+  background:rgba(255,255,255,.52);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+  border:1px solid rgba(255,255,255,.70);
   border-radius:var(--rs);
   box-shadow:0 -4px 20px rgba(0,0,0,.12), 0 8px 24px rgba(0,0,0,.08);
   padding:12px;
@@ -906,7 +951,8 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 }
 [data-theme="dark"] .e-popup,
 [data-theme="dark"] .t-popup {
-  background:rgba(15,23,42,0.88);
+  background:rgba(15,23,42,.62);
+  border-color:rgba(255,255,255,.08);
 }
 .e-cats {
   display:flex; gap:4px; overflow-x:auto; padding-bottom:8px;
@@ -935,12 +981,13 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 }
 .pop-title { font-size:12px; font-weight:600; color:var(--muted); }
 .pop-close {
-  width:22px; height:22px;
-  background:var(--bg); border-radius:5px;
-  font-size:13px; color:var(--muted);
+  width:36px; height:36px;
+  background:var(--bg); border-radius:8px;
+  font-size:14px; color:var(--muted);
   display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; transition:background .15s;
 }
-.pop-close:hover { background:var(--border); }
+.pop-close:hover { background:var(--border); color:var(--text); }
 
 .e-grid {
   display:grid;
@@ -951,10 +998,10 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   font-size:18px;
   display:flex; align-items:center; justify-content:center;
   transition: background .1s, box-shadow .1s;
-  border:1.5px solid transparent;
+  border:1.5px solid var(--border);
 }
-.e-key:hover { background:var(--key-h); border-color:var(--indigo); box-shadow:0 0 0 2px rgba(99,102,241,.18); }
-.e-key:active { background:rgba(99,102,241,.15); }
+.e-key:hover { background:var(--key-h); border-color:var(--blue); box-shadow:0 0 0 2px rgba(0,104,255,.18); }
+.e-key:active { background:rgba(0,104,255,.12); }
 
 .t-grid {
   display:grid; grid-template-columns:repeat(4,1fr); gap:6px;
@@ -967,7 +1014,7 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   transition: all .12s;
 }
 .t-key .tl { font-size:8px; color:var(--muted); font-family:'Inter',sans-serif; }
-.t-key:hover { background:var(--purple); color:#fff; border-color:var(--purple); }
+.t-key:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
 .t-key:hover .tl { color:rgba(255,255,255,.75); }
 .ai-tash-btn {
   display:flex; align-items:center; justify-content:center; gap:6px;
@@ -983,9 +1030,9 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* ── NUMBERS POPUP ── */
 .n-popup {
-  position:absolute; bottom:72px; right:14px; width:260px;
+  position:absolute; bottom:72px; left:14px; width:260px;
   max-height:min(300px, calc(100dvh - 260px)); overflow-y:auto;
-  background:rgba(255,255,255,.96); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid var(--border);
+  background:rgba(255,255,255,.52); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border:1px solid rgba(255,255,255,.70);
   border-radius:var(--rs);
   box-shadow:0 -4px 20px rgba(0,0,0,.12), 0 8px 24px rgba(0,0,0,.08);
   padding:12px; z-index:200; display:none; animation:popUp .18s ease;
@@ -1001,7 +1048,7 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
   display:flex; align-items:center; justify-content:center;
   transition: all .12s;
 }
-.n-key:hover { background:var(--indigo); color:#fff; border-color:var(--indigo); }
+.n-key:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
 .n-key.ar { font-family:'Tajawal',sans-serif; font-size:18px; }
 
 /* ── FRANCO HINT BAR ── */
@@ -1227,15 +1274,56 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* ── FOOTER ── */
 /* ── MORE KEYBOARDS ── */
-.more-kbs { padding:32px 28px 0; max-width:900px; margin:0 auto; }
-.more-kbs-title { font-size:16px; font-weight:700; color:var(--muted); margin-bottom:14px; text-align:center; text-transform:uppercase; letter-spacing:.6px; font-family:'Inter',sans-serif; }
-.more-kbs-grid { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
-.kb-chip { display:flex; flex-direction:column; align-items:center; gap:1px; padding:8px 14px; background:var(--surface); border:1px solid rgba(255,255,255,.75); border-radius:50px; text-decoration:none; color:var(--text); transition:transform .15s, box-shadow .15s; box-shadow:0 2px 8px rgba(15,23,42,.05); }
-.kb-chip:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(15,23,42,.10); }
-.kb-chip-name { font-size:12px; font-weight:600; font-family:'Inter',sans-serif; }
-.kb-chip-native { font-size:11px; color:var(--muted); font-family:'Inter',sans-serif; }
-[data-theme="dark"] .kb-chip { border-color:rgba(255,255,255,.10); }
-@media(max-width:640px){ .more-kbs { padding:28px 16px 0; } .kb-chip { padding:7px 11px; } .kb-chip-name { font-size:11px; } .kb-chip-native { font-size:10px; } }
+/* ── MORE KEYBOARDS ── */
+.more-kbs { padding:56px 20px 40px; max-width:960px; margin:0 auto; border-top:1px solid var(--border); }
+.more-kbs-hd { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:24px; gap:16px; }
+.more-kbs-sup { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--blue); margin-bottom:4px; }
+.more-kbs-title { font-size:22px; font-weight:800; color:var(--text); letter-spacing:-.3px; margin:0; }
+.more-kbs-all { display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:600; color:var(--blue); text-decoration:none; flex-shrink:0; transition:gap .15s; }
+.more-kbs-all:hover { gap:9px; }
+.more-kbs-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(128px,1fr)); gap:8px; }
+.kb-chip { display:flex; flex-direction:row; align-items:center; gap:9px; padding:9px 12px; background:var(--surface); border:1px solid var(--border); border-radius:12px; text-decoration:none; color:var(--text); transition:border-color .15s, box-shadow .15s, transform .15s; box-shadow:0 1px 4px rgba(15,23,42,.04); }
+.kb-chip:hover { border-color:var(--blue); box-shadow:0 4px 16px rgba(0,104,255,.10); transform:translateY(-1px); }
+.kb-chip-flag { font-size:20px; line-height:1; flex-shrink:0; }
+.kb-chip-info { display:flex; flex-direction:column; gap:1px; }
+.kb-chip-name { font-size:12px; font-weight:600; }
+.kb-chip-native { font-size:11px; color:var(--muted); }
+[data-theme="dark"] .kb-chip { border-color:rgba(255,255,255,.09); background:rgba(255,255,255,.04); }
+[data-theme="dark"] .kb-chip:hover { border-color:rgba(0,104,255,.5); }
+/* ── DISCOVER CARD (merged) ── */
+.kb-discover { display:flex; flex-direction:column; justify-content:space-between; padding:9px 14px 8px; background:linear-gradient(135deg,#0F172A,#1a2744); border:1px solid rgba(0,104,255,.22); border-radius:12px; text-decoration:none; overflow:hidden; transition:border-color .2s, box-shadow .2s; }
+.kb-discover:hover { border-color:rgba(0,104,255,.55); box-shadow:0 4px 18px rgba(0,104,255,.22); }
+.kb-discover-top { display:flex; align-items:center; justify-content:space-between; }
+.kb-discover-count { font-size:13px; font-weight:800; color:#F1F5F9; }
+.kb-discover-arr { font-size:12px; color:rgba(96,165,250,.7); }
+.kb-discover-label { font-size:10px; color:#64748B; font-weight:500; margin-top:1px; }
+.kb-discover-flags { overflow:hidden; margin-top:6px; mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent); -webkit-mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent); }
+.kb-discover-flags-inner { display:flex; gap:3px; font-size:13px; animation:flag-scroll 14s linear infinite; white-space:nowrap; width:max-content; }
+@keyframes flag-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+@media(max-width:640px){ .more-kbs { padding:36px 12px 28px; } .more-kbs-hd { align-items:flex-start; flex-direction:column; gap:8px; } .more-kbs-grid { grid-template-columns:repeat(auto-fill, minmax(100px,1fr)); } .kb-chip { padding:7px 10px; } .kb-chip-name { font-size:11px; } .kb-chip-native { font-size:10px; } }
+
+/* ── MORE TEXT TOOLS ── */
+.more-tools { padding:0 20px 56px; max-width:960px; margin:0 auto; }
+.more-tools-hd { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; gap:16px; }
+.more-tools-sup { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--blue); margin-bottom:4px; }
+.more-tools-title { font-size:22px; font-weight:800; color:var(--text); letter-spacing:-.3px; margin:0; }
+.more-tools-grid { display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; -ms-overflow-style:none; padding-bottom:2px; }
+.more-tools-grid::-webkit-scrollbar { display:none; }
+.tool-card { flex:0 0 164px; height:164px; scroll-snap-align:start; display:flex; flex-direction:column; padding:14px 14px 12px; background:#0F172A; border:1px solid rgba(255,255,255,.07); border-radius:16px; text-decoration:none; overflow:hidden; transition:border-color .2s, transform .2s, box-shadow .2s; }
+.tool-card:hover { border-color:rgba(0,104,255,.45); box-shadow:0 8px 28px rgba(0,104,255,.18); transform:translateY(-2px); }
+.tool-card-visual { position:relative; width:48px; height:48px; margin-bottom:10px; flex-shrink:0; }
+.tool-card-visual svg { width:48px; height:48px; display:block; }
+.tool-card-badge { position:absolute; bottom:-3px; left:-6px; width:22px; height:22px; background:#000; border-radius:50%; border:2.5px solid #0F172A; display:flex; align-items:center; justify-content:center; }
+.tool-card-name { font-size:14px; font-weight:700; color:#F1F5F9; line-height:1.2; }
+.tool-card-desc { font-size:11px; color:#64748B; line-height:1.5; margin-top:5px; flex:1; }
+.tool-card-arrow { margin-top:12px; font-size:12px; color:rgba(96,165,250,.55); font-weight:600; }
+[data-theme="dark"] .tool-card { background:rgba(15,23,42,.8); }
+[data-theme="dark"] .tool-card-badge { border-color:rgba(15,23,42,.8); }
+.more-tools-dots { display:flex; justify-content:center; gap:6px; margin-top:14px; }
+.mtd { width:6px; height:6px; border-radius:50%; background:rgba(15,23,42,.15); cursor:pointer; transition:all .25s; flex-shrink:0; }
+[data-theme="dark"] .mtd { background:rgba(255,255,255,.15); }
+.mtd.active { background:var(--blue); width:18px; border-radius:3px; }
+@media(max-width:640px){ .more-tools { padding:0 12px 40px; } .tool-card { flex:0 0 146px; height:146px; } .more-tools-hd { flex-direction:column; gap:8px; } }
 
 footer {
   background: #07091A;
@@ -1303,7 +1391,8 @@ footer {
   transform:translateX(-50%) translateY(80px);
   background:#1E293B; color:#fff;
   padding:10px 24px; border-radius:50px;
-  font-size:13px; white-space:nowrap;
+  font-size:13px; text-align:center;
+  max-width:calc(100vw - 32px);
   box-shadow:0 8px 24px rgba(0,0,0,.2);
   transition:transform .32s cubic-bezier(.34,1.56,.64,1);
   z-index:9999;
@@ -1389,21 +1478,21 @@ footer {
   .sh-ic { width:21px; height:21px; }
   .sh-ic img { width:21px; height:21px; }
 
-  /* Editor bar — row1: stats+font | row2: buttons | row3: lang selector */
+  /* Editor bar — row1: stats+font | row2: icon circles + lang btn */
   .editor-bar { flex-wrap:wrap; gap:6px; align-items:center; }
   .bar-stats  { flex:1; order:1; min-width:0; }
   .font-wrap  { order:2; gap:3px; flex:0 0 auto; }
   .f-btn { width:24px; height:24px; font-size:10px; }
   .f-num { font-size:11px; }
-  .bar-center { flex:none; width:100%; order:3; flex-wrap:wrap; gap:6px; }
-  .bar-center .t-btn { flex:1; min-width:0; justify-content:center; padding:8px 6px; font-size:12px; }
-  .t-btn img { width:14px; height:14px; }
-  .t-btn span { font-size:12px; }
-  .lang-sel-wrap { flex-basis:100%; }
-  .lang-sel-btn { width:100%; justify-content:center; gap:10px; padding:10px 14px; }
+  .bar-center { flex:none; width:100%; order:3; gap:8px; flex-wrap:nowrap; align-items:center; }
+  .bar-center .t-btn { flex:0 0 auto; width:44px; height:44px; border-radius:50%; padding:0; justify-content:center; min-width:0; box-shadow:none; }
+  .bar-center .t-btn span { display:none; }
+  .bar-center .t-btn img { width:18px; height:18px; }
+  .lang-sel-wrap { flex:1; }
+  .lang-sel-btn { width:100%; justify-content:center; gap:10px; padding:6px 14px; height:36px; }
 
   /* Hide QWERTY PC toggle — useless on mobile */
-  .qwerty-left { display:none; }
+  .pc-btn { display:none; }
 
   /* kb-top: suggestions expand full width */
   .kb-top { gap:6px; }
@@ -1686,11 +1775,7 @@ footer {
 :root { --bg: #F8FAFC; }
 body { background: #F8FAFC; }
 
-/* 2 · Header — 88px is too tall. 60px is the standard */
-header { height: 60px !important; padding: 0 20px !important; }
-
-/* 3 · Logo — width:140px, not height:200px */
-.logo-img { height: auto !important; width: 140px !important; }
+/* 3 · Logo */
 
 /* 4 · Background blobs — 3 competing blobs is noise. Keep 1, hide s2 */
 .s1 { background: rgba(0,104,255,.08) !important; width: 700px !important; height: 700px !important; }
@@ -1726,6 +1811,7 @@ header { height: 60px !important; padding: 0 20px !important; }
 .hs-num { font-size: 28px !important; letter-spacing: -1px !important; }
 .hs-label { font-size: 11px !important; }
 .hero-stat { padding: 0 32px !important; }
+@media(max-width:480px){ .hero-stat { padding: 0 14px !important; } .hs-num { font-size: 18px !important; } }
 
 /* 9 · Nav chevron — smooth rotation on open */
 .tools-chevron { transition: transform .2s; flex-shrink: 0; }
@@ -1771,7 +1857,7 @@ header { height: 60px !important; padding: 0 20px !important; }
 .combo-ins { font-size: 11px !important; color: var(--blue) !important; font-weight: 600 !important; background: rgba(0,104,255,.08) !important; padding: 3px 10px !important; border-radius: 999px !important; border: none !important; }
 
 /* Share bar scroll dots */
-.sh-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0 4px; }
+.sh-dots { display: flex; justify-content: center; gap: 6px; padding: 4px 0 4px; margin-top: -8px; }
 .sh-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); transition: background .2s, width .2s; }
 .sh-dot.active { background: var(--blue); width: 18px; border-radius: 3px; }
 
@@ -1820,6 +1906,45 @@ header { height: 60px !important; padding: 0 20px !important; }
 .how-step p{font-size:13px;color:var(--muted);line-height:1.6;margin:0;}
 .how-arrow{font-size:24px;color:var(--muted);padding:0 8px;align-self:center;flex-shrink:0;}
 @media(max-width:640px){.how-steps{flex-direction:column;align-items:center;gap:12px;}.how-arrow{transform:rotate(90deg);}.how-step{max-width:100%;width:100%;}}
+
+/* ── KEY CALLOUT (iOS-style) ── */
+#key-callout {
+  position: fixed;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 24px rgba(0,0,0,.18), 0 1px 3px rgba(0,0,0,.10);
+  font-size: 32px;
+  font-weight: 500;
+  color: #1a1a1a;
+  min-width: 48px;
+  height: 52px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translateX(-50%);
+  padding: 0 14px;
+  font-family: 'Tajawal', 'Inter', sans-serif;
+}
+#key-callout::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 9px solid #fff;
+}
+[data-theme="dark"] #key-callout {
+  background: #4B5563;
+  color: #F8FAFC;
+  border-color: rgba(255,255,255,.10);
+  box-shadow: 0 4px 24px rgba(0,0,0,.45);
+}
+[data-theme="dark"] #key-callout::after { border-top-color: #4B5563; }
 </style>
 
   <!-- BreadcrumbList structured data -->
@@ -1844,11 +1969,18 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 /* Whiter key buttons */
 :root{--key-bg:rgba(255,255,255,.98)}
 [data-theme=dark]{--key-bg:rgba(255,255,255,.11)}
-/* Fix transparent SPEC and Numbers popup boxes */
-.spec-popup{background:rgba(255,255,255,.97)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.n-popup{background:rgba(255,255,255,.97)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-[data-theme=dark] .spec-popup{background:rgba(15,23,42,.96)!important}
-[data-theme=dark] .n-popup{background:rgba(15,23,42,.96)!important}
+[data-theme=dark] .spec-popup{background:rgba(15,23,42,.62)!important;border-color:rgba(255,255,255,.08)!important}
+[data-theme=dark] .n-popup{background:rgba(15,23,42,.62)!important;border-color:rgba(255,255,255,.08)!important}
+/* Dark mode: popup keys */
+[data-theme=dark] .n-key,[data-theme=dark] .spec-key{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.10);color:#E2E8F0}
+[data-theme=dark] .t-key{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.10);color:#E2E8F0}
+[data-theme=dark] .e-key{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+[data-theme=dark] .n-section-lbl{color:rgba(255,255,255,.35)}
+[data-theme=dark] .pop-title{color:rgba(255,255,255,.4)}
+[data-theme=dark] .pop-close{background:rgba(255,255,255,.08);color:rgba(255,255,255,.5)}
+/* Dark mode: circle buttons */
+[data-theme=dark] .pc-btn{background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)}
+[data-theme=dark] .mic-btn{background:rgba(255,255,255,.06)}
 </style>
 </head>
 <body>
@@ -1869,7 +2001,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
-                                                  <nav>
+                                                            <nav>
     <a href="/home.html" class="nav-link">Home</a>
     <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
     <a href="#faq" class="nav-link">FAQ</a>
@@ -1884,6 +2016,8 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/><circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/><path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
         <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
         <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
+        <a href="/arabic-calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Arabic Calligraphy</a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -1920,13 +2054,13 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <span class="hs-num">40</span>
+          <span class="hs-num">300+</span>
           <span class="hs-label">Keyboards</span>
         </div>
         <div class="hs-sep"></div>
         <div class="hero-stat">
-          <span class="hs-num">50K+</span>
-          <span class="hs-label">Daily Users</span>
+          <span class="hs-num">4B+</span>
+          <span class="hs-label">Speakers Covered</span>
         </div>
         <div class="hs-sep"></div>
         <div class="hero-stat">
@@ -1992,15 +2126,15 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     </div>
     <!-- Editor -->
     <div class="card editor-card">
-      <textarea id="arabic-text"
-        placeholder="Type Hindi here... or click the letters below ✍️"
-        oninput="onInput()" spellcheck="false" inputmode="none"></textarea>
+      <div class="textarea-wrap">
+        <textarea id="arabic-text"
+          placeholder="Type Hindi here... or click the letters below ✍️"
+          oninput="onInput()" onkeydown="playClick()" spellcheck="false" inputmode="none"></textarea>
+        <span class="char-num" id="char-counter">0 / 5000</span>
+        <div class="char-progress" id="char-bar"></div>
+      </div>
 
       <div class="editor-bar">
-        <div class="bar-stats">
-          <span>Chars: <b id="cc">0</b></span>
-          <span>Words: <b id="wc">0</b></span>
-        </div>
         <div class="bar-center">
           <button class="t-btn t-dl" onclick="dlText()">
             <img loading="lazy" src="../images/Icon-Telecharger-Clavierarabe-online.svg" alt="Download">
@@ -2129,10 +2263,8 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
           </div>
         </div>
-        <div class="font-wrap">
-          <button class="f-btn" onclick="chFont(-2)">A-</button>
-          <span class="f-num" id="fnum">22</span>
-          <button class="f-btn" onclick="chFont(2)">A+</button>
+        <div class="font-wrap" style="display:none">
+          <span id="fnum">22</span>
         </div>
       </div>
     </div>
@@ -2166,10 +2298,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
           <button class="pop-close" onclick="closeTashkeel()">✕</button>
         </div>
         <div class="t-grid" id="tgrid"></div>
-        <button class="ai-tash-btn" onclick="aiTashkeel()">
-          <span class="ai-tash-icon">✨</span>
-          <span class="ai-tash-label" data-i18n="btn.aitash">AI تشكيل تلقائي</span>
-        </button>
       </div>
 
       <!-- Numbers popup -->
@@ -2188,18 +2316,12 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
       <!-- Combined: QWERTY toggle + suggestions + mic — single row -->
       <div class="kb-top">
-        <div class="qwerty-left" onclick="toggleQwerty()">
-          <div class="qwerty-icon">
-            <img loading="lazy" src="../images/clavier-icon-arabikeyboard-enligne.svg" alt="Keyboard">
-          </div>
-          <div class="qwerty-txt">
-            <span class="qwerty-title" data-i18n="qwerty.title">हिंदी कीबोर्ड — कंप्यूटर से टाइप करें</span>
-            <span class="qwerty-sub" data-i18n="qwerty.sub">QWERTY phonetic</span>
-          </div>
-          <div class="sw-track" id="sw-track">
-            <div class="sw-thumb"></div>
-          </div>
-        </div>
+        <button class="pc-btn" id="pc-btn" onclick="toggleQwerty()" aria-label="Type with PC keyboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="12" rx="2"/>
+            <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/>
+          </svg>
+        </button>
 
         <div class="kb-flex"></div>
 
@@ -2537,47 +2659,321 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 <!-- FOOTER -->
 <!-- More Keyboards -->
 <div class="more-kbs">
-  <p class="more-kbs-title">More Free Online Keyboards</p>
+  <div class="more-kbs-hd">
+    <div>
+      <p class="more-kbs-sup">300+ Languages</p>
+      <h2 class="more-kbs-title">More Free Online Keyboards</h2>
+    </div>
+    <a href="/keyboards/" class="more-kbs-all">View all <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
   <div class="more-kbs-grid">
-      <a href="/arabic/" class="kb-chip"><span class="kb-chip-name">Arabic</span><span class="kb-chip-native">العربية</span></a>
-      <a href="../amazigh/" class="kb-chip"><span class="kb-chip-name">Amazigh</span><span class="kb-chip-native">ⵜⴰⵎⴰⵣⵉⵖⵜ</span></a>
-      <a href="../amharic/" class="kb-chip"><span class="kb-chip-name">Amharic</span><span class="kb-chip-native">አማርኛ</span></a>
-      <a href="../bengali/" class="kb-chip"><span class="kb-chip-name">Bengali</span><span class="kb-chip-native">বাংলা</span></a>
-      <a href="../de/" class="kb-chip"><span class="kb-chip-name">Arabic (DE)</span><span class="kb-chip-native">Deutsch</span></a>
-      <a href="../es/" class="kb-chip"><span class="kb-chip-name">Arabic (ES)</span><span class="kb-chip-native">Español</span></a>
-      <a href="../filipino/" class="kb-chip"><span class="kb-chip-name">Filipino</span><span class="kb-chip-native">Filipino</span></a>
-      <a href="../fr/" class="kb-chip"><span class="kb-chip-name">Arabic (FR)</span><span class="kb-chip-native">Français</span></a>
-      <a href="../greek/" class="kb-chip"><span class="kb-chip-name">Greek</span><span class="kb-chip-native">Ελληνικά</span></a>
-      <a href="../it/" class="kb-chip"><span class="kb-chip-name">Arabic (IT)</span><span class="kb-chip-native">Italiano</span></a>
-      <a href="../kurdish/" class="kb-chip"><span class="kb-chip-name">Kurdish</span><span class="kb-chip-native">کوردی</span></a>
-      <a href="../marathi/" class="kb-chip"><span class="kb-chip-name">Marathi</span><span class="kb-chip-native">मराठी</span></a>
-      <a href="../nepali/" class="kb-chip"><span class="kb-chip-name">Nepali</span><span class="kb-chip-native">नेपाली</span></a>
-      <a href="../nl/" class="kb-chip"><span class="kb-chip-name">Arabic (NL)</span><span class="kb-chip-native">Nederlands</span></a>
-      <a href="../pashto/" class="kb-chip"><span class="kb-chip-name">Pashto</span><span class="kb-chip-native">پښتو</span></a>
-      <a href="../persian/" class="kb-chip"><span class="kb-chip-name">Farsi</span><span class="kb-chip-native">فارسی</span></a>
-      <a href="../punjabi/" class="kb-chip"><span class="kb-chip-name">Punjabi</span><span class="kb-chip-native">ਪੰਜਾਬੀ</span></a>
-      <a href="../russian/" class="kb-chip"><span class="kb-chip-name">Russian</span><span class="kb-chip-native">Русский</span></a>
-      <a href="../sindhi/" class="kb-chip"><span class="kb-chip-name">Sindhi</span><span class="kb-chip-native">سنڌي</span></a>
-      <a href="../somali/" class="kb-chip"><span class="kb-chip-name">Somali</span><span class="kb-chip-native">Soomaali</span></a>
-      <a href="../tamil/" class="kb-chip"><span class="kb-chip-name">Tamil</span><span class="kb-chip-native">தமிழ்</span></a>
-      <a href="../telugu/" class="kb-chip"><span class="kb-chip-name">Telugu</span><span class="kb-chip-native">తెలుగు</span></a>
-    <a href="../kannada/" class="kb-chip"><span class="kb-chip-name">Kannada</span><span class="kb-chip-native">ಕನ್ನಡ</span></a>
-    <a href="../yoruba/" class="kb-chip"><span class="kb-chip-name">Yoruba</span><span class="kb-chip-native">Yorùbá</span></a>
-    <a href="../vietnamese/" class="kb-chip"><span class="kb-chip-name">Vietnamese</span><span class="kb-chip-native">Tiếng Việt</span></a>
-    <a href="../tigrinya/" class="kb-chip"><span class="kb-chip-name">Tigrinya</span><span class="kb-chip-native">ትግርኛ</span></a>
-    <a href="../thai/" class="kb-chip"><span class="kb-chip-name">Thai</span><span class="kb-chip-native">ภาษาไทย</span></a>
-    <a href="../mongolian/" class="kb-chip"><span class="kb-chip-name">Mongolian</span><span class="kb-chip-native">Монгол</span></a>
-    <a href="../malayalam/" class="kb-chip"><span class="kb-chip-name">Malayalam</span><span class="kb-chip-native">മലയാളം</span></a>
-    <a href="../korean/" class="kb-chip"><span class="kb-chip-name">Korean</span><span class="kb-chip-native">한국어</span></a>
-    <a href="../japanese/" class="kb-chip"><span class="kb-chip-name">Japanese</span><span class="kb-chip-native">日本語</span></a>
-    <a href="../igbo/" class="kb-chip"><span class="kb-chip-name">Igbo</span><span class="kb-chip-native">Igbo</span></a>
-    <a href="../hausa/" class="kb-chip"><span class="kb-chip-name">Hausa</span><span class="kb-chip-native">Hausa</span></a>
-    <a href="../gujarati/" class="kb-chip"><span class="kb-chip-name">Gujarati</span><span class="kb-chip-native">ગુજરાતી</span></a>
-    <a href="../chinese/" class="kb-chip"><span class="kb-chip-name">Chinese</span><span class="kb-chip-native">中文</span></a>
-    <a href="../burmese/" class="kb-chip"><span class="kb-chip-name">Burmese</span><span class="kb-chip-native">မြန်မာ</span></a>
-      <a href="../turkish/" class="kb-chip"><span class="kb-chip-name">Turkish</span><span class="kb-chip-native">Türkçe</span></a>
-      <a href="../urdu/" class="kb-chip"><span class="kb-chip-name">Urdu</span><span class="kb-chip-native">اردو</span></a>
-      <a href="../uyghur/" class="kb-chip"><span class="kb-chip-name">Uyghur</span><span class="kb-chip-native">ئۇيغۇرچە</span></a>
+    <a href="/arabic/"        class="kb-chip"><span class="kb-chip-flag">🇸🇦</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic</span><span class="kb-chip-native">العربية</span></div></a>
+    <a href="../amazigh/"     class="kb-chip"><span class="kb-chip-flag">🇲🇦</span><div class="kb-chip-info"><span class="kb-chip-name">Amazigh</span><span class="kb-chip-native">ⵜⴰⵎⴰⵣⵉⵖⵜ</span></div></a>
+    <a href="../amharic/"     class="kb-chip"><span class="kb-chip-flag">🇪🇹</span><div class="kb-chip-info"><span class="kb-chip-name">Amharic</span><span class="kb-chip-native">አማርኛ</span></div></a>
+    <a href="../bengali/"     class="kb-chip"><span class="kb-chip-flag">🇧🇩</span><div class="kb-chip-info"><span class="kb-chip-name">Bengali</span><span class="kb-chip-native">বাংলা</span></div></a>
+    <a href="../de/"          class="kb-chip"><span class="kb-chip-flag">🇩🇪</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (DE)</span><span class="kb-chip-native">Deutsch</span></div></a>
+    <a href="../es/"          class="kb-chip"><span class="kb-chip-flag">🇪🇸</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (ES)</span><span class="kb-chip-native">Español</span></div></a>
+    <a href="../filipino/"    class="kb-chip"><span class="kb-chip-flag">🇵🇭</span><div class="kb-chip-info"><span class="kb-chip-name">Filipino</span><span class="kb-chip-native">Filipino</span></div></a>
+    <a href="../fr/"          class="kb-chip"><span class="kb-chip-flag">🇫🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (FR)</span><span class="kb-chip-native">Français</span></div></a>
+    <a href="../greek/"       class="kb-chip"><span class="kb-chip-flag">🇬🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Greek</span><span class="kb-chip-native">Ελληνικά</span></div></a>
+    <a href="../it/"          class="kb-chip"><span class="kb-chip-flag">🇮🇹</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (IT)</span><span class="kb-chip-native">Italiano</span></div></a>
+    <a href="../kurdish/"     class="kb-chip"><span class="kb-chip-flag">🇮🇶</span><div class="kb-chip-info"><span class="kb-chip-name">Kurdish</span><span class="kb-chip-native">کوردی</span></div></a>
+    <a href="../marathi/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Marathi</span><span class="kb-chip-native">मराठी</span></div></a>
+    <a href="../nepali/"      class="kb-chip"><span class="kb-chip-flag">🇳🇵</span><div class="kb-chip-info"><span class="kb-chip-name">Nepali</span><span class="kb-chip-native">नेपाली</span></div></a>
+    <a href="../nl/"          class="kb-chip"><span class="kb-chip-flag">🇳🇱</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (NL)</span><span class="kb-chip-native">Nederlands</span></div></a>
+    <a href="../pashto/"      class="kb-chip"><span class="kb-chip-flag">🇦🇫</span><div class="kb-chip-info"><span class="kb-chip-name">Pashto</span><span class="kb-chip-native">پښتو</span></div></a>
+    <a href="../persian/"     class="kb-chip"><span class="kb-chip-flag">🇮🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Farsi</span><span class="kb-chip-native">فارسی</span></div></a>
+    <a href="../punjabi/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Punjabi</span><span class="kb-chip-native">ਪੰਜਾਬੀ</span></div></a>
+    <a href="../russian/"     class="kb-chip"><span class="kb-chip-flag">🇷🇺</span><div class="kb-chip-info"><span class="kb-chip-name">Russian</span><span class="kb-chip-native">Русский</span></div></a>
+    <a href="../sindhi/"      class="kb-chip"><span class="kb-chip-flag">🇵🇰</span><div class="kb-chip-info"><span class="kb-chip-name">Sindhi</span><span class="kb-chip-native">سنڌي</span></div></a>
+    <a href="../somali/"      class="kb-chip"><span class="kb-chip-flag">🇸🇴</span><div class="kb-chip-info"><span class="kb-chip-name">Somali</span><span class="kb-chip-native">Soomaali</span></div></a>
+    <a href="../tamil/"       class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Tamil</span><span class="kb-chip-native">தமிழ்</span></div></a>
+    <a href="../telugu/"      class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Telugu</span><span class="kb-chip-native">తెలుగు</span></div></a>
+    <a href="../kannada/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Kannada</span><span class="kb-chip-native">ಕನ್ನಡ</span></div></a>
+    <a href="../yoruba/"      class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Yoruba</span><span class="kb-chip-native">Yorùbá</span></div></a>
+    <a href="../vietnamese/"  class="kb-chip"><span class="kb-chip-flag">🇻🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Vietnamese</span><span class="kb-chip-native">Tiếng Việt</span></div></a>
+    <a href="../tigrinya/"    class="kb-chip"><span class="kb-chip-flag">🇪🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Tigrinya</span><span class="kb-chip-native">ትግርኛ</span></div></a>
+    <a href="../thai/"        class="kb-chip"><span class="kb-chip-flag">🇹🇭</span><div class="kb-chip-info"><span class="kb-chip-name">Thai</span><span class="kb-chip-native">ภาษาไทย</span></div></a>
+    <a href="../mongolian/"   class="kb-chip"><span class="kb-chip-flag">🇲🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Mongolian</span><span class="kb-chip-native">Монгол</span></div></a>
+    <a href="../malayalam/"   class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Malayalam</span><span class="kb-chip-native">മലയാളം</span></div></a>
+    <a href="../korean/"      class="kb-chip"><span class="kb-chip-flag">🇰🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Korean</span><span class="kb-chip-native">한국어</span></div></a>
+    <a href="../japanese/"    class="kb-chip"><span class="kb-chip-flag">🇯🇵</span><div class="kb-chip-info"><span class="kb-chip-name">Japanese</span><span class="kb-chip-native">日本語</span></div></a>
+    <a href="../igbo/"        class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Igbo</span><span class="kb-chip-native">Igbo</span></div></a>
+    <a href="../hausa/"       class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Hausa</span><span class="kb-chip-native">Hausa</span></div></a>
+    <a href="../gujarati/"    class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Gujarati</span><span class="kb-chip-native">ગુજરાતી</span></div></a>
+    <a href="../chinese/"     class="kb-chip"><span class="kb-chip-flag">🇨🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Chinese</span><span class="kb-chip-native">中文</span></div></a>
+    <a href="../burmese/"     class="kb-chip"><span class="kb-chip-flag">🇲🇲</span><div class="kb-chip-info"><span class="kb-chip-name">Burmese</span><span class="kb-chip-native">မြန်မာ</span></div></a>
+    <a href="../turkish/"     class="kb-chip"><span class="kb-chip-flag">🇹🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Turkish</span><span class="kb-chip-native">Türkçe</span></div></a>
+    <a href="../urdu/"        class="kb-chip"><span class="kb-chip-flag">🇵🇰</span><div class="kb-chip-info"><span class="kb-chip-name">Urdu</span><span class="kb-chip-native">اردو</span></div></a>
+    <a href="../uyghur/"      class="kb-chip"><span class="kb-chip-flag">🇨🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Uyghur</span><span class="kb-chip-native">ئۇيغۇرچە</span></div></a>
+    <a href="/keyboards/" class="kb-discover">
+      <div class="kb-discover-top">
+        <span class="kb-discover-count">+264 more</span>
+        <span class="kb-discover-arr">→</span>
+      </div>
+      <div class="kb-discover-label">Discover all keyboards</div>
+      <div class="kb-discover-flags">
+        <div class="kb-discover-flags-inner">🇸🇦 🇮🇳 🇮🇷 🇵🇰 🇧🇩 🇹🇷 🇷🇺 🇰🇷 🇯🇵 🇨🇳 🇩🇪 🇫🇷 🇬🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇭 🇳🇵 🇲🇦 🇸🇴 🇪🇹 🇻🇳 🇹🇭 🇲🇳 &nbsp;🇸🇦 🇮🇳 🇮🇷 🇵🇰 🇧🇩 🇹🇷 🇷🇺 🇰🇷 🇯🇵 🇨🇳 🇩🇪 🇫🇷 🇬🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇭 🇳🇵 🇲🇦 🇸🇴 🇪🇹 🇻🇳 🇹🇭 🇲🇳</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- More Text Tools -->
+<div class="more-tools">
+  <div class="more-tools-hd">
+    <div>
+      <p class="more-tools-sup">Unicode &amp; Text</p>
+      <h2 class="more-tools-title">More Text Tools</h2>
+    </div>
+    <a href="/symbols/" class="more-kbs-all">Explore all <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="more-tools-grid" id="toolsScroll">
+
+    <!-- Symbols: dark indigo, glowing 4-point star, orbiting symbols -->
+    <a href="/symbols/" class="tool-card">
+      <div class="tool-card-visual">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <!-- 3×2 coloured symbol grid — each cell a different hue -->
+          <g style="filter:drop-shadow(0 6px 16px rgba(0,0,0,.55))">
+            <rect x="2"  y="2"  width="16" height="24" rx="4" fill="#2D1B69"/>
+            <rect x="20" y="2"  width="16" height="24" rx="4" fill="#7F1D1D"/>
+            <rect x="38" y="2"  width="16" height="24" rx="4" fill="#0C2340"/>
+            <rect x="2"  y="28" width="16" height="24" rx="4" fill="#14532D"/>
+            <rect x="20" y="28" width="16" height="24" rx="4" fill="#78350F"/>
+            <rect x="38" y="28" width="16" height="24" rx="4" fill="#1E1B4B"/>
+          </g>
+          <text x="10" y="14" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#C4B5FD">★</text>
+          <text x="28" y="14" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#FCA5A5">♥</text>
+          <text x="46" y="14" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#7DD3FC">→</text>
+          <text x="10" y="40" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#86EFAC">∞</text>
+          <text x="28" y="40" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#FDE68A">✓</text>
+          <text x="46" y="40" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#A5B4FC">♪</text>
+        </svg>
+        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1l1 2.4 2.5.35-1.8 1.75.42 2.5L5.5 6.7 3.38 8l.42-2.5L2 3.75l2.5-.35Z" fill="#fff"/></svg></span>
+      </div>
+      <span class="tool-card-name">Symbols</span>
+      <span class="tool-card-desc">Stars, arrows, hearts & 10K+</span>
+      <span class="tool-card-arrow">→</span>
+    </a>
+
+    <!-- Fancy Text: gold "A" + 3 small style previews below -->
+    <a href="/fancy-text/" class="tool-card">
+      <div class="tool-card-visual">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <defs>
+            <linearGradient id="tc-ft-a" x1="28" y1="7" x2="28" y2="50" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FEF9C3"/>
+              <stop offset=".45" stop-color="#F59E0B"/>
+              <stop offset="1" stop-color="#78350F"/>
+            </linearGradient>
+          </defs>
+          <!-- Perfectly symmetric bold A: two equal legs + centred crossbar, stroke only -->
+          <path d="M28 8 L11 48 M28 8 L45 48 M18 34 H38"
+            stroke="url(#tc-ft-a)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" fill="none"
+            style="filter:drop-shadow(0 6px 18px rgba(245,158,11,.55))"/>
+          <!-- 4-pointed sparkle top-right -->
+          <path d="M46 5 L47.6 11 L53 12 L47.6 13 L46 19 L44.4 13 L41 12 L44.4 11Z" fill="#FDE68A" style="filter:drop-shadow(0 2px 6px rgba(253,230,138,.7))"/>
+          <circle cx="41" cy="4" r="2.2" fill="#FCD34D" opacity=".8"/>
+        </svg>
+        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M3 9L5.5 2l2.5 7M4.2 6.2h2.6" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+      </div>
+      <span class="tool-card-name">Fancy Text</span>
+      <span class="tool-card-desc">100+ Unicode styles instantly</span>
+      <span class="tool-card-arrow">→</span>
+    </a>
+
+    <!-- Kaomoji: pink speech bubble showing actual kaomoji text -->
+    <a href="/kaomoji/" class="tool-card">
+      <div class="tool-card-visual">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <defs>
+            <linearGradient id="tc-km-a" x1="4" y1="4" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FECDD3"/>
+              <stop offset="1" stop-color="#E11D48"/>
+            </linearGradient>
+          </defs>
+          <!-- Dark circle background -->
+          <circle cx="28" cy="28" r="26" fill="#15030A" style="filter:drop-shadow(0 8px 18px rgba(225,29,72,.4))"/>
+          <!-- Left parenthesis ( — defines the kaomoji frame -->
+          <path d="M22 8 Q9 28 22 48" stroke="url(#tc-km-a)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <!-- Right parenthesis ) -->
+          <path d="M34 8 Q47 28 34 48" stroke="url(#tc-km-a)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <!-- Left eye ^ -->
+          <path d="M17 29 L21 22 L25 29" stroke="#FECDD3" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- Right eye ^ (mirror) -->
+          <path d="M31 29 L35 22 L39 29" stroke="#FECDD3" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- Mouth _ -->
+          <line x1="22" y1="38" x2="34" y2="38" stroke="#FECDD3" stroke-width="2.8" stroke-linecap="round"/>
+        </svg>
+        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 6Q5.5 9.5 8.5 6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="3.5" cy="3.5" r="1.1" fill="#fff"/><circle cx="7.5" cy="3.5" r="1.1" fill="#fff"/></svg></span>
+      </div>
+      <span class="tool-card-name">Kaomoji</span>
+      <span class="tool-card-desc">Japanese text faces ( ͡° ͜ʖ ͡°)</span>
+      <span class="tool-card-arrow">→</span>
+    </a>
+
+    <!-- Invisible Char: crossed-out eye = hidden/invisible concept -->
+    <a href="/invisible-character/" class="tool-card">
+      <div class="tool-card-visual">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <defs>
+            <linearGradient id="tc-inv-a" x1="14" y1="14" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#67E8F9"/>
+              <stop offset="1" stop-color="#0284C7"/>
+            </linearGradient>
+          </defs>
+          <!-- Dark background -->
+          <circle cx="28" cy="28" r="26" fill="#040C14" style="filter:drop-shadow(0 8px 18px rgba(2,132,199,.45))"/>
+          <!-- ∅ symbol = null / void / nothing — large so it reads at any scale -->
+          <circle cx="28" cy="28" r="14" stroke="url(#tc-inv-a)" stroke-width="3.5" fill="rgba(3,130,199,.07)" style="filter:drop-shadow(0 0 12px rgba(103,232,249,.5))"/>
+          <!-- Slash through the circle — midpoint hits (28,28) exactly -->
+          <line x1="17" y1="40" x2="39" y2="16" stroke="url(#tc-inv-a)" stroke-width="3.5" stroke-linecap="round" style="filter:drop-shadow(0 0 10px rgba(103,232,249,.65))"/>
+          <!-- Top-left lens highlight -->
+          <ellipse cx="21" cy="21" rx="5" ry="3" fill="#67E8F9" opacity=".1"/>
+        </svg>
+        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><circle cx="5.5" cy="5.5" r="3.8" stroke="#fff" stroke-width="1.3"/><path d="M3 3l5 5" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+      </div>
+      <span class="tool-card-name">Invisible Char</span>
+      <span class="tool-card-desc">Zero-width blank spaces</span>
+      <span class="tool-card-arrow">→</span>
+    </a>
+
+    <!-- Zalgo: dark BG + glowing "Z" + corruption marks -->
+    <a href="/zalgo-text/" class="tool-card">
+      <div class="tool-card-visual">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <defs><linearGradient id="tc-zg-a" x1="10" y1="14" x2="46" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="#86EFAC"/><stop offset="1" stop-color="#14532D"/></linearGradient></defs>
+          <circle cx="28" cy="28" r="26" fill="#061410" style="filter:drop-shadow(0 8px 20px rgba(22,163,74,.4))"/>
+          <path d="M12 16H44L14 40H44" stroke="url(#tc-zg-a)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 10px rgba(74,222,128,.6))"/>
+          <circle cx="19" cy="7"  r="1.5" fill="#4ADE80"/><circle cx="26" cy="4"  r="1" fill="#86EFAC"/>
+          <circle cx="33" cy="7"  r="1.5" fill="#4ADE80"/><circle cx="40" cy="5"  r="1" fill="#86EFAC"/>
+          <line x1="22" y1="10" x2="30" y2="10" stroke="#4ADE80" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="34" y1="11" x2="39" y2="11" stroke="#86EFAC" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="19" cy="49" r="1.5" fill="#4ADE80"/><circle cx="26" cy="52" r="1" fill="#86EFAC"/>
+          <circle cx="33" cy="49" r="1.5" fill="#4ADE80"/><circle cx="40" cy="51" r="1" fill="#86EFAC"/>
+          <line x1="22" y1="46" x2="30" y2="46" stroke="#4ADE80" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="34" y1="45" x2="39" y2="45" stroke="#86EFAC" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 7.5h6M2.5 3.5h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 3.5L4 7.5" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity=".6"/></svg></span>
+      </div>
+      <span class="tool-card-name">Zalgo Text</span>
+      <span class="tool-card-desc">G̸l̷i̴t̵c̸h̵ corrupted text</span>
+      <span class="tool-card-arrow">→</span>
+    </a>
+
+    <!-- Text Art: orange monitor showing ASCII "A" on dark screen -->
+    <a href="/text-art/" class="tool-card">
+      <div class="tool-card-visual">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <defs><linearGradient id="tc-ta-a" x1="2" y1="2" x2="54" y2="44" gradientUnits="userSpaceOnUse"><stop stop-color="#FDBA74"/><stop offset="1" stop-color="#C2410C"/></linearGradient></defs>
+          <!-- Monitor bezel -->
+          <rect x="2" y="3" width="52" height="40" rx="7" fill="url(#tc-ta-a)" style="filter:drop-shadow(0 8px 18px rgba(249,115,22,.45))"/>
+          <!-- Screen -->
+          <rect x="6" y="7" width="44" height="32" rx="4" fill="#0D1117"/>
+          <!-- Top gloss -->
+          <rect x="2" y="3" width="52" height="9" rx="7" fill="#fff" opacity=".13"/>
+          <!-- Stand -->
+          <rect x="21" y="43" width="14" height="5" rx="2" fill="#9A3412"/>
+          <rect x="15" y="48" width="26" height="4" rx="2" fill="#7C2D12"/>
+          <!-- ASCII "A" on screen: 5-col 5-row pixel art, 5px blocks, 1px gap -->
+          <!-- Row 0: _XXX_ -->
+          <rect x="16" y="10" width="5" height="5" rx="1" fill="#F97316"/><rect x="22" y="10" width="5" height="5" rx="1" fill="#F97316"/><rect x="28" y="10" width="5" height="5" rx="1" fill="#F97316"/>
+          <!-- Row 1: X___X -->
+          <rect x="10" y="16" width="5" height="5" rx="1" fill="#F97316"/><rect x="34" y="16" width="5" height="5" rx="1" fill="#F97316"/>
+          <!-- Row 2: XXXXX -->
+          <rect x="10" y="22" width="5" height="5" rx="1" fill="#FB923C"/><rect x="16" y="22" width="5" height="5" rx="1" fill="#FB923C"/><rect x="22" y="22" width="5" height="5" rx="1" fill="#FB923C"/><rect x="28" y="22" width="5" height="5" rx="1" fill="#FB923C"/><rect x="34" y="22" width="5" height="5" rx="1" fill="#FB923C"/>
+          <!-- Row 3: X___X -->
+          <rect x="10" y="28" width="5" height="5" rx="1" fill="#F97316"/><rect x="34" y="28" width="5" height="5" rx="1" fill="#F97316"/>
+          <!-- Row 4: X___X -->
+          <rect x="10" y="34" width="5" height="5" rx="1" fill="#F97316"/><rect x="34" y="34" width="5" height="5" rx="1" fill="#F97316"/>
+          <!-- Cursor -->
+          <rect x="40" y="34" width="3" height="5" rx=".5" fill="#FED7AA" opacity=".8"/>
+        </svg>
+        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1" y="1" width="3" height="3" rx=".8" fill="#fff"/><rect x="5" y="1" width="3" height="3" rx=".8" fill="#fff" opacity=".6"/><rect x="1" y="5" width="3" height="3" rx=".8" fill="#fff" opacity=".6"/><rect x="5" y="5" width="3" height="3" rx=".8" fill="#fff"/></svg></span>
+      </div>
+      <span class="tool-card-name">Text Art</span>
+      <span class="tool-card-desc">ASCII art from any text</span>
+      <span class="tool-card-arrow">→</span>
+    </a>
+
+    <!-- Dot Art: red pixel heart -->
+    <a href="/dot-art/" class="tool-card">
+      <div class="tool-card-visual">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <rect x="8"  y="6"  width="7" height="7" rx="2" fill="#FB7185"/>
+          <rect x="16" y="6"  width="7" height="7" rx="2" fill="#F43F5E"/>
+          <rect x="32" y="6"  width="7" height="7" rx="2" fill="#F43F5E"/>
+          <rect x="40" y="6"  width="7" height="7" rx="2" fill="#FB7185"/>
+          <rect x="0"  y="14" width="7" height="7" rx="2" fill="#FB7185"/>
+          <rect x="8"  y="14" width="7" height="7" rx="2" fill="#F43F5E"/>
+          <rect x="16" y="14" width="7" height="7" rx="2" fill="#E11D48"/>
+          <rect x="24" y="14" width="7" height="7" rx="2" fill="#BE123C"/>
+          <rect x="32" y="14" width="7" height="7" rx="2" fill="#E11D48"/>
+          <rect x="40" y="14" width="7" height="7" rx="2" fill="#F43F5E"/>
+          <rect x="48" y="14" width="7" height="7" rx="2" fill="#FB7185"/>
+          <rect x="0"  y="22" width="7" height="7" rx="2" fill="#F43F5E"/>
+          <rect x="8"  y="22" width="7" height="7" rx="2" fill="#E11D48"/>
+          <rect x="16" y="22" width="7" height="7" rx="2" fill="#BE123C"/>
+          <rect x="24" y="22" width="7" height="7" rx="2" fill="#9F1239"/>
+          <rect x="32" y="22" width="7" height="7" rx="2" fill="#BE123C"/>
+          <rect x="40" y="22" width="7" height="7" rx="2" fill="#E11D48"/>
+          <rect x="48" y="22" width="7" height="7" rx="2" fill="#F43F5E"/>
+          <rect x="8"  y="30" width="7" height="7" rx="2" fill="#F43F5E"/>
+          <rect x="16" y="30" width="7" height="7" rx="2" fill="#E11D48"/>
+          <rect x="24" y="30" width="7" height="7" rx="2" fill="#BE123C"/>
+          <rect x="32" y="30" width="7" height="7" rx="2" fill="#E11D48"/>
+          <rect x="40" y="30" width="7" height="7" rx="2" fill="#F43F5E"/>
+          <rect x="16" y="38" width="7" height="7" rx="2" fill="#FB7185"/>
+          <rect x="24" y="38" width="7" height="7" rx="2" fill="#F43F5E"/>
+          <rect x="32" y="38" width="7" height="7" rx="2" fill="#FB7185"/>
+          <rect x="24" y="46" width="7" height="7" rx="2" fill="#FCA5A5"/>
+        </svg>
+        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1.5" y="1.5" width="3" height="3" rx="1" fill="#fff"/><rect x="6.5" y="1.5" width="3" height="3" rx="1" fill="#fff"/><rect x="1.5" y="6.5" width="3" height="3" rx="1" fill="#fff"/><rect x="6.5" y="6.5" width="3" height="3" rx="1" fill="#fff"/></svg></span>
+      </div>
+      <span class="tool-card-name">Dot Art</span>
+      <span class="tool-card-desc">Pixel art & dot illustrations</span>
+      <span class="tool-card-arrow">→</span>
+    </a>
+
+    <!-- Gaming Names: game controller -->
+    <a href="/free-fire-name/" class="tool-card">
+      <div class="tool-card-visual">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <defs>
+            <linearGradient id="tc-gm-a" x1="28" y1="6" x2="28" y2="49" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FEF9C3"/>
+              <stop offset=".38" stop-color="#F97316"/>
+              <stop offset="1" stop-color="#991B1B"/>
+            </linearGradient>
+            <radialGradient id="tc-gm-b" cx=".5" cy=".3" r=".7">
+              <stop stop-color="#FEF3C7" opacity=".55"/>
+              <stop offset="1" stop-color="#F97316" opacity="0"/>
+            </radialGradient>
+          </defs>
+          <!-- Dark ember background -->
+          <circle cx="28" cy="28" r="26" fill="#0E0200" style="filter:drop-shadow(0 8px 18px rgba(249,115,22,.5))"/>
+          <!-- Main flame body -->
+          <path d="M28 49 Q15 39 15 26 Q15 16 23 12 Q20 22 24 24 Q26 14 28 6 Q30 14 32 24 Q36 22 33 12 Q41 16 41 26 Q41 39 28 49Z"
+            fill="url(#tc-gm-a)" style="filter:drop-shadow(0 0 14px rgba(249,115,22,.65))"/>
+          <!-- Inner bright core (gives flame 3D depth) -->
+          <path d="M28 43 Q22 36 22 27 Q22 21 25 18 Q24 24 26 26 Q27 19 28 15 Q29 19 30 26 Q32 24 31 18 Q34 21 34 27 Q34 36 28 43Z"
+            fill="url(#tc-gm-b)"/>
+          <!-- Tip glow -->
+          <circle cx="28" cy="7" r="2.5" fill="#FFFBEB" style="filter:drop-shadow(0 0 8px rgba(254,252,232,1))"/>
+        </svg>
+        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 2v7M2 5.5h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+      </div>
+      <span class="tool-card-name">FF & PUBG Names</span>
+      <span class="tool-card-desc">Stylish gaming usernames</span>
+      <span class="tool-card-arrow">→</span>
+    </a>
+
+  </div>
+  <div class="more-tools-dots">
+    <span class="mtd active"></span>
+    <span class="mtd"></span>
+    <span class="mtd"></span>
   </div>
 </div>
 
@@ -2592,7 +2988,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         </div>
         <span class="ft-name">Kactyl</span>
       </a>
-      <div class="ft-tagline">Type any language from any device.<br>No download. No account.</div>
+      <div class="ft-tagline">Every Language. One Tab.<br>No download. No account.</div>
       <div class="ft-badges">
         <span class="ft-badge g">✓ 100% Free</span>
         <span class="ft-badge b">⚡ No Install</span>
@@ -2667,6 +3063,8 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <a href="/invisible-character/">Invisible Char</a>
         <a href="/zalgo-text/">Zalgo Text</a>
         <a href="/free-fire-name/">FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/">Hijri Calendar</a>
+        <a href="/arabic-calligraphy/">Arabic Calligraphy</a>
       </div>
       <h4 class="ft-h4-gap">Company</h4>
       <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
@@ -2926,7 +3324,7 @@ function buildKB() {
 
       if (k === 'ENTER') {
         btn.classList.add('k-enter'); btn.innerHTML = '<svg width="16" height="13" viewBox="0 0 16 13" fill="currentColor"><path d="M14 0v6H4.4l2.3-2.3-1.4-1.4L1 7l4.3 4.3 1.4-1.4L4.4 7.5H16V0h-2z"/></svg>';
-        btn.onclick = () => ins('\n');
+        btn.onclick = () => ins('\n', 'special');
 
       } else if (k === 'BSP') {
         btn.classList.add('k-bsp'); btn.innerHTML = '<svg width="19" height="14" viewBox="0 0 19 14" fill="currentColor"><path d="M7 0L0 7l7 7h12V0H7zm5.7 9.3l-1.4 1.4L9 8.4l-2.3 2.3-1.4-1.4L7.6 7 5.3 4.7l1.4-1.4L9 5.6l2.3-2.3 1.4 1.4L10.4 7l2.3 2.3z"/></svg>';
@@ -2964,13 +3362,13 @@ function buildKB() {
 
       } else if (k === 'TASHKEEL') {
         btn.classList.add('k-tashkeel');
-        btn.innerHTML = '✨ Matra<span class="ks">मात्रा</span>';
+        btn.innerHTML = 'Matra<span class="ks">ा ि ी</span>';
         btn.onclick = e => { e.stopPropagation(); toggleTash(); };
 
       } else if (k === 'FRANCO') {
         btn.classList.add('k-franco');
         if (francoOn) btn.classList.add('active');
-        btn.innerHTML = `Roman<span class="ks">${francoOn ? 'ON' : 'OFF'}</span>`;
+        btn.innerHTML = 'Roman<span class="ks">A → अ</span>';
         btn.onclick = toggleFranco;
 
       } else {
@@ -3153,12 +3551,45 @@ function toggleNum()     { numOpen = !numOpen; document.getElementById('npop').c
 function closeNum()      { numOpen = false; document.getElementById('npop').classList.remove('show'); }
 
 /* ── TEXT OPS ── */
-function ins(ch) {
+let _ac = null;
+function playClick(type) {
+  try {
+    const ac = _ac || (_ac = new (window.AudioContext || window.webkitAudioContext)());
+    const t = ac.currentTime;
+    const sr = ac.sampleRate;
+    const sp = type === 'special';
+
+    /* — Layer 1: sharp click transient (5ms noise burst, highpassed) — */
+    const tLen = Math.ceil(sr * 0.005);
+    const tBuf = ac.createBuffer(1, tLen, sr);
+    const td = tBuf.getChannelData(0);
+    for (let i = 0; i < tLen; i++) td[i] = (Math.random()*2-1) * (1 - i/tLen);
+    const tSrc = ac.createBufferSource();
+    tSrc.buffer = tBuf;
+    const tHp = ac.createBiquadFilter();
+    tHp.type = 'highpass'; tHp.frequency.value = sp ? 3200 : 4800;
+    const tG = ac.createGain(); tG.gain.value = sp ? 0.20 : 0.15;
+    tSrc.connect(tHp); tHp.connect(tG); tG.connect(ac.destination);
+    tSrc.start(t);
+
+    /* — Layer 2: resonant body (sine tone, fast exponential decay) — */
+    const osc = ac.createOscillator();
+    const oG = ac.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = sp ? 480 : 740;
+    oG.gain.setValueAtTime(sp ? 0.09 : 0.06, t);
+    oG.gain.exponentialRampToValueAtTime(0.0001, t + (sp ? 0.07 : 0.048));
+    osc.connect(oG); oG.connect(ac.destination);
+    osc.start(t); osc.stop(t + (sp ? 0.07 : 0.048));
+  } catch(e) {}
+}
+
+function ins(ch, snd) {
   const ta = document.getElementById('arabic-text');
   const s = ta.selectionStart, e = ta.selectionEnd;
   ta.value = ta.value.slice(0,s) + ch + ta.value.slice(e);
   ta.selectionStart = ta.selectionEnd = s + ch.length;
-  ta.focus({preventScroll:true}); updateStats(); updateSugs();
+  ta.focus({preventScroll:true}); updateStats(); updateSugs(); playClick(snd || 'normal');
 }
 
 function bsp() {
@@ -3166,15 +3597,23 @@ function bsp() {
   const s = ta.selectionStart, e = ta.selectionEnd;
   if (s !== e) { ta.value = ta.value.slice(0,s) + ta.value.slice(e); ta.selectionStart = ta.selectionEnd = s; }
   else if (s > 0) { ta.value = ta.value.slice(0,s-1) + ta.value.slice(s); ta.selectionStart = ta.selectionEnd = s-1; }
-  ta.focus({preventScroll:true}); updateStats(); updateSugs();
+  ta.focus({preventScroll:true}); updateStats(); updateSugs(); playClick('special');
 }
 
 function onInput() { updateStats(); updateSugs(); localStorage.setItem(DRAFT_KEY, document.getElementById('arabic-text').value); }
 
 function updateStats() {
   const v = document.getElementById('arabic-text').value;
-  document.getElementById('cc').textContent = v.length;
-  document.getElementById('wc').textContent = v.trim() ? v.trim().split(/\s+/).length : 0;
+  const len = v.length;
+  const state = len > 5000 ? 'over' : len > 4000 ? 'near' : '';
+  const el = document.getElementById('char-counter');
+  const bar = document.getElementById('char-bar');
+  el.textContent = len + ' / 5000';
+  el.className = 'char-num' + (state ? ' ' + state : '');
+  bar.style.width = Math.min(100, (len / 5000) * 100) + '%';
+  bar.className = 'char-progress' + (state ? ' ' + state : '');
+  const empty = !v.trim();
+  document.querySelectorAll('.t-dl,.t-cp,.t-clr').forEach(b => b.classList.toggle('btn-inactive', empty));
 }
 
 /* ── SUGGESTIONS — smartphone style ── */
@@ -3352,13 +3791,12 @@ function chFont(d) {
 /* ── QWERTY TOGGLE ── */
 function toggleQwerty() {
   qwertyOn = !qwertyOn;
-  const sw   = document.getElementById('sw-track');
-  sw.classList.toggle('on', qwertyOn);
+  document.getElementById('pc-btn').classList.toggle('on', qwertyOn);
   if (qwertyOn) {
     document.getElementById('arabic-text').focus({preventScroll:true});
-    toast('✅ QWERTY → Arabic activated');
+    toast('✅ PC keyboard activated');
   } else {
-    toast('⌨️ Physical keyboard off');
+    toast('⌨️ PC keyboard off');
   }
 }
 
@@ -3819,6 +4257,50 @@ async function submitFeedback(e) {
     else hdr.classList.remove('hdr-hidden');
     lastY = y;
   }, { passive: true });
+})();
+
+/* ── TOOLS SCROLL DOTS ── */
+(function(){
+  const grid = document.getElementById('toolsScroll');
+  const dots = document.querySelectorAll('.mtd');
+  if (!grid || !dots.length) return;
+  grid.addEventListener('scroll', () => {
+    const max = grid.scrollWidth - grid.offsetWidth;
+    if (max <= 0) return;
+    const p = grid.scrollLeft / max;
+    const idx = p < 0.33 ? 0 : p < 0.67 ? 1 : 2;
+    dots.forEach((d,i) => d.classList.toggle('active', i === idx));
+  }, { passive: true });
+  dots.forEach((d,i) => d.addEventListener('click', () => {
+    const max = grid.scrollWidth - grid.offsetWidth;
+    grid.scrollTo({ left: max * (i / 2), behavior: 'smooth' });
+  }));
+})();
+
+/* ── KEY CALLOUT ── */
+(function(){
+  const co = document.createElement('div');
+  co.id = 'key-callout';
+  document.body.appendChild(co);
+  const SKIP = ['k-enter','k-bsp','k-shift','k-emoji','k-123','k-slash','k-spec','k-dot','k-space','k-franco','k-tashkeel'];
+  function show(key) {
+    if (SKIP.some(c => key.classList.contains(c))) return;
+    const ch = key.textContent.trim().slice(-1);
+    if (!ch) return;
+    const r = key.getBoundingClientRect();
+    co.textContent = ch;
+    co.style.left = (r.left + r.width / 2) + 'px';
+    co.style.top  = (r.top - 68) + 'px';
+    co.style.display = 'flex';
+  }
+  function hide() { co.style.display = 'none'; }
+  const kb = document.getElementById('kbrows');
+  if (kb) {
+    kb.addEventListener('mousedown', e => { const k = e.target.closest('.key'); if (k) show(k); });
+    kb.addEventListener('touchstart', e => { const k = e.target.closest('.key'); if (k) show(k); }, {passive:true});
+  }
+  document.addEventListener('mouseup', hide);
+  document.addEventListener('touchend', hide);
 })();
 </script>
 <!-- ── FEEDBACK WIDGET ── -->
