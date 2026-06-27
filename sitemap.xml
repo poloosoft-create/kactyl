@@ -1964,4 +1964,76 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- Arabic Calligraphy Generator -->
+  <url>
+    <loc>https://kactyl.com/arabic-calligraphy/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Hijri Calendar -->
+  <url>
+    <loc>https://kactyl.com/hijri-calendar/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Hijri Calendar AR -->
+  <url>
+    <loc>https://kactyl.com/ar/hijri-calendar/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Belarusian keyboard -->
+  <url>
+    <loc>https://kactyl.com/belarusian/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Bulgarian keyboard -->
+  <url>
+    <loc>https://kactyl.com/bulgarian/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Macedonian keyboard -->
+  <url>
+    <loc>https://kactyl.com/macedonian/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Serbian keyboard -->
+  <url>
+    <loc>https://kactyl.com/serbian/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Ukrainian keyboard -->
+  <url>
+    <loc>https://kactyl.com/ukrainian/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Minecraft Enchantment keyboard -->
+  <url>
+    <loc>https://kactyl.com/minecraft-enchantment/</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Google Input Tools alternative -->
+  <url>
+    <loc>https://kactyl.com/google-input-tools-alternative/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
