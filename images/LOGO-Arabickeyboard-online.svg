@@ -83,14 +83,14 @@
         fill: #ff1736;
       }
     </style>
-    <linearGradient id="linear-gradient" x1="14.7" y1="3313" x2="61.4" y2="3266" gradientTransform="translate(0 -3192)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient" x1="14.7" y1="-3111" x2="61.4" y2="-3064" gradientTransform="translate(0 -2990) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#f0f"/>
       <stop offset="0" stop-color="#fd07e7" stop-opacity=".9"/>
       <stop offset=".2" stop-color="#fa1aa9" stop-opacity=".6"/>
       <stop offset=".4" stop-color="#f63948" stop-opacity=".2"/>
       <stop offset=".5" stop-color="#f44819" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="linear-gradient1" x1="64.2" y1="3309.4" x2="7.5" y2="3274.8" gradientTransform="translate(0 -3192)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient1" x1="64.2" y1="-3107.4" x2="7.5" y2="-3072.8" gradientTransform="translate(0 -2990) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ebef0d"/>
       <stop offset="0" stop-color="#ebdc0e" stop-opacity=".9"/>
       <stop offset=".2" stop-color="#eead11" stop-opacity=".6"/>
@@ -98,14 +98,14 @@
       <stop offset=".5" stop-color="#f44819" stop-opacity="0"/>
       <stop offset="1" stop-color="#e91b00" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="linear-gradient2" x1="7.4" y1="2710" x2="49.3" y2="2667.9" gradientTransform="translate(0 -2594)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient2" x1="7.4" y1="-2508" x2="49.3" y2="-2465.9" gradientTransform="translate(0 -2392) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#f0f"/>
       <stop offset="0" stop-color="#fd07e7" stop-opacity=".9"/>
       <stop offset=".2" stop-color="#fa1aa9" stop-opacity=".6"/>
       <stop offset=".4" stop-color="#f63948" stop-opacity=".2"/>
       <stop offset=".5" stop-color="#f44819" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="linear-gradient3" x1="51.8" y1="2706.9" x2=".8" y2="2675.7" gradientTransform="translate(0 -2594)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient3" x1="51.8" y1="-2504.9" x2=".8" y2="-2473.7" gradientTransform="translate(0 -2392) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ebef0d"/>
       <stop offset="0" stop-color="#ebdc0e" stop-opacity=".9"/>
       <stop offset=".2" stop-color="#eead11" stop-opacity=".6"/>
@@ -113,7 +113,7 @@
       <stop offset=".5" stop-color="#f44819" stop-opacity="0"/>
       <stop offset="1" stop-color="#e91b00" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="linear-gradient4" x1="26.1" y1="-814.7" x2="26.1" y2="-771.6" gradientTransform="translate(0 -696) scale(1 -1)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient4" x1="26.1" y1="1814.7" x2="26.1" y2="1771.6" gradientTransform="translate(0 -1696)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fff" stop-opacity="0"/>
       <stop offset="0" stop-color="#fff" stop-opacity=".2"/>
       <stop offset="0" stop-color="#fff" stop-opacity=".4"/>
@@ -124,17 +124,17 @@
       <stop offset=".3" stop-color="#fff" stop-opacity=".8"/>
       <stop offset=".4" stop-color="#fff" stop-opacity=".9"/>
       <stop offset=".5" stop-color="#fff" stop-opacity=".9"/>
-      <stop offset=".6" stop-color="#fff" stop-opacity="1"/>
+      <stop offset=".6" stop-color="#fff"/>
       <stop offset=".7" stop-color="#fff"/>
     </linearGradient>
-    <linearGradient id="linear-gradient5" x1="6.6" y1="-1610" x2="49.2" y2="-1567.2" gradientTransform="translate(0 -1494) scale(1 -1)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient5" x1="6.6" y1="2610" x2="49.2" y2="2567.2" gradientTransform="translate(0 -2494)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#f0f"/>
       <stop offset="0" stop-color="#fd07e7" stop-opacity=".9"/>
       <stop offset=".2" stop-color="#fa1aa9" stop-opacity=".6"/>
       <stop offset=".4" stop-color="#f63948" stop-opacity=".2"/>
       <stop offset=".5" stop-color="#f44819" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="linear-gradient6" x1="51.8" y1="-1606.9" x2="0" y2="-1575.2" gradientTransform="translate(0 -1494) scale(1 -1)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient6" x1="51.8" y1="2606.9" x2="0" y2="2575.2" gradientTransform="translate(0 -2494)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ebef0d"/>
       <stop offset="0" stop-color="#ebdc0e" stop-opacity=".9"/>
       <stop offset=".2" stop-color="#eead11" stop-opacity=".6"/>
@@ -142,7 +142,7 @@
       <stop offset=".5" stop-color="#f44819" stop-opacity="0"/>
       <stop offset="1" stop-color="#e91b00" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="linear-gradient7" x1="25.7" y1="916.3" x2="25.7" y2="873.5" gradientTransform="translate(0 -798)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient7" x1="25.7" y1="-714.3" x2="25.7" y2="-671.5" gradientTransform="translate(0 -596) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fff" stop-opacity="0"/>
       <stop offset="0" stop-color="#fff" stop-opacity=".2"/>
       <stop offset="0" stop-color="#fff" stop-opacity=".4"/>
@@ -219,20 +219,24 @@
     <path d="M126.2,110.8c-7,0-12.6-5-12.5-12.2,0-7,5.5-12.1,12.5-12,6,0,11.3,4,12,10h-7.6c-1.1-3.2-5.6-4.1-7.8-1.6-1.8,1.8-1.8,5.5,0,7.3,2.3,2.6,6.9,1.6,7.8-1.9h7.7c-.8,6.1-5.9,10.4-12.1,10.3h0Z"/>
     <path d="M156.8,103.2v6.8h-5.3c-2.5,0-4.5-.7-5.9-2.2-1.4-1.4-2.2-3.4-2.2-5.9v-8.6h-4.2v-1.8l10.2-10.8h1.6v6.6h5.7v6h-5.5v7.2c0,.8.2,1.5.7,1.9.5.5,1.1.7,1.9.7h3.1-.1Z"/>
     <path d="M196.9,103.2c-1.6,0-2.6-1-2.6-2.6v-21.4h0c-2,3-4.7,5.5-7.7,7.5v6.6h0c0,6.4-1.7,16.7,7.8,16.6h5.6c0-2.5.6-6.8-3.1-6.8h0Z"/>
-    <path class="st12" d="M135.9,113.3h36.7v4.7c0,2.5-2.1,4.6-4.6,4.6h-32.2c-2.5,0-4.6-2.1-4.6-4.6h0c0-2.7,2.1-4.7,4.6-4.7h.1Z"/>
+    <path class="st12" d="M125.7,113.3h36.7v4.7c0,2.5-2.1,4.6-4.6,4.6h-32.2c-2.5,0-4.6-2.1-4.6-4.6h0c0-2.7,2.1-4.7,4.6-4.7h.1Z"/>
     <path d="M182.7,94.6v-5.9c-2.4,1.1-4.9,1.8-7.7,2.1v11.6c-.4,1.8-1.9,2.9-4.1,2.9s-3.3-1.2-3.3-3.8v-11c-2.7-.5-5.3-1.3-7.7-2.5v14.4c0,4.5,2.6,7.9,6.6,8.9,2.8.7,6.4.3,8.4-1.5v8.5c.2,5.1,7.6,5.1,7.8,0v-23.9.2Z"/>
     <path class="st14" d="M38.2,101.5h.7c1.2,0,2.3-1.6,2.4-2.7.2-2,0-4.3,0-6.2.3-4.3,6.3-4.6,6.8-.3-.3,4.3,1,8.7-1.8,12.5-1.9,2.6-5,3.9-8.2,3.7v6.7c0,1.7-1.3,3.2-3,3.4h-5.5c-1.7,0-3-1.7-3-3.3v-11.6c-4.2.3-8-2.1-9.4-6s-.3-5.9-.5-8.7c.5-3.9,6.1-3.9,6.4.2s0,3.5,0,5.1,1.2,2.7,2.5,2.7h1.1v-14.7c.5-7.4,10.9-7.5,11.6,0v19.4h0v-.2h-.1Z"/>
     <g class="st1">
       <g class="st1">
         <g class="st1">
-          <text class="st0" transform="translate(136 119.8)"><tspan x="0" y="0">Anywhere</tspan></text>
+          <g class="st1">
+            <text class="st0" transform="translate(125.8 119.8)"><tspan x="0" y="0">One Tab.</tspan></text>
+          </g>
         </g>
       </g>
     </g>
     <g class="st1">
       <g class="st1">
         <g class="st1">
-          <text class="st4" transform="translate(59.7 120.1)"><tspan x="0" y="0">Type Any Language.</tspan></text>
+          <g class="st1">
+            <text class="st4" transform="translate(59.7 120.1)"><tspan x="0" y="0">Every Language.</tspan></text>
+          </g>
         </g>
       </g>
     </g>
@@ -242,7 +246,7 @@
     <rect class="st6" x=".3" y="71.4" width="51.6" height="51.6" rx="14.9" ry="14.9"/>
     <rect class="st8" x=".3" y="71.4" width="51.6" height="51.6" rx="14.9" ry="14.9"/>
     <path class="st17" d="M50,71.4h-4.2c-3.4,0-6.1,2.7-6.1,6.1.4,8.1,11.9,8.1,12.2,0v-4.2c0-1.1-.9-2-2-2h0Z"/>
-    <path class="st10" d="M32.2,101.2h.7c1.2,0,2.3-1.6,2.4-2.7.2-2,0-4.3,0-6.4.3-4.3,6.5-4.7,7-.3-.3,4.3,1,9-1.8,12.8-1.7,2.4-4.5,3.7-7.4,3.8s-1,.5-1,1.1v5.9c0,1.7-1.3,3.3-3.1,3.5-1.8,0-3.9,0-5.7,0s-3.1-1.7-3.1-3.4v-10.8c0-.6-.4-1-1-1.1-3.9,0-7.3-2.5-8.7-6.2-1.4-4.1-.3-6.1-.5-9,.5-4,6.3-4,6.6.2s-.1,3.6,0,5.3,1.2,2.7,2.5,2.7h1.1v-15.2c.5-7.6,11.2-7.7,11.9,0v19.9h-.2.3Z"/>
+    <path class="st10" d="M32.2,101.2h.7c1.2,0,2.3-1.6,2.4-2.7.2-2,0-4.3,0-6.4.3-4.3,6.5-4.7,7-.3-.3,4.3,1,9-1.8,12.8-1.7,2.4-4.5,3.7-7.4,3.8s-1,.5-1,1.1v5.9c0,1.7-1.3,3.3-3.1,3.5h-5.7c-1.8,0-3.1-1.7-3.1-3.4v-10.8c0-.6-.4-1-1-1.1-3.9,0-7.3-2.5-8.7-6.2-1.4-4.1-.3-6.1-.5-9,.5-4,6.3-4,6.6.2s-.1,3.6,0,5.3,1.2,2.7,2.5,2.7h1.1v-15.2c.5-7.6,11.2-7.7,11.9,0v19.9h-.2.3Z"/>
   </g>
   <g class="st16">
     <rect class="st13" y="71.3" width="51.2" height="51.2" rx="13" ry="13"/>

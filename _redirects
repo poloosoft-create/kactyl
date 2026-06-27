@@ -6,14 +6,25 @@ https://www.arabikeyboard.com/ https://kactyl.com/arabic/ 301!
 https://arabikeyboard.com/* https://kactyl.com/:splat 301!
 https://www.arabikeyboard.com/* https://kactyl.com/:splat 301!
 
-# Redirect /home.html → / so Bing/Google index root URL, not /home.html
-/home.html  /  301!
+# Redirect .html pages → clean URLs (fixes "Alternative page" in Google Search Console)
+/home.html          /               301!
+/home               /               301!
+/index.html         /               301!
+/terms.html         /terms/         301!
+/cookies.html       /cookies/       301!
+/privacy.html       /privacy/       301!
+/franco-arab.html   /franco-arab/   301!
+
+# Redirect /slug/index.html → /slug/ for all keyboard/tool pages
+/*/index.html       /:splat/        301!
 
 # Serve homepage at / (no URL change)
 /   /home.html   200!
 
 /favicon.ico /images/favicon.svg 200
 
-/fancy-text/tiktok-fonts/     /tiktok-fonts/     301
-/fancy-text/discord-fonts/    /discord-fonts/    301
-/fancy-text/instagram-fonts/  /instagram-fonts/  301
+/fancy-text/tiktok-fonts/     /tiktok-fonts/     301!
+/fancy-text/discord-fonts/    /discord-fonts/    301!
+/fancy-text/instagram-fonts/  /instagram-fonts/  301!
+/fancy-text/pubg/             /fancy-text/       301!
+/fancy-text/free-fire/        /free-fire-name/   301!
