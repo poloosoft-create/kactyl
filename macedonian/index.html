@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Macedonian Keyboard Online 2026 — Free [Mobile] | Македонски</title>
+  <title>Macedonian Keyboard Online 2026 — Free Mobile | Македонски | Kactyl</title>
   <meta name="description" content="Free Macedonian keyboard online — type Cyrillic without installation. Phonetic layout, one-click copy. Works on iPhone, Android, PC and Mac.">
   <meta name="keywords" content="macedonian keyboard online, type macedonian online, macedonian cyrillic keyboard, macedonian keyboard free, тастатура онлајн">
 
@@ -3011,7 +3011,7 @@ function updateSugs() {
     let nextPreds = lastPickedWord ? (NEXT_WORD[lastPickedWord] || []) : [];
     if (nextPreds.length < 3) {
       const top = Object.entries(userFreq).sort((a,b)=>b[1]-a[1]).map(([w])=>w);
-      while (nextPreds.length < 3) nextPreds.push(top.shift() || ['नमस्ते','धन्यوाद','प्यार'][nextPreds.length]);
+      while (nextPreds.length < 3) nextPreds.push(top.shift() || ['здраво','благодарам','љубов'][nextPreds.length]);
     }
     el0.textContent = nextPreds[0] || ''; el1.textContent = nextPreds[1] || ''; el2.textContent = nextPreds[2] || '';
     sugs = [el0.textContent, el1.textContent, el2.textContent];

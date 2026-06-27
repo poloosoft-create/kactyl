@@ -1307,23 +1307,22 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 .more-tools-hd { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; gap:16px; }
 .more-tools-sup { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--blue); margin-bottom:4px; }
 .more-tools-title { font-size:22px; font-weight:800; color:var(--text); letter-spacing:-.3px; margin:0; }
-.more-tools-grid { display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; -ms-overflow-style:none; padding-bottom:2px; }
+.more-tools-grid { display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; -ms-overflow-style:none; padding:16px 4px 52px; margin-bottom:-36px; }
 .more-tools-grid::-webkit-scrollbar { display:none; }
-.tool-card { flex:0 0 164px; height:164px; scroll-snap-align:start; display:flex; flex-direction:column; padding:14px 14px 12px; background:#0F172A; border:1px solid rgba(255,255,255,.07); border-radius:16px; text-decoration:none; overflow:hidden; transition:border-color .2s, transform .2s, box-shadow .2s; }
-.tool-card:hover { border-color:rgba(0,104,255,.45); box-shadow:0 8px 28px rgba(0,104,255,.18); transform:translateY(-2px); }
-.tool-card-visual { position:relative; width:48px; height:48px; margin-bottom:10px; flex-shrink:0; }
-.tool-card-visual svg { width:48px; height:48px; display:block; }
-.tool-card-badge { position:absolute; bottom:-3px; left:-6px; width:22px; height:22px; background:#000; border-radius:50%; border:2.5px solid #0F172A; display:flex; align-items:center; justify-content:center; }
-.tool-card-name { font-size:14px; font-weight:700; color:#F1F5F9; line-height:1.2; }
-.tool-card-desc { font-size:11px; color:#64748B; line-height:1.5; margin-top:5px; flex:1; }
-.tool-card-arrow { margin-top:12px; font-size:12px; color:rgba(96,165,250,.55); font-weight:600; }
-[data-theme="dark"] .tool-card { background:rgba(15,23,42,.8); }
-[data-theme="dark"] .tool-card-badge { border-color:rgba(15,23,42,.8); }
-.more-tools-dots { display:flex; justify-content:center; gap:6px; margin-top:14px; }
+.tool-card { flex:0 0 180px; height:180px; scroll-snap-align:start; display:flex; flex-direction:column; padding:14px 14px 12px; background:#0F172A; border:1px solid rgba(255,255,255,.07); border-radius:20px; text-decoration:none; box-shadow:0 12px 36px rgba(0,0,0,.6), 0 4px 10px rgba(0,0,0,.4), 0 1px 3px rgba(0,0,0,.3); transition:border-color .2s, transform .2s, box-shadow .2s; }
+.tool-card:hover { border-color:rgba(0,104,255,.45); box-shadow:0 18px 48px rgba(0,104,255,.22), 0 6px 16px rgba(0,0,0,.5); transform:translateY(-3px); }
+.tool-card-visual { position:relative; width:56px; height:56px; margin-bottom:10px; flex-shrink:0; }
+.tool-card-visual svg { width:56px; height:56px; display:block; filter:drop-shadow(0 5px 14px rgba(0,0,0,.45)); }
+.tool-card-badge { display:none; }
+.tool-card-name { font-size:18px; font-weight:800; color:#F1F5F9; line-height:1.2; }
+.tool-card-desc { font-size:12px; color:#64748B; line-height:1.5; margin-top:4px; flex:1; }
+.tool-card-open { margin-top:8px; align-self:flex-end; font-size:11px; font-weight:700; color:#fff; background:rgba(96,165,250,.22); border-radius:20px; padding:5px 13px; letter-spacing:.05em; }
+[data-theme="dark"] .tool-card { background:rgba(15,23,42,.85); }
+.more-tools-dots { display:flex; justify-content:center; gap:6px; margin-top:10px; }
 .mtd { width:6px; height:6px; border-radius:50%; background:rgba(15,23,42,.15); cursor:pointer; transition:all .25s; flex-shrink:0; }
 [data-theme="dark"] .mtd { background:rgba(255,255,255,.15); }
 .mtd.active { background:var(--blue); width:18px; border-radius:3px; }
-@media(max-width:640px){ .more-tools { padding:0 12px 40px; } .tool-card { flex:0 0 146px; height:146px; } .more-tools-hd { flex-direction:column; gap:8px; } }
+@media(max-width:640px){ .more-tools { padding:0 12px 40px; } .tool-card { flex:0 0 158px; height:158px; } .more-tools-hd { flex-direction:column; gap:8px; } }
 
 footer {
   background: #07091A;
@@ -2730,280 +2729,162 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   </div>
   <div class="more-tools-grid" id="toolsScroll">
 
-    <!-- Symbols: 3D golden star floating with sparkles -->
+    <!-- Symbols -->
     <a href="/symbols/" class="tool-card">
       <div class="tool-card-visual">
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <defs>
-            <linearGradient id="tc-sym-body" x1="8" y1="5" x2="48" y2="52" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FEF9C3"/>
-              <stop offset=".45" stop-color="#F59E0B"/>
-              <stop offset="1" stop-color="#7C2D12"/>
-            </linearGradient>
-            <linearGradient id="tc-sym-hi" x1="14" y1="10" x2="30" y2="26" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FFFBEB" stop-opacity=".8"/>
-              <stop offset="1" stop-color="#FDE68A" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="28" cy="52" rx="16" ry="3" fill="rgba(0,0,0,.28)"/>
-          <g transform="rotate(-12 28 28)" style="filter:drop-shadow(0 6px 16px rgba(245,158,11,.6))">
-            <path d="M28 7 L33 22 H49 L37 31 L41 46 L28 38 L15 46 L19 31 L7 22 H23 Z" fill="url(#tc-sym-body)"/>
-            <path d="M28 7 L23 22 H7 L16 27" stroke="url(#tc-sym-hi)" stroke-width="3" stroke-linecap="round" fill="none"/>
-            <ellipse cx="20" cy="17" rx="5" ry="3" fill="rgba(255,255,255,.35)" transform="rotate(-25 20 17)"/>
+          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
+          <g transform="translate(7,7) scale(2.33)">
+            <path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/>
+            <path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity=".82"/>
+            <path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/>
           </g>
-          <path d="M45 4 L46.4 8.5 L51 10 L46.4 11.5 L45 16 L43.6 11.5 L39 10 L43.6 8.5Z" fill="#FDE68A" style="filter:drop-shadow(0 2px 8px rgba(253,230,138,.85))"/>
-          <path d="M7 40 L7.9 43 L10.5 44 L7.9 45 L7 48 L6.1 45 L3.5 44 L6.1 43Z" fill="#FCD34D" opacity=".6"/>
-          <circle cx="48" cy="30" r="1.5" fill="#FDE68A" opacity=".5"/>
         </svg>
         <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1l1 2.4 2.5.35-1.8 1.75.42 2.5L5.5 6.7 3.38 8l.42-2.5L2 3.75l2.5-.35Z" fill="#fff"/></svg></span>
       </div>
       <span class="tool-card-name">Symbols</span>
       <span class="tool-card-desc">Stars, arrows, hearts & 10K+</span>
-      <span class="tool-card-arrow">→</span>
+      <span class="tool-card-open">OPEN</span>
     </a>
 
-    <!-- Fancy Text: 3D gold bold "A" tilted with crown sparkle -->
+    <!-- Fancy Text -->
     <a href="/fancy-text/" class="tool-card">
       <div class="tool-card-visual">
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <defs>
-            <linearGradient id="tc-ft-body" x1="10" y1="5" x2="46" y2="52" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FEF9C3"/>
-              <stop offset=".45" stop-color="#EAB308"/>
-              <stop offset="1" stop-color="#78350F"/>
-            </linearGradient>
-            <linearGradient id="tc-ft-hi" x1="14" y1="8" x2="26" y2="22" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FFFBEB" stop-opacity=".85"/>
-              <stop offset="1" stop-color="#FDE68A" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="28" cy="52" rx="14" ry="3" fill="rgba(0,0,0,.24)"/>
-          <g transform="rotate(-10 28 28)" style="filter:drop-shadow(0 6px 18px rgba(234,179,8,.55))">
-            <path d="M28 8 L14 49 M28 8 L42 49 M20 33 H36" stroke="url(#tc-ft-body)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M28 8 L18 39" stroke="url(#tc-ft-hi)" stroke-width="3.5" stroke-linecap="round"/>
+          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
+          <g transform="translate(7,7) scale(2.33)">
+            <path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/>
           </g>
-          <path d="M44 3 L45.5 8.5 L51 10 L45.5 11.5 L44 17 L42.5 11.5 L37 10 L42.5 8.5Z" fill="#FDE68A" style="filter:drop-shadow(0 2px 8px rgba(253,230,138,.8))"/>
-          <circle cx="14" cy="7" r="2.2" fill="#FCD34D" opacity=".55"/>
-          <circle cx="49" cy="26" r="1.5" fill="#FDE68A" opacity=".45"/>
         </svg>
         <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M3 9L5.5 2l2.5 7M4.2 6.2h2.6" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg></span>
       </div>
       <span class="tool-card-name">Fancy Text</span>
       <span class="tool-card-desc">100+ Unicode styles instantly</span>
-      <span class="tool-card-arrow">→</span>
+      <span class="tool-card-open">OPEN</span>
     </a>
 
-    <!-- Kaomoji: 3D yellow round face with ^_^ eyes and blush -->
+    <!-- Kaomoji -->
     <a href="/kaomoji/" class="tool-card">
       <div class="tool-card-visual">
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <defs>
-            <radialGradient id="tc-km-face" cx=".38" cy=".28" r=".72">
-              <stop stop-color="#FEF9C3"/>
-              <stop offset=".55" stop-color="#FCD34D"/>
-              <stop offset="1" stop-color="#B45309"/>
-            </radialGradient>
-          </defs>
-          <ellipse cx="28" cy="52" rx="18" ry="3.5" fill="rgba(0,0,0,.26)"/>
-          <circle cx="28" cy="26" r="22" fill="url(#tc-km-face)" style="filter:drop-shadow(0 7px 20px rgba(252,211,77,.5))"/>
-          <ellipse cx="19" cy="16" rx="7" ry="4.5" fill="rgba(255,255,255,.38)" transform="rotate(-25 19 16)"/>
-          <path d="M17 24 Q20.5 19 24 24" stroke="#78350F" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-          <path d="M32 24 Q35.5 19 39 24" stroke="#78350F" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-          <path d="M19 34 Q28 41 37 34" stroke="#78350F" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-          <ellipse cx="15" cy="32" rx="4.5" ry="2.5" fill="#F43F5E" opacity=".3"/>
-          <ellipse cx="41" cy="32" rx="4.5" ry="2.5" fill="#F43F5E" opacity=".3"/>
+          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
+          <g transform="translate(7,7) scale(2.33)">
+            <path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
+          </g>
         </svg>
         <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 6Q5.5 9.5 8.5 6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="3.5" cy="3.5" r="1.1" fill="#fff"/><circle cx="7.5" cy="3.5" r="1.1" fill="#fff"/></svg></span>
       </div>
       <span class="tool-card-name">Kaomoji</span>
       <span class="tool-card-desc">Japanese text faces ( ͡° ͜ʖ ͡°)</span>
-      <span class="tool-card-arrow">→</span>
+      <span class="tool-card-open">OPEN</span>
     </a>
 
-    <!-- Invisible Char: 3D white ghost floating -->
+    <!-- Invisible Char -->
     <a href="/invisible-character/" class="tool-card">
       <div class="tool-card-visual">
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <defs>
-            <linearGradient id="tc-gh-body" x1="14" y1="8" x2="42" y2="50" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#F8FAFC"/>
-              <stop offset="1" stop-color="#BAE6FD"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="28" cy="53" rx="14" ry="2.5" fill="rgba(0,0,0,.2)"/>
-          <g style="filter:drop-shadow(0 7px 20px rgba(147,197,253,.45))">
-            <path d="M13 49 Q13 9 28 9 Q43 9 43 49 L38.5 44.5 L34 49 L29 44.5 L24 49 L19 44.5 Z" fill="url(#tc-gh-body)"/>
-            <ellipse cx="20" cy="18" rx="6" ry="4" fill="rgba(255,255,255,.55)" transform="rotate(-20 20 18)"/>
-            <circle cx="22" cy="30" r="4.5" fill="#1E293B"/>
-            <circle cx="34" cy="30" r="4.5" fill="#1E293B"/>
-            <circle cx="23.5" cy="28.5" r="1.8" fill="white"/>
-            <circle cx="35.5" cy="28.5" r="1.8" fill="white"/>
+          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
+          <g transform="translate(7,7) scale(2.33)">
+            <rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/>
+            <line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
+            <line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".6"/>
           </g>
-          <path d="M47 22 Q50 25.5 47 29 Q50 32.5 47 36" stroke="rgba(147,197,253,.55)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
         </svg>
         <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><circle cx="5.5" cy="5.5" r="3.8" stroke="#fff" stroke-width="1.3"/><path d="M3 3l5 5" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/></svg></span>
       </div>
       <span class="tool-card-name">Invisible Char</span>
       <span class="tool-card-desc">Zero-width blank spaces</span>
-      <span class="tool-card-arrow">→</span>
+      <span class="tool-card-open">OPEN</span>
     </a>
 
-    <!-- Zalgo: 3D purple skull with glowing green eyes -->
+    <!-- Zalgo Text -->
     <a href="/zalgo-text/" class="tool-card">
       <div class="tool-card-visual">
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <defs>
-            <linearGradient id="tc-sk-body" x1="10" y1="5" x2="46" y2="46" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#7C3AED"/>
-              <stop offset="1" stop-color="#1E0D36"/>
-            </linearGradient>
-            <radialGradient id="tc-sk-eye" cx=".5" cy=".4" r=".6">
-              <stop stop-color="#86EFAC"/>
-              <stop offset="1" stop-color="#14532D"/>
-            </radialGradient>
-          </defs>
-          <ellipse cx="28" cy="53" rx="14" ry="2.5" fill="rgba(0,0,0,.3)"/>
-          <g style="filter:drop-shadow(0 6px 18px rgba(124,58,237,.55))">
-            <path d="M28 7 Q44 7 44 25 Q44 36 40 38 L40 47 H16 L16 38 Q12 36 12 25 Q12 7 28 7Z" fill="url(#tc-sk-body)"/>
-            <ellipse cx="21" cy="16" rx="6" ry="3.5" fill="rgba(255,255,255,.16)" transform="rotate(-20 21 16)"/>
-            <circle cx="21" cy="26" r="5.5" fill="url(#tc-sk-eye)" style="filter:drop-shadow(0 0 8px rgba(74,222,128,.9))"/>
-            <circle cx="35" cy="26" r="5.5" fill="url(#tc-sk-eye)" style="filter:drop-shadow(0 0 8px rgba(74,222,128,.9))"/>
-            <circle cx="21" cy="26" r="2.5" fill="rgba(0,0,0,.55)"/>
-            <circle cx="35" cy="26" r="2.5" fill="rgba(0,0,0,.55)"/>
-            <rect x="19" y="40" width="5" height="8" rx="1.5" fill="rgba(240,240,255,.88)"/>
-            <rect x="25.5" y="40" width="5" height="8" rx="1.5" fill="rgba(240,240,255,.88)"/>
-            <rect x="32" y="40" width="5" height="8" rx="1.5" fill="rgba(240,240,255,.88)"/>
+          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
+          <g transform="translate(7,7) scale(2.33)">
+            <path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+            <line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+            <line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".35"/>
+            <line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+            <line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
           </g>
-          <circle cx="7" cy="15" r="1.8" fill="#4ADE80" opacity=".7"/>
-          <circle cx="49" cy="22" r="1.5" fill="#4ADE80" opacity=".55"/>
-          <path d="M6 26 L9 29" stroke="#4ADE80" stroke-width="1.8" stroke-linecap="round" opacity=".5"/>
-          <path d="M48 34 L51 31" stroke="#4ADE80" stroke-width="1.8" stroke-linecap="round" opacity=".4"/>
-          <circle cx="7" cy="42" r="1.2" fill="#86EFAC" opacity=".45"/>
         </svg>
         <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 7.5h6M2.5 3.5h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 3.5L4 7.5" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity=".6"/></svg></span>
       </div>
       <span class="tool-card-name">Zalgo Text</span>
       <span class="tool-card-desc">G̸l̷i̴t̵c̸h̵ corrupted text</span>
-      <span class="tool-card-arrow">→</span>
+      <span class="tool-card-open">OPEN</span>
     </a>
 
-    <!-- Text Art: 3D purple monitor (like the screenshot browser style) -->
+    <!-- Text Art -->
     <a href="/text-art/" class="tool-card">
       <div class="tool-card-visual">
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <defs>
-            <linearGradient id="tc-ta-mon" x1="2" y1="2" x2="54" y2="44" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#A78BFA"/>
-              <stop offset=".5" stop-color="#7C3AED"/>
-              <stop offset="1" stop-color="#3B0764"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="28" cy="53" rx="17" ry="3.5" fill="rgba(0,0,0,.26)"/>
-          <g style="filter:drop-shadow(0 7px 20px rgba(124,58,237,.6))">
-            <rect x="2" y="4" width="52" height="38" rx="8" fill="url(#tc-ta-mon)"/>
-            <rect x="2" y="4" width="52" height="13" rx="8" fill="rgba(255,255,255,.18)"/>
-            <rect x="2" y="13" width="52" height="4" fill="rgba(255,255,255,.06)"/>
-            <rect x="6" y="8" width="44" height="30" rx="5" fill="#0D0A1F"/>
-            <rect x="6" y="8" width="44" height="30" rx="5" fill="rgba(139,92,246,.06)"/>
-            <rect x="21" y="42" width="14" height="5" rx="2" fill="#5B21B6"/>
-            <rect x="15" y="47" width="26" height="4" rx="2" fill="#4C1D95"/>
-            <!-- ASCII A on screen -->
-            <rect x="18" y="11" width="4" height="4" rx="1" fill="#A78BFA"/>
-            <rect x="23" y="11" width="4" height="4" rx="1" fill="#A78BFA"/>
-            <rect x="28" y="11" width="4" height="4" rx="1" fill="#A78BFA"/>
-            <rect x="14" y="17" width="4" height="4" rx="1" fill="#A78BFA"/>
-            <rect x="36" y="17" width="4" height="4" rx="1" fill="#A78BFA"/>
-            <rect x="14" y="23" width="4" height="4" rx="1" fill="#C4B5FD"/>
-            <rect x="18" y="23" width="4" height="4" rx="1" fill="#C4B5FD"/>
-            <rect x="23" y="23" width="4" height="4" rx="1" fill="#C4B5FD"/>
-            <rect x="28" y="23" width="4" height="4" rx="1" fill="#C4B5FD"/>
-            <rect x="36" y="23" width="4" height="4" rx="1" fill="#C4B5FD"/>
-            <rect x="14" y="29" width="4" height="4" rx="1" fill="#A78BFA"/>
-            <rect x="36" y="29" width="4" height="4" rx="1" fill="#A78BFA"/>
-            <rect x="41" y="29" width="2" height="4" rx=".5" fill="#E9D5FF" opacity=".7"/>
+          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
+          <g transform="translate(7,7) scale(2.33)">
+            <circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/>
+            <circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/>
+            <path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+            <line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity=".38"/>
+            <line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity=".38"/>
           </g>
         </svg>
         <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1" y="1" width="3" height="3" rx=".8" fill="#fff"/><rect x="5" y="1" width="3" height="3" rx=".8" fill="#fff" opacity=".6"/><rect x="1" y="5" width="3" height="3" rx=".8" fill="#fff" opacity=".6"/><rect x="5" y="5" width="3" height="3" rx=".8" fill="#fff"/></svg></span>
       </div>
       <span class="tool-card-name">Text Art</span>
       <span class="tool-card-desc">ASCII art from any text</span>
-      <span class="tool-card-arrow">→</span>
+      <span class="tool-card-open">OPEN</span>
     </a>
 
-    <!-- Dot Art: red pixel heart — KEPT -->
+    <!-- Dot Art -->
     <a href="/dot-art/" class="tool-card">
       <div class="tool-card-visual">
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="8"  y="6"  width="7" height="7" rx="2" fill="#FB7185"/>
-          <rect x="16" y="6"  width="7" height="7" rx="2" fill="#F43F5E"/>
-          <rect x="32" y="6"  width="7" height="7" rx="2" fill="#F43F5E"/>
-          <rect x="40" y="6"  width="7" height="7" rx="2" fill="#FB7185"/>
-          <rect x="0"  y="14" width="7" height="7" rx="2" fill="#FB7185"/>
-          <rect x="8"  y="14" width="7" height="7" rx="2" fill="#F43F5E"/>
-          <rect x="16" y="14" width="7" height="7" rx="2" fill="#E11D48"/>
-          <rect x="24" y="14" width="7" height="7" rx="2" fill="#BE123C"/>
-          <rect x="32" y="14" width="7" height="7" rx="2" fill="#E11D48"/>
-          <rect x="40" y="14" width="7" height="7" rx="2" fill="#F43F5E"/>
-          <rect x="48" y="14" width="7" height="7" rx="2" fill="#FB7185"/>
-          <rect x="0"  y="22" width="7" height="7" rx="2" fill="#F43F5E"/>
-          <rect x="8"  y="22" width="7" height="7" rx="2" fill="#E11D48"/>
-          <rect x="16" y="22" width="7" height="7" rx="2" fill="#BE123C"/>
-          <rect x="24" y="22" width="7" height="7" rx="2" fill="#9F1239"/>
-          <rect x="32" y="22" width="7" height="7" rx="2" fill="#BE123C"/>
-          <rect x="40" y="22" width="7" height="7" rx="2" fill="#E11D48"/>
-          <rect x="48" y="22" width="7" height="7" rx="2" fill="#F43F5E"/>
-          <rect x="8"  y="30" width="7" height="7" rx="2" fill="#F43F5E"/>
-          <rect x="16" y="30" width="7" height="7" rx="2" fill="#E11D48"/>
-          <rect x="24" y="30" width="7" height="7" rx="2" fill="#BE123C"/>
-          <rect x="32" y="30" width="7" height="7" rx="2" fill="#E11D48"/>
-          <rect x="40" y="30" width="7" height="7" rx="2" fill="#F43F5E"/>
-          <rect x="16" y="38" width="7" height="7" rx="2" fill="#FB7185"/>
-          <rect x="24" y="38" width="7" height="7" rx="2" fill="#F43F5E"/>
-          <rect x="32" y="38" width="7" height="7" rx="2" fill="#FB7185"/>
-          <rect x="24" y="46" width="7" height="7" rx="2" fill="#FCA5A5"/>
+          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
+          <g transform="translate(7,7) scale(2.33)">
+            <circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity=".3"/>
+            <circle cx="9" cy="4.5" r="2" fill="#0068ff"/>
+            <circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity=".5"/>
+            <circle cx="4" cy="9.5" r="2" fill="#0068ff"/>
+            <circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity=".35"/>
+            <circle cx="14" cy="9.5" r="2" fill="#0068ff"/>
+            <circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity=".5"/>
+            <circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity=".2"/>
+            <circle cx="14" cy="14.5" r="2" fill="#0068ff"/>
+          </g>
         </svg>
         <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1.5" y="1.5" width="3" height="3" rx="1" fill="#fff"/><rect x="6.5" y="1.5" width="3" height="3" rx="1" fill="#fff"/><rect x="1.5" y="6.5" width="3" height="3" rx="1" fill="#fff"/><rect x="6.5" y="6.5" width="3" height="3" rx="1" fill="#fff"/></svg></span>
       </div>
       <span class="tool-card-name">Dot Art</span>
       <span class="tool-card-desc">Pixel art & dot illustrations</span>
-      <span class="tool-card-arrow">→</span>
+      <span class="tool-card-open">OPEN</span>
     </a>
 
-    <!-- FF & PUBG Names: 3D orange game controller -->
+    <!-- FF & PUBG Names -->
     <a href="/free-fire-name/" class="tool-card">
       <div class="tool-card-visual">
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <defs>
-            <linearGradient id="tc-ctrl-body" x1="4" y1="12" x2="52" y2="46" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FED7AA"/>
-              <stop offset=".5" stop-color="#F97316"/>
-              <stop offset="1" stop-color="#7C2D12"/>
-            </linearGradient>
-            <linearGradient id="tc-ctrl-bump" x1="8" y1="10" x2="48" y2="14" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FDBA74"/>
-              <stop offset="1" stop-color="#EA580C"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="28" cy="53" rx="18" ry="3.5" fill="rgba(0,0,0,.26)"/>
-          <g transform="rotate(-7 28 28)" style="filter:drop-shadow(0 7px 18px rgba(249,115,22,.55))">
-            <path d="M9 24 Q7 16 17 14 L39 14 Q49 16 47 24 L43 41 Q41 47 28 47 Q15 47 13 41 Z" fill="url(#tc-ctrl-body)"/>
-            <path d="M9 24 Q7 16 17 14 L39 14 Q49 16 47 24 L46 28 Q37 21 28 21 Q19 21 10 28 Z" fill="rgba(255,255,255,.22)"/>
-            <rect x="8" y="11" width="10" height="5" rx="2.5" fill="url(#tc-ctrl-bump)"/>
-            <rect x="38" y="11" width="10" height="5" rx="2.5" fill="url(#tc-ctrl-bump)"/>
-            <rect x="19" y="23" width="18" height="11" rx="3.5" fill="rgba(0,0,0,.35)"/>
-            <rect x="11" y="28" width="7" height="2.5" rx="1" fill="rgba(0,0,0,.45)"/>
-            <rect x="13.75" y="25.75" width="2.5" height="7" rx="1" fill="rgba(0,0,0,.45)"/>
-            <circle cx="38" cy="24.5" r="2.5" fill="#FCA5A5" opacity=".85"/>
-            <circle cx="43.5" cy="28.5" r="2.5" fill="#86EFAC" opacity=".85"/>
-            <circle cx="32.5" cy="28.5" r="2.5" fill="#93C5FD" opacity=".85"/>
-            <circle cx="38" cy="32.5" r="2.5" fill="#FDE68A" opacity=".85"/>
+          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
+          <g transform="translate(7,7) scale(2.33)">
+            <rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/>
+            <line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/>
+            <circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/>
           </g>
         </svg>
         <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1.5" y="4" width="3.5" height="2.5" rx=".8" fill="#fff" opacity=".6"/><rect x="2.5" y="3" width="1.5" height="4.5" rx=".8" fill="#fff" opacity=".6"/><circle cx="8" cy="4" r="1.2" fill="#fff"/><circle cx="8" cy="7" r="1.2" fill="#fff" opacity=".6"/></svg></span>
       </div>
       <span class="tool-card-name">FF & PUBG Names</span>
       <span class="tool-card-desc">Stylish gaming usernames</span>
-      <span class="tool-card-arrow">→</span>
+      <span class="tool-card-open">OPEN</span>
     </a>
 
   </div>
