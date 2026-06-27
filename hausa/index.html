@@ -3203,7 +3203,7 @@ function updateSugs() {
     let nextPreds = lastPickedWord ? (NEXT_WORD[lastPickedWord] || []) : [];
     if (nextPreds.length < 3) {
       const top = Object.entries(userFreq).sort((a,b)=>b[1]-a[1]).map(([w])=>w);
-      while (nextPreds.length < 3) nextPreds.push(top.shift() || ['नमस्ते','धन्यوाद','प्यार'][nextPreds.length]);
+      while (nextPreds.length < 3) nextPreds.push(top.shift() || ['sannu','na gode','ƙauna'][nextPreds.length]);
     }
     el0.textContent = nextPreds[0] || ''; el1.textContent = nextPreds[1] || ''; el2.textContent = nextPreds[2] || '';
     sugs = [el0.textContent, el1.textContent, el2.textContent];
