@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>Hijri Calendar 2026 — Today's Islamic Date + Gregorian Converter | Kactyl</title>
+  <title>Hijri Calendar 2026 — Today's Islamic Date | Kactyl</title>
   <meta name="description" content="Today's Hijri date in Arabic and English. Free Hijri to Gregorian converter, full Islamic calendar 1447 AH, upcoming Islamic events countdown. No">
   <link rel="canonical" href="https://kactyl.com/hijri-calendar/">
   <link rel="alternate" hreflang="en" href="https://kactyl.com/hijri-calendar/">
@@ -443,7 +443,7 @@ footer{background:#07091A;border-top:none;padding:0}
 
   <!-- HOW TO — premium dark card style -->
   <div class="how-sec">
-    <h2 class="how-head">How to Use This Calendar</h2>
+    <h2 class="how-head">How to Use <span class="sec-grad">This Calendar</span></h2>
     <div class="how-steps">
 
       <div class="how-step">
@@ -580,42 +580,49 @@ footer{background:#07091A;border-top:none;padding:0}
         <div class="how-emoji">
           <svg viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="moon-body" x1="14" y1="14" x2="70" y2="74" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#FDE68A"/>
-                <stop offset="45%" stop-color="#F59E0B"/>
+              <linearGradient id="cr-gold" x1="18" y1="12" x2="62" y2="72" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FEF9C3"/>
+                <stop offset="42%" stop-color="#FCD34D"/>
                 <stop offset="100%" stop-color="#92400E"/>
               </linearGradient>
-              <linearGradient id="moon-badge" x1="54" y1="54" x2="78" y2="78" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#1C1C22"/>
+              <linearGradient id="cr-badge" x1="56" y1="56" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#1C1917"/>
                 <stop offset="100%" stop-color="#0A0A0F"/>
               </linearGradient>
-              <radialGradient id="moon-glow" cx="35%" cy="30%" r="60%">
-                <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.6"/>
-                <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
-              </radialGradient>
-              <filter id="moon-shadow">
-                <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="rgba(180,83,9,0.6)"/>
+              <linearGradient id="cr-hi" x1="28" y1="20" x2="40" y2="38" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FFFBEB" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#FDE68A" stop-opacity="0"/>
+              </linearGradient>
+              <mask id="cr-mask">
+                <rect width="88" height="88" fill="white"/>
+                <circle cx="50" cy="34" r="21" fill="black"/>
+              </mask>
+              <filter id="cr-shadow">
+                <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="rgba(146,64,14,0.65)"/>
               </filter>
             </defs>
-            <!-- Outer glow -->
-            <circle cx="42" cy="45" r="30" fill="rgba(245,158,11,0.1)"/>
-            <!-- Moon shadow -->
-            <path d="M26 14 A30 30 0 1 1 26 74 A20 20 0 1 0 26 14Z" fill="rgba(0,0,0,0.3)" transform="translate(4,5)"/>
-            <!-- Moon body -->
-            <path d="M26 14 A30 30 0 1 1 26 74 A20 20 0 1 0 26 14Z" fill="url(#moon-body)" filter="url(#moon-shadow)"/>
-            <!-- Inner shadow on cutout edge -->
-            <path d="M26 14 A30 30 0 1 1 26 74 A20 20 0 1 0 26 14Z" fill="url(#moon-glow)"/>
-            <!-- Highlight on top-left -->
-            <ellipse cx="34" cy="26" rx="8" ry="5" fill="rgba(255,255,255,0.22)" transform="rotate(-30 34 26)"/>
-            <!-- Small stars -->
-            <circle cx="68" cy="18" r="2.2" fill="#FCD34D" opacity="0.9"/>
-            <circle cx="72" cy="30" r="1.4" fill="#FDE68A" opacity="0.7"/>
-            <circle cx="62" cy="12" r="1.6" fill="#FEF3C7" opacity="0.8"/>
-            <path d="M14 30 l1.2 2.4 2.6.4-1.9 1.8.45 2.6L14 36l-2.35 1.2.45-2.6-1.9-1.8 2.6-.4z" fill="#FCD34D" opacity="0.75"/>
+            <!-- Ambient glow -->
+            <circle cx="38" cy="46" r="32" fill="rgba(245,158,11,0.09)"/>
+            <!-- Crescent via mask — no dark blob behind it -->
+            <g filter="url(#cr-shadow)">
+              <circle cx="38" cy="46" r="26" fill="url(#cr-gold)" mask="url(#cr-mask)"/>
+            </g>
+            <!-- Highlight shimmer on crescent tip -->
+            <circle cx="38" cy="46" r="26" fill="url(#cr-hi)" mask="url(#cr-mask)"/>
+            <!-- Surface highlight ellipse -->
+            <ellipse cx="30" cy="30" rx="7" ry="4" fill="rgba(255,255,255,0.2)" transform="rotate(-35 30 30)" mask="url(#cr-mask)"/>
+            <!-- 5-point star top-right -->
+            <path d="M72 14 l1.6 4 4.2.6-3.1 3 .75 4.3L72 23.7l-3.45 2.2.75-4.3-3.1-3 4.2-.6z" fill="#FCD34D" opacity="0.95" style="filter:drop-shadow(0 2px 6px rgba(252,211,77,0.7))"/>
+            <!-- Scattered small stars -->
+            <circle cx="18" cy="24" r="1.9" fill="#FDE68A" opacity="0.8"/>
+            <circle cx="76" cy="38" r="1.4" fill="#FEF3C7" opacity="0.7"/>
+            <circle cx="14" cy="54" r="1.5" fill="#FCD34D" opacity="0.55"/>
+            <circle cx="70" cy="56" r="1.2" fill="#FDE68A" opacity="0.5"/>
+            <!-- Small sparkle left -->
+            <path d="M20 40 l.9 1.8 2 .28-1.45 1.4.34 2L20 44.4l-1.79 1 .34-2-1.45-1.4 2-.28z" fill="#FCD34D" opacity="0.7"/>
             <!-- Badge -->
-            <circle cx="68" cy="68" r="13" fill="rgba(0,0,0,0.5)"/>
-            <circle cx="68" cy="68" r="12" fill="url(#moon-badge)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-            <!-- Star in badge -->
+            <circle cx="68" cy="68" r="13.5" fill="rgba(0,0,0,0.45)"/>
+            <circle cx="68" cy="68" r="12" fill="url(#cr-badge)" stroke="rgba(252,211,77,0.18)" stroke-width="1.2"/>
             <path d="M68 60.5 l1.8 3.6 4 .58-2.9 2.83.68 3.99L68 69.5l-3.58 1.98.68-3.99-2.9-2.83 4-.58z" fill="#FCD34D"/>
           </svg>
         </div>
@@ -635,7 +642,7 @@ footer{background:#07091A;border-top:none;padding:0}
 
   <!-- FAQ -->
   <div class="tool-faq">
-    <h2>Frequently Asked Questions</h2>
+    <h2 class="how-head">Frequently Asked <span class="sec-grad">Questions</span></h2>
     <details>
       <summary>What is today's Hijri date?</summary>
       <div class="faq-ans">Today's Hijri date is calculated automatically and shown at the top of this page in both Arabic and English. The calculation uses the standard Tabular Islamic Calendar (Kuwaiti algorithm), which is accurate to within 1 day of the observed date.</div>
