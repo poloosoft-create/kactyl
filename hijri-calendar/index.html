@@ -318,7 +318,6 @@ footer{background:#07091A;border-top:none;padding:0}
       <div class="lang-menu" id="lang-menu">
         <div class="lang-opt active" onclick="setLang('en')">🇺🇸 English</div>
         <div class="lang-opt" onclick="setLang('ar')">🇸🇦 العربية</div>
-        <div class="lang-opt" onclick="setLang('fr')">🇫🇷 Français</div>
       </div>
     </div>
     <div class="theme-wrap" onclick="toggleTheme()" title="Toggle dark mode">
@@ -1046,8 +1045,8 @@ function toggleTheme() {
 }
 function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
 function setLang(l) {
-  const urls = { en: '/hijri-calendar/', ar: '/ar/hijri-calendar/', fr: '/fr/hijri-calendar/' };
-  if (l !== 'en') { /* future multilingual */ }
+  const urls = { en: '/hijri-calendar/', ar: '/ar/hijri-calendar/' };
+  if (urls[l] && l !== 'en') window.location.href = urls[l];
   document.getElementById('lang-menu').classList.remove('show');
 }
 document.addEventListener('click', e => {
