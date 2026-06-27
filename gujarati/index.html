@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gujarati Keyboard Online 2026 — Free [Mobile] | ગુજરાતી</title>
-  <meta name="description" content="Free Gujarati keyboard online — type Gujarati for WhatsApp, TikTok & Instagram. Guglish phonetic mode, voice typing & predictive text. No download needed. Works on iPhone & Android.">
+  <meta name="description" content="Free Gujarati keyboard online — type Gujarati for WhatsApp, TikTok & Instagram. Guglish phonetic mode, voice typing & predictive text. No download">
   <meta name="keywords" content="gujarati keyboard, gujarati keyboard online, type gujarati online, gujarati typing online, ગુજરાતી કીબોર્ડ, gujarati keyboard for whatsapp, online gujarati keyboard free, gujarati keyboard no download">
 
   <!-- Pinterest verification -->
@@ -35,10 +35,10 @@
   <meta property="og:url"         content="https://kactyl.com/gujarati/">
   <meta property="og:title"       content="Gujarati Keyboard Online 2026 — Free [Mobile] | ગુજરાતી">
   <meta property="og:description" content="Type Gujarati from your phone or PC — no app, no download. Gujarati keyboard for WhatsApp, TikTok, Instagram. Guglish mode converts English letters to Gujarati instantly.">
-  <meta property="og:image" content="https://kactyl.com/images/og-images/gujarati.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-  <meta property="og:locale"      content="gu_IN">
+  <meta property="og:image" content="/images/og-images/gujarati.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+          <meta property="og:locale"      content="gu_IN">
   <meta property="og:site_name"   content="Kactyl">
 
   <!-- Twitter Card -->
@@ -2367,7 +2367,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <p>The <strong>phonetic transliteration mode</strong> is the most popular feature — type Gujarati words using English letters on your QWERTY keyboard and they convert to Gujarati script automatically when you press Space. Type <em>namaste</em> → નમસ્તે, <em>aavjo</em> → આવજો, <em>shukriya</em> → શુક્રિયા. You can also click individual Gujarati letters directly on the on-screen keyboard, use the vowel sign (matra) panel for ા િ ી ુ ૂ, and insert Gujarati emoji combos with one click.</p>
 
     <h3>Who Uses This Gujarati Typing Keyboard?</h3>
-    <p>This keyboard is used daily by <strong>Gujarati workers in Qatar, UAE, Malaysia, and South Korea</strong> sending messages home on WhatsApp. By <strong>Gujarati students in Australia, the UK, and the US</strong> posting on Instagram and TikTok. By <strong>Gujarati communities in India</strong> (Sikkim, Darjeeling, Assam) staying connected in their native language. By content creators making Gujarati-language YouTube videos and TikToks. And by anyone who wants to write नमस्ते, धन्यवाद, or माया प्रेम without installing anything.</p>
+    <p>This keyboard is used daily by <strong>Gujarati workers in Qatar, UAE, Malaysia, and South Korea</strong> sending messages home on WhatsApp. By <strong>Gujarati students in Australia, the UK, and the US</strong> posting on Instagram and TikTok. By <strong>Gujarati communities in India</strong> (Sikkim, Darjeeling, Assam) staying connected in their native language. By content creators making Gujarati-language YouTube videos and TikToks. And by anyone who wants to write નમસ્તે, આભાર, or પ્રેમ without installing anything.</p>
 
     <h3>How to Type Gujarati Online — Step by Step</h3>
     <p><strong>1.</strong> Open kactyl.com/gujarati/ in any browser — Chrome, Safari, Firefox, or Edge. <strong>2.</strong> Click the <em>Phonetic</em> button to type using English letters, or click Gujarati letters directly on the keyboard. <strong>3.</strong> Use the matra panel for vowel signs (ા િ ી ુ ૂ). <strong>4.</strong> Add emoji from the hub. <strong>5.</strong> Click <em>Copy</em> and paste into WhatsApp, TikTok, Instagram, or any app. Done — no download, no account, 100% free.</p>
@@ -3213,7 +3213,7 @@ function updateSugs() {
     let nextPreds = lastPickedWord ? (NEXT_WORD[lastPickedWord] || []) : [];
     if (nextPreds.length < 3) {
       const top = Object.entries(userFreq).sort((a,b)=>b[1]-a[1]).map(([w])=>w);
-      while (nextPreds.length < 3) nextPreds.push(top.shift() || ['नमस्ते','धन्यوाद','प्यार'][nextPreds.length]);
+      while (nextPreds.length < 3) nextPreds.push(top.shift() || ['નમસ્તે','આભાર','પ્રેમ'][nextPreds.length]);
     }
     el0.textContent = nextPreds[0] || ''; el1.textContent = nextPreds[1] || ''; el2.textContent = nextPreds[2] || '';
     sugs = [el0.textContent, el1.textContent, el2.textContent];
