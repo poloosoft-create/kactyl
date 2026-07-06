@@ -448,7 +448,7 @@
 
   <!-- Franco Arab page -->
   <url>
-    <loc>https://kactyl.com/franco-arab/</loc>
+    <loc>https://kactyl.com/franco-arab</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -456,7 +456,7 @@
 
   <!-- Privacy Policy -->
   <url>
-    <loc>https://kactyl.com/privacy/</loc>
+    <loc>https://kactyl.com/privacy</loc>
     <lastmod>2026-05-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -1946,13 +1946,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kactyl.com/cookies/</loc>
+    <loc>https://kactyl.com/cookies</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://kactyl.com/terms/</loc>
+    <loc>https://kactyl.com/terms</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

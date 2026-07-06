@@ -6,7 +6,11 @@ https://www.arabikeyboard.com/ https://kactyl.com/arabic/ 301!
 https://arabikeyboard.com/* https://kactyl.com/:splat 301!
 https://www.arabikeyboard.com/* https://kactyl.com/:splat 301!
 
-# Redirect .html pages → clean URLs (fixes "Alternative page" in Google Search Console)
+# Catch all .html and /index.html variants BEFORE serving files
+# Redirect /slug/index.html → /slug/ for all keyboard/tool pages
+/*/index.html       /:splat/        301!
+
+# Redirect root-level .html pages → clean URLs (fixes "Alternative page" in Google Search Console)
 /home.html          /               301!
 /home               /               301!
 /index.html         /               301!
@@ -15,8 +19,11 @@ https://www.arabikeyboard.com/* https://kactyl.com/:splat 301!
 /privacy.html       /privacy/       301!
 /franco-arab.html   /franco-arab/   301!
 
-# Redirect /slug/index.html → /slug/ for all keyboard/tool pages
-/*/index.html       /:splat/        301!
+# Catch-all: redirect any *.html to its folder equivalent
+/*/*.html           /:splat/        301!
+
+# Remove trailing slashes only for *.html (force clean URLs)
+/privacy            /privacy/       301!
 
 # Serve homepage at / (no URL change)
 /   /home.html   200!

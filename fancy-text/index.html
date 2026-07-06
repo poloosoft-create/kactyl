@@ -315,7 +315,7 @@ footer{background:#07091A;border-top:none;padding:0}
   .ft-bottom-links{flex-wrap:wrap;justify-content:center}
 }
 /* ── Platform font cards ── */
-.pf-section{padding:48px 24px 0;max-width:1000px;margin:0 auto;text-align:center}
+.pf-section{padding:48px 24px 0;max-width:1000px;margin:0 auto;text-align:center;position:relative}
 .pf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px;text-align:left}
 @media(max-width:700px){.pf-grid{grid-template-columns:repeat(2,1fr)}}
 .pf-card{border-radius:16px;padding:22px 18px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:transform .2s,box-shadow .2s;border:none;position:relative;overflow:hidden}
@@ -398,16 +398,61 @@ footer{background:#07091A;border-top:none;padding:0}
 .use-cases{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px;margin-bottom:4px}
 .uc-badge{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700}
 .uc-badge svg{flex-shrink:0}
-/* How-to section */
-.how-sec{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:32px;max-width:1100px;margin:0 auto 32px;position:relative;z-index:1}
-[data-theme="dark"] .how-sec{background:rgba(255,255,255,.04)}
-.how-head{font-size:clamp(20px,2.5vw,26px);font-weight:800;margin-bottom:24px;letter-spacing:-.4px}
-.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
-.how-num-bg{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.how-step-title{font-size:14px;font-weight:700;color:var(--text)}
-.how-step-desc{font-size:13px;color:var(--muted);line-height:1.6}
-@media(max-width:600px){.how-steps{grid-template-columns:1fr}}
+/* How-to section (brand v2 tools: square theme-colored cards, no section bg) */
+.how-sec { padding: 16px 20px 24px; position:relative; z-index:1 }
+.how-sec .wrap { max-width: 880px; margin: 0 auto; }
+.how-hd { text-align: center; margin-bottom: 12px; }
+.how-hd h2 { font-size: clamp(32px,5vw,56px); font-weight: 900; color: var(--text); margin: 0 0 10px; letter-spacing:-.8px; }
+.how-hd p { font-size: 13px; color: var(--muted); font-weight: 600; margin: 0; }
+.how-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.how-step-wrap { position: relative; padding-top: 80px; }
+.how-step-wrap::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.45; z-index:0; pointer-events:none; }
+.how-step-icon { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 160px; height: auto; z-index: 2; pointer-events: none; }
+.how-step { background: linear-gradient(135deg,var(--purple) 0%,var(--purple-2) 100%); border-radius: 52px; padding: 48px 24px 12px; position: relative; z-index: 1; display: flex; flex-direction: column; aspect-ratio: 1/1; }
+.how-step h3 { font-size: clamp(28px,3.5vw,38px); font-weight: 900; color: #fff; margin: 6px 0 6px; line-height: 1; letter-spacing: -.5px; }
+.how-step p { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.6; flex: 1; margin: 0; }
+.how-num { font-size: 56px; font-weight: 900; color: rgba(255,255,255,.35); line-height: 1; text-align: right; margin-top: 6px; letter-spacing: -2px; }
+@media(max-width:640px){ .how-steps { grid-template-columns: 1fr; gap: 72px; } .how-step-icon { width: 150px; } .how-step-wrap { padding-top: 90px; } .how-step { aspect-ratio:auto; min-height:280px; } }
+/* Section header + mascot (brand v2: Mascot in-flow, always fully visible) */
+.sec-hd-mascot { display:flex; align-items:center; justify-content:space-between; gap:24px; text-align:left; margin-bottom:8px; }
+.sec-hd-mascot .sec-hd-text { flex:1; }
+.sec-mascot { width:220px; height:auto; display:block; flex-shrink:0; filter:drop-shadow(0 8px 24px rgba(0,0,0,.10)); pointer-events:none; }
+@media(max-width:640px){ .sec-hd-mascot { gap:12px; } .sec-mascot { width:140px; } }
+/* FAQ promo cards (brand v2: Mascot-2 band) */
+.faq-promo { padding:120px 16px 56px; }
+.faq-promo .wrap { max-width:860px; margin:0 auto; }
+.faq-promo-grid { display:grid; grid-template-columns:1fr 1.45fr; gap:16px; position:relative; }
+.faq-card-brand { background:#fff; border:1px solid #E2E8F0; border-radius:24px; padding:48px 32px; display:flex; align-items:center; justify-content:center; min-height:240px; position:relative; }
+.faq-card-brand::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.7; z-index:-1; pointer-events:none; }
+.faq-brand-logo { width:230px; max-width:82%; }
+.faq-mascot { position:absolute; top:-50px; left:calc(41% - 90px); width:180px; z-index:10; pointer-events:none; filter:drop-shadow(0 6px 18px rgba(0,0,0,.15)); }
+.faq-card-dark { background:#0F172A; border-radius:24px; padding:40px 36px; display:flex; flex-direction:column; justify-content:center; min-height:240px; position:relative; }
+.faq-card-dark::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.7; z-index:-1; pointer-events:none; }
+.faq-dark-h { font-size:clamp(32px,4.5vw,52px); font-weight:800; color:#F1F5F9; line-height:1.05; letter-spacing:-.8px; margin-bottom:14px; }
+.faq-dark-sub { font-size:14px; color:#64748B; line-height:1.6; margin:0 0 24px; }
+.faq-dark-pill { display:inline-flex; align-items:center; background:#EC4899; color:#fff; border-radius:24px; padding:11px 32px; font-size:15px; font-weight:700; letter-spacing:.06em; align-self:flex-end; text-decoration:none; transition:opacity .2s; }
+.faq-dark-pill:hover { opacity:.85; }
+@media(max-width:600px){
+  .faq-promo { padding:100px 16px 48px; }
+  .faq-promo-grid { grid-template-columns:1fr; }
+  .faq-mascot { top:-90px; }
+  .faq-card-dark { padding:32px 24px; }
+}
+/* FAQ header shell (brand v2: Mascot-3 + sparkles) */
+.faq-hd { display:flex; align-items:center; justify-content:space-between; gap:32px; margin:0 0 24px; text-align:left; }
+.faq-hd-left { flex:1; }
+.faq-hd-badge { display:inline-flex; align-items:center; background:#111; border-radius:50px; padding:8px 22px; font-size:13px; font-weight:800; color:#fff; letter-spacing:.03em; text-transform:uppercase; margin-bottom:18px; }
+[data-theme="dark"] .faq-hd-badge { background:#fff; color:#111; }
+.faq-hd h2 { font-size:clamp(34px,5vw,54px); font-weight:800; letter-spacing:-.8px; line-height:1.1; margin:0; }
+.faq-hd p { font-size:15px; color:var(--muted); margin-top:10px; }
+.faq-hd-right { position:relative; flex-shrink:0; }
+.faq-mascot-2 { width:260px; display:block; filter:drop-shadow(0 8px 24px rgba(0,0,0,.12)); }
+.faq-sparkle { position:absolute; pointer-events:none; }
+@media(max-width:640px){
+  .faq-hd { flex-direction:column; gap:0; align-items:stretch; }
+  .faq-hd-right { align-self:flex-end; margin-top:-20px; }
+  .faq-mascot-2 { width:160px; }
+}
 /* Standard FAQ */
 .tool-faq{max-width:1100px;margin:0 auto 48px;padding:0 24px;position:relative;z-index:1}
 .tool-faq>h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px}
@@ -599,8 +644,13 @@ footer{background:#07091A;border-top:none;padding:0}
 </section>
 <!-- More generators -->
 <section class="pf-section">
-  <div class="more-tools-title">Platform Font <span class="sec-grad">Generators</span></div>
-  <p class="more-tools-sub">Curated font styles per platform — copy &amp; paste instantly into any app.</p>
+  <div class="sec-hd-mascot">
+    <div class="sec-hd-text">
+      <div class="more-tools-title">Platform Font <span class="sec-grad">Generators</span></div>
+      <p class="more-tools-sub" style="margin-bottom:0">Curated font styles per platform — copy &amp; paste instantly into any app.</p>
+    </div>
+    <img src="../images/Mascot-1.svg" alt="" class="sec-mascot" loading="lazy">
+  </div>
   <div class="pf-grid">
     <a class="pf-card tk" href="/tiktok-fonts/">
       <div class="pf-icon">
@@ -695,17 +745,76 @@ footer{background:#07091A;border-top:none;padding:0}
 
 
 
-    <div class="how-sec">
-      <div class="how-head">How to <span style="background:linear-gradient(135deg,#7c3aed,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Use</span></div>
-      <div class="how-steps">
-        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#7c3aed,#a855f7)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#fff" stroke-width="1.8" fill="none"/><line x1="8" y1="8" x2="16" y2="8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><line x1="8" y1="12" x2="16" y2="12" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><line x1="8" y1="16" x2="13" y2="16" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="how-step-title">1. Type Your Text</div><div class="how-step-desc">Enter any text in the input box. All 38+ styles update in real time.</div></div>
-        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#7c3aed,#a855f7)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><line x1="4" y1="6" x2="20" y2="6" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><line x1="4" y1="18" x2="20" y2="18" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="6" r="2.5" fill="#fff"/><circle cx="14" cy="12" r="2.5" fill="#fff"/><circle cx="10" cy="18" r="2.5" fill="#fff"/></svg></div><div class="how-step-title">2. Choose a Style</div><div class="how-step-desc">Browse bold, italic, cursive, bubble, and 34 more styles. Click any to copy.</div></div>
-        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#7c3aed,#a855f7)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="2" stroke="#fff" stroke-width="1.8" fill="none"/><path d="M9 3v3h6V3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="13" x2="15" y2="13" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><line x1="9" y1="17" x2="13" y2="17" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="how-step-title">3. Paste Anywhere</div><div class="how-step-desc">Paste into Instagram bio, TikTok, Discord, Twitter/X, or any text field.</div></div>
-      </div>
-    </div>
+    <section class="how-sec">
+      <div class="wrap">
+        <div class="how-hd">
+          <h2>How To <span class="sec-grad">Use</span></h2>
+          <p>Three steps. Ten seconds.</p>
+        </div>
+        <div class="how-steps">
 
-    <section class="tool-faq">
-      <h2>Frequently Asked <span style="background:linear-gradient(135deg,#7c3aed,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Questions</span></h2>
+          <div class="how-step-wrap">
+            <img class="how-step-icon" src="../images/Type.svg" alt="Type" loading="lazy">
+            <div class="how-step">
+              <h3>Type</h3>
+              <p>Type or paste your text — all 62 font styles update in real time as you go.</p>
+              <div class="how-num">1</div>
+            </div>
+          </div>
+
+          <div class="how-step-wrap">
+            <img class="how-step-icon" src="../images/Copy.svg" alt="Copy" loading="lazy">
+            <div class="how-step">
+              <h3>Copy</h3>
+              <p>Click any style card — the fancy version is saved to your clipboard in one tap.</p>
+              <div class="how-num">2</div>
+            </div>
+          </div>
+
+          <div class="how-step-wrap">
+            <img class="how-step-icon" src="../images/Past.svg" alt="Paste" loading="lazy">
+            <div class="how-step">
+              <h3>Paste</h3>
+              <p>Open any app — Instagram, TikTok, Discord — and long-press to paste.</p>
+              <div class="how-num">3</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ PROMO -->
+    <section class="faq-promo">
+      <div class="wrap">
+        <div class="faq-promo-grid">
+          <div class="faq-card-brand">
+            <img src="../images/kactyl-brand.png" alt="Kactyl" class="faq-brand-logo" loading="lazy">
+          </div>
+          <img src="../images/Mascot-2.svg" alt="" class="faq-mascot" loading="lazy">
+          <div class="faq-card-dark">
+            <div class="faq-dark-h">Got Questions?</div>
+            <p class="faq-dark-sub">Your top fancy text questions, answered.</p>
+            <a href="#faq" class="faq-dark-pill">Get Answers</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-faq" id="faq">
+      <div class="faq-hd">
+        <div class="faq-hd-left">
+          <div class="faq-hd-badge">FAQ</div>
+          <h2>Frequently Asked<br><span class="sec-grad">Questions</span></h2>
+          <p>Everything you need to know about the fancy text generator</p>
+        </div>
+        <div class="faq-hd-right">
+          <img src="../images/Mascot-3.svg" alt="" class="faq-mascot-2" loading="lazy">
+          <svg class="faq-sparkle" style="top:-8px;right:52px;width:28px;height:28px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#7c3aed"/></svg>
+          <svg class="faq-sparkle" style="top:28px;right:12px;width:18px;height:18px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#7c3aed" opacity=".7"/></svg>
+          <svg class="faq-sparkle" style="top:5px;right:-8px;width:12px;height:12px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#7c3aed" opacity=".5"/></svg>
+        </div>
+      </div>
       <details>
         <summary>What is a fancy text generator?</summary>
         <div class="faq-ans">A fancy text generator converts regular letters into Unicode mathematical and decorative characters that visually resemble different fonts — bold, italic, cursive, bubble, and more. They are standard Unicode characters, not images, so they work everywhere text is supported.</div>
