@@ -40,7 +40,7 @@
           <meta property="og:locale"      content="en_US">
   <meta property="og:locale:alternate" content="fr_FR">
   <meta property="og:locale:alternate" content="ar_AR">
-  <meta property="og:site_name"   content="Kactyl">
+  <meta property="og:site_name" content="Kactyl">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
@@ -2133,18 +2133,54 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 /* ── ALL KEYBOARDS GRID ───────────────────────────────────── */
 .hp-grid-section { padding:28px 0 48px; }
-.hp-grid-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+.hp-grid-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:34px; }
 .hp-grid-title { font-size:20px; font-weight:800; letter-spacing:-.3px; }
 .hp-grid-count { font-size:12px; color:var(--muted); font-weight:500; }
-.hp-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:10px; }
-.hp-kb-card { display:flex; flex-direction:column; align-items:center; padding:16px 10px 12px;
-  background:var(--surface); border:1.5px solid var(--border); border-radius:14px;
-  box-shadow:0 2px 10px var(--shadow); transition:transform .18s,box-shadow .18s,border-color .18s;
-  cursor:pointer; text-align:center; text-decoration:none; }
-.hp-kb-card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,104,255,.14); border-color:var(--blue); }
-.hp-kb-flag { font-size:28px; margin-bottom:7px; line-height:1; }
-.hp-kb-native { font-size:13px; font-weight:700; color:var(--text); margin-bottom:2px; line-height:1.3; }
-.hp-kb-en { font-size:10px; color:var(--muted); font-weight:500; }
+.hp-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(168px,1fr)); gap:16px; }
+/* ── .floats : the named soft "grounded" shadow (from combos cards) — reuse site-wide ── */
+.floats { position:relative; z-index:0; }
+/* Grounded card shadow (combos style). PIXEL insets — the blur is a fixed 12px, so % insets
+   spill on some card widths and pinch on others; 14px insets keep the soft edge ~2px inside
+   EVERY card regardless of width. Set once, correct everywhere. */
+.floats::before, .tool-mini-card::before { content:''; position:absolute; bottom:-5px; left:14px; right:14px; height:24px; border-radius:14px;
+  background:#080E1E; filter:blur(12px); opacity:.38; z-index:-1; pointer-events:none; transition:opacity .28s, bottom .28s; }
+.floats:hover::before, .tool-mini-card:hover::before { opacity:.50; bottom:-8px; }
+/* larger tool cards read a touch darker for the same weight */
+.tool-mini-card::before { opacity:.50; }
+.tool-mini-card:hover::before { opacity:.62; }
+
+/* ── keyboard card (Nike style: card-in-card, flag hero + glyph circle badge + Open pill) ── */
+.hp-kb-card { position:relative; z-index:1; display:flex; flex-direction:column; text-decoration:none;
+  background:var(--surface); border:1px solid rgba(15,23,42,.06); border-radius:20px; padding:6px;
+  transition:transform .2s cubic-bezier(.2,.7,.3,1), border-color .2s; cursor:pointer; }
+.hp-kb-card:hover { transform:translateY(-4px); border-color:rgba(0,104,255,.28); }
+.hp-kb-media { position:relative; height:114px; border-radius:15px; overflow:hidden; background-color:#eef1fa; }
+.hp-kb-flagbg { position:absolute; inset:0; background-size:cover; background-position:center; background-repeat:no-repeat;
+  transition:transform .45s cubic-bezier(.2,.7,.3,1); will-change:transform; }
+.hp-kb-card:hover .hp-kb-flagbg { transform:scale(1.08); }
+.hp-kb-media::after { content:''; position:absolute; inset:0; z-index:1; box-shadow:inset 0 0 0 1px rgba(8,14,30,.06);
+  background:linear-gradient(180deg,rgba(8,14,30,0) 55%,rgba(8,14,30,.14)); }
+.hp-kb-glyphbadge { position:absolute; top:9px; right:9px; z-index:2; width:34px; height:34px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.78);
+  backdrop-filter:blur(8px) saturate(1.4); -webkit-backdrop-filter:blur(8px) saturate(1.4);
+  border:1px solid rgba(255,255,255,.55); box-shadow:0 3px 12px rgba(8,14,30,.24);
+  font-size:19px; font-weight:700; line-height:1; transition:transform .2s cubic-bezier(.2,.7,.3,1); }
+.hp-kb-card:hover .hp-kb-glyphbadge { transform:scale(1.1); }
+.hp-kb-glyphbadge span { color:#16181d; }
+[data-theme="dark"] .hp-kb-glyphbadge span { color:#fff; }
+.hp-kb-body { padding:10px 6px 6px; display:flex; align-items:center; justify-content:space-between; gap:6px; }
+.hp-kb-names { display:flex; flex-direction:column; gap:1px; min-width:0; flex:1; }
+.hp-kb-native { font-size:13.5px; font-weight:700; color:var(--text); line-height:1.3; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.hp-kb-en { font-size:11px; color:var(--muted); font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.hp-kb-open { flex-shrink:0; display:inline-flex; align-items:center; gap:4px;
+  font-size:10px; font-weight:600; color:#fff; background:#16181d; padding:5px 10px; border-radius:999px; transition:all .2s; }
+.hp-kb-open svg { width:10px; height:10px; }
+.hp-kb-open svg { transition:transform .2s; }
+.hp-kb-card:hover .hp-kb-open { color:#fff; background:var(--blue); }
+.hp-kb-card:hover .hp-kb-open svg { transform:translateX(2px); }
+[data-theme="dark"] .hp-kb-card { background:rgba(30,41,59,.55); border-color:rgba(255,255,255,.08); }
+[data-theme="dark"] .hp-kb-glyphbadge { background:rgba(20,24,32,.55); border-color:rgba(255,255,255,.18); }
+[data-theme="dark"] .hp-kb-open { background:#fff; color:#16181d; }
 
 /* ── TOOL SECTIONS (CINEMATIC) ───────────────────────────── */
 .tsec { padding:100px 24px; position:relative; overflow:hidden; }
@@ -2282,14 +2318,13 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 .tools-cards { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
 .tool-mini-card {
   display:flex; flex-direction:column;
-  border-radius:18px; overflow:hidden;
+  border-radius:18px; position:relative; z-index:0;
   width:160px; flex-shrink:0;
   text-decoration:none;
-  box-shadow:0 4px 20px rgba(15,23,42,.10),0 1px 4px rgba(15,23,42,.05);
-  transition:transform .28s cubic-bezier(.34,1.56,.64,1), box-shadow .28s;
+  transition:transform .28s cubic-bezier(.34,1.56,.64,1);
 }
-.tool-mini-card:hover { transform:translateY(-8px); box-shadow:0 20px 44px rgba(15,23,42,.16),0 4px 12px rgba(15,23,42,.08); }
-.tmc-visual { height:152px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.tool-mini-card:hover { transform:translateY(-8px); }
+.tmc-visual { height:152px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; border-radius:18px; }
 .tmc-visual::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(255,255,255,.14) 0%,transparent 55%); pointer-events:none; }
 .tmc-name { position:absolute; bottom:0; left:0; right:0; background:rgba(255,255,255,.18); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); padding:11px 12px; font-size:13px; font-weight:800; color:#fff; text-align:center; letter-spacing:.2px; text-shadow:0 1px 6px rgba(0,0,0,.35); border-top:1px solid rgba(255,255,255,.25); }
 
@@ -3499,278 +3534,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 /* ── DATA ── */
-const ROWS = [
-  ['ض','ص','ث','ق','ف','غ','ع','ه','خ','ح','ج','د','ENTER'],
-  ['ش','س','ي','ب','ل','ا','ت','ن','م','ك','ط','ظ'],
-  ['SHIFT','SPEC','ئ','ء','ؤ','ر','لا','ى','ة','و','ز',',','BSP'],
-  ['N123','EMOJI','TASHKEEL','SPACE','DOT','FRANCO']
-];
-
-const SPEC_CHARS = [
-  '،','؟','!','؛',':','…','—','-','(',')','@','#',
-  '٠','١','٢','٣','٤','٥','٦','٧','٨','٩',
-  'أ','آ','إ','ذ','ـ','«','»','%','/','+','='
-];
-
 /* Franco/Arabizi phonetic hint for each Arabic letter */
-const FL = {
-  'ض':"9'",'ص':'ss', 'ث':'th', 'ق':'q',  'ف':'f',  'غ':'gh', 'ع':'3',
-  'ه':'h',  'خ':'kh', 'ح':'7',  'ج':'j',  'د':'d',
-  'ش':'sh', 'س':'s',  'ي':'y',  'ب':'b',  'ل':'l',  'ا':'a',  'ت':'t',
-  'ن':'n',  'م':'m',  'ك':'k',  'ط':'tt', 'ظ':"6'",
-  'ئ':'y',  'ء':'2',  'ؤ':'w',  'ر':'r',  'لا':'la','ى':'a',  'ة':'a',
-  'و':'w',  'ز':'z',  ',':','
-};
-
-const PHYS = {
-  'q':'ض','w':'ص','e':'ث','r':'ق','t':'ف','y':'غ','u':'ع','i':'ه','o':'خ','p':'ح',
-  '[':'ج',']':'د',
-  'a':'ش','s':'س','d':'ي','f':'ب','g':'ل','h':'ا','j':'ت','k':'ن','l':'م',';':'ك',"'":'ط',
-  'z':'ئ','x':'ء','c':'ؤ','v':'ر','b':'لا','n':'ى','m':'ة',',':'و','.':'ز','/':'ظ','`':'ذ'
-};
-
-const TASH = [
-  {c:'َ',l:'فتحة'},{c:'ً',l:'تنوين فتح'},{c:'ُ',l:'ضمة'},{c:'ٌ',l:'تنوين ضم'},
-  {c:'ِ',l:'كسرة'},{c:'ٍ',l:'تنوين كسر'},{c:'ّ',l:'شدة'},{c:'ْ',l:'سكون'},
-  {c:'أ',l:'أ'},{c:'إ',l:'إ'},{c:'آ',l:'آ'},{c:'ة',l:'ة'},
-  {c:'ى',l:'مقصورة'},{c:'،',l:'فاصلة'},{c:'؟',l:'استفهام'},{c:'؛',l:'منقوطة'},
-];
-
-const EMOJI_CATS_DATA = {
-  '🕐': { label:'Recent', emojis:[] },
-  '😀': { label:'Faces', emojis:['😀','😃','😄','😁','😆','😅','🤣','😂','🙂','😉','😊','😇','🥰','😍','🤩','😘','😗','😚','😙','😋','😛','😜','🤪','😝','🤑','🤗','🤭','🤫','🤔','🫡','🤐','😐','😑','😶','😏','😒','🙄','😬','🤥','😌','😔','😪','🤤','😴','😷','🤒','🤕','🤢','🤮','🤧','🥵','🥶','😵','🤯','😎','🥳','🤠','😕','😟','🙁','☹️','😮','😱','😨','😰','😥','😢','😭','😤','😠','😡','🤬','🫠','😈','👿','💀','💩','🤡','👻'] },
-  '👋': { label:'People', emojis:['👋','🤚','✋','🖐','🖖','👌','🤌','✌️','🤞','🤟','🤘','👍','👎','✊','👊','🤛','🤜','👏','🙌','🤲','🙏','💅','💪','🦾','👀','👅','👄','💋','🧑','👦','👧','👨','👩','👴','👵','👶','🧒','💑','👫','👬','👭','👨‍👩‍👧','👨‍👩‍👦'] },
-  '❤️': { label:'Hearts', emojis:['❤️','🧡','💛','💚','💙','💜','🖤','🤍','🤎','💔','❤️‍🔥','💕','💞','💓','💗','💖','💘','💝','💯','🔥','✨','⭐','🌟','💫','🎉','🎊','🎈','🎁','🎀','🏆','🥇','🎯','💎','👑','🔑','🪄','🎪','🎭','🎨','🪅'] },
-  '🌿': { label:'Nature', emojis:['🌸','🌺','🌻','🌹','🌷','🌿','🍀','☘️','🌱','🌲','🌳','🌴','🌵','🍁','🍂','🍃','🌙','🌛','🌜','🌝','☀️','🌤','⛅','🌦','🌧','⛈','🌩','🌨','❄️','☃️','⛄','🌈','🌊','🌀','🌍','🌏','🌎','🦋','🐝','🐞','🦄','🐶','🐱','🐭','🐰','🦊','🐻','🐼','🐸','🐧','🐦','🦅','🦁','🐯','🐮','🐷','🐔','🦆','🦉','🐺','🐬','🐳','🦈','🐙'] },
-  '🍎': { label:'Food', emojis:['🍎','🍊','🍋','🍇','🍓','🍒','🍑','🥭','🍍','🥝','🍅','🫐','🥑','🍆','🌽','🍕','🍔','🌮','🌯','🥙','🍜','🍝','🍣','🍱','🍛','🥗','🍿','🧆','🧇','🥞','🧈','🍳','🥚','🧀','🥓','🥩','🍗','🍖','🌭','🥪','🎂','🍰','🧁','🍫','🍬','🍭','🍯','☕','🍵','🧃','🥤','🍺','🥂','🍷','🧋','🍹'] },
-  '⚽': { label:'Sports', emojis:['⚽','🏀','🏈','⚾','🎾','🏐','🏉','🎱','🏓','🏸','🥊','🥋','🎽','⛳','🎿','🛷','🎯','🎳','🏋️','🤸','⛹️','🤾','🚴','🏊','🤽','🧘','🧗','🚵','🏇','🎠','🎡','🎢','🎮','🕹','🎲','♟','🃏','🎴','🀄'] },
-  '✈️': { label:'Travel', emojis:['🚗','🚕','🚙','🚌','🚓','🚑','🚒','✈️','🛫','🛬','🚀','🛸','🚂','🚃','🚄','🚅','⛵','🛳','🚢','🚁','🛵','🏍','🚲','🛴','🏠','🏡','🏢','🏥','🏦','🏨','🏪','🏫','🕌','🛕','🕍','⛩','🗼','🗽','⛲','🌃','🌆','🌇','🌉','🏖','🏝','🏔','🌋','🏕'] },
-  '📱': { label:'Objects', emojis:['📱','💻','⌨️','🖥','🖨','🖱','💿','📷','📸','📹','🎥','📺','📻','🎵','🎶','🎸','🎹','🎺','🎻','🥁','📚','📖','📰','✏️','🖊','📝','📌','📍','🔍','🔎','💡','🔦','🕯','🔑','🔒','🔓','💰','💵','💳','📧','📩','📬','📦','🎒','👜','👛','💄','💍','💎','🪞','🛋','🪴','🧸'] },
-  '🚩': { label:'Flags', emojis:['🇸🇦','🇦🇪','🇪🇬','🇲🇦','🇩🇿','🇹🇳','🇱🇾','🇸🇩','🇾🇪','🇸🇾','🇮🇶','🇯🇴','🇵🇸','🇱🇧','🇰🇼','🇧🇭','🇶🇦','🇴🇲','🇮🇷','🇹🇷','🇺🇸','🇨🇦','🇲🇽','🇧🇷','🇦🇷','🇨🇱','🇨🇴','🇵🇪','🇻🇪','🇬🇧','🇫🇷','🇩🇪','🇪🇸','🇮🇹','🇵🇹','🇳🇱','🇧🇪','🇨🇭','🇦🇹','🇸🇪','🇳🇴','🇩🇰','🇫🇮','🇵🇱','🇺🇦','🇷🇺','🇬🇷','🇨🇿','🇭🇺','🇷🇴','🇧🇬','🇷🇸','🇭🇷','🇸🇰','🇸🇮','🇮🇪','🇮🇸','🇨🇳','🇯🇵','🇰🇷','🇮🇳','🇵🇰','🇧🇩','🇮🇩','🇲🇾','🇸🇬','🇹🇭','🇻🇳','🇵🇭','🇰🇭','🇱🇦','🇲🇲','🇳🇵','🇱🇰','🇦🇺','🇳🇿','🇿🇦','🇳🇬','🇰🇪','🇪🇹','🇬🇭','🇹🇿','🇺🇬','🇨🇲','🏳️','🏴','🏁','🚩','🎌'] }
-};
-
-const WORDS = [
-  // ── Greetings & everyday expressions ──
-  'السلام','عليكم','ورحمة','وبركاته','مرحبا','أهلا','وسهلا','هلا','يهلا',
-  'شكرا','جزيلا','عفوا','آسف','أسف','معليش','مشكور','يسلمو','يسلموا',
-  'من فضلك','لو سمحت','بسم الله','الحمد لله','إن شاء الله','ما شاء الله',
-  'سبحان الله','الله أكبر','استغفر الله','جزاك الله','خيرا','آمين','بارك الله',
-  'تبارك الله','لا إله','إلا الله','حسبي الله','توكلت','على الله','اللهم','صلى الله',
-  'صباح الخير','صباح النور','صباح السعادة','مساء الخير','مساء النور','تصبح على خير',
-  'مع السلامة','إلى اللقاء','يسلمك','ربي يحفظك','الله يعطيك الصحة','الله يسعدك',
-  'الله يكرمك','الله يحفظك','ربنا يوفقك','ربي يبارك','الله يرحمه','ربي يرحمو',
-  // ── Common responses & fillers ──
-  'نعم','لا','طيب','تمام','بخير','ماشي','صحيح','أكيد','بالتأكيد','ربما','لا بأس',
-  'يعني','هيك','هكذا','طبعا','واضح','معروف','بالظبط','تقريبا','إطلاقا','مش معقول',
-  'والله','والله العظيم','بصراحة','حقيقي','فعلا','زبالة','ولا','وإلا','خلاص','حسنا',
-  'أوك','أوكي','مزيان','مليح','زين','عادي','نورمال','ياسر','بزاف','شوية','قليلا',
-  'برشا','هيا','يلا','يلا بينا','روح','تعال','اسمع','انظر','شوف','دير بالك',
-  // ── Pronouns ──
-  'أنا','أنت','أنتِ','أنتم','أنتن','هو','هي','نحن','هم','هن',
-  'هذا','هذه','هذان','هذين','هؤلاء','ذلك','تلك','أولئك',
-  'الذي','التي','الذين','اللواتي','كل','بعض','أي','كلا','كلتا','جميع',
-  'نفسي','نفسه','نفسها','نفسك','نفسنا','بعضنا','بعضهم','إياه','إياها','إياك',
-  // ── Question words ──
-  'كيف','كيفك','كيفاش','أين','وين','فين','متى','لماذا','ليش','علاش','ماذا',
-  'من','ما','ماهو','ماهي','كم','كمية','هل','هكذا','لمن','لماذا','بماذا',
-  // ── Verbs — present ──
-  'يريد','يحب','يعرف','يذهب','يجيء','يأكل','يشرب','ينام','يعمل','يدرس',
-  'يكتب','يقرأ','يسمع','يرى','يتكلم','يفهم','يفكر','يعتقد','يقول','يسأل',
-  'يجيب','يساعد','يفعل','يأخذ','يعطي','يفتح','يغلق','يبدأ','ينهي','يرجع',
-  'يصل','يخرج','يدخل','يجلس','يقف','يركض','يلعب','يضحك','يبكي','يشعر',
-  'يتذكر','ينسى','يحتاج','يمكن','يجب','يلزم','يختار','يقرر','يحاول','يستطيع',
-  'يبدو','يظهر','يختفي','يبقى','يتغير','يتعلم','يعلم','يخبر','يحكي','يشرح',
-  'يحسب','يحل','يبني','يصنع','يرسم','يصور','يكمل','ينجح','يفشل','يعود',
-  // ── Verbs — first person ──
-  'أريد','أحب','أعرف','أذهب','أجيء','أعمل','أدرس','أسكن','أفكر','أعتقد','أفهم',
-  'أكتب','أقرأ','أسمع','أرى','أتكلم','أقول','أسأل','أجيب','أساعد','أفعل',
-  'أخذ','أعطي','أفتح','أغلق','أبدأ','أنهي','أرجع','أصل','أخرج','أدخل',
-  'أجلس','أقف','أشعر','أتذكر','أنسى','أحتاج','أختار','أقرر','أحاول','أستطيع',
-  // ── Verbs — past ──
-  'كان','كانت','كانوا','ذهب','جاء','أكل','شرب','نام','عمل','درس',
-  'كتب','قرأ','سمع','رأى','تكلم','فهم','فكر','قال','سأل','أجاب',
-  'ساعد','فعل','أخذ','أعطى','فتح','أغلق','بدأ','انتهى','رجع','وصل',
-  'خرج','دخل','جلس','وقف','ركض','لعب','ضحك','بكى','شعر','تذكر',
-  'نسي','احتاج','اختار','قرر','حاول','استطاع','بنى','صنع','رسم','نجح',
-  // ── Verbs — imperative ──
-  'اذهب','تعال','اجلس','قف','اكتب','اقرأ','افتح','أغلق','ابدأ','انتظر',
-  'خذ','أعط','ساعد','انظر','اسمع','قل','اسأل','فكر','تذكر','اختر',
-  // ── Places ──
-  'البيت','المنزل','الشقة','الغرفة','المطبخ','الحمام','الصالون','الباب','الشباك',
-  'السرير','الكرسي','الطاولة','الأريكة','الخزانة','الثلاجة','المكيف',
-  'المدرسة','الجامعة','الكلية','المعهد','الفصل','الملعب','المكتبة',
-  'المستشفى','العيادة','الصيدلية','الدكتور','الطبيب','الممرض',
-  'المحل','السوق','الدكان','المتجر','البقالة','الصيدلية','البنك','البريد',
-  'المسجد','الكنيسة','الجامع','المصلى','الزاوية',
-  'المكتب','المطعم','المقهى','الفندق','الملعب','الحديقة','الشاطئ',
-  'الشارع','الطريق','الزقاق','الحي','المدينة','القرية','البلد','الدوار',
-  'المركز','الميدان','المطار','المحطة','الميناء','الحدود',
-  'الجزائر','المغرب','تونس','ليبيا','مصر','السعودية','الإمارات','فرنسا',
-  'إسبانيا','إيطاليا','ألمانيا','بلجيكا','كندا','أمريكا','تركيا','العراق','سوريا',
-  // ── Objects ──
-  'الكتاب','القلم','الورقة','الملف','الحقيبة','المفتاح','الساعة',
-  'الهاتف','الجوال','الموبايل','الحاسوب','اللابتوب','التلفاز','الراديو',
-  'السيارة','الدراجة','الحافلة','القطار','الطائرة','المترو',
-  'الملابس','القميص','البنطال','الجاكيت','الفستان','الحجاب','الجلابة',
-  'الحذاء','الصندل','الجوارب','القبعة','الحزام','الساعة','النظارة',
-  // ── Food & drink ──
-  'الطعام','الأكل','الوجبة','الغداء','العشاء','الفطور','الإفطار',
-  'الماء','الحليب','القهوة','الشاي','العصير','الليمون','السكر','الملح',
-  'الخبز','البطبوط','التمر','الزيت','الزيتون','الجبن','البيض','الدجاج','اللحم',
-  'السمك','الخضار','الطماطم','البصل','الثوم','الفلفل','الجزر','البطاطا',
-  'الأرز','الكسكس','الحريرة','الطاجين','الشوربة','البسطيلة','المحنشة',
-  'الحلوى','الكعكة','الفطيرة','العسل','التمر','الزبيب','المكسرات',
-  // ── Family & people ──
-  'الأب','البابا','الأم','الماما','الأخ','الأخت','الجد','الجدة',
-  'العم','العمة','الخال','الخالة','ابن العم','بنت العم','القريب','العائلة',
-  'الابن','البنت','الولد','البنت','الطفل','الرضيع','الشاب','الشابة',
-  'الزوج','الزوجة','الخطيب','الخطيبة','الرجل','المرأة','الشيخ','الشيخة',
-  'الصديق','الصديقة','الجار','الجارة','الزميل','الزميلة','الأستاذ','الأستاذة',
-  'الطالب','الطالبة','الموظف','العامل','التاجر','الطبيب','المهندس','المعلم',
-  // ── Time ──
-  'اليوم','غدا','أمس','الآن','بعد','قبل','لاحقا','قريبا','مؤخرا',
-  'الصباح','المساء','الليل','النهار','الفجر','الظهر','العصر','المغرب','العشاء',
-  'الساعة','الدقيقة','الثانية','الأسبوع','الشهر','السنة','العام','القرن',
-  'السبت','الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة',
-  'يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر',
-  'دائما','أحيانا','أبدا','دائماً','نادرا','كثيرا','قليلا','سريعا','فورا','بعدين','هسا','دروك',
-  // ── Adjectives ──
-  'جميل','جميلة','حلو','حلوة','كبير','كبيرة','صغير','صغيرة','جديد','جديدة',
-  'قديم','قديمة','سريع','بطيء','قريب','بعيد','غالي','رخيص','صعب','سهل',
-  'طويل','قصير','عريض','ضيق','ثقيل','خفيف','حار','بارد','دافئ','بايت',
-  'ممتاز','رائع','مميز','مهم','كثير','قليل','كافي','ناقص','زيادة','تمام',
-  'جيد','كويس','زين','مزيان','مليح','عادي','مش زين','بطل','قوي','ضعيف',
-  'صحيح','خاطئ','حقيقي','كاذب','واضح','غامض','معقد','بسيط','خاص','عام',
-  'أول','أخير','آخر','ثاني','ثالث','نفس','مختلف','مشابه','هام','خطير',
-  'لطيف','كريم','شجاع','ذكي','حكيم','صبور','طيب','نظيف','مرتب','هادئ',
-  // ── Colors ──
-  'أحمر','أزرق','أخضر','أصفر','أبيض','أسود','برتقالي','بنفسجي','وردي','بني',
-  'رمادي','ذهبي','فضي','بيج','سماوي','نيلي','زيتي','كحلي',
-  // ── Numbers ──
-  'واحد','اثنان','ثلاثة','أربعة','خمسة','ستة','سبعة','ثمانية','تسعة','عشرة',
-  'أحد عشر','اثنا عشر','عشرون','ثلاثون','مئة','ألف','مليون',
-  // ── Body ──
-  'الرأس','الشعر','الوجه','العين','الأنف','الفم','الأذن','الرقبة',
-  'الكتف','الذراع','اليد','الأصابع','الصدر','البطن','الظهر','الساق','القدم',
-  'القلب','الدماغ','الدم','العظام','الجلد','الأسنان',
-  // ── Emotions & states ──
-  'سعيد','حزين','غاضب','خائف','متعب','مريض','بخير','تعبان','زعفان','مبسوط',
-  'فرحان','مزعوج','قلقان','خجول','منبسط','مرتاح','فاهم','ضايع','ناعسان',
-  'الفرح','الحزن','الغضب','الخوف','الحب','الكراهية','الأمل','الحلم',
-  // ── Work & study ──
-  'العمل','الوظيفة','المهنة','الشغل','الراتب','الأجر','الإجازة','الاجتماع',
-  'المشروع','الملف','التقرير','الرسالة','البريد','الإيميل','الاجتماع',
-  'الدراسة','الامتحان','الواجب','الدرس','الشهادة','النجاح','الرسوب',
-  // ── Tech & social media ──
-  'الإنترنت','الواتساب','الفيسبوك','الإنستغرام','تيك توك','سناب شات','يوتيوب',
-  'الصورة','الفيديو','المنشور','التعليق','الإعجاب','المتابعة','الرسالة',
-  'التطبيق','البرنامج','الموقع','الرابط','الهاشتاق','السيلفي','الريلز',
-  'اللوحة','المفاتيح','العربية','اونلاين','مجانية','كتابة','نص','كلمة',
-  // ── Islamic & cultural ──
-  'الله','الرحمن','الرحيم','الحمد','رب','العالمين','النبي','محمد','رسول',
-  'الصلاة','الزكاة','الصوم','الحج','القرآن','السنة','المسجد','الجنة','الدنيا',
-  'رمضان','عيد الفطر','عيد الأضحى','الجمعة','المولد','الليلة','البركة',
-  'الدعاء','الصدقة','الزكاة','الطهارة','الوضوء','الصلاة','السجود','الركوع',
-  // ── Prepositions & conjunctions ──
-  'مع','على','في','من','إلى','عن','بين','حول','بعد','قبل','فوق','تحت',
-  'داخل','خارج','أمام','خلف','يسار','يمين','بجانب','قرب','ضد','رغم',
-  'لكن','أو','إذا','لأن','حتى','ثم','بعدها','لذلك','هكذا','مثل','كأن',
-  'بدون','دون','سوى','غير','إلا','حتى','عندما','كلما','بينما','حيث',
-  // ── Maghrebi dialect (Algerian/Moroccan) ──
-  'واش','واشنو','كيفاش','فاش','علاش','منين','فين','كيف داير','راك','راكي',
-  'بغيت','بغى','جاء','راح','كلى','شرب','نعس','خدم','قرا','كتب',
-  'زعما','تاع','ديالي','ديالك','ديالو','ديالها','حنا','نتوما','هوما',
-  'خاطر','علبالي','علبالك','ما عندي','عندي','عندك','عنده','عندها',
-  'نحوس','نشوف','نروح','نجي','نكمل','نكتب','نهدر','نقرا','نخدم',
-  'مكاش','فيه','فيها','فيك','هكا','هكاك','هنا','هناك','هناية',
-  'قاع','كاش','والو','بصح','حاجة','شي','باش','حتى','كيما','حسب',
-  'دابا','دروك','هسا','غدوة','لبارح','الليلة','هذ الصباح','هذ المساء',
-  'خويا','خوتي','صاحبي','صحابي','حبيبي','حبيبتي','أختي','ولدي',
-  // ── Egyptian dialect ──
-  'إيه','أيوه','لأ','زي','مش','عايز','عايزة','بتاع','بتاعتي','إزيك',
-  'إزيكي','تمام','أوي','أهو','يلا','معلش','خلاص','دلوقتي','هنا','هناك',
-  // ── Gulf dialect ──
-  'شلونك','شلونج','تعبت','وايد','زين','مو','هالحين','يبغى','يبي','چذي',
-  // ── Common phrases (as units) ──
-  'ما عندي مشكلة','عندي سؤال','مفهوم','ما فهمت','ممكن تعيد','أعد السؤال',
-  'شكرا جزيلا','من فضلك','لو سمحت','بكل سرور','يسعدني','تشرفنا',
-  'أنا بخير','كيف حالك','والله بخير','الله يسلمك','يسلمو عليك',
-  'ما في مشكلة','كل شيء تمام','الأمور بخير','ربنا معك','الله كريم',
-];
-
 /* ── PREDICTIVE TEXT ENGINE ── */
 let userFreq = {};
 try { userFreq = JSON.parse(localStorage.getItem('arabi-freq') || '{}'); } catch(e) {}
 
-function recordWord(w) {
-  w = w.trim();
-  if (!w || w.length < 2) return;
-  userFreq[w] = (userFreq[w] || 0) + 1;
-  try { localStorage.setItem('arabi-freq', JSON.stringify(userFreq)); } catch(e) {}
-}
-
-function editDist(a, b) {
-  if (Math.abs(a.length - b.length) > 2) return 99;
-  const m = a.length, n = b.length;
-  const dp = Array.from({length:m+1}, (_,i) => Array.from({length:n+1}, (_,j) => i===0?j:j===0?i:0));
-  for (let i=1;i<=m;i++) for (let j=1;j<=n;j++)
-    dp[i][j] = a[i-1]===b[j-1] ? dp[i-1][j-1] : 1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
-  return dp[m][n];
-}
-
-const NEXT_WORD = {
-  'السلام':['عليكم','عليك','الله'],'عليكم':['ورحمة','السلام','وبركاته'],
-  'كيف':['حالك','الحال','أنت'],'كيفك':['بخير','الحمد','تمام'],
-  'مرحبا':['بك','بكم','يا'],'أهلا':['وسهلا','بك','بكم'],
-  'شكرا':['جزيلا','لك','لكم'],'جزاك':['الله','خيرا'],
-  'صباح':['الخير','النور','السعادة'],'مساء':['الخير','النور','السعادة'],
-  'الخير':['صباح','مساء','والسرور'],'النور':['صباح','مساء'],
-  'إن':['شاء','كان','الله'],'شاء':['الله','ربي'],
-  'الله':['أكبر','يرحمه','عليه','يحفظك'],'أكبر':['الله','من'],
-  'يا':['أخي','ربي','الله','صديقي'],'ربي':['يسعدك','يحفظك'],
-  'أنا':['بخير','هنا','أريد','معك'],'أنت':['بخير','هنا','تريد'],
-  'نعم':['بالتأكيد','طبعا','هو'],'لا':['بأس','إله','أعلم','شكرا'],
-  'بخير':['الحمد','وأنت','شكرا'],'الحمد':['لله','لك'],
-  'أريد':['أن','ذلك','منك'],'تريد':['أن','ذلك','مني'],
-  'هل':['أنت','تريد','يمكن','عندك'],'من':['أين','هو','فضلك'],
-  'في':['الحقيقة','البيت','المدينة','الخير'],'على':['الله','ما','ذلك'],
-  'مع':['السلامة','الشكر','ذلك'],'السلامة':['مع','في'],
-  'تفضل':['يا','بالراحة'],'بكل':['سرور','خير','تأكيد'],
-  'ما':['شاء','هو','هي','عندك'],'ماشاء':['الله'],
-  'إنشاء':['الله'],'بإذن':['الله'],'جميل':['جدا','ما','الله'],
-  'تمام':['بالتأكيد','جدا','كل'],'حسنا':['جيد','تفضل'],
-  'اهلا':['وسهلا','بك'],'وسهلا':['بك','بكم'],
-  'حبيبي':['كيفك','شكرا','يا'],'حبيبتي':['كيفك','شكرا'],
-  'أخي':['كيفك','شكرا','يا'],'أختي':['كيفك','شكرا'],
-  'صحيح':['جدا','تماما','ذلك'],'مشكور':['جدا','على']
-};
-
 let lastPickedWord = '';
-
-function getSuggestions(prefix) {
-  if (!prefix || prefix.length < 1) return [];
-  const scored = {};
-  const freq = w => userFreq[w] || 0;
-
-  // Dictionary words
-  WORDS.forEach(w => {
-    if (w === prefix) return;
-    let s = 0;
-    if (w.startsWith(prefix))      s = 100 + freq(w) * 5 - w.length;
-    else if (freq(w) > 0 && w.startsWith(prefix.slice(0,-1))) s = 40 + freq(w) * 3;
-    else if (w.length >= prefix.length && editDist(w.slice(0,prefix.length+2), prefix) <= 1) s = 20 + freq(w) * 2;
-    if (s > 0) scored[w] = s;
-  });
-
-  // User's own words (learned words not in dictionary)
-  Object.keys(userFreq).forEach(w => {
-    if (w === prefix || w.length < 2) return;
-    if (scored[w]) { scored[w] += userFreq[w] * 3; return; }
-    if (w.startsWith(prefix)) scored[w] = 80 + userFreq[w] * 5 - w.length;
-  });
-
-  return Object.entries(scored).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([w])=>w);
-}
 
 /* ── STATE ── */
 let fontSize = 22, isDark = false, francoOn = false, shiftOn = false;
@@ -3782,288 +3551,14 @@ let qwertyOn = false;
 const FRANCO_DEFAULT_PLACEHOLDER = 'اكتب هنا... أو انقر على الأحرف أدناه ✍️';
 const FRANCO_ON_PLACEHOLDER = 'Essaye: salam — kifak — 7abibi — wesh rak\nAppuie sur Espace pour convertir en arabe ✨';
 
-const FRANCO_CHIPS = [
-  { l:'salam',   a:'سلام'  },
-  { l:'7abibi',  a:'حبيبي' },
-  { l:'kifak',   a:'كيفك'  },
-  { l:'wesh rak',a:'واش راك'},
-];
-
 /* ── INIT ── */
-function init() {
-  buildKB(); buildEmoji(); buildTash(); buildSpec(); buildNum(); initEmojiHub();
-/* ── Amazigh custom flag button in emoji hub ── */
-(function addAmazighFlagBtn() {
-  const panel = document.getElementById('ep-flags');
-  if (!panel) return;
-  const grid = panel.querySelector('.ehub-grid') || panel;
-  const btn = document.createElement('button');
-  btn.className = 'ehub-emoji amazigh-flag-btn';
-  btn.title = 'ⵣ Amazigh Flag — click to insert';
-  btn.style.cssText = 'padding:2px 4px; font-size:10px; line-height:1;';
-  btn.innerHTML = '<img src="images/flag-amazigh.svg" width="28" height="20" alt="ⵣ" style="display:block;border-radius:3px;">';
-  btn.onclick = () => { ins('ⵣ'); toast('ⵣ inserted'); };
-  grid.insertBefore(btn, grid.firstChild);
-})();
- buildFrancoChips();
-  setupPhys(); loadTheme(); updateStats();
-  document.addEventListener('click', e => {
-    if (!e.target.closest('#epop') && !e.target.closest('.k-emoji')) closeEmoji();
-    if (!e.target.closest('#tpop') && !e.target.closest('.k-tashkeel')) closeTashkeel();
-    if (!e.target.closest('#spop') && !e.target.closest('.k-spec')) closeSpec();
-    if (!e.target.closest('#npop') && !e.target.closest('.k-123')) closeNum();
-    if (!e.target.closest('#lang-menu') && !e.target.closest('#lang-btn')) closeLang();
-  });
-
-  // Franco transliteration: convert last word on Space/Enter
-  document.getElementById('arabic-text').addEventListener('keydown', function(e) {
-    if (!francoOn) return;
-    if (e.key !== ' ' && e.key !== 'Enter') return;
-    const ta = this;
-    const pos = ta.selectionStart;
-    const before = ta.value.slice(0, pos);
-    const after  = ta.value.slice(pos);
-    const lastBreak = Math.max(before.lastIndexOf(' '), before.lastIndexOf('\n'));
-    const lastWord  = before.slice(lastBreak + 1);
-    if (!lastWord) return;
-    const converted = arabiziToArabic(lastWord);
-    const newBefore = before.slice(0, lastBreak + 1) + converted;
-    e.preventDefault();
-    const sep = e.key === 'Enter' ? '\n' : ' ';
-    ta.value = newBefore + sep + after;
-    ta.selectionStart = ta.selectionEnd = newBefore.length + sep.length;
-    recordWord(converted);
-    updateStats(); updateSugs();
-  });
-  const saved = localStorage.getItem(DRAFT_KEY); if (saved) { document.getElementById('arabic-text').value = saved; updateStats(); updateSugs(); }
-}
-
-function buildFrancoChips() {
-  const container = document.getElementById('franco-chips');
-  if (!container) return;
-  FRANCO_CHIPS.forEach(({ l, a }) => {
-    const chip = document.createElement('button');
-    chip.className = 'franco-chip';
-    chip.innerHTML = `<span class="fc-latin">${l}</span><span class="fc-arrow">→</span><span class="fc-arab">${a}</span>`;
-    chip.title = 'Click to try';
-    chip.onclick = () => {
-      const ta = document.getElementById('arabic-text');
-      ta.focus({preventScroll:true});
-      const sep = ta.value && !ta.value.endsWith(' ') ? ' ' : '';
-      ta.value += sep + a + ' ';
-      ta.selectionStart = ta.selectionEnd = ta.value.length;
-      updateStats(); updateSugs();
-      toast(l + ' → ' + a + ' ✨');
-    };
-    container.appendChild(chip);
-  });
-}
-
 /* ── BUILD KEYBOARD ── */
 const DRAFT_KEY = (window.location.pathname.split('/').filter(Boolean)[0] || 'arabic') + '-draft';
 
-function buildKB() {
-  const wrap = document.getElementById('kbrows');
-  wrap.innerHTML = '';
-  document.getElementById('kbc').classList.toggle('franco-on', francoOn);
-
-  ROWS.forEach(row => {
-    const rowEl = document.createElement('div');
-    rowEl.className = 'kb-row';
-
-    row.forEach(k => {
-      const btn = document.createElement('button');
-      btn.className = 'key';
-
-      if (k === 'ENTER') {
-        btn.classList.add('k-enter'); btn.innerHTML = '<svg width="16" height="13" viewBox="0 0 16 13" fill="currentColor"><path d="M14 0v6H4.4l2.3-2.3-1.4-1.4L1 7l4.3 4.3 1.4-1.4L4.4 7.5H16V0h-2z"/></svg>';
-        btn.onclick = () => ins('\n');
-
-      } else if (k === 'BSP') {
-        btn.classList.add('k-bsp'); btn.innerHTML = '<svg width="19" height="14" viewBox="0 0 19 14" fill="currentColor"><path d="M7 0L0 7l7 7h12V0H7zm5.7 9.3l-1.4 1.4L9 8.4l-2.3 2.3-1.4-1.4L7.6 7 5.3 4.7l1.4-1.4L9 5.6l2.3-2.3 1.4 1.4L10.4 7l2.3 2.3z"/></svg>';
-        btn.onclick = bsp;
-
-      } else if (k === 'SLASH') {
-        btn.classList.add('k-slash'); btn.textContent = '/';
-        btn.onclick = () => ins('/');
-
-      } else if (k === 'SHIFT') {
-        btn.classList.add('k-shift');
-        btn.innerHTML = '⇧';
-        btn.onclick = e => { e.stopPropagation(); toggleShift(); };
-
-      } else if (k === 'SPEC') {
-        btn.classList.add('k-spec');
-        btn.innerHTML = '#<br>.-+';
-        btn.onclick = e => { e.stopPropagation(); toggleSpec(); };
-
-      } else if (k === 'SPACE') {
-        btn.classList.add('k-space');
-        btn.innerHTML = '<span style="font-family:Tajawal">مسافة</span>';
-        btn.onclick = () => ins(' ');
-
-      } else if (k === 'DOT') {
-        btn.classList.add('k-dot'); btn.textContent = '.';
-        btn.onclick = () => ins('.');
-
-      } else if (k === 'N123') {
-        btn.classList.add('k-123'); btn.textContent = '123';
-        btn.onclick = e => { e.stopPropagation(); toggleNum(); };
-
-      } else if (k === 'EMOJI') {
-        btn.classList.add('k-emoji'); btn.textContent = '😊';
-        btn.onclick = e => { e.stopPropagation(); toggleEmoji(); };
-
-      } else if (k === 'TASHKEEL') {
-        btn.classList.add('k-tashkeel');
-        btn.innerHTML = '✨ تشكيل<span class="ks">حركات</span>';
-        btn.onclick = e => { e.stopPropagation(); toggleTash(); };
-
-      } else if (k === 'FRANCO') {
-        btn.classList.add('k-franco');
-        if (francoOn) btn.classList.add('active');
-        btn.innerHTML = `Franco<span class="ks">${francoOn ? 'إيقاف' : 'تفعيل'}</span>`;
-        btn.onclick = toggleFranco;
-
-      } else {
-        /* Arabic letter */
-        const hint = FL[k] || '';
-        btn.innerHTML = `<span class="fl">${hint}</span>${k}`;
-        if (k === 'لا') btn.style.fontSize = '15px';
-        btn.onclick = () => ins(k);
-      }
-
-      rowEl.appendChild(btn);
-    });
-    wrap.appendChild(rowEl);
-  });
-}
-
-function buildSpec() {
-  const g = document.getElementById('sgrid');
-  g.innerHTML = '';
-  SPEC_CHARS.forEach(ch => {
-    const b = document.createElement('button');
-    b.className = 'spec-key'; b.textContent = ch;
-    b.onclick = () => ins(ch);
-    g.appendChild(b);
-  });
-}
-
-function buildNum() {
-  const western  = ['1','2','3','4','5','6','7','8','9','0'];
-  const arabic   = ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'];
-  const symbols  = ['+','-','×','÷','=','%','°','½','¼','¾'];
-  const fill = (id, chars, extraClass='') => {
-    const g = document.getElementById(id); if (!g) return;
-    g.innerHTML = '';
-    chars.forEach(ch => {
-      const b = document.createElement('button');
-      b.className = 'n-key' + (extraClass ? ' '+extraClass : '');
-      b.textContent = ch; b.onclick = () => ins(ch);
-      g.appendChild(b);
-    });
-  };
-  fill('ngrid-w', western);
-  fill('ngrid-a', arabic, 'ar');
-  fill('ngrid-s', symbols);
-}
-
 let eCurCat = '🕐';
 
-function buildEmoji() {
-  /* load recent from storage */
-  try {
-    const saved = JSON.parse(localStorage.getItem('arabi-recent') || '[]');
-    EMOJI_CATS_DATA['🕐'].emojis = saved;
-    if (!saved.length) eCurCat = '😀';
-  } catch(e) {}
-
-  /* build category tabs once */
-  const cats = document.getElementById('ecats');
-  if (!cats.hasChildNodes()) {
-    Object.keys(EMOJI_CATS_DATA).forEach(icon => {
-      const b = document.createElement('button');
-      b.className = 'e-cat-btn'; b.textContent = icon;
-      b.title = EMOJI_CATS_DATA[icon].label;
-      b.onclick = () => showEmojiCat(icon);
-      cats.appendChild(b);
-    });
-  }
-
-  showEmojiCat(eCurCat);
-}
-
-function showEmojiCat(cat) {
-  eCurCat = cat;
-  document.querySelectorAll('.e-cat-btn').forEach(b =>
-    b.classList.toggle('active', b.textContent === cat)
-  );
-  const data = EMOJI_CATS_DATA[cat];
-  const title = document.getElementById('ecattitle');
-  if (title) title.textContent = cat + ' ' + data.label;
-
-  const g = document.getElementById('egrid');
-  g.innerHTML = '';
-
-  const list = data.emojis.length ? data.emojis : [];
-  if (!list.length && cat === '🕐') {
-    const msg = document.createElement('p');
-    msg.style.cssText = 'grid-column:1/-1;text-align:center;color:var(--muted);font-size:12px;padding:16px 0';
-    msg.textContent = 'No recent emojis yet';
-    g.appendChild(msg);
-    return;
-  }
-
-  list.forEach(em => {
-    const b = document.createElement('button');
-    b.className = 'e-key'; b.textContent = em;
-    b.onclick = () => insertEmoji(em);
-    g.appendChild(b);
-  });
-}
-
-function insertEmoji(em) {
-  ins(em);
-  /* save to recent */
-  try {
-    let recent = JSON.parse(localStorage.getItem('arabi-recent') || '[]');
-    recent = [em, ...recent.filter(e => e !== em)].slice(0, 24);
-    localStorage.setItem('arabi-recent', JSON.stringify(recent));
-    EMOJI_CATS_DATA['🕐'].emojis = recent;
-    if (eCurCat === '🕐') showEmojiCat('🕐');
-  } catch(e) {}
-}
-
-function buildTash() {
-  const g = document.getElementById('tgrid');
-  g.innerHTML = '';
-  TASH.forEach(({c,l}) => {
-    const b = document.createElement('button');
-    b.className = 't-key';
-    b.innerHTML = `${c}<span class="tl">${l}</span>`;
-    b.onclick = () => ins(c);
-    g.appendChild(b);
-  });
-}
-
 /* ── FRANCO ── */
-function toggleFranco() {
-  francoOn = !francoOn;
-  buildKB();
-  const ta = document.getElementById('arabic-text');
-  ta.placeholder = francoOn ? FRANCO_ON_PLACEHOLDER : FRANCO_DEFAULT_PLACEHOLDER;
-}
-
-/* ── POPUPS ── */
-function toggleSpec()    { specOpen = !specOpen; document.getElementById('spop').classList.toggle('show', specOpen); if (specOpen) { closeEmoji(); closeTashkeel(); closeNum(); } }
-function toggleShift()   { shiftOn = !shiftOn; document.querySelectorAll('.k-shift').forEach(b => b.classList.toggle('active', shiftOn)); }
-function closeSpec()     { specOpen = false; document.getElementById('spop').classList.remove('show'); }
-function toggleEmoji()   { emojiOpen = !emojiOpen; document.getElementById('epop').classList.toggle('show', emojiOpen); if (emojiOpen) { closeTashkeel(); closeSpec(); closeNum(); } }
-function closeEmoji()    { emojiOpen = false; document.getElementById('epop').classList.remove('show'); }
-function toggleTash()    { tashOpen = !tashOpen; document.getElementById('tpop').classList.toggle('show', tashOpen); if (tashOpen) { closeEmoji(); closeSpec(); closeNum(); } }
-function closeTashkeel() { tashOpen = false; document.getElementById('tpop').classList.remove('show'); }
-
+/* ── POPUPS ── */function toggleShift()   { shiftOn = !shiftOn; document.querySelectorAll('.k-shift').forEach(b => b.classList.toggle('active', shiftOn)); }function toggleEmoji()   { emojiOpen = !emojiOpen; document.getElementById('epop').classList.toggle('show', emojiOpen); if (emojiOpen) { closeTashkeel(); closeSpec(); closeNum(); } }function toggleTash()    { tashOpen = !tashOpen; document.getElementById('tpop').classList.toggle('show', tashOpen); if (tashOpen) { closeEmoji(); closeSpec(); closeNum(); } }
 /* ── AI TASHKEEL ── */
 async function aiTashkeel() {
   const ta = document.getElementById('arabic-text');
@@ -4095,115 +3590,13 @@ async function aiTashkeel() {
     btn.querySelector('.ai-tash-label').textContent = t['btn.aitash'] || 'AI تشكيل تلقائي';
   }
 }
-
-function toggleNum()     { numOpen = !numOpen; document.getElementById('npop').classList.toggle('show', numOpen); if (numOpen) { closeEmoji(); closeTashkeel(); closeSpec(); } }
-function closeNum()      { numOpen = false; document.getElementById('npop').classList.remove('show'); }
-
 /* ── TEXT OPS ── */
-function ins(ch) {
-  const ta = document.getElementById('arabic-text');
-  const s = ta.selectionStart, e = ta.selectionEnd;
-  ta.value = ta.value.slice(0,s) + ch + ta.value.slice(e);
-  ta.selectionStart = ta.selectionEnd = s + ch.length;
-  ta.focus({preventScroll:true}); updateStats(); updateSugs();
-}
-
-function bsp() {
-  const ta = document.getElementById('arabic-text');
-  const s = ta.selectionStart, e = ta.selectionEnd;
-  if (s !== e) { ta.value = ta.value.slice(0,s) + ta.value.slice(e); ta.selectionStart = ta.selectionEnd = s; }
-  else if (s > 0) { ta.value = ta.value.slice(0,s-1) + ta.value.slice(s); ta.selectionStart = ta.selectionEnd = s-1; }
-  ta.focus({preventScroll:true}); updateStats(); updateSugs();
-}
-
-function onInput() { updateStats(); updateSugs(); localStorage.setItem(DRAFT_KEY, document.getElementById('arabic-text').value); }
-
-function updateStats() {
-  const v = document.getElementById('arabic-text').value;
-  document.getElementById('cc').textContent = v.length;
-  document.getElementById('wc').textContent = v.trim() ? v.trim().split(/\s+/).length : 0;
-}
-
 /* ── SUGGESTIONS — smartphone style ── */
 // sugs[0]=left, sugs[1]=middle(current word), sugs[2]=right
 let lastRecorded = '';
 let currentPrefix = '';
 
-function updateSugs() {
-  const ta = document.getElementById('arabic-text');
-  const v  = ta.value;
-  const pos = ta.selectionStart;
-  const before = v.slice(0, pos);
-
-  // Record completed word when space was just typed
-  if (before.endsWith(' ') || before.endsWith('\n')) {
-    const words = before.trimEnd().split(/\s+/);
-    const prev  = words[words.length - 1] || '';
-    if (prev && prev !== lastRecorded) { recordWord(prev); lastRecorded = prev; }
-  }
-
-  // Current partial word being typed
-  const parts = before.split(/[\s\n]+/);
-  currentPrefix = parts[parts.length - 1] || '';
-
-  const el0 = document.getElementById('s0');
-  const el1 = document.getElementById('s1');
-  const el2 = document.getElementById('s2');
-  if (!el0||!el1||!el2) return;
-
-  // Reset styles
-  [el0,el1,el2].forEach(el => { el.classList.remove('sug-current','sug-empty'); });
-
-  if (currentPrefix.length >= 1) {
-    // Typing mode: left=alt1, middle=what you typed, right=alt2
-    const alts = getSuggestions(currentPrefix);
-    el0.textContent = alts[0] || '';
-    el1.textContent = currentPrefix;
-    el2.textContent = alts[1] || alts[0] || '';
-    el1.classList.add('sug-current');
-    if (!el0.textContent) el0.classList.add('sug-empty');
-    if (!el2.textContent) el2.classList.add('sug-empty');
-    sugs = [el0.textContent, currentPrefix, el2.textContent];
-  } else {
-    // Idle mode: next-word prediction based on last word typed
-    let nextPreds = lastPickedWord ? (NEXT_WORD[lastPickedWord] || []) : [];
-    if (nextPreds.length < 3) {
-      const top = Object.entries(userFreq).sort((a,b)=>b[1]-a[1]).map(([w])=>w);
-      while (nextPreds.length < 3) nextPreds.push(top.shift() || ['السلام','مرحبا','شكرا'][nextPreds.length]);
-    }
-    el0.textContent = nextPreds[0] || ''; el1.textContent = nextPreds[1] || ''; el2.textContent = nextPreds[2] || '';
-    sugs = [el0.textContent, el1.textContent, el2.textContent];
-  }
-}
-
-function pickSug(i) {
-  const sug = sugs[i]; if (!sug) return;
-  const ta  = document.getElementById('arabic-text');
-  const pos = ta.selectionStart;
-  const after = ta.value.slice(pos);
-
-  if (currentPrefix.length >= 1) {
-    const start = pos - currentPrefix.length;
-    ta.value = ta.value.slice(0, start) + sug + ' ' + after;
-    ta.selectionStart = ta.selectionEnd = start + sug.length + 1;
-  } else {
-    ins((ta.value && !ta.value.endsWith(' ') ? ' ' : '') + sug + ' ');
-  }
-  recordWord(sug);
-  lastRecorded = sug;
-  lastPickedWord = sug;
-  currentPrefix = '';
-  ta.focus({preventScroll:true});
-  updateStats(); updateSugs();
-}
-
-/* ── ACTIONS ── */
-function cpText() {
-  const v = document.getElementById('arabic-text').value;
-  if (!v.trim()) { toast('No text to copy'); return; }
-  navigator.clipboard.writeText(v).then(() => toast('✅ Copied!'));
-}
-function clrText() {
+/* ── ACTIONS ── */function clrText() {
   const ta = document.getElementById('arabic-text');
   if (!ta.value) return;
   const backup = ta.value;
@@ -4228,34 +3621,7 @@ function clrText() {
   } else {
     toast('Cleared');
   }
-}
-function dlText() {
-  const v = document.getElementById('arabic-text').value;
-  if (!v.trim()) { toast('No text to download'); return; }
-  const a = Object.assign(document.createElement('a'), {
-    href: URL.createObjectURL(new Blob([v], {type:'text/plain;charset=utf-8'})),
-    download: 'arabic-text.txt'
-  });
-  a.click(); toast('✅ Downloading...');
-}
-
-function shareTikTok()    { cpAndToast('✅ Copied — paste in TikTok'); }
-function shareSnapchat()  { cpAndToast('✅ Copied — paste in Snapchat'); }
-function searchChatGPT()  { openIfText('https://chat.openai.com/?q='); }
-function shareWhatsApp()  { openIfText('https://wa.me/?text='); }
-function searchYouTube()  { openIfText('https://www.youtube.com/results?search_query='); }
-function searchGoogle()   { openIfText('https://www.google.com/search?q='); }
-function shareInstagram()  { navigator.clipboard.writeText(document.getElementById('arabic-text').value).then(() => { toast('✅ Copied — paste in Instagram'); window.open('https://www.instagram.com/', '_blank'); }); }
-function shareFacebook()   { navigator.clipboard.writeText(document.getElementById('arabic-text').value).then(() => { toast('✅ Copied — paste in Facebook'); window.open('https://www.facebook.com/', '_blank'); }); }
-function shareTelegram()   { openIfText('https://t.me/share/url?text='); }
-function shareTwitterX()   { openIfText('https://x.com/intent/tweet?text='); }
-function translateText() {
-  const txt = document.getElementById('arabic-text').value.trim();
-  if (!txt) { toast('Type something first — then translate 🌐'); return; }
-  const url = 'https://translate.google.com/?sl=ar&tl=en&text=' + encodeURIComponent(txt);
-  window.open(url, '_blank');
-}
-(function(){
+}function searchChatGPT()  { openIfText('https://chat.openai.com/?q='); }function searchYouTube()  { openIfText('https://www.youtube.com/results?search_query='); }function shareFacebook()   { navigator.clipboard.writeText(document.getElementById('arabic-text').value).then(() => { toast('✅ Copied — paste in Facebook'); window.open('https://www.facebook.com/', '_blank'); }); }function shareTwitterX()   { openIfText('https://x.com/intent/tweet?text='); }(function(){
   var bar=document.querySelector('.share-bar');
   if(!bar)return;
   var outer=bar.parentNode;
@@ -4273,65 +3639,15 @@ function translateText() {
   bar.addEventListener('scroll',upd,{passive:true});
   requestAnimationFrame(function(){requestAnimationFrame(upd);});
 })();
-
-function cpAndToast(msg) {
-  const v = document.getElementById('arabic-text').value;
-  if (!v.trim()) { toast('Write some text first'); return; }
-  navigator.clipboard.writeText(v).then(() => toast(msg));
-}
 function openIfText(base) {
   const v = document.getElementById('arabic-text').value;
   if (!v.trim()) { toast('Write some text first'); return; }
   window.open(base + encodeURIComponent(v), '_blank');
 }
 
-function chFont(d) {
-  fontSize = Math.min(42, Math.max(14, fontSize+d));
-  document.getElementById('arabic-text').style.fontSize = fontSize+'px';
-  document.getElementById('fnum').textContent = fontSize;
-}
-
 /* ── QWERTY TOGGLE ── */
-function toggleQwerty() {
-  qwertyOn = !qwertyOn;
-  const sw   = document.getElementById('sw-track');
-  sw.classList.toggle('on', qwertyOn);
-  if (qwertyOn) {
-    document.getElementById('arabic-text').focus({preventScroll:true});
-    toast('✅ QWERTY → Arabic activated');
-  } else {
-    toast('⌨️ Physical keyboard off');
-  }
-}
-
 /* ── PHYSICAL KB ── */
-function setupPhys() {
-  document.addEventListener('keydown', e => {
-    if (!qwertyOn) return;
-    const ta = document.getElementById('arabic-text');
-    if (document.activeElement !== ta || e.ctrlKey || e.metaKey || e.altKey) return;
-    const skip = ['Backspace','Delete','Tab','Enter','Arrow','Home','End'];
-    if (skip.some(s => e.key.startsWith(s))) return;
-    const ch = PHYS[e.key?.toLowerCase()];
-    if (ch) { e.preventDefault(); ins(ch); }
-  });
-}
-
-/* ── VOICE ── */
-function toggleVoice() {
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if (!SR) { toast('Voice not supported — use Chrome'); return; }
-  if (isRec) { stopVoice(); return; }
-  const isSafari = /safari/i.test(navigator.userAgent) && !/chrome|android/i.test(navigator.userAgent);
-  if (isSafari && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({audio:true})
-      .then(function(){ startVoice(SR); })
-      .catch(function(){ toast('🎤 Allow microphone in Safari Settings → kactyl.com'); });
-  } else {
-    startVoice(SR);
-  }
-}
-function startVoice(SR) {
+/* ── VOICE ── */function startVoice(SR) {
   isRec=true; recog = new SR(); recog.lang='ar-SA'; recog.continuous=true; recog.interimResults=false;
   recog.onstart  = () => { document.getElementById('micbtn').classList.add('rec'); toast('🎤 Listening... speak Arabic'); };
   recog.onresult = e => { for(let i=e.resultIndex;i<e.results.length;i++) if(e.results[i].isFinal) ins(e.results[i][0].transcript); };
@@ -4502,119 +3818,10 @@ function setLang(code, label) {
 }
 
 /* ── TRANSLITERATION ENGINE ── */
-const ARABIZI = [
-  // Digraphs & number combos — must come BEFORE single chars
-  ["3'", 'غ'], ["6'", 'ظ'], ["7'", 'خ'], ["9'", 'ض'],
-  ['sh', 'ش'], ['SS', 'ص'], ['TT', 'ط'], ['DH', 'ذ'],
-  ['th', 'ث'], ['kh', 'خ'], ['gh', 'غ'], ['dh', 'ذ'],
-  ['ch', 'ش'], ['aa', 'ا'],
-  // Numbers
-  ['2', 'أ'], ['3', 'ع'], ['5', 'خ'],
-  ['6', 'ط'], ['7', 'ح'], ['8', 'غ'], ['9', 'ق'],
-  // Letters
-  ['a', 'ا'], ['b', 'ب'], ['t', 'ت'], ['j', 'ج'],
-  ['d', 'د'], ['r', 'ر'], ['z', 'ز'], ['s', 'س'],
-  ['f', 'ف'], ['q', 'ق'], ['k', 'ك'], ['l', 'ل'],
-  ['m', 'م'], ['n', 'ن'], ['h', 'ه'], ['w', 'و'],
-  ['y', 'ي'], ['e', 'ي'], ['i', 'ي'], ['o', 'و'],
-  ['u', 'و'], ['p', 'ب'], ['c', 'ك'], ['g', 'ج'],
-  ['v', 'ف'], ['x', 'كس'],
-];
-
-
-function arabiziToArabic(text) {
-  let result = '';
-  let i = 0;
-  while (i < text.length) {
-    let matched = false;
-    const remaining = text.slice(i).toLowerCase();
-    for (const [from, to] of ARABIZI) {
-      if (remaining.startsWith(from.toLowerCase())) {
-        result += to;
-        i += from.length;
-        matched = true;
-        break;
-      }
-    }
-    if (!matched) { result += text[i]; i++; }
-  }
-  return result;
-}
 
 
 /* ── EMOJI HUB DATA ── */
-const EMOJI_CATS = {
-  popular: ['❤️','😂','😍','🙏','👍','💪','🎉','✨','🔥','💯','😭','😘','🥰','💕','👏','🌟','😅','🤔','💙','🎊','😎','🥳','🤩','🫶','🤗','😊','🤣','👀','💎','🌹','😤','🥺','💀','🫠','😶‍🌫️','🫡','🤌','💅','👌','✌️'],
-  islamic:  ['🕌','🕋','☪️','🤲','📿','🌙','⭐','🌟','🕊️','📖','🌹','🌿','🌾','💚','🤍','🧎','🧎‍♂️','🙏','🌅','✨','🕯️','🌄','🫶','🌙','🌺','🌸','🤲','🫖','🌊'],
-  culture:  ['🐪','🏜️','🌴','🫖','☕','🥘','🫕','🏺','🌊','🏔️','☀️','🌺','🌸','🦁','🦅','🐎','🎶','🎵','🥁','🪘','🪔','🌅','🏛️','⛵','🗺️','🌍','🎪','🫙','🌻','🐠'],
-  flags:    ['🇩🇿','🇲🇦','🇹🇳','🇱🇾','🇸🇦','🇦🇪','🇶🇦','🇰🇼','🇧🇭','🇯🇴','🇪🇬','🇮🇶','🇸🇾','🇾🇪','🇴🇲','🇵🇸','🇱🇧','🇩🇯','🇸🇩','🇸🇴','🇲🇷','🇫🇷','🇧🇪','🇨🇦','🇩🇪','🇸🇪'],
-  social:   ['❤️‍🔥','🫀','💔','🥺','😤','😈','🙈','🙉','🙊','💀','🤡','🥹','😑','🫠','🫡','🤌','👌','✌️','🤙','☝️','🤏','🫳','🫴','🤝','💅','🫰','🙃','😏','🧢','🔑','💸','🎯']
-};
-
-const EMOJI_COMBOS = [
-  { text:'عيد مبارك 🌙✨🎉🕌',              label:'Eid Mubarak' },
-  { text:'رمضان كريم 🌙⭐🕌🤲',             label:'Ramadan Kareem' },
-  { text:'الحمد لله ❤️🤲✨',                label:'Alhamdulillah' },
-  { text:'ما شاء الله 🌹❤️😍',              label:'MashaAllah' },
-  { text:'صباح الخير ☀️😊🌸',               label:'Good Morning' },
-  { text:'مساء الخير 🌙✨💫',               label:'Good Evening' },
-  { text:'بالتوفيق 💪✨🎯',                 label:'Good Luck' },
-  { text:'أحبك ❤️😘💕',                    label:'I Love You' },
-  { text:'شكراً جزيلاً 🙏❤️😊',             label:'Thank You' },
-  { text:'مرحبا وسهلا 😊👋✨',              label:'Welcome' },
-  { text:'السلام عليكم ورحمة الله 🤲☪️',    label:'As-salamu Alaykum' },
-  { text:'يلا نروح 😎🔥💪',                label:"Yalla (Let's go)" },
-  { text:'كيف حالك؟ 😄👀',                  label:'How are you? (Saudi Arabia)' },
-  { text:'بخير الحمد لله 😌🤲',            label:"I'm good (Maghrebi)" },
-  { text:'بالصح والله 💯🔥',               label:'Exactly! (Franco)' },
-  { text:'اخي انت 🤝❤️',                     label:'Bro (North Africa)' },
-  { text:'تصبح علي خير 😴☀️',                  label:'Good sleep' },
-  { text:'ربي يحفظك 🤲💚',                 label:'God protect you' },
-  { text:'إن شاء الله 🙏✨',               label:'Inshallah' },
-  { text:'يعطيك الصحة 💪❤️',              label:'Bless you (Maghrebi)' },
-];
-
 /* ── EMOJI HUB LOGIC ── */
-function initEmojiHub() {
-  Object.entries(EMOJI_CATS).forEach(([key, emojis]) => {
-    const panel = document.getElementById('ep-' + key);
-    if (!panel) return;
-    const grid = document.createElement('div');
-    grid.className = 'ehub-grid';
-    emojis.forEach(em => {
-      const btn = document.createElement('button');
-      btn.className = 'ehub-emoji';
-      btn.textContent = em;
-      btn.title = em + ' — click to insert';
-      btn.onclick = () => { ins(em); toast(em + ' inserted'); };
-      grid.appendChild(btn);
-    });
-    panel.appendChild(grid);
-  });
-
-  const cg = document.getElementById('combo-grid');
-  if (!cg) return;
-  EMOJI_COMBOS.forEach(c => {
-    const card = document.createElement('div');
-    card.className = 'combo-card';
-    card.innerHTML = `
-      <div class="combo-ar">${c.text}</div>
-      <div class="combo-meta">
-        <span class="combo-label-txt">${c.label}</span>
-        <span class="combo-ins">▶ Insert</span>
-      </div>`;
-    card.onclick = () => { ins(c.text + ' '); toast('Combo inserted! ✅'); };
-    cg.appendChild(card);
-  });
-}
-
-function switchTab(btn, key) {
-  document.querySelectorAll('.ehub-panel').forEach(p => p.classList.remove('show'));
-  document.querySelectorAll('.ehub-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('ep-' + key).classList.add('show');
-  btn.classList.add('active');
-}
-
 /* ── THEME ── */
 function toggleTheme() {
   isDark = !isDark; applyTheme();
@@ -4706,15 +3913,6 @@ loadTheme();
   spawnParticles('cv-editor', 18);
   spawnParticles('cv-kb', 28);
 })();
-
-function toggleLangDrop() {
-  const btn = document.getElementById('langSelBtn');
-  const drop = document.getElementById('langDropdown');
-  const edCard = document.querySelector('.editor-card');
-  btn.classList.toggle('open');
-  const opening = drop.classList.toggle('show');
-  if (edCard) edCard.style.zIndex = opening ? '10' : '';
-}
 function closeLangDrop() {
   /* langSelBtn/langDropdown belong to the (removed) keyboard editor — absent on the
      homepage. Guard so this document-click handler doesn't throw on every click. */
@@ -4886,13 +4084,36 @@ async function submitFeedback(e) {
     return flagEmoji(k.flag);
   }
 
+  /* Specimen glyph per language — the script's most distinctive letter (for Latin/Cyrillic,
+     the special character that is the REASON that keyboard exists). Replaces flag emoji. */
+  var SPECIMEN = {
+    'Arabic':'ع','Hindi':'अ','Persian':'پ','Urdu':'ن','Kurdish':'ک','Pashto':'ښ','Sindhi':'ڳ',
+    'Bengali':'অ','Tamil':'அ','Telugu':'అ','Kannada':'ಅ','Malayalam':'അ','Gujarati':'અ','Punjabi':'ਪ',
+    'Marathi':'म','Nepali':'न','Amharic':'አ','Tigrinya':'ት','Somali':'S','Hausa':'Ɗ','Igbo':'Ị',
+    'Yoruba':'Ẹ','Chinese':'中','Japanese':'あ','Korean':'한','Thai':'ก','Burmese':'က','Mongolian':'Ө',
+    'Vietnamese':'Ơ','Filipino':'Ñ','Uyghur':'ئ','Russian':'Я','Belarusian':'Ў','Bulgarian':'Б',
+    'Macedonian':'Џ','Serbian':'Ђ','Ukrainian':'Ї','Greek':'Ω','Turkish':'Ş','Amazigh':'ⵣ'
+  };
+  var ARROW = '<svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h6M6 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  function flagImg(k) {
+    return SVG_FLAGS[k.name] ? SVG_FLAGS[k.name] : 'https://flagcdn.com/w320/' + k.flag + '.png';
+  }
   function render(list) {
     gridEl.innerHTML = list.map(function(k) {
-      return '<a href="' + k.path + '" class="hp-kb-card">' +
-        '<div class="hp-kb-flag">' + flagHtml(k) + '</div>' +
-        '<div class="hp-kb-native">' + k.native + '</div>' +
-        '<div class="hp-kb-en">' + k.name + '</div>' +
-        '</a>';
+      return '<div class="hp-kb-wrap floats"><a href="' + k.path + '" class="hp-kb-card">' +
+        '<div class="hp-kb-media">' +
+          '<div class="hp-kb-flagbg" style="background-image:url(\'' + flagImg(k) + '\')"></div>' +
+          '<span class="hp-kb-glyphbadge"><span>' + (SPECIMEN[k.name] || k.native.charAt(0)) + '</span></span>' +
+        '</div>' +
+        '<div class="hp-kb-body">' +
+          '<div class="hp-kb-names">' +
+            '<div class="hp-kb-native">' + k.native + '</div>' +
+            '<div class="hp-kb-en">' + k.name + '</div>' +
+          '</div>' +
+          '<div class="hp-kb-open">Open' + ARROW + '</div>' +
+        '</div>' +
+        '</a></div>';
     }).join('');
     if (countEl) countEl.textContent = list.length + ' live';
   }
