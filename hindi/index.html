@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hindi Keyboard Online — Free &amp; Instant | हिंदी कीबोर्ड</title>
+  <title>Hindi Keyboard Online — Hinglish Typing Free | हिंदी कीबोर्ड</title>
   <meta name="description" content="Free Hindi keyboard online — type Hindi for WhatsApp, TikTok & Instagram. Hinglish mode, matras & voice typing. No download. Works on iPhone & Android.">
   <meta name="keywords" content="hindi keyboard online, hindi typing online, hinglish keyboard, type hindi online, hindi keyboard for whatsapp, hindi keyboard free, hindi typing without installation, हिंदी टाइपिंग">
 
@@ -35,9 +35,9 @@
   <meta property="og:title"       content="Hindi Keyboard Online — Free &amp; Instant | हिंदी कीबोर्ड">
   <meta property="og:description" content="Type Hindi from your phone or PC — no app, no download. Hindi keyboard for WhatsApp, TikTok, Instagram. Hinglish mode converts English letters to Hindi instantly.">
   <meta property="og:image" content="https://kactyl.com/images/og-images/hindi.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-  <meta property="og:locale"      content="hi_IN">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+          <meta property="og:locale"      content="hi_IN">
   <meta property="og:site_name"   content="Kactyl">
 
   <!-- Twitter Card -->
@@ -69,13 +69,6 @@
       "@type": "Organization",
       "name": "Kactyl",
       "url": "https://kactyl.com"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "3124",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   }
   </script>
@@ -133,7 +126,15 @@
   <style>
 /* ── RESET ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { overflow-x: clip; max-width:100%; }
+html { overflow-x: clip; max-width:100%; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+/* iOS Safari inflates sub-11px text unless text-size-adjust is pinned — the mode-key
+   labels (Tashkeel/Matra/Roman) ballooned and spilled outside their keys on iPhone.
+   overflow:hidden below is the belt-and-braces so no label can ever spill again. */
+.k-tashkeel, .k-franco { overflow:hidden; }
+/* Roman/Franco mode needs a physical keyboard (type Latin → Space → script). On mobile
+   the native keyboard is hidden (inputmode=none) so roman input is impossible — hide the
+   Roman key + its hint bar there; the on-screen script keyboard is the mobile input. */
+@media (max-width:768px){ .franco-hint{ display:none !important; } }
 button { cursor:pointer; font-family:inherit; border:none; background:none; }
 
 /* ── TOKENS ── */
@@ -850,13 +851,13 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* Franco dual label */
 .fl {
-  font-size:17px; font-family:'Inter',sans-serif; font-weight:700;
+  font-size:15px; font-family:'Inter',sans-serif; font-weight:700;
   color:var(--indigo); line-height:1;
   opacity:0; height:0; overflow:hidden;
   transition: opacity .2s;
 }
 .franco-on .fl { opacity:1; height:auto; }
-.franco-on .key { height:60px; font-size:14px; }
+.franco-on .key { height:60px; font-size:22px; }
 @media (hover:hover) and (pointer:fine) { .franco-on .key:hover .fl { color: var(--fl-hover); } }
 :root {
   --fl-hover: #4d008b;
@@ -899,23 +900,23 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 @media (hover:hover) and (pointer:fine) { .k-emoji:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
 
 .k-tashkeel {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#7C3AED,#A855F7) !important;
   border:none !important; box-shadow:0 3px 0 #5B21B6; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-tashkeel:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
-.k-tashkeel .ks { font-size:9px; opacity:.5; font-weight:400; font-family:'Tajawal',sans-serif; }
+.k-tashkeel .ks { font-size:7px; opacity:.5; font-weight:400; font-family:'Tajawal',sans-serif; }
 
 .k-franco {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#3B82F6,#6366F1) !important;
   border:none !important; box-shadow:0 3px 0 #1D4ED8; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-franco:hover  { filter:brightness(1.1); box-shadow:0 3px 0 #1D4ED8; transform:translateY(-1px); } }
 .k-franco.active { background:linear-gradient(135deg,#059669,#10B981) !important; box-shadow:0 3px 0 #047857; }
-.k-franco .ks    { font-size:9px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
+.k-franco .ks    { font-size:7px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
 
 /* Special chars key */
 .k-spec { min-width:46px; font-size:13px; font-weight:700; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.2; position:relative; }
@@ -1565,8 +1566,8 @@ footer {
 
   /* Special key flex ratios */
   .k-space   { flex:3;   min-width:0 !important; }
-  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:9px; }
-  .k-franco  { flex:1.5; min-width:0 !important; font-size:9px; }
+  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:8px; }
+  .k-franco  { flex:1.5; min-width:0 !important; font-size:8px; }
   .k-emoji   { flex:1;   min-width:0 !important; font-size:18px; }
   .k-123     { flex:1;   min-width:0 !important; font-size:10px; }
   .k-enter   { flex:1.5; min-width:0 !important; font-size:13px; }
@@ -2051,13 +2052,13 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
                                                             <nav>
-    <a href="/home.html" class="nav-link">Home</a>
-    <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
       <button class="tools-btn">Tools &#9662;</button>
@@ -2450,7 +2451,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="combo-section-hd">
       <div class="combo-hd-inner">
         <div class="combo-hd-text">
-          <p class="combo-section-sup" data-i18n="combo.title">Ready-Made <span>Combos</span></p>
+          <p class="combo-section-sup" data-i18n="combo.title">Ready-Made <span>Hindi Combos</span></p>
           <h2 class="combo-section-sub">One click to insert — or copy straight to clipboard</h2>
         </div>
         <img src="../images/Mascot-1.svg" alt="Emoji mascot" class="combo-mascot">
@@ -2603,16 +2604,15 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="seo-dark-label">Free Hindi Keyboard</div>
     <h2>Free Hindi Keyboard Online.<br>Type from any device — no download, no install.</h2>
     <div class="seo-dark-stats">
-      <span><strong>600M+</strong> speakers</span>
-      <span class="seo-dark-dot">·</span>
       <span><strong>100%</strong> free</span>
       <span class="seo-dark-dot">·</span>
-      <span><strong>0</strong> downloads needed</span>
+      <span><strong>609 million</strong> speakers</span>
       <span class="seo-dark-dot">·</span>
       <span><strong>All</strong> devices</span>
     </div>
-    <p>Hindi is the 3rd most spoken language worldwide, written in Devanagari script. This <strong>free Hindi keyboard online</strong> works instantly in any browser — no app download, no installation, no changing your phone's language settings.</p>
-    <p>Type Hindi on <strong>iPhone, Android, Windows or Mac</strong>. <strong>Hinglish mode</strong> converts romanized Hindi (like <em>namaste</em>) to Devanagari automatically. Copy directly to <strong>WhatsApp</strong> messages, <strong>TikTok</strong> captions, <strong>Instagram</strong> bios, and more.</p>
+    <p>Devanagari script achieved standardization <strong>by 1000 CE</strong> for official use in royal grants and administrative documents across Karnataka. In <strong>1837, the East India Company adopted local vernaculars through Act XXIX</strong>, choosing Devanagari for Hindustani in Hindu-majority regions. On <strong>September 14, 1949</strong>, India's Constituent Assembly officially adopted Hindi as the language of the Union, and <strong>January 26, 1950, India's Constitution (Article 343) formally designated Hindi in Devanagari script as the official language of India</strong>. A <strong>15-year transition period allowed English during this time</strong>. Standardization continued through the 1950s–1960s: <strong>1950 Lucknow conference, 1953 letter recommendations, 1962 Ministry of Education adoption, 1966 finalization of Government of India Devanagari standards, and 1967 publication of 'Hindi Vartani ka Manakikaran' (Hindi Orthography Standardization)</strong>. This <strong>Three-Language Formula (1968) established Hindi as a required link language in non-Hindi states</strong>, requiring students to study mother tongue, Hindi, and English.</p>
+    <p>Devanagari's <strong>inherent vowel (अ = 'a') is built into every consonant</strong> — क = 'ka' (not just 'k'), requiring fundamentally different typing logic from Latin keyboards. The <strong>matra system (vowel marks) attaches above, below, or sideways</strong> and critically <strong>reorders relative to consonants</strong> — in Unicode, के (ke) is typed <strong>क (ka) + े (e-mark), but renders with the e-mark appearing LEFT of the consonant in RTL visual order</strong>. The <strong>virama/halant (्) suppresses the inherent vowel</strong> and is essential for consonant clusters. <strong>Conjuncts/juktakkhor (~1,000 possible ligatures)</strong> fuse consonants into single shapes — क्ष (k + halant + ṣ) becomes one character. The <strong>shirorekha (horizontal line) across the top</strong> is distinctive to Devanagari — matras must render correctly relative to it, requiring proper Unicode support.</p>
+    <p>Hindi speakers connect via <strong>WhatsApp (532–536 million users, largest single market globally), Facebook (403+ million in India), Instagram (481 million+), and YouTube (50%+ Hindi content in 2023)</strong>. However, <strong>75% of Indians receive WhatsApp messages in Hinglish (Latin-based Hindi)</strong> rather than Devanagari, and <strong>58% of respondents prefer reading Hindi in Latin script over Devanagari</strong>. The <strong>Three-Language Formula has made Hindi the lingua franca</strong> across non-Hindi states. <strong>InScript layout</strong> (government-standardized since the 1960s–1970s) is built into Windows (2000+), Linux, macOS, iOS 5+, and Android, providing comprehensive Devanagari input. Diaspora communities in the US, UK, Middle East, Canada use these same tools for Devanagari access.</p>
     <div class="seo-dark-steps">
       <span class="seo-dark-step">1. Open kactyl.com/hindi/</span>
       <span class="seo-dark-arr">→</span>
@@ -2634,6 +2634,70 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         </div>
       </a>
     </div>
+<!-- SIGNATURE MODULE: Inside the Devanagari alphabet (Hindi pilot) -->
+<section class="sig-sec">
+  <style>
+    .sig-sec{padding:64px 0;background:linear-gradient(180deg,rgba(255,153,0,.045),transparent 30%)}
+    .sig-sec .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .sig-hd{text-align:center;margin-bottom:36px}
+    .sig-hd h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text,#1E293B)}
+    .sig-hd h2 span{background:linear-gradient(90deg,#ff9900,#ffb833);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sig-hd p{color:var(--muted,#64748B);margin-top:10px;font-size:16px;max-width:640px;margin-left:auto;margin-right:auto}
+    .sig-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0 34px}
+    .sig-stats span{background:var(--surface,#fff);border:1px solid rgba(255,153,0,.15);border-radius:999px;padding:8px 18px;font-size:14px;font-weight:700;color:#ff9900;box-shadow:0 2px 10px rgba(30,41,59,.05)}
+    .sig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .sig-card{background:var(--surface,#fff);border-radius:20px;padding:24px;position:relative}.sig-card::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.65;z-index:-1;pointer-events:none}
+    .sig-card h3{font-size:17px;font-weight:800;color:var(--text,#1E293B);margin-bottom:4px}
+    .sig-card .sig-tag{font-size:12.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#ff9900;display:block;margin-bottom:10px}
+    .sig-letters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+    .sig-letters b{font-size:26px;line-height:1;background:rgba(255,153,0,.07);border-radius:12px;height:56px;min-width:56px;padding:0 8px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;font-weight:400}
+    .sig-card p{font-size:14.5px;color:var(--muted,#64748B);line-height:1.65}
+    .sig-card p b{color:var(--text,#1E293B);font-weight:700}
+    .sig-ex{margin-top:10px;font-size:14px;color:var(--text,#1E293B);background:rgba(255,153,0,.05);border-radius:10px;padding:8px 12px;display:inline-block}
+    .sig-hero-card{background:linear-gradient(135deg,#fff8f0 0%,#fff5e8 55%,#fff2e0 100%);border:1px solid rgba(255,153,0,.16)}.sig-hero-card .sig-letters b{background:rgba(255,153,0,.10)}.sig-hero-card .sig-ex{background:rgba(255,153,0,.08)}
+    .sig-letters b{font-family:'Noto Sans Devanagari', sans-serif;font-size:30px;line-height:1.8}.sig-ex{font-family:'Noto Sans Devanagari', sans-serif}
+  </style>
+  <div class="wrap">
+    <div class="sig-hd">
+      <h2>Inside the <span>Devanagari Alphabet</span></h2>
+      <p>Devanagari's unique challenge is the inherent vowel built into every consonant, plus matra marks that reorder during display — making Devanagari typing fundamentally different from Latin keyboards.</p>
+    </div>
+    <div class="sig-stats">
+      <span>47+ characters</span><span>Inherent vowel अ</span><span>1000 conjuncts</span><span>Official since 1950</span>
+    </div>
+    <div class="sig-grid">
+      <div class="sig-card sig-hero-card">
+        <span class="sig-tag">The inherent vowel</span>
+        <h3>Every consonant = consonant + 'a'</h3>
+        <div class="sig-letters"><b>क</b><b>ख</b><b>ग</b><b>घ</b></div>
+        <p>Devanagari's defining feature: क = 'ka' (not just 'k'), ख = 'kha', ग = 'ga'. Every consonant comes with an inherent <b>अ (a)</b> sound. To write a bare consonant or a different vowel, you add vowel marks or virama. This is fundamentally different from Latin.</p>
+        <div class="sig-ex">क alone = 'ka'; क् (with virama) = 'k'; का (with long vowel mark) = 'kaa'</div>
+      </div>
+      <div class="sig-card">
+        <span class="sig-tag">Matra reordering</span>
+        <h3>Vowel marks shift position</h3>
+        <div class="sig-letters"><b>कु</b><b>कू</b><b>का</b><b>की</b></div>
+        <p>Matra marks (ु, ू, ा, ी, etc.) attach to consonants but often display in a different order than typed. In Unicode, कू is entered as क (ka) + ु (u-mark), but displays with the u-mark <b>below</b> the consonant. This visual reordering is invisible in code but confuses Latin-keyboard typists.</p>
+        <div class="sig-ex">Type: क + ु → Display: कु (mark moves to the bottom)</div>
+      </div>
+      <div class="sig-card">
+        <span class="sig-tag">Conjunct ligatures</span>
+        <h3>~1000 cluster combinations</h3>
+        <div class="sig-letters"><b>क्ष</b><b>त्र</b><b>ध्य</b><b>ज्ञ</b></div>
+        <p>Devanagari fuses consonant pairs into single <b>juktakkhor (conjunct) ligatures</b> — approximately 1,000 exist. क्ष (kṣa) is typed क + ् (halant) + ष, but displays as one fused character. Learning which key combinations produce which ligature is a major typing challenge.</p>
+        <div class="sig-ex">क्ष = k + halant + ṣ = one character</div>
+      </div>
+      <div class="sig-card">
+        <span class="sig-tag">The shirorekha line</span>
+        <h3>The 'head line' across letters</h3>
+        <div class="sig-letters"><b>काव</b></div>
+        <p>The <strong>shirorekha (head line)</strong> — the horizontal line across the top of Devanagari text — is distinctive and defines the script's appearance. Proper font rendering requires every consonant to align correctly with this line, and vowel marks to position relative to it. Bad rendering breaks the aesthetic.</p>
+        <div class="sig-ex">The top line is as important as the letters themselves</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq-sec" id="faq">
   <div class="wrap">
@@ -3172,14 +3236,7 @@ const SPEC_CHARS = ['म','य','र','ल','व','श','ष','स','ह','क�
 
 /* Franco/Arabizi phonetic hint for each Arabic letter */
 const FL = {
-  'अ':'a',  'आ':'aa', 'इ':'i',  'ई':'ii', 'उ':'u',  'ऊ':'uu',
-  'ए':'e',  'ऐ':'ai', 'ओ':'o',  'औ':'au', 'ं':'n',
-  'क':'k',  'ख':'kh', 'ग':'g',  'घ':'gh', 'च':'ch', 'छ':'chh',
-  'ज':'j',  'झ':'jh', 'ट':'T',  'ठ':'Th', 'ड':'D',
-  'ढ':'Dh', 'त':'t',  'थ':'th', 'द':'d',  'ध':'dh',
-  'न':'n',  'प':'p',  'फ':'ph', 'ब':'b',  'भ':'bh',
-  'म':'m',  'य':'y',  'र':'r',  'ल':'l',  'व':'v',
-  'श':'sh', 'ष':'Sh', 'स':'s',  'ह':'h'
+  'अ':'a', 'आ':'aa', 'इ':'i', 'ई':'ii', 'उ':'u', 'ऊ':'uu', 'ए':'e', 'ऐ':'ai', 'ओ':'o', 'औ':'au', 'ं':'ṃ', 'क':'k', 'ख':'kh', 'ग':'g', 'घ':'gh', 'च':'ch', 'छ':'chh', 'ज':'j', 'झ':'jh', 'ट':'T', 'ठ':'Th', 'ड':'D', 'ढ':'Dh', 'त':'t', 'थ':'th', 'द':'d', 'ध':'dh', 'न':'n', 'प':'p', 'फ':'ph', 'ब':'b', 'भ':'bh', 'म':'m', 'य':'y', 'र':'r', 'ल':'l', 'व':'v', 'श':'sh', 'ष':'Sh', 'स':'s', 'ह':'h'
 };
 
 const PHYS = {
@@ -3210,105 +3267,7 @@ const EMOJI_CATS_DATA = {
   '🚩': { label:'Flags', emojis:['🇸🇦','🇦🇪','🇪🇬','🇲🇦','🇩🇿','🇹🇳','🇱🇾','🇸🇩','🇾🇪','🇸🇾','🇮🇶','🇯🇴','🇵🇸','🇱🇧','🇰🇼','🇧🇭','🇶🇦','🇴🇲','🇮🇷','🇹🇷','🇺🇸','🇨🇦','🇲🇽','🇧🇷','🇦🇷','🇨🇱','🇨🇴','🇵🇪','🇻🇪','🇬🇧','🇫🇷','🇩🇪','🇪🇸','🇮🇹','🇵🇹','🇳🇱','🇧🇪','🇨🇭','🇦🇹','🇸🇪','🇳🇴','🇩🇰','🇫🇮','🇵🇱','🇺🇦','🇷🇺','🇬🇷','🇨🇿','🇭🇺','🇷🇴','🇧🇬','🇷🇸','🇭🇷','🇸🇰','🇸🇮','🇮🇪','🇮🇸','🇨🇳','🇯🇵','🇰🇷','🇮🇳','🇵🇰','🇧🇩','🇮🇩','🇲🇾','🇸🇬','🇹🇭','🇻🇳','🇵🇭','🇰🇭','🇱🇦','🇲🇲','🇳🇵','🇱🇰','🇦🇺','🇳🇿','🇿🇦','🇳🇬','🇰🇪','🇪🇹','🇬🇭','🇹🇿','🇺🇬','🇨🇲','🏳️','🏴','🏁','🚩','🎌'] }
 };
 
-const WORDS = [
-  // Pronouns
-  'मैं','तुम','आप','वह','हम','यह','वे','कोई','कुछ','सब','सभी',
-  'खुद','अपना','अपनी','अपने','इसे','उसे','हमें','तुम्हें','आपको',
-  // Verb forms
-  'है','हैं','था','थी','थे','हो','हूँ','होना','होगा','होगी',
-  'करना','करें','करो','किया','कर','करता','करती','करते',
-  'कहना','कहो','कहा','कहते','कहूँगा',
-  'जाना','जाएं','जाओ','गया','गई','गए','जाऊँगा',
-  'आना','आएं','आओ','आया','आई','आए','आऊँगा',
-  'देना','दो','दिया','दें','देता','देती',
-  'लेना','लो','लिया','लेता','लेती',
-  'बोलना','बोलो','बोला','बोलता','बोलती',
-  'सुनना','सुनो','सुना','सुनता','सुनती',
-  'देखना','देखो','देखा','देखता','देखती',
-  'चाहना','चाहिए','चाहता','चाहती','चाहते',
-  'सोचना','सोचो','सोचा','सोचता',
-  'जानना','जानते','जानता','जानती',
-  'समझना','समझो','समझा','समझते',
-  'रहना','रहो','रहे','रहा','रही',
-  'मिलना','मिलते','मिला','मिली',
-  'खाना','खाओ','खाया','खाती',
-  'पीना','पियो','पिया',
-  'सोना','सोओ','सोया','सोई',
-  'उठना','उठो','उठा','उठी',
-  'चलना','चलो','चला','चली',
-  'बताना','बताओ','बताया',
-  'पूछना','पूछो','पूछा',
-  'लिखना','लिखो','लिखा',
-  'पढ़ना','पढ़ो','पढ़ा',
-  'हँसना','हँसो','हँसा',
-  'रोना','रोओ','रोया','रोई',
-  'भेजना','भेजो','भेजा',
-  'बनाना','बनाओ','बनाया',
-  'सीखना','सीखो','सीखा',
-  'खेलना','खेलो','खेला',
-  // People & family
-  'दोस्त','यार','भाई','बहन','माँ','पापा','मम्मी','पिता',
-  'परिवार','बच्चा','बच्चे','दादा','दादी','नाना','नानी',
-  'चाचा','चाची','मामा','मामी','बेटा','बेटी','पति','पत्नी',
-  // Time & place
-  'घर','काम','वक्त','समय','दिन','रात','सुबह','शाम','दोपहर',
-  'जगह','रास्ता','सड़क','शहर','गाँव','देश','दुनिया',
-  'दिल्ली','मुंबई','भारत','हिंदी','इंडिया',
-  // Food & drink
-  'पानी','चाय','रोटी','चावल','दाल','दूध','चीनी','नमक',
-  'सब्ज़ी','फल','नाश्ता',
-  // Digital & modern
-  'मोबाइल','फ़ोन','मैसेज','वीडियो','तस्वीर','फ़ोटो',
-  'नंबर','ऐप','इंटरनेट','व्हाट्सऐप',
-  // Abstract
-  'ज़िंदगी','दिल','ख़ुशी','दर्द','प्यार','मोहब्बत','इश्क़',
-  'याद','यादें','सपना','नींद','भूख','प्यास',
-  'नाम','बात','सवाल','जवाब','ख़बर','आवाज़','उम्मीद',
-  // Work & study
-  'नौकरी','व्यापार','पैसा','रुपया','स्कूल','कॉलेज','किताब',
-  // Nature
-  'पेड़','फूल','आसमान','ज़मीन','नदी','पहाड़','समुद्र','धूप','बारिश','हवा',
-  // Religion & culture
-  'भगवान','राम','कृष्ण','शिव','दुर्गा','गणेश',
-  'मंदिर','मस्जिद','गुरुद्वारा','नमाज़','पूजा',
-  // Adjectives
-  'अच्छा','अच्छी','अच्छे','बुरा','बड़ा','बड़ी','बड़े',
-  'छोटा','छोटी','नया','नई','पुराना','पुरानी',
-  'सुंदर','खूबसूरत','प्यारा','प्यारी','प्यारे',
-  'ज़्यादा','कम','बहुत','थोड़ा','थोड़ी','सारा','पूरा','आधा',
-  'सही','ग़लत','मुश्किल','आसान','ज़रूरी','ख़ास',
-  'बेहतर','बेहतरीन','शानदार','कमाल','मज़ेदार','ज़बरदस्त',
-  'ख़ुश','दुखी','थका','थकी','भूखा','प्यासा','तैयार',
-  'गर्म','ठंडा','तेज़','धीमा','साफ़','गंदा','खुला','बंद',
-  'सच्चा','झूठा','असली','मशहूर',
-  // Question words
-  'क्या','कैसे','क्यों','कब','कहाँ','कौन','कितना','कितनी','कैसा','कैसी',
-  // Time words
-  'अभी','बाद','पहले','आज','कल','परसों',
-  'हमेशा','कभी','अक्सर','जल्दी','धीरे',
-  'सोमवार','मंगलवार','बुधवार','गुरुवार','शुक्रवार','शनिवार','रविवार',
-  // Greetings & core phrases
-  'नमस्ते','नमस्कार','सलाम','प्रणाम',
-  'धन्यवाद','शुक्रिया','मेहरबानी','कृपया','स्वागत',
-  'माफ़ करना','ठीक है','ठीक हूँ','बिल्कुल','ज़रूर','हाँ','नहीं',
-  'बताओ','सुनो','देखो','आओ','जाओ','करो','रुको',
-  'क्या हाल','कैसे हो','कैसे हैं','सब ठीक',
-  // WhatsApp phrases
-  'बहुत अच्छा','बहुत बढ़िया','बहुत प्यार','बहुत याद',
-  'खुश रहो','सलामत रहो','हँसते रहो',
-  'जल्दी आओ','जल्दी आना','मिलते हैं','ज़रूर आना',
-  'कैसा लगा','मज़ा आया','अच्छा लगा','दिल से',
-  // Celebrations
-  'जन्मदिन','मुबारक','शुभकामनाएँ','बधाई','दुआ',
-  'ईद मुबारक','दीवाली','होली','रक्षाबंधन',
-  // Religious expressions
-  'इन्शाअल्लाह','माशाअल्लाह','अलहमदुलिल्लाह','सुभानल्लाह','आमीन',
-  'जय हिंद','भारत माता','वंदे मातरम','जय श्री राम',
-  // Conjunctions & connectors
-  'और','या','लेकिन','मगर','इसलिए','क्योंकि','अगर','तो',
-  'जब','जहाँ','जो','जैसे','फिर','भी','ही','न','ना','मत',
-  'बिना','साथ','से','को','में','पर','का','की','के',
-];
+const WORDS = ["के", "में", "है", "की", "को", "से", "ने", "और", "हैं", "का", "कि", "पर", "भी", "इस", "नहीं", "एक", "लिए", "कर", "था", "कहा", "ही", "किया", "गया", "हो", "कोरोना", "तो", "रहे", "बाद", "करने", "साथ", "दिया", "ये", "रहा", "सरकार", "तक", "यह", "लेकिन", "गई", "लोगों", "थी", "रही", "जा", "थे", "हुए", "उन्होंने", "अब", "भारत", "अपने", "पहले", "इसके", "जो", "दिल्ली", "गए", "कुछ", "दी", "पुलिस", "वो", "बात", "लेकर", "कई", "वायरस", "वाले", "देश", "कोई", "साल", "होने", "हुई", "लोग", "उनके", "अपनी", "तरह", "उन्हें", "बताया", "बीच", "कोरोना वायरस", "मामले", "जब", "चीन", "करते", "हुआ", "किसी", "काम", "या", "सिंह", "कांग्रेस", "इन", "सभी", "वह", "दिन", "दौरान", "पार्टी", "होगा", "हम", "ऐसे", "दो", "क्या", "बार", "शुरू", "जारी", "फिर", "सकता", "प्रदेश", "लिया", "मोदी", "लॉकडाउन", "दोनों", "सबसे", "समय", "घर", "उनकी", "वहीं", "वे", "सामने", "बीजेपी", "भारतीय", "जाने", "करना", "कम", "हालांकि", "इससे", "ज्यादा", "अगर", "मंत्री", "वजह", "यहां", "चुनाव", "राज्य", "चाहिए", "बहुत", "सकते", "अभी", "आज", "नाम", "पास", "किए", "खिलाफ", "मौत", "मैं", "रुपये", "मुताबिक", "जाएगा", "जाता", "शामिल", "ओर", "पिछले", "वाली", "हर", "बता", "दें", "काफी", "देने", "कोर्ट", "बिहार", "संख्या", "बारे", "आने", "उस", "जांच", "आप", "पूरी", "अलावा", "तीन", "प्रधानमंत्री", "आए", "कारण", "लाख", "ऐसा", "होगी", "दे", "मुख्यमंत्री", "इसे", "दुनिया", "टीम", "होता", "जानकारी", "फिल्म", "रूप", "वीडियो", "कहना", "उसके", "इसी", "सकती", "कहते", "क्योंकि", "नेता", "पाकिस्तान", "उसे", "जबकि", "दिनों", "मीडिया", "करोड़", "संक्रमण", "इसमें", "परिवार", "जिसमें", "केंद्र", "आगे", "लगा", "उनका", "अपना", "बंद", "चुके", "जहां", "जैसे", "नए", "कंपनी", "देशों", "अन्य", "अस्पताल", "अधिक", "दर्ज", "दूसरे", "रिपोर्ट", "दिए", "वहां", "ले", "आरोप", "चुकी", "सोशल", "बड़ी", "केस", "इसका", "बाहर", "गांधी", "सवाल", "पूर्व", "करीब", "कुमार", "आई", "महीने", "लगातार", "उत्तर", "करें", "टेस्ट", "मदद", "तब", "तौर", "क्षेत्र", "मुझे", "ट्वीट", "हमें", "मिल", "इसलिए", "स्थिति", "होती", "स्वास्थ्य", "राष्ट्रपति", "लिखा", "चल", "अमेरिका", "मुंबई", "आया", "हूं", "इसकी", "कोशिश", "आपको", "फीसदी", "पता", "महामारी", "बयान", "पीएम", "सेना", "रहने", "थीं", "बैंक", "द्वारा", "बैठक", "जाएगी", "बना", "मंत्रालय", "उन", "जाए", "तहत", "अनुसार", "इस्तेमाल", "नरेंद्र", "तरफ", "बनाने", "वैक्सीन", "सिर्फ", "करेंगे", "जिसके", "महिला", "जनता", "ट्रंप", "हमारे", "वाला", "यानी", "कुल", "राज्यों", "करता", "विधानसभा", "पूरे", "तैयार", "अध्यक्ष", "रखा", "किसानों", "उत्तर प्रदेश", "घटना", "सुरक्षा", "फैसला", "मिली", "हजार", "ली", "मांग", "नरेंद्र मोदी", "दूसरी", "बड़े", "बड़ा", "महाराष्ट्र", "पूरा", "वक्त", "नजर", "सोशल मीडिया", "ना", "जवाब", "पहली", "शेयर", "जगह", "खुद", "बातचीत", "बजे", "विकास", "बढ़", "आदेश", "पहुंच", "मार्च", "सुशांत", "क्यों", "राहुल", "वापस", "ठीक", "राजस्थान", "ऐसी", "खान", "मामलों", "रात", "संकट", "वालों", "संक्रमित", "विरोध", "जिस", "उसकी", "कैसे", "लगाया", "अधिकारी", "मंदिर", "चार", "चीनी", "प्रदर्शन", "हाल", "सोमवार", "इंडिया", "दावा", "होंगे", "जाती", "होते", "मरीजों", "विधायक", "देखा", "करती", "सीमा", "चर्चा", "अधिकारियों", "बन", "रन", "हमने", "कानून", "किसान", "कभी", "बल्कि", "अलग", "राष्ट्रीय", "लेने", "विभाग", "चलते", "यादव", "मामला", "सीएम", "मंगलवार", "केंद्रीय", "सुप्रीम", "आम", "देते", "नेताओं", "व्यक्ति", "सुप्रीम कोर्ट", "यही", "जरिए", "शुरुआत", "चुका", "डॉक्टर", "मेरे", "मैंने", "सरकारी", "ज़्यादा", "इलाज", "गांव", "लागू", "राम", "जाना", "मिला", "पांच", "होना", "राजनीतिक", "इलाके", "मिलने", "नई", "पिता", "सब", "सुबह", "केंद्र सरकार", "करके", "घंटे", "पॉजिटिव", "देखने", "आर्थिक", "मौजूद", "स्तर", "चाहते", "देखते", "यूपी", "ऑफ", "लगता", "कार्रवाई", "प्रशासन", "रह", "जरूरत", "लगे", "जिससे", "परीक्षा", "मई", "जाते", "शो", "ध्यान", "बच्चों", "जिले", "प्रमुख", "समर्थन", "हिस्सा", "दरअसल", "समेत", "रखने", "मध्य", "हत्या", "उसने", "विदेश", "असर", "भर्ती", "रविवार", "बनाया", "गिरफ्तार", "तय", "जीत", "बनाए", "बिना", "बुधवार", "शहर", "भाजपा", "नीतीश", "माना", "अगले", "जान", "शुक्रवार", "लगभग", "उम्मीद", "पीछे", "भर", "प्रतिशत", "चला", "तेजी", "जुड़े", "मैच", "हाथ", "हिंसा", "आधार", "शादी", "योजना", "इनमें", "पाया", "अप्रैल", "केजरीवाल", "शाह", "प्रति", "सके", "जल्द", "जून", "योगी", "गृह", "संगठन", "लगी", "गुरुवार", "ऐलान", "पंजाब", "केवल", "ताकि", "शर्मा", "जिसे", "फिलहाल", "हालात", "मिले", "दूर", "हमारी", "पाए", "जाएंगे", "कदम", "कश्मीर", "रोक", "बने", "बोर्ड", "बीते", "बेहद", "खबर", "याचिका", "दल", "पड़ा", "पद", "भारी", "अपील", "वर्ष", "विधायकों", "बच्चे", "कहीं", "मध्य प्रदेश", "व्यवस्था", "उसका", "मेडिकल", "घोषणा", "प्रभावित", "विवाद", "शनिवार", "हमला", "पायलट", "मजदूरों", "स्थित", "रहते", "मरीज", "कार्यक्रम", "महिलाओं", "राजनीति", "हासिल", "अमरीका", "वायरल", "साफ", "अहम", "राजधानी", "सांसद", "खत्म", "मुख्य", "कह", "जेल", "मां", "बंगाल", "देख", "पालन", "पानी", "कंपनियों", "ईरान", "फोन", "जरूरी", "पत्र", "अमित", "बावजूद", "अगस्त", "बाजार", "स्कूल", "अंदर", "बेहतर", "विश्व", "उससे", "सही", "जी", "नुकसान", "मास्क", "आरोपी", "प्रक्रिया", "लग", "भाई", "अलग-अलग", "राहुल गांधी", "गंभीर", "पत्नी", "हो सकता है", "तस्वीर", "नंबर", "खास", "बताते", "नया", "मुश्किल", "हमले", "अमेरिकी", "निर्माण", "बदलाव", "तनाव", "दिसंबर", "अच्छा", "छात्रों", "पूछताछ", "सुनवाई", "शाम", "नेपाल", "रोकने", "जैसी", "शिकायत", "आपके", "कराया", "कृषि", "लगाने", "कहती", "पड़", "विकेट", "सामना", "अंतिम", "बारिश", "तरीके", "देना", "रेलवे", "कपूर", "वित्त", "स्थानीय", "रक्षा", "उनसे", "जनवरी", "बॉलीवुड", "मौके", "यात्रा", "गुजरात", "अच्छी", "जिन", "सीट", "मिलेगा", "रहेगा", "राहत", "इलाकों", "पेश", "पोस्ट", "सदस्य", "अदालत", "जुलाई", "दिख", "आवेदन", "इतना", "तैयारी", "अनुमति", "संबंध", "कमी", "गहलोत", "बढ़ा", "ख़िलाफ़", "डॉलर", "नागरिकता", "मुद्दे", "विशेष", "लड़ाई", "हमेशा", "पहला", "समस्या", "पहुंचे", "सूत्रों", "उम्मीदवार", "सितंबर", "अरब", "उसी", "तमाम", "बेटी", "मेरी", "कराने", "नीतीश कुमार", "फैसले", "क्रिकेट", "वोट", "सचिन", "चिंता", "नेतृत्व", "बस", "हाई", "एजेंसी", "किस", "घरों", "दौर", "बाकी", "करेगा", "उपलब्ध", "जीवन", "नवंबर", "सेवा", "सीटों", "अर्थव्यवस्था", "वरिष्ठ", "साबित", "पक्ष", "निर्देश", "भेजा", "बीमारी", "अमित शाह", "बेटे", "पार", "आदमी", "ऑनलाइन", "कीमत", "संपर्क", "देर", "गिरावट", "पूछा", "आंदोलन", "एक बार फिर", "तेज", "सैनिकों", "बनी", "प्रस्ताव", "ट्रेन", "रिया", "छह", "अयोध्या", "मौसम", "लॉन्च", "उम्र", "डर", "एवं", "निजी", "गौरतलब", "संजय", "लखनऊ", "दर", "पैदा", "बीबीसी", "वेबसाइट", "शख्स", "हरियाणा", "निशाना", "कौन", "जिनमें", "पहचान", "दुबे", "छात्र", "फरवरी", "आते", "पैसे", "चुनौती", "नगर", "शरीर", "कही", "होकर", "खेल", "डॉ", "सूचना", "मगर", "आयोग", "प्रवासी", "सामान्य", "करेगी", "ऊपर", "दिल्ली पुलिस", "सुरक्षित", "ब्रिटेन", "संसद", "टीवी", "सीबीआई", "एक्टर", "दक्षिण", "मतलब", "संशोधन", "मौजूदा", "चाहता", "अंतरराष्ट्रीय", "पश्चिम", "विमान", "हालत", "प्रियंका", "भूमिका", "मोबाइल", "विधानसभा चुनाव", "आंकड़ा", "खराब", "शिक्षा", "अरविंद", "पुष्टि", "आधिकारिक", "करनी", "पा", "लाभ", "बनने", "अशोक", "ऐप", "कर्मचारियों", "राय", "समाज", "दूसरा", "सेंटर", "रहेंगे", "निवेश", "मुताबिक़", "गलत", "पति", "लंबे", "जिला", "ट्विटर", "जनरल", "कार्ड", "शराब", "हफ्ते", "डोनाल्ड", "पसंद", "नौकरी", "लद्दाख", "याद", "बढ़ते", "लाने", "सड़क", "यूनिवर्सिटी", "स्पेशल", "खड़े", "डोनाल्ड ट्रंप", "ओवर", "चाहती", "आता", "टेस्टिंग", "विचार", "संभावना", "रखी", "मार", "मिलकर", "ऑस्ट्रेलिया", "छूट", "लगाए", "उनमें", "जम्मू-कश्मीर", "सत्ता", "दिल्ली सरकार", "भीड़", "स्पष्ट", "विदेशी", "अभियान", "उसमें", "दिखाई", "भेज", "वकील", "प्रयास", "मानना", "सचिन पायलट", "सालों", "पैसा", "टिकट", "शव", "सीरीज", "जुड़ी", "राशि", "तुलना", "बिग", "घोषित", "रिकॉर्ड", "मुस्लिम", "अरविंद केजरीवाल", "कार", "जिसकी", "तेजस्वी", "दवा", "लड़की", "गयी", "आग", "आम आदमी", "चरण", "तैनात", "चली", "महत्वपूर्ण", "अधिकार", "अली", "निपटने", "सचिव", "बनाई", "मजबूत", "नोटिस", "बढ़ाने", "सहित", "देंगे", "जंग", "पदों", "सिंधिया", "आखिरी", "राज्य सरकार", "सिर्फ़", "उम्मीदवारों", "जाकर", "मुलाकात", "मैदान", "कारोबार", "तीनों", "धर्म", "नीति", "घायल", "रहेगी", "आबादी", "इंडस्ट्री", "प्रसाद", "सार्वजनिक", "अक्टूबर", "ट्रायल", "रिलीज", "शहरों", "नेशनल", "अचानक", "आयोजित", "छोड़", "परेशान", "प्रवक्ता", "बदल", "सात", "बॉस", "कहानी", "सेक्टर", "आदित्यनाथ", "जिसका", "मरने", "रहती", "संयुक्त", "आठ", "किलोमीटर", "केरल", "दबाव", "पश्चिम बंगाल", "राज्यसभा", "रूस", "कप्तान", "सदस्यों", "सहयोग", "लेते", "हिंदू", "गईं", "क़ानून", "जनता पार्टी", "जमा", "परिषद", "लाल", "आतंकी", "मन", "जताई", "हों", "छोटे", "जिन्होंने", "रख", "सुधार", "मिलेगी", "उनको", "कार्य", "क्वारनटीन", "बढ़कर", "योगी आदित्यनाथ", "वैसे", "शायद", "गेंद", "ग्रुप", "इंडियन", "निर्णय", "बजट", "हाउस", "फायदा", "जैसा", "देकर", "विभिन्न", "डॉक्टरों", "भरोसा", "अच्छे", "बिग बॉस", "भारतीय जनता", "राजपूत", "कमलनाथ", "एंड", "जिन्हें", "मेरा", "लगाई", "कड़ी", "क्षेत्रों", "सिस्टम", "आम आदमी पार्टी", "तुरंत", "सप्ताह", "समुदाय", "कल", "भविष्य", "अस्पतालों", "कंगना", "धार्मिक", "प्रेस", "भारतीय जनता पार्टी", "युवक", "रुपए", "सामान", "सारे", "दिल", "आयोजन", "नीचे", "लक्षण", "विपक्ष", "डिस्टेंसिंग", "कोविड", "जानते", "दोबारा", "फोटो", "सलाह", "हमारा", "पहुंची", "अमरीकी", "इजाजत", "जगहों", "दूरी", "गये", "लोकसभा", "विकास दुबे", "सियासी", "अंत", "देता", "संबंधित", "गोली", "पहुंचा", "नोएडा", "सैन्य", "हिसाब", "ज़रूरत", "दोस्त", "माहौल", "राज्यपाल", "शांति", "जवान", "रखते", "रहता", "अनुमान", "टैक्स", "तेल", "राम मंदिर", "सोशल डिस्टेंसिंग", "सत्र", "भगवान", "करियर", "तभी", "दिशा", "ममता", "संघ", "आती", "नागरिक", "मोहम्मद", "समिति", "कर्मचारी", "देशभर", "राष्ट्र", "सीएए", "सुशांत सिंह", "हज़ार", "युद्ध", "इनकार", "फांसी", "महसूस", "बचाने", "उल्लंघन", "एक्ट्रेस", "कॉलेज", "लिस्ट", "उठाया", "इतनी", "प्रभाव", "इतिहास", "काफ़ी", "जिंदगी", "जोन", "बातें", "रद्द", "क्षमता", "जिलों", "नियंत्रण", "विकल्प", "स्टेशन", "आतंकियों", "आरोपियों", "चले", "बच्चन", "सुविधा", "स्थान", "मारे", "इन्हें", "पारी", "पूजा", "मजदूर", "डेटा", "घाटी", "बॉर्डर", "मौका", "वही", "शिकार", "हाईकोर्ट", "होम", "आजतक", "आरजेडी", "आंकड़ों", "साझा", "साथ-साथ", "होनी", "तीसरे", "नियमों", "भारत सरकार", "समझ", "सलमान", "आसपास", "इटली", "कहां", "खर्च", "निकल", "माध्यम", "शिवराज", "हिस्सों", "खाना", "खतरा", "जम्मू", "मिश्रा", "वक़्त", "हैदराबाद", "जिम्मेदारी", "बैठे", "डिग्री", "पीड़ित", "पूर्वी", "मुद्दा", "स्वीकार", "इमरान", "खाली", "नज़र", "युवा", "शुरुआती", "संघर्ष", "फिल्मों", "भले", "प्यार", "कर्नाटक", "फैलने", "बिक्री", "बिल", "सफल", "सुनिश्चित", "इतने", "प्राप्त", "रास्ता", "विश्वास", "शाहीन", "इंटरव्यू", "इनके", "कितना", "किरदार", "प्रकार", "मानते", "सीटें", "रोल", "संदेश", "इंतजार", "तारीख", "महीनों", "तापमान", "बिजली", "पड़ी", "कैबिनेट", "खाने", "दाखिल", "पाकिस्तानी", "रहना", "लड़ने", "शूटिंग", "हेल्थ", "असम", "जमीन", "तरफ़", "थाना", "नियम", "एनडीए", "कॉल", "घरेलू", "जस्टिस", "तथा", "बाग", "स्टाफ", "चपेट", "जवानों", "परिजनों", "बढ़ने", "मिनट", "सुशांत सिंह राजपूत", "सोनिया", "आपकी", "पाई", "अमिताभ", "लोन", "हिरासत", "शानदार", "अशोक गहलोत", "रखना", "कथित", "भीतर", "हार", "गाने", "प्राइवेट", "दिखाया", "दोषी", "पत्रकार", "देखें"];
 
 /* ── PREDICTIVE TEXT ENGINE ── */
 let userFreq = {};
@@ -3600,7 +3559,7 @@ function buildSpec() {
 function buildNum() {
   const western  = ['1','2','3','4','5','6','7','8','9','0'];
   const arabic   = ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'];
-  const symbols  = ['?','!',',','.','(',')',':',';','@','#','+','-','×','÷','=','%','°','½','¼','¾'];
+  const symbols  = ["?","!",",",".","(",")",":",";","@","#","+","-","×","÷","=","%","°","½","¼","¾","&","*","\"","'","/","\\","|","_","~","^","<",">","[","]","{","}","€","$","£","¥","©","®","™","•","…","—","«","»","§"/*LANG_SYMBOLS*/,"।","॥","₹"/*END_LANG_SYMBOLS*/];
   const fill = (id, chars, extraClass='') => {
     const g = document.getElementById(id); if (!g) return;
     g.innerHTML = '';
@@ -3708,7 +3667,6 @@ function toggleFranco() {
   buildKB();
   const ta = document.getElementById('arabic-text');
   ta.placeholder = francoOn ? FRANCO_ON_PLACEHOLDER : FRANCO_DEFAULT_PLACEHOLDER;
-  toast(francoOn ? '🔤 Hinglish ON — type & press Space to convert' : '⌨️ Hinglish OFF');
 }
 
 /* ── POPUPS ── */
@@ -4684,5 +4642,219 @@ async function submitFeedback(e) {
 })();
 </script>
 <script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+<!-- ══════════ KBDOCK — docked mobile keyboard (installed by tools/add_kbdock.py) ══════════ -->
+<style>
+/* Mobile docked keyboard — native phone feel. Active ≤720px only. */
+@media (max-width: 768px) {
+  body.kb-docked #kbc {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
+    margin: 0; border-radius: 18px 18px 0 0;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    box-shadow: 0 -10px 34px rgba(0,0,0,.20);
+    max-height: 76vh; overflow: visible;
+    animation: kbdock-up .26s cubic-bezier(.2,.8,.25,1);
+  }
+  @keyframes kbdock-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  [data-theme="dark"] body.kb-docked #kbc { box-shadow: 0 -10px 34px rgba(0,0,0,.55); }
+
+  /* Franco hint panel grows the dock past the viewport (bottom key row pushed
+     off-screen) — when docked it becomes ONE slim horizontal row: same content
+     (instruction + example chips), swipeable sideways, native-strip height */
+  body.kb-docked .franco-hint {
+    flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: flex-start;
+    gap: 8px; margin: 6px 0 2px; padding: 7px 10px; font-size: 10.5px;
+    overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+  }
+  body.kb-docked .franco-hint::-webkit-scrollbar { display: none; }
+  body.kb-docked .franco-hint > span { flex: 0 0 auto; white-space: nowrap; }
+  body.kb-docked .franco-chips { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
+  body.kb-docked .franco-chips > * { white-space: nowrap; flex: 0 0 auto; }
+
+  /* toasts: the dock owns the bottom of the screen, so notices become a TOP
+     banner while docked (native-style), never trapped behind the keyboard */
+  body.kb-docked .toast {
+    bottom: auto; top: 72px;
+    transform: translateX(-50%) translateY(-140px);
+  }
+  body.kb-docked .toast.show { transform: translateX(-50%) translateY(0); }
+
+  .kbdock-handle { display: none; }
+  body.kb-docked .kbdock-handle {
+    display: flex; align-items: center; justify-content: center;
+    height: 26px; margin: -6px 0 2px; cursor: grab; touch-action: none;
+  }
+  .kbdock-handle::before {
+    content: ''; width: 42px; height: 5px; border-radius: 3px;
+    background: rgba(100,116,139,.35);
+  }
+  body.kb-docked .sug-pill { font-size: 13px; padding: 7px 8px; }
+}
+
+#kb-altpop {
+  position: fixed; z-index: 10000; display: none; gap: 6px;
+  background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.22); padding: 8px; transform: translateX(-50%);
+}
+[data-theme="dark"] #kb-altpop { background: #1E293B; border-color: rgba(255,255,255,.12); }
+#kb-altpop button {
+  min-width: 44px; height: 46px; border: 0; border-radius: 10px; cursor: pointer;
+  font-size: 24px; font-family: inherit; background: rgba(0,104,255,.08); color: inherit;
+}
+#kb-altpop button:active, #kb-altpop button:hover { background: var(--indigo, #6366F1); color: #fff; }
+
+/* Matra/Roman labels: docked = native-small. Outside any media query and
+   !important — the template re-sizes these keys at several widths (12px base,
+   9px <=640) and docked must win at every width. */
+body.kb-docked .k-tashkeel, body.kb-docked .k-franco { font-size: 8px !important; }
+body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !important; }
+/* Roman/Franco mode enlarges LETTER keys (to show the roman hint) via
+   .franco-on .key{font-size:13-14px} — but that also hit the Tashkeel/Roman
+   mode keys and clipped their labels ('Tashkeel'->'ashke'). Pin the mode-key
+   labels to the compact size in Roman mode too, docked OR inline. */
+.franco-on .k-tashkeel, .franco-on .k-franco { font-size: 8px !important; }
+.franco-on .k-tashkeel .ks, .franco-on .k-franco .ks { font-size: 6px !important; }
+</style>
+<script>
+(function kbdockDemo() {
+  const mq = window.matchMedia('(max-width: 768px)');
+  const kbc = document.getElementById('kbc');
+  const ta  = document.getElementById('arabic-text');
+  if (!kbc || !ta) return;
+
+  const handle = document.createElement('div');
+  handle.className = 'kbdock-handle';
+  handle.setAttribute('aria-label', 'Hide keyboard');
+  kbc.insertBefore(handle, kbc.firstChild);
+  const spacer = document.createElement('div');
+  spacer.style.display = 'none';
+  kbc.parentNode.insertBefore(spacer, kbc);
+
+  let docked = false;
+  function dock() {
+    if (docked || !mq.matches) return;
+    spacer.style.height = kbc.offsetHeight + 'px';
+    spacer.style.display = 'block';
+    /* portal: #kbc lives inside .wrap (z-index:1 stacking context), so later
+       sections (mascots, combo text) paint OVER it no matter how high its own
+       z-index is. Re-parenting to <body> while docked puts it above everything. */
+    document.body.appendChild(kbc);
+    document.body.classList.add('kb-docked');
+    docked = true;
+    requestAnimationFrame(() => {
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+      followCaret();
+    });
+  }
+  function undock() {
+    if (!docked) return;
+    document.body.classList.remove('kb-docked');
+    document.body.style.paddingBottom = '';
+    spacer.parentNode.insertBefore(kbc, spacer.nextSibling); /* back to its slot */
+    spacer.style.display = 'none';
+    docked = false;
+    ta.blur();
+  }
+
+  ta.addEventListener('focus', dock);
+
+  /* mode toggles (Hinglish ON/OFF, Matra…) must not throw a center card while
+     docked — the key's own color + the hint row ARE the state. Event toasts
+     (Copied!, Cleared…) still show, as the top banner. */
+  if (typeof window.toast === 'function') {
+    const _toast = window.toast;
+    window.toast = function (msg) {
+      if (docked && /Hinglish (ON|OFF)|Roman hints|Matra/i.test(String(msg))) return;
+      return _toast.apply(this, arguments);
+    };
+  }
+
+  /* dock content changes height (Franco panel, tashkeel row…) — keep the page
+     padding and the toast offset in sync */
+  if (window.ResizeObserver) {
+    new ResizeObserver(() => {
+      if (!docked) return;
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+    }).observe(kbc);
+  }
+
+  let hy = null;
+  handle.addEventListener('pointerdown', e => { hy = e.clientY; handle.setPointerCapture(e.pointerId); });
+  handle.addEventListener('pointermove', e => { if (hy !== null && e.clientY - hy > 40) { hy = null; undock(); } });
+  handle.addEventListener('pointerup',   e => { if (hy !== null) undock(); hy = null; });
+  window.addEventListener('resize', () => { if (!mq.matches) undock(); });
+
+  /* selecting text: never auto-scroll while the user's pointer is down in the
+     textarea (a mid-drag scroll cancels the selection), and make selection
+     explicitly allowed. Scroll only follows actual TYPING. */
+  ta.style.userSelect = 'text';
+  ta.style.webkitUserSelect = 'text';
+  let taPointerDown = false;
+  ta.addEventListener('pointerdown', () => { taPointerDown = true; }, { passive: true });
+  ['pointerup', 'pointercancel'].forEach(ev =>
+    document.addEventListener(ev, () => { taPointerDown = false; }, { passive: true }));
+
+  function followCaret() {
+    if (!docked || taPointerDown) return;
+    const r = ta.getBoundingClientRect();
+    const dockTop = window.innerHeight - kbc.offsetHeight;
+    if (r.bottom > dockTop - 8 || r.top < 0) {
+      window.scrollBy({ top: r.bottom - (dockTop - 16), behavior: 'smooth' });
+    }
+  }
+  ta.addEventListener('input', () => requestAnimationFrame(followCaret));
+
+  const kbrows = document.getElementById('kbrows');
+  if (kbrows && navigator.vibrate) {
+    kbrows.addEventListener('pointerdown', e => { if (e.target.closest('.key')) navigator.vibrate(8); }, { passive: true });
+  }
+
+  /* long-press alternates — per-language data from tools/kb_lang_data.py */
+  const KB_ALT = {"क": ["क़"], "ख": ["ख़"], "ग": ["ग़"], "ज": ["ज़"], "ड": ["ड़"], "ढ": ["ढ़"], "फ": ["फ़"]};
+  const pop = document.createElement('div');
+  pop.id = 'kb-altpop';
+  document.body.appendChild(pop);
+  let lpTimer = null, lpKey = null, suppressClick = false;
+
+  function showAlts(keyEl, ch) {
+    pop.innerHTML = '';
+    KB_ALT[ch].forEach(alt => {
+      const b = document.createElement('button');
+      b.textContent = alt;
+      b.onclick = ev => { ev.stopPropagation(); ins(alt); hideAlts(); };
+      pop.appendChild(b);
+    });
+    const r = keyEl.getBoundingClientRect();
+    pop.style.display = 'flex';
+    pop.style.left = (r.left + r.width / 2) + 'px';
+    pop.style.top  = (r.top - 62) + 'px';
+    suppressClick = true;
+  }
+  function hideAlts() { pop.style.display = 'none'; }
+
+  if (kbrows) {
+    kbrows.addEventListener('pointerdown', e => {
+      const k = e.target.closest('.key');
+      if (!k) return;
+      const ch = k.textContent.trim().slice(0, 1);
+      if (!KB_ALT[ch]) return;
+      lpKey = k;
+      lpTimer = setTimeout(() => showAlts(k, ch), 420);
+    }, { passive: true });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(ev =>
+      kbrows.addEventListener(ev, () => { clearTimeout(lpTimer); lpTimer = null; }, { passive: true }));
+    kbrows.addEventListener('click', e => {
+      if (suppressClick) { e.stopPropagation(); e.preventDefault(); suppressClick = false; }
+    }, true);
+  }
+  document.addEventListener('pointerdown', e => {
+    if (!pop.contains(e.target) && e.target !== lpKey) hideAlts();
+  });
+})();
+</script>
+<!-- ══════════ /KBDOCK ══════════ -->
 </body>
 </html>

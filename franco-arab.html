@@ -18,17 +18,17 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-circle.svg">
-  <link rel="canonical" href="https://kactyl.com/franco-arab/">
+  <link rel="canonical" href="https://kactyl.com/franco-arab">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="alternate" hreflang="fr" href="https://kactyl.com/franco-arab/">
   <link rel="alternate" hreflang="ar" href="https://kactyl.com/franco-arab/">
   <link rel="alternate" hreflang="en" href="https://kactyl.com/franco-arab/">
 
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://kactyl.com/franco-arab/">
+  <meta property="og:url"         content="https://kactyl.com/franco-arab">
   <meta property="og:title"       content="Clavier Franco Arabe en Ligne — Arabizi Keyboard | Kactyl">
   <meta property="og:description" content="Tapez en franco arabe, conversion automatique en arabe. Free Arabizi keyboard online — type Arabic with Latin letters. Works on WhatsApp, TikTok, Instagram.">
-  <meta property="og:image" content="/images/og-images/arabic.png">
+  <meta property="og:image" content="https://kactyl.com/images/og-images/arabic.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
           <meta property="og:site_name"   content="Kactyl">
@@ -722,11 +722,11 @@ footer {
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
                                                             <nav>
-    <a href="/home.html" class="nav-link">Home</a>
+    <a href="/" class="nav-link">Home</a>
     <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <div class="tools-wrap">
       <button class="tools-btn">Tools &#9662;</button>
@@ -1161,7 +1161,7 @@ footer {
 <footer>
   <div class="ft-inner">
     <div class="ft-brand">
-      <a class="ft-logo" href="home.html">
+      <a class="ft-logo" href="/">
         <div class="ft-ic">
           <img loading="lazy" src="images/favicon.svg" alt="Kactyl" width="36" height="36">
         </div>
@@ -1502,7 +1502,6 @@ function buildEmoji() {
 
 function toggleFranco() {
   francoOn = !francoOn; buildKB();
-  toast(francoOn ? '🔤 Franco ON — type & press Space to convert' : '⌨️ Franco OFF');
   const ta = document.getElementById('arabic-text');
   ta.placeholder = francoOn
     ? 'Essaye: salam — kifak — 7abibi — wesh rak\nAppuie sur Espace pour convertir en arabe ✨'

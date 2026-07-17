@@ -34,7 +34,7 @@
   <meta property="og:url"         content="https://kactyl.com/fr/">
   <meta property="og:title"       content="Clavier Arabe en Ligne 2026 — Gratuit [Mobile] | عربي">
   <meta property="og:description" content="Clavier arabe en ligne 100% gratuit. Tapez en arabe sans téléchargement. Mode franco-arabe, tachkil, saisie vocale. Idéal pour WhatsApp, TikTok, Instagram.">
-  <meta property="og:image"       content="/images/og-images/arabic.png">
+  <meta property="og:image"       content="https://kactyl.com/images/og-images/arabic.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
   <meta property="og:locale"      content="fr_FR">
@@ -69,13 +69,6 @@
       "@type": "Organization",
       "name": "Kactyl",
       "url": "https://kactyl.com"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "3124",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   }
   </script>
@@ -209,7 +202,15 @@
   <style>
 /* ── RESET ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { overflow-x: clip; max-width:100%; }
+html { overflow-x: clip; max-width:100%; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+/* iOS Safari inflates sub-11px text unless text-size-adjust is pinned — the mode-key
+   labels (Tashkeel/Matra/Roman) ballooned and spilled outside their keys on iPhone.
+   overflow:hidden below is the belt-and-braces so no label can ever spill again. */
+.k-tashkeel, .k-franco { overflow:hidden; }
+/* Roman/Franco mode needs a physical keyboard (type Latin → Space → script). On mobile
+   the native keyboard is hidden (inputmode=none) so roman input is impossible — hide the
+   Roman key + its hint bar there; the on-screen script keyboard is the mobile input. */
+@media (max-width:768px){ .franco-hint{ display:none !important; } }
 button { cursor:pointer; font-family:inherit; border:none; background:none; }
 
 /* ── TOKENS ── */
@@ -926,13 +927,13 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* Franco dual label */
 .fl {
-  font-size:17px; font-family:'Inter',sans-serif; font-weight:700;
+  font-size:15px; font-family:'Inter',sans-serif; font-weight:700;
   color:var(--indigo); line-height:1;
   opacity:0; height:0; overflow:hidden;
   transition: opacity .2s;
 }
 .franco-on .fl { opacity:1; height:auto; }
-.franco-on .key { height:60px; font-size:14px; }
+.franco-on .key { height:60px; font-size:22px; }
 @media (hover:hover) and (pointer:fine) { .franco-on .key:hover .fl { color: var(--fl-hover); } }
 :root {
   --fl-hover: #4d008b;
@@ -975,23 +976,23 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 @media (hover:hover) and (pointer:fine) { .k-emoji:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
 
 .k-tashkeel {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#7C3AED,#A855F7) !important;
   border:none !important; box-shadow:0 3px 0 #5B21B6; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-tashkeel:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
-.k-tashkeel .ks { font-size:9px; opacity:.5; font-weight:400; font-family:'Tajawal',sans-serif; }
+.k-tashkeel .ks { font-size:7px; opacity:.5; font-weight:400; font-family:'Tajawal',sans-serif; }
 
 .k-franco {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#3B82F6,#6366F1) !important;
   border:none !important; box-shadow:0 3px 0 #1D4ED8; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-franco:hover  { filter:brightness(1.1); box-shadow:0 3px 0 #1D4ED8; transform:translateY(-1px); } }
 .k-franco.active { background:linear-gradient(135deg,#059669,#10B981) !important; box-shadow:0 3px 0 #047857; }
-.k-franco .ks    { font-size:9px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
+.k-franco .ks    { font-size:7px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
 
 /* Special chars key */
 .k-spec { min-width:46px; font-size:13px; font-weight:700; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.2; position:relative; }
@@ -1641,8 +1642,8 @@ footer {
 
   /* Special key flex ratios */
   .k-space   { flex:3;   min-width:0 !important; }
-  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:9px; }
-  .k-franco  { flex:1.5; min-width:0 !important; font-size:9px; }
+  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:8px; }
+  .k-franco  { flex:1.5; min-width:0 !important; font-size:8px; }
   .k-emoji   { flex:1;   min-width:0 !important; font-size:18px; }
   .k-123     { flex:1;   min-width:0 !important; font-size:10px; }
   .k-enter   { flex:1.5; min-width:0 !important; font-size:13px; }
@@ -2127,12 +2128,12 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
                                                             <nav>
-    <a href="/home.html" class="nav-link">Accueil</a>
+    <a href="/" class="nav-link">Accueil</a>
     <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Mode Franco</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
@@ -2175,7 +2176,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="hero-hd">
       <h1 data-i18n="hero.h1">Clavier Arabe en Ligne <span class="h1-arabic">لوحة المفاتيح العربية</span></h1>
       <div class="hero-sub-row">
-        <p class="hero-sub" data-i18n="hero.sub">Tapez en arabe depuis n\'importe quel appareil. Sans téléchargement, sans installation.</p>
+        <p class="hero-sub" data-i18n="hero.sub">Tapez en arabe depuis n'importe quel appareil. Sans téléchargement, sans installation.</p>
         <div class="hero-badge">
           <span class="badge-dot"></span>
           100% Gratuit &middot; Sans Compte &middot; Partout
@@ -2529,7 +2530,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="combo-section-hd">
       <div class="combo-hd-inner">
         <div class="combo-hd-text">
-          <p class="combo-section-sup" data-i18n="combo.title">Combos <span>prêts</span></p>
+          <p class="combo-section-sup" data-i18n="combo.title">Combos <span>Arabes prêts</span></p>
           <h2 class="combo-section-sub">Un clic pour insérer — ou copier directement</h2>
         </div>
         <img src="../images/Mascot-1.svg" alt="Emoji mascot" class="combo-mascot">
@@ -2585,7 +2586,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   <div class="wrap">
     <div class="apps-hd">
       <h2 data-i18n="apps.h2">Clavier Arabe pour <span style="color:var(--blue)">Toutes les Applis</span></h2>
-      <p data-i18n="apps.sub">Tapez votre texte arabe ci-dessus → cliquez sur <b>Copier</b> → collez dans n\'importe quelle appli. Aucun réglage spécial.</p>
+      <p data-i18n="apps.sub">Tapez votre texte arabe ci-dessus → cliquez sur <b>Copier</b> → collez dans n'importe quelle appli. Aucun réglage spécial.</p>
     </div>
     <div class="apps-grid">
 
@@ -2616,7 +2617,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.ig.h3">Clavier Arabe pour Instagram</h3>
-            <p data-i18n="app.ig.p">Écrivez vos légendes, bio ou messages → Copier → collez sur Instagram. Le texte arabe s\'affiche de droite à gauche. Ajoutez le tachkil et des emojis arabes.</p>
+            <p data-i18n="app.ig.p">Écrivez vos légendes, bio ou messages → Copier → collez sur Instagram. Le texte arabe s'affiche de droite à gauche. Ajoutez le tachkil et des emojis arabes.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2627,7 +2628,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.tt.h3">Clavier Arabe pour TikTok</h3>
-            <p data-i18n="app.tt.p">Écrivez vos légendes ou commentaires arabes → Copier → collez dans TikTok. Le mode franco vous permet de taper l\'arabe depuis votre clavier QWERTY.</p>
+            <p data-i18n="app.tt.p">Écrivez vos légendes ou commentaires arabes → Copier → collez dans TikTok. Le mode franco vous permet de taper l'arabe depuis votre clavier QWERTY.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2650,7 +2651,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <span class="b-ar-word">عربي كيبورد</span>
       </div>
       <div class="b-domain">kactyl.com</div>
-      <div class="b-tag" data-i18n="brand.tag">Écrivez en arabe depuis n\'importe quel appareil, sans installation</div>
+      <div class="b-tag" data-i18n="brand.tag">Écrivez en arabe depuis n'importe quel appareil, sans installation</div>
       <div class="b-badges">
         <span class="b-badge green" data-i18n="brand.badge1">✓ 100% Gratuit</span>
         <span class="b-badge blue"  data-i18n="brand.badge2">⚡ Sans install</span>
@@ -2712,6 +2713,69 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         </div>
       </div>
     </div>
+<section class="sig-sec">
+  <style>
+    .sig-sec{padding:64px 0;background:linear-gradient(180deg,rgba(0,102,204,.045),transparent 30%)}
+    .sig-sec .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .sig-hd{text-align:center;margin-bottom:36px}
+    .sig-hd h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text,#1E293B)}
+    .sig-hd h2 span{background:linear-gradient(90deg,#0066cc,#3399ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sig-hd p{color:var(--muted,#64748B);margin-top:10px;font-size:16px;max-width:640px;margin-left:auto;margin-right:auto}
+    .sig-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0 34px}
+    .sig-stats span{background:var(--surface,#fff);border:1px solid rgba(0,102,204,.15);border-radius:999px;padding:8px 18px;font-size:14px;font-weight:700;color:#0066cc;box-shadow:0 2px 10px rgba(30,41,59,.05)}
+    .sig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .sig-card{background:var(--surface,#fff);border-radius:20px;padding:24px;position:relative;direction:rtl}.sig-card::before{content:"";position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.65;z-index:-1;pointer-events:none}
+    .sig-card h3{font-size:17px;font-weight:800;color:var(--text,#1E293B);margin-bottom:4px;direction:rtl}
+    .sig-card .sig-tag{font-size:12.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#0066cc;display:block;margin-bottom:10px}
+    .sig-letters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+    .sig-letters b{font-size:26px;line-height:1;background:rgba(0,102,204,.07);border-radius:12px;height:56px;min-width:56px;padding:0 8px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;font-weight:400;direction:rtl}
+    .sig-card p{font-size:14.5px;color:var(--muted,#64748B);line-height:1.65;direction:rtl}
+    .sig-card p b{color:var(--text,#1E293B);font-weight:700}
+    .sig-ex{margin-top:10px;font-size:14px;color:var(--text,#1E293B);background:rgba(0,102,204,.05);border-radius:10px;padding:8px 12px;display:inline-block;direction:rtl}
+    .sig-hero-card{background:linear-gradient(135deg,#f0f4ff 0%,#e8f0ff 55%,#e0ecff 100%);border:1px solid rgba(0,102,204,.16)}.sig-hero-card .sig-letters b{background:rgba(0,102,204,.10)}.sig-hero-card .sig-ex{background:rgba(0,102,204,.08)}
+    .sig-letters b{font-family:"Tajawal", sans-serif;font-size:30px;line-height:1.5}
+  </style>
+  <div class="wrap">
+    <div class="sig-hd">
+      <h2>Au cœur de <span>l'alphabet arabe de 28 lettres</span></h2>
+      <p>La caractéristique majeure de l'arabe, ce sont les formes contextuelles des lettres. Chaque lettre change complètement d'aspect selon sa position dans le mot — ce qui rend l'affichage et la saisie de l'arabe particulièrement complexes.</p>
+    </div>
+    <div class="sig-stats">
+      <span>28 lettres</span><span>De droite à gauche</span><span>4 formes</span><span>Attesté en 512</span>
+    </div>
+    <div class="sig-grid">
+      <div class="sig-card sig-hero-card">
+        <span class="sig-tag">Formes contextuelles</span>
+        <h3>Des formes selon la position</h3>
+        <div class="sig-letters"><b>ع</b><b>عـــــ</b><b>ـــعـــ</b><b>ـــع</b></div>
+        <p>Chaque lettre arabe peut prendre <b>jusqu'à 4 formes totalement différentes</b> : isolée (ع), initiale (عـــــ), médiane (ـــعـــ) et finale (ـــع). Aucune autre grande écriture ne fait cela — d'où la complexité unique de l'arabe.</p>
+        <div class="sig-ex">La même lettre ع, quatre aspects entièrement différents</div>
+      </div>
+      <div class="sig-card">
+        <span class="sig-tag">Voyelles facultatives</span>
+        <h3>Les signes vocaliques (tachkil)</h3>
+        <div class="sig-letters"><b>َ</b><b>ِ</b><b>ُ</b><b>ْ</b></div>
+        <p>Les voyelles arabes (tachkil / harakat) sont des signes diacritiques facultatifs. Les voyelles brèves sont presque toujours omises dans l'écriture en ligne informelle. Les textes formels, universitaires et religieux utilisent le tachkil pour plus de clarté.</p>
+        <div class="sig-ex">كتب peut signifier « il a écrit », « des livres » ou « écris » — le tachkil lève l'ambiguïté</div>
+      </div>
+      <div class="sig-card">
+        <span class="sig-tag">Sens droite-gauche</span>
+        <h3>Sens de lecture inversé</h3>
+        <div class="sig-letters"><b>ع</b><b>ب</b><b>ر</b><b>ي</b></div>
+        <p>L'arabe s'écrit <b>de droite à gauche</b> — à l'inverse du français. Combiné aux formes contextuelles des lettres, ce sens crée des difficultés d'affichage et de saisie sur les appareils numériques.</p>
+        <div class="sig-ex">Cela se lit de droite ← à gauche — à l'inverse du français</div>
+      </div>
+      <div class="sig-card">
+        <span class="sig-tag">Dialecte et langue formelle</span>
+        <h3>Les locuteurs natifs parlent en dialecte</h3>
+        <div class="sig-letters"><b>Egyptian</b><b>Levantine</b><b>Gulf</b><b>Moroccan</b></div>
+        <p>L'arabe standard moderne (la fusha) est la langue écrite et formelle — sans aucun locuteur natif. La langue maternelle de chaque Arabe est son dialecte régional. En ligne, les Arabes écrivent dans leur dialecte local ou mêlent le dialecte à l'anglais ou au français.</p>
+        <div class="sig-ex">Les dialectes sont parfois incompréhensibles entre eux ; la fusha s'apprend à l'école</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq-sec" id="faq">
   <div class="wrap">
@@ -3215,12 +3279,7 @@ const SPEC_CHARS = ['.', '-', '#', '+', '"', '§', '$', '%', '&', '/', '…', '(
 
 /* Phonetic hint for each key */
 const FL = {
-  'ض':"9'",'ص':'ss', 'ث':'th', 'ق':'q',  'ف':'f',  'غ':'gh', 'ع':'3',
-  'ه':'h',  'خ':'kh', 'ح':'7',  'ج':'j',  'د':'d',
-  'ش':'sh', 'س':'s',  'ي':'y',  'ب':'b',  'ل':'l',  'ا':'a',  'ت':'t',
-  'ن':'n',  'م':'m',  'ك':'k',  'ط':'tt', 'ظ':"6'",
-  'ئ':'y',  'ء':'2',  'ؤ':'w',  'ر':'r',  'لا':'la','ى':'a',  'ة':'a',
-  'و':'w',  'ز':'z',  ',':','
+  'ص':'ss', 'ث':'th', 'ق':'q', 'ف':'f', 'غ':'gh', 'ع':'3', 'ه':'h', 'خ':'kh', 'ح':'7', 'ج':'j', 'د':'d', 'ش':'sh', 'س':'s', 'ي':'y', 'ب':'b', 'ل':'l', 'ا':'a', 'ت':'t', 'ن':'n', 'م':'m', 'ك':'k', 'ط':'tt', 'ئ':'y2', 'ء':'2', 'ؤ':'w2', 'ر':'r', 'لا':'la', 'ى':'a2', 'ة':'ẗ', 'و':'w', 'ز':'z', ',':','
 };
 
 const PHYS = {
@@ -3497,7 +3556,7 @@ function buildSpec() {
 function buildNum() {
   const western  = ['1','2','3','4','5','6','7','8','9','0'];
   const arabic   = ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'];
-  const symbols  = ['?','!',',','.','(',')',':',';','@','#','+','-','×','÷','=','%','°','½','¼','¾'];
+  const symbols  = ["?","!",",",".","(",")",":",";","@","#","+","-","×","÷","=","%","°","½","¼","¾","&","*","\"","'","/","\\","|","_","~","^","<",">","[","]","{","}","€","$","£","¥","©","®","™","•","…","—","«","»","§"/*LANG_SYMBOLS*/,"،","؛","؟","٪","«","»","ـ"/*END_LANG_SYMBOLS*/];
   const fill = (id, chars, extraClass='') => {
     const g = document.getElementById(id); if (!g) return;
     g.innerHTML = '';
@@ -3605,7 +3664,6 @@ function toggleFranco() {
   buildKB();
   const ta = document.getElementById('arabic-text');
   ta.placeholder = francoOn ? FRANCO_ON_PLACEHOLDER : FRANCO_DEFAULT_PLACEHOLDER;
-  toast(francoOn ? '🔤 Hinglish ON — type & press Space to convert' : '⌨️ Hinglish OFF');
 }
 
 /* ── POPUPS ── */
@@ -4572,5 +4630,219 @@ async function submitFeedback(e) {
 })();
 </script>
 <script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+<!-- ══════════ KBDOCK — docked mobile keyboard (installed by tools/add_kbdock.py) ══════════ -->
+<style>
+/* Mobile docked keyboard — native phone feel. Active ≤720px only. */
+@media (max-width: 768px) {
+  body.kb-docked #kbc {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
+    margin: 0; border-radius: 18px 18px 0 0;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    box-shadow: 0 -10px 34px rgba(0,0,0,.20);
+    max-height: 76vh; overflow: visible;
+    animation: kbdock-up .26s cubic-bezier(.2,.8,.25,1);
+  }
+  @keyframes kbdock-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  [data-theme="dark"] body.kb-docked #kbc { box-shadow: 0 -10px 34px rgba(0,0,0,.55); }
+
+  /* Franco hint panel grows the dock past the viewport (bottom key row pushed
+     off-screen) — when docked it becomes ONE slim horizontal row: same content
+     (instruction + example chips), swipeable sideways, native-strip height */
+  body.kb-docked .franco-hint {
+    flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: flex-start;
+    gap: 8px; margin: 6px 0 2px; padding: 7px 10px; font-size: 10.5px;
+    overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+  }
+  body.kb-docked .franco-hint::-webkit-scrollbar { display: none; }
+  body.kb-docked .franco-hint > span { flex: 0 0 auto; white-space: nowrap; }
+  body.kb-docked .franco-chips { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
+  body.kb-docked .franco-chips > * { white-space: nowrap; flex: 0 0 auto; }
+
+  /* toasts: the dock owns the bottom of the screen, so notices become a TOP
+     banner while docked (native-style), never trapped behind the keyboard */
+  body.kb-docked .toast {
+    bottom: auto; top: 72px;
+    transform: translateX(-50%) translateY(-140px);
+  }
+  body.kb-docked .toast.show { transform: translateX(-50%) translateY(0); }
+
+  .kbdock-handle { display: none; }
+  body.kb-docked .kbdock-handle {
+    display: flex; align-items: center; justify-content: center;
+    height: 26px; margin: -6px 0 2px; cursor: grab; touch-action: none;
+  }
+  .kbdock-handle::before {
+    content: ''; width: 42px; height: 5px; border-radius: 3px;
+    background: rgba(100,116,139,.35);
+  }
+  body.kb-docked .sug-pill { font-size: 13px; padding: 7px 8px; }
+}
+
+#kb-altpop {
+  position: fixed; z-index: 10000; display: none; gap: 6px;
+  background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.22); padding: 8px; transform: translateX(-50%);
+}
+[data-theme="dark"] #kb-altpop { background: #1E293B; border-color: rgba(255,255,255,.12); }
+#kb-altpop button {
+  min-width: 44px; height: 46px; border: 0; border-radius: 10px; cursor: pointer;
+  font-size: 24px; font-family: inherit; background: rgba(0,104,255,.08); color: inherit;
+}
+#kb-altpop button:active, #kb-altpop button:hover { background: var(--indigo, #6366F1); color: #fff; }
+
+/* Matra/Roman labels: docked = native-small. Outside any media query and
+   !important — the template re-sizes these keys at several widths (12px base,
+   9px <=640) and docked must win at every width. */
+body.kb-docked .k-tashkeel, body.kb-docked .k-franco { font-size: 8px !important; }
+body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !important; }
+/* Roman/Franco mode enlarges LETTER keys (to show the roman hint) via
+   .franco-on .key{font-size:13-14px} — but that also hit the Tashkeel/Roman
+   mode keys and clipped their labels ('Tashkeel'->'ashke'). Pin the mode-key
+   labels to the compact size in Roman mode too, docked OR inline. */
+.franco-on .k-tashkeel, .franco-on .k-franco { font-size: 8px !important; }
+.franco-on .k-tashkeel .ks, .franco-on .k-franco .ks { font-size: 6px !important; }
+</style>
+<script>
+(function kbdockDemo() {
+  const mq = window.matchMedia('(max-width: 768px)');
+  const kbc = document.getElementById('kbc');
+  const ta  = document.getElementById('arabic-text');
+  if (!kbc || !ta) return;
+
+  const handle = document.createElement('div');
+  handle.className = 'kbdock-handle';
+  handle.setAttribute('aria-label', 'Masquer le clavier');
+  kbc.insertBefore(handle, kbc.firstChild);
+  const spacer = document.createElement('div');
+  spacer.style.display = 'none';
+  kbc.parentNode.insertBefore(spacer, kbc);
+
+  let docked = false;
+  function dock() {
+    if (docked || !mq.matches) return;
+    spacer.style.height = kbc.offsetHeight + 'px';
+    spacer.style.display = 'block';
+    /* portal: #kbc lives inside .wrap (z-index:1 stacking context), so later
+       sections (mascots, combo text) paint OVER it no matter how high its own
+       z-index is. Re-parenting to <body> while docked puts it above everything. */
+    document.body.appendChild(kbc);
+    document.body.classList.add('kb-docked');
+    docked = true;
+    requestAnimationFrame(() => {
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+      followCaret();
+    });
+  }
+  function undock() {
+    if (!docked) return;
+    document.body.classList.remove('kb-docked');
+    document.body.style.paddingBottom = '';
+    spacer.parentNode.insertBefore(kbc, spacer.nextSibling); /* back to its slot */
+    spacer.style.display = 'none';
+    docked = false;
+    ta.blur();
+  }
+
+  ta.addEventListener('focus', dock);
+
+  /* mode toggles (Hinglish ON/OFF, Matra…) must not throw a center card while
+     docked — the key's own color + the hint row ARE the state. Event toasts
+     (Copied!, Cleared…) still show, as the top banner. */
+  if (typeof window.toast === 'function') {
+    const _toast = window.toast;
+    window.toast = function (msg) {
+      if (docked && /Hinglish (ON|OFF)|Roman hints|Matra/i.test(String(msg))) return;
+      return _toast.apply(this, arguments);
+    };
+  }
+
+  /* dock content changes height (Franco panel, tashkeel row…) — keep the page
+     padding and the toast offset in sync */
+  if (window.ResizeObserver) {
+    new ResizeObserver(() => {
+      if (!docked) return;
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+    }).observe(kbc);
+  }
+
+  let hy = null;
+  handle.addEventListener('pointerdown', e => { hy = e.clientY; handle.setPointerCapture(e.pointerId); });
+  handle.addEventListener('pointermove', e => { if (hy !== null && e.clientY - hy > 40) { hy = null; undock(); } });
+  handle.addEventListener('pointerup',   e => { if (hy !== null) undock(); hy = null; });
+  window.addEventListener('resize', () => { if (!mq.matches) undock(); });
+
+  /* selecting text: never auto-scroll while the user's pointer is down in the
+     textarea (a mid-drag scroll cancels the selection), and make selection
+     explicitly allowed. Scroll only follows actual TYPING. */
+  ta.style.userSelect = 'text';
+  ta.style.webkitUserSelect = 'text';
+  let taPointerDown = false;
+  ta.addEventListener('pointerdown', () => { taPointerDown = true; }, { passive: true });
+  ['pointerup', 'pointercancel'].forEach(ev =>
+    document.addEventListener(ev, () => { taPointerDown = false; }, { passive: true }));
+
+  function followCaret() {
+    if (!docked || taPointerDown) return;
+    const r = ta.getBoundingClientRect();
+    const dockTop = window.innerHeight - kbc.offsetHeight;
+    if (r.bottom > dockTop - 8 || r.top < 0) {
+      window.scrollBy({ top: r.bottom - (dockTop - 16), behavior: 'smooth' });
+    }
+  }
+  ta.addEventListener('input', () => requestAnimationFrame(followCaret));
+
+  const kbrows = document.getElementById('kbrows');
+  if (kbrows && navigator.vibrate) {
+    kbrows.addEventListener('pointerdown', e => { if (e.target.closest('.key')) navigator.vibrate(8); }, { passive: true });
+  }
+
+  /* long-press alternates — per-language data from tools/kb_lang_data.py */
+  const KB_ALT = {"ا": ["أ", "إ", "آ"], "و": ["ؤ"], "ي": ["ئ", "ى"], "ه": ["ة"]};
+  const pop = document.createElement('div');
+  pop.id = 'kb-altpop';
+  document.body.appendChild(pop);
+  let lpTimer = null, lpKey = null, suppressClick = false;
+
+  function showAlts(keyEl, ch) {
+    pop.innerHTML = '';
+    KB_ALT[ch].forEach(alt => {
+      const b = document.createElement('button');
+      b.textContent = alt;
+      b.onclick = ev => { ev.stopPropagation(); ins(alt); hideAlts(); };
+      pop.appendChild(b);
+    });
+    const r = keyEl.getBoundingClientRect();
+    pop.style.display = 'flex';
+    pop.style.left = (r.left + r.width / 2) + 'px';
+    pop.style.top  = (r.top - 62) + 'px';
+    suppressClick = true;
+  }
+  function hideAlts() { pop.style.display = 'none'; }
+
+  if (kbrows) {
+    kbrows.addEventListener('pointerdown', e => {
+      const k = e.target.closest('.key');
+      if (!k) return;
+      const ch = k.textContent.trim().slice(0, 1);
+      if (!KB_ALT[ch]) return;
+      lpKey = k;
+      lpTimer = setTimeout(() => showAlts(k, ch), 420);
+    }, { passive: true });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(ev =>
+      kbrows.addEventListener(ev, () => { clearTimeout(lpTimer); lpTimer = null; }, { passive: true }));
+    kbrows.addEventListener('click', e => {
+      if (suppressClick) { e.stopPropagation(); e.preventDefault(); suppressClick = false; }
+    }, true);
+  }
+  document.addEventListener('pointerdown', e => {
+    if (!pop.contains(e.target) && e.target !== lpKey) hideAlts();
+  });
+})();
+</script>
+<!-- ══════════ /KBDOCK ══════════ -->
 </body>
 </html>

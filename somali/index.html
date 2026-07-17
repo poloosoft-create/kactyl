@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Somali Keyboard Online 2026 — Free Soomaali [Mobile]</title>
+  <title>Somali Keyboard Online — Type Soomaali, Free &amp; No Download</title>
   <meta name="description" content="Free Somali keyboard online — type Soomaali for WhatsApp, TikTok & Instagram. DH, SH, KH shortcuts & voice typing. No download. Works on iPhone & Android.">
   <meta name="keywords" content="somali keyboard online, somali typing online, type somali online, somali keyboard for whatsapp, kiboodhka soomaaliga, somali keyboard free, type somali on iphone, online somali keyboard">
 
@@ -34,10 +34,10 @@
   <meta property="og:url"         content="https://kactyl.com/somali/">
   <meta property="og:title"       content="Somali Keyboard Online 2026 — Free Soomaali [Mobile]">
   <meta property="og:description" content="Type Somali from your phone or PC — no app, no download. Somali keyboard for WhatsApp, TikTok, Instagram. DH, SH, KH digraph buttons for fast typing.">
-  <meta property="og:image"       content="/images/og-images/somali.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-  <meta property="og:locale"      content="so_SO">
+  <meta property="og:image" content="https://kactyl.com/images/og-images/somali.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+          <meta property="og:locale"      content="so_SO">
   <meta property="og:site_name"   content="Kactyl">
 
   <!-- Twitter Card -->
@@ -69,13 +69,6 @@
       "@type": "Organization",
       "name": "Kactyl",
       "url": "https://kactyl.com"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "3124",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   }
   </script>
@@ -117,7 +110,15 @@
   <style>
 /* ── RESET ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { overflow-x: clip; max-width:100%; }
+html { overflow-x: clip; max-width:100%; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+/* iOS Safari inflates sub-11px text unless text-size-adjust is pinned — the mode-key
+   labels (Tashkeel/Matra/Roman) ballooned and spilled outside their keys on iPhone.
+   overflow:hidden below is the belt-and-braces so no label can ever spill again. */
+.k-tashkeel, .k-franco { overflow:hidden; }
+/* Roman/Franco mode needs a physical keyboard (type Latin → Space → script). On mobile
+   the native keyboard is hidden (inputmode=none) so roman input is impossible — hide the
+   Roman key + its hint bar there; the on-screen script keyboard is the mobile input. */
+@media (max-width:768px){ .franco-hint{ display:none !important; } }
 button { cursor:pointer; font-family:inherit; border:none; background:none; }
 
 /* ── TOKENS ── */
@@ -834,13 +835,13 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* Franco dual label */
 .fl {
-  font-size:17px; font-family:'Inter',sans-serif; font-weight:700;
+  font-size:15px; font-family:'Inter',sans-serif; font-weight:700;
   color:var(--indigo); line-height:1;
   opacity:0; height:0; overflow:hidden;
   transition: opacity .2s;
 }
 .franco-on .fl { opacity:1; height:auto; }
-.franco-on .key { height:60px; font-size:14px; }
+.franco-on .key { height:60px; font-size:22px; }
 @media (hover:hover) and (pointer:fine) { .franco-on .key:hover .fl { color: var(--fl-hover); } }
 :root {
   --fl-hover: #4d008b;
@@ -883,23 +884,23 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 @media (hover:hover) and (pointer:fine) { .k-emoji:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
 
 .k-tashkeel {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#7C3AED,#A855F7) !important;
   border:none !important; box-shadow:0 3px 0 #5B21B6; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-tashkeel:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
-.k-tashkeel .ks { font-size:9px; opacity:.5; font-weight:400; font-family:'Inter',sans-serif; }
+.k-tashkeel .ks { font-size:7px; opacity:.5; font-weight:400; font-family:'Inter',sans-serif; }
 
 .k-franco {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#3B82F6,#6366F1) !important;
   border:none !important; box-shadow:0 3px 0 #1D4ED8; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-franco:hover  { filter:brightness(1.1); box-shadow:0 3px 0 #1D4ED8; transform:translateY(-1px); } }
 .k-franco.active { background:linear-gradient(135deg,#059669,#10B981) !important; box-shadow:0 3px 0 #047857; }
-.k-franco .ks    { font-size:9px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
+.k-franco .ks    { font-size:7px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
 
 /* Special chars key */
 .k-spec { min-width:46px; font-size:13px; font-weight:700; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.2; position:relative; }
@@ -1549,8 +1550,8 @@ footer {
 
   /* Special key flex ratios */
   .k-space   { flex:3;   min-width:0 !important; }
-  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:9px; }
-  .k-franco  { flex:1.5; min-width:0 !important; font-size:9px; }
+  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:8px; }
+  .k-franco  { flex:1.5; min-width:0 !important; font-size:8px; }
   .k-emoji   { flex:1;   min-width:0 !important; font-size:18px; }
   .k-123     { flex:1;   min-width:0 !important; font-size:10px; }
   .k-enter   { flex:1.5; min-width:0 !important; font-size:13px; }
@@ -2035,13 +2036,13 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
                                                             <nav>
-    <a href="/home.html" class="nav-link">Home</a>
-    <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
       <button class="tools-btn">Tools &#9662;</button>
@@ -2427,7 +2428,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="combo-section-hd">
       <div class="combo-hd-inner">
         <div class="combo-hd-text">
-          <p class="combo-section-sup" data-i18n="combo.title">Ready-Made <span>Combos</span></p>
+          <p class="combo-section-sup" data-i18n="combo.title">Ready-Made <span>Somali Combos</span></p>
           <h2 class="combo-section-sub">One click to insert — or copy straight to clipboard</h2>
         </div>
         <img src="../images/Mascot-1.svg" alt="Emoji mascot" class="combo-mascot">
@@ -2580,7 +2581,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="seo-dark-label">Free Somali Keyboard</div>
     <h2>Free Somali Keyboard Online.<br>Type from any device — no download, no install.</h2>
     <div class="seo-dark-stats">
-      <span><strong>600M+</strong> speakers</span>
+      <span><strong>22M+</strong> speakers</span>
       <span class="seo-dark-dot">·</span>
       <span><strong>100%</strong> free</span>
       <span class="seo-dark-dot">·</span>
@@ -2588,8 +2589,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <span class="seo-dark-dot">·</span>
       <span><strong>All</strong> devices</span>
     </div>
-    <p>This <strong>free Somali keyboard online</strong> works instantly in any browser — no app download, no installation, no changing your phone's language settings.</p>
-    <p>Type Somali on <strong>iPhone, Android, Windows or Mac</strong>. <strong>QWERTY</strong> converts romanized Somali to Somali script automatically. Copy directly to <strong>WhatsApp</strong> messages, <strong>TikTok</strong> captions, <strong>Instagram</strong> bios, and more.</p>
+    <p>Somali is one of the world's <strong>youngest standardized written languages</strong> — the official orthography dates only to <strong>October 1972</strong>. For half a century before that, Somalia fought its famous "script wars": religious scholars wrote Somali in Arabic script (<strong>Wadaad writing</strong>), nationalists championed the invented <strong>Osmanya alphabet</strong> created by Osman Yusuf Kenadid in the 1920s, and modernizers pushed Latin. The government finally adopted the Latin system engineered by linguist <strong>Shire Jama Ahmed</strong>, then sent thousands of students into the countryside in the <strong>1974–75 rural literacy campaign</strong> — one of Africa's most ambitious. All of it built on one of the continent's richest oral traditions: Somali <strong>gabay</strong> poetry, composed and memorized for centuries without writing.</p>
+    <p>Somali needs no special script — but typing it on an English keyboard is quietly miserable. <strong>Autocorrect constantly "fixes" Somali words into English ones</strong>, doubled vowels and doubled consonants both change meaning (so every letter counts), and the apostrophe marking the glottal stop gets mangled by smart-quote settings. The alphabet drops p, v and z entirely, and leans on digraphs — <strong>dh, kh and sh carry sounds single letters can't</strong>. This keyboard treats those digraphs as single one-tap keys, keeps predictions Somali-aware instead of English-biased, and never rewrites your words behind your back.</p>
+    <p>Somali is spoken by <strong>22M+ people across Somalia, Djibouti, Ethiopia's Somali Region and northeastern Kenya</strong> — and by one of the most dispersed diasporas on earth. <strong>Minneapolis's "Little Mogadishu" is North America's largest Somali community</strong>; London, Toronto and Nairobi's Eastleigh district anchor the rest. That dispersion makes typing infrastructure matter: <strong>remittances of roughly $1.5–2 billion a year</strong> flow home through relationships maintained daily on WhatsApp and Facebook, and Somali TikTok has boomed since 2020 — captions, comments and status updates all typed by people on borrowed devices, shared phones and desktop browsers where installing a keyboard isn't an option.</p>
     <div class="seo-dark-steps">
       <span class="seo-dark-step">1. Open kactyl.com/somali/</span>
       <span class="seo-dark-arr">→</span>
@@ -2611,6 +2613,42 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         </div>
       </a>
     </div>
+
+
+
+
+
+<section class="sig-sec">
+  <style>
+    .sig-sec{padding:64px 0;background:linear-gradient(180deg,rgba(0,127,255,.045),transparent 30%)}
+    .sig-sec .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .sig-hd{text-align:center;margin-bottom:36px}
+    .sig-hd h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text,#1E293B)}
+    .sig-hd h2 span{background:linear-gradient(90deg,#007fff,#66b2ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sig-hd p{color:var(--muted,#64748B);margin-top:10px;font-size:16px;max-width:640px;margin-left:auto;margin-right:auto}
+    .sig-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0 34px}
+    .sig-stats span{background:var(--surface,#fff);border:1px solid rgba(0,127,255,.15);border-radius:999px;padding:8px 18px;font-size:14px;font-weight:700;color:#007fff;box-shadow:0 2px 10px rgba(30,41,59,.05)}
+    .sig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .sig-card{background:var(--surface,#fff);border-radius:20px;padding:24px;position:relative}.sig-card::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.65;z-index:-1;pointer-events:none}
+    .sig-card h3{font-size:17px;font-weight:800;color:var(--text,#1E293B);margin-bottom:4px}
+    .sig-card .sig-tag{font-size:12.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#007fff;display:block;margin-bottom:10px}
+    .sig-letters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+    .sig-letters b{font-size:26px;line-height:1;background:rgba(0,127,255,.07);border-radius:12px;height:56px;min-width:56px;padding:0 8px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;font-weight:400}
+    .sig-card p{font-size:14.5px;color:var(--muted,#64748B);line-height:1.65}
+    .sig-card p b{color:var(--text,#1E293B);font-weight:700}
+    .sig-ex{margin-top:10px;font-size:14px;color:var(--text,#1E293B);background:rgba(0,127,255,.05);border-radius:10px;padding:8px 12px;display:inline-block}
+    .sig-hero-card{background:linear-gradient(135deg,#ebf5ff 0%,#cce5ff 55%,#94c9ff 100%);border:1px solid rgba(0,127,255,.16)}.sig-hero-card .sig-letters b{background:rgba(0,127,255,.10)}.sig-hero-card .sig-ex{background:rgba(0,127,255,.08)}
+  </style>
+  <div class="wrap">
+    <div class="sig-hd">
+      <h2>How Somali <span>Spells Its Sounds</span></h2>
+      <p>Somalia adopted this Latin alphabet in 1972 — and immediately bent ordinary letters to Cushitic sounds no European language has.</p>
+    </div>
+    <div class="sig-stats"><span>Latin since 1972</span><span>Doubled long vowels</span><span>c = ʿayn</span><span>dh retroflex</span></div>
+    <div class="sig-grid"><div class="sig-card sig-hero-card"><span class="sig-tag">Recycled letters</span><h3>c and x aren’t what you think</h3><div class="sig-letters"><b>Cali</b><b>Xamar</b><b>Cumar</b></div><p>Somali gave spare Latin letters new jobs: <b>c is the deep throat sound ʿayn</b> — Cali is Ali, Cumar is Omar — and <b>x is the heavy h</b>: Xamar is Mogadishu’s own name. Read them the English way and every Somali name comes out wrong; this keyboard’s layout keeps both one tap away.</p><div class="sig-ex">Cali — Ali · Xamar — Mogadishu</div></div><div class="sig-card"><span class="sig-tag">Length is meaning</span><h3>Long vowels are written twice</h3><div class="sig-letters"><b>oo</b><b>aa</b><b>ee</b></div><p>Vowel length changes words in Somali, so the spelling <b>always doubles a long vowel</b> — Soomaaliya carries two of them in its own name. No guessing, no diacritics: what you see is how long you say it.</p><div class="sig-ex">Soomaaliya — Somalia</div></div><div class="sig-card"><span class="sig-tag">The signature sound</span><h3>dh — the retroflex d</h3><div class="sig-letters"><b>dh</b><b>dhul</b></div><p>The digraph dh marks a <b>retroflex d</b> — tongue curled back — in everyday words like dhul (land) and dhar (clothes). It’s one of the sounds that instantly identifies Somali speech.</p><div class="sig-ex">dhul — land · dhar — clothes</div></div><div class="sig-card"><span class="sig-tag">The 1972 decision</span><h3>A young alphabet, a huge campaign</h3><div class="sig-letters"><b>1972</b></div><p>After decades of debate between Arabic script and the homegrown Osmanya alphabet, Somalia chose Latin in October 1972 — then launched <b>one of Africa’s largest literacy campaigns</b> to teach it nationwide.</p><div class="sig-ex">far Soomaali — Somali writing</div></div></div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq-sec" id="faq">
   <div class="wrap">
@@ -3139,7 +3177,7 @@ const ROWS = [
   ['q','w','e','r','t','y','u','i','o','p'],
   ['a','s','d','f','g','h','j','k','l','','BSP'],
   ['SHIFT','z','x','c','v','b','n','m','dh','sh','kh'],
-  ['N123','EMOJI','SPACE','.','ENTER']
+  ['N123','EMOJI','SPACE','.','FRANCO','ENTER']
 ];
 
 const SPEC_CHARS = [
@@ -3149,7 +3187,11 @@ const SPEC_CHARS = [
 ];
 
 /* Phonetic hint for each key */
-const FL = {};
+const FL = {
+  'q':'q', 'w':'w', 'e':'e', 'r':'r', 't':'t', 'y':'y', 'u':'u', 'i':'i', 'o':'o', 'p':'p', 'a':'a', 's':'s', 'd':'d', 'f':'f', 'g':'g', 'h':'h', 'j':'j', 'k':'k', 'l':'l', ',':',', '],
+  [':'],
+  [', 'dh':'d+h', 'kh':'k+h', 'sh':'s+h'
+};
 
 const PHYS = {
   'q':'q','w':'w','e':'e','r':'r','t':'t','y':'y','u':'u','i':'i','o':'o','p':'p',
@@ -3172,19 +3214,7 @@ const EMOJI_CATS_DATA = {
   '🚩': { label:'Flags', emojis:['🇸🇦','🇦🇪','🇪🇬','🇲🇦','🇩🇿','🇹🇳','🇱🇾','🇸🇩','🇾🇪','🇸🇾','🇮🇶','🇯🇴','🇵🇸','🇱🇧','🇰🇼','🇧🇭','🇶🇦','🇴🇲','🇮🇷','🇹🇷','🇺🇸','🇨🇦','🇲🇽','🇧🇷','🇦🇷','🇨🇱','🇨🇴','🇵🇪','🇻🇪','🇬🇧','🇫🇷','🇩🇪','🇪🇸','🇮🇹','🇵🇹','🇳🇱','🇧🇪','🇨🇭','🇦🇹','🇸🇪','🇳🇴','🇩🇰','🇫🇮','🇵🇱','🇺🇦','🇷🇺','🇬🇷','🇨🇿','🇭🇺','🇷🇴','🇧🇬','🇷🇸','🇭🇷','🇸🇰','🇸🇮','🇮🇪','🇮🇸','🇨🇳','🇯🇵','🇰🇷','🇮🇳','🇵🇰','🇧🇩','🇮🇩','🇲🇾','🇸🇬','🇹🇭','🇻🇳','🇵🇭','🇰🇭','🇱🇦','🇲🇲','🇳🇵','🇱🇰','🇦🇺','🇳🇿','🇿🇦','🇳🇬','🇰🇪','🇪🇹','🇬🇭','🇹🇿','🇺🇬','🇨🇲','🏳️','🏴','🏁','🚩','🎌'] }
 };
 
-const WORDS = [
-  'waxaan','waxaad','waxuu','waxay','waxaynu','waxaydin',
-  'aad','iyo','oo','ee','ah','ku','la','ka','u','si',
-  'haa','maya','mahadsanid','soo','dheh','fadlan','adiga',
-  'wanaagsan','fiican','weyn','yar','cusub','daba','maanta','berri','hadda',
-  'cuno','cab','tag','kaalay','samee','sheeg','arag','maqal',
-  'guri','dugsiga','shaqo','suuq','waddo','magaalo','dalka',
-  'soomaali','muqdisho','xamar','hargeysa','berbera','kismaayo','baydhabo',
-  'jacayl','nabadgelyo','nabad','rajo','aamini','xor','midnimo',
-  'ciid','dhalasho','ramadan','subax','habeenimo','galabnimo',
-  'qoys','saaxiib','hooyo','aabo','walaal','ilmo',
-  'dhib','farxad','xasanad','shaqo','waxbarasho'
-];
+const WORDS = ["oo", "ka", "ayaa", "ay", "ku", "ee", "in", "iyo", "ah", "uu", "soo", "la", "lagu", "soomaaliya", "kale", "dowladda", "puntland", "waxaa", "sheegay", "ugu", "loo", "laga", "magaalada", "dalka", "si", "gobolka", "waxa", "sidoo", "kala", "madaxweynaha", "sida", "mid", "waxay", "ciidamada", "maxamed", "madaxweyne", "aan", "badan", "markii", "federaalka", "maanta", "dadka", "uga", "waa", "ahaa", "looga", "al-shabaab", "inay", "muqdisho", "wuxuu", "tirsan", "waxaana", "wax", "dib", "yahay", "yihiin", "axmed", "golaha", "degmada", "galmudug", "dowlad", "tahay", "kadib", "dhacay", "hore", "qof", "labada", "aysan", "deni", "cudurka", "wasiirka", "arrimaha", "somaliland", "wasaaradda", "isku", "kamid", "cabdullaahi", "inuu", "gaar", "shacabka", "sii", "ciidanka", "sheegtay", "maamulka", "soomaaliyeed", "ayuu", "sare", "duwan", "loogu", "guddiga", "doorashada", "ma", "amniga", "hadlay", "baxay", "mareykanka", "ra’iisul", "cusub", "farmaajo", "xarunta", "cali", "guddoomiyaha", "guud", "bulshada", "itoobiya", "gudaha", "cabdi", "shirka", "ahaan", "kasoo", "balse", "xasan", "islamarkaana", "doono", "ama", "xukuumadda", "lahaa", "wada", "xalay", "inta", "jubbaland", "degaanka", "weli", "leh", "ilaa", "aad", "sugan", "isla", "baarlamaanka", "madaxda", "siciid", "yiri", "hoose", "waxaan", "kenya", "helay", "caafimaadka", "qaaday", "hadda", "socda", "qaar", "halka", "kuwa", "dilay", "goboleedka", "coronavirus", "banaadir", "dhanka", "sidii", "wararka", "kula", "warbaahinta", "jira", "laba", "mudane", "hor", "gaaray", "haddii", "dhashay", "aqalka", "dhuusamareeb", "iyadoo", "cumar", "magacaabay", "doonaan", "halkaas", "kuwaas", "boosaaso", "muddo", "doorashooyinka", "ahayd", "isaga", "kulan", "shalay", "dagaal", "weyn", "dhammaan", "kaga", "markaana", "qoraal", "kulanka", "dhigay", "garoowe", "wasaaraha", "katirsan", "tilmaamay", "dhinaca", "dagaalka", "sheegaya", "goboleedyada", "sheegeen", "xanuunka", "siyaasadeed", "caasimadda", "meel", "taliyaha", "saraakiisha", "dhexe", "sano", "mar", "dhinac", "qeyb", "jiray", "uusan", "gaalkacyo", "koonfur", "trump", "kooban", "halkaasi", "xafiiska", "saaray", "dhan", "jubaland", "kasta", "isagoo", "taas", "xilka", "ayay", "yaalla", "iska", "wasaare", "marka", "ruux", "baarlamanka", "socday", "dambeeyay", "afrika", "garoonka", "sameeyay", "wasiir", "dambe", "xaqiijiyay", "is", "somalia", "madaxtooyada", "caalamka", "karo", "shiinaha", "qaraxa", "hay’adda", "ciidamo", "dhaafay", "kaas", "kooxda", "deegaanka", "qoor", "galbeed", "booliska", "adag", "heer", "ha", "doorasho", "xubno", "labaad", "bari", "caafimaad", "xusay", "haatan", "xigeenka", "muuse", "xilli", "hirshabeelle", "reer", "deg", "geeriyooday", "cid", "qaatay", "dastuurka", "saddex", "dhintay", "galay", "qabtay", "gacanta", "xaaladda", "xubnaha", "aadan", "diyaaradaha", "ganacsiga", "turkiga", "xuseen", "waddanka", "inkastoo", "dalalka", "maxkamadda", "dhacday", "baaqay", "booliiska", "tirada", "jiraan", "horay", "dilka", "siyaasadda", "maraykanka", "jirin", "nin", "maxamuud", "tan", "qoraalka", "geystay", "kusoo", "wali", "isugu", "saaka", "guddoomiye", "dibadda", "jabuuti", "xooggan", "dalkaasi", "bishii", "shir", "dal", "taliska", "maamul", "doona", "kama", "khasaaraha", "jiro", "karin", "sidaas", "xiriira", "qaramada", "hal", "nuur", "dhulka", "sharciga", "maadaama", "labo", "nool", "weerar", "qaranka", "ahayn", "dhex", "masar", "midowga", "xildhibaanada", "saabsan", "yurub", "mudug", "ku-xigeenka", "jirto", "qarax", "yimid", "noqon", "dawladda", "lasoo", "soomaalida", "goobta", "mas’uuliyiinta", "taagan", "waxayna", "leeyihiin", "doonto", "leeyahay", "qayb", "mas’uuliyiin", "saraakiil", "jireen", "lala", "culus", "biixi", "shaqo", "isu", "amisom", "heshiis", "ciidan", "hannaanka", "qardho", "xigtay", "xiray", "yeeshay", "kulmay", "dhismaha", "dhowr", "dadkii", "dhaqaalaha", "gedo", "wanaagsan", "askari", "xildhibaannada", "cismaan", "yar", "ahna", "sababta", "shaqada", "dhexmaray", "noqday", "yuusuf", "meesha", "federaal", "cad", "iyada", "shabeellaha", "gaari", "kalena", "shaaciyay", "walba", "qaarkood", "ayaan", "muhiim", "wuxuuna", "dhaqanka", "rooble", "dhexeeya", "dhawaan", "beesha", "weerarka", "taasi", "baxday", "doonaa", "magacaabo", "maaliyadda", "midoobay", "dileen", "iney", "kheyre", "dheer", "hoos", "qaran", "mr", "baahan", "bixin", "wixii", "intii", "hadalka", "adduunka", "gaartay", "sanadkii", "lacagta", "xisbiga", "sheekh", "cabdiraxmaan", "dr", "aynu", "iyaga", "intaas", "khasaare", "caalamiga", "heshiiska", "xoogga", "waxbarashada", "shirkii", "ethiopia", "jeediyay", "socota", "dunida", "agaasimaha", "duqa", "hargeysa", "saartay", "kulamo", "alle", "maalin", "abiy", "dhinteen", "dalkaas", "kaddib", "ururka", "madaxa", "shirkadda", "warar", "dil", "diray", "leedahay", "madoobe", "ismaaciil", "xubnood", "goob", "xisbiyada", "shaqaalaha", "garowe", "soomaali", "ayey", "dhow", "qaban", "kismaayo", "cod", "wasiirada", "gaadiidka", "imaanaya", "qaabilsan", "ula", "khayre", "dhimasho", "madasha", "xiriirka", "caasimada", "laamaha", "horumarinta", "rayidka", "gen", "ahaayeen", "dhaawac", "doonin", "hubaysan", "faarax", "kaasi", "dhaqaale", "lacag", "gaarka", "gobollada", "kara", "keliya", "cabsi", "safiirka", "laakiin", "wadajir", "sheegayaan", "lahaayeen", "maalmihii", "hadal", "lama", "afar", "dekedda", "ganacsatada", "qalabka", "shan", "xildhibaan", "baaritaan", "xiriir", "kaariye", "gudoomiyaha", "rasmi", "qorshaha", "hay’adaha", "maxaa", "xeer", "sool", "ayna", "mudda", "uuna", "kuwo", "tirsanaa", "xal", "xabsiga", "marxuumka", "nugaal", "ahaanna", "daray", "dhaawacmeen", "karaan", "keentay", "dadweynaha", "dowladdu", "faahfaahin", "koonfurta", "haweenka", "dowladaha", "waqooyi", "difaaca", "deegaannada", "dhaca", "haya", "lahayd", "qaadi", "siiyay", "jir", "dhinacyada", "lahayn", "corona", "guddoonka", "mudan", "ammaanka", "badda", "bilowday", "doortay", "kuna", "horey", "arkay", "khasaaro", "sacuudiga", "xassan", "karto", "noqotay", "qabto", "rasmiya", "sameeyeen", "usoo", "duleedka", "illaa", "horumarka", "milyan", "waana", "militariga", "africom", "khilaafka", "degmooyinka", "donald", "bilood", "bixiyay", "helo", "isna", "qaadeen", "eedeeyay", "kor", "jaamac", "goobaha", "madax", "shacab", "geerida", "madaxweynihii", "waqooyiga", "nabad", "abshir", "ibraahim", "filayaa", "iyagoo", "kan", "karaash", "gacan", "siiyo", "cilmi", "kumaandooska", "maalinta", "biyaha", "marxuum", "danab", "sikastaba", "aaddan", "hayo", "lagula", "shaacisay", "dhacdo", "sameeyo", "haddana", "kun", "jowhar", "degaannada", "ganacsi", "dowlada", "ahaate", "gaaraya", "jirtay", "maray", "qaadan", "iran", "sanaag", "soomaaliga", "hadleen", "jirta", "kaliya", "lix", "qofka", "dhowaan", "madaxweynayaasha", "hase", "soomaalidu", "aheyd", "dheeraad", "dhici", "qabo", "shabeellada", "waare", "geliyay", "carabta", "hiiraan", "bisha", "dhaqan", "hawlgal", "sharci", "xukunka", "kooxaha", "hawada", "saldhiga", "addis", "mahdi", "gaaro", "gaystay", "heli", "kalana", "saxiixay", "amray", "horreeyay", "tallaabo", "daraawiishta", "baraha", "odayaasha", "gobolada", "ahi", "baxaya", "buuxda", "dhaawacmay", "riday", "wadaa", "barre", "qorshaysan", "wuxu", "doonta", "islaam", "ummadda", "xoghayaha", "sarkaal", "ilaalinta", "xerada", "maxay", "xaaji", "dhaxeeya", "diiday", "jirey", "keenay", "tagay", "timid", "waayo", "warbixin", "cirka", "mucaaradka", "dagaalkii", "gargaarka", "md", "malayshiyaadka", "dollar", "ciise", "xaashi", "dhawaaqay", "doonayo", "fuliyeen", "hortagga", "hubeysan", "jeer", "jooga", "taalla", "waayay", "yaqaan", "bishan", "howlaha", "heshiiskii", "xeerka", "guuleed", "nairobi", "suudaan", "baa", "darro", "dhaweeyay", "hadlin", "qoray", "sababay", "wadaan", "yeesheen", "qoorqoor", "kiis", "qaado", "hayaan", "bangiga", "bartiisa", "taliye", "xuquuqda", "iskaashiga", "arimaha", "markuu", "karkaar", "saciid", "villa", "dhalatay", "saareen", "saaro", "talada", "yaraan", "yeelan", "jubbada", "diyaar", "hoggaaminayo", "taageero", "cadde", "kii", "maalmood", "wakiilada", "kuwaasi", "ababa", "mas’uul", "xaalad", "dawlad", "xarumaha", "qaybta", "howlgalka", "wafdi", "munaasabadda", "xaafadda", "sudan", "karta", "laabtay", "qaba", "qabteen", "wado", "waxba", "yeeshee", "afgooye", "geelle", "sheikh", "xamar", "kadibna", "go’aan", "sanadkan", "maalmaha", "uma", "xiran", "tiro", "maalintii", "muranka", "qeybta", "nabadda", "beeraha", "wakiilka", "shabeellaha hoose", "ba’an", "dhac", "dhibaato", "fuliyay", "inaan", "na", "sheegatay", "tegay", "waday", "dfs", "bandhigay", "dhimashada", "fara", "taasoo", "arrimo", "post", "jaamacadda", "bay", "caabuqa", "hubka", "nidaamka", "taliyihii", "wadada", "isbitaalka", "ururada", "dhul", "faafidda", "geysteen", "saari", "socdo", "sugnaa", "khaliif", "biyo", "inaga", "duqeyn", "sannadkii", "suuqa", "warfaafinta", "deyn", "saakay", "xaafadaha", "amni", "gaariga", "koox", "miino", "saldhig", "faah", "waxaase", "nnkh", "bilaabay", "booqday", "galeen", "jeeda", "kuma", "socodka", "weeraray", "yaal", "xog", "waxyaabaha", "cudurkan", "guddoomiyihii", "gobalka", "argagixisada", "xafiiskiisa", "daawo", "diyaaradda", "xoolaha", "biden", "daacish", "warsame", "amar", "dhigeen", "gelin", "helin", "karaa", "israel", "garab", "shaqeeyaan", "nolosha", "safar", "meelaha", "wuu", "twitter-ka", "kowaad", "rayid", "waan", "deegaanada", "mudanayaasha", "diyaarad", "safmarka", "sirdoonka", "warbixinta", "ingiriiska", "baaqday", "ballaaran", "beegsaday", "doonaya", "fursad", "gashay", "halis", "helaan", "la’aan", "qabaan", "shaacin", "shaqeeya", "ansixiyay", "cidda", "intaa", "waliba", "arrintaas", "maalmo", "rasmiga", "dalku", "bartamaha", "qatar", "duulista", "wakiillada", "warshadaha", "isgaarsiinta", "safaaradda", "webiga", "bariga", "taariikhda", "cabdicasiis", "cabdirashiid", "faray", "hayay", "hortago", "kana", "sameeyey", "xaqiijisay", "xoog", "ahmed", "jamhuuriyadda", "suuriya", "awood", "joogay", "lagama", "toos", "ii", "doorashadii", "alshabaab", "colaad", "sanadka", "magaalooyinka", "midnimada", "guddi", "magaca", "xil", "natiijada", "wasaarada", "kulankii", "urur", "waxgaradka", "cawad", "galgaduud", "hindiya", "aanu", "baxsaday", "beegan", "dhigtay", "dhisan", "eegtay", "furay", "gaareen", "galaan", "geeyay", "mana", "burbur", "talyaaniga", "gobol", "naxariistee", "gurmad", "hirgelinta", "khilaaf", "dalal", "wasiirkii", "labadii", "siyaasiyiin", "degmadaasi", "dibedda", "war-saxaafadeed", "bin", "hoggaanka", "qoyska", "gobolkaasi", "wabiga", "beledweyne", "daahir", "ducaale", "gaas", "mursal", "taiwan", "adeegyada", "deggan", "dhamaan", "doonayay", "hadashay", "joojiyay", "kuwii", "siin", "africa", "isniin", "shariif", "aanan", "awoodda", "fadhiya", "kahor", "waaweyn", "xaqiijiyeen", "xogta", "filish", "hub", "iyana", "qaabka", "xarun", "dadku", "qaraxaasi", "af", "talo", "xabsi", "ninka", "tababarka", "taageerada", "xukun", "qofkii", "tuulada", "socdaalka", "bayaan", "wakaaladda", "wararku", "qaadka", "wasaarihii", "saddexda", "baydhabo", "imaaraadka", "buu", "fiican", "mahadceliyay", "saaran", "salaysan", "waddo", "al", "liibiya", "saacado", "khamiis", "hab", "markaas", "xilligii", "danjire", "haddaba", "dood", "guul", "heerka", "cafinta", "afhayeenka", "magaaladda", "madaxwaynaha", "aragti", "shirkadaha", "koowaad", "ilo", "kmg", "soomaaliland", "aanay", "baxeen", "dadaal", "dambeeyey", "dhaceen", "dhaliyay", "diiwaan", "faahin", "habka", "horreysay", "magaciisa", "markale", "noqdo", "wajahan", "walaac", "xun", "baay", "madiina", "ruushka", "jaray", "shaqeyn", "faransiiska", "magacaabi", "tacsi", "daran", "waddooyinka", "milateriga", "howlgal", "g/sare", "weerarkii", "askar", "saacadihii", "dugsiga", "muwaadiniinta", "wareegto", "rasaas", "wafdiga", "arrintan", "mahad", "garsoorka", "cabdulle", "israa’iil", "tigray", "xaaf", "xirsi", "bixi", "dambeyn", "lagaga", "la’aanta", "marar", "qaadatay", "qabsoomay", "qeybaha", "sheegin", "siday", "wayn", "axad", "bulsho", "codsaday", "digay", "habeen", "muddooyinkii", "qorshe", "shabaab", "yaasiin", "qoys", "weeraro", "boqor", "xilligaas", "xilliga", "banaan", "diinta", "wefdi", "hawlaha", "sanad", "nasiib", "go’aankii", "imtixaanka", "wasiiro", "muslimiinta", "shire", "baxaan", "bogaadiyay", "dalbaday", "darteed", "go’an", "hadlayay", "kaloo", "magac", "mas’uuliyadda", "noqoto", "qaataan", "qabsaday", "saameyn", "socdaan", "xigeen", "xirnaa", "ra’iisal", "bannaan", "dilkii", "celiyay", "degdeg", "marnaba", "xaaladaha", "sabtiya", "afka", "caawa", "farsamo", "amaanka", "dowladdii", "gurmadka", "joogtada", "sharaf", "siyaasiyiinta", "fulinta", "go’aanka", "kiisaska", "rag", "isimada", "beelaha", "kooxo", "askariga", "xildhibaano", "codka", "qaxootiga", "askarta", "madaxweynuhu", "waaxda", "djibouti", "facebook", "siyaad", "swan", "tplf", "aha"];
 
 /* ── PREDICTIVE TEXT ENGINE ── */
 let userFreq = {};
@@ -3207,13 +3237,46 @@ function editDist(a, b) {
 }
 
 const NEXT_WORD = {
-  'waxaan':['jecelahay','doonayaa','garanayaa','ahay'],
-  'aad':['baad','iyo','u','wanaagsan'],
-  'wanaagsan':['tahay','yihiin','baad'],
-  'mahadsanid':['aad','walaal','saaxiib'],
-  'soomaali':['wanaagsan','jacayl','mahadsanid'],
-  'ciid':['wanaagsan','mubaarak'],
-  'nabad':['gelyo','iyo','baad']
+  "oo": ["ay", "ka", "ku", "uu"],
+  "ka": ["soo", "tirsan", "mid", "dhacay"],
+  "ayaa": ["sheegay", "lagu", "ku", "maanta"],
+  "ay": ["ku", "ka", "soo", "la"],
+  "ku": ["soo", "sugan", "yaalla", "xigeenka"],
+  "ee": ["gobolka", "ku", "soomaaliya", "dalka"],
+  "in": ["ay", "uu", "la", "ka"],
+  "iyo": ["kuwa", "in", "dowlad", "xubno"],
+  "ah": ["oo", "ee", "ayaa", "ku"],
+  "uu": ["ku", "ka", "sheegay", "soo"],
+  "soo": ["baxay", "saaray", "xigtay", "socda"],
+  "la": ["sheegay", "soo", "xiriira", "xaqiijiyay"],
+  "lagu": ["sheegay", "soo", "dilay", "magacaabo"],
+  "kale": ["oo", "ee", "waxaa", "wuxuu"],
+  "dowladda": ["federaalka", "puntland", "soomaaliya", "iyo"],
+  "waxaa": ["ka", "lagu", "la", "uu"],
+  "soomaaliya": ["ayaa", "iyo", "maxamed", "ee"],
+  "sheegay": ["in", "inuu", "inay", "iney"],
+  "ugu": ["baaqay", "soo", "dambeeyay", "badan"],
+  "puntland": ["ayaa", "iyo", "siciid", "oo"],
+  "loo": ["soo", "magacaabay", "yaqaan", "doortay"],
+  "laga": ["soo", "helay", "qaaday", "cabsi"],
+  "magaalada": ["muqdisho", "dhuusamareeb", "boosaaso", "gaalkacyo"],
+  "si": ["loo", "ay", "looga", "gaar"],
+  "gobolka": ["banaadir", "bari", "mudug", "gedo"],
+  "waxa": ["uu", "ay", "ka", "uuna"],
+  "dalka": ["iyo", "kenya", "ka", "oo"],
+  "sidoo": ["kale", "kalena", "kalana", "kawada"],
+  "kala": ["duwan", "ah", "guurka", "hadlay"],
+  "madaxweynaha": ["dowladda", "puntland", "dowlad", "galmudug"],
+  "sida": ["ay", "uu", "la", "laga"],
+  "mid": ["ah", "ahaa", "ka", "kamid"],
+  "waxay": ["ku", "ka", "sheegtay", "sheegeen"],
+  "ciidamada": ["dowladda", "qalabka", "mareykanka", "amisom"],
+  "madaxweyne": ["farmaajo", "deni", "ku", "trump"],
+  "maxamed": ["cabdullaahi", "cabdi", "islaam", "xuseen"],
+  "aan": ["la", "weli", "ka", "ku"],
+  "markii": ["ay", "uu", "la", "ugu"],
+  "federaalka": ["soomaaliya", "iyo", "ah", "ee"],
+  "badan": ["oo", "ku", "ee", "ay"],
 };
 
 let lastPickedWord = '';
@@ -3327,6 +3390,12 @@ function buildKB() {
         btn.innerHTML = 'Extras<span class="ks">DH/SH/KH</span>';
         btn.onclick = e => { e.stopPropagation(); toggleTash(); };
 
+      } else if (k === 'FRANCO') {
+        btn.classList.add('k-franco');
+        if (francoOn) btn.classList.add('active');
+        btn.innerHTML = 'Roman<span class="ks">DH·KH·SH</span>';
+        btn.onclick = toggleFranco;
+
       } else {
         /* letter key — prefix combining chars with dotted circle so they render visibly */
         const COMBINING = new Set([]);
@@ -3357,7 +3426,7 @@ function buildSpec() {
 function buildNum() {
   const western  = ['1','2','3','4','5','6','7','8','9','0'];
   const arabic   = ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'];
-  const symbols  = ['?','!',',','.','(',')',':',';','@','#','+','-','×','÷','=','%','°','½','¼','¾'];
+  const symbols  = ["?","!",",",".","(",")",":",";","@","#","+","-","×","÷","=","%","°","½","¼","¾","&","*","\"","'","/","\\","|","_","~","^","<",">","[","]","{","}","€","$","£","¥","©","®","™","•","…","—","«","»","§"/*LANG_SYMBOLS*//*END_LANG_SYMBOLS*/];
   const fill = (id, chars, extraClass='') => {
     const g = document.getElementById(id); if (!g) return;
     g.innerHTML = '';
@@ -3466,6 +3535,8 @@ function toggleSpec()    { specOpen = !specOpen; document.getElementById('spop')
 function closeSpec()     { specOpen = false; document.getElementById('spop').classList.remove('show'); }
 function toggleEmoji()   { emojiOpen = !emojiOpen; document.getElementById('epop').classList.toggle('show', emojiOpen); if (emojiOpen) { closeTashkeel(); closeSpec(); closeNum(); } }
 function closeEmoji()    { emojiOpen = false; document.getElementById('epop').classList.remove('show'); }
+function toggleFranco()  { francoOn = !francoOn; buildKB(); }
+
 function toggleTash()    { tashOpen = !tashOpen; document.getElementById('tpop').classList.toggle('show', tashOpen); if (tashOpen) { closeEmoji(); closeSpec(); closeNum(); } }
 
 async function aiTashkeel() {
@@ -4367,5 +4438,219 @@ async function submitFeedback(e) {
 })();
 </script>
 <script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+<!-- ══════════ KBDOCK — docked mobile keyboard (installed by tools/add_kbdock.py) ══════════ -->
+<style>
+/* Mobile docked keyboard — native phone feel. Active ≤720px only. */
+@media (max-width: 768px) {
+  body.kb-docked #kbc {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
+    margin: 0; border-radius: 18px 18px 0 0;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    box-shadow: 0 -10px 34px rgba(0,0,0,.20);
+    max-height: 76vh; overflow: visible;
+    animation: kbdock-up .26s cubic-bezier(.2,.8,.25,1);
+  }
+  @keyframes kbdock-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  [data-theme="dark"] body.kb-docked #kbc { box-shadow: 0 -10px 34px rgba(0,0,0,.55); }
+
+  /* Franco hint panel grows the dock past the viewport (bottom key row pushed
+     off-screen) — when docked it becomes ONE slim horizontal row: same content
+     (instruction + example chips), swipeable sideways, native-strip height */
+  body.kb-docked .franco-hint {
+    flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: flex-start;
+    gap: 8px; margin: 6px 0 2px; padding: 7px 10px; font-size: 10.5px;
+    overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+  }
+  body.kb-docked .franco-hint::-webkit-scrollbar { display: none; }
+  body.kb-docked .franco-hint > span { flex: 0 0 auto; white-space: nowrap; }
+  body.kb-docked .franco-chips { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
+  body.kb-docked .franco-chips > * { white-space: nowrap; flex: 0 0 auto; }
+
+  /* toasts: the dock owns the bottom of the screen, so notices become a TOP
+     banner while docked (native-style), never trapped behind the keyboard */
+  body.kb-docked .toast {
+    bottom: auto; top: 72px;
+    transform: translateX(-50%) translateY(-140px);
+  }
+  body.kb-docked .toast.show { transform: translateX(-50%) translateY(0); }
+
+  .kbdock-handle { display: none; }
+  body.kb-docked .kbdock-handle {
+    display: flex; align-items: center; justify-content: center;
+    height: 26px; margin: -6px 0 2px; cursor: grab; touch-action: none;
+  }
+  .kbdock-handle::before {
+    content: ''; width: 42px; height: 5px; border-radius: 3px;
+    background: rgba(100,116,139,.35);
+  }
+  body.kb-docked .sug-pill { font-size: 13px; padding: 7px 8px; }
+}
+
+#kb-altpop {
+  position: fixed; z-index: 10000; display: none; gap: 6px;
+  background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.22); padding: 8px; transform: translateX(-50%);
+}
+[data-theme="dark"] #kb-altpop { background: #1E293B; border-color: rgba(255,255,255,.12); }
+#kb-altpop button {
+  min-width: 44px; height: 46px; border: 0; border-radius: 10px; cursor: pointer;
+  font-size: 24px; font-family: inherit; background: rgba(0,104,255,.08); color: inherit;
+}
+#kb-altpop button:active, #kb-altpop button:hover { background: var(--indigo, #6366F1); color: #fff; }
+
+/* Matra/Roman labels: docked = native-small. Outside any media query and
+   !important — the template re-sizes these keys at several widths (12px base,
+   9px <=640) and docked must win at every width. */
+body.kb-docked .k-tashkeel, body.kb-docked .k-franco { font-size: 8px !important; }
+body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !important; }
+/* Roman/Franco mode enlarges LETTER keys (to show the roman hint) via
+   .franco-on .key{font-size:13-14px} — but that also hit the Tashkeel/Roman
+   mode keys and clipped their labels ('Tashkeel'->'ashke'). Pin the mode-key
+   labels to the compact size in Roman mode too, docked OR inline. */
+.franco-on .k-tashkeel, .franco-on .k-franco { font-size: 8px !important; }
+.franco-on .k-tashkeel .ks, .franco-on .k-franco .ks { font-size: 6px !important; }
+</style>
+<script>
+(function kbdockDemo() {
+  const mq = window.matchMedia('(max-width: 768px)');
+  const kbc = document.getElementById('kbc');
+  const ta  = document.getElementById('arabic-text');
+  if (!kbc || !ta) return;
+
+  const handle = document.createElement('div');
+  handle.className = 'kbdock-handle';
+  handle.setAttribute('aria-label', 'Hide keyboard');
+  kbc.insertBefore(handle, kbc.firstChild);
+  const spacer = document.createElement('div');
+  spacer.style.display = 'none';
+  kbc.parentNode.insertBefore(spacer, kbc);
+
+  let docked = false;
+  function dock() {
+    if (docked || !mq.matches) return;
+    spacer.style.height = kbc.offsetHeight + 'px';
+    spacer.style.display = 'block';
+    /* portal: #kbc lives inside .wrap (z-index:1 stacking context), so later
+       sections (mascots, combo text) paint OVER it no matter how high its own
+       z-index is. Re-parenting to <body> while docked puts it above everything. */
+    document.body.appendChild(kbc);
+    document.body.classList.add('kb-docked');
+    docked = true;
+    requestAnimationFrame(() => {
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+      followCaret();
+    });
+  }
+  function undock() {
+    if (!docked) return;
+    document.body.classList.remove('kb-docked');
+    document.body.style.paddingBottom = '';
+    spacer.parentNode.insertBefore(kbc, spacer.nextSibling); /* back to its slot */
+    spacer.style.display = 'none';
+    docked = false;
+    ta.blur();
+  }
+
+  ta.addEventListener('focus', dock);
+
+  /* mode toggles (Hinglish ON/OFF, Matra…) must not throw a center card while
+     docked — the key's own color + the hint row ARE the state. Event toasts
+     (Copied!, Cleared…) still show, as the top banner. */
+  if (typeof window.toast === 'function') {
+    const _toast = window.toast;
+    window.toast = function (msg) {
+      if (docked && /Hinglish (ON|OFF)|Roman hints|Matra/i.test(String(msg))) return;
+      return _toast.apply(this, arguments);
+    };
+  }
+
+  /* dock content changes height (Franco panel, tashkeel row…) — keep the page
+     padding and the toast offset in sync */
+  if (window.ResizeObserver) {
+    new ResizeObserver(() => {
+      if (!docked) return;
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+    }).observe(kbc);
+  }
+
+  let hy = null;
+  handle.addEventListener('pointerdown', e => { hy = e.clientY; handle.setPointerCapture(e.pointerId); });
+  handle.addEventListener('pointermove', e => { if (hy !== null && e.clientY - hy > 40) { hy = null; undock(); } });
+  handle.addEventListener('pointerup',   e => { if (hy !== null) undock(); hy = null; });
+  window.addEventListener('resize', () => { if (!mq.matches) undock(); });
+
+  /* selecting text: never auto-scroll while the user's pointer is down in the
+     textarea (a mid-drag scroll cancels the selection), and make selection
+     explicitly allowed. Scroll only follows actual TYPING. */
+  ta.style.userSelect = 'text';
+  ta.style.webkitUserSelect = 'text';
+  let taPointerDown = false;
+  ta.addEventListener('pointerdown', () => { taPointerDown = true; }, { passive: true });
+  ['pointerup', 'pointercancel'].forEach(ev =>
+    document.addEventListener(ev, () => { taPointerDown = false; }, { passive: true }));
+
+  function followCaret() {
+    if (!docked || taPointerDown) return;
+    const r = ta.getBoundingClientRect();
+    const dockTop = window.innerHeight - kbc.offsetHeight;
+    if (r.bottom > dockTop - 8 || r.top < 0) {
+      window.scrollBy({ top: r.bottom - (dockTop - 16), behavior: 'smooth' });
+    }
+  }
+  ta.addEventListener('input', () => requestAnimationFrame(followCaret));
+
+  const kbrows = document.getElementById('kbrows');
+  if (kbrows && navigator.vibrate) {
+    kbrows.addEventListener('pointerdown', e => { if (e.target.closest('.key')) navigator.vibrate(8); }, { passive: true });
+  }
+
+  /* long-press alternates — per-language data from tools/kb_lang_data.py */
+  const KB_ALT = {};
+  const pop = document.createElement('div');
+  pop.id = 'kb-altpop';
+  document.body.appendChild(pop);
+  let lpTimer = null, lpKey = null, suppressClick = false;
+
+  function showAlts(keyEl, ch) {
+    pop.innerHTML = '';
+    KB_ALT[ch].forEach(alt => {
+      const b = document.createElement('button');
+      b.textContent = alt;
+      b.onclick = ev => { ev.stopPropagation(); ins(alt); hideAlts(); };
+      pop.appendChild(b);
+    });
+    const r = keyEl.getBoundingClientRect();
+    pop.style.display = 'flex';
+    pop.style.left = (r.left + r.width / 2) + 'px';
+    pop.style.top  = (r.top - 62) + 'px';
+    suppressClick = true;
+  }
+  function hideAlts() { pop.style.display = 'none'; }
+
+  if (kbrows) {
+    kbrows.addEventListener('pointerdown', e => {
+      const k = e.target.closest('.key');
+      if (!k) return;
+      const ch = k.textContent.trim().slice(0, 1);
+      if (!KB_ALT[ch]) return;
+      lpKey = k;
+      lpTimer = setTimeout(() => showAlts(k, ch), 420);
+    }, { passive: true });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(ev =>
+      kbrows.addEventListener(ev, () => { clearTimeout(lpTimer); lpTimer = null; }, { passive: true }));
+    kbrows.addEventListener('click', e => {
+      if (suppressClick) { e.stopPropagation(); e.preventDefault(); suppressClick = false; }
+    }, true);
+  }
+  document.addEventListener('pointerdown', e => {
+    if (!pop.contains(e.target) && e.target !== lpKey) hideAlts();
+  });
+})();
+</script>
+<!-- ══════════ /KBDOCK ══════════ -->
 </body>
 </html>

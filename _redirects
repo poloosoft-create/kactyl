@@ -14,19 +14,15 @@ https://www.arabikeyboard.com/* https://kactyl.com/:splat 301!
 /home.html          /               301!
 /home               /               301!
 /index.html         /               301!
-/terms.html         /terms/         301!
-/cookies.html       /cookies/       301!
-/privacy.html       /privacy/       301!
-/franco-arab.html   /franco-arab/   301!
+/terms.html         /terms         301!
+/cookies.html       /cookies       301!
+/privacy.html       /privacy       301!
+/franco-arab.html   /franco-arab   301!
 
 # Catch-all: redirect any *.html to its folder equivalent
 /*/*.html           /:splat/        301!
 
-# Remove trailing slashes only for *.html (force clean URLs)
-/privacy            /privacy/       301!
 
-# Serve homepage at / (no URL change)
-/   /home.html   200!
 
 /favicon.ico /images/favicon.svg 200
 

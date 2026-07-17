@@ -42,7 +42,7 @@
   <meta property="og:url"         content="https://kactyl.com/">
   <meta property="og:title"       content="Arabi Keyboard — Free Arabic Keyboard Online | لوحة المفاتيح العربية">
   <meta property="og:description" content="Free Arabic keyboard online. Type Arabic from any device without installation. Franco mode, tashkeel, voice typing. لوحة مفاتيح عربية مجانية.">
-  <meta property="og:image" content="/images/og-images/home.png">
+  <meta property="og:image" content="https://kactyl.com/images/og-images/home.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
           <meta property="og:locale"      content="en_US">
@@ -265,7 +265,11 @@
   <style>
 /* ── RESET ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { overflow-x: clip; max-width:100%; }
+html { overflow-x: clip; max-width:100%; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+/* iOS Safari inflates sub-11px text unless text-size-adjust is pinned — the mode-key
+   labels (Tashkeel/Matra/Roman) ballooned and spilled outside their keys on iPhone.
+   overflow:hidden below is the belt-and-braces so no label can ever spill again. */
+.k-tashkeel, .k-franco { overflow:hidden; }
 button { cursor:pointer; font-family:inherit; border:none; background:none; }
 
 /* ── TOKENS ── */
@@ -1970,12 +1974,12 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
                                                             <nav>
-    <a href="/home.html" class="nav-link">Home</a>
+    <a href="/" class="nav-link">Home</a>
     <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
@@ -3136,7 +3140,6 @@ function toggleFranco() {
   buildKB();
   const ta = document.getElementById('arabic-text');
   ta.placeholder = francoOn ? FRANCO_ON_PLACEHOLDER : FRANCO_DEFAULT_PLACEHOLDER;
-  toast(francoOn ? '🔤 Franco ON — type & press Space to convert' : '⌨️ Franco OFF');
 }
 
 /* ── POPUPS ── */

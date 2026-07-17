@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amharic Keyboard Online 2026 — Free [Mobile] | አማርኛ</title>
+  <title>Amharic Keyboard Online — Type Amharic Free | አማርኛ ኪቦርድ</title>
   <meta name="description" content="Free Amharic keyboard online — type Ethiopic Fidel for WhatsApp, TikTok & Instagram. Phonetic mode & voice typing. No download. Works on iPhone & Android.">
   <meta name="keywords" content="amharic keyboard online, amharic typing online, ethiopic keyboard, fidel keyboard, type amharic online, amharic keyboard free, amharic keyboard for whatsapp, አማርኛ ቁልፍ ሰሌዳ">
 
@@ -32,17 +32,17 @@
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://kactyl.com/amharic/">
-  <meta property="og:title"       content="Amharic Keyboard Online 2026 — Free [Mobile] | አማርኛ">
+  <meta property="og:title"       content="Amharic Keyboard Online — Type Amharic Free | አማርኛ ኪቦርድ">
   <meta property="og:description" content="Type Amharic from your phone or PC — no app, no download. Amharic keyboard for WhatsApp, TikTok, Instagram. Phonetic mode maps English keys to Amharic.">
-  <meta property="og:image"       content="/images/og-images/amharic.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-  <meta property="og:locale"      content="am_ET">
+  <meta property="og:image" content="https://kactyl.com/images/og-images/amharic.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+          <meta property="og:locale"      content="am_ET">
   <meta property="og:site_name"   content="Kactyl">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Amharic Keyboard Online 2026 — Free [Mobile] | አማርኛ">
+  <meta name="twitter:title"       content="Amharic Keyboard Online — Type Amharic Free | አማርኛ ኪቦርድ">
   <meta name="twitter:description" content="Free Amharic keyboard — full Fidel grid, phonetic mode & voice typing. Type Amharic for WhatsApp & TikTok. No download, works on all devices.">
   <meta name="twitter:image"       content="https://kactyl.com/images/og-images/amharic.png">
 
@@ -69,13 +69,6 @@
       "@type": "Organization",
       "name": "Kactyl",
       "url": "https://kactyl.com"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "3124",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   }
   </script>
@@ -117,7 +110,15 @@
   <style>
 /* ── RESET ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { overflow-x: clip; max-width:100%; }
+html { overflow-x: clip; max-width:100%; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+/* iOS Safari inflates sub-11px text unless text-size-adjust is pinned — the mode-key
+   labels (Tashkeel/Matra/Roman) ballooned and spilled outside their keys on iPhone.
+   overflow:hidden below is the belt-and-braces so no label can ever spill again. */
+.k-tashkeel, .k-franco { overflow:hidden; }
+/* Roman/Franco mode needs a physical keyboard (type Latin → Space → script). On mobile
+   the native keyboard is hidden (inputmode=none) so roman input is impossible — hide the
+   Roman key + its hint bar there; the on-screen script keyboard is the mobile input. */
+@media (max-width:768px){ .franco-hint{ display:none !important; } }
 button { cursor:pointer; font-family:inherit; border:none; background:none; }
 
 /* ── TOKENS ── */
@@ -834,13 +835,13 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* Franco dual label */
 .fl {
-  font-size:17px; font-family:'Inter',sans-serif; font-weight:700;
+  font-size:15px; font-family:'Inter',sans-serif; font-weight:700;
   color:var(--indigo); line-height:1;
   opacity:0; height:0; overflow:hidden;
   transition: opacity .2s;
 }
 .franco-on .fl { opacity:1; height:auto; }
-.franco-on .key { height:60px; font-size:14px; }
+.franco-on .key { height:60px; font-size:22px; }
 @media (hover:hover) and (pointer:fine) { .franco-on .key:hover .fl { color: var(--fl-hover); } }
 :root {
   --fl-hover: #4d008b;
@@ -883,23 +884,23 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 @media (hover:hover) and (pointer:fine) { .k-emoji:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
 
 .k-tashkeel {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#7C3AED,#A855F7) !important;
   border:none !important; box-shadow:0 3px 0 #5B21B6; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-tashkeel:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
-.k-tashkeel .ks { font-size:9px; opacity:.5; font-weight:400; font-family:'Noto Sans Ethiopic',sans-serif; }
+.k-tashkeel .ks { font-size:7px; opacity:.5; font-weight:400; font-family:'Noto Sans Ethiopic',sans-serif; }
 
 .k-franco {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#3B82F6,#6366F1) !important;
   border:none !important; box-shadow:0 3px 0 #1D4ED8; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-franco:hover  { filter:brightness(1.1); box-shadow:0 3px 0 #1D4ED8; transform:translateY(-1px); } }
 .k-franco.active { background:linear-gradient(135deg,#059669,#10B981) !important; box-shadow:0 3px 0 #047857; }
-.k-franco .ks    { font-size:9px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
+.k-franco .ks    { font-size:7px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
 
 /* Special chars key */
 .k-spec { min-width:46px; font-size:13px; font-weight:700; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.2; position:relative; }
@@ -1549,8 +1550,8 @@ footer {
 
   /* Special key flex ratios */
   .k-space   { flex:3;   min-width:0 !important; }
-  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:9px; }
-  .k-franco  { flex:1.5; min-width:0 !important; font-size:9px; }
+  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:8px; }
+  .k-franco  { flex:1.5; min-width:0 !important; font-size:8px; }
   .k-emoji   { flex:1;   min-width:0 !important; font-size:18px; }
   .k-123     { flex:1;   min-width:0 !important; font-size:10px; }
   .k-enter   { flex:1.5; min-width:0 !important; font-size:13px; }
@@ -1983,6 +1984,152 @@ body { background: #F8FAFC; }
   box-shadow: 0 4px 24px rgba(0,0,0,.45);
 }
 [data-theme="dark"] #key-callout::after { border-top-color: #4B5563; }
+
+.fidel-grid {
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:5px;
+  margin-bottom:5px;
+}
+.fidel-base {
+  font-family:'Noto Sans Ethiopic',sans-serif !important;
+  font-size:19px !important;
+  height:44px !important;
+  border-radius:10px;
+  transition:background .12s, border-color .12s;
+  position:relative;
+  overflow:visible;
+}
+
+
+.fidel-base.fam-active {
+  background:rgba(0,104,255,.14) !important;
+  border-color:var(--blue) !important;
+  color:var(--blue) !important;
+}
+
+
+.fidel-picker {
+  display:none;
+  position:absolute;
+  z-index:60;
+  grid-template-columns:repeat(7,54px);
+  gap:5px;
+  padding:8px;
+  background:var(--card,#fff);
+  border:1px solid rgba(0,104,255,.25);
+  border-radius:16px;
+  box-shadow:0 12px 32px rgba(15,23,42,.18);
+  animation:fadeUp .12s ease;
+}
+.fidel-picker::after {
+  content:'';
+  position:absolute;
+  bottom:-7px;
+  left:var(--arrow-x,50%);
+  transform:translateX(-50%) rotate(45deg);
+  width:12px; height:12px;
+  background:var(--card,#fff);
+  border-right:1px solid rgba(0,104,255,.25);
+  border-bottom:1px solid rgba(0,104,255,.25);
+}
+.fam-pick-btn {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:54px;
+  border-radius:12px;
+  border:1.5px solid var(--border,#e5e7eb);
+  background:var(--bg,#fff);
+  cursor:pointer;
+  gap:2px;
+  padding:0 6px;
+  transition:background .1s, border-color .1s;
+}
+.fam-pick-btn:hover { border-color:var(--blue,#0068ff); }
+.fam-pick-btn:active { background:rgba(0,104,255,.12); }
+.fam-rom {
+  font-size:10px; font-weight:700; color:var(--indigo,#6366f1);
+  line-height:1;
+}
+.fam-ch {
+  font-family:'Noto Sans Ethiopic',sans-serif;
+  font-size:27px;
+  line-height:1;
+}
+.fam-ord {
+  font-size:9px;
+  color:var(--muted,#64748B);
+  font-weight:700;
+  letter-spacing:.2px;
+}
+.fam-a {
+  background:rgba(0,104,255,.08) !important;
+  border-color:rgba(0,104,255,.4) !important;
+}
+.fam-a .fam-ord { color:var(--blue,#0068ff); }
+/* more-forms indicator: subtle +6, becomes ✕ while its picker is open */
+.fidel-base { position:relative; }
+.fidel-base::after {
+  content:'+6';
+  position:absolute;
+  top:4px; right:6px;
+  font-size:9px;
+  font-weight:700;
+  color:var(--blue,#0068ff);
+  opacity:.75;
+  font-family:sans-serif;
+  letter-spacing:-.3px;
+}
+.fidel-base::before {
+  content:'';
+  position:absolute;
+  bottom:4px;
+  left:50%;
+  transform:translateX(-50%);
+  width:30px;
+  height:3px;
+  border-radius:2px;
+  background:
+    radial-gradient(circle, rgba(0,104,255,.25) 50%, transparent 50%) 0/4px 3px,
+    radial-gradient(circle, rgba(0,104,255,.25) 50%, transparent 50%) 5px 0/4px 3px,
+    radial-gradient(circle, rgba(0,104,255,.25) 50%, transparent 50%) 10px 0/4px 3px,
+    radial-gradient(circle, rgba(0,104,255,.85) 50%, transparent 50%) 15px 0/4px 3px,
+    radial-gradient(circle, rgba(0,104,255,.25) 50%, transparent 50%) 20px 0/4px 3px,
+    radial-gradient(circle, rgba(0,104,255,.25) 50%, transparent 50%) 25px 0/4px 3px,
+    radial-gradient(circle, rgba(0,104,255,.25) 50%, transparent 50%) 30px 0/4px 3px;
+  background-repeat: no-repeat;
+  transition: opacity .15s;
+}
+.fidel-base.fam-active::before { opacity:.5; filter:brightness(1.4); }
+/* Phon. mode: letter stays the HERO (big), Latin hint is a small tag above it */
+.franco-on .fidel-base { height:62px !important; font-size:23px !important; padding-bottom:9px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; }
+.franco-on .fidel-base .fl { font-size:13.5px !important; font-weight:700; letter-spacing:.2px; opacity:1; line-height:1; }
+.franco-on .fidel-base::after { display:none; }  /* roman takes the top in Phon. mode; dots below still show +6 forms */
+.fidel-base.fam-active::after { content:'✕'; opacity:.8; color:var(--blue,#0068ff); }
+/* mobile: bubble never wider than the keyboard — 7 mini-keys shrink fluidly */
+.fidel-picker { max-width:calc(100% - 8px); }
+.fam-pick-btn { min-width:0; }
+@media (max-width:640px) {
+  .fidel-picker { gap:5px; padding:6px; }
+  .fam-ch { font-size:17px; }
+  .fam-ord { font-size:8px; }
+}
+
+.fidel-picker.show { display:grid; }
+.fidel-base { height:38px !important; font-size:15px !important; }
+.fidel-base').forEach(b => b.classList.remove('fam-active'));
+  el.classList.add('fam-active');
+  const ORDERS = ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7'];
+  const picker = document.getElementById('fidel-picker');
+  picker.innerHTML = '';
+  FIDEL[famIdx].forEach((ch, i) => {
+    const b = document.createElement('button');
+    b.className = 'fam-pick-btn' + (i === 3 ? ' fam-a' : '');
+    b.innerHTML = '<span class="fam-ch">' + ch + '</span><span class="fam-ord">' + ORDERS[i] + '</span>';
+    b.onclick = e => { e.stopPropagation(); ins(ch); closePicker(); }
 </style>
 
   <!-- BreadcrumbList structured data -->
@@ -2035,13 +2182,13 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
                                                             <nav>
-    <a href="/home.html" class="nav-link">Home</a>
-    <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
       <button class="tools-btn">Tools &#9662;</button>
@@ -2427,7 +2574,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="combo-section-hd">
       <div class="combo-hd-inner">
         <div class="combo-hd-text">
-          <p class="combo-section-sup" data-i18n="combo.title">Ready-Made <span>Combos</span></p>
+          <p class="combo-section-sup" data-i18n="combo.title">Ready-Made <span>Amharic Combos</span></p>
           <h2 class="combo-section-sub">One click to insert — or copy straight to clipboard</h2>
         </div>
         <img src="../images/Mascot-1.svg" alt="Emoji mascot" class="combo-mascot">
@@ -2580,7 +2727,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="seo-dark-label">Free Amharic Keyboard</div>
     <h2>Free Amharic Keyboard Online.<br>Type from any device — no download, no install.</h2>
     <div class="seo-dark-stats">
-      <span><strong>600M+</strong> speakers</span>
+      <span><strong>35M+</strong> speakers</span>
       <span class="seo-dark-dot">·</span>
       <span><strong>100%</strong> free</span>
       <span class="seo-dark-dot">·</span>
@@ -2588,8 +2735,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <span class="seo-dark-dot">·</span>
       <span><strong>All</strong> devices</span>
     </div>
-    <p>This <strong>free Amharic keyboard online</strong> works instantly in any browser — no app download, no installation, no changing your phone's language settings.</p>
-    <p>Type Amharic on <strong>iPhone, Android, Windows or Mac</strong>. <strong>Phonetic mode</strong> converts romanized Amharic to Amharic script automatically. Copy directly to <strong>WhatsApp</strong> messages, <strong>TikTok</strong> captions, <strong>Instagram</strong> bios, and more.</p>
+    <p>The Ethiopic script (fidel) is <strong>one of the oldest writing systems still in daily use in Africa</strong> — descended from Ancient South Arabian and carved in stone in the Aksumite kingdom by the 4th century CE, when <strong>King Ezana's conversion to Christianity</strong> drove the addition of vowel marking that turned the old consonant script into today's syllabary. Amharic inherited the fidel from Ge'ez and has been the language of the Ethiopian court since the <strong>13th-century Solomonic dynasty</strong>. Because Ethiopia was never colonized, the script was never displaced by Latin — <strong>Amharic is one of the very few major African languages written in an indigenous African script</strong>, and Ge'ez itself lives on as the liturgical language of the Ethiopian Orthodox Tewahedo Church.</p>
+    <p>Typing Amharic means navigating <strong>over 230 syllographs from 33 consonant families</strong> — far more characters than any physical keyboard can show, which is why <strong>phonetic input is the universal method</strong>: type the sound, pick the form. The real spelling challenge is historic: Amharic kept letters from Ge'ez tradition that now sound identical — <strong>ሀ, ሐ and ኀ are all "h"; ሰ and ሠ are both "s"; ጸ and ፀ both "ts"</strong> — so correct spelling is memorized, not heard. Gemination (doubled consonants that change meaning) isn't written at all. This keyboard lays out every family with all seven orders visible, so the right form is always one tap away.</p>
+    <p>Ethiopia is <strong>Africa's second most populous country (120M+)</strong>, and its digital life runs unusually — <strong>Telegram, not WhatsApp, is the dominant messenger</strong>, alongside heavy Facebook and YouTube use. Abroad, the demand is diaspora-driven: the <strong>Washington DC area hosts the largest Ethiopian community outside Africa</strong>, with major populations in Minneapolis, Seattle, Toronto, Israel and the Gulf — communities that constantly switch between devices with no Amharic keyboard installed. Ethiopian Orthodox parishes worldwide keep fidel literacy alive for liturgy, and Amharic music channels and EthioTube-style media generate a steady stream of comments, captions and lyrics typed in fidel.</p>
     <div class="seo-dark-steps">
       <span class="seo-dark-step">1. Open kactyl.com/amharic/</span>
       <span class="seo-dark-arr">→</span>
@@ -2611,6 +2759,42 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         </div>
       </a>
     </div>
+
+
+
+
+
+<section class="sig-sec">
+  <style>
+    .sig-sec{padding:64px 0;background:linear-gradient(180deg,rgba(212,17,89,.045),transparent 30%)}
+    .sig-sec .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .sig-hd{text-align:center;margin-bottom:36px}
+    .sig-hd h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text,#1E293B)}
+    .sig-hd h2 span{background:linear-gradient(90deg,#d41159,#e5709b);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sig-hd p{color:var(--muted,#64748B);margin-top:10px;font-size:16px;max-width:640px;margin-left:auto;margin-right:auto}
+    .sig-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0 34px}
+    .sig-stats span{background:var(--surface,#fff);border:1px solid rgba(212,17,89,.15);border-radius:999px;padding:8px 18px;font-size:14px;font-weight:700;color:#d41159;box-shadow:0 2px 10px rgba(30,41,59,.05)}
+    .sig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .sig-card{background:var(--surface,#fff);border-radius:20px;padding:24px;position:relative}.sig-card::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.65;z-index:-1;pointer-events:none}
+    .sig-card h3{font-size:17px;font-weight:800;color:var(--text,#1E293B);margin-bottom:4px}
+    .sig-card .sig-tag{font-size:12.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#d41159;display:block;margin-bottom:10px}
+    .sig-letters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+    .sig-letters b{font-size:26px;line-height:1;background:rgba(212,17,89,.07);border-radius:12px;height:56px;min-width:56px;padding:0 8px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;font-weight:400}
+    .sig-card p{font-size:14.5px;color:var(--muted,#64748B);line-height:1.65}
+    .sig-card p b{color:var(--text,#1E293B);font-weight:700}
+    .sig-ex{margin-top:10px;font-size:14px;color:var(--text,#1E293B);background:rgba(212,17,89,.05);border-radius:10px;padding:8px 12px;display:inline-block}
+    .sig-hero-card{background:linear-gradient(135deg,#fcecf2 0%,#f6cfde 55%,#ed9bb9 100%);border:1px solid rgba(212,17,89,.16)}.sig-hero-card .sig-letters b{background:rgba(212,17,89,.10)}.sig-hero-card .sig-ex{background:rgba(212,17,89,.08)}
+  </style>
+  <div class="wrap">
+    <div class="sig-hd">
+      <h2>Inside the <span>Amharic Fidel</span></h2>
+      <p>Amharic isn’t written with an alphabet — each character is a consonant already fused with its vowel. Here’s the machinery this keyboard puts under your fingers.</p>
+    </div>
+    <div class="sig-stats"><span>33 fidel families</span><span>7 vowel orders</span><span>230+ syllographs</span><span>Its own numerals</span></div>
+    <div class="sig-grid"><div class="sig-card sig-hero-card"><span class="sig-tag">The seven orders</span><h3>One letter, seven forms</h3><div class="sig-letters"><b>ሀ</b><b>ሁ</b><b>ሂ</b><b>ሃ</b><b>ሄ</b><b>ህ</b><b>ሆ</b></div><p>Every consonant comes in <b>seven vowel orders</b>: ሀ hä, ሁ hu, ሂ hi, ሃ ha, ሄ he, ህ hə, ሆ ho. Pick the consonant, then the order — the keyboard shows all seven so you never hunt for a form.</p><div class="sig-ex">ሰላም — selam, peace / hello</div></div><div class="sig-card"><span class="sig-tag">A syllabary, not an alphabet</span><h3>No separate vowel letters</h3><div class="sig-letters"><b>ለ</b><b>ሉ</b><b>ላ</b></div><p>ለ is “lä”, ሉ is “lu”, ላ is “la” — <b>consonant and vowel travel as one character</b>. That’s why Amharic can’t be typed on a Latin keyboard without a converter: there is no standalone “l” to press.</p><div class="sig-ex">አማርኛ — Amharic</div></div><div class="sig-card"><span class="sig-tag">Its own punctuation</span><h3>። is the full stop</h3><div class="sig-letters"><b>።</b><b>፣</b><b>፤</b></div><p>Amharic keeps Ge’ez punctuation alive: ። ends a sentence, ፣ is the comma, ፤ the semicolon. Classical texts even separate words with ፡. <b>All of them have keys here</b> — no hunting through symbol menus.</p><div class="sig-ex">ሰላም ነው። — It is peace.</div></div><div class="sig-card"><span class="sig-tag">Ge’ez numerals</span><h3>Numbers with no zero</h3><div class="sig-letters"><b>፩</b><b>፪</b><b>፲</b></div><p>Ethiopic has its own numerals — ፩ (1), ፪ (2), ፲ (10) — still used for dates, church calendars and formal documents. The system has <b>no zero</b>: ፲፪ is ten-plus-two, twelve.</p><div class="sig-ex">፲፪ — 12 · ፳ — 20</div></div></div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq-sec" id="faq">
   <div class="wrap">
@@ -3135,8 +3319,33 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 <script>
 /* ── DATA ── */
+const FRANCO_CHIPS = [
+  { l:'h → ሃ', a:'ሃ' },
+  { l:'m → ማ', a:'ማ' },
+  { l:'l → ላ', a:'ላ' },
+  { l:'s → ሳ', a:'ሳ' },
+];
+
+const FIDEL = [
+  ['ሀ','ሁ','ሂ','ሃ','ሄ','ህ','ሆ'],['ለ','ሉ','ሊ','ላ','ሌ','ል','ሎ'],
+  ['ሐ','ሑ','ሒ','ሓ','ሔ','ሕ','ሖ'],['መ','ሙ','ሚ','ማ','ሜ','ም','ሞ'],
+  ['ረ','ሩ','ሪ','ራ','ሬ','ር','ሮ'],['ሰ','ሱ','ሲ','ሳ','ሴ','ስ','ሶ'],
+  ['ሸ','ሹ','ሺ','ሻ','ሼ','ሽ','ሾ'],['ቀ','ቁ','ቂ','ቃ','ቄ','ቅ','ቆ'],
+  ['በ','ቡ','ቢ','ባ','ቤ','ብ','ቦ'],['ቨ','ቩ','ቪ','ቫ','ቬ','ቭ','ቮ'],
+  ['ተ','ቱ','ቲ','ታ','ቴ','ት','ቶ'],['ቸ','ቹ','ቺ','ቻ','ቼ','ች','ቾ'],
+  ['ነ','ኑ','ኒ','ና','ኔ','ን','ኖ'],['ኘ','ኙ','ኚ','ኛ','ኜ','ኝ','ኞ'],
+  ['አ','ኡ','ኢ','ኣ','ኤ','እ','ኦ'],['ከ','ኩ','ኪ','ካ','ኬ','ክ','ኮ'],
+  ['ወ','ዉ','ዊ','ዋ','ዌ','ው','ዎ'],['ዐ','ዑ','ዒ','ዓ','ዔ','ዕ','ዖ'],
+  ['ዘ','ዙ','ዚ','ዛ','ዜ','ዝ','ዞ'],['ዠ','ዡ','ዢ','ዣ','ዤ','ዥ','ዦ'],
+  ['የ','ዩ','ዪ','ያ','ዬ','ይ','ዮ'],['ደ','ዱ','ዲ','ዳ','ዴ','ድ','ዶ'],
+  ['ጀ','ጁ','ጂ','ጃ','ጄ','ጅ','ጆ'],['ገ','ጉ','ጊ','ጋ','ጌ','ግ','ጎ'],
+  ['ጠ','ጡ','ጢ','ጣ','ጤ','ጥ','ጦ'],['ጨ','ጩ','ጪ','ጫ','ጬ','ጭ','ጮ'],
+  ['ጰ','ጱ','ጲ','ጳ','ጴ','ጵ','ጶ'],['ጸ','ጹ','ጺ','ጻ','ጼ','ጽ','ጾ'],
+  ['ፈ','ፉ','ፊ','ፋ','ፌ','ፍ','ፎ'],['ፐ','ፑ','ፒ','ፓ','ፔ','ፕ','ፖ'],
+];
+
 const ROWS = [
-  ['N123','EMOJI','TASHKEEL','SPACE','DOT','ENTER','BSP','።','፣']
+  ['N123','EMOJI','TASHKEEL','SPACE','DOT','FRANCO','ENTER','BSP']
 ];
 
 const SPEC_CHARS = [
@@ -3147,7 +3356,7 @@ const SPEC_CHARS = [
 ];
 
 /* Phonetic hint for each key */
-const FL = {};
+const FL = {'ሀ':'ha','ለ':'le','ሐ':'ha','መ':'me','ሠ':'se','ረ':'re','ሰ':'se','ሸ':'she','ቀ':'qe','በ':'be','ተ':'te','ቸ':'che','ኀ':'he','ነ':'ne','ኘ':'nye','አ':'a','ከ':'ke','ኸ':'khe','ወ':'we','ዐ':'a','ዘ':'ze','ዠ':'zhe','የ':'ye','ደ':'de','ጀ':'je','ገ':'ge','ጠ':'te','ጨ':'che','ጰ':'pe','ጸ':'tse','ፀ':'tse','ፈ':'fe','ፐ':'pe','ቨ':'ve'};
 
 const PHYS = {
   'h':'ሃ','l':'ላ','m':'ማ','r':'ራ','s':'ሳ','q':'ቃ',
@@ -3175,16 +3384,7 @@ const EMOJI_CATS_DATA = {
   '🚩': { label:'Flags', emojis:['🇸🇦','🇦🇪','🇪🇬','🇲🇦','🇩🇿','🇹🇳','🇱🇾','🇸🇩','🇾🇪','🇸🇾','🇮🇶','🇯🇴','🇵🇸','🇱🇧','🇰🇼','🇧🇭','🇶🇦','🇴🇲','🇮🇷','🇹🇷','🇺🇸','🇨🇦','🇲🇽','🇧🇷','🇦🇷','🇨🇱','🇨🇴','🇵🇪','🇻🇪','🇬🇧','🇫🇷','🇩🇪','🇪🇸','🇮🇹','🇵🇹','🇳🇱','🇧🇪','🇨🇭','🇦🇹','🇸🇪','🇳🇴','🇩🇰','🇫🇮','🇵🇱','🇺🇦','🇷🇺','🇬🇷','🇨🇿','🇭🇺','🇷🇴','🇧🇬','🇷🇸','🇭🇷','🇸🇰','🇸🇮','🇮🇪','🇮🇸','🇨🇳','🇯🇵','🇰🇷','🇮🇳','🇵🇰','🇧🇩','🇮🇩','🇲🇾','🇸🇬','🇹🇭','🇻🇳','🇵🇭','🇰🇭','🇱🇦','🇲🇲','🇳🇵','🇱🇰','🇦🇺','🇳🇿','🇿🇦','🇳🇬','🇰🇪','🇪🇹','🇬🇭','🇹🇿','🇺🇬','🇨🇲','🏳️','🏴','🏁','🚩','🎌'] }
 };
 
-const WORDS = [
-  'ሰላም','አዎ','አይ','ጥሩ','ደህና','ምን','ለምን','እናቴ','አባቴ','ቤት',
-  'ሀ‍ገር','ፍቅር','ጓደኛ','ቤተሰብ','ሕፃን','ልጅ','ሰው','ዘፈን','ሙዚቃ','ስዕል',
-  'ዛሬ','ነገ','ትናንትና','ዓመት','ወር','ዕለት','ጊዜ','ስራ','ትምህርት','ምግብ',
-  'አዲስ','አሮጌ','ትልቅ','ትንሽ','ቆንጆ','ደስተኛ','ሀዘን','ደስታ','ጥሩ','ፈጣን',
-  'ኢትዮጵያ','አዲስ አበባ','አማርኛ','ኢትዮጵያዊ',
-  'ብዙ','ሁሉ','ግን','ስለዚህ','ምክንያቱም','ከዚህ','እዚህ','አሁን',
-  'ደስ ይበልህ','አምሰግናለሁ','ፈቃድ','ሙሉ ምኞቱ',
-  'ፍቅር','ልብ','ሕልም','ተስፋ','እምነት','ሰላም','ዕድሜ','ጸሎት'
-];
+const WORDS = ["ነው", "ላይ", "እና", "ነበር", "ውስጥ", "እንደ", "ወደ", "ግን", "ጊዜ", "ወይም", "ጋር", "በኋላ", "አንድ", "እስከ", "ሲሆን", "ዘመን", "ይህ", "ደግሞ", "ዓ.ም", "ናቸው", "ብዙ", "ማለት", "መንግሥት", "ድረስ", "ስለ", "በዚህ", "ዓክልበ", "ሆነ", "ሰው", "ሁሉ", "ነገር", "ቀን", "ሰዎች", "ቤት", "ብቻ", "ሆኖ", "ልጅ", "ስም", "ዓመት", "ከተማ", "ንጉሥ", "ከዚህ", "በላይ", "አገር", "ዘንድ", "ቁጥር", "ሁለት", "እንዲሁም", "ነበሩ", "መካከል", "ዋና", "አሁን", "ዓም", "በጣም", "ትምህርት", "ታሪክ", "አዲስ", "ሌላ", "ክፍል", "ዓመታት", "ጀምሮ", "ምክንያት", "ቤተ", "ይችላል", "ቋንቋ", "ያለው", "ምንም", "ፊደል", "በፊት", "አንዱ", "አይነት", "እንጂ", "ብሎ", "ከፍተኛ", "ቦታ", "የኢትዮጵያ", "ይባላል", "ብለው", "እንዲህ", "ይህን", "ደረጃ", "ይህም", "ከዚያ", "ሌሎች", "ያህል", "ልዩ", "እ.ኤ.አ", "ስለዚህ", "ወቅት", "ቃል", "አመት", "ይገኛል", "ተብሎ", "ጦርነት", "አካባቢ", "የሚሰጡዋቸውን", "በአንድ", "ያለ", "ልጆች", "አሉ", "ሁኔታ", "ክርስቲያን", "የሚል", "ቅዱስ", "የተለያዩ", "ኢትዮጵያ", "ግዛት", "ቅድሚያ", "ሆኖም", "ክፍለ", "ሕዝብ", "በተለይ", "መንገድ", "እንደሆነ", "ግምገማዎች", "አለ", "እጅግ", "ወገን", "የግዕዝ", "ዓለም", "ለምሳሌ", "የነበረው", "ዓ/ም", "እነዚህ", "መጠን", "መጽሐፍ", "ሆነው", "አበባ", "አንዳንድ", "ይላል", "ስራ", "ሴት", "ስሙ", "በይፋ", "ነበረ", "ይሆናል", "ምን", "ሥራ", "አለቃ", "የሆነ", "እንደገና", "ይቻላል", "በሙሉ", "ትልቅ", "ኳስ", "ግድም", "ሺህ", "ነገሥታት", "በዚሁ", "ታላቅ", "እኔ", "ጉዳይ", "ሳይሆን", "አካል", "የሚገኝ", "መቶ", "በኢትዮጵያ", "አለው", "ቢሆንም", "ሜትር", "ያሉ", "ይታወቃል", "መንግስት", "ሲሆን፣", "በዚያ", "የሰው", "ዓይነት", "ይመስላል", "ቋንቋዎች", "ጥናት", "የሚለው", "አባት", "ከዚያም", "ውጭ", "ናት", "መሆኑን", "ኗሪ", "ወይንም", "ዕለት", "ጦር", "ሦስት", "ሲሆኑ", "መሠረት", "ቀለም", "ትርጉም", "እንደነበር", "ስለሆነም", "በሌላ", "መጀመርያ", "ምልክት", "ምናልባት", "በማለት", "በተለያዩ", "አለም", "ስር", "እምነት", "ዘዴ", "አይደለም", "መረጃ", "ሥርወ", "በተጨማሪ", "ቤቶች", "ትንሽ", "አገራት", "የመጀመሪያው", "የሚባል", "አምላክ", "ሥፍራ", "ብሔራዊ", "ብዛት", "ነገሮች", "አመታት", "እንግዲህ", "እጅ", "የተባለ", "ንጉስ", "ሊሆን", "መሆኑ", "ሙሉ", "በአሁኑ", "ያለውን", "ጋራ", "ጥንታዊ", "ጽሑፍ", "ስለሆነ", "ዝርዝር", "እግር", "ይገኛሉ", "መልኩ", "ሚሊዮን", "በመባል", "አባላት", "ግንኙነት", "አሉት", "መሪ", "ስሞች", "በኩል", "አራት", "የህዝብ", "ድል", "ፊደላት", "ብር", "የተባለው", "የነበሩ", "ሃይማኖት", "መሰረት", "ሠራዊት", "በብዙ", "ነው፤", "አቀፍ", "ክርስቶስ", "ወንዝ", "ዛሬ", "ዜና", "የመጀመሪያ", "በዚህም", "ይገመታል", "ሁለተኛ", "ምክንያቱም", "ሲል", "በርካታ", "ወር", "ዘንድ፣", "በመሆኑ", "ሆኑ", "ሊቃውንት", "መጀመሪያ", "ምድር", "ሥርዓት", "በመሆን", "በሽታ", "ተመሳሳይ", "ክፍሎች", "ውጤት", "ዘመናዊ", "ዙሪያ", "ያላቸው", "የሆነው", "ሁሉም", "መጻሕፍት", "ምኒልክ", "ራስ", "ቀለሞች", "በታሪክ", "ነበር፤", "አልፎ", "ውሃ", "የነበሩት", "የአንድ", "ጥቂት", "ይልቅ", "ህዝብ", "መሬት", "መጠቀም", "ኃይል", "አቶ", "አየር", "እስካሁን", "ከአንድ", "እንቅስቃሴ", "ማርያም", "ቃላት", "እንኳ", "እንዴት", "ክልል", "ዋና ከተማ", "ብርሃን", "ይችላሉ", "ሁለቱ", "መርገጫዎች", "ሰዓት", "በማድረግ", "ኣንድ", "የጦር", "ይሄ", "ጨምሮ", "ምግብ", "አስቀድሞ", "ከሆነ", "ይታመናል", "አላቸው", "ሆኗል", "መስመር", "በተለይም", "ባለው", "ገንዘብ", "ገጽ", "ግዕዝ", "ጥሩ", "አባል", "ይነገራል", "ርቀት", "በዓለም", "ነጥብ", "አዳዲስ", "እንዲሆን", "እግዚአብሔር", "ዘርፍ", "የዚህ", "ጽሕፈት", "ንጉሠ", "ማድረግ", "ቡድን", "ይላሉ", "የለም", "ሥልጣን", "ሥነ", "ቤቱ", "አገሮች", "እርሱ", "ዘር", "የሆኑ", "ጥቅም", "በመጠቀም", "የዓለም", "ልክ", "ሕዝቦች", "ሴቶች", "ሶስት", "በሁለት", "በሚል", "ቢሆን", "ባህላዊ", "ተራራ", "እንኳን", "እዚህ", "ወንድ", "የሚባለው", "የነበረ", "የኤሌክትሪክ", "የሚገኘው", "ሂደት", "ባለ", "ተጨማሪ", "አቆጣጠር", "አዲስ አበባ", "እግር ኳስ", "ይህንን", "ድምጽ", "እያንዳንዱ", "የሚገኙ", "ለመጀመሪያ", "መጨረሻ", "ምልክቶች", "ቅርስ", "በቀር", "በቀዳሚ", "በታች", "በዚያው", "ታዋቂ", "ነው፣", "ከላይ", "የተነሳ", "ደሴት", "ድርጅት", "ጠቅላይ", "ፊት", "መልክ", "ማለትም", "ሥር", "ወዘተ", "ሕይወት", "ቀጥሎ", "ችግር", "አድርጎ", "አገልግሎት", "እሱ", "ከተማው", "ዘመናት", "የሚኖርበት", "ገና", "ጥበብ", "ምንጭ", "መብት", "ጀመረ", "ሕግ", "መሆን", "መጀመርያው", "ሙዚቃ", "ስፍራ", "ቀይ", "በኋላ፣", "ታሪካዊ", "እያለ", "ከተሞች", "ውድድር", "ዘመቻ", "የራሱ", "ደቡብ", "ፍቅር", "አቅጣጫ", "ያሉት", "ሌላው", "ሚካኤል", "ሰነድ", "ስድስት", "በአዲስ", "ተራ", "ነበር፣", "አምስት", "አቅም", "አድርገው", "እውነት", "ከዚህም", "ዛፍ", "የእግር", "ጊዮርጊስ", "ምሳሌ", "ሀገር", "ሁለተኛው", "ህይወት", "መቅደስ", "ሜዳ", "ምዕራብ", "ስለነበር", "ስሜን", "ስርዓት", "በር", "ተብለው", "ተደርጎ", "ነጻ", "አብዛኛው", "ኢየሱስ", "እኒህ", "እናት", "ከነዚህ", "ክፍላገር", "ወልደ", "የመሬት", "የከተማው", "ይዞ", "ዳግማዊ", "ሲሉ", "በዓል", "ይሰጣል", "አልነበረም", "መልካም", "መቀመጫ", "ማንም", "ምክር", "ሞት", "ርዝመት", "ሰላም", "ስብስብ", "በሌሎች", "በተጨማሪም", "ትዕዛዝ", "ኢትዮጵያውያን", "እሱም", "እንስሳት", "እንዲሁ", "እኩል", "ከሌሎች", "የሕዝብ", "የወርቅ", "የውጭ", "ዮሐንስ", "ፍጥነት", "ነገሥት", "ጀመር", "አደረገ", "ይሁን", "ረገድ", "ስያሜ", "ቀስ", "ቁጥሩም", "በትክክል", "በአንዳንድ", "ቢያንስ", "ቤተክርስቲያን", "ቶሎ", "አስተሳሰብ", "አንድላይ", "እራሱ", "እንዳለው", "ኪሎ", "ክለብ", "ዕውቀት", "የሙዚቃ", "የሚለውን", "የተፈጥሮ", "የታሪክ", "ድንጋይ", "ገብረ", "ጎን", "ነጭ", "ዋጋ", "ደብዳቤ", "ፍላጎት", "ይገባል", "ለዚህ", "መልስ", "መንግሥታት", "ማን", "ሰሜን", "ሳይንስ", "ስምምነት", "ቅርጽ", "በቀላሉ", "በኋላም", "ብሔር", "ታሪኮች", "ትውልድ", "ንጉሱ", "አልጋ", "አስተዳደር", "አባ", "አብያተ", "አንተ", "አደጋ", "አፈ", "ኢትዮጵያን", "እንስሳ", "ከባድ", "ወጣት", "ዘመነ", "የበለጠ", "የተነሣ", "ዩኒቨርሲቲ", "ይገናኛሉ", "ደም", "ጽላት", "ፈርዖን", "የተገኘ", "ጉዞ", "ፕሬዚደንት", "ይጠቀሳል", "ይታያል", "ሆይ", "መብቶች", "መንፈስ", "መኮንን", "መደበኛ", "ሥላሴ", "ሰዎችን", "ሰፊ", "ስፋት", "ቀበሮዎች", "በሞት", "በነዚህ", "በወቅቱ", "ተከታዮች", "ችሎታ", "ነገሮችን", "ናቸው፤", "ንግሥት", "አሁንም", "አስፈላጊ", "አንጄሎ", "አጠገብ", "እርስ", "ከፍ", "ኬሚካዊ", "ውክሉ", "ዓፄ", "የሚሉ", "የአሜሪካ", "የግብጽ", "ይዘው", "ድንግል", "ይገኙበታል", "ነኝ", "ህግ", "መኖሪያ", "መዋዕል", "ሚና", "ማዕረግ", "ማይክል", "ምርጫ", "ምዕራፍ", "ስሙን", "ቀናት", "በመጨረሻ", "ተናጋሪዎች", "ንግግር", "አቶማዊ", "አካላት", "አውራጃ", "አይነቶች", "እራሱን", "እንግሊዝኛ", "እያሉ", "ውል", "የትምህርት", "የነበረውን", "የፖለቲካ", "ዳሩ", "ፈቃድ", "ተከታይ", "ጀመሩ", "ተደረገ", "ነገሠ", "ነዉ", "ሃይል", "ለማድረግ", "ለማግኘት", "ልደት", "መሳሪያ", "ሚስት", "ሚኒስትር", "ማዕከል", "ሰራዊት", "ስለጀመሩ", "ስልጣን", "ስሜት", "ስትሆን", "በራሱ", "በደቡብ", "ተግባር", "ነገሥቱ", "አቡነ", "አጠቃላይ", "የላቲን", "የተሰኘው", "የተባለውን", "የአካባቢውን", "የዓማርኛ", "የደም", "ዲግሪ", "ግብጽ", "ጥያቄ", "ፈንታ", "ሥጋ", "ተብሏል", "አላህ", "አይ", "አደረጉ", "እነርሱም", "ዶክተሩ", "ጌታ", "ያሳያል", "ተባለ", "ሆና", "ሌሎችም", "ልብ", "ልዩነት", "ልጁ", "ሕዝቡ", "ሕገ", "ማናቸውም", "ምንጮች", "ሥራዎች", "ሲገመት", "ስንት", "በሆነ", "በምድር", "በብዛት", "በጊዜው", "በግዕዝ", "ቤተሰብ", "ታላላቅ", "ችግሮች", "ኗሪዎች", "አበበ", "ኤርትራ", "እነዚህን", "እንዳለ", "እኛ", "ከክርስቶስ", "ወራት", "ወታደራዊ", "ዘመድ", "የተለየ", "የአይርላንድ", "ያሕል", "ያን", "ይታስባል", "ገዳም", "ጠቃሚ", "ጠንካራ", "ጸሐፊ", "መንግሥቱ", "የሚታወቀው", "ያደረገው", "ጭምር", "ቆየ", "አለበት", "ይታወቃሉ", "ነበረች", "አይሆንም", "ገዛ", "ነበርና", "ደረሰ", "የለውም", "ለማወቅ", "ለአንድ", "ልብስ", "ማወቅ", "ሲባል", "ሲጨምር", "ስዕል", "ሽልማት", "በመስጠት", "በርስ", "ባለቤት", "ተራሮች", "ንግድ", "አንድን", "እንግዳ", "ከሁሉ", "ከኢትዮጵያ", "ዝም", "ዝርያ", "የሆኑት", "የቤተ", "የክብር", "የውሃ", "ይሆን", "ይፋዊ", "ዳር", "ገዥ", "ጉልበት", "ቻለ", "ኣሉ", "እርዳታ", "ፓርቲ", "ይባላሉ", "ሃሳብ", "ለመሆን", "ለምን", "ለውጥ", "መሣሪያ", "መክተብ", "መደብ", "ምንጊዜም", "ራሱን", "ሰነዶች", "ሲሄድ", "ቀላል", "ቀመር", "ቁጥሮች", "በመላው", "በቤተ", "በተባለ", "በዘመኑ", "በዚያን", "ባሕር", "ብላ", "ተስፋ", "ታላቁ", "ቴዎድሮስ", "ትክክለኛ", "አብዛኞቹ", "አንዳንዴ", "አጼ", "እቴጌ", "ከሌላ", "ከብዙ", "ከነዚህም", "ክብ", "ወራሽ", "ወታደሮች", "ዋናው", "የአየር", "የአገሪቱ", "የኢትዮጵያን", "የእንግሊዝ", "ያለበት", "ያንጊዜ", "ጊዜ፣", "ጥቃት", "ጥበቃ", "ጽሁፍ", "ምሁራን", "ሰወች", "ዝርያዎች", "የግል", "አይታወቅም", "መጣ", "ሞተ", "ኪ.ሜ", "ሁለቱም", "ሁሉንም", "ሁላቸው", "ለረጅም", "ለብዙ", "ሊባል", "ልማድ", "መስክ", "መኖር", "ማህበር", "ሥራዊት", "ስህተት", "ስራው", "ቀደም", "በቀጥታ", "በቂ", "በዘመናዊ", "በጥንት", "ቤተሠብ", "ብዬ", "ንጉሡ", "አለቃም", "አለቆች", "አስተዳዳሪ", "አብረው", "አጭር", "ከሥልጣን", "ከጥንት", "ካሬ", "ክርስቲያናት", "ወረራ", "ወሰን", "ወንድም", "ወይ", "ወዲያው", "ወገኖች", "ዋነኛ", "ውሸት", "ውኃ", "የሆነውን", "የመንግሥት", "የመጣ", "የራሱን", "የስራ", "የተባሉት", "የጣልያን", "ይሁንና", "ገብተው", "ገደማ", "ጊዜም", "ግልጽ", "ግምገማ", "ጠረፍ", "ጫፍ", "አረንጓዴ", "ክ.በ", "ክብር", "የሌለው", "ይናገራል", "ያስፈልጋል", "ያዘ", "ህዝቦች", "ለማለት", "ሕገ መንግሥት", "መስጠት", "መታወቂያ", "መኪና", "መፈንቅለ", "ማተሚያ", "ማንኛውም", "ምርጥ", "ስጦታ", "ቀበሮ", "ቅኝ", "በመሬት", "በመጀመሪያ", "በሮች", "በሰፊ", "በተባለው", "በትምህርት", "በእንግሊዝኛ", "በከፍተኛ", "ባለሙያ", "ቴክኖሎጂ", "ትኩረት", "ነጻነት", "ነፃ", "አማርኛ", "አባቱ", "አነስተኛ", "አንጻር", "ኢትዮጵያዊ", "እ.አ.አ", "እምቅ", "እነ", "እድገት", "ከሁለት", "ከርሱ", "ወይዘሮ", "ወደፊት", "ውግያ", "ዘጠኝ", "የቅዱስ", "የተመሠረተ", "የተሰራ", "የተባሉ", "የነበራቸው", "የንግድ", "የአለም", "የአፍሪካ", "የእጅ", "ይለናል", "ደብረ", "ግብር", "ጣቢያ", "ፕሮግራም", "መጻፍ", "ማስታወሻ", "ምሥራቅ", "ሰማይ", "አድርገዋል", "እንጨት", "ሳለ", "ያደርጋል", "ገባ", "ተመሠረተ", "ነበረው", "ወጣ", "ሀገራት", "ሆነዋል", "ለጊዜው", "ላይ፣", "ልሳናት", "መሆናቸውን", "መዝገቦች", "መጥቶ", "ሙሴ", "ረጅም", "ስለዚህም", "ቀንድ", "ቀኝ", "ቀድሞ", "ቁስ", "ቅድስት", "ቅጣት", "በሰው", "በአብዛኛው", "በአንዱ", "በአካባቢው", "በአጠቃላይ", "በእሳት", "በግራ", "ባህር", "ቦታዎች", "ተጫዋች", "ትምህርቱን", "ትክክል", "ትግል", "ኃይለ", "ኑሮ", "አሥር", "አካባቢዎች", "አዝማች", "እርምጃ", "እሳት", "እናም", "እውቀት", "እዚያ", "ከአለት", "ኪዳን", "ካለው", "ኮሌጅ", "ወረዳ", "ውጪ", "ዕድሜ", "ዘፈን", "ዙፋን", "ዛሬም", "ዝናብ", "ዞን", "የሚችል", "የሚገኙት", "የአማርኛ", "የአዲስ", "የዘር", "የደቡብ", "የጽሕፈት", "ይቆጠራል", "ደራሲ", "ዳርቻ", "ድጋፍ", "ገበያ", "ግንባር", "ግን፣", "ጥረት", "ጽንሰ", "ፍልስፍና", "ምስል", "ሳምንት", "አል", "አረፉ", "አስተያየት", "አደረገው", "እቃ", "እነዚህም", "ፕሬዝዳንት", "ነውና", "ኣይደለም", "ይጨምራል", "በቃ", "ሃገር", "ለማሳየት", "ላይም", "ሌሎቹ", "ልጁን", "መሃል", "መሳፍንት", "መስቀል", "መቃብር", "መንደር", "መጋቢት", "ሙከራ", "ሚኒስቴር", "ማረፊያ", "ማሽን", "ማኅበር", "ማንኛውንም", "ረቂቅ", "ሰማያዊ", "ሰባት", "ሳጥን", "ስልክ", "ስምንት", "ቅርሶች", "ቋሚ", "በልዩ", "በሚገባ", "በሦስት", "በስተቀር", "በቀስ", "በተለምዶ", "በተግባር", "በአለም", "በአሜሪካ", "በውስጡ", "በደንብ", "በጦርነት", "ባህርይ", "ብለን", "ተማሪ", "ተማሪዎች", "ተቃራኒ", "ተነስቶ", "ተወላጅ", "ትርጉሙ", "ትውፊት", "ነፍስ", "ኖሮ", "አሜሪካ", "አሸናፊ", "አባባል", "አዋጅ", "አዲሱ", "ኣንዳንድ", "እነሱም", "እንደነበሩ", "እንዳሉት", "እየተባለ", "እድል", "ወንዞች", "ወንዶች", "ወዲህ", "ዘመኑ", "ዜጎች", "የሚሰጥ", "የቋንቋ", "የብርሃን", "የተወሰነ", "የት", "የዓመት", "የጋራ", "የፊደል", "ያው", "ያዕቆብ", "ይፋ", "ደስ", "ደቂቃ", "ድርጊት", "ድንበር", "ጀርመን", "ገዳማ", "ግማሽ", "ግሪክ", "ግቢ", "ግዛቶች", "ፈሳሽ", "ሆነች", "ለማየት", "ማክ", "ቀኖች", "ቅዱሳን", "ችሏል", "አሊ", "አገልግሏል", "አፈር", "ፖሊስ", "ሄደ", "አብዮት", "እርሱም", "ያገለግላል", "ነች", "አለባቸው", "ነበራቸው", "ይኖራሉ", "መሠረተ", "ተገኘ", "አላት", "ሃይማኖታዊ", "ሆስፒታል", "ለኢትዮጵያ", "ለየት", "ልጆችን", "ሐሳብ", "መሣሪያዎች", "መጠሪያ", "መጥፎ", "ሙሐመድ", "ሙያ", "ማሞ", "ማስረጃ", "ማዕከላዊ", "ሞገድ", "ሰቀል", "ስብሰባ", "ስጋ", "ቀዳማዊ", "በመሆናቸው", "በሥነ", "በቅርቡ", "በተደረገው", "በውሃ", "በዚያም", "በየጊዜው", "በደብረ", "በጠቅላላ", "ባህል", "ባላቸው", "ብቃት", "ብዙም", "ብዙውን", "ብዙዎች", "ተጠቃሚ", "ተጠቃሚዎች", "ተፈጥሮ", "ታዲያ", "ቴአትር", "ትልቁ", "ነሽ", "አላማ", "አባታቸው", "አብሮ", "አንደኛው", "ኣበራ", "እስር", "እናንተ", "እኔም", "እንዲያውም", "ከሚለው", "ከሰው", "ከጊዜ", "ካሉ", "ወጥ", "ዓማርኛ", "የመጀመሪያውን", "የነበሩትን", "የኤርትራ", "የጻፈው", "ያሉትን", "ያገኘው", "ይሄው", "ይባላል፤", "ይዘት", "ጉዳዮች", "ግዛቱ", "ግድ", "ግጥም", "ጥላ", "ጨዋታ", "ፍሬ"];
 
 /* ── PREDICTIVE TEXT ENGINE ── */
 let userFreq = {};
@@ -3207,12 +3407,46 @@ function editDist(a, b) {
 }
 
 const NEXT_WORD = {
-  'ሰላም':['ወዳጅ','ናቸሁ','ነዎት'],
-  'ፍቅር':['ነው','አለ','ወደ'],
-  'ኢትዮጵያ':['ሀ‍ገሬ','ትቅደም'],
-  'አዲስ አበባ':['ከተማ','ውስጥ'],
-  'ደስ':['ይበልህ','ይበልሽ'],
-  'አምሰግናለሁ':['ወዳጅ','ብዙ']
+  "ላይ": ["ነው", "ይገኛል", "እንደ", "ያለው"],
+  "እና": ["ሌሎች", "አንድ", "እንዲሁም", "በሌሎች"],
+  "ውስጥ": ["ኬሚካዊ", "የሚገኝ", "የሚገኙ", "ያለ"],
+  "እንደ": ["ነበር", "ሆነ", "ነገሠ", "ነበሩ"],
+  "ወደ": ["ሌላ", "ደቡብ", "አዲስ", "ኢትዮጵያ"],
+  "ግን": ["ይህ", "አንድ", "እንደ", "ምንም"],
+  "ጊዜ": ["ውስጥ", "በኋላ", "ብዙ", "ደግሞ"],
+  "ወይም": ["ዓመታት", "ደግሞ", "ዓክልበ", "እንደ"],
+  "ጋር": ["ግንኙነት", "ይገናኛሉ", "ተመሳሳይ", "በመሆን"],
+  "በኋላ": ["ግን", "ወደ", "ዓክልበ", "እስከ"],
+  "አንድ": ["ሰው", "ላይ", "ቀን", "አይነት"],
+  "ሲሆን": ["ይህም", "ከሥልጣን", "ብዙ", "ከነሱም"],
+  "እስከ": ["ዓክልበ", "ዓም", "ዓ.ም", "ዛሬ"],
+  "ዘመን": ["ዓክልበ", "ነው", "ጀምሮ", "ዓመታት"],
+  "ይህ": ["ሁሉ", "ግን", "አይነት", "መጽሐፍ"],
+  "ደግሞ": ["ሆኖ", "ሰው", "ወደ", "ተመሳሳይ"],
+  "ነው": ["ማለት", "ብለው", "እንጂ", "ብሎ"],
+  "ዓ.ም": ["ድረስ", "ግድም", "ጀምሮ", "ነበር"],
+  "ብዙ": ["ጊዜ", "ሰዎች", "ሺህ", "መቶ"],
+  "ማለት": ["ነው", "ይቻላል", "አንድ", "አይደለም"],
+  "መንግሥት": ["መጨረሻ", "ዓክልበ", "መጀመርያ", "ውስጥ"],
+  "ድረስ": ["የነበሩት", "ይህን", "ያህል", "እንደ"],
+  "ስለ": ["መጣ፣", "ሆነ", "ባሮች", "ኢትዮጵያ"],
+  "በዚህ": ["ጊዜ", "ምክንያት", "ወቅት", "ዕለት"],
+  "ሰው": ["መኖሪያ", "ነው", "ሁሉ", "ሠራሽ"],
+  "ሁሉ": ["ላይ", "እንደ", "በሁሉ", "የአላህ"],
+  "ነገር": ["ግን", "ነው", "ሁሉ", "ለማድረግ"],
+  "ቀን": ["ዓ.ም", "ነው", "ዓ/ም", "በኋላ"],
+  "ሰዎች": ["ሁሉ", "ብቻ", "አሉ", "ነበሩ"],
+  "ቤት": ["ውስጥ", "ነው", "እና", "ነበር"],
+  "ብቻ": ["ነው", "ሳይሆን", "ነበር", "ናቸው"],
+  "ስም": ["ነው", "እንደ", "ጋር", "ከ«ሴይንት"],
+  "ሆኖ": ["ይገመታል", "ሲገመት", "ነበር", "ሳለ"],
+  "ልጅ": ["ሲሆን", "ናቸው", "ሁሉ", "ነው"],
+  "ዓመት": ["ዓክልበ", "በኋላ", "እንደ", "ወጣት"],
+  "ከተማ": ["ነው", "ሆነ", "ሲሆን", "ናት"],
+  "ንጉሥ": ["ነበር", "ሆኖ", "ሆነ", "ስም"],
+  "ከዚህ": ["በኋላ", "በላይ", "በፊት", "ዓለም"],
+  "ነበር": ["ማለት", "ይላል", "የሚል", "ይመስላል"],
+  "በላይ": ["ዘለቀ", "ሰዎች", "ነው", "አንዳንድ"],
 };
 
 let lastPickedWord = '';
@@ -3255,8 +3489,9 @@ let qwertyOn = false;
 function init() {
   buildKB(); buildEmoji(); buildTash(); buildSpec(); buildNum(); initEmojiHub();
 /* ── Amazigh custom flag button in emoji hub ── */
-  setupPhys(); loadTheme(); updateStats();
+  buildFrancoChips(); setupPhys(); loadTheme(); updateStats();
   document.addEventListener('click', e => {
+    if (!e.target.closest('#fidel-picker') && !e.target.closest('.fidel-base')) closePicker();
     if (!e.target.closest('#epop') && !e.target.closest('.k-emoji')) closeEmoji();
     if (!e.target.closest('#tpop') && !e.target.closest('.k-tashkeel')) closeTashkeel();
     if (!e.target.closest('#spop') && !e.target.closest('.k-spec')) closeSpec();
@@ -3270,72 +3505,132 @@ function init() {
 /* ── BUILD KEYBOARD ── */
 const DRAFT_KEY = (window.location.pathname.split('/').filter(Boolean)[0] || 'arabic') + '-draft';
 
+// ── restored from Jun-27 working version: activeFam decl ──
+let activeFam = null;
+
+// ── restored from Jun-27 working version: closePicker ──
+function closePicker() {
+  activeFam = null;
+  const p = document.getElementById('fidel-picker');
+  if (p) p.classList.remove('show');
+  document.querySelectorAll('.fidel-base').forEach(b => b.classList.remove('fam-active'));
+}
+
+// ── restored from Jun-27 working version: selectFamily ──
+function selectFamily(famIdx, el) {
+  if (activeFam === famIdx) { closePicker(); return; }
+  activeFam = famIdx;
+  document.querySelectorAll('.fidel-base').forEach(b => b.classList.remove('fam-active'));
+  el.classList.add('fam-active');
+  const ORDERS = ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7'];
+  const VOW = ['ä','u','i','a','e','ə','o'];
+  const stem = (FL[FIDEL[famIdx][0]] || '').replace(/[aeiouäə]$/i, '');
+  const picker = document.getElementById('fidel-picker');
+  picker.innerHTML = '';
+  FIDEL[famIdx].forEach((ch, i) => {
+    const b = document.createElement('button');
+    b.className = 'fam-pick-btn' + (i === 3 ? ' fam-a' : '');
+    const rom = francoOn ? (stem + VOW[i]) : '';
+    b.innerHTML = (rom ? '<span class="fam-rom">' + rom + '</span>' : '') + '<span class="fam-ch">' + ch + '</span><span class="fam-ord">' + ORDERS[i] + '</span>';
+    b.onclick = e => { e.stopPropagation(); ins(ch); closePicker(); };
+    picker.appendChild(b);
+  });
+  picker.classList.add('show');
+  // position: floating bubble centered above the tapped key, clamped to the keyboard edges
+  const wrap = document.getElementById('kbrows');
+  if (getComputedStyle(wrap).position === 'static') wrap.style.position = 'relative';
+  // size the 7 columns to the available width: 54px squares when room, shrink to fit when not
+  const avail = wrap.getBoundingClientRect().width - 8 - 16 - 6*5; // margins + padding + gaps
+  const colw = Math.min(54, Math.floor(avail / 7));
+  picker.style.gridTemplateColumns = `repeat(7, ${colw}px)`;
+  picker.querySelectorAll('.fam-pick-btn').forEach(b => b.style.height = Math.max(60, colw + 6) + 'px');
+  picker.style.visibility = 'hidden';
+  requestAnimationFrame(() => {
+    const kr = el.getBoundingClientRect(), wr = wrap.getBoundingClientRect(), pw = picker.offsetWidth;
+    let left = kr.left - wr.left + kr.width/2 - pw/2;
+    left = Math.max(4, Math.min(left, wr.width - pw - 4));
+    picker.style.left = left + 'px';
+    picker.style.top = (kr.top - wr.top - picker.offsetHeight - 10) + 'px';
+    picker.style.setProperty('--arrow-x', (kr.left - wr.left + kr.width/2 - left) + 'px');
+    picker.style.visibility = 'visible';
+  });
+}
+
+function buildFrancoChips() {
+  const container = document.getElementById('franco-chips');
+  if (!container) return;
+  FRANCO_CHIPS.forEach(({ l, a }) => {
+    const chip = document.createElement('button');
+    chip.className = 'franco-chip';
+    chip.innerHTML = `<span class="fc-latin">${l}</span><span class="fc-arrow">→</span><span class="fc-arab">${a}</span>`;
+    chip.title = 'Click to try';
+    chip.onclick = () => {
+      const ta = document.getElementById('arabic-text');
+      ta.focus({preventScroll:true});
+      const sep = ta.value && !ta.value.endsWith(' ') ? ' ' : '';
+      ta.value += sep + a + ' ';
+      ta.selectionStart = ta.selectionEnd = ta.value.length;
+      updateStats(); updateSugs();
+      toast(l + ' → ' + a + ' ✨');
+    };
+    container.appendChild(chip);
+  });
+}
+
 function buildKB() {
   const wrap = document.getElementById('kbrows');
   wrap.innerHTML = '';
   document.getElementById('kbc').classList.toggle('franco-on', francoOn);
 
+  // Vowel-order picker (hidden until family tapped)
+  const picker = document.createElement('div');
+  picker.id = 'fidel-picker';
+  picker.className = 'fidel-picker';
+  wrap.appendChild(picker);
+
+  // Compact 6-col grid of 30 base consonants (4th order = "a" vowel)
+  const grid = document.createElement('div');
+  grid.className = 'fidel-grid';
+  FIDEL.forEach((family, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'key fidel-base';
+    btn.innerHTML = `<span class="fl">${FL[family[0]] || ''}</span>${family[3]}`;
+    btn.onclick = e => { e.stopPropagation(); selectFamily(idx, btn); };
+    grid.appendChild(btn);
+  });
+  wrap.appendChild(grid);
+
+  // Control row
   ROWS.forEach(row => {
     const rowEl = document.createElement('div');
     rowEl.className = 'kb-row';
-
     row.forEach(k => {
       const btn = document.createElement('button');
       btn.className = 'key';
-
-      if (k === 'ENTER') {
-        btn.classList.add('k-enter'); btn.innerHTML = '<svg width="16" height="13" viewBox="0 0 16 13" fill="currentColor"><path d="M14 0v6H4.4l2.3-2.3-1.4-1.4L1 7l4.3 4.3 1.4-1.4L4.4 7.5H16V0h-2z"/></svg>';
-        btn.onclick = () => ins('\n', 'special');
-
-      } else if (k === 'BSP') {
-        btn.classList.add('k-bsp'); btn.innerHTML = '<svg width="19" height="14" viewBox="0 0 19 14" fill="currentColor"><path d="M7 0L0 7l7 7h12V0H7zm5.7 9.3l-1.4 1.4L9 8.4l-2.3 2.3-1.4-1.4L7.6 7 5.3 4.7l1.4-1.4L9 5.6l2.3-2.3 1.4 1.4L10.4 7l2.3 2.3z"/></svg>';
-        btn.onclick = bsp;
-      } else if (k === 'SHIFT') {
-        btn.classList.add('k-shift'); btn.innerHTML = '<svg width="14" height="15" viewBox="0 0 14 15" fill="currentColor"><path d="M7 0L0 7h4v5h6V7h4L7 0z"/><rect x="4" y="13" width="6" height="2" rx="1"/></svg>';
-        btn.onclick = e => { e.stopPropagation(); toggleShift(); };
-
-
-      } else if (k === 'SLASH') {
-        btn.classList.add('k-slash'); btn.textContent = '/';
-        btn.onclick = () => ins('/');
-
-      } else if (k === 'SPEC') {
-        btn.classList.add('k-spec');
-        btn.innerHTML = 'Sym<span class="ks"># · + −</span>';
-        btn.onclick = e => { e.stopPropagation(); toggleSpec(); };
-
+      if (k === 'BSP') {
+        btn.classList.add('k-bsp'); btn.innerHTML = '<svg width="19" height="14" viewBox="0 0 19 14" fill="currentColor"><path d="M7 0L0 7l7 7h12V0H7zm5.7 9.3l-1.4 1.4L9 8.4l-2.3 2.3-1.4-1.4L7.6 7 5.3 4.7l1.4-1.4L9 5.6l2.3-2.3 1.4 1.4L10.4 7l2.3 2.3z"/></svg>'; btn.onclick = bsp;
       } else if (k === 'SPACE') {
-        btn.classList.add('k-space');
-        btn.innerHTML = '';
-        btn.onclick = () => ins(' ');
-
+        btn.classList.add('k-space'); btn.textContent = ''; btn.onclick = () => ins(' ');
       } else if (k === 'DOT') {
-        btn.classList.add('k-dot'); btn.textContent = '.';
-        btn.onclick = () => ins('.');
-
+        btn.classList.add('k-dot'); btn.textContent = '።'; btn.onclick = () => ins('።');
       } else if (k === 'N123') {
-        btn.classList.add('k-123'); btn.textContent = '123';
-        btn.onclick = e => { e.stopPropagation(); toggleNum(); };
-
+        btn.classList.add('k-123'); btn.textContent = '123'; btn.onclick = e => { e.stopPropagation(); closePicker(); toggleNum(); };
       } else if (k === 'EMOJI') {
-        btn.classList.add('k-emoji'); btn.textContent = '😊';
-        btn.onclick = e => { e.stopPropagation(); toggleEmoji(); };
-
+        btn.classList.add('k-emoji'); btn.textContent = '😊'; btn.onclick = e => { e.stopPropagation(); closePicker(); toggleEmoji(); };
       } else if (k === 'TASHKEEL') {
         btn.classList.add('k-tashkeel');
-        btn.innerHTML = 'Orders<span class="ks">ቅደምተከተል</span>';
-        btn.onclick = e => { e.stopPropagation(); toggleTash(); };
-
+        btn.innerHTML = '✨ ፊደል<span class="ks">Orders</span>';
+        btn.onclick = e => { e.stopPropagation(); closePicker(); toggleTash(); };
+      } else if (k === 'FRANCO') {
+        btn.classList.add('k-franco');
+        if (francoOn) btn.classList.add('active');
+        btn.innerHTML = 'Phon.<span class="ks">' + (francoOn ? 'ON' : 'OFF') + '</span>';
+        btn.onclick = toggleFranco;
+      } else if (k === 'ENTER') {
+        btn.classList.add('k-enter'); btn.innerHTML = '<svg width="16" height="13" viewBox="0 0 16 13" fill="currentColor"><path d="M14 0v6H4.4l2.3-2.3-1.4-1.4L1 7l4.3 4.3 1.4-1.4L4.4 7.5H16V0h-2z"/></svg>'; btn.onclick = () => ins('\n');
       } else {
-        /* letter key — prefix combining chars with dotted circle so they render visibly */
-        const COMBINING = new Set([]);
-        const display = COMBINING.has(k) ? '◌' + k : k;
-        const hint = FL[k] || '';
-        btn.innerHTML = `<span class="fl">${hint}</span>${display}`;
-        if (k === 'لا') btn.style.fontSize = '15px';
-        btn.onclick = () => ins(k);
+        btn.textContent = k; btn.onclick = () => ins(k);
       }
-
       rowEl.appendChild(btn);
     });
     wrap.appendChild(rowEl);
@@ -3356,7 +3651,7 @@ function buildSpec() {
 function buildNum() {
   const western  = ['1','2','3','4','5','6','7','8','9','0'];
   const arabic   = ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'];
-  const symbols  = ['?','!',',','.','(',')',':',';','@','#','+','-','×','÷','=','%','°','½','¼','¾'];
+  const symbols  = ["?","!",",",".","(",")",":",";","@","#","+","-","×","÷","=","%","°","½","¼","¾","&","*","\"","'","/","\\","|","_","~","^","<",">","[","]","{","}","€","$","£","¥","©","®","™","•","…","—","«","»","§"/*LANG_SYMBOLS*/,"።","፣","፤","፥","፡"/*END_LANG_SYMBOLS*/];
   const fill = (id, chars, extraClass='') => {
     const g = document.getElementById(id); if (!g) return;
     g.innerHTML = '';
@@ -3465,6 +3760,20 @@ function toggleSpec()    { specOpen = !specOpen; document.getElementById('spop')
 function closeSpec()     { specOpen = false; document.getElementById('spop').classList.remove('show'); }
 function toggleEmoji()   { emojiOpen = !emojiOpen; document.getElementById('epop').classList.toggle('show', emojiOpen); if (emojiOpen) { closeTashkeel(); closeSpec(); closeNum(); } }
 function closeEmoji()    { emojiOpen = false; document.getElementById('epop').classList.remove('show'); }
+const FRANCO_DEFAULT_PLACEHOLDER = 'Type Amharic here... or click the letters below ✍️';
+const FRANCO_ON_PLACEHOLDER = 'Try: selam — fiqir — Ityopya ✨\nPhonetic keys type Amharic directly';
+
+function toggleFranco() {
+  francoOn = !francoOn;
+  qwertyOn = francoOn;
+  closePicker();
+  buildKB();
+  const sw = document.getElementById('sw-track');
+  if (sw) sw.classList.toggle('on', francoOn);
+  const ta = document.getElementById('arabic-text');
+  ta.placeholder = francoOn ? FRANCO_ON_PLACEHOLDER : FRANCO_DEFAULT_PLACEHOLDER;
+}
+
 function toggleTash()    { tashOpen = !tashOpen; document.getElementById('tpop').classList.toggle('show', tashOpen); if (tashOpen) { closeEmoji(); closeSpec(); closeNum(); } }
 
 async function aiTashkeel() {
@@ -4343,5 +4652,219 @@ async function submitFeedback(e) {
 })();
 </script>
 <script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+<!-- ══════════ KBDOCK — docked mobile keyboard (installed by tools/add_kbdock.py) ══════════ -->
+<style>
+/* Mobile docked keyboard — native phone feel. Active ≤720px only. */
+@media (max-width: 768px) {
+  body.kb-docked #kbc {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
+    margin: 0; border-radius: 18px 18px 0 0;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    box-shadow: 0 -10px 34px rgba(0,0,0,.20);
+    max-height: 76vh; overflow: visible;
+    animation: kbdock-up .26s cubic-bezier(.2,.8,.25,1);
+  }
+  @keyframes kbdock-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  [data-theme="dark"] body.kb-docked #kbc { box-shadow: 0 -10px 34px rgba(0,0,0,.55); }
+
+  /* Franco hint panel grows the dock past the viewport (bottom key row pushed
+     off-screen) — when docked it becomes ONE slim horizontal row: same content
+     (instruction + example chips), swipeable sideways, native-strip height */
+  body.kb-docked .franco-hint {
+    flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: flex-start;
+    gap: 8px; margin: 6px 0 2px; padding: 7px 10px; font-size: 10.5px;
+    overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+  }
+  body.kb-docked .franco-hint::-webkit-scrollbar { display: none; }
+  body.kb-docked .franco-hint > span { flex: 0 0 auto; white-space: nowrap; }
+  body.kb-docked .franco-chips { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
+  body.kb-docked .franco-chips > * { white-space: nowrap; flex: 0 0 auto; }
+
+  /* toasts: the dock owns the bottom of the screen, so notices become a TOP
+     banner while docked (native-style), never trapped behind the keyboard */
+  body.kb-docked .toast {
+    bottom: auto; top: 72px;
+    transform: translateX(-50%) translateY(-140px);
+  }
+  body.kb-docked .toast.show { transform: translateX(-50%) translateY(0); }
+
+  .kbdock-handle { display: none; }
+  body.kb-docked .kbdock-handle {
+    display: flex; align-items: center; justify-content: center;
+    height: 26px; margin: -6px 0 2px; cursor: grab; touch-action: none;
+  }
+  .kbdock-handle::before {
+    content: ''; width: 42px; height: 5px; border-radius: 3px;
+    background: rgba(100,116,139,.35);
+  }
+  body.kb-docked .sug-pill { font-size: 13px; padding: 7px 8px; }
+}
+
+#kb-altpop {
+  position: fixed; z-index: 10000; display: none; gap: 6px;
+  background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.22); padding: 8px; transform: translateX(-50%);
+}
+[data-theme="dark"] #kb-altpop { background: #1E293B; border-color: rgba(255,255,255,.12); }
+#kb-altpop button {
+  min-width: 44px; height: 46px; border: 0; border-radius: 10px; cursor: pointer;
+  font-size: 24px; font-family: inherit; background: rgba(0,104,255,.08); color: inherit;
+}
+#kb-altpop button:active, #kb-altpop button:hover { background: var(--indigo, #6366F1); color: #fff; }
+
+/* Matra/Roman labels: docked = native-small. Outside any media query and
+   !important — the template re-sizes these keys at several widths (12px base,
+   9px <=640) and docked must win at every width. */
+body.kb-docked .k-tashkeel, body.kb-docked .k-franco { font-size: 8px !important; }
+body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !important; }
+/* Roman/Franco mode enlarges LETTER keys (to show the roman hint) via
+   .franco-on .key{font-size:13-14px} — but that also hit the Tashkeel/Roman
+   mode keys and clipped their labels ('Tashkeel'->'ashke'). Pin the mode-key
+   labels to the compact size in Roman mode too, docked OR inline. */
+.franco-on .k-tashkeel, .franco-on .k-franco { font-size: 8px !important; }
+.franco-on .k-tashkeel .ks, .franco-on .k-franco .ks { font-size: 6px !important; }
+</style>
+<script>
+(function kbdockDemo() {
+  const mq = window.matchMedia('(max-width: 768px)');
+  const kbc = document.getElementById('kbc');
+  const ta  = document.getElementById('arabic-text');
+  if (!kbc || !ta) return;
+
+  const handle = document.createElement('div');
+  handle.className = 'kbdock-handle';
+  handle.setAttribute('aria-label', 'Hide keyboard');
+  kbc.insertBefore(handle, kbc.firstChild);
+  const spacer = document.createElement('div');
+  spacer.style.display = 'none';
+  kbc.parentNode.insertBefore(spacer, kbc);
+
+  let docked = false;
+  function dock() {
+    if (docked || !mq.matches) return;
+    spacer.style.height = kbc.offsetHeight + 'px';
+    spacer.style.display = 'block';
+    /* portal: #kbc lives inside .wrap (z-index:1 stacking context), so later
+       sections (mascots, combo text) paint OVER it no matter how high its own
+       z-index is. Re-parenting to <body> while docked puts it above everything. */
+    document.body.appendChild(kbc);
+    document.body.classList.add('kb-docked');
+    docked = true;
+    requestAnimationFrame(() => {
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+      followCaret();
+    });
+  }
+  function undock() {
+    if (!docked) return;
+    document.body.classList.remove('kb-docked');
+    document.body.style.paddingBottom = '';
+    spacer.parentNode.insertBefore(kbc, spacer.nextSibling); /* back to its slot */
+    spacer.style.display = 'none';
+    docked = false;
+    ta.blur();
+  }
+
+  ta.addEventListener('focus', dock);
+
+  /* mode toggles (Hinglish ON/OFF, Matra…) must not throw a center card while
+     docked — the key's own color + the hint row ARE the state. Event toasts
+     (Copied!, Cleared…) still show, as the top banner. */
+  if (typeof window.toast === 'function') {
+    const _toast = window.toast;
+    window.toast = function (msg) {
+      if (docked && /Hinglish (ON|OFF)|Roman hints|Matra/i.test(String(msg))) return;
+      return _toast.apply(this, arguments);
+    };
+  }
+
+  /* dock content changes height (Franco panel, tashkeel row…) — keep the page
+     padding and the toast offset in sync */
+  if (window.ResizeObserver) {
+    new ResizeObserver(() => {
+      if (!docked) return;
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+    }).observe(kbc);
+  }
+
+  let hy = null;
+  handle.addEventListener('pointerdown', e => { hy = e.clientY; handle.setPointerCapture(e.pointerId); });
+  handle.addEventListener('pointermove', e => { if (hy !== null && e.clientY - hy > 40) { hy = null; undock(); } });
+  handle.addEventListener('pointerup',   e => { if (hy !== null) undock(); hy = null; });
+  window.addEventListener('resize', () => { if (!mq.matches) undock(); });
+
+  /* selecting text: never auto-scroll while the user's pointer is down in the
+     textarea (a mid-drag scroll cancels the selection), and make selection
+     explicitly allowed. Scroll only follows actual TYPING. */
+  ta.style.userSelect = 'text';
+  ta.style.webkitUserSelect = 'text';
+  let taPointerDown = false;
+  ta.addEventListener('pointerdown', () => { taPointerDown = true; }, { passive: true });
+  ['pointerup', 'pointercancel'].forEach(ev =>
+    document.addEventListener(ev, () => { taPointerDown = false; }, { passive: true }));
+
+  function followCaret() {
+    if (!docked || taPointerDown) return;
+    const r = ta.getBoundingClientRect();
+    const dockTop = window.innerHeight - kbc.offsetHeight;
+    if (r.bottom > dockTop - 8 || r.top < 0) {
+      window.scrollBy({ top: r.bottom - (dockTop - 16), behavior: 'smooth' });
+    }
+  }
+  ta.addEventListener('input', () => requestAnimationFrame(followCaret));
+
+  const kbrows = document.getElementById('kbrows');
+  if (kbrows && navigator.vibrate) {
+    kbrows.addEventListener('pointerdown', e => { if (e.target.closest('.key')) navigator.vibrate(8); }, { passive: true });
+  }
+
+  /* long-press alternates — per-language data from tools/kb_lang_data.py */
+  const KB_ALT = {};
+  const pop = document.createElement('div');
+  pop.id = 'kb-altpop';
+  document.body.appendChild(pop);
+  let lpTimer = null, lpKey = null, suppressClick = false;
+
+  function showAlts(keyEl, ch) {
+    pop.innerHTML = '';
+    KB_ALT[ch].forEach(alt => {
+      const b = document.createElement('button');
+      b.textContent = alt;
+      b.onclick = ev => { ev.stopPropagation(); ins(alt); hideAlts(); };
+      pop.appendChild(b);
+    });
+    const r = keyEl.getBoundingClientRect();
+    pop.style.display = 'flex';
+    pop.style.left = (r.left + r.width / 2) + 'px';
+    pop.style.top  = (r.top - 62) + 'px';
+    suppressClick = true;
+  }
+  function hideAlts() { pop.style.display = 'none'; }
+
+  if (kbrows) {
+    kbrows.addEventListener('pointerdown', e => {
+      const k = e.target.closest('.key');
+      if (!k) return;
+      const ch = k.textContent.trim().slice(0, 1);
+      if (!KB_ALT[ch]) return;
+      lpKey = k;
+      lpTimer = setTimeout(() => showAlts(k, ch), 420);
+    }, { passive: true });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(ev =>
+      kbrows.addEventListener(ev, () => { clearTimeout(lpTimer); lpTimer = null; }, { passive: true }));
+    kbrows.addEventListener('click', e => {
+      if (suppressClick) { e.stopPropagation(); e.preventDefault(); suppressClick = false; }
+    }, true);
+  }
+  document.addEventListener('pointerdown', e => {
+    if (!pop.contains(e.target) && e.target !== lpKey) hideAlts();
+  });
+})();
+</script>
+<!-- ══════════ /KBDOCK ══════════ -->
 </body>
 </html>

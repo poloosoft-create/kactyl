@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tamil Keyboard Online 2026 — Free [Mobile] | தமிழ்</title>
+  <title>Tamil Keyboard Online — Tanglish Typing | தமிழ் கீபோர்டு</title>
   <meta name="description" content="Free Tamil keyboard online — type Tamil for WhatsApp, TikTok & Instagram. Tanglish mode, vowel signs & voice typing. No download. Works on iPhone">
   <meta name="keywords" content="tamil keyboard online, tamil typing online, tanglish keyboard, type tamil online, tamil keyboard for whatsapp, tamil keyboard free, tamil typing without installation, தமிழ் கீபோர்டு">
 
@@ -32,17 +32,17 @@
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://kactyl.com/tamil/">
-  <meta property="og:title"       content="Tamil Keyboard Online 2026 — Free [Mobile] | தமிழ்">
+  <meta property="og:title"       content="Tamil Keyboard Online — Tanglish Typing | தமிழ் கீபோர்டு">
   <meta property="og:description" content="Type Tamil from your phone or PC — no app, no download. Tamil keyboard for WhatsApp, TikTok, Instagram. Tanglish mode converts English letters to Tamil instantly.">
-  <meta property="og:image"       content="/images/og-images/tamil.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-  <meta property="og:locale"      content="ta_IN">
+  <meta property="og:image" content="https://kactyl.com/images/og-images/tamil.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+          <meta property="og:locale"      content="ta_IN">
   <meta property="og:site_name"   content="Kactyl">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Tamil Keyboard Online 2026 — Free [Mobile] | தமிழ்">
+  <meta name="twitter:title"       content="Tamil Keyboard Online — Tanglish Typing | தமிழ் கீபோர்டு">
   <meta name="twitter:description" content="Free Tamil keyboard — Tanglish mode, vowel signs & voice typing. Type Tamil for WhatsApp & TikTok. No download, works on all devices.">
   <meta name="twitter:image"       content="https://kactyl.com/images/og-images/tamil.png">
 
@@ -69,13 +69,6 @@
       "@type": "Organization",
       "name": "Kactyl",
       "url": "https://kactyl.com"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "3124",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   }
   </script>
@@ -133,7 +126,15 @@
   <style>
 /* ── RESET ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { overflow-x: clip; max-width:100%; }
+html { overflow-x: clip; max-width:100%; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+/* iOS Safari inflates sub-11px text unless text-size-adjust is pinned — the mode-key
+   labels (Tashkeel/Matra/Roman) ballooned and spilled outside their keys on iPhone.
+   overflow:hidden below is the belt-and-braces so no label can ever spill again. */
+.k-tashkeel, .k-franco { overflow:hidden; }
+/* Roman/Franco mode needs a physical keyboard (type Latin → Space → script). On mobile
+   the native keyboard is hidden (inputmode=none) so roman input is impossible — hide the
+   Roman key + its hint bar there; the on-screen script keyboard is the mobile input. */
+@media (max-width:768px){ .franco-hint{ display:none !important; } }
 button { cursor:pointer; font-family:inherit; border:none; background:none; }
 
 /* ── TOKENS ── */
@@ -850,13 +851,13 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* Franco dual label */
 .fl {
-  font-size:17px; font-family:'Inter',sans-serif; font-weight:700;
+  font-size:15px; font-family:'Inter',sans-serif; font-weight:700;
   color:var(--indigo); line-height:1;
   opacity:0; height:0; overflow:hidden;
   transition: opacity .2s;
 }
 .franco-on .fl { opacity:1; height:auto; }
-.franco-on .key { height:60px; font-size:14px; }
+.franco-on .key { height:60px; font-size:22px; }
 @media (hover:hover) and (pointer:fine) { .franco-on .key:hover .fl { color: var(--fl-hover); } }
 :root {
   --fl-hover: #4d008b;
@@ -899,23 +900,23 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 @media (hover:hover) and (pointer:fine) { .k-emoji:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
 
 .k-tashkeel {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#7C3AED,#A855F7) !important;
   border:none !important; box-shadow:0 3px 0 #5B21B6; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-tashkeel:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
-.k-tashkeel .ks { font-size:9px; opacity:.5; font-weight:400; font-family:'Baloo Thambi 2',sans-serif; }
+.k-tashkeel .ks { font-size:7px; opacity:.5; font-weight:400; font-family:'Baloo Thambi 2',sans-serif; }
 
 .k-franco {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#3B82F6,#6366F1) !important;
   border:none !important; box-shadow:0 3px 0 #1D4ED8; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-franco:hover  { filter:brightness(1.1); box-shadow:0 3px 0 #1D4ED8; transform:translateY(-1px); } }
 .k-franco.active { background:linear-gradient(135deg,#059669,#10B981) !important; box-shadow:0 3px 0 #047857; }
-.k-franco .ks    { font-size:9px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
+.k-franco .ks    { font-size:7px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
 
 /* Special chars key */
 .k-spec { min-width:46px; font-size:13px; font-weight:700; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.2; position:relative; }
@@ -1565,8 +1566,8 @@ footer {
 
   /* Special key flex ratios */
   .k-space   { flex:3;   min-width:0 !important; }
-  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:9px; }
-  .k-franco  { flex:1.5; min-width:0 !important; font-size:9px; }
+  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:8px; }
+  .k-franco  { flex:1.5; min-width:0 !important; font-size:8px; }
   .k-emoji   { flex:1;   min-width:0 !important; font-size:18px; }
   .k-123     { flex:1;   min-width:0 !important; font-size:10px; }
   .k-enter   { flex:1.5; min-width:0 !important; font-size:13px; }
@@ -2051,13 +2052,13 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
                                                             <nav>
-    <a href="/home.html" class="nav-link">Home</a>
-    <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
       <button class="tools-btn">Tools &#9662;</button>
@@ -2443,7 +2444,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="combo-section-hd">
       <div class="combo-hd-inner">
         <div class="combo-hd-text">
-          <p class="combo-section-sup" data-i18n="combo.title">Ready-Made <span>Combos</span></p>
+          <p class="combo-section-sup" data-i18n="combo.title">Ready-Made <span>Tamil Combos</span></p>
           <h2 class="combo-section-sub">One click to insert — or copy straight to clipboard</h2>
         </div>
         <img src="../images/Mascot-1.svg" alt="Emoji mascot" class="combo-mascot">
@@ -2596,7 +2597,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="seo-dark-label">Free Tamil Keyboard</div>
     <h2>Free Tamil Keyboard Online.<br>Type from any device — no download, no install.</h2>
     <div class="seo-dark-stats">
-      <span><strong>600M+</strong> speakers</span>
+      <span><strong>80M+</strong> speakers</span>
       <span class="seo-dark-dot">·</span>
       <span><strong>100%</strong> free</span>
       <span class="seo-dark-dot">·</span>
@@ -2604,8 +2605,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <span class="seo-dark-dot">·</span>
       <span><strong>All</strong> devices</span>
     </div>
-    <p>This <strong>free Tamil keyboard online</strong> works instantly in any browser — no app download, no installation, no changing your phone's language settings.</p>
-    <p>Type Tamil on <strong>iPhone, Android, Windows or Mac</strong>. <strong>Tanglish mode</strong> converts romanized Tamil to Tamil script automatically. Copy directly to <strong>WhatsApp</strong> messages, <strong>TikTok</strong> captions, <strong>Instagram</strong> bios, and more.</p>
+    <p>Tamil is <strong>one of the oldest living languages on earth</strong> — Sangam-era poetry survives from roughly 2,000 years ago, Tamil-Brahmi inscriptions go back further still, and in <strong>2004 Tamil became the first language India officially declared a Classical Language</strong>. The script evolved from Tamil-Brahmi through the rounded Vatteluttu into the Chola-era letterforms behind today's alphabet. Tamil also got to print astonishingly early: <strong>the first book ever printed in any Indian script was in Tamil</strong> — <em>Thambiran Vanakkam</em>, 1578 — decades before most of the world's scripts saw a press.</p>
+    <p>On screen, Tamil's 247-letter system stays manageable because it's <strong>built from just 31 bases</strong> — but typed order and visual order don't always match: vowel signs can appear <strong>before</strong> the consonant they follow (கெ) or wrap around it (கொ), so the engine must reorder as you type. Spelling demands precision English never asks for: <strong>three distinct n-letters (ந ன ண), two r-letters (ர ற) and three l-letters (ல ள ழ)</strong> — picking the wrong one is a visible spelling error to every literate reader. Phonetic input on this keyboard handles the reordering automatically and keeps all the lookalike letters one tap apart.</p>
+    <p>Tamil is an <strong>official language in three countries — India (Tamil Nadu and Puducherry), Sri Lanka and Singapore</strong> — a status almost no other Indian language holds. Chennai anchors a major tech corridor and the Kollywood film industry, whose songs and memes drive enormous typed-Tamil volume. The diaspora is vast: Malaysia and Singapore's long-settled communities, the Gulf's workforce, and <strong>Toronto — the largest Sri Lankan Tamil city outside Asia</strong>. Language pride runs deep in Tamil digital culture: public posts in proper Tamil script, not romanized "Tanglish," are the norm — which keeps browser-based Tamil typing in constant demand on devices that ship without it.</p>
     <div class="seo-dark-steps">
       <span class="seo-dark-step">1. Open kactyl.com/tamil/</span>
       <span class="seo-dark-arr">→</span>
@@ -2627,6 +2629,38 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         </div>
       </a>
     </div>
+<!-- FAQ -->
+<section class="sig-sec">
+  <style>
+    .sig-sec{padding:64px 0;background:linear-gradient(180deg,rgba(204,0,153,.045),transparent 30%)}
+    .sig-sec .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .sig-hd{text-align:center;margin-bottom:36px}
+    .sig-hd h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text,#1E293B)}
+    .sig-hd h2 span{background:linear-gradient(90deg,#cc0099,#e066c2);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sig-hd p{color:var(--muted,#64748B);margin-top:10px;font-size:16px;max-width:640px;margin-left:auto;margin-right:auto}
+    .sig-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0 34px}
+    .sig-stats span{background:var(--surface,#fff);border:1px solid rgba(204,0,153,.15);border-radius:999px;padding:8px 18px;font-size:14px;font-weight:700;color:#cc0099;box-shadow:0 2px 10px rgba(30,41,59,.05)}
+    .sig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .sig-card{background:var(--surface,#fff);border-radius:20px;padding:24px;position:relative}.sig-card::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.65;z-index:-1;pointer-events:none}
+    .sig-card h3{font-size:17px;font-weight:800;color:var(--text,#1E293B);margin-bottom:4px}
+    .sig-card .sig-tag{font-size:12.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#cc0099;display:block;margin-bottom:10px}
+    .sig-letters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+    .sig-letters b{font-size:26px;line-height:1;background:rgba(204,0,153,.07);border-radius:12px;height:56px;min-width:56px;padding:0 8px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;font-weight:400}
+    .sig-card p{font-size:14.5px;color:var(--muted,#64748B);line-height:1.65}
+    .sig-card p b{color:var(--text,#1E293B);font-weight:700}
+    .sig-ex{margin-top:10px;font-size:14px;color:var(--text,#1E293B);background:rgba(204,0,153,.05);border-radius:10px;padding:8px 12px;display:inline-block}
+    .sig-hero-card{background:linear-gradient(135deg,#fbebf7 0%,#f5cceb 55%,#ea94d4 100%);border:1px solid rgba(204,0,153,.16)}.sig-hero-card .sig-letters b{background:rgba(204,0,153,.10)}.sig-hero-card .sig-ex{background:rgba(204,0,153,.08)}
+  </style>
+  <div class="wrap">
+    <div class="sig-hd">
+      <h2>247 Letters, <span>One Clean System</span></h2>
+      <p>Tamil is one of the world’s oldest living scripts — and one of the most disciplined: a compact grid of sounds with almost no ligature chaos.</p>
+    </div>
+    <div class="sig-stats"><span>247 letters</span><span>12 vowels</span><span>18 consonants</span><span>2,000+ years old</span></div>
+    <div class="sig-grid"><div class="sig-card sig-hero-card"><span class="sig-tag">The grid</span><h3>12 × 18 builds everything</h3><div class="sig-letters"><b>க</b><b>கா</b><b>கி</b></div><p>12 uyir (vowels) combine with 18 mei (consonants) — plus the rare ஃ — to make <b>247 letters from just 31 base shapes</b>. Learn the grid once and every combination is predictable.</p><div class="sig-ex">தமிழ் — Tamil</div></div><div class="sig-card"><span class="sig-tag">The pulli dot</span><h3>One dot silences the vowel</h3><div class="sig-letters"><b>க</b><b>க்</b></div><p>Every consonant carries a built-in “a” — the pulli dot <b>்</b> removes it: க (ka) becomes க் (k). தமிழ் itself ends on a pulli. It’s the single most-used mark in the script.</p><div class="sig-ex">தமிழ் — ends in ழ்</div></div><div class="sig-card"><span class="sig-tag">No cluster chaos</span><h3>The abugida that stays legible</h3><div class="sig-letters"><b>ட்</b><b>ச</b><b>ன்</b></div><p>Where Devanagari fuses consonant clusters into hundreds of ligatures, Tamil <b>refuses</b> — each consonant keeps its shape with a pulli between them. It’s among the easiest Indic scripts to read at speed.</p><div class="sig-ex">நட்பு — friendship</div></div><div class="sig-card"><span class="sig-tag">The untranslatable letter</span><h3>ழ — Tamil’s own sound</h3><div class="sig-letters"><b>ழ</b><b>தமிழ்</b></div><p>The retroflex ழ — sitting inside the word தமிழ் itself — exists in <b>almost no other major language</b>. Getting it right is a badge of honor; even neighboring Indian languages approximate it.</p><div class="sig-ex">மழை — rain · வாழை — banana</div></div></div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq-sec" id="faq">
   <div class="wrap">
@@ -3155,9 +3189,10 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 <script>
 /* ── DATA ── */
 const ROWS = [
-  ['அ','ஆ','இ','ஈ','உ','ஊ','எ','ஏ','ஐ','ஒ','ஓ'],
-  ['க','ங','ச','ஞ','ட','ண','த','ந','ப','ம','ன'],
-  ['SHIFT','ய','ர','ல','வ','ழ','ள','ற','ஜ','ஹ','ஷ','BSP'],
+  ['அ','ஆ','இ','ஈ','உ','ஊ','எ','ஏ','ஐ','ஒ'],
+  ['ஓ','ஔ','க','ங','ச','ஞ','ட','ண'],
+  ['SHIFT','த','ந','ப','ம','ய','ர','ல','வ','BSP'],
+  ['ழ','ள','ற','ன','ஜ','ஷ','ஸ','ஹ'],
   ['N123','EMOJI','TASHKEEL','SPACE','DOT','FRANCO','ENTER']
 ];
 
@@ -3165,12 +3200,7 @@ const SPEC_CHARS = ['ஸ','ஶ','ஷ','ஜ','ஹ','க்ஷ','ஔ','ஃ','ா',
 
 /* Phonetic hint for each key */
 const FL = {
-  'அ':'a',  'ஆ':'aa', 'இ':'i',  'ஈ':'ii', 'உ':'u',  'ஊ':'uu',
-  'எ':'e',  'ஏ':'ee', 'ஐ':'ai', 'ஒ':'o',  'ஓ':'oo',
-  'க':'k',  'ங':'ng', 'ச':'ch', 'ஞ':'ny', 'ட':'T',  'ண':'N',
-  'த':'th', 'ந':'n',  'ப':'p',  'ம':'m',  'ன':'n',
-  'ய':'y',  'ர':'r',  'ல':'l',  'வ':'v',  'ழ':'zh',
-  'ள':'L',  'ற':'R',  'ஜ':'j',  'ஹ':'h',  'ஷ':'sh'
+  'ஸ':'s', 'ஔ':'au', 'அ':'a', 'ஆ':'aa', 'இ':'i', 'ஈ':'ii', 'உ':'u', 'ஊ':'uu', 'எ':'e', 'ஏ':'ee', 'ஐ':'ai', 'ஒ':'o', 'ஓ':'oo', 'க':'k', 'ங':'ng', 'ச':'ch', 'ஞ':'ny', 'ட':'T', 'ண':'N', 'த':'th', 'ந':'n', 'ப':'p', 'ம':'m', 'ன':'n2', 'ய':'y', 'ர':'r', 'ல':'l', 'வ':'v', 'ழ':'zh', 'ள':'L', 'ற':'R', 'ஜ':'j', 'ஹ':'h', 'ஷ':'sh'
 };
 
 const PHYS = {
@@ -3200,7 +3230,7 @@ const EMOJI_CATS_DATA = {
   '🚩': { label:'Flags', emojis:['🇸🇦','🇦🇪','🇪🇬','🇲🇦','🇩🇿','🇹🇳','🇱🇾','🇸🇩','🇾🇪','🇸🇾','🇮🇶','🇯🇴','🇵🇸','🇱🇧','🇰🇼','🇧🇭','🇶🇦','🇴🇲','🇮🇷','🇹🇷','🇺🇸','🇨🇦','🇲🇽','🇧🇷','🇦🇷','🇨🇱','🇨🇴','🇵🇪','🇻🇪','🇬🇧','🇫🇷','🇩🇪','🇪🇸','🇮🇹','🇵🇹','🇳🇱','🇧🇪','🇨🇭','🇦🇹','🇸🇪','🇳🇴','🇩🇰','🇫🇮','🇵🇱','🇺🇦','🇷🇺','🇬🇷','🇨🇿','🇭🇺','🇷🇴','🇧🇬','🇷🇸','🇭🇷','🇸🇰','🇸🇮','🇮🇪','🇮🇸','🇨🇳','🇯🇵','🇰🇷','🇮🇳','🇵🇰','🇧🇩','🇮🇩','🇲🇾','🇸🇬','🇹🇭','🇻🇳','🇵🇭','🇰🇭','🇱🇦','🇲🇲','🇳🇵','🇱🇰','🇦🇺','🇳🇿','🇿🇦','🇳🇬','🇰🇪','🇪🇹','🇬🇭','🇹🇿','🇺🇬','🇨🇲','🏳️','🏴','🏁','🚩','🎌'] }
 };
 
-const WORDS = ["என", "வர", "உலக", "உதவ", "பல", "உணர", "இலவச", "இல", "வட", "ஆக", "சக", "தவற", "வளர", "இதய", "மன", "அழ", "பண", "தர", "கனரக", "மரண", "நடன", "ஆட", "ஆய", "மர", "நகர", "அவசர", "இட", "மத", "அட", "பணய", "உணவக", "ஓட", "சம", "மற", "மட", "இன", "ஊடக", "பட", "கவச", "ஏல", "சவர", "உர", "உப", "கணகண", "ஆற", "பயண", "கலக", "பரவ", "மனநல", "கன", "சலன"];
+const WORDS = ["மற்றும்", "கொரோனா", "இந்த", "என்று", "என", "ஒரு", "பேர்", "மேலும்", "இன்று", "வைரஸ்", "அவர்", "உள்ள", "வேண்டும்", "மாவட்ட", "அமைச்சர்", "சென்னை", "கடந்த", "தொற்று", "நேற்று", "அரசு", "இருந்து", "கொரோனா வைரஸ்", "அந்த", "மூலம்", "குறித்த", "நிலையில்", "உள்ளது", "முதல்", "மக்கள்", "தெரிவித்துள்ளார்", "சுகாதார", "கொண்டு", "கைது", "வருகிறது", "இது", "தெரிவித்தார்", "வரை", "செயலாளர்", "என்ற", "எண்ணிக்கை", "அனைத்து", "சிகிச்சை", "கலெக்டர்", "தலைவர்", "போது", "தற்போது", "மத்திய", "செய்து", "ஆயிரத்து", "தொடர்ந்து", "ஜனாதிபதி", "கலந்து", "குறித்து", "பல்வேறு", "தெரிவித்துள்ளது", "நடவடிக்கை", "பகுதியில்", "ஆக", "தொடர்பில்", "வரும்", "துறை", "இதுவரை", "தமிழகத்தில்", "பொலிஸ்", "காரணமாக", "பேருக்கு", "முதலமைச்சர்", "எம்", "புதிய", "நோய்", "ஆம்", "தமிழக", "பல", "தான்", "இவ்வாறு", "பொலிஸார்", "மாவட்டத்தில்", "வந்த", "சில", "முழுவதும்", "வகையில்", "தேசிய", "சேர்ந்த", "தேதி", "தனது", "இதில்", "தடுப்பு", "இலங்கை", "ஆண்டு", "உறுதி", "முன்னாள்", "ஆர்", "காலை", "பெற்று", "பிரதமர்", "எடப்பாடி", "மணி", "மாதம்", "பின்னர்", "எஸ்", "தகவல்", "பாதிப்பு", "ஊரடங்கு", "ஆயிரம்", "சிறப்பு", "சென்னையில்", "இதன்", "இல்லை", "பேரும்", "கூறினார்", "சார்பில்", "சென்று", "நான்", "அதன்", "இந்திய", "பி", "தமிழ்", "அவர்கள்", "செய்ய", "துணை", "பொது", "ஆனால்", "லட்சத்து", "அண்ணா", "தி", "இந்நிலையில்", "சமூக", "திகதி", "பழனிசாமி", "கோடி", "மருத்துவ", "வீடு", "இருக்கும்", "இந்தியாவில்", "இலங்கையில்", "ஒரே", "பகுதிகளில்", "மாவட்டம்", "ஆகிய", "உள்ளிட்ட", "கே", "ஆய்வு", "முடியும்", "ஆகியோர்", "எனவும்", "என்றார்", "ஒருவர்", "கொவிட்", "தலைமையில்", "பாதுகாப்பு", "வருகின்றனர்", "அதன்படி", "அதிகாரிகள்", "நிறுவனம்", "இருந்த", "கல்வி", "காஞ்சீபுரம்", "என்றும்", "கொழும்பு", "செய்யப்பட்டுள்ளது", "வழங்கினார்", "உள்ளனர்", "இதனை", "தனியார்", "என்பது", "ஒன்று", "சுமார்", "மருத்துவமனையில்", "மார்ச்", "வயது", "அது", "இதனால்", "லட்சம்", "நடைபெற்றது", "மட்டும்", "மீது", "கொண்ட", "பரிசோதனை", "அதிகரித்துள்ளது", "இரண்டு", "வைத்து", "அமைச்சு", "பொதுமக்கள்", "எனவே", "நாம்", "முதல்வர்", "டாக்டர்", "உறுப்பினர்", "அப்போது", "அல்லது", "மீண்டும்", "என்", "சம்பவம்", "அடிப்படையில்", "அதிக", "அவரது", "தொற்றுக்கு", "தொழில்", "நாட்டில்", "மாலை", "வழங்கி", "விழுப்புரம்", "இதேவேளை", "பெண்", "தமிழ்நாடு", "தெரிவித்தனர்", "அரசியல்", "மதுரை", "அருகே", "நாடு", "இருந்தது", "கீழ்", "கொண்டனர்", "தலைமை", "அனுமதி", "கடன்", "குணமடைந்து", "குறிப்பிடத்தக்கது", "நாள்", "பாராளுமன்ற", "மக்களுக்கு", "அங்கு", "உலக", "வங்கி", "வழங்க", "வந்து", "சி", "இரவு", "உட்பட", "டி", "தேர்தல்", "தொடர்பாக", "மிகவும்", "அரசின்", "இந்தியா", "அளவில்", "மட்டுமே", "வி", "விற்பனை", "அரசாங்கம்", "கூடிய", "மக்களின்", "நடவடிக்கைகள்", "நபர்", "பணி", "பிரிவு", "இருக்கிறது", "அதிபர்", "அதில்", "உத்தரவு", "ஊடாக", "கூட்டம்", "நாளில்", "நிலை", "அடுத்த", "வழங்கும்", "இடங்களில்", "உதவி", "உரிய", "எந்த", "குழு", "ஒன்றை", "கிலோ", "பிறகு", "அம்மா", "உள்ளன", "காவல்", "கோவில்", "சர்வதேச", "செய்யப்பட்ட", "பகுதி", "பதிவு", "மாணவர்கள்", "அனைவரும்", "நடவடிக்கைகளை", "போன்ற", "ராஜபக்ஷ", "வருகை", "ஆகும்", "உணவு", "செய்யப்பட்டு", "தினம்", "ரூபாய்", "திட்டம்", "இவர்", "தடை", "நிர்வாக", "பற்றி", "பொருட்கள்", "இதற்கு", "எமது", "ஒவ்வொரு", "கிழக்கு", "நேரத்தில்", "மாநில", "மேற்பட்ட", "வெற்றி", "நாளை", "உற்பத்தி", "எடுத்து", "பெற்ற", "முறையில்", "மேல்", "ரூ", "வருகின்றன", "எதிராக", "செய்யும்", "தேவையான", "பலர்", "போக்குவரத்து", "போலீசார்", "மூன்று", "விழா", "இயக்குனர்", "எதிர்வரும்", "குறிப்பிட்டார்", "புதிதாக", "நாங்கள்", "நிதி", "பெண்கள்", "என்பதை", "கழக", "நல்ல", "பூரணமாக", "மழை", "மஹிந்த", "வைத்தார்", "நீர்", "இணைந்து", "இயக்குநர்", "குடிநீர்", "ஜூலை", "பணிகள்", "மேற்கொண்டு", "வடக்கு", "வழங்கப்படும்", "விசாரணை", "வைத்தியசாலையில்", "சேவை", "அலுவலர்", "ஆலோசனை", "இடத்தில்", "இடம்பெற்ற", "இதன்போது", "சிறந்த", "செய்தார்", "ஜூன்", "தேர்வு", "நாட்டின்", "நிலையத்தில்", "பா", "மே", "வேலை", "ஓ.பன்னீர்செல்வம்", "கடலூர்", "பணியில்", "பயிற்சி", "பொருட்களை", "முக்கிய", "மொத்த", "வீட்டில்", "அரச", "இங்கு", "உடனடியாக", "உயர்", "ஐக்கிய", "கூட்டுறவு", "சட்டமன்ற", "சென்ற", "தமிழக அரசு", "தொடங்கி", "தொடர்பான", "நகர்", "மொத்தம்", "விசேட", "விமான", "என்ன", "உள்பட", "உள்ளதாக", "ஒரே நாளில்", "பணிகளை", "மணிக்கு", "முழு", "வந்தது", "வெளியிட்டுள்ள", "இரு", "கல்லூரி", "வளர்ச்சி", "அதிகாரி", "அவரை", "சட்டம்", "செய்த", "தங்கள்", "தற்போதைய", "நகர", "பதில்", "போதே", "முடிவு", "சுற்றுலா", "முடியாது", "அலுவலர்கள்", "அவருக்கு", "இருக்க", "இளைஞர்", "உடல்", "எனது", "கொள்ள", "சிறப்பாக", "செல்ல", "திருச்சி", "நடத்தி", "நாடுகளில்", "நிகழ்ச்சியில்", "நேரில்", "பிரதேச", "விரைவில்", "விலை", "அதேபோல்", "அனுப்பி", "அலுவலகத்தில்", "இடம்", "இப்போது", "கட்சி", "கோரிக்கை", "சிறு", "நடைபெற்ற", "மணியளவில்", "மாகாண", "அத்தியாவசிய", "அத்துடன்", "அபிவிருத்தி", "அழைத்து", "அவர்களின்", "உள்ளார்", "ஊழியர்கள்", "கடற்படை", "காலத்தில்", "கூட்டத்தில்", "செய்யப்பட்டுள்ளனர்", "மாநகராட்சி", "வருவாய்", "வரையில்", "அடையாளம்", "அதே", "அரசாங்க", "உட்பட்ட", "கொரோனாவால்", "செய்தனர்", "செய்யப்பட்டது", "தளபதி", "தொகை", "நிவாரண", "பெரிய", "விட்டு", "அதற்கு", "அமெரிக்க", "இதுகுறித்து", "இதுவரையில்", "ஊராட்சி", "ஏற்கனவே", "கட்சியின்", "கருத்து", "கிராம்", "கூட", "கூடுதல்", "சபை", "நடந்த", "நீதவான்", "பிரதேசத்தில்", "போலீஸ்", "மருத்துவமனை", "மேலதிக", "விசாரணைகளை", "அணி", "அவர்களுக்கு", "உயர்ந்துள்ளது", "ஏற்படும்", "கஞ்சா", "கடல்", "தாக்கல்", "திட்டத்தை", "தொடர்பு", "நிகழ்ச்சி", "நிலையம்", "பணிப்பாளர்", "மகளிர்", "முன்னிலையில்", "வருகிறார்", "அதிகரித்து", "அறிக்கை", "இல்லாமல்", "ஏனைய", "செல்லும்", "தன்", "திட்டத்தின்", "நபர்கள்", "பாதிக்கப்பட்டு", "பெற", "மனைவி", "வருவதாக", "வாய்ப்பு", "விவசாயிகள்", "அதனை", "இருப்பது", "இல்லாத", "உயிரிழந்த", "உலகம்", "எனக்கு", "ஏற்பாடு", "கிராம", "கூறியுள்ளார்", "சந்தேக", "சபையின்", "தமது", "நிறுவனங்கள்", "பக்தர்கள்", "பொருளாதார", "மருந்து", "முறை", "அதிகமான", "அன்று", "அரிசி", "அவர்களை", "உள்ளாகி", "எங்கள்", "ஒன்றிய", "கால", "குறைந்த", "கோட்டாபய", "ஜி", "தடுக்க", "தமிழகம்", "தேர்தலில்", "தொற்றால்", "பெயர்", "விபத்து", "வேண்டாம்", "வேண்டிய", "இன்னும்", "இன்றைய", "எதிர்ப்பு", "கிடைக்கும்", "குடும்ப", "சேவைகள்", "டெல்லி", "தரம்", "திறந்து", "தெரிவித்துள்ளனர்", "நாட்டு", "நிலைமை", "நீங்கள்", "பலி", "பள்ளி", "பாதிக்கப்பட்ட", "பின்", "மேற்கு", "மையம்", "விவசாய", "வெளியே", "அடுத்து", "அதை", "அறிக்கையில்", "ஆட்சி", "இதை", "இராஜாங்க", "ஏற்பட்ட", "காட்சி", "சொந்த", "தனிமைப்படுத்தல்", "திட்டங்கள்", "துணை முதலமைச்சர்", "தொழிலாளர்கள்", "பிற", "பேரில்", "பொதுமக்களுக்கு", "மனித", "மாணவர்களுக்கு", "மின்", "முன்னர்", "முன்பு", "மேற்கொள்ளப்பட்ட", "வரையான", "விழாவில்", "வெளிநாட்டு", "குறிப்பாக", "மாணவ", "வசதி", "கூறியிருப்பதாவது", "அலுவலக", "ஆணைக்குழு", "உயிரிழந்துள்ளனர்", "உறுப்பினர்கள்", "சட்டத்தை", "செயல்படும்", "நிர்வாகம்", "நிறுவனத்தின்", "பணம்", "மா", "முன்னிட்டு", "முழுமையாக", "மேற்கொள்ள", "ரெயில்", "வழங்கப்பட்டுள்ளது", "விபத்தில்", "விளையாட்டு", "வைத்தியசாலைகளில்", "அதனடிப்படையில்", "அதிகம்", "இலங்கைக்கு", "எனினும்", "ஏற்பட்டுள்ளது", "குறித்தும்", "கேள்வி", "கொண்டார்", "சாலை", "செய்யப்பட்டுள்ளார்", "தலைவர்கள்", "திணைக்களம்", "நகரில்", "நாட்களில்", "பிரதான", "மட்டக்களப்பு", "மிக", "முறையாக", "வசதிகள்", "வாகன", "விழிப்புணர்வு", "கொரோனாவுக்கு", "ஜனவரி", "அதிகமாக", "அமெரிக்காவில்", "அமைச்சின்", "அறிவித்துள்ளது", "அவன்", "ஆண்டில்", "உங்கள்", "ஊரடங்கு உத்தரவு", "ஏழை", "காலி", "குழந்தைகள்", "சக்தி", "சட்ட", "சதவீதம்", "சம்பவ", "தமிழ்நாட்டில்", "தொற்றாளர்கள்", "நடைபெறும்", "நாடுகள்", "பயணிகள்", "பலனின்றி", "பிரதி", "பேருந்து", "மகன்", "மண்டல", "மாத", "மாவட்டங்களில்", "மூலமாக", "மோட்டார்", "ரத்து", "வருகிறார்கள்", "வழியாக", "அளவு", "அமைய", "அருகில்", "இதையடுத்து", "இராணுவ", "இருவரும்", "எடுக்க", "எல்லாம்", "கட்ட", "கவனம்", "கொடுத்து", "கொலை", "டிசம்பர்", "திருவள்ளூர்", "தெற்கு", "தொழில்நுட்ப", "நாட்களுக்கு", "நாட்கள்", "நீதிமன்ற", "நேரம்", "பரவலை", "பஸ்", "முகக்கவசம்", "வயதுக்கு", "வழக்கு", "யாரும்", "கூறியதாவது", "அதிகாலை", "அமைப்பு", "அம்மாவின்", "இருந்தால்", "இவர்கள்", "ஊரக", "என்றால்", "ஏற்பட்டது", "ஒன்றில்", "காங்கிரஸ்", "கிரிக்கெட்", "குறிப்பிட்ட", "சிகிச்சைக்காக", "சிலர்", "செய்தி", "செய்துள்ளது", "தங்களது", "தலைமையிலான", "தீவிர", "துவக்கி", "தொகுதி", "தொடர்ந்தும்", "நன்றி", "பற்றிய", "பல்கலைக்கழக", "பிரிவில்", "பெற்றுக்", "பேசினார்", "போல்", "மன்னார்", "மஹிந்த ராஜபக்ஷ", "மேற்கொள்ளப்பட்டு", "மோடி", "வர", "வருகின்றது", "வழங்கப்பட்டது", "வாகனங்கள்", "விட", "வீட்டு", "பேசுகையில்", "அமைச்சர்கள்", "அவசியம்", "அவ்வப்போது", "இரண்டாம்", "என்பதால்", "எப்படி", "ஏற்படுத்தி", "ஒதுக்கீடு", "கட்டுப்படுத்த", "கலை", "காலம்", "கூறி", "கேட்டுக்", "கேரள", "கொண்டிருந்த", "செய்யப்படும்", "தனி", "தீர்மானம்", "தூத்துக்குடி", "தேடி", "நகராட்சி", "நடத்த", "நடந்து", "நடைபெற்று", "நிறுவன", "நேற்றைய", "பேருக்கும்", "மருத்துவக்", "மருத்துவர்கள்", "மாநிலம்", "முன்னெச்சரிக்கை", "ரூபா", "வளாகத்தில்", "வவுனியா", "ஆணையர்", "அதற்கான", "அதிகபட்சமாக", "அனைத்தும்", "அனைவருக்கும்", "அறிவிப்பு", "அலுவலகம்", "இந்தப்", "இருந்தாலும்", "ஈடுபட்டு", "உயர்ந்து", "கூடாது", "கூறுகையில்", "செயலாளர்கள்", "சேர்ந்தவர்", "ஜெனரல்", "தண்ணீர்", "தலைவராக", "திருவண்ணாமலை", "தேர்தலை", "தொழிலாளர்", "நடந்தது", "நாயகம்", "பார்வையிட்டு", "புதுடெல்லி", "பெறும்", "பேராசிரியர்", "போல", "மாணவிகள்", "மில்லியன்", "மீன்", "வது", "வயதுடைய", "வழங்கிய", "வாகனம்", "விருது", "வீடுகளுக்கு", "மாதிரி", "ம்", "வருமாறு", "அடி", "அடிப்படை", "அமெரிக்கா", "அவர்களில்", "அவை", "ஆணைக்குழுவின்", "ஆராய்ச்சி", "இணை", "இயற்கை", "உயிரிழந்துள்ளதாக", "உயிரிழந்துள்ளார்", "ஊடக", "எடுத்துக்", "என்னை", "ஏப்ரல்", "கடும்", "கட்டுப்பாட்டு", "கிராமத்தில்", "கிருமி", "குறைந்து", "சங்க", "சங்கத்தின்", "சட்டசபையில்", "சார்ந்த", "சில்வா", "சீனாவில்", "செங்கல்பட்டு", "சோதனை", "தந்த", "தாக்குதல்", "திட்ட", "தென்", "தொடக்கம்", "நமது", "நீதிமன்றம்", "நுவரெலியா", "பணியாளர்கள்", "பார்த்து", "பால்", "பெரும்", "மனு", "மீதான", "மேற்கொள்ளப்படும்", "ரத்த", "வீதி", "வெளியில்", "வேளாண்", "வைக்க", "அதாவது", "அதிகாரிகளுக்கு", "அரசாங்கத்தின்", "அவரின்", "ஆண்கள்", "ஆன்லைன்", "இடையில்", "இதற்காக", "இந்நிகழ்ச்சியில்", "இருவர்", "இறுதி", "இளம்", "இளைஞர்கள்", "எல்", "ஒருவருக்கு", "கண்காணிப்பு", "கண்டி", "கண்டு", "கமிஷனர்", "காணப்படும்", "கார்", "காற்று", "குறிப்பிட்டுள்ளார்", "குழந்தை", "கோயில்", "சுய", "செய்யப்படுகிறது", "செய்யப்பட்டுள்ளதாக", "தடுக்கும்", "தயாராக", "தலா", "திருகோணமலை", "திரும்பி", "தீவிரமாக", "தேசியக்", "தொலைபேசி", "நலத்திட்ட", "நிர்வாகிகள்", "பரவி", "பாசறை", "பேரை", "மக்களை", "மஞ்சள்", "மத்தியில்", "மன்ற", "மற்ற", "மாநகர", "முதன்மை", "மூத்த", "மேலாளர்", "வேறு", "சார்", "மேலாண்மை", "ஸ்ரீ", "அடங்கிய", "அதனால்", "அமைந்துள்ள", "அறிவியல்", "அவ்வாறு", "இடைவெளியை", "இந்தத்", "இரண்டாவது", "இருப்பதாக", "இருப்பதால்", "உதவும்", "ஏன்", "ஏற்பட்டு", "ஒத்துழைப்பு", "காய்ச்சல்", "காரணம்", "குடும்பங்களுக்கு", "சங்கம்", "சட்டமா", "சதவீத", "சமீபத்தில்", "சார்பாக", "சீனாவின்", "சுகாதாரத்துறை", "செயலாளராக", "செய்துள்ளனர்", "டிஜிட்டல்", "தங்க", "தலைமைச்", "தீர்வு", "தெரிவிக்கின்றனர்", "தொடர்", "தொடர்புடைய", "நல", "நாட்டை", "நான்கு", "நீதிமன்றில்", "பணியாற்றி", "பரவல்", "பரிசோதனைகள்", "பறிமுதல்", "பழைய", "பிற்பகல்", "பேரிடர்", "போன்று", "மகேஸ்வரி", "மருத்துவமனைகளில்", "மறு", "முடியாத", "முதலில்", "முன்", "யாழ்ப்பாணம்", "வங்கியின்", "வசிக்கும்", "வந்தனர்", "விசாரணைக்கு", "வீரர்கள்", "வேலூர்", "வைரசால்", "ஹெரோயின்", "இருக்கிறார்கள்", "வீடியோ", "அந்தப்", "அம்பாறை", "அறிமுகம்", "அளிக்க", "அவள்", "ஆசிரியர்", "ஆசிரியர்கள்", "இந்தியாவின்", "இம்முறை", "இருப்பினும்", "இவை", "இவ்வாறான", "உண்டு", "உதவிகளை", "உத்தரவிட்டார்", "உரிமை", "உலகின்", "எச்சரிக்கை", "எடுக்கப்படும்", "கடற்பரப்புகளில்", "கம்பஹா", "காணப்படுகின்றது", "கை", "சண்முகம்", "சந்தித்து", "சந்திப்பில்", "சந்தை", "சரியான", "சாத்தியம்", "செயலர்", "செயலாளரும்", "செயல்", "செய்தியாளர்", "சேகர்", "ஜெயலலிதா", "டெல்லியில்", "தபால்", "தமிழகத்தின்", "தவிர", "திட்டங்களை", "திரும்பியுள்ளதாக", "துறையின்", "தெரிவித்த", "தெரிவித்து", "தொற்று நோய்", "தோட்ட", "நடைபெறுகிறது", "நவீன", "பாடசாலை", "பிறந்த", "புத்தளம்", "போய்", "போராட்டம்", "மாநிலத்தில்", "மேற்கொண்ட", "மோகன்", "வந்தார்", "வழியில்", "வாயிலாக", "விலையில்", "வீதியில்", "ஹம்பாந்தோட்டை", "இருக்கு", "வாழும்", "அண்ணாதுரை", "அண்மையில்", "அமைவாக", "அவசர", "ஆகஸ்ட்", "ஆகியவை", "ஆணையாளர்", "ஆரம்ப", "இடம்பெற்றது", "இடம்பெற்றுள்ளது", "இடையிலான", "இடையே", "இடைவெளி", "இதன்மூலம்", "இதற்கான", "இருந்தனர்", "இலவச", "உதவிகள்", "எதுவும்", "எமக்கு", "எளிய", "ஏற்பட்டுள்ள", "ஓய்வு", "கடை", "காய்கறி", "குமார்", "குழுவின்", "கொண்டே", "கொள்ளலாம்", "சடலம்", "சாதனை", "சென்றார்", "செயல்பட்டு", "செய்யப்பட்டுள்ளன", "செலுத்த", "சேர்ந்தவர்கள்", "ஜெ", "தாக்கம்", "திறக்க", "தீ", "தெரண", "தொகுதியில்", "நடவடிக்கையாக", "நம்பிக்கை", "நிலைய", "நிலையங்களில்", "நீதிபதி", "படம்", "பட்டியலில்", "பயணித்த", "புதுக்கோட்டை", "பெண்ணின்", "பெயரில்", "பொறுப்பு", "முதலமைச்சரின்", "முன்தினம்", "வசதிகளை", "வட்டார", "வரி", "வைக்கப்பட்டுள்ளது", "அகில", "அத", "அமைச்சகம்", "அமைச்சரவை", "அறிகுறிகள்", "அறிவித்தல்", "அழைத்துச்", "அவற்றை", "ஆகவே", "ஆரணி", "ஆவின்", "இடம்பெறும்", "இந்தியன்", "இன்றி", "இராணுவத்", "இருக்கின்றது", "இலங்கையின்", "இவர்களுக்கு", "எங்களுக்கு", "எடுக்கப்பட்டுள்ளது", "என்னும்", "ஏராளமான", "கடைகள்", "கண்காணிப்பாளர்", "காலங்களில்", "கிடைத்த", "கேட்டு", "சம்பந்தப்பட்ட", "சாதாரண", "சுகாதாரத்", "செப்டம்பர்", "செய்வதற்கு", "செலுத்தி", "தினமும்", "திருமணம்", "தேவை", "தொண்டமான்", "தொழிலாளர்களுக்கு", "நடுத்தர", "நபர்களுக்கு", "நம்", "நினைவு", "நிலையங்கள்", "நீதிமன்றத்தில்", "நோக்கி", "பழனி", "பாரிய", "பிரபல", "பிரிவின்", "பேசி", "பேச்சாளர்", "பொதுத்", "பொதுமக்களிடம்", "போன்", "மாகாணத்தில்", "மாணவர்", "மாத்தறை", "மாவட்டங்களிலும்", "மிகுந்த", "முதலாவது", "மையங்கள்", "மோதி", "ரயில்", "லெப்டினன்", "வகுப்பு", "வட்டி", "வணிக", "வருவதாகவும்", "வீடுகளில்", "வீடுகள்", "வெளிநாடுகளில்", "வெளியிட்டார்", "வேகமாக", "வைத்தனர்", "கொஞ்சம்", "டிரம்ப்", "தந்தை", "பயணம்", "அந்தந்த", "அப்பல்லோ", "அமைப்பின்", "அளித்த", "அளித்து", "இசை", "இடம்பெற்று", "இப்படி", "இவரது", "இவருக்கு", "ஈரான்", "உடலில்", "உத்தரவை", "உள்ளே", "எவ்வாறு", "எவ்வித", "ஒன்றின்", "கடுமையான", "கருதி", "கருத்தில்", "கவசம்", "காவல்துறை", "குணம்", "குற்றம்", "கொள்முதல்", "கோவிலில்", "சந்தையில்", "சிங்", "சேவைகளை", "சொந்தமான", "தனிப்பட்ட", "தர"];
 
 /* ── PREDICTIVE TEXT ENGINE ── */
 let userFreq = {};
@@ -3388,7 +3418,7 @@ function buildSpec() {
 function buildNum() {
   const western  = ['1','2','3','4','5','6','7','8','9','0'];
   const arabic   = ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'];
-  const symbols  = ['?','!',',','.','(',')',':',';','@','#','+','-','×','÷','=','%','°','½','¼','¾'];
+  const symbols  = ["?","!",",",".","(",")",":",";","@","#","+","-","×","÷","=","%","°","½","¼","¾","&","*","\"","'","/","\\","|","_","~","^","<",">","[","]","{","}","€","$","£","¥","©","®","™","•","…","—","«","»","§"/*LANG_SYMBOLS*/,"₹"/*END_LANG_SYMBOLS*/];
   const fill = (id, chars, extraClass='') => {
     const g = document.getElementById(id); if (!g) return;
     g.innerHTML = '';
@@ -3498,7 +3528,7 @@ function closeSpec()     { specOpen = false; document.getElementById('spop').cla
 function toggleEmoji()   { emojiOpen = !emojiOpen; document.getElementById('epop').classList.toggle('show', emojiOpen); if (emojiOpen) { closeTashkeel(); closeSpec(); closeNum(); } }
 function closeEmoji()    { emojiOpen = false; document.getElementById('epop').classList.remove('show'); }
 function toggleTash()    { tashOpen = !tashOpen; document.getElementById('tpop').classList.toggle('show', tashOpen); if (tashOpen) { closeEmoji(); closeSpec(); closeNum(); } }
-function toggleFranco()  { francoOn = !francoOn; buildKB(); toast(francoOn ? '🔤 Roman hints ON' : '⌨️ Roman hints OFF'); }
+function toggleFranco()  { francoOn = !francoOn; buildKB(); }
 
 async function aiTashkeel() {
   const ta = document.getElementById('arabic-text');
@@ -4395,5 +4425,219 @@ async function submitFeedback(e) {
 })();
 </script>
 <script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+<!-- ══════════ KBDOCK — docked mobile keyboard (installed by tools/add_kbdock.py) ══════════ -->
+<style>
+/* Mobile docked keyboard — native phone feel. Active ≤720px only. */
+@media (max-width: 768px) {
+  body.kb-docked #kbc {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
+    margin: 0; border-radius: 18px 18px 0 0;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    box-shadow: 0 -10px 34px rgba(0,0,0,.20);
+    max-height: 76vh; overflow: visible;
+    animation: kbdock-up .26s cubic-bezier(.2,.8,.25,1);
+  }
+  @keyframes kbdock-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  [data-theme="dark"] body.kb-docked #kbc { box-shadow: 0 -10px 34px rgba(0,0,0,.55); }
+
+  /* Franco hint panel grows the dock past the viewport (bottom key row pushed
+     off-screen) — when docked it becomes ONE slim horizontal row: same content
+     (instruction + example chips), swipeable sideways, native-strip height */
+  body.kb-docked .franco-hint {
+    flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: flex-start;
+    gap: 8px; margin: 6px 0 2px; padding: 7px 10px; font-size: 10.5px;
+    overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+  }
+  body.kb-docked .franco-hint::-webkit-scrollbar { display: none; }
+  body.kb-docked .franco-hint > span { flex: 0 0 auto; white-space: nowrap; }
+  body.kb-docked .franco-chips { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
+  body.kb-docked .franco-chips > * { white-space: nowrap; flex: 0 0 auto; }
+
+  /* toasts: the dock owns the bottom of the screen, so notices become a TOP
+     banner while docked (native-style), never trapped behind the keyboard */
+  body.kb-docked .toast {
+    bottom: auto; top: 72px;
+    transform: translateX(-50%) translateY(-140px);
+  }
+  body.kb-docked .toast.show { transform: translateX(-50%) translateY(0); }
+
+  .kbdock-handle { display: none; }
+  body.kb-docked .kbdock-handle {
+    display: flex; align-items: center; justify-content: center;
+    height: 26px; margin: -6px 0 2px; cursor: grab; touch-action: none;
+  }
+  .kbdock-handle::before {
+    content: ''; width: 42px; height: 5px; border-radius: 3px;
+    background: rgba(100,116,139,.35);
+  }
+  body.kb-docked .sug-pill { font-size: 13px; padding: 7px 8px; }
+}
+
+#kb-altpop {
+  position: fixed; z-index: 10000; display: none; gap: 6px;
+  background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.22); padding: 8px; transform: translateX(-50%);
+}
+[data-theme="dark"] #kb-altpop { background: #1E293B; border-color: rgba(255,255,255,.12); }
+#kb-altpop button {
+  min-width: 44px; height: 46px; border: 0; border-radius: 10px; cursor: pointer;
+  font-size: 24px; font-family: inherit; background: rgba(0,104,255,.08); color: inherit;
+}
+#kb-altpop button:active, #kb-altpop button:hover { background: var(--indigo, #6366F1); color: #fff; }
+
+/* Matra/Roman labels: docked = native-small. Outside any media query and
+   !important — the template re-sizes these keys at several widths (12px base,
+   9px <=640) and docked must win at every width. */
+body.kb-docked .k-tashkeel, body.kb-docked .k-franco { font-size: 8px !important; }
+body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !important; }
+/* Roman/Franco mode enlarges LETTER keys (to show the roman hint) via
+   .franco-on .key{font-size:13-14px} — but that also hit the Tashkeel/Roman
+   mode keys and clipped their labels ('Tashkeel'->'ashke'). Pin the mode-key
+   labels to the compact size in Roman mode too, docked OR inline. */
+.franco-on .k-tashkeel, .franco-on .k-franco { font-size: 8px !important; }
+.franco-on .k-tashkeel .ks, .franco-on .k-franco .ks { font-size: 6px !important; }
+</style>
+<script>
+(function kbdockDemo() {
+  const mq = window.matchMedia('(max-width: 768px)');
+  const kbc = document.getElementById('kbc');
+  const ta  = document.getElementById('arabic-text');
+  if (!kbc || !ta) return;
+
+  const handle = document.createElement('div');
+  handle.className = 'kbdock-handle';
+  handle.setAttribute('aria-label', 'Hide keyboard');
+  kbc.insertBefore(handle, kbc.firstChild);
+  const spacer = document.createElement('div');
+  spacer.style.display = 'none';
+  kbc.parentNode.insertBefore(spacer, kbc);
+
+  let docked = false;
+  function dock() {
+    if (docked || !mq.matches) return;
+    spacer.style.height = kbc.offsetHeight + 'px';
+    spacer.style.display = 'block';
+    /* portal: #kbc lives inside .wrap (z-index:1 stacking context), so later
+       sections (mascots, combo text) paint OVER it no matter how high its own
+       z-index is. Re-parenting to <body> while docked puts it above everything. */
+    document.body.appendChild(kbc);
+    document.body.classList.add('kb-docked');
+    docked = true;
+    requestAnimationFrame(() => {
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+      followCaret();
+    });
+  }
+  function undock() {
+    if (!docked) return;
+    document.body.classList.remove('kb-docked');
+    document.body.style.paddingBottom = '';
+    spacer.parentNode.insertBefore(kbc, spacer.nextSibling); /* back to its slot */
+    spacer.style.display = 'none';
+    docked = false;
+    ta.blur();
+  }
+
+  ta.addEventListener('focus', dock);
+
+  /* mode toggles (Hinglish ON/OFF, Matra…) must not throw a center card while
+     docked — the key's own color + the hint row ARE the state. Event toasts
+     (Copied!, Cleared…) still show, as the top banner. */
+  if (typeof window.toast === 'function') {
+    const _toast = window.toast;
+    window.toast = function (msg) {
+      if (docked && /Hinglish (ON|OFF)|Roman hints|Matra/i.test(String(msg))) return;
+      return _toast.apply(this, arguments);
+    };
+  }
+
+  /* dock content changes height (Franco panel, tashkeel row…) — keep the page
+     padding and the toast offset in sync */
+  if (window.ResizeObserver) {
+    new ResizeObserver(() => {
+      if (!docked) return;
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+    }).observe(kbc);
+  }
+
+  let hy = null;
+  handle.addEventListener('pointerdown', e => { hy = e.clientY; handle.setPointerCapture(e.pointerId); });
+  handle.addEventListener('pointermove', e => { if (hy !== null && e.clientY - hy > 40) { hy = null; undock(); } });
+  handle.addEventListener('pointerup',   e => { if (hy !== null) undock(); hy = null; });
+  window.addEventListener('resize', () => { if (!mq.matches) undock(); });
+
+  /* selecting text: never auto-scroll while the user's pointer is down in the
+     textarea (a mid-drag scroll cancels the selection), and make selection
+     explicitly allowed. Scroll only follows actual TYPING. */
+  ta.style.userSelect = 'text';
+  ta.style.webkitUserSelect = 'text';
+  let taPointerDown = false;
+  ta.addEventListener('pointerdown', () => { taPointerDown = true; }, { passive: true });
+  ['pointerup', 'pointercancel'].forEach(ev =>
+    document.addEventListener(ev, () => { taPointerDown = false; }, { passive: true }));
+
+  function followCaret() {
+    if (!docked || taPointerDown) return;
+    const r = ta.getBoundingClientRect();
+    const dockTop = window.innerHeight - kbc.offsetHeight;
+    if (r.bottom > dockTop - 8 || r.top < 0) {
+      window.scrollBy({ top: r.bottom - (dockTop - 16), behavior: 'smooth' });
+    }
+  }
+  ta.addEventListener('input', () => requestAnimationFrame(followCaret));
+
+  const kbrows = document.getElementById('kbrows');
+  if (kbrows && navigator.vibrate) {
+    kbrows.addEventListener('pointerdown', e => { if (e.target.closest('.key')) navigator.vibrate(8); }, { passive: true });
+  }
+
+  /* long-press alternates — per-language data from tools/kb_lang_data.py */
+  const KB_ALT = {};
+  const pop = document.createElement('div');
+  pop.id = 'kb-altpop';
+  document.body.appendChild(pop);
+  let lpTimer = null, lpKey = null, suppressClick = false;
+
+  function showAlts(keyEl, ch) {
+    pop.innerHTML = '';
+    KB_ALT[ch].forEach(alt => {
+      const b = document.createElement('button');
+      b.textContent = alt;
+      b.onclick = ev => { ev.stopPropagation(); ins(alt); hideAlts(); };
+      pop.appendChild(b);
+    });
+    const r = keyEl.getBoundingClientRect();
+    pop.style.display = 'flex';
+    pop.style.left = (r.left + r.width / 2) + 'px';
+    pop.style.top  = (r.top - 62) + 'px';
+    suppressClick = true;
+  }
+  function hideAlts() { pop.style.display = 'none'; }
+
+  if (kbrows) {
+    kbrows.addEventListener('pointerdown', e => {
+      const k = e.target.closest('.key');
+      if (!k) return;
+      const ch = k.textContent.trim().slice(0, 1);
+      if (!KB_ALT[ch]) return;
+      lpKey = k;
+      lpTimer = setTimeout(() => showAlts(k, ch), 420);
+    }, { passive: true });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(ev =>
+      kbrows.addEventListener(ev, () => { clearTimeout(lpTimer); lpTimer = null; }, { passive: true }));
+    kbrows.addEventListener('click', e => {
+      if (suppressClick) { e.stopPropagation(); e.preventDefault(); suppressClick = false; }
+    }, true);
+  }
+  document.addEventListener('pointerdown', e => {
+    if (!pop.contains(e.target) && e.target !== lpKey) hideAlts();
+  });
+})();
+</script>
+<!-- ══════════ /KBDOCK ══════════ -->
 </body>
 </html>

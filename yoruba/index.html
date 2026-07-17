@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yoruba Keyboard Online 2026 — Free Ẹ Ọ Ṣ [Mobile]</title>
+  <title>Yoruba Keyboard Online — Tone Marks &amp; Accents | Yorùbá</title>
   <meta name="description" content="Free Yoruba keyboard online — type Yorùbá for WhatsApp, TikTok & Instagram. All tone marks (à á), ẹ ọ ṣ characters. No download needed. Works on iPhone">
   <meta name="keywords" content="yoruba keyboard, yoruba keyboard online, type yoruba online, yoruba typing online, yoruba keyboard free, yoruba keyboard for whatsapp, yoruba alphabet keyboard, nigerian keyboard">
 
@@ -34,10 +34,10 @@
   <meta property="og:url"         content="https://kactyl.com/yoruba/">
   <meta property="og:title"       content="Yoruba Keyboard Online 2026 — Free Ẹ Ọ Ṣ [Mobile]">
   <meta property="og:description" content="Type Yoruba from your phone or PC — no app, no download. Yoruba keyboard for WhatsApp, TikTok, Instagram. Yoruba mode converts English letters to Yoruba instantly.">
-  <meta property="og:image"       content="/images/og-images/yoruba.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-  <meta property="og:locale"      content="yo_NG">
+  <meta property="og:image" content="https://kactyl.com/images/og-images/yoruba.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+          <meta property="og:locale"      content="yo_NG">
   <meta property="og:site_name"   content="Kactyl">
 
   <!-- Twitter Card -->
@@ -69,13 +69,6 @@
       "@type": "Organization",
       "name": "Kactyl",
       "url": "https://kactyl.com"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "3124",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   }
   </script>
@@ -241,7 +234,15 @@
   <style>
 /* ── RESET ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { overflow-x: clip; max-width:100%; }
+html { overflow-x: clip; max-width:100%; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+/* iOS Safari inflates sub-11px text unless text-size-adjust is pinned — the mode-key
+   labels (Tashkeel/Matra/Roman) ballooned and spilled outside their keys on iPhone.
+   overflow:hidden below is the belt-and-braces so no label can ever spill again. */
+.k-tashkeel, .k-franco { overflow:hidden; }
+/* Roman/Franco mode needs a physical keyboard (type Latin → Space → script). On mobile
+   the native keyboard is hidden (inputmode=none) so roman input is impossible — hide the
+   Roman key + its hint bar there; the on-screen script keyboard is the mobile input. */
+@media (max-width:768px){ .franco-hint{ display:none !important; } }
 button { cursor:pointer; font-family:inherit; border:none; background:none; }
 
 /* ── TOKENS ── */
@@ -958,13 +959,13 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* Franco dual label */
 .fl {
-  font-size:17px; font-family:'Inter',sans-serif; font-weight:700;
+  font-size:15px; font-family:'Inter',sans-serif; font-weight:700;
   color:var(--indigo); line-height:1;
   opacity:0; height:0; overflow:hidden;
   transition: opacity .2s;
 }
 .franco-on .fl { opacity:1; height:auto; }
-.franco-on .key { height:60px; font-size:14px; }
+.franco-on .key { height:60px; font-size:22px; }
 @media (hover:hover) and (pointer:fine) { .franco-on .key:hover .fl { color: var(--fl-hover); } }
 :root {
   --fl-hover: #4d008b;
@@ -1007,23 +1008,23 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 @media (hover:hover) and (pointer:fine) { .k-emoji:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
 
 .k-tashkeel {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#7C3AED,#A855F7) !important;
   border:none !important; box-shadow:0 3px 0 #5B21B6; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-tashkeel:hover { filter:brightness(1.1); box-shadow:0 3px 0 #5B21B6; transform:translateY(-1px); } }
-.k-tashkeel .ks { font-size:9px; opacity:.5; font-weight:400; font-family:'Tajawal',sans-serif; }
+.k-tashkeel .ks { font-size:7px; opacity:.5; font-weight:400; font-family:'Tajawal',sans-serif; }
 
 .k-franco {
-  min-width:70px; font-size:12px; font-weight:700;
+  min-width:70px; font-size:10px; font-weight:700;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,#3B82F6,#6366F1) !important;
   border:none !important; box-shadow:0 3px 0 #1D4ED8; color:#fff;
 }
 @media (hover:hover) and (pointer:fine) { .k-franco:hover  { filter:brightness(1.1); box-shadow:0 3px 0 #1D4ED8; transform:translateY(-1px); } }
 .k-franco.active { background:linear-gradient(135deg,#059669,#10B981) !important; box-shadow:0 3px 0 #047857; }
-.k-franco .ks    { font-size:9px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
+.k-franco .ks    { font-size:7px; opacity:.75; font-weight:600; font-family:'Inter',sans-serif; letter-spacing:.3px; }
 
 /* Special chars key */
 .k-spec { min-width:46px; font-size:13px; font-weight:700; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.2; position:relative; }
@@ -1673,8 +1674,8 @@ footer {
 
   /* Special key flex ratios */
   .k-space   { flex:3;   min-width:0 !important; }
-  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:9px; }
-  .k-franco  { flex:1.5; min-width:0 !important; font-size:9px; }
+  .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:8px; }
+  .k-franco  { flex:1.5; min-width:0 !important; font-size:8px; }
   .k-emoji   { flex:1;   min-width:0 !important; font-size:18px; }
   .k-123     { flex:1;   min-width:0 !important; font-size:10px; }
   .k-enter   { flex:1.5; min-width:0 !important; font-size:13px; }
@@ -2159,13 +2160,13 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="/home.html">
+  <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
                                                             <nav>
-    <a href="/home.html" class="nav-link">Home</a>
-    <a href="/franco-arab.html" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
       <button class="tools-btn">Tools &#9662;</button>
@@ -2554,7 +2555,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="combo-section-hd">
       <div class="combo-hd-inner">
         <div class="combo-hd-text">
-          <p class="combo-section-sup" data-i18n="combo.title">Ready-Made <span>Combos</span></p>
+          <p class="combo-section-sup" data-i18n="combo.title">Ready-Made <span>Yoruba Combos</span></p>
           <h2 class="combo-section-sub">One click to insert — or copy straight to clipboard</h2>
         </div>
         <img src="../images/Mascot-1.svg" alt="Emoji mascot" class="combo-mascot">
@@ -2707,7 +2708,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="seo-dark-label">Free Yoruba Keyboard</div>
     <h2>Free Yoruba Keyboard Online.<br>Type from any device — no download, no install.</h2>
     <div class="seo-dark-stats">
-      <span><strong>600M+</strong> speakers</span>
+      <span><strong>45M+</strong> speakers</span>
       <span class="seo-dark-dot">·</span>
       <span><strong>100%</strong> free</span>
       <span class="seo-dark-dot">·</span>
@@ -2715,8 +2716,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <span class="seo-dark-dot">·</span>
       <span><strong>All</strong> devices</span>
     </div>
-    <p>This <strong>free Yoruba keyboard online</strong> works instantly in any browser — no app download, no installation, no changing your phone's language settings.</p>
-    <p>Type Yoruba on <strong>iPhone, Android, Windows or Mac</strong>. <strong>QWERTY layout</strong> converts romanized Yoruba to Yoruba script automatically. Copy directly to <strong>WhatsApp</strong> messages, <strong>TikTok</strong> captions, <strong>Instagram</strong> bios, and more.</p>
+    <p>Yoruba's written standard traces to a remarkable figure: <strong>Samuel Ajayi Crowther</strong> — captured as a boy, freed from a slave ship, and eventually <strong>the first African Anglican bishop</strong> — whose 1843 vocabulary and Yoruba Bible translation established the pattern of tone marks and subdotted letters still used today. The orthography was hammered out at an <strong>1875 missionary conference in Lagos</strong> and refined by Nigerian linguists into the modern 1960s–70s standard. Before and alongside Latin, Yoruba was also written in <strong>Ajami Arabic script</strong> in the Muslim north — but it's Crowther's tone-marked Latin that became the language's face.</p>
+    <p>Written Yoruba carries information most keyboards physically can't produce: <strong>three tones (grave for low, acute for high, unmarked for mid) that stack on top of subdotted vowels</strong> — ọ̀ is a subdot AND a tone mark on one letter, built from combining characters phone keyboards mangle. The everyday Nigerian workaround is typing bare letters and letting readers guess from context — readable, but ambiguous everywhere it matters. This keyboard makes <strong>fully-marked Yoruba one tap per character</strong>: every tone, every subdot, every nasal vowel, with no combining-character breakage when you paste into other apps.</p>
+    <p>Roughly <strong>45 million people speak Yoruba across Nigeria, Benin and Togo</strong>, centered on Lagos — Africa's largest city and its startup capital. And Yoruba's digital reach now far exceeds its borders: <strong>Afrobeats carried Yoruba lyrics global</strong> (Wizkid, Burna Boy, Davido, Asake), sending fans worldwide searching for the words; Nollywood runs a full Yoruba-language film industry; and <strong>Yoruba is a living liturgical language in the Americas</strong> — Candomblé in Brazil and Santería/Lucumí in Cuba preserve Yoruba prayer and song, with millions of practitioners learning the orthography. Add the UK and US diaspora on WhatsApp — Nigeria's default messenger — and Yoruba typing demand spans four continents.</p>
     <div class="seo-dark-steps">
       <span class="seo-dark-step">1. Open kactyl.com/yoruba/</span>
       <span class="seo-dark-arr">→</span>
@@ -2738,6 +2740,38 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         </div>
       </a>
     </div>
+<!-- FAQ -->
+<section class="sig-sec">
+  <style>
+    .sig-sec{padding:64px 0;background:linear-gradient(180deg,rgba(17,128,0,.045),transparent 30%)}
+    .sig-sec .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .sig-hd{text-align:center;margin-bottom:36px}
+    .sig-hd h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text,#1E293B)}
+    .sig-hd h2 span{background:linear-gradient(90deg,#118000,#70b366);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sig-hd p{color:var(--muted,#64748B);margin-top:10px;font-size:16px;max-width:640px;margin-left:auto;margin-right:auto}
+    .sig-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0 34px}
+    .sig-stats span{background:var(--surface,#fff);border:1px solid rgba(17,128,0,.15);border-radius:999px;padding:8px 18px;font-size:14px;font-weight:700;color:#118000;box-shadow:0 2px 10px rgba(30,41,59,.05)}
+    .sig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .sig-card{background:var(--surface,#fff);border-radius:20px;padding:24px;position:relative}.sig-card::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.65;z-index:-1;pointer-events:none}
+    .sig-card h3{font-size:17px;font-weight:800;color:var(--text,#1E293B);margin-bottom:4px}
+    .sig-card .sig-tag{font-size:12.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#118000;display:block;margin-bottom:10px}
+    .sig-letters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+    .sig-letters b{font-size:26px;line-height:1;background:rgba(17,128,0,.07);border-radius:12px;height:56px;min-width:56px;padding:0 8px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;font-weight:400}
+    .sig-card p{font-size:14.5px;color:var(--muted,#64748B);line-height:1.65}
+    .sig-card p b{color:var(--text,#1E293B);font-weight:700}
+    .sig-ex{margin-top:10px;font-size:14px;color:var(--text,#1E293B);background:rgba(17,128,0,.05);border-radius:10px;padding:8px 12px;display:inline-block}
+    .sig-hero-card{background:linear-gradient(135deg,#ecf5eb 0%,#cfe6cc 55%,#9bca94 100%);border:1px solid rgba(17,128,0,.16)}.sig-hero-card .sig-letters b{background:rgba(17,128,0,.10)}.sig-hero-card .sig-ex{background:rgba(17,128,0,.08)}
+  </style>
+  <div class="wrap">
+    <div class="sig-hd">
+      <h2>How Yoruba <span>Writes Its Tones</span></h2>
+      <p>Yoruba is a tonal language written in Latin letters — with dots below and accents above doing work the base alphabet never could.</p>
+    </div>
+    <div class="sig-stats"><span>25 letters</span><span>3 written tones</span><span>Subdot letters</span><span>gb = one sound</span></div>
+    <div class="sig-grid"><div class="sig-card sig-hero-card"><span class="sig-tag">Do-re-mi meaning</span><h3>Three tones change the word</h3><div class="sig-letters"><b>ọkọ</b><b>ọkọ̀</b><b>ọkọ́</b></div><p>Low, mid and high tones are <b>written with grave and acute accents</b> — and they split words apart: ọkọ (husband), ọkọ̀ (vehicle), ọkọ́ (hoe). Skip the marks and the sentence is a guessing game.</p><div class="sig-ex">ọkọ · ọkọ̀ · ọkọ́</div></div><div class="sig-card"><span class="sig-tag">The subdot letters</span><h3>ẹ, ọ, ṣ — dots below</h3><div class="sig-letters"><b>ẹ</b><b>ọ</b><b>ṣ</b></div><p>A dot below makes a <b>different letter</b>, not a decoration: ẹ and ọ are open vowels, ṣ says “sh”. Ẹ káàrọ̀ (good morning) needs both — and most keyboards can’t type either.</p><div class="sig-ex">Ẹ káàrọ̀ — good morning</div></div><div class="sig-card"><span class="sig-tag">One sound, two letters</span><h3>gb — pressed together</h3><div class="sig-letters"><b>gb</b></div><p>The digraph gb is a <b>doubly-articulated consonant</b> — g and b released at the same instant, a sound West African languages own. It opens gbogbo (all) and gba (receive).</p><div class="sig-ex">gbogbo — all · gba — receive</div></div><div class="sig-card"><span class="sig-tag">The trimmed alphabet</span><h3>No C, Q, V, X, Z</h3><div class="sig-letters"><b>a</b><b>gb</b><b>ṣ</b></div><p>Yoruba <b>dropped five Latin letters</b> it never needed and added its own — the alphabet runs a–y in 25 letters, counting gb as a letter in its own right.</p><div class="sig-ex">Yorùbá — Yoruba</div></div></div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq-sec" id="faq">
   <div class="wrap">
@@ -3266,13 +3300,15 @@ const ROWS = [
   ['a','à','á','e','è','é','ẹ','ẹ̀','ẹ́','i','í'],
   ['b','d','f','g','gb','h','j','k','l','m','n'],
   ['SHIFT','o','ò','ó','ọ','p','r','s','ṣ','BSP'],
-  ['N123','EMOJI','TASHKEEL','SPACE','DOT','ENTER']
+  ['N123','EMOJI','TASHKEEL','SPACE','DOT','FRANCO','ENTER']
 ];
 
 const SPEC_CHARS = ['ù','ú','ọ̀','ọ́','ì','t','w','y','kp','gb','ch','sh','ṣ','?','!',',','.','(',')','@','#','+','=','-','_'];
 
 /* Phonetic hint for each key */
-const FL = {'à':'low','á':'high','è':'low','é':'high','ẹ':'mid','ẹ̀':'low','ẹ́':'hi','ò':'low','ó':'high','ọ':'sub','ṣ':'sh'};
+const FL = {
+  'a':'a', 'e':'e', 'i':'i', 'í':'í', 'b':'b', 'd':'d', 'f':'f', 'g':'g', 'gb':'gb', 'h':'h', 'j':'j', 'k':'k', 'l':'l', 'm':'m', 'n':'n', 'o':'o', 'p':'p', 'r':'r', 's':'s', 'à':'à', 'á':'á', 'è':'è', 'é':'é', 'ẹ':'ẹ', 'ẹ̀':'ẹ̀', 'ẹ́':'ẹ́', 'ò':'ò', 'ó':'ó', 'ọ':'ọ', 'ṣ':'ṣ'
+};
 
 const PHYS = {
   'a':'a','b':'b','d':'d','e':'e','f':'f','g':'g','h':'h','i':'i','j':'j','k':'k',
@@ -3324,14 +3360,46 @@ function editDist(a, b) {
 }
 
 const NEXT_WORD = {
-  'Báwo ni':['?',''],
-  'E ṣé':['o',''],
-  'Mo nífẹ̀':['ẹ',''],
-  'Yorùbá':['ni',''],
-  'ilé':['wa',''],
-  'ọrẹ':['mi',''],
-  'E káàárọ̀':[''],
-  'ẹbí':['mi',''],
+  "ni": ["wọ́n", "odun", "ti", "àwọn"],
+  "ní": ["ọdún", "ọjọ́", "ìlú", "àwọn"],
+  "wọ́n": ["sì", "ti", "bí", "fi"],
+  "ọmọ": ["ọdún", "bíbí", "ẹgbẹ́", "orílẹ̀-èdè"],
+  "kí": ["tó", "wọ́n", "àwọn", "wọn"],
+  "lọ": ["sí", "si", "ní", "láti"],
+  "ilé": ["iṣẹ́", "ẹ̀kọ́", "ìgbìmọ̀", "ìwé"],
+  "èyí": ["tí", "ni", "tó", "sì"],
+  "jẹ": ["ki", "ọmọ", "mọ́", "ọkan"],
+  "sọ": ["pé", "èdè", "fún", "di"],
+  "wá": ["sí", "láti", "di", "ṣe"],
+  "lẹ́yìn": ["tí", "èyí", "ìgbà", "náà"],
+  "mo": ["si", "ti", "awon", "bi"],
+  "yorùbá": ["ní", "tí", "ni", "àti"],
+  "mu": ["ki", "ni", "kí", "awọn"],
+  "ọ̀kan": ["lára", "nínú", "pàtàkì", "gbòógì"],
+  "omi": ["àti", "ti", "tí", "tó"],
+  "pọ̀": ["mọ́", "sí", "ní", "tó"],
+  "bàbá": ["rẹ̀", "wọn", "àti", "rẹ"],
+  "ìyá": ["rẹ̀", "rẹ", "ọmọ", "dúró"],
+  "wo": ["àwọn", "ni", "bí", "eré"],
+  "púpọ̀": ["nínú", "ju", "lati", "nítorí"],
+  "díẹ̀": ["lára", "kí", "láti", "sí"],
+  "ìdílé": ["ọba", "àwọn", "náà", "eléyàn"],
+  "ńlá": ["kan", "ni", "wa", "séèfù"],
+  "gbọ́": ["pé", "nípa", "wípé", "ní"],
+  "tí": ["wọ́n", "sì", "àwọn", "ti"],
+  "ti": ["ṣe", "orile-ede", "awọn", "ko"],
+  "àwọn": ["ènìyàn", "tí", "ọmọ", "òbí"],
+  "àti": ["àwọn", "bẹ́ẹ̀", "ti", "ní"],
+  "jẹ́": ["ọmọ", "ọ̀kan", "kí", "òṣèré"],
+  "sí": ["ilé", "àwọn", "ní", "ìlú"],
+  "ṣe": ["pàtàkì", "ni", "àgbéjáde", "iṣẹ́"],
+  "fún": ["àwọn", "ètò", "ọdún", "ipa"],
+  "ati": ["awọn", "awon", "pe", "ti"],
+  "rẹ̀": ["jẹ́", "ní", "tí", "ni"],
+  "awọn": ["eniyan", "ti", "ọmọ", "ọmọde"],
+  "ọdún": ["jẹ́", "tí", "sí", "ní"],
+  "láti": ["fi", "ọdún", "ṣe", "ọ̀dọ̀"],
+  "nínú": ["eré", "àwọn", "ìmọ̀", "sinimá"],
 };
 
 let lastPickedWord = '';
@@ -3445,6 +3513,12 @@ function buildKB() {
         btn.innerHTML = 'Tones<span class="ks">Ẹ ọ Ṣ</span>';
         btn.onclick = e => { e.stopPropagation(); toggleTash(); };
 
+      } else if (k === 'FRANCO') {
+        btn.classList.add('k-franco');
+        if (francoOn) btn.classList.add('active');
+        btn.innerHTML = 'Roman<span class="ks">E → ẹ</span>';
+        btn.onclick = toggleFranco;
+
       } else {
         /* letter key — prefix combining chars with dotted circle so they render visibly */
         const COMBINING = new Set([]);
@@ -3475,7 +3549,7 @@ function buildSpec() {
 function buildNum() {
   const western  = ['1','2','3','4','5','6','7','8','9','0'];
   const arabic   = ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'];
-  const symbols  = ['?','!',',','.','(',')',':',';','@','#','+','-','×','÷','=','%','°','½','¼','¾'];
+  const symbols  = ["?","!",",",".","(",")",":",";","@","#","+","-","×","÷","=","%","°","½","¼","¾","&","*","\"","'","/","\\","|","_","~","^","<",">","[","]","{","}","€","$","£","¥","©","®","™","•","…","—","«","»","§"/*LANG_SYMBOLS*//*END_LANG_SYMBOLS*/];
   const fill = (id, chars, extraClass='') => {
     const g = document.getElementById(id); if (!g) return;
     g.innerHTML = '';
@@ -3584,6 +3658,8 @@ function toggleSpec()    { specOpen = !specOpen; document.getElementById('spop')
 function closeSpec()     { specOpen = false; document.getElementById('spop').classList.remove('show'); }
 function toggleEmoji()   { emojiOpen = !emojiOpen; document.getElementById('epop').classList.toggle('show', emojiOpen); if (emojiOpen) { closeTashkeel(); closeSpec(); closeNum(); } }
 function closeEmoji()    { emojiOpen = false; document.getElementById('epop').classList.remove('show'); }
+function toggleFranco()  { francoOn = !francoOn; buildKB(); }
+
 function toggleTash()    { tashOpen = !tashOpen; document.getElementById('tpop').classList.toggle('show', tashOpen); if (tashOpen) { closeEmoji(); closeSpec(); closeNum(); } }
 
 async function aiTashkeel() {
@@ -4467,5 +4543,219 @@ async function submitFeedback(e) {
 })();
 </script>
 <script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+<!-- ══════════ KBDOCK — docked mobile keyboard (installed by tools/add_kbdock.py) ══════════ -->
+<style>
+/* Mobile docked keyboard — native phone feel. Active ≤720px only. */
+@media (max-width: 768px) {
+  body.kb-docked #kbc {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
+    margin: 0; border-radius: 18px 18px 0 0;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    box-shadow: 0 -10px 34px rgba(0,0,0,.20);
+    max-height: 76vh; overflow: visible;
+    animation: kbdock-up .26s cubic-bezier(.2,.8,.25,1);
+  }
+  @keyframes kbdock-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  [data-theme="dark"] body.kb-docked #kbc { box-shadow: 0 -10px 34px rgba(0,0,0,.55); }
+
+  /* Franco hint panel grows the dock past the viewport (bottom key row pushed
+     off-screen) — when docked it becomes ONE slim horizontal row: same content
+     (instruction + example chips), swipeable sideways, native-strip height */
+  body.kb-docked .franco-hint {
+    flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: flex-start;
+    gap: 8px; margin: 6px 0 2px; padding: 7px 10px; font-size: 10.5px;
+    overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+  }
+  body.kb-docked .franco-hint::-webkit-scrollbar { display: none; }
+  body.kb-docked .franco-hint > span { flex: 0 0 auto; white-space: nowrap; }
+  body.kb-docked .franco-chips { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
+  body.kb-docked .franco-chips > * { white-space: nowrap; flex: 0 0 auto; }
+
+  /* toasts: the dock owns the bottom of the screen, so notices become a TOP
+     banner while docked (native-style), never trapped behind the keyboard */
+  body.kb-docked .toast {
+    bottom: auto; top: 72px;
+    transform: translateX(-50%) translateY(-140px);
+  }
+  body.kb-docked .toast.show { transform: translateX(-50%) translateY(0); }
+
+  .kbdock-handle { display: none; }
+  body.kb-docked .kbdock-handle {
+    display: flex; align-items: center; justify-content: center;
+    height: 26px; margin: -6px 0 2px; cursor: grab; touch-action: none;
+  }
+  .kbdock-handle::before {
+    content: ''; width: 42px; height: 5px; border-radius: 3px;
+    background: rgba(100,116,139,.35);
+  }
+  body.kb-docked .sug-pill { font-size: 13px; padding: 7px 8px; }
+}
+
+#kb-altpop {
+  position: fixed; z-index: 10000; display: none; gap: 6px;
+  background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.22); padding: 8px; transform: translateX(-50%);
+}
+[data-theme="dark"] #kb-altpop { background: #1E293B; border-color: rgba(255,255,255,.12); }
+#kb-altpop button {
+  min-width: 44px; height: 46px; border: 0; border-radius: 10px; cursor: pointer;
+  font-size: 24px; font-family: inherit; background: rgba(0,104,255,.08); color: inherit;
+}
+#kb-altpop button:active, #kb-altpop button:hover { background: var(--indigo, #6366F1); color: #fff; }
+
+/* Matra/Roman labels: docked = native-small. Outside any media query and
+   !important — the template re-sizes these keys at several widths (12px base,
+   9px <=640) and docked must win at every width. */
+body.kb-docked .k-tashkeel, body.kb-docked .k-franco { font-size: 8px !important; }
+body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !important; }
+/* Roman/Franco mode enlarges LETTER keys (to show the roman hint) via
+   .franco-on .key{font-size:13-14px} — but that also hit the Tashkeel/Roman
+   mode keys and clipped their labels ('Tashkeel'->'ashke'). Pin the mode-key
+   labels to the compact size in Roman mode too, docked OR inline. */
+.franco-on .k-tashkeel, .franco-on .k-franco { font-size: 8px !important; }
+.franco-on .k-tashkeel .ks, .franco-on .k-franco .ks { font-size: 6px !important; }
+</style>
+<script>
+(function kbdockDemo() {
+  const mq = window.matchMedia('(max-width: 768px)');
+  const kbc = document.getElementById('kbc');
+  const ta  = document.getElementById('arabic-text');
+  if (!kbc || !ta) return;
+
+  const handle = document.createElement('div');
+  handle.className = 'kbdock-handle';
+  handle.setAttribute('aria-label', 'Hide keyboard');
+  kbc.insertBefore(handle, kbc.firstChild);
+  const spacer = document.createElement('div');
+  spacer.style.display = 'none';
+  kbc.parentNode.insertBefore(spacer, kbc);
+
+  let docked = false;
+  function dock() {
+    if (docked || !mq.matches) return;
+    spacer.style.height = kbc.offsetHeight + 'px';
+    spacer.style.display = 'block';
+    /* portal: #kbc lives inside .wrap (z-index:1 stacking context), so later
+       sections (mascots, combo text) paint OVER it no matter how high its own
+       z-index is. Re-parenting to <body> while docked puts it above everything. */
+    document.body.appendChild(kbc);
+    document.body.classList.add('kb-docked');
+    docked = true;
+    requestAnimationFrame(() => {
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+      followCaret();
+    });
+  }
+  function undock() {
+    if (!docked) return;
+    document.body.classList.remove('kb-docked');
+    document.body.style.paddingBottom = '';
+    spacer.parentNode.insertBefore(kbc, spacer.nextSibling); /* back to its slot */
+    spacer.style.display = 'none';
+    docked = false;
+    ta.blur();
+  }
+
+  ta.addEventListener('focus', dock);
+
+  /* mode toggles (Hinglish ON/OFF, Matra…) must not throw a center card while
+     docked — the key's own color + the hint row ARE the state. Event toasts
+     (Copied!, Cleared…) still show, as the top banner. */
+  if (typeof window.toast === 'function') {
+    const _toast = window.toast;
+    window.toast = function (msg) {
+      if (docked && /Hinglish (ON|OFF)|Roman hints|Matra/i.test(String(msg))) return;
+      return _toast.apply(this, arguments);
+    };
+  }
+
+  /* dock content changes height (Franco panel, tashkeel row…) — keep the page
+     padding and the toast offset in sync */
+  if (window.ResizeObserver) {
+    new ResizeObserver(() => {
+      if (!docked) return;
+      const h = kbc.offsetHeight;
+      document.body.style.paddingBottom = (h + 24) + 'px';
+      document.body.style.setProperty('--kbdock-h', h + 'px');
+    }).observe(kbc);
+  }
+
+  let hy = null;
+  handle.addEventListener('pointerdown', e => { hy = e.clientY; handle.setPointerCapture(e.pointerId); });
+  handle.addEventListener('pointermove', e => { if (hy !== null && e.clientY - hy > 40) { hy = null; undock(); } });
+  handle.addEventListener('pointerup',   e => { if (hy !== null) undock(); hy = null; });
+  window.addEventListener('resize', () => { if (!mq.matches) undock(); });
+
+  /* selecting text: never auto-scroll while the user's pointer is down in the
+     textarea (a mid-drag scroll cancels the selection), and make selection
+     explicitly allowed. Scroll only follows actual TYPING. */
+  ta.style.userSelect = 'text';
+  ta.style.webkitUserSelect = 'text';
+  let taPointerDown = false;
+  ta.addEventListener('pointerdown', () => { taPointerDown = true; }, { passive: true });
+  ['pointerup', 'pointercancel'].forEach(ev =>
+    document.addEventListener(ev, () => { taPointerDown = false; }, { passive: true }));
+
+  function followCaret() {
+    if (!docked || taPointerDown) return;
+    const r = ta.getBoundingClientRect();
+    const dockTop = window.innerHeight - kbc.offsetHeight;
+    if (r.bottom > dockTop - 8 || r.top < 0) {
+      window.scrollBy({ top: r.bottom - (dockTop - 16), behavior: 'smooth' });
+    }
+  }
+  ta.addEventListener('input', () => requestAnimationFrame(followCaret));
+
+  const kbrows = document.getElementById('kbrows');
+  if (kbrows && navigator.vibrate) {
+    kbrows.addEventListener('pointerdown', e => { if (e.target.closest('.key')) navigator.vibrate(8); }, { passive: true });
+  }
+
+  /* long-press alternates — per-language data from tools/kb_lang_data.py */
+  const KB_ALT = {};
+  const pop = document.createElement('div');
+  pop.id = 'kb-altpop';
+  document.body.appendChild(pop);
+  let lpTimer = null, lpKey = null, suppressClick = false;
+
+  function showAlts(keyEl, ch) {
+    pop.innerHTML = '';
+    KB_ALT[ch].forEach(alt => {
+      const b = document.createElement('button');
+      b.textContent = alt;
+      b.onclick = ev => { ev.stopPropagation(); ins(alt); hideAlts(); };
+      pop.appendChild(b);
+    });
+    const r = keyEl.getBoundingClientRect();
+    pop.style.display = 'flex';
+    pop.style.left = (r.left + r.width / 2) + 'px';
+    pop.style.top  = (r.top - 62) + 'px';
+    suppressClick = true;
+  }
+  function hideAlts() { pop.style.display = 'none'; }
+
+  if (kbrows) {
+    kbrows.addEventListener('pointerdown', e => {
+      const k = e.target.closest('.key');
+      if (!k) return;
+      const ch = k.textContent.trim().slice(0, 1);
+      if (!KB_ALT[ch]) return;
+      lpKey = k;
+      lpTimer = setTimeout(() => showAlts(k, ch), 420);
+    }, { passive: true });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(ev =>
+      kbrows.addEventListener(ev, () => { clearTimeout(lpTimer); lpTimer = null; }, { passive: true }));
+    kbrows.addEventListener('click', e => {
+      if (suppressClick) { e.stopPropagation(); e.preventDefault(); suppressClick = false; }
+    }, true);
+  }
+  document.addEventListener('pointerdown', e => {
+    if (!pop.contains(e.target) && e.target !== lpKey) hideAlts();
+  });
+})();
+</script>
+<!-- ══════════ /KBDOCK ══════════ -->
 </body>
 </html>
