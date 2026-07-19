@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-13B2Z80B92"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-13B2Z80B92');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -16,7 +8,7 @@
   <meta name="description" content="Complete Bengali alphabet and script reference guide. Learn all the letters, how to write them, and how to type Bengali online for free.">
   <link rel="canonical" href="https://kactyl.com/blog/bengali-alphabet-guide/">
   <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-circle.svg">
+  <link rel="apple-touch-icon" href="../../images/favicon.svg">
   <link rel="sitemap" type="application/xml" href="../../sitemap.xml">
 
   <!-- Open Graph -->
@@ -24,16 +16,14 @@
   <meta property="og:url" content="https://kactyl.com/blog/bengali-alphabet-guide/">
   <meta property="og:title" content="Bengali Alphabet Guide: Complete Reference">
   <meta property="og:description" content="Complete Bengali alphabet and script reference guide. Learn all the letters, how to write them, and how to type Bengali online for free.">
-  <meta property="og:image" content="https://kactyl.com/images/og-images/bengali.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-          <meta property="og:site_name" content="Kactyl">
+  <meta property="og:image" content="https://kactyl.com/images/og-preview.png">
+  <meta property="og:site_name" content="Kactyl">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bengali Alphabet Guide: Complete Reference">
   <meta name="twitter:description" content="Complete Bengali alphabet and script reference guide. Learn all the letters, how to write them, and how to type Bengali online for free.">
-  <meta name="twitter:image" content="https://kactyl.com/images/og-images/bengali.png">
+  <meta name="twitter:image" content="https://kactyl.com/images/og-preview.png">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -41,8 +31,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Bengali Alphabet Guide: Complete Reference",
-    "datePublished": "2026-03-19",
-    "dateModified": "2026-06-03",
+    "datePublished": "2026-03-05",
+    "dateModified": "2026-07-18",
     "author": {
       "@type": "Organization",
       "name": "Kactyl",
@@ -83,7 +73,7 @@
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{"@type":"Question","name":"How many letters does Bengali have?","acceptedAnswer":{"@type":"Answer","text":"Bengali uses Bengali script, left-to-right, 50 letters. The exact count varies by how you count combined forms and diacritical variations, but the keyboard includes all standard characters."}},{"@type":"Question","name":"Is Bengali hard to learn?","acceptedAnswer":{"@type":"Answer","text":"Bengali has its own unique script, but the Kactyl keyboard makes typing accessible without requiring you to memorize the full script layout. Phonetic mode helps beginners start immediately."}},{"@type":"Question","name":"Can I type Bengali letters one by one?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Kactyl Bengali keyboard displays each letter individually on-screen. Just click the letter you want and it appears in the text editor. Great for learning the script letter by letter."}},{"@type":"Question","name":"Are all Bengali special characters available?","acceptedAnswer":{"@type":"Answer","text":"Yes. The keyboard includes all standard Bengali characters, special letters, vowel marks, and diacritical signs. Every character needed for correct Bengali text is available."}}]
+    "mainEntity": [{"@type":"Question","name":"How do I type juktakkhor (যুক্তাক্ষর) — conjunct letters like ক্ত or ন্ড?","acceptedAnswer":{"@type":"Answer","text":"In phonetic mode, type the consonant sounds together — \"rakta\" produces রক্ত with the ক্ত conjunct formed automatically. On the visual layout, press the first consonant, the hasanta (্), then the second: ক + ্ + ত = ক্ত. Bengali has hundreds of these fused forms, and the keyboard outputs clean Unicode so every font renders them correctly."}},{"@type":"Question","name":"Why does the vowel sign appear to the left of the letter I just typed?","acceptedAnswer":{"@type":"Answer","text":"That's correct Bengali behavior, not a bug. The e-kar (ে) and oi-kar (ৈ) always render to the LEFT of their consonant even though they are typed after it: ক then ে displays as কে. The o-kar (ো) and ou-kar (ৌ) even split around both sides. Unicode stores the letters in phonetic order and the font performs the visual reordering."}},{"@type":"Question","name":"Is this the same as typing with Avro?","acceptedAnswer":{"@type":"Answer","text":"The phonetic principle is the same — write Bengali sounds in Latin letters (\"Banglish\") and get Bangla script. Avro is a program you install on Windows; Kactyl runs in the browser on any device with nothing to download — which matters on a work computer, an internet café in the Gulf, or a borrowed phone."}},{"@type":"Question","name":"What is Banglish, and can this keyboard convert it?","acceptedAnswer":{"@type":"Answer","text":"Banglish is Bengali written in Latin letters — \"kemon acho\" instead of কেমন আছো — the way most Bengalis type in chat apps because their phone ships with an English keyboard. Kactyl's phonetic mode is built exactly for this habit: keep typing the Banglish you already know, and the output is proper Bangla script that renders correctly for the person receiving it."}},{"@type":"Question","name":"Can I type Bengali letters one by one?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Kactyl Bengali keyboard displays each letter individually on-screen. Just click the letter you want and it appears in the text editor — great for learning the script letter by letter."}}]
   }
   </script>
 
@@ -96,31 +86,27 @@
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="/">
+  <a class="logo" href="../../">
     <img class="logo-img" src="../../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
-                                                            <nav>
+  <nav>
     <a href="/" class="nav-link">Home</a>
-    <a href="/keyboards/" class="nav-link">Keyboards</a>
+    <a href="../../keyboards/" class="nav-link">Keyboards</a>
+    <a href="../../blog/" class="nav-link" style="color:var(--blue);font-weight:700;">Blog</a>
+    <a href="../../#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
-      <button class="tools-btn">Tools &#9662;</button>
+      <button class="tools-btn">Tools ▾</button>
       <div class="tools-drop">
-        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
-        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
-        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
-        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
-        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
-        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/><circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/><path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
-        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
-        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
-        <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
-        <a href="/arabic-calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Arabic Calligraphy</a>
+        <a href="../../fancy-text/" class="tools-item"><span class="t-icon">✨</span> Fancy Text Generator <span class="tools-coming">SOON</span></a>
+        <a href="../../kaomoji/" class="tools-item"><span class="t-icon">😸</span> Kaomoji <span class="tools-coming">SOON</span></a>
+        <a href="../../invisible-character/" class="tools-item"><span class="t-icon">🔤</span> Invisible Character <span class="tools-coming">SOON</span></a>
+        <a href="../../zalgo-text/" class="tools-item"><span class="t-icon">👾</span> Zalgo Text <span class="tools-coming">SOON</span></a>
       </div>
     </div>
     <div class="theme-wrap" onclick="toggleTheme()">
       <div class="t-track" id="tt">
         <div class="t-thumb" id="th">
-          <img id="theme-icon" src="../../images/Icon-white mode-Clavierarabe-enligne.svg" alt="Toggle theme" width="13" height="13">
+          <img id="theme-icon" src="../../images/Icon-white mode-Clavierarabe-enligne.svg" alt="" width="13" height="13">
         </div>
       </div>
       <div class="t-lbl" id="tlbl">White<br>Mode</div>
@@ -148,7 +134,7 @@
         <div class="hero-kicker">Bengali · Alphabet &amp; Script Reference</div>
         <h1>Bengali Alphabet Guide: Complete Reference</h1>
         <div class="hero-meta">
-          <span>📅 Published 2026-03-19</span>
+          <span>📅 Published 2026-03-05</span>
           <span>⏱ 6 min read</span>
           <span>🔤 Bengali script, left-to-right, 50 letters</span>
         </div>
@@ -159,31 +145,39 @@
     <div class="article-meta-bar">
       <a href="../../blog/" class="back-to-blog">← Back to Blog</a>
       <span>📚 Script reference</span>
-      <span>👥 230 million speakers</span>
+      <span>👥 270 million speakers</span>
     </div>
 
     <!-- Article body -->
     <article class="article-body">
 
-<figure class="article-hero-img">
-        <img src="../../blog/images/languages/bengali.jpg" alt="Bengali keyboard typing" width="1200" height="630" loading="lazy" style="width:100%;height:320px;object-fit:cover;border-radius:12px;margin-bottom:32px;">
-      </figure>
+      <figure class="article-hero-svg" style="margin:0 0 32px;"><svg viewBox="0 0 1200 340" width="100%" role="img" aria-label="Bengali script specimen" style="display:block;border-radius:14px;max-height:340px;">
+  <defs>
+    <linearGradient id="abg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#006633"/><stop offset="1" stop-color="#006633" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="340" fill="url(#abg)"/>
+  <circle cx="150" cy="290" r="120" fill="#ffffff" opacity="0.05"/>
+  <circle cx="1060" cy="60" r="140" fill="#ffffff" opacity="0.05"/>
+  <foreignObject x="150" y="40" width="900" height="30"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:15px;letter-spacing:3px;text-transform:uppercase;color:#ffffff;opacity:.85;">Bengali · Alphabet &amp; Script Guide</div></foreignObject>
+  <foreignObject x="100" y="74" width="1000" height="70"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:56px;font-weight:800;color:#fff;">বাংলা</div></foreignObject>
+  <rect x="133" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="133.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">অ</div></foreignObject><rect x="269" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="269.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">আ</div></foreignObject><rect x="405" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="405.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">ই</div></foreignObject><rect x="541" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="541.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">ঈ</div></foreignObject><rect x="677" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="677.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">উ</div></foreignObject><rect x="813" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="813.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">ঊ</div></foreignObject><rect x="949" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="949.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">ঋ</div></foreignObject>
+</svg></figure>
 
       <!-- Quick Answer -->
       <div class="quick-answer">
         <strong>Quick Answer</strong>
-        Bengali is written in Bengali script, left-to-right, 50 letters. The language has 230 million native speakers worldwide. To type Bengali online without learning the script layout, use <a href="https://kactyl.com/bengali/" style="color:var(--blue)">kactyl.com/bengali/</a> — click any letter to type it instantly in your browser.
+        Bengali is written in Bengali script, left-to-right, 50 letters. The language has 270 million native speakers worldwide. To type Bengali online without learning the script layout, use <a href="https://kactyl.com/bengali/" style="color:var(--blue)">kactyl.com/bengali/</a> — click any letter to type it instantly in your browser.
       </div>
 
 
 
       <h2>About the Bengali Script</h2>
-      <p>Bengali (বাংলা) is written using <strong>Bengali script, left-to-right, 50 letters</strong>. With <strong>230 million speakers</strong>, it is one of the world's significant languages. The writing system has been used for centuries and has a rich literary tradition.</p>
+      <p>The Bengali script (Bangla lipi) descends from <strong>Brahmi through the Gupta and Siddham scripts</strong>, taking recognizable form under the Pala dynasty — the oldest surviving Bengali texts, the <strong>Charyapada</strong> mystic songs, date to the 10th–12th centuries. Modern printed Bengali was born in <strong>1778</strong>, when punch-cutter <strong>Panchanan Karmakar</strong> cut the first Bengali movable type for Nathaniel Halhed's <em>Grammar of the Bengal Language</em> — decades before most Indian scripts were ever printed. The alphabet order taught today was standardized by <strong>Ishwar Chandra Vidyasagar</strong> in his 1855 primer <em>Barnaparichay</em>, still the first book many Bengali children read. It is the script of <strong>Rabindranath Tagore</strong>, the first non-European Nobel laureate in Literature (1913), and the only script in the world whose poetry became the national anthem of <em>two</em> countries — India's <em>Jana Gana Mana</em> and Bangladesh's <em>Amar Shonar Bangla</em>, both written by Tagore in Bengali.</p>
 
-      <p>Understanding the Bengali script is useful whether you're learning the language, doing research, or need to type Bengali text regularly. However, you don't need to memorize the entire alphabet to start typing — Kactyl's online keyboard lets you click letters to type them instantly.</p>
-
-      <h2>The Bengali Alphabet</h2>
-      <p>Here are all the letters in the Bengali script. Each character represents a distinct sound in the language:</p>
+      <h2>The Bengali Alphabet — Every Letter</h2>
+      <p>Here is the full Bengali character set. You can click any letter on the <a href="https://kactyl.com/bengali/">Kactyl Bengali keyboard</a> to type it instantly — no need to memorize positions.</p>
 
       <div class="alphabet-grid">
         <div class="letter-card"><span class="letter-native">অ</span></div>
@@ -232,42 +226,166 @@
 
       </div>
 
-      <h2>Key Facts About the Bengali Writing System</h2>
       <ul>
         <li><strong>Script:</strong> Bengali script, left-to-right, 50 letters</li>
-        <li><strong>Speakers:</strong> 230 million worldwide</li>
-        <li><strong>Direction:</strong> Left-to-right</li>
-        <li><strong>Unique feature:</strong> Phonetic typing with automatic conjunct formation</li>
+        <li><strong>Speakers:</strong> 270 million worldwide</li>
+        <li><strong>Writing direction:</strong> Left-to-right</li>
+        <li><strong>Distinctive feature:</strong> Bengali vowel signs don't follow the letter they belong to — they <strong>wrap around it</strong>: in কে (ke), the sign ে is typed after ক but renders to its <em>left</em>; in কো (ko), the sign ো splits into pieces on <em>both sides</em> of the consonant. Letters hang from a continuous headstroke (the <strong>matra line</strong>), and consonant clusters fuse into <strong>যুক্তাক্ষর (juktakkhor)</strong> — hundreds of conjunct ligatures built with the hasanta (্) — which makes Bengali impossible to type letter-by-letter on a Latin keyboard. Kactyl's phonetic mode handles all of it automatically: type <em>ke</em> and the visual reordering happens for you; type a cluster and the conjunct fuses itself; type <em>banglish</em> the way you already write in chat and get correct Bangla script.</li>
       </ul>
 
+      <h2>The Bengali Alphabet, Letter by Letter</h2>
+      <p>Every Bengali letter with its name, the sound it makes, and a real example word. <strong>Tap any letter to copy it</strong> — keep this reference open while you learn to read or type:</p>
+      <table class="platform-table alphabet-table">
+        <thead>
+          <tr><th>Letter</th><th>Name</th><th>Sound</th><th>Example word</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="অ" aria-label="Hear and copy অ">অ</button></td><td><strong>ô</strong></td><td>inherent o (as in “hot”)</td><td>অজগর — <em>ôjôgôr</em> (python)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="আ" aria-label="Hear and copy আ">আ</button></td><td><strong>a</strong></td><td>long a</td><td>আম — <em>am</em> (mango)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ই" aria-label="Hear and copy ই">ই</button></td><td><strong>i</strong></td><td>i</td><td>ইঁদুর — <em>indur</em> (mouse)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ঈ" aria-label="Hear and copy ঈ">ঈ</button></td><td><strong>ī</strong></td><td>long ee</td><td>ঈগল — <em>īgôl</em> (eagle)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="উ" aria-label="Hear and copy উ">উ</button></td><td><strong>u</strong></td><td>u</td><td>উট — <em>ut</em> (camel)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ঊ" aria-label="Hear and copy ঊ">ঊ</button></td><td><strong>ū</strong></td><td>long oo</td><td>ঊষা — <em>ūsha</em> (dawn)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ঋ" aria-label="Hear and copy ঋ">ঋ</button></td><td><strong>ri</strong></td><td>vocalic ri</td><td>ঋষি — <em>rishi</em> (sage)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="এ" aria-label="Hear and copy এ">এ</button></td><td><strong>e</strong></td><td>e</td><td>একতারা — <em>ektara</em></td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ঐ" aria-label="Hear and copy ঐ">ঐ</button></td><td><strong>oi</strong></td><td>oi</td><td>ঐরাবত — <em>oirabôt</em></td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ও" aria-label="Hear and copy ও">ও</button></td><td><strong>o</strong></td><td>o</td><td>ওল — <em>ol</em> (yam)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ঔ" aria-label="Hear and copy ঔ">ঔ</button></td><td><strong>ou</strong></td><td>ou</td><td>ঔষধ — <em>oushôdh</em> (medicine)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ক" aria-label="Hear and copy ক">ক</button></td><td><strong>kô</strong></td><td>k</td><td>কলম — <em>kôlôm</em> (pen)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="খ" aria-label="Hear and copy খ">খ</button></td><td><strong>khô</strong></td><td>k + breath</td><td>খরগোশ — <em>khôrgosh</em> (rabbit)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="গ" aria-label="Hear and copy গ">গ</button></td><td><strong>gô</strong></td><td>g</td><td>গরু — <em>gôru</em> (cow)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ঘ" aria-label="Hear and copy ঘ">ঘ</button></td><td><strong>ghô</strong></td><td>voiced g + breath</td><td>ঘর — <em>ghôr</em> (house)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ঙ" aria-label="Hear and copy ঙ">ঙ</button></td><td><strong>uɔ̃</strong></td><td>ng (rare)</td><td>ব্যাঙ — <em>bêng</em> (frog)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="চ" aria-label="Hear and copy চ">চ</button></td><td><strong>chô</strong></td><td>ch</td><td>চাঁদ — <em>chãd</em> (moon)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ছ" aria-label="Hear and copy ছ">ছ</button></td><td><strong>chhô</strong></td><td>ch + breath</td><td>ছাতা — <em>chhata</em> (umbrella)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="জ" aria-label="Hear and copy জ">জ</button></td><td><strong>jô</strong></td><td>j</td><td>জল — <em>jôl</em> (water)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ঝ" aria-label="Hear and copy ঝ">ঝ</button></td><td><strong>jhô</strong></td><td>voiced j + breath</td><td>ঝর্ণা — <em>jhôrna</em> (waterfall)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ঞ" aria-label="Hear and copy ঞ">ঞ</button></td><td><strong>niô</strong></td><td>ny (rare)</td><td>মিঞা — <em>miña</em></td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ট" aria-label="Hear and copy ট">ট</button></td><td><strong>ṭô</strong></td><td>hard retroflex t</td><td>টমেটো — <em>ṭômêṭo</em> (tomato)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ঠ" aria-label="Hear and copy ঠ">ঠ</button></td><td><strong>ṭhô</strong></td><td>retroflex t + breath</td><td>ঠোঁট — <em>ṭhõṭ</em> (lip)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ড" aria-label="Hear and copy ড">ড</button></td><td><strong>ḍô</strong></td><td>hard retroflex d</td><td>ডিম — <em>ḍim</em> (egg)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ঢ" aria-label="Hear and copy ঢ">ঢ</button></td><td><strong>ḍhô</strong></td><td>retroflex d + breath</td><td>ঢাক — <em>ḍhak</em> (drum)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ণ" aria-label="Hear and copy ণ">ণ</button></td><td><strong>ṇô</strong></td><td>retroflex n</td><td>বাণ — <em>baṇ</em> (arrow)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ত" aria-label="Hear and copy ত">ত</button></td><td><strong>tô</strong></td><td>soft dental t</td><td>তারা — <em>tara</em> (star)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="থ" aria-label="Hear and copy থ">থ</button></td><td><strong>thô</strong></td><td>dental t + breath</td><td>থালা — <em>thala</em> (plate)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="দ" aria-label="Hear and copy দ">দ</button></td><td><strong>dô</strong></td><td>soft dental d</td><td>দরজা — <em>dôrja</em> (door)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ধ" aria-label="Hear and copy ধ">ধ</button></td><td><strong>dhô</strong></td><td>dental d + breath</td><td>ধান — <em>dhan</em> (paddy)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ন" aria-label="Hear and copy ন">ন</button></td><td><strong>nô</strong></td><td>n</td><td>নদী — <em>nôdi</em> (river)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="প" aria-label="Hear and copy প">প</button></td><td><strong>pô</strong></td><td>p</td><td>পাখি — <em>pakhi</em> (bird)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ফ" aria-label="Hear and copy ফ">ফ</button></td><td><strong>phô</strong></td><td>p + breath / f</td><td>ফুল — <em>phul</em> (flower)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ব" aria-label="Hear and copy ব">ব</button></td><td><strong>bô</strong></td><td>b</td><td>বই — <em>bôi</em> (book)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ভ" aria-label="Hear and copy ভ">ভ</button></td><td><strong>bhô</strong></td><td>voiced b + breath</td><td>ভালুক — <em>bhaluk</em> (bear)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ম" aria-label="Hear and copy ম">ম</button></td><td><strong>mô</strong></td><td>m</td><td>মাছ — <em>machh</em> (fish)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="য" aria-label="Hear and copy য">য</button></td><td><strong>jô</strong></td><td>j (ôntôsthô)</td><td>যাদু — <em>jadu</em> (magic)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="র" aria-label="Hear and copy র">র</button></td><td><strong>rô</strong></td><td>r</td><td>রথ — <em>rôth</em> (chariot)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ল" aria-label="Hear and copy ল">ল</button></td><td><strong>lô</strong></td><td>l</td><td>লেবু — <em>lebu</em> (lemon)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="শ" aria-label="Hear and copy শ">শ</button></td><td><strong>shô</strong></td><td>sh</td><td>শাপলা — <em>shapla</em> (water lily)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ষ" aria-label="Hear and copy ষ">ষ</button></td><td><strong>shô</strong></td><td>sh (retroflex, now sh)</td><td>ষাঁড় — <em>shãṛ</em> (bull)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="স" aria-label="Hear and copy স">স</button></td><td><strong>shô</strong></td><td>s / sh</td><td>সূর্য — <em>shurjô</em> (sun)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="হ" aria-label="Hear and copy হ">হ</button></td><td><strong>hô</strong></td><td>h</td><td>হাতি — <em>hati</em> (elephant)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ড়" aria-label="Hear and copy ড়">ড়</button></td><td><strong>ṛô</strong></td><td>retroflex flap r</td><td>বড় — <em>bôṛo</em> (big)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="য়" aria-label="Hear and copy য়">য়</button></td><td><strong>yô</strong></td><td>y</td><td>নদীয় — <em>nôdiyô</em></td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ৎ" aria-label="Hear and copy ৎ">ৎ</button></td><td><strong>khônḍô tô</strong></td><td>final t (no vowel)</td><td>উৎসব — <em>utsôb</em> (festival)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ং" aria-label="Hear and copy ং">ং</button></td><td><strong>ônushshôr</strong></td><td>ng</td><td>রং — <em>rông</em> (colour)</td></tr>
+        </tbody>
+      </table>
+      <p class="lt-hint" style="font-size:13px;color:var(--muted,#64748b);margin-top:-6px;">Click any letter to copy it to your clipboard.</p>
+      <script>
+      (function(){
+        var AUDIO_BASE="";
+        var voices=[];
+        function loadVoices(){ voices=window.speechSynthesis?window.speechSynthesis.getVoices():[]; }
+        if(window.speechSynthesis){ loadVoices(); window.speechSynthesis.onvoiceschanged=loadVoices; }
+        function speak(t){
+          if(!window.speechSynthesis) return;
+          window.speechSynthesis.cancel();
+          var u=new SpeechSynthesisUtterance(t); u.lang="bn"; u.rate=.8;
+          var v=voices.find(function(x){return x.lang&&x.lang.toLowerCase().indexOf("bn".toLowerCase())===0;});
+          if(v) u.voice=v;
+          window.speechSynthesis.speak(u);
+        }
+        function play(b){
+          var file=b.getAttribute('data-audio');
+          if(AUDIO_BASE && file){ var a=new Audio(AUDIO_BASE+file); a.play().catch(function(){ speak(b.getAttribute('data-say')); }); }
+          else { speak(b.getAttribute('data-say')); }
+        }
+        function flash(el){ el.classList.add('lt-copied'); setTimeout(function(){ el.classList.remove('lt-copied'); },700); }
+        document.querySelectorAll('.lt-glyph').forEach(function(b){
+          b.addEventListener('click',function(){
+            play(b);
+            if(navigator.clipboard) navigator.clipboard.writeText(b.getAttribute('data-say')).then(function(){flash(b);},function(){});
+          });
+        });
+      })();
+      </script>
+      <style>
+        .alphabet-table .lt-cell{text-align:center;}
+        .lt-glyph{font-size:1.5em;line-height:1;background:none;border:1px solid transparent;
+          border-radius:8px;padding:4px 10px;cursor:pointer;color:inherit;font-family:inherit;
+          transition:background .15s,border-color .15s;position:relative;}
+        .lt-glyph:hover{background:rgba(99,102,241,.10);border-color:rgba(99,102,241,.35);}
+        .lt-glyph:focus-visible{outline:2px solid #6366f1;outline-offset:2px;}
+        .lt-glyph.lt-copied{background:rgba(16,163,106,.16);border-color:rgba(16,163,106,.5);}
+        .lt-glyph.lt-copied::after{content:"copied ✓";position:absolute;left:50%;top:-22px;
+          transform:translateX(-50%);font-size:10px;white-space:nowrap;color:#10a36a;
+          background:#fff;border:1px solid rgba(16,163,106,.4);border-radius:6px;padding:1px 6px;}
+      </style>
+
+
+      <h2>What Makes the Bengali Alphabet Distinctive</h2>
+      <p>These are the features of the Bengali script that trip up learners coming from the Latin alphabet — the things worth understanding before you start reading or typing:</p>
+      <ul>
+        <li>Bengali is an abugida, but its inherent vowel is <strong>ô</strong> (like the o in “hot”), not “a” — so <strong>ক</strong> is read “<em>kô</em>”, not “ka”. This one difference re-shapes how every consonant sounds compared with Hindi.</li>
+        <li>Bengali <strong>merged the three sibilants</strong> — শ, ষ and স are almost all pronounced “sh”, so the language has far fewer distinct s/sh sounds than its spelling suggests.</li>
+        <li>There’s no native <strong>v/w or z</strong>: ব covers b/v, and জ/য cover the j sound — foreign z and v words get borrowed into these.</li>
+        <li>Like Devanagari it hangs letters from a <strong>top line (matra)</strong>, but Bengali’s letters have a distinctive rounded, curved look, and it shares its script with Assamese.</li>
+        <li>Special signs finish the system: <strong>ৎ</strong> (khonḍo to, a final t with no vowel), <strong>ং</strong> (anusvar, ‘ng’) and the nasalising chandrabindu <strong>ঁ</strong>.</li>
+      </ul>
+
+
+      <h2>Bengali Script — The Facts</h2>
+      <ul>
+        <li><strong>Unicode block:</strong> Bengali, U+0980–09FF</li>
+        <li><strong>ISO 15924 script code:</strong> Beng (325)</li>
+        <li><strong>Script family:</strong> Brahmic abugida (Bengali–Assamese script)</li>
+        <li><strong>First attested:</strong> ~11th century CE</li>
+        <li><strong>Speakers:</strong> 270 million (Ethnologue)</li>
+      </ul>
+      <p style="font-size:13px;color:var(--muted,#64748b);"><strong>Sources:</strong> <a href="https://www.unicode.org/charts/PDF/U0980.pdf" target="_blank" rel="noopener nofollow">Unicode Bengali block (U+0980)</a> · <a href="https://www.ethnologue.com/language/ben/" target="_blank" rel="noopener nofollow">Ethnologue — Bengali</a> · <a href="https://unicode.org/iso15924/iso15924-codes.html" target="_blank" rel="noopener nofollow">ISO 15924 — Beng</a></p>
+
+      
+      <div class="tip-box" style="border-left-color:#f59e0b;">
+        <strong>Did You Know?</strong>
+        Bengali numerals (০১২৩৪৫৬৭৮৯) are entirely different from both Arabic and Devanagari numerals. Bangladesh uses Bengali numerals officially, while West Bengal in India uses both Bengali and international numerals depending on context.
+      </div>
+
+
       <h2>Common Bengali Words to Learn</h2>
-      <p>These common words give you a starting point for recognizing Bengali characters in context:</p>
+      <p>These everyday words are a fast way to start recognizing Bengali letters in real context:</p>
       <ul>
         <li>নমস্কার (namoskar = hello)</li>
 <li>ধন্যবাদ (dhonnobad = thank you)</li>
 <li>আপনি কেমন আছেন (apni kemon achen = how are you)</li>
       </ul>
 
-      <h2>How to Type All These Letters Online</h2>
-      <p>Memorizing the position of every Bengali letter on a physical keyboard takes weeks. With Kactyl's online keyboard, you don't need to memorize anything. The letters are displayed visually — just click the one you want.</p>
+      
+      <h2>Common Bengali Phrases</h2>
+      <table class="platform-table">
+        <thead>
+          <tr><th>Bengali Script</th><th>Romanized</th><th>English</th></tr>
+        </thead>
+        <tbody>
+          <tr><td style="font-size:1.1em;">নমস্কার</td><td><em>nomoskar</em></td><td>hello</td></tr>
+          <tr><td style="font-size:1.1em;">ধন্যবাদ</td><td><em>dhonnobad</em></td><td>thank you</td></tr>
+          <tr><td style="font-size:1.1em;">আপনি কেমন আছেন?</td><td><em>apni kemon achen</em></td><td>how are you?</td></tr>
+          <tr><td style="font-size:1.1em;">ভালোবাসি</td><td><em>bhalobashi</em></td><td>I love (you)</td></tr>
+          <tr><td style="font-size:1.1em;">শুভ নববর্ষ</td><td><em>Shubho Nababarsha</em></td><td>Happy New Year</td></tr>
+        </tbody>
+      </table>
 
-      <p>To type Bengali online right now:</p>
-      <ol class="steps-list">
-        <li>Go to <a href="https://kactyl.com/bengali/">kactyl.com/bengali/</a></li>
-        <li>Find the letter you want to type in the on-screen keyboard</li>
-        <li>Click it — it appears in the text editor</li>
-        <li>Build your text character by character, or use phonetic/transliteration mode for faster input</li>
-        <li>Copy your completed text and paste it anywhere</li>
-      </ol>
 
-      <h2>Script Learning Resources</h2>
-      <p>If you want to go beyond typing and actually learn to read and write Bengali, here are the best approaches:</p>
-      <ul>
-        <li><strong>Phonetic mapping:</strong> Learn which letter corresponds to which sound in your native language</li>
-        <li><strong>Common words:</strong> Start with the 50 most common Bengali words and their spellings</li>
-        <li><strong>Writing practice:</strong> Use the Kactyl keyboard as a reference while practicing handwriting</li>
-        <li><strong>Pattern recognition:</strong> Learn letter groups by shape (for scripts with complex forms)</li>
-      </ul>
+      <h2>Type Bengali Online Without Learning the Layout</h2>
+      <p>You don't need to memorize where each Bengali letter sits on a physical keyboard. Open <a href="https://kactyl.com/bengali/">kactyl.com/bengali/</a>, click the letters you see on screen (or type phonetically), then copy your text anywhere — WhatsApp, documents, social media.</p>
 
       <h2>Tips for Typing Bengali</h2>
       <ul>
@@ -298,20 +416,24 @@
       <div class="article-faq">
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
-          <div class="faq-q">How many letters does Bengali have?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Bengali uses Bengali script, left-to-right, 50 letters. The exact count varies by how you count combined forms and diacritical variations, but the keyboard includes all standard characters.</div>
+          <div class="faq-q">How do I type juktakkhor (যুক্তাক্ষর) — conjunct letters like ক্ত or ন্ড?<span class="faq-icon">+</span></div>
+          <div class="faq-a">In phonetic mode, type the consonant sounds together — "rakta" produces রক্ত with the ক্ত conjunct formed automatically. On the visual layout, press the first consonant, the hasanta (্), then the second: ক + ্ + ত = ক্ত. Bengali has hundreds of these fused forms, and the keyboard outputs clean Unicode so every font renders them correctly.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Is Bengali hard to learn?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Bengali has its own unique script, but the Kactyl keyboard makes typing accessible without requiring you to memorize the full script layout. Phonetic mode helps beginners start immediately.</div>
+          <div class="faq-q">Why does the vowel sign appear to the left of the letter I just typed?<span class="faq-icon">+</span></div>
+          <div class="faq-a">That's correct Bengali behavior, not a bug. The e-kar (ে) and oi-kar (ৈ) always render to the LEFT of their consonant even though they are typed after it: ক then ে displays as কে. The o-kar (ো) and ou-kar (ৌ) even split around both sides. Unicode stores the letters in phonetic order and the font performs the visual reordering.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is this the same as typing with Avro?<span class="faq-icon">+</span></div>
+          <div class="faq-a">The phonetic principle is the same — write Bengali sounds in Latin letters ("Banglish") and get Bangla script. Avro is a program you install on Windows; Kactyl runs in the browser on any device with nothing to download — which matters on a work computer, an internet café in the Gulf, or a borrowed phone.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What is Banglish, and can this keyboard convert it?<span class="faq-icon">+</span></div>
+          <div class="faq-a">Banglish is Bengali written in Latin letters — "kemon acho" instead of কেমন আছো — the way most Bengalis type in chat apps because their phone ships with an English keyboard. Kactyl's phonetic mode is built exactly for this habit: keep typing the Banglish you already know, and the output is proper Bangla script that renders correctly for the person receiving it.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Can I type Bengali letters one by one?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Yes. The Kactyl Bengali keyboard displays each letter individually on-screen. Just click the letter you want and it appears in the text editor. Great for learning the script letter by letter.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Are all Bengali special characters available?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Yes. The keyboard includes all standard Bengali characters, special letters, vowel marks, and diacritical signs. Every character needed for correct Bengali text is available.</div>
+          <div class="faq-a">Yes. The Kactyl Bengali keyboard displays each letter individually on-screen. Just click the letter you want and it appears in the text editor — great for learning the script letter by letter.</div>
         </div>
 
       </div>
@@ -363,7 +485,7 @@
         </div>
         <span class="ft-name">Kactyl</span>
       </a>
-      <div class="ft-tagline">Every Language. One Tab.<br>No download. No account.</div>
+      <div class="ft-tagline">Type any language from any device.<br>No download. No account.</div>
       <div class="ft-badges">
         <span class="ft-badge g">✓ 100% Free</span>
         <span class="ft-badge b">⚡ No Install</span>
@@ -423,22 +545,20 @@
         <a href="../../tigrinya/">Tigrinya</a>
       </div>
     </div>
-        <div class="ft-col">
+    <div class="ft-col">
       <h4>Tools</h4>
       <div class="ft-legal">
-        <a href="/symbols/">Symbols</a>
-        <a href="/fancy-text/">Fancy Text</a>
-        <a href="/kaomoji/">Kaomoji</a>
-        <a href="/text-art/">Text Art</a>
-        <a href="/dot-art/">Dot Art</a>
-        <a href="/invisible-character/">Invisible Char</a>
-        <a href="/zalgo-text/">Zalgo Text</a>
-        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
-        <a href="/hijri-calendar/">Hijri Calendar</a>
-        <a href="/arabic-calligraphy/">Arabic Calligraphy</a>
+        <a href="../../fancy-text/">Fancy Text</a>
+        <a href="../../invisible-character/">Invisible Char</a>
+        <a href="../../kaomoji/">Kaomoji</a>
+        <a href="../../zalgo-text/">Zalgo Text</a>
       </div>
       <h4 class="ft-h4-gap">Company</h4>
-      <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
+      <div class="ft-legal">
+        <a href="../../about/">About</a>
+        <a href="../../blog/">Blog</a>
+        <a href="../../contact/">Contact</a>
+      </div>
     </div>
     <div class="ft-col">
       <h4>Legal</h4>
@@ -495,23 +615,5 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 </script>
-<script>
-(function(){
-  var btns = document.querySelectorAll('.tools-btn');
-  btns.forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.stopPropagation();
-      var wrap = btn.closest('.tools-wrap');
-      var isOpen = wrap.classList.contains('open');
-      document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
-      if (!isOpen) wrap.classList.add('open');
-    });
-  });
-  document.addEventListener('click', function(){
-    document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
-  });
-})();
-</script>
-<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
 </body>
 </html>

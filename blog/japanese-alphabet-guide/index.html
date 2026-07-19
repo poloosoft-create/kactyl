@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-13B2Z80B92"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-13B2Z80B92');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -16,7 +8,7 @@
   <meta name="description" content="Complete Japanese alphabet and script reference guide. Learn all the letters, how to write them, and how to type Japanese online for free.">
   <link rel="canonical" href="https://kactyl.com/blog/japanese-alphabet-guide/">
   <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-circle.svg">
+  <link rel="apple-touch-icon" href="../../images/favicon.svg">
   <link rel="sitemap" type="application/xml" href="../../sitemap.xml">
 
   <!-- Open Graph -->
@@ -24,16 +16,14 @@
   <meta property="og:url" content="https://kactyl.com/blog/japanese-alphabet-guide/">
   <meta property="og:title" content="Japanese Alphabet Guide: Complete Reference">
   <meta property="og:description" content="Complete Japanese alphabet and script reference guide. Learn all the letters, how to write them, and how to type Japanese online for free.">
-  <meta property="og:image" content="https://kactyl.com/images/og-images/japanese.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-          <meta property="og:site_name" content="Kactyl">
+  <meta property="og:image" content="https://kactyl.com/images/og-preview.png">
+  <meta property="og:site_name" content="Kactyl">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Japanese Alphabet Guide: Complete Reference">
   <meta name="twitter:description" content="Complete Japanese alphabet and script reference guide. Learn all the letters, how to write them, and how to type Japanese online for free.">
-  <meta name="twitter:image" content="https://kactyl.com/images/og-images/japanese.png">
+  <meta name="twitter:image" content="https://kactyl.com/images/og-preview.png">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -41,8 +31,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Japanese Alphabet Guide: Complete Reference",
-    "datePublished": "2026-04-20",
-    "dateModified": "2026-06-03",
+    "datePublished": "2026-03-05",
+    "dateModified": "2026-07-18",
     "author": {
       "@type": "Organization",
       "name": "Kactyl",
@@ -83,7 +73,7 @@
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{"@type":"Question","name":"How many letters does Japanese have?","acceptedAnswer":{"@type":"Answer","text":"Japanese uses Three scripts: Hiragana (46), Katakana (46), Kanji (2,000+ common). The exact count varies by how you count combined forms and diacritical variations, but the keyboard includes all standard characters."}},{"@type":"Question","name":"Is Japanese hard to learn?","acceptedAnswer":{"@type":"Answer","text":"Japanese has its own unique script, but the Kactyl keyboard makes typing accessible without requiring you to memorize the full script layout. Phonetic mode helps beginners start immediately."}},{"@type":"Question","name":"Can I type Japanese letters one by one?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Kactyl Japanese keyboard displays each letter individually on-screen. Just click the letter you want and it appears in the text editor. Great for learning the script letter by letter."}},{"@type":"Question","name":"Are all Japanese special characters available?","acceptedAnswer":{"@type":"Answer","text":"Yes. The keyboard includes all standard Japanese characters, special letters, vowel marks, and diacritical signs. Every character needed for correct Japanese text is available."}}]
+    "mainEntity": [{"@type":"Question","name":"How does Romaji mode turn English letters into Japanese?","acceptedAnswer":{"@type":"Answer","text":"Turn on Romaji (Roman) mode, type phonetically, and press Space — the keyboard converts the word to kana the way a phone IME does. \"ka\"→か, \"shi\"→し, \"tsu\"→つ, \"kya\"→きゃ, and a double consonant like \"tt\" builds the small っ. It's a full wapuro-style converter, not a lookup of a few words."}},{"@type":"Question","name":"What's the difference between hiragana and katakana?","acceptedAnswer":{"@type":"Answer","text":"They spell the same 46 sounds but do different jobs. Hiragana (ひらがな) writes native Japanese words, particles and verb endings; katakana (カタカナ) writes foreign loanwords, brand names and sound effects. コーヒー (coffee) is katakana; こんにちは (hello) is hiragana."}},{"@type":"Question","name":"Do I need to install a Japanese IME to use this?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs in your browser. Tap the kana grid or use Romaji mode, then Copy and paste. Nothing is installed and no system language settings change — ideal on a borrowed phone, a library PC or a work laptop."}},{"@type":"Question","name":"How do I type katakana and small kana like っ ゃ ゅ ょ?","acceptedAnswer":{"@type":"Answer","text":"Open the special-characters panel for the katakana set and the small kana (っ ゃ ゅ ょ ぁ ぃ...). In Romaji mode they're automatic: \"kk/tt\"→っ, \"kya/shu/cho\"→きゃ/しゅ/ちょ."}},{"@type":"Question","name":"Can I type Japanese letters one by one?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Kactyl Japanese keyboard displays each letter individually on-screen. Just click the letter you want and it appears in the text editor — great for learning the script letter by letter."}}]
   }
   </script>
 
@@ -96,31 +86,27 @@
 
 <!-- HEADER -->
 <header>
-  <a class="logo" href="/">
+  <a class="logo" href="../../">
     <img class="logo-img" src="../../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
-                                                            <nav>
+  <nav>
     <a href="/" class="nav-link">Home</a>
-    <a href="/keyboards/" class="nav-link">Keyboards</a>
+    <a href="../../keyboards/" class="nav-link">Keyboards</a>
+    <a href="../../blog/" class="nav-link" style="color:var(--blue);font-weight:700;">Blog</a>
+    <a href="../../#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
-      <button class="tools-btn">Tools &#9662;</button>
+      <button class="tools-btn">Tools ▾</button>
       <div class="tools-drop">
-        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
-        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
-        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
-        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
-        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
-        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/><circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/><path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
-        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
-        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
-        <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
-        <a href="/arabic-calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Arabic Calligraphy</a>
+        <a href="../../fancy-text/" class="tools-item"><span class="t-icon">✨</span> Fancy Text Generator <span class="tools-coming">SOON</span></a>
+        <a href="../../kaomoji/" class="tools-item"><span class="t-icon">😸</span> Kaomoji <span class="tools-coming">SOON</span></a>
+        <a href="../../invisible-character/" class="tools-item"><span class="t-icon">🔤</span> Invisible Character <span class="tools-coming">SOON</span></a>
+        <a href="../../zalgo-text/" class="tools-item"><span class="t-icon">👾</span> Zalgo Text <span class="tools-coming">SOON</span></a>
       </div>
     </div>
     <div class="theme-wrap" onclick="toggleTheme()">
       <div class="t-track" id="tt">
         <div class="t-thumb" id="th">
-          <img id="theme-icon" src="../../images/Icon-white mode-Clavierarabe-enligne.svg" alt="Toggle theme" width="13" height="13">
+          <img id="theme-icon" src="../../images/Icon-white mode-Clavierarabe-enligne.svg" alt="" width="13" height="13">
         </div>
       </div>
       <div class="t-lbl" id="tlbl">White<br>Mode</div>
@@ -148,9 +134,9 @@
         <div class="hero-kicker">Japanese · Alphabet &amp; Script Reference</div>
         <h1>Japanese Alphabet Guide: Complete Reference</h1>
         <div class="hero-meta">
-          <span>📅 Published 2026-04-20</span>
+          <span>📅 Published 2026-03-05</span>
           <span>⏱ 6 min read</span>
-          <span>🔤 Three scripts: Hiragana (46), Katakana (46), Kanji (2,000+ common)</span>
+          <span>🔤 Hiragana and katakana syllabaries plus kanji characters, left-to-right</span>
         </div>
       </div>
     </div>
@@ -165,127 +151,187 @@
     <!-- Article body -->
     <article class="article-body">
 
-<figure class="article-hero-img">
-        <img src="../../blog/images/languages/japanese.jpg" alt="Japanese keyboard typing" width="1200" height="630" loading="lazy" style="width:100%;height:320px;object-fit:cover;border-radius:12px;margin-bottom:32px;">
-      </figure>
+      <figure class="article-hero-svg" style="margin:0 0 32px;"><svg viewBox="0 0 1200 340" width="100%" role="img" aria-label="Japanese script specimen" style="display:block;border-radius:14px;max-height:340px;">
+  <defs>
+    <linearGradient id="abg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#bc002d"/><stop offset="1" stop-color="#bc002d" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="340" fill="url(#abg)"/>
+  <circle cx="150" cy="290" r="120" fill="#ffffff" opacity="0.05"/>
+  <circle cx="1060" cy="60" r="140" fill="#ffffff" opacity="0.05"/>
+  <foreignObject x="150" y="40" width="900" height="30"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:15px;letter-spacing:3px;text-transform:uppercase;color:#ffffff;opacity:.85;">Japanese · Alphabet &amp; Script Guide</div></foreignObject>
+  <foreignObject x="100" y="74" width="1000" height="70"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:56px;font-weight:800;color:#fff;">日本語</div></foreignObject>
+  <rect x="133" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="133.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">あ</div></foreignObject><rect x="269" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="269.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">い</div></foreignObject><rect x="405" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="405.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">う</div></foreignObject><rect x="541" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="541.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">え</div></foreignObject><rect x="677" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="677.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">お</div></foreignObject><rect x="813" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="813.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">か</div></foreignObject><rect x="949" y="150" width="118" height="118" rx="20" fill="#ffffff" opacity="0.16"/><foreignObject x="949.0" y="150" width="118" height="118"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI','Noto Sans',Tahoma,Arial,sans-serif;font-size:62px;color:#fff;text-align:center;line-height:118px;">き</div></foreignObject>
+</svg></figure>
 
       <!-- Quick Answer -->
       <div class="quick-answer">
         <strong>Quick Answer</strong>
-        Japanese is written in Three scripts: Hiragana (46), Katakana (46), Kanji (2,000+ common). The language has 125 million native speakers worldwide. To type Japanese online without learning the script layout, use <a href="https://kactyl.com/japanese/" style="color:var(--blue)">kactyl.com/japanese/</a> — click any letter to type it instantly in your browser.
+        Japanese is written in Hiragana and katakana syllabaries plus kanji characters, left-to-right. The language has 125 million native speakers worldwide. To type Japanese online without learning the script layout, use <a href="https://kactyl.com/japanese/" style="color:var(--blue)">kactyl.com/japanese/</a> — click any letter to type it instantly in your browser.
       </div>
 
 
 
       <h2>About the Japanese Script</h2>
-      <p>Japanese (日本語) is written using <strong>Three scripts: Hiragana (46), Katakana (46), Kanji (2,000+ common)</strong>. With <strong>125 million speakers</strong>, it is one of the world's significant languages. The writing system has been used for centuries and has a rich literary tradition.</p>
+      <p>Japanese is written with <strong>three scripts at once</strong>, and each arrived differently. <strong>Kanji</strong> — logographic characters — were borrowed from China around the <strong>5th century</strong>, the first way Japanese was ever written. Because Chinese characters fit the Japanese language poorly, scribes then invented two native syllabaries from them. <strong>Hiragana</strong> grew out of the flowing cursive forms of man'yōgana during the Heian period (9th–10th century) — at first called "women's hand" — while <strong>katakana</strong> was pieced together by Buddhist monks from small fragments of kanji used as reading aids. Both settled into <strong>46 basic characters</strong> each, a perfect sound-for-sound mirror. Modern kanji use is anchored by the Ministry of Education's <strong>jōyō list of 2,136 characters</strong>, last revised on 30 November 2010. The result is a system where a single sentence routinely blends all three — something no other living language does.</p>
 
-      <p>Understanding the Japanese script is useful whether you're learning the language, doing research, or need to type Japanese text regularly. However, you don't need to memorize the entire alphabet to start typing — Kactyl's online keyboard lets you click letters to type them instantly.</p>
-
-      <h2>The Japanese Alphabet</h2>
-      <p>Here are all the letters in the Japanese script. Each character represents a distinct sound in the language:</p>
+      <h2>The Japanese Alphabet — Every Letter</h2>
+      <p>Here is the full Japanese character set. You can click any letter on the <a href="https://kactyl.com/japanese/">Kactyl Japanese keyboard</a> to type it instantly — no need to memorize positions.</p>
 
       <div class="alphabet-grid">
-        <div class="letter-card"><span class="letter-native">あ</span></div>
-<div class="letter-card"><span class="letter-native">い</span></div>
-<div class="letter-card"><span class="letter-native">う</span></div>
-<div class="letter-card"><span class="letter-native">え</span></div>
-<div class="letter-card"><span class="letter-native">お</span></div>
-<div class="letter-card"><span class="letter-native">か</span></div>
-<div class="letter-card"><span class="letter-native">き</span></div>
-<div class="letter-card"><span class="letter-native">く</span></div>
-<div class="letter-card"><span class="letter-native">け</span></div>
-<div class="letter-card"><span class="letter-native">こ</span></div>
-<div class="letter-card"><span class="letter-native">さ</span></div>
-<div class="letter-card"><span class="letter-native">し</span></div>
-<div class="letter-card"><span class="letter-native">す</span></div>
-<div class="letter-card"><span class="letter-native">せ</span></div>
-<div class="letter-card"><span class="letter-native">そ</span></div>
-<div class="letter-card"><span class="letter-native">た</span></div>
-<div class="letter-card"><span class="letter-native">ち</span></div>
-<div class="letter-card"><span class="letter-native">つ</span></div>
-<div class="letter-card"><span class="letter-native">て</span></div>
-<div class="letter-card"><span class="letter-native">と</span></div>
-<div class="letter-card"><span class="letter-native">な</span></div>
-<div class="letter-card"><span class="letter-native">に</span></div>
-<div class="letter-card"><span class="letter-native">ぬ</span></div>
-<div class="letter-card"><span class="letter-native">ね</span></div>
-<div class="letter-card"><span class="letter-native">の</span></div>
-<div class="letter-card"><span class="letter-native">は</span></div>
-<div class="letter-card"><span class="letter-native">ひ</span></div>
-<div class="letter-card"><span class="letter-native">ふ</span></div>
-<div class="letter-card"><span class="letter-native">へ</span></div>
-<div class="letter-card"><span class="letter-native">ほ</span></div>
-<div class="letter-card"><span class="letter-native">ま</span></div>
-<div class="letter-card"><span class="letter-native">み</span></div>
-<div class="letter-card"><span class="letter-native">む</span></div>
-<div class="letter-card"><span class="letter-native">め</span></div>
-<div class="letter-card"><span class="letter-native">も</span></div>
-<div class="letter-card"><span class="letter-native">や</span></div>
-<div class="letter-card"><span class="letter-native">ゆ</span></div>
-<div class="letter-card"><span class="letter-native">よ</span></div>
-<div class="letter-card"><span class="letter-native">ら</span></div>
-<div class="letter-card"><span class="letter-native">り</span></div>
-<div class="letter-card"><span class="letter-native">る</span></div>
-<div class="letter-card"><span class="letter-native">れ</span></div>
-<div class="letter-card"><span class="letter-native">ろ</span></div>
-<div class="letter-card"><span class="letter-native">わ</span></div>
-<div class="letter-card"><span class="letter-native">を</span></div>
-<div class="letter-card"><span class="letter-native">ん</span></div>
-
+        
       </div>
 
-      <h2>Key Facts About the Japanese Writing System</h2>
       <ul>
-        <li><strong>Script:</strong> Three scripts: Hiragana (46), Katakana (46), Kanji (2,000+ common)</li>
+        <li><strong>Script:</strong> Hiragana and katakana syllabaries plus kanji characters, left-to-right</li>
         <li><strong>Speakers:</strong> 125 million worldwide</li>
-        <li><strong>Direction:</strong> Left-to-right</li>
-        <li><strong>Unique feature:</strong> Three writing systems used together in the same text</li>
+        <li><strong>Writing direction:</strong> Left-to-right</li>
+        <li><strong>Distinctive feature:</strong> Japanese is the only major writing system that <strong>uses three scripts together in one sentence</strong>, each with a clear job: <strong>kanji</strong> carry meaning, <strong>hiragana</strong> supply grammar — the particles and verb endings — and <strong>katakana</strong> mark foreign words, brand names and sound effects. Read 日本語を勉強します and you see all three at work in five words. This keyboard gives you the full 46-kana hiragana grid plus a katakana panel, and its <strong>Romaji mode</strong> reproduces exactly what a phone IME does — typing <em>kya</em> builds きゃ, <em>tt</em> builds the small っ, <em>n</em> before a consonant becomes ん.</li>
       </ul>
+
+      <h2>The Japanese Alphabet, Letter by Letter</h2>
+      <p>Every Japanese letter with its name, the sound it makes, and a real example word. <strong>Tap any letter to hear and copy it</strong> — keep this reference open while you learn to read or type:</p>
+      <table class="platform-table alphabet-table">
+        <thead>
+          <tr><th>Letter</th><th>Name</th><th>Sound</th><th>Example word</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="あ" data-audio="00.m4a" aria-label="Hear and copy あ">あ</button></td><td><strong>a</strong></td><td>a</td><td>あめ — <em>ame</em> (rain)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="い" data-audio="01.m4a" aria-label="Hear and copy い">い</button></td><td><strong>i</strong></td><td>i</td><td>いぬ — <em>inu</em> (dog)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="う" data-audio="02.m4a" aria-label="Hear and copy う">う</button></td><td><strong>u</strong></td><td>u</td><td>うみ — <em>umi</em> (sea)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="え" data-audio="03.m4a" aria-label="Hear and copy え">え</button></td><td><strong>e</strong></td><td>e</td><td>えき — <em>eki</em> (station)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="お" data-audio="04.m4a" aria-label="Hear and copy お">お</button></td><td><strong>o</strong></td><td>o</td><td>おに — <em>oni</em> (ogre)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="か" data-audio="05.m4a" aria-label="Hear and copy か">か</button></td><td><strong>ka</strong></td><td>ka</td><td>かさ — <em>kasa</em> (umbrella)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="き" data-audio="06.m4a" aria-label="Hear and copy き">き</button></td><td><strong>ki</strong></td><td>ki</td><td>き — <em>ki</em> (tree)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="く" data-audio="07.m4a" aria-label="Hear and copy く">く</button></td><td><strong>ku</strong></td><td>ku</td><td>くalso — <em>kumo</em> (cloud)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="け" data-audio="08.m4a" aria-label="Hear and copy け">け</button></td><td><strong>ke</strong></td><td>ke</td><td>けむり — <em>kemuri</em> (smoke)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="こ" data-audio="09.m4a" aria-label="Hear and copy こ">こ</button></td><td><strong>ko</strong></td><td>ko</td><td>こめ — <em>kome</em> (rice)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="さ" data-audio="10.m4a" aria-label="Hear and copy さ">さ</button></td><td><strong>sa</strong></td><td>sa</td><td>さかな — <em>sakana</em> (fish)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="し" data-audio="11.m4a" aria-label="Hear and copy し">し</button></td><td><strong>shi</strong></td><td>shi</td><td>しろ — <em>shiro</em> (white)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="す" data-audio="12.m4a" aria-label="Hear and copy す">す</button></td><td><strong>su</strong></td><td>su</td><td>すし — <em>sushi</em></td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="せ" data-audio="13.m4a" aria-label="Hear and copy せ">せ</button></td><td><strong>se</strong></td><td>se</td><td>せかい — <em>sekai</em> (world)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="そ" data-audio="14.m4a" aria-label="Hear and copy そ">そ</button></td><td><strong>so</strong></td><td>so</td><td>そら — <em>sora</em> (sky)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="た" data-audio="15.m4a" aria-label="Hear and copy た">た</button></td><td><strong>ta</strong></td><td>ta</td><td>たまご — <em>tamago</em> (egg)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ち" data-audio="16.m4a" aria-label="Hear and copy ち">ち</button></td><td><strong>chi</strong></td><td>chi</td><td>ちず — <em>chizu</em> (map)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="つ" data-audio="17.m4a" aria-label="Hear and copy つ">つ</button></td><td><strong>tsu</strong></td><td>tsu</td><td>つき — <em>tsuki</em> (moon)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="て" data-audio="18.m4a" aria-label="Hear and copy て">て</button></td><td><strong>te</strong></td><td>te</td><td>て — <em>te</em> (hand)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="と" data-audio="19.m4a" aria-label="Hear and copy と">と</button></td><td><strong>to</strong></td><td>to</td><td>とり — <em>tori</em> (bird)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="な" data-audio="20.m4a" aria-label="Hear and copy な">な</button></td><td><strong>na</strong></td><td>na</td><td>なつ — <em>natsu</em> (summer)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="に" data-audio="21.m4a" aria-label="Hear and copy に">に</button></td><td><strong>ni</strong></td><td>ni</td><td>にく — <em>niku</em> (meat)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ぬ" data-audio="22.m4a" aria-label="Hear and copy ぬ">ぬ</button></td><td><strong>nu</strong></td><td>nu</td><td>ぬの — <em>nuno</em> (cloth)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ね" data-audio="23.m4a" aria-label="Hear and copy ね">ね</button></td><td><strong>ne</strong></td><td>ne</td><td>ねこ — <em>neko</em> (cat)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="の" data-audio="24.m4a" aria-label="Hear and copy の">の</button></td><td><strong>no</strong></td><td>no</td><td>のり — <em>nori</em> (seaweed)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="は" data-audio="25.m4a" aria-label="Hear and copy は">は</button></td><td><strong>ha</strong></td><td>ha</td><td>はな — <em>hana</em> (flower)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ひ" data-audio="26.m4a" aria-label="Hear and copy ひ">ひ</button></td><td><strong>hi</strong></td><td>hi</td><td>ひ — <em>hi</em> (fire)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ふ" data-audio="27.m4a" aria-label="Hear and copy ふ">ふ</button></td><td><strong>fu</strong></td><td>fu</td><td>ふね — <em>fune</em> (boat)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="へ" data-audio="28.m4a" aria-label="Hear and copy へ">へ</button></td><td><strong>he</strong></td><td>he</td><td>へや — <em>heya</em> (room)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ほ" data-audio="29.m4a" aria-label="Hear and copy ほ">ほ</button></td><td><strong>ho</strong></td><td>ho</td><td>ほし — <em>hoshi</em> (star)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ま" data-audio="30.m4a" aria-label="Hear and copy ま">ま</button></td><td><strong>ma</strong></td><td>ma</td><td>まち — <em>machi</em> (town)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="み" data-audio="31.m4a" aria-label="Hear and copy み">み</button></td><td><strong>mi</strong></td><td>mi</td><td>みず — <em>mizu</em> (water)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="む" data-audio="32.m4a" aria-label="Hear and copy む">む</button></td><td><strong>mu</strong></td><td>mu</td><td>むし — <em>mushi</em> (insect)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="め" data-audio="33.m4a" aria-label="Hear and copy め">め</button></td><td><strong>me</strong></td><td>me</td><td>め — <em>me</em> (eye)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="も" data-audio="34.m4a" aria-label="Hear and copy も">も</button></td><td><strong>mo</strong></td><td>mo</td><td>もり — <em>mori</em> (forest)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="や" data-audio="35.m4a" aria-label="Hear and copy や">や</button></td><td><strong>ya</strong></td><td>ya</td><td>やま — <em>yama</em> (mountain)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ゆ" data-audio="36.m4a" aria-label="Hear and copy ゆ">ゆ</button></td><td><strong>yu</strong></td><td>yu</td><td>ゆき — <em>yuki</em> (snow)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="よ" data-audio="37.m4a" aria-label="Hear and copy よ">よ</button></td><td><strong>yo</strong></td><td>yo</td><td>よる — <em>yoru</em> (night)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ら" data-audio="38.m4a" aria-label="Hear and copy ら">ら</button></td><td><strong>ra</strong></td><td>ra</td><td>らくだ — <em>rakuda</em> (camel)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="り" data-audio="39.m4a" aria-label="Hear and copy り">り</button></td><td><strong>ri</strong></td><td>ri</td><td>りんご — <em>ringo</em> (apple)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="る" data-audio="40.m4a" aria-label="Hear and copy る">る</button></td><td><strong>ru</strong></td><td>ru</td><td>るす — <em>rusu</em> (absence)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="れ" data-audio="41.m4a" aria-label="Hear and copy れ">れ</button></td><td><strong>re</strong></td><td>re</td><td>れきし — <em>rekishi</em> (history)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ろ" data-audio="42.m4a" aria-label="Hear and copy ろ">ろ</button></td><td><strong>ro</strong></td><td>ro</td><td>ろく — <em>roku</em> (six)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="わ" data-audio="43.m4a" aria-label="Hear and copy わ">わ</button></td><td><strong>wa</strong></td><td>wa</td><td>わたし — <em>watashi</em> (I)</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="を" data-audio="44.m4a" aria-label="Hear and copy を">を</button></td><td><strong>wo</strong></td><td>o (particle)</td><td>を — object marker</td></tr>
+          <tr><td class="lt-cell"><button type="button" class="lt-glyph" data-say="ん" data-audio="45.m4a" aria-label="Hear and copy ん">ん</button></td><td><strong>n</strong></td><td>n</td><td>ほん — <em>hon</em> (book)</td></tr>
+        </tbody>
+      </table>
+      <p class="lt-hint" style="font-size:13px;color:var(--muted,#64748b);margin-top:-6px;">🔊 Click any letter to <strong>hear it pronounced</strong> (recorded native voice) and copy it to your clipboard.</p>
+      <script>
+      (function(){
+        var AUDIO_BASE="../audio/japanese/";
+        var voices=[];
+        function loadVoices(){ voices=window.speechSynthesis?window.speechSynthesis.getVoices():[]; }
+        if(window.speechSynthesis){ loadVoices(); window.speechSynthesis.onvoiceschanged=loadVoices; }
+        function speak(t){
+          if(!window.speechSynthesis) return;
+          window.speechSynthesis.cancel();
+          var u=new SpeechSynthesisUtterance(t); u.lang="ja"; u.rate=.8;
+          var v=voices.find(function(x){return x.lang&&x.lang.toLowerCase().indexOf("ja".toLowerCase())===0;});
+          if(v) u.voice=v;
+          window.speechSynthesis.speak(u);
+        }
+        function play(b){
+          var file=b.getAttribute('data-audio');
+          if(AUDIO_BASE && file){ var a=new Audio(AUDIO_BASE+file); a.play().catch(function(){ speak(b.getAttribute('data-say')); }); }
+          else { speak(b.getAttribute('data-say')); }
+        }
+        function flash(el){ el.classList.add('lt-copied'); setTimeout(function(){ el.classList.remove('lt-copied'); },700); }
+        document.querySelectorAll('.lt-glyph').forEach(function(b){
+          b.addEventListener('click',function(){
+            play(b);
+            if(navigator.clipboard) navigator.clipboard.writeText(b.getAttribute('data-say')).then(function(){flash(b);},function(){});
+          });
+        });
+      })();
+      </script>
+      <style>
+        .alphabet-table .lt-cell{text-align:center;}
+        .lt-glyph{font-size:1.5em;line-height:1;background:none;border:1px solid transparent;
+          border-radius:8px;padding:4px 10px;cursor:pointer;color:inherit;font-family:inherit;
+          transition:background .15s,border-color .15s;position:relative;}
+        .lt-glyph:hover{background:rgba(99,102,241,.10);border-color:rgba(99,102,241,.35);}
+        .lt-glyph:focus-visible{outline:2px solid #6366f1;outline-offset:2px;}
+        .lt-glyph.lt-copied{background:rgba(16,163,106,.16);border-color:rgba(16,163,106,.5);}
+        .lt-glyph.lt-copied::after{content:"copied ✓";position:absolute;left:50%;top:-22px;
+          transform:translateX(-50%);font-size:10px;white-space:nowrap;color:#10a36a;
+          background:#fff;border:1px solid rgba(16,163,106,.4);border-radius:6px;padding:1px 6px;}
+      </style>
+
+
+      <h2>What Makes the Japanese Alphabet Distinctive</h2>
+      <p>These are the features of the Japanese script that trip up learners coming from the Latin alphabet — the things worth understanding before you start reading or typing:</p>
+      <ul>
+        <li>Japanese writes with <strong>three scripts at once</strong>: hiragana (rounded, for grammar and native words), katakana (angular, for foreign words), and kanji (Chinese characters, for meaning). This chart is <strong>hiragana</strong>, the first one learners master.</li>
+        <li>Hiragana is a <strong>syllabary, not an alphabet</strong>: each symbol is a whole syllable — か is “ka”, not “k” + “a”. There are 46 basic syllables.</li>
+        <li>Hiragana and katakana are two costumes for the <strong>same 46 sounds</strong> — か and カ both say “ka” — kept apart only by the job they do.</li>
+        <li>Two small dots (<strong>dakuten ゛</strong>) or a circle (handakuten ゜) shift the sound: か (ka) → が (ga), は (ha) → ば (ba) → ぱ (pa).</li>
+        <li><strong>ん</strong> is the only standalone consonant, and <strong>を</strong> (pronounced “o”) now survives only as the particle that marks a sentence’s object.</li>
+      </ul>
+
+
+      <h2>Japanese Script — The Facts</h2>
+      <ul>
+        <li><strong>Unicode block:</strong> Hiragana U+3040–309F; Katakana U+30A0–30FF</li>
+        <li><strong>ISO 15924 script code:</strong> Hira (410) / Jpan (413)</li>
+        <li><strong>Script family:</strong> Syllabary (kana), derived from simplified kanji</li>
+        <li><strong>First attested:</strong> ~9th century CE (Heian period)</li>
+        <li><strong>Speakers:</strong> 125 million (Ethnologue)</li>
+      </ul>
+      <p style="font-size:13px;color:var(--muted,#64748b);"><strong>Sources:</strong> <a href="https://www.unicode.org/charts/PDF/U3040.pdf" target="_blank" rel="noopener nofollow">Unicode Hiragana block (U+3040)</a> · <a href="https://www.ethnologue.com/language/jpn/" target="_blank" rel="noopener nofollow">Ethnologue — Japanese</a> · <a href="https://unicode.org/iso15924/iso15924-codes.html" target="_blank" rel="noopener nofollow">ISO 15924 — Hira</a></p>
+
+      
 
       <h2>Common Japanese Words to Learn</h2>
-      <p>These common words give you a starting point for recognizing Japanese characters in context:</p>
+      <p>These everyday words are a fast way to start recognizing Japanese letters in real context:</p>
       <ul>
         <li>こんにちは (konnichiwa = hello)</li>
-<li>ありがとう (arigatou = thank you)</li>
-<li>お元気ですか (ogenki desuka = how are you)</li>
-      </ul>
-
-      <h2>How to Type All These Letters Online</h2>
-      <p>Memorizing the position of every Japanese letter on a physical keyboard takes weeks. With Kactyl's online keyboard, you don't need to memorize anything. The letters are displayed visually — just click the one you want.</p>
-
-      <p>To type Japanese online right now:</p>
-      <ol class="steps-list">
-        <li>Go to <a href="https://kactyl.com/japanese/">kactyl.com/japanese/</a></li>
-        <li>Find the letter you want to type in the on-screen keyboard</li>
-        <li>Click it — it appears in the text editor</li>
-        <li>Build your text character by character, or use phonetic/transliteration mode for faster input</li>
-        <li>Copy your completed text and paste it anywhere</li>
-      </ol>
-
-      <h2>Script Learning Resources</h2>
-      <p>If you want to go beyond typing and actually learn to read and write Japanese, here are the best approaches:</p>
-      <ul>
-        <li><strong>Phonetic mapping:</strong> Learn which letter corresponds to which sound in your native language</li>
-        <li><strong>Common words:</strong> Start with the 50 most common Japanese words and their spellings</li>
-        <li><strong>Writing practice:</strong> Use the Kactyl keyboard as a reference while practicing handwriting</li>
-        <li><strong>Pattern recognition:</strong> Learn letter groups by shape (for scripts with complex forms)</li>
-      </ul>
-
-      <h2>Tips for Typing Japanese</h2>
-      <ul>
-        <li>Start with Hiragana — the phonetic alphabet</li>
-<li>Romaji input converts to Hiragana automatically</li>
-<li>Katakana is used for foreign words</li>
+<li>ありがとう (arigatō = thank you)</li>
+<li>さようなら (sayōnara = goodbye)</li>
       </ul>
 
       
-      <h2>About the Japanese Language</h2>
-      <p>Japanese uses three writing systems simultaneously: Hiragana (phonetic), Katakana (phonetic, for foreign words), and Kanji (logographic characters borrowed from Chinese). All three often appear in the same sentence. Japan's LINE messaging app has 95 million users. Twitter (now X) is particularly popular in Japan — more tweets are sent in Japanese than any other language except English.</p>
 
-      <h2>Three Scripts, One Language — Japanese's Unique Complexity</h2>
-      <p>A typical Japanese sentence might use Kanji for nouns and verb stems, Hiragana for grammatical endings, and Katakana for foreign loanwords — all in the same sentence. This visual complexity is one reason Japanese is considered one of the hardest languages for non-native speakers to learn. Yet for native speakers, all three scripts feel natural and each carries subtle connotations: Kanji looks formal and meaningful, Hiragana looks soft and native, Katakana looks foreign and modern. Japanese input on phones and computers uses Romaji (Latin letters) that convert to Hiragana, which then suggest Kanji. Kactyl's Japanese keyboard provides direct access to Hiragana, Katakana, and common Kanji characters, letting users type Japanese without needing a Japanese IME installed. This is particularly useful for the Japanese diaspora and Japanese learners who use non-Japanese devices.</p>
+      <h2>Type Japanese Online Without Learning the Layout</h2>
+      <p>You don't need to memorize where each Japanese letter sits on a physical keyboard. Open <a href="https://kactyl.com/japanese/">kactyl.com/japanese/</a>, click the letters you see on screen (or type phonetically), then copy your text anywhere — WhatsApp, documents, social media.</p>
 
+      <h2>Tips for Typing Japanese</h2>
+      <ul>
+        <li>Type in rōmaji and let the IME convert to kana/kanji</li>
+<li>Press space to cycle kanji candidates, Enter to confirm</li>
+<li>Hiragana for grammar, katakana for foreign words</li>
+      </ul>
+
+      
 
 
       <!-- Mid-article CTA -->
@@ -301,20 +347,24 @@
       <div class="article-faq">
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
-          <div class="faq-q">How many letters does Japanese have?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Japanese uses Three scripts: Hiragana (46), Katakana (46), Kanji (2,000+ common). The exact count varies by how you count combined forms and diacritical variations, but the keyboard includes all standard characters.</div>
+          <div class="faq-q">How does Romaji mode turn English letters into Japanese?<span class="faq-icon">+</span></div>
+          <div class="faq-a">Turn on Romaji (Roman) mode, type phonetically, and press Space — the keyboard converts the word to kana the way a phone IME does. "ka"→か, "shi"→し, "tsu"→つ, "kya"→きゃ, and a double consonant like "tt" builds the small っ. It's a full wapuro-style converter, not a lookup of a few words.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Is Japanese hard to learn?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Japanese has its own unique script, but the Kactyl keyboard makes typing accessible without requiring you to memorize the full script layout. Phonetic mode helps beginners start immediately.</div>
+          <div class="faq-q">What's the difference between hiragana and katakana?<span class="faq-icon">+</span></div>
+          <div class="faq-a">They spell the same 46 sounds but do different jobs. Hiragana (ひらがな) writes native Japanese words, particles and verb endings; katakana (カタカナ) writes foreign loanwords, brand names and sound effects. コーヒー (coffee) is katakana; こんにちは (hello) is hiragana.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do I need to install a Japanese IME to use this?<span class="faq-icon">+</span></div>
+          <div class="faq-a">No. Everything runs in your browser. Tap the kana grid or use Romaji mode, then Copy and paste. Nothing is installed and no system language settings change — ideal on a borrowed phone, a library PC or a work laptop.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How do I type katakana and small kana like っ ゃ ゅ ょ?<span class="faq-icon">+</span></div>
+          <div class="faq-a">Open the special-characters panel for the katakana set and the small kana (っ ゃ ゅ ょ ぁ ぃ...). In Romaji mode they're automatic: "kk/tt"→っ, "kya/shu/cho"→きゃ/しゅ/ちょ.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Can I type Japanese letters one by one?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Yes. The Kactyl Japanese keyboard displays each letter individually on-screen. Just click the letter you want and it appears in the text editor. Great for learning the script letter by letter.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Are all Japanese special characters available?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Yes. The keyboard includes all standard Japanese characters, special letters, vowel marks, and diacritical signs. Every character needed for correct Japanese text is available.</div>
+          <div class="faq-a">Yes. The Kactyl Japanese keyboard displays each letter individually on-screen. Just click the letter you want and it appears in the text editor — great for learning the script letter by letter.</div>
         </div>
 
       </div>
@@ -333,20 +383,20 @@
             <span class="card-read-time">⏱ 5 min</span>
           </div>
         </a>
-        <a href="../../blog/japanese-keyboard-iphone-android/" class="blog-card">
-          <div class="card-flag">🇯🇵</div>
-          <div class="card-title">Japanese Keyboard for iPhone & Android (Free, No App)</div>
-          <div class="card-meta">
-            <span class="card-lang-tag">Japanese</span>
-            <span class="card-read-time">⏱ 4 min</span>
-          </div>
-        </a>
         <a href="../../blog/type-japanese-on-whatsapp/" class="blog-card">
           <div class="card-flag">🇯🇵</div>
           <div class="card-title">How to Type Japanese on WhatsApp in 2026</div>
           <div class="card-meta">
             <span class="card-lang-tag">Japanese</span>
             <span class="card-read-time">⏱ 3 min</span>
+          </div>
+        </a>
+        <a href="../../blog/japanese-keyboard-no-download/" class="blog-card">
+          <div class="card-flag">🇯🇵</div>
+          <div class="card-title">Free Japanese Keyboard — No Download, No Installation</div>
+          <div class="card-meta">
+            <span class="card-lang-tag">Japanese</span>
+            <span class="card-read-time">⏱ 4 min</span>
           </div>
         </a>
 
@@ -366,7 +416,7 @@
         </div>
         <span class="ft-name">Kactyl</span>
       </a>
-      <div class="ft-tagline">Every Language. One Tab.<br>No download. No account.</div>
+      <div class="ft-tagline">Type any language from any device.<br>No download. No account.</div>
       <div class="ft-badges">
         <span class="ft-badge g">✓ 100% Free</span>
         <span class="ft-badge b">⚡ No Install</span>
@@ -426,22 +476,20 @@
         <a href="../../tigrinya/">Tigrinya</a>
       </div>
     </div>
-        <div class="ft-col">
+    <div class="ft-col">
       <h4>Tools</h4>
       <div class="ft-legal">
-        <a href="/symbols/">Symbols</a>
-        <a href="/fancy-text/">Fancy Text</a>
-        <a href="/kaomoji/">Kaomoji</a>
-        <a href="/text-art/">Text Art</a>
-        <a href="/dot-art/">Dot Art</a>
-        <a href="/invisible-character/">Invisible Char</a>
-        <a href="/zalgo-text/">Zalgo Text</a>
-        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
-        <a href="/hijri-calendar/">Hijri Calendar</a>
-        <a href="/arabic-calligraphy/">Arabic Calligraphy</a>
+        <a href="../../fancy-text/">Fancy Text</a>
+        <a href="../../invisible-character/">Invisible Char</a>
+        <a href="../../kaomoji/">Kaomoji</a>
+        <a href="../../zalgo-text/">Zalgo Text</a>
       </div>
       <h4 class="ft-h4-gap">Company</h4>
-      <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
+      <div class="ft-legal">
+        <a href="../../about/">About</a>
+        <a href="../../blog/">Blog</a>
+        <a href="../../contact/">Contact</a>
+      </div>
     </div>
     <div class="ft-col">
       <h4>Legal</h4>
@@ -498,23 +546,5 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 </script>
-<script>
-(function(){
-  var btns = document.querySelectorAll('.tools-btn');
-  btns.forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.stopPropagation();
-      var wrap = btn.closest('.tools-wrap');
-      var isOpen = wrap.classList.contains('open');
-      document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
-      if (!isOpen) wrap.classList.add('open');
-    });
-  });
-  document.addEventListener('click', function(){
-    document.querySelectorAll('.tools-wrap.open').forEach(function(w){ w.classList.remove('open'); });
-  });
-})();
-</script>
-<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
 </body>
 </html>
