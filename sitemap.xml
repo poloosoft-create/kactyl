@@ -624,13 +624,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kactyl.com/dot-art/heart/</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kactyl.com/dot-art/hello-kitty/</loc>
+    <loc>https://kactyl.com/dot-art/kawaii/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -648,7 +642,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kactyl.com/dot-art/pokemon/</loc>
+    <loc>https://kactyl.com/dot-art/monster/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

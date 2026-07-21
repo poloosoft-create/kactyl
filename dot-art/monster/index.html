@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monster Dot Art — Copy & Paste (15) | Kactyl</title>
+<meta name="description" content="Copy 15 monster dot art pieces — cute critters and chibi creatures drawn in Braille dots. Tap Copy and paste into Discord, TikTok or a bio.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://kactyl.com/dot-art/monster/">
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-circle.svg">
+<meta property="og:title" content="Monster Dot Art — Copy &amp; Paste (15+)">
+<meta property="og:description" content="Copy 15 monster dot art pieces — cute critters and chibi creatures drawn in Braille dots. Tap Copy and paste into Discord, TikTok or a bio.">
+    <meta property="og:image" content="https://kactyl.com/images/og-images/dot-art.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+        <meta property="og:url" content="https://kactyl.com/dot-art/monster/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kactyl">
+<link rel="alternate" hreflang="en" href="https://kactyl.com/dot-art/monster/">
+<link rel="alternate" hreflang="x-default" href="https://kactyl.com/dot-art/monster/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is monster dot art?","acceptedAnswer":{"@type":"Answer","text":"Monster dot art is a multi-line text picture of a cute creature built from Braille dot characters (Unicode ⠀–⣿). Each character holds up to 8 dots, enough to shape the ears, eyes and tail. A single tap grabs the whole critter as text."}},{"@type":"Question","name":"How is it different from an emoji?","acceptedAnswer":{"@type":"Answer","text":"An emoji is a fixed thumbnail that never changes. A monster piece is a whole little creature drawn line by line — ears, tail and all — so it reads as a character you picked out, not a stock icon dropped mid-sentence."}},{"@type":"Question","name":"Where does monster dot art look best?","acceptedAnswer":{"@type":"Answer","text":"It fits right into gaming and kawaii corners — monster-catcher Discord servers, cute Tumblr blogs, playful TikTok captions. Drop it inside a code block and every part of the critter lines up cleanly."}},{"@type":"Question","name":"Will it work on my phone?","acceptedAnswer":{"@type":"Answer","text":"Every up-to-date device already includes these characters, so nothing needs installing. A chunky creature may spill onto extra lines in a narrow chat — a wider field or landscape mode pulls it back into shape."}},{"@type":"Question","name":"Can I build a little collection?","acceptedAnswer":{"@type":"Answer","text":"Yes — copy a few different critters onto separate lines and you’ve got a whole party of monsters in your bio or post. They pair well with the star and heart pieces too."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kactyl.com/"},{"@type":"ListItem","position":2,"name":"Dot Art","item":"https://kactyl.com/dot-art/"},{"@type":"ListItem","position":3,"name":"Monster","item":"https://kactyl.com/dot-art/monster/"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0068ff;--bg:#fff;--surface:#fff;--text:#1E293B;--muted:#64748B;--border:#E2E8F0;--shadow:rgba(0,0,0,.07);--nav-bg:rgba(255,255,255,.88);--nav-txt:#1E293B;--accent:#ef4444;--accent2:#ef4444cc}
+[data-theme="dark"]{--bg:#0F172A;--surface:#1E293B;--text:#F1F5F9;--muted:#94A3B8;--border:rgba(255,255,255,.09);--shadow:rgba(0,0,0,.35);--nav-bg:rgba(15,23,42,.88);--nav-txt:#F1F5F9}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+.bg-shapes{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.s{position:absolute;border-radius:50%}
+header{background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px}
+[data-theme="dark"] header{background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-img{height:200px;width:auto;display:block}
+nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
+.nav-link{padding:6px 12px;border-radius:6px;text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:background .2s;white-space:nowrap}
+.nav-link:hover{background:var(--border)}
+[data-theme="dark"] .nav-link{color:var(--nav-txt)}
+.tools-wrap{position:relative}
+.tools-btn{cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.tools-btn:hover{background:var(--border)}
+[data-theme="dark"] .tools-btn{color:var(--nav-txt)}
+.tools-drop{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:8px 6px;min-width:200px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px}
+.tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
+.tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s,color .18s;white-space:nowrap}
+.tools-item:hover{background:var(--border)}
+.tools-item.active-tool{color:var(--accent)!important;font-weight:600}
+.t-icon{font-size:14px;flex-shrink:0}
+.theme-wrap{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
+.t-track{width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s}
+.t-track.on{background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12)}
+.t-thumb{width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center}
+.t-thumb.on{left:21px}
+.t-lbl{font-size:11px;font-weight:600;color:var(--muted);line-height:1.1;white-space:nowrap}
+.lang-wrap{position:relative}
+.lang-pill{display:flex;align-items:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s}
+.lang-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px var(--shadow);min-width:140px;overflow:hidden;z-index:400}
+.lang-menu.show{display:block}
+.lang-opt{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s}
+.lang-opt:hover{background:var(--bg)}
+.lang-opt.active{color:#ef4444;font-weight:600}
+@media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--bg);font-size:13px;font-weight:600;padding:10px 22px;border-radius:99px;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.18)}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+footer{background:#07091A;padding:0}
+.ft-inner{max-width:1000px;margin:0 auto;padding:56px 28px 44px;display:grid;grid-template-columns:200px 1fr 150px 130px;gap:40px;align-items:start}
+.ft-brand{display:flex;flex-direction:column;gap:14px}
+.ft-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.ft-ic{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-ic img{width:48px;height:48px}
+.ft-name{font-size:15px;font-weight:800;color:#F1F5F9}
+.ft-tagline{font-size:13px;color:#94A3B8;line-height:1.7}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ft-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
+.ft-badge.g{background:rgba(5,150,105,.12);color:#34D399;border:1px solid rgba(5,150,105,.18)}
+.ft-badge.b{background:rgba(0,104,255,.12);color:#60A5FA;border:1px solid rgba(0,104,255,.18)}
+.ft-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:#64748B;margin-bottom:14px}
+.ft-col h4.ft-h4-gap{margin-top:22px}
+.ft-kb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}
+.ft-kb-grid a,.ft-legal a{font-size:13px;color:#CBD5E1;text-decoration:none;padding:5px 0;display:block;transition:color .15s}
+.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}
+.ft-legal{display:flex;flex-direction:column}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;gap:12px}
+.ft-copy{font-size:11px;color:#64748B}
+.ft-bottom-links{display:flex;align-items:center;gap:16px}
+.ft-bottom-links a{font-size:11px;color:#64748B;text-decoration:none}
+@media(max-width:860px){.ft-inner{grid-template-columns:200px 1fr 130px}.ft-inner .ft-col:last-child{grid-column:2;grid-row:2}}
+@media(max-width:640px){.ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px}.ft-brand{grid-column:1/-1}.ft-bottom{flex-direction:column;gap:8px;text-align:center}}
+.s1{width:600px;height:600px;background:#ef444422;top:10%;left:-180px;filter:blur(80px)}
+.s2{width:500px;height:500px;background:#ef444414;top:50%;right:-180px;filter:blur(80px)}
+[data-theme="dark"] .s1{background:#ef444444}
+[data-theme="dark"] .s2{background:#ef444433}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:0 24px;margin-top:16px;position:relative;z-index:1;transition:color .15s}
+.back-link:hover{color:#ef4444}
+.hero{position:relative;z-index:1;text-align:center;padding:52px 24px 28px}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:#ef444418;border:1px solid #ef444433;color:#ef4444;border-radius:99px;padding:5px 14px;font-size:13px;font-weight:600;margin-bottom:18px;font-family:monospace}
+.hero h1{font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-2px;line-height:1.07;background:linear-gradient(135deg,var(--text) 0%,#ef4444 60%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
+.hero-sub{font-size:16px;color:var(--muted);max-width:640px;margin:0 auto;line-height:1.55}
+.grid-wrap{position:relative;z-index:1;max-width:1100px;margin:32px auto 0;padding:0 24px 52px}
+.da-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
+
+@media(max-width:760px){.da-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.da-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.da-grid{grid-template-columns:1fr}}
+.da-card{background:rgba(255,255,255,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:16px;padding:18px 16px 14px;cursor:pointer;transition:all .18s;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;user-select:none;min-height:150px}
+[data-theme="dark"] .da-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+.da-card:hover{border-color:#ef444455;box-shadow:0 8px 28px #ef444422;transform:translateY(-3px)}
+.da-card.flashed{animation:flash .35s ease}
+@keyframes flash{0%,100%{background:rgba(255,255,255,.72)}50%{background:#ef444412}}
+.da-art{font-family:'Courier New',Courier,monospace;font-size:clamp(10px,1.4vw,13px);font-weight:400;line-height:1.4;color:var(--text);white-space:pre;word-break:keep-all;overflow-x:auto;max-width:100%}
+.da-xl{grid-column:span 2}
+@media(max-width:800px){.da-xl{grid-column:span 2}}
+@media(max-width:480px){.da-xl{grid-column:span 1}}
+.cp-hint{font-size:11px;color:#ef4444;font-weight:600;opacity:0;position:absolute;bottom:7px;left:50%;transform:translateX(-50%);transition:opacity .15s;white-space:nowrap}
+.da-card:hover .cp-hint{opacity:1}
+.intro-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 32px;padding:0 24px;font-size:15px;color:var(--muted);line-height:1.8}
+.when-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 32px;padding:0 24px}
+.when-sec h2{font-size:18px;font-weight:800;color:var(--text);margin-bottom:12px;letter-spacing:-.4px}
+.use-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.use-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--muted);line-height:1.7}
+.use-list li::before{content:'→';color:#ef4444;font-weight:700;flex-shrink:0;margin-top:1px}
+.plat-tip{margin-top:14px;padding:12px 16px;background:#ef44440e;border-left:3px solid #ef4444;border-radius:0 10px 10px 0;font-size:13.5px;color:var(--muted);line-height:1.75}
+[data-theme="dark"] .plat-tip{background:#ef444422}
+.related-sec{position:relative;z-index:1;max-width:1100px;margin:0 auto 80px;padding:0 24px}
+.related-sec h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin-bottom:32px;letter-spacing:-.5px}
+.rel-pills{display:flex;flex-wrap:wrap;gap:8px}
+.rel-pill{font-size:13px;padding:7px 16px;border-radius:99px;background:rgba(255,255,255,.65);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.80);color:var(--muted);text-decoration:none;transition:all .15s}
+.rel-pill:hover{border-color:#ef444455;color:#ef4444}
+[data-theme="dark"] .rel-pill{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+.faq-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 48px;padding:0 24px}
+.sec-grad{background:linear-gradient(135deg,var(--blue) 0%,#2563eb 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.faq-sec h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin-bottom:20px;letter-spacing:-.5px}
+.faq-item{background:rgba(255,255,255,.65);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.80);border-radius:14px;margin-bottom:10px;overflow:hidden}
+[data-theme="dark"] .faq-item{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+.faq-item summary{padding:16px 20px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:20px;font-weight:300;color:#ef4444;flex-shrink:0;margin-left:12px;transition:transform .2s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-ans{padding:0 20px 16px;font-size:14px;line-height:1.85;color:var(--muted)}
+.da-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:640px){.da-rel-grid{grid-template-columns:repeat(2,1fr)}}
+.da-rel-card{background:rgba(255,255,255,.78);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.92);border-radius:22px;overflow:hidden;text-decoration:none;color:var(--text);transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column;position:relative}
+.da-rel-card::after{content:'';position:absolute;inset:0;border-radius:22px;background:linear-gradient(135deg,color-mix(in srgb,var(--ca) 7%,transparent) 0%,transparent 60%);opacity:0;transition:opacity .22s;pointer-events:none}
+.da-rel-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px color-mix(in srgb,var(--ca) 18%,transparent),0 4px 18px rgba(0,0,0,.07);border-color:color-mix(in srgb,var(--ca) 38%,transparent)}
+.da-rel-card:hover::after{opacity:1}
+[data-theme="dark"] .da-rel-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+[data-theme="dark"] .da-rel-card:hover{box-shadow:0 24px 56px color-mix(in srgb,var(--ca) 22%,transparent),0 4px 18px rgba(0,0,0,.3)}
+.da-rel-preview{background:linear-gradient(145deg,color-mix(in srgb,var(--ca) 6%,transparent) 0%,color-mix(in srgb,var(--ca) 4%,transparent) 100%);display:flex;align-items:center;justify-content:center;padding:22px 16px 18px;min-height:108px;border-bottom:1px solid color-mix(in srgb,var(--ca) 9%,transparent)}
+[data-theme="dark"] .da-rel-preview{background:linear-gradient(145deg,color-mix(in srgb,var(--ca) 12%,transparent) 0%,color-mix(in srgb,var(--ca) 6%,transparent) 100%);border-bottom-color:color-mix(in srgb,var(--ca) 14%,transparent)}
+.da-rel-body{padding:15px 18px 18px;display:flex;flex-direction:column;gap:5px;flex:1}
+.da-rel-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
+.da-rel-emoji{font-size:18px;line-height:1}
+.da-rel-name{font-size:16px;font-weight:800;color:var(--text);letter-spacing:-.3px}
+.da-rel-sub{font-size:12px;color:var(--muted);line-height:1.4}
+.da-rel-count{font-size:10.5px;font-weight:700;color:var(--ca);background:color-mix(in srgb,var(--ca) 10%,transparent);border:1px solid color-mix(in srgb,var(--ca) 18%,transparent);padding:3px 10px;border-radius:99px;letter-spacing:.2px;white-space:nowrap}
+.da-rel-arrow{position:absolute;bottom:17px;right:18px;font-size:16px;font-weight:700;color:var(--ca);opacity:0;transform:translateX(-5px);transition:opacity .2s,transform .2s}
+.da-rel-card:hover .da-rel-arrow{opacity:1;transform:translateX(0)}
+/*DA-CARDS*/
+.da-box{width:100%;height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.da-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-top:10px}
+.da-foot .da-name{margin-top:0;text-align:left}
+.da-copy{background:#ef4444;color:#fff;border:none;border-radius:99px;padding:7px 20px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.3px;transition:background .15s;flex:0 0 auto}
+.da-copy:hover{background:#c43838}
+[data-theme="dark"] .da-copy{background:#f8abab;color:#1a1205}
+.da-btns{display:flex;gap:8px;flex:0 0 auto}
+.da-copy-dc{background:transparent;border:1.5px solid #ef4444;color:#ef4444;padding:6px 15px}
+.da-copy-dc:hover{background:#ef4444;color:#fff}
+[data-theme="dark"] .da-copy-dc{background:transparent;border-color:#f8abab;color:#f8abab}
+[data-theme="dark"] .da-copy-dc:hover{background:#f8abab;color:#1a1205}
+@media(max-width:400px){.da-foot{flex-direction:column;align-items:stretch;gap:8px}.da-btns{justify-content:flex-end}}
+/*END-DA-CARDS*/
+/*DA-MASCOT*/
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-sec{position:relative;margin-top:64px}
+.faq-sec>h2{margin-bottom:44px}
+.faq-combo-mascot{width:180px;height:auto;display:block;position:absolute;right:0;top:-24px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+@media(max-width:640px){.faq-combo-mascot{width:130px;top:-8px}}
+/*END-DA-MASCOT*/
+</style>
+</head>
+<body>
+<div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div></div>
+<header>
+  <a class="logo" href="/"><img class="logo-img" src="../../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo"></a>
+                          <nav>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+    <div class="tools-wrap">
+      <button class="tools-btn">Tools &#9662;</button>
+      <div class="tools-drop">
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/><circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/><path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
+        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
+        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
+        <a href="/arabic-calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Arabic Calligraphy</a>
+      </div>
+    </div>
+    <div class="lang-wrap">
+      <button class="lang-pill" id="lang-btn" onclick="toggleLang()">🇺🇸 English ▾</button>
+      <div class="lang-menu" id="lang-menu">
+        <div class="lang-opt active">🇺🇸 English</div>
+        <div class="lang-opt">🇫🇷 Français</div>
+        <div class="lang-opt">🇸🇦 العربية</div>
+      </div>
+    </div>
+    <div class="theme-wrap" onclick="toggleTheme()">
+      <div class="t-track" id="tt"><div class="t-thumb" id="th"><img src="../../images/Icon-white mode-Clavierarabe-enligne.svg" alt="Toggle theme" width="13" height="13"></div></div>
+      <div class="t-lbl" id="tlbl">White<br>Mode</div>
+    </div>
+  </nav>
+</header>
+<a class="back-link" href="/dot-art/">← All Dot Art</a>
+<section class="hero">
+  <div class="hero-badge">⚡ &nbsp;·&nbsp; 15 Pieces &nbsp;·&nbsp; Click to Copy</div>
+  <h1>Monster Dot Art</h1>
+  <p class="hero-sub">Copy 15 monster dot art pieces — cute critters &amp; chibi creatures in Braille dots. Tap Copy and paste into Discord, TikTok or a bio.</p>
+</section>
+<div class="grid-wrap"><div class="da-grid">
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⢠⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠴⠋⣇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡇⠀⠙⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠴⠋⠁⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⠁⡄⠀⠀⠑⠦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣔⣋⠀⠀⠀⣠⠃⠀⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⠀⠹⡀⡤⢄⣀⡟⠳⠦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠊⠀⠀⠘⠒⢲⢶⣇⡀⠀⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠘⣆⡔⢾⠧⣀⠀⠀⠀⠀⠀⠙⣦⠤⠤⠶⠶⠤⠤⣄⡼⠁⠀⠀⠀⣠⠖⠁⢸⠉⠙⣶⠇⠀⠀⠀⣠⠔⢦⠀
+⠀⠀⠀⠀⠀⠀⢻⠀⢸⡀⢈⣳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣳⠀⢠⠏⠀⢀⡟⠀⢀⡔⠋⠀⠠⠈⣆
+⠀⠀⠀⠀⠀⠀⠈⣆⠀⡇⠓⢤⢉⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢦⠘⡇⠀⡇⠀⢀⠞⠀⠀⡎⠀⠀⢀⡇⠀⢸
+⠀⠀⠀⠀⠀⠀⠀⠘⢆⠸⡀⢳⠎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡁⡼⠁⣠⠋⠀⠀⠀⣇⠀⢀⡞⠀⠀⡞
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠣⡙⢺⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⢀⠞⠁⠀⠀⠀⠀⠈⡲⠮⠤⠤⠚⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡇⠀⠀⠀⠀⢸⣶⡄⠀⠀⠀⠀⣶⣿⠀⠀⠀⠀⠀⡟⠁⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀
+⠀⠀⡶⢤⡀⠀⠀⠀⠀⠀⣸⠥⠤⣄⠀⠀⠘⠿⠇⠀⢀⠀⠀⢿⠟⠀⢀⡤⠖⠒⠻⡀⢀⣀⣀⣀⡤⠴⠚⠹⡄⠀⠀⠀⠀
+⠀⣰⠁⡄⠉⣲⡄⠀⠀⠀⡇⠀⠀⠀⢳⠀⠀⠀⠀⠀⢹⠁⠀⠀⠀⠀⡞⠀⠀⠀⠀⡟⠉⠀⠀⠀⠀⠀⠀⠀⠹⡄⠀⠀⠀
+⢠⠃⠀⡇⢸⠁⠀⣠⡀⠀⠘⢦⡀⠀⢸⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⡇⠀⠀⣀⠜⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢧⠀⠀⠀
+⡇⠀⠀⢳⠈⠓⠚⠁⢱⠀⠀⠀⠉⢓⡿⠤⠤⣤⡤⠤⠀⠀⠤⠤⠤⠴⠗⠒⠻⢥⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀
+⢳⡀⠀⠈⢧⠀⠀⢀⡜⠀⠀⠀⢀⠎⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢳⠒⢲⠂⠀⠀⠀⠀⠀⠀⠀⣼⠀⠀⠀
+⠀⠙⠢⠤⠬⢷⡴⠋⠀⠀⠀⠀⠘⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⢸⢧⣏⣠⡤⢶⡇⠀⠀⠀⢀⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠓⠦⠀⠀⠀⢰⢻⡀⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⢠⡧⠏⠈⡆⠀⢀⡞⠀⠀⠀⣠⡾⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⢑⢤⡀⢣⠀⠀⠀⠀⠀⠀⠀⡰⣁⣴⡭⠂⠀⠀⡇⢠⣞⣀⣠⠴⠋⣹⠃⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⠉⠫⣙⠳⣄⡀⠀⠀⣠⠞⢋⢱⠋⠀⠀⠀⢠⠇⠈⠉⠀⠀⣀⡜⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣄⠀⠀⢹⣧⣀⣉⣲⣎⣀⣀⣮⡏⠀⠀⠀⣠⠏⠀⣀⣠⠴⠚⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⠟⠉⢸⡅⠀⠈⡏⠀⢈⡇⠈⠑⣤⠞⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠼⠶⠷⣦⡼⢧⣄⡾⠷⠧⠖⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 1</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠴⠚⡉⠳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⣦
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠞⢁⡴⠋⠙⣆⠹⡄⠀⠀⠀⠀⠀⠀⠀⣠⠞⢁⡏
+⠀⡖⢦⠀⠀⠀⠀⣴⢋⣉⡙⠲⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠋⣰⠋⠀⠀⠀⢸⡄⢷⠀⠀⠀⠀⠀⣠⠞⠁⠀⢸⠁
+⠀⢧⠈⢳⡀⠀⢠⡇⡏⠀⠉⠓⢦⡉⠳⢦⡀⠀⠀⠀⠀⠀⠀⣰⠃⣰⠃⠀⠀⠀⠀⠀⡇⣸⠀⠀⣀⡴⠋⠀⠀⠀⠀⣿⠀
+⠀⢸⠀⢀⠹⣄⠸⣄⡇⠀⠀⠀⠀⢙⣦⣴⠗⠒⠲⠛⠒⠲⢤⠇⢀⠇⠀⠀⠀⠀⠀⠀⡇⣿⠖⢋⣡⠔⠁⠀⠀⠀⠀⢿⠀
+⠀⢸⡆⠀⠑⢬⡳⣾⣿⠀⠀⣠⠖⠋⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⢸⢀⡠⢄⣀⠀⠀⣸⠁⡿⠒⠋⠀⠀⠀⠀⠀⠀⠀⠸⡄
+⠀⢸⠁⠀⠀⠀⠉⠛⣿⣇⡴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⢈⡿⠀⢠⠏⣤⡟⠓⠲⠦⠤⣤⣀⣀⣀⠀⠀⢷
+⢀⡞⢀⣀⣠⣤⠤⠤⠼⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇⡴⢋⡼⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠴⠋
+⠾⣌⡁⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⠵⣏⣇⠀⠳⣄⠀⠀⠀⠀⠀⢀⡞⠁⠀⠀
+⠀⠀⠉⠳⢤⠀⠀⠀⣧⠀⢠⣤⣀⠀⢀⠄⠀⠀⠀⣶⣿⡾⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠀⠀⠈⢳⡀⠀⠀⠀⡟⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⢷⠀⠀⢸⠀⠈⠿⠿⠃⠰⡖⢾⠀⠀⠙⠛⠀⠀⠀⠀⠀⠀⠀⢀⣤⡇⢸⠀⠀⠀⠀⠙⢦⡀⠸⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠘⡇⢠⠛⠶⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⠴⠋⠀⠀⢸⠀⠀⠀⠀⠀⢀⣈⣀⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠧⢤⣄⣀⠀⠙⡦⣴⠶⠤⠄⠀⠀⠀⠠⠒⠋⠉⠉⠒⢤⣀⠀⠀⠀⡜⠀⠀⣠⠖⠋⠉⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⣄⢳⢹⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⡀⠀⡇⢠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡎⡆⢹⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣧⠀⢀⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡀⡼⠙⢦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠋⠘⣇⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠃⠀⠀⠉⠙⠲⠤⣤⠤⠶⠶⠒⠋⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 2</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠫⠑⢤⠀⠀⠀⠀⠀⠀⠀⠆⠀⠀⠀⠀⠀⠴⡖⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠔⠩⠃⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡣⠄⠡⠀⠀⠀⠀⠀⢀⠜⠃⠀⠀⠀⠀⠀⠀⠀⢡⠀⠀⠀⠀⠀⠀⠀⡰⠁⢄⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡁⣐⠉⠑⡀⠀⠀⠀⡺⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠆⠀⠀⠀⠀⠀⡐⠉⢑⠀⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢓⠁⠀⡰⡉⠒⡤⣰⠁⣠⠔⠀⠀⠀⠀⠀⣀⠤⠀⠦⡀⢀⡠⡔⠊⡡⠀⠀⢱⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⢞⠀⠏⣀⠀⠂⢥⠐⠉⢀⠔⠊⠁⠲⠊⠀⠀⠀⢀⡈⠑⠕⠂⢀⡈⠇⢸⠆⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢌⣢⡀⠃⠀⣌⠄⡇⢠⠁⠀⠀⠀⠀⠀⢀⡴⠋⠉⠉⠑⠌⡄⠀⠃⡠⣂⠄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡂⠉⠒⢭⢁⠤⣌⡎⠀⠀⠀⠀⠀⠀⣜⡴⢚⣛⠲⡄⠀⢨⠕⠋⠁⡛⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢥⠀⠀⠀⠈⡼⣿⣿⠀⠀⠀⠀⠀⠀⣟⣾⢻⣿⣷⡄⠀⠈⡄⠀⠤⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠂⠐⠺⠘⢿⣿⣿⠀⠀⠀⠀⠀⠀⣇⢻⣽⣿⡿⡃⠀⠀⠈⢲⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡐⠁⠀⠐⠉⡡⠊⠉⠉⠉⠦⠀⠈⠐⠈⠉⠛⠉⠈⠁⠀⡼⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠧⡀⠀⠃⢀⠈⠁⠀⠀⠈⠁⢀⣀⣤⠚⠁⠀⠀⠀⢀⠔⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡀⣀⡠⠴⡄⠀⠀⠈⠢⠄⣀⡈⠳⢶⡂⡈⣉⡧⠚⠁⣀⡀⠤⠐⠈⠁⠀⠀⢀⠓⣁⡢⢄⢀⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⢠⢤⠷⠃⠀⠉⢪⢂⠀⠀⠀⠀⠀⠈⠁⠒⠭⠭⠥⠐⠋⠁⢇⣄⢀⠀⠀⠀⠀⠠⢂⠊⠀⢈⠢⠳⠄⠀⠀⠀⠀
+⠀⠀⢀⠜⡡⠑⠈⠑⠠⠊⠱⡑⢍⠢⣀⠀⠀⠀⠀⡠⠐⠁⢀⠀⠀⠀⠀⢞⡄⠉⠢⣀⠔⠁⠑⠉⠀⠁⠉⢳⣡⠀⠀⠀⠀
+⠀⡰⡵⠋⠀⠀⠀⠀⠀⠀⠀⠡⠀⠁⠢⠬⢉⠔⠁⠀⠀⠀⢀⠀⠀⠀⠀⠠⢷⡀⠀⠈⢦⠈⠀⠀⠀⠀⠀⠀⢻⣧⠀⠀⠀
+⢰⡽⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⡀⠀⠀⠊⠀⠠⢄⢀⠀⢀⠀⠀⠀⠀⠀⠔⢷⣄⠀⠈⠆⠀⠀⢠⠀⠀⠀⠀⠻⣷⡀⠀
+⣿⠃⡀⠀⣀⠀⠀⢸⠀⠀⠀⠀⠀⢳⡀⠠⠀⠀⠀⠀⡝⠀⡀⠀⠀⠀⠀⠀⠀⠈⣿⠀⠀⠰⠀⠀⠘⠀⠀⢀⡀⠤⠬⠭⢄
+⠖⠁⠀⠀⠀⠈⠢⣸⠀⡀⠤⠀⠀⠄⣣⢀⢃⡀⠀⠀⠢⢄⠈⠐⠀⠤⠄⠀⠐⠀⢹⠄⠀⠀⠄⠀⠀⢀⠔⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡀⠀⠑⠎⠀⠀⠀⠀⠀⠈⠾⠁⠀⠀⠀⠀⠀⡵⢄⠀⠀⠀⠀⠠⠐⢩⡰⠀⡀⡈⢄⡐⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢠⠔⡉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠃⠐⢠⠠⣤⠸⢖⠏⠀⠀⠀⠀⠀⢀⠀⢸⠀⣋⠉⠁⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⡌⠀⠣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠂⠀⠀⠁⠀⡀⠈⠀⠀⠀⠈⠀⡀⡎⠠⠆⠁⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠠⠀⠀⠈⠒⠀⠤⠀⠠⠄⠐⠂⢣⠀⠀⠀⠀⠀⠀⠈⠂⠀⠀⠀⠀⠁⡐⠀⠀⢀⠌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠑⠄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠢⡀⠀⠀⢪⡑⠠⠀⠀⠀⡰⠋⠀⠀⠒⠁⠀⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠁⠒⠂⠠⠤⠄⠀⢠⠒⡠⢊⠔⠀⠀⠀⠯⠠⠔⠒⠉⠃⢄⠀⠈⢵⡀⢡⠬⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠘⠁⠾⡀⠤⢆⡰⠃⠀⠀⠀⠀⠀⠀⠁⠓⠚⠁⠊⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 3</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠖⠛⠋⠉⠉⠓⠒⡤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡞⢉⡇⠳⣄⣀⣀⣀⣠⠜⢰⡉⢓⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠃⢨⣥⣤⠀⠸⡉⠉⢉⡇⠀⣤⣬⡍⠈⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠃⠀⠘⢾⣿⠂⠀⣩⠭⢍⠀⠀⣿⡿⠋⠀⠈⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⠀⣀⡀⠀⠀⢀⣴⣥⣀⣬⣦⡀⠀⠀⢀⣀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡇⠸⣀⡈⠀⠀⠘⢿⡿⠛⢻⡿⠃⠀⠀⢁⣀⠇⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⣺⣧⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⢸⡓⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠫⠊⠡⢿⡀⠀⠀⠀⠀⠀⠀⠠⠤⠂⠀⠀⠀⠀⠀⠀⠀⡿⠌⠳⠙⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣰⠟⠀⠀⢢⠈⠺⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠗⢁⠜⠀⠀⠹⣆⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣼⠋⠑⠢⡀⠀⠳⠒⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠲⠊⠀⢀⠔⠂⠙⣧⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡼⢃⠄⠐⠢⡌⠳⡤⠤⢾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡷⠤⢤⠞⢡⠖⠀⠠⡈⢧⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⡰⢁⠇⡆⡔⢠⠁⠀⠃⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠘⠀⠸⡀⢆⢣⢱⠈⢇⠀⠀⠀⠀
+⠀⠀⠀⢠⠃⠸⠄⡈⡠⠊⠀⢰⣀⠤⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠤⣀⡇⠀⠱⢄⠁⠠⠃⠘⣆⠀⠀⠀
+⠀⣠⡖⠳⢄⣀⠀⢀⣀⢤⠔⠋⣕⠒⡌⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠳⠒⡮⠙⠲⡤⣀⡀⠀⣀⡠⠞⡲⣄⠀
+⣾⣍⢉⠇⡰⠃⢀⠤⡄⢸⠀⠳⢔⡶⠳⡙⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⢋⠟⢶⡦⠊⠀⡇⡤⢤⢀⠈⢆⠪⡉⡨⣷
+⠘⢷⣄⣰⠁⠸⠄⠁⠇⠈⣦⡴⠋⠀⠀⢳⠀⠑⠢⠤⠀⠀⠀⠀⠀⠠⠔⠊⠀⡾⠀⠀⠙⠶⣤⡇⠡⠈⠨⠀⠈⣆⣠⡼⠃
+⠀⠀⠈⠛⡷⠶⢶⠶⠚⠋⠁⠀⠀⠀⠀⢸⠂⠤⠤⠀⠀⠀⣀⣀⣀⣠⠤⠤⠰⣇⠀⠀⠀⠀⠈⠙⠓⠶⣶⠶⢾⠛⠉⠀⠀
+⠀⠀⠀⣼⠁⢠⠏⠀⠀⠀⠀⠀⠀⠀⠀⣾⠲⠶⢤⣤⣤⣤⣄⣀⠠⠤⠤⠶⠖⣿⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠈⣧⠀⠀⠀
+⠀⠀⣰⠃⢀⡎⣾⣫⢢⠀⠀⠀⠀⠀⢀⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡀⠀⠀⠀⠀⠀⡔⡍⣷⢱⡀⠈⣆⠀⠀
+⠀⣰⠇⠀⡾⠀⠓⠐⠀⠀⠀⠀⠀⠀⢸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⠀⠀⠀⠀⠀⠈⠊⠚⠀⢷⡀⠘⣦⠀
+⠰⡏⠀⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠈⣧⠀⢸⠇
+⠀⢹⡞⠁⢸⣤⠂⢢⠀⡀⣀⠀⠀⡾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⡀⠀⢀⢀⠀⡴⠐⣤⡇⠈⢳⡏⠀
+⠀⠸⣀⣀⣾⠃⠀⢸⡟⠀⢸⡆⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣧⢠⡇⠀⢻⡇⠀⠘⣷⣀⣀⡇⠀
+⠀⠀⠈⠉⠙⠤⣤⠾⢧⣀⡼⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢧⣀⡴⠷⣤⠤⠊⠉⠁⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 4</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠔⢩⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⢤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠃⠀⡘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠁⠀⠸⠀⠀⠀⠀⠰⣤⣀⠀⣀⡀⠴⠓⠒⢢⣧⠊⡹⠀⠀⠀⢀⣀⠀⡔⠐⢆⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠊⡀⠀⠀⡇⠀⠀⠀⢀⡇⠈⡢⠋⠀⠀⠀⠀⠀⠀⠀⠙⠓⣊⠝⠛⠉⢩⠁⡇⠀⠸⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡠⢊⠔⡟⢀⠆⢠⠁⠀⠀⠀⠈⡟⢻⠁⠀⠀⠀⢀⣴⢶⢶⠄⠀⠘⢤⣤⣤⢤⣼⢀⠃⢠⡀⢃⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⢊⠜⠁⡜⢀⠎⢸⢸⠀⠀⠀⠀⠀⡻⠗⠒⠒⠀⠀⠸⢸⣘⣸⠃⠀⠀⣇⡀⠀⡞⠀⡸⢀⢸⢣⠘⡀⠀
+⠀⠀⠀⠀⢀⠔⡕⠁⠀⢰⠁⡜⠀⢸⢸⠀⠀⠀⠀⠸⠓⠀⠀⠒⠀⠀⠀⠀⠀⣀⡞⠉⠢⢹⠉⠉⠀⢠⠃⣾⠀⠀⠆⠇⠀
+⠀⠀⠀⢠⢊⠎⠀⠀⠀⡇⢰⠁⠀⠘⠀⡀⠀⠀⠀⠰⣲⠦⡶⡶⣦⠠⣴⠞⢛⡟⠀⠀⡰⣸⠀⠀⢀⠎⡸⠀⠀⡆⠸⢸⠀
+⠀⠀⣠⢣⠃⠀⠀⠀⢸⠀⡌⠀⠀⠀⡇⠇⠀⠀⠀⠀⠉⠀⢡⡧⡀⠛⣠⣶⠟⢀⡠⠞⠁⡏⠀⢀⠎⡰⠁⠀⠀⡇⠀⠇⡆
+⠀⢠⢃⠇⠀⠀⠀⠀⡌⠀⠃⠀⠀⠀⢱⠸⠀⠀⠀⠀⠀⠀⠘⢝⠛⠛⣋⠥⠚⠁⠀⠀⠀⠇⡠⢃⡜⠁⠀⠀⠀⠁⠀⢸⠇
+⠀⡆⡌⠀⠀⠀⠀⠀⡇⢸⠀⠀⠀⠀⠈⡆⢃⠀⠀⠀⠀⠀⠀⡠⠋⠉⡆⠀⠀⠀⠀⠒⢸⠞⡡⠊⠀⠀⠀⢰⢰⠀⠀⠈⣼
+⢸⢰⠁⠀⠀⠀⠀⠀⡇⢸⠀⠀⠀⠀⠀⠰⡈⢆⣀⠠⠤⢒⠞⠁⠀⠀⠄⠀⠀⠀⠀⠀⢸⠊⠀⠀⠀⠀⠀⢸⠸⠀⠀⠀⣿
+⠈⡈⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠱⠀⡀⢤⡴⠃⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⠀⠀⠀⡈⡆⠀⠀⠀⣿
+⠇⡇⠀⠀⠀⠀⠀⠀⢁⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠋⠀⠀⠀⠀⠀⠤⠀⣀⠀⠀⠀⢀⣇⡠⠔⠒⢢⠀⠀⣿⠀⠀⠀⠀⣿
+⢰⡇⠀⠀⠀⠀⠀⠀⠸⣄⠀⠀⠀⠀⣀⣀⡠⠊⠀⠀⠀⡀⠀⠀⠠⠒⠉⠈⢱⠀⠀⠜⠁⠀⡄⠀⠀⢃⣰⠇⠀⠀⠀⠀⡟
+⠸⡇⠀⠀⠀⠀⠀⠀⠀⢿⡠⠔⠊⠉⠀⡜⠁⠀⠀⠀⠀⠇⠀⠀⠀⠐⠀⠀⠀⢇⠀⢠⢀⡴⡇⠀⠀⡜⡍⠉⠑⠢⡀⢸⠇
+⠀⣧⠀⠀⣀⠤⠔⠒⠈⠉⠀⠀⠘⡍⡙⠀⠀⠀⠀⠀⠀⠘⣄⢀⡤⠊⡇⠀⢸⣘⠀⢸⣁⠀⣄⣰⡴⠷⠁⠀⠀⠀⠱⡾⠀
+⠀⠸⡔⠊⠀⠀⠤⢄⠀⢸⠑⠢⣀⢼⠁⠀⠀⠀⠀⠀⠀⠈⠉⠻⣦⣠⠧⠺⠎⠋⠀⢸⠀⠙⡄⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀
+⠀⠀⠀⡰⢣⣀⠤⠤⠓⠚⠒⠉⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢢⠉⠀⠀⠐⠀⠇⠀⠀⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡠⠓⠒⠃⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡆⠀⠀⢀⠞⠀⠀⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢠⠎⠀⠀⡴⢳⠀⠀⠀⠀⠀⣀⠠⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠁⠀⢠⠋⠀⠀⣀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡎⠀⠀⠀⠑⠚⠀⣠⠀⡊⠀⠠⡀⠀⠘⡄⠀⠀⠀⠀⣀⣀⣀⣀⣠⣎⢀⡴⠁⠐⠂⠙⡶⣿⢟⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⡇⠀⠀⠀⠀⠀⠰⣁⡇⠱⣶⡎⠉⠉⠀⠈⢇⡀⠀⠀⢀⠴⢦⠭⢶⠒⢿⠂⠠⠤⠤⠼⠤⠌⡦⠧⠇⠀⠀⠀⠀⠀⠀⠀⠀
+⠘⣄⠀⠀⠀⠀⠀⠀⠀⠀⠃⠜⠉⢺⢳⠤⢄⣈⡑⠒⠚⠠⢌⡆⠤⠗⠒⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⠓⠤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠘⠚⠓⠢⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠉⠒⠒⠠⠤⠤⠤⠀⠀⠀⠀⠤⠀⣀⣀⠀⠈⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠲⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 5</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⢀⡴⣋⣙⠲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡾⣸⠁⠈⠙⢮⡳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⣚⠽⠓⢿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣸⠁⡇⠀⠀⠀⠀⠳⡝⣶⣄⠀⠀⠀⠀⠀⠀⠀⢀⡴⡶⣫⠞⠁⠀⠀⢸⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡏⠐⡇⠀⠀⠀⠀⠀⠹⡄⢸⣄⣀⣀⣠⣤⡄⢀⡞⢀⡼⠁⠀⠀⠀⠀⢸⢠⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢷⡄⡇⠀⠀⠀⢀⡤⠖⠛⠉⠁⠈⠁⠀⠈⠛⠚⠦⣾⡀⠀⠀⠀⠀⠀⡞⣼⡤⠴⠖⠒⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣇⢹⠀⣠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⣄⠀⠀⡼⠹⡧⠀⠀⠀⠀⠀⠉⠙⠲⢤⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠸⣌⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⡼⢁⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀
+⠀⢠⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇⠀⠀⠀⠀⠀
+⢀⡏⠀⠀⠀⠀⢀⠀⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢠⣤⡀⠀⠀⠀⢸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡟⠀⠀⠀⠀⠀
+⠈⣿⠀⠀⠀⠀⠹⢿⣿⣿⠀⢀⠠⣶⠄⡀⠀⠀⢿⣿⡿⠃⠀⠀⠀⢸⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠖⠦⠛⢦⣄⣀⣀⡀
+⠀⢿⣄⠀⠀⠀⠀⠀⣩⠤⠴⠁⠀⠀⠀⠈⠳⢄⣀⠉⠀⠀⠀⠀⠀⣈⡇⠀⠀⠀⠀⠀⠀⠀⢀⣠⠎⠀⠀⠀⠀⠀⠈⠁⣹
+⠀⠀⠈⠷⠖⢦⣀⠈⠁⠀⠀⠀⠀⠀⠀⠀⡀⠀⠈⠒⠤⢤⣠⣠⠾⣛⠁⠀⠀⠀⠀⠀⠀⢰⠃⠀⠀⠀⠀⠀⠀⠀⠀⣰⠃
+⠀⠀⠀⠀⠀⢀⣨⢭⠉⠉⢉⠀⠀⠀⠀⠀⡉⠉⢻⢛⣻⣉⠁⠀⠀⠈⣳⡄⠀⠀⠀⠀⣀⡏⠀⠀⠀⠀⠀⠀⠀⠀⣨⠟⠀
+⠀⠀⠀⠀⠀⡿⠀⢸⠀⠀⠀⠣⢄⠀⡠⠒⠁⠀⢼⠏⠀⠈⢳⡄⠀⠀⣧⠙⢦⡀⢀⣀⡇⠀⠀⠀⠀⠀⠀⠀⠐⣺⠅⠀⠀
+⠀⠀⠀⠀⢸⡁⠀⠸⣄⠀⠀⠀⠀⡄⠀⠀⠀⠀⣸⠀⠀⠀⠘⡆⠀⣴⠃⠀⠀⠉⠓⠋⠉⠙⠒⠒⠲⠶⠖⠒⠋⠁⠀⠀⠀
+⠀⠀⠀⠀⣀⣧⣀⡤⣼⠦⠤⠄⠀⣇⡀⠀⠤⠴⣇⢀⣀⣀⣰⣧⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢸⣅⣠⡤⠴⢧⣤⣤⠤⠞⠁⠳⣤⣀⣤⠼⠶⠦⠤⢤⣤⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 6</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠚⠩⢍⡉⠉⠉⠐⠒⠤⢄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⡀⠀⠀⠀⠀⠈⠐⢄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢱⠀⠀⠀⠀⠀⠀⠀⠑⢄⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⣀⠀⠀⠀⠀⢀⠔⣒⠂⣊⢩⠠⣄⠈⠉⠯⠤⢠⡤⢀⠀⠒⢁⣀⣀⡀⠀⠀⠀⠀⠀⠀⣣⠀⠀
+⠀⠀⠀⠀⠀⠈⠉⢋⠓⠈⠣⠀⢀⢀⣀⠈⠆⡄⣄⠻⣏⡹⠊⠀⠀⠐⠮⠁⡀⠀⠈⠢⡀⠀⠀⠀⠀⠀⠉⠓⠶⡢⠇⠑⢄
+⠀⠀⠀⠀⠴⠖⡆⠌⢮⡑⢤⠙⡐⠀⠀⠁⠀⣈⠈⣙⠞⣙⠂⠀⠀⣲⠊⠉⠣⣄⠀⠀⢱⠀⠀⠀⠀⠀⠀⢀⣠⡪⠄⢤⣢
+⠀⠀⠀⠀⠀⠀⠈⠁⠀⠉⠈⠀⠀⠀⠀⠀⠀⣈⣭⣢⡧⠚⠀⢀⣄⡀⠀⠀⠀⠀⠑⢤⠀⠀⠀⠀⠀⠀⢔⠟⠉⠀⠀⠀⠈
+⠀⠀⣠⡤⠖⠚⠛⠛⠛⠛⠛⠓⠲⠦⣤⠄⡀⠣⠬⠓⠒⠒⠋⠉⠀⠈⠓⠄⠀⠀⠠⠀⠑⠄⠀⠀⠀⡐⠁⠀⠀⠀⠀⠀⠀
+⠔⠉⠀⠀⠀⠉⠁⠢⠀⠀⠀⠀⢀⣀⣀⣉⣒⣄⡊⢽⠁⠀⠀⠀⠀⠀⠀⠈⡆⠀⠀⠀⠀⠬⢆⠀⡔⠀⠀⢀⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠤⠂⠉⢀⡀⠀⠀⠀⢀⠤⠚⠁⠪⢶⠄⣀⠀⠀⠀⠀⢹⢀⡀⠀⠀⠀⠘⣴⠀⠰⢄⠠⢟⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⢄⡔⠁⠀⠀⠀⠀⠀⠑⠄⠀⡨⠵⠒⠎⠈⠃⠀⠀⠀⠀⡇⠀⠀⢆⠁⡻⠁⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠢⠀⠀⢀⣀⠤⠊⠀⠀⠀⠀⠀⠲⠤⡀⠀⠤⠋⠲⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣀⠀⠠⠤⠤⣀⡀⠀⠀⠀⠀⠀⡴⠚⠓⠤⢜⡟⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⠔⠩⡄⠀⠀⠀⠀⠐⡾⠉⠁⠒⠀⠀⠳⠤⢴⡆⡗⠚⢦⡿⢄⠀⠀⠀⡠⠃⠀⢀⡴⠄⡀⣨⠢⠐⠄⠀⠀⠀
+⠀⠀⠀⣴⠅⠀⡠⠔⠒⠒⠓⠦⣄⠀⠀⠀⢠⠂⠀⠀⠀⠀⠀⠁⢀⡨⢤⡀⠀⠉⠉⠈⠁⡰⠁⠀⠎⣟⣃⣶⢤⠂⠀⠀⠀
+⠀⠀⢀⡇⠀⡐⠀⠀⠀⠀⠀⠀⠀⠙⠲⡶⠁⠀⠀⠀⠁⠀⣠⠔⠳⣄⠀⠈⠐⠀⠀⣠⠞⠀⠀⠀⠞⠀⠀⣯⠎⠀⠀⠀⠀
+⠀⠀⠀⡇⠀⢇⠀⠠⡄⠀⠀⢐⠆⠀⡸⠀⡶⠄⠀⠀⢀⠄⠙⠢⣀⠀⠁⠐⢀⡠⠞⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀
+⠀⢀⡀⠙⠢⠤⠭⠭⠙⢃⡠⠋⠀⢀⠃⠀⠀⢀⠀⣰⠃⠈⠉⠒⠒⠲⡂⠈⠁⠀⢤⠈⡆⠀⠀⠀⠀⠀⠀⠀⡰⣡⠊⠀⠀
+⠀⠀⣠⡆⠀⠀⢀⠀⠀⠀⠀⠀⡰⢲⣣⣈⡆⢈⡶⠁⠀⠀⠀⠀⠀⢀⡹⠀⠀⠀⢀⢀⠇⠀⠀⠀⠀⠀⠀⠀⢹⢀⣆⠀⠀
+⠀⢰⢹⡀⣀⢠⠻⠀⠀⠀⠀⠀⡇⠀⡝⠛⠊⠁⠀⠀⠀⠀⠀⠀⠀⠣⡀⠀⢤⠮⠟⠋⠀⠀⠀⠀⠀⢢⠸⡐⠱⠻⠉⠀⠀
+⠀⠘⠾⢦⠐⠀⠱⠀⠀⠀⠀⢠⣃⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⢰⠀⠀⠀⠀⠀⠀⠀⡜⠘⣴⡃⠀⠀⠃⠀⠀
+⠀⠀⠙⡟⠈⢑⠜⠀⠀⢰⠀⡿⠀⣍⠁⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⢗⢺⠳⠶⠀⠀⠀⠓⢼⠢⠵⢀⣨⡄⠀⠀
+⠀⠀⠀⠀⠈⠁⠀⠀⠀⠈⠠⠃⡼⠉⢦⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠃⠸⠦⡆⠇⠀⠀⠀⠀⠑⠒⠉⠀⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 7</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⡄⠀⠀⠀⠀⠀⡞⢆⡠⡀⠀⠀⠀⣸⣢⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢧⠜⠲⢄⡀⠘⢣⡇⢸⠃⢱⣀⠀⣰⣁⡈⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢆⠀⠆⢉⡹⠭⣌⡽⡀⠀⣆⡹⠓⠢⣈⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⣀⣈⣳⣤⠋⠀⠀⠈⠳⡈⠉⢨⠃⠀⠀⠘⣀⣀⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢄⡀⠀⠘⢢⠤⣤⣀⠀⢱⠀⢸⠀⣠⣖⢺⠁⡠⠃⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠤⠬⠓⠀⣇⠋⡎⠋⢃⠀⠀⠀⢠⡇⢸⣿⠯⢠⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠒⠀⡄⠘⠧⠧⣇⠼⡠⠄⠒⠚⠷⡞⠙⠖⠁⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣔⢱⠤⣀⡀⠀⠠⢄⡐⠂⠀⠘⣹⠞⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡠⡨⡀⠉⠉⢲⡬⣉⣉⠝⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠇⠀⠠⣀⠀⣀⣣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⠤⠒⠚⠏⠲⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠛⣄⣀⠣⠀⠀⠀⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡰⠁⠀⣠⣤⡒⠒⠚⢢⢲⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⣀⠀⠀⢀⡄⠀⢱⡄⠀⠱⡀⠀⠀⠀⠑⢦⡀⠀⠀⠀⠀⠀
+⠀⣷⠀⠀⠀⠀⠈⢉⠦⡠⠑⠨⣶⠀⠀⠀⠀⠀⡤⣀⡠⠔⠓⠚⢋⠛⢺⣘⣄⡪⠼⢔⠊⠘⢄⠀⠀⠀⠀⠈⠲⣄⠀⠀⠀
+⠚⠥⣀⣀⡠⠔⠳⠃⠀⠱⡠⠔⠄⣣⡀⠀⠀⢀⠗⠁⠀⠀⠀⢸⠀⠀⠀⠀⠀⠙⡖⡎⠢⡀⣀⠱⡂⠈⠉⠁⠀⠈⠣⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠛⡅⠀⣯⠋⠀⠔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠳⡀⢿⣄⠀⠈⠄⠀⠀⠀⠀⠀⠱⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡷⠂⠉⠀⢿⣧⡇⠀⠀⣇⠀⠀⠀⠀⢀⠤⠁⠀⠀⠤⠁⠁⢹⠹⣙⡦⠒⠊⡄⠀⠀⠀⠀⠀⢣
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡇⠀⢀⠀⠀⡹⠀⠀⠀⠀⢀⡀⣀⢀⠊⠀⠀⠀⡔⠀⠀⠀⠀⠉⠴⠁⠀⠀⠀⠀⠀⠀⠀⠀⢸
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡅⡔⠃⠀⠀⢰⡀⠀⢠⠊⠉⠢⡀⠈⠑⢄⠀⠀⠈⠀⠀⠀⠀⠀⣂⠀⠀⠀⠈⠀⠀⠒⠒⠀⠸
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣰⡁⢀⠀⠀⠀⠑⠀⠂⠀⠀⠀⠀⣩⠃⠐⢷⣄⠀⢀⠄⠀⠀⠀⠘⢤⠀⢀⠃⠀⠀⠀⠀⢠⠃
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠜⠁⠀⠀⠀⠀⢸⡀⠀⠀⠀⡰⠁⠀⠀⠀⢙⠗⠁⠀⠀⠀⠀⠀⠀⡡⠂⠀⠀⠀⠀⡠⠃⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠀⠀⠀⠀⣠⠔⠁⠀⢈⡨⢯⠀⠀⠀⠀⠀⠸⡀⠀⠀⠀⣀⠴⠐⠚⠢⠀⢀⣀⠤⢺⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡆⠀⠀⠈⡗⠒⠒⢚⠉⠀⢸⠀⠀⠀⠀⠀⠀⠱⡀⠀⠀⢩⠉⠒⠒⠒⠊⢹⠀⠀⢰⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣄⠀⠀⢣⣀⣀⣸⠀⠀⣇⠀⠀⠀⠀⠀⠀⠀⠑⣄⠀⠀⢣⣀⣀⠀⠀⢸⠀⠀⣌⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠭⢄⣀⠠⠄⣹⣵⠤⠵⠤⢽⠀⠀⠀⠀⠀⠀⢰⠭⢄⣀⠠⠄⣹⡵⠀⠧⠤⠽⠦⠼⠄⠀</pre></div><div class="da-foot"><span class="da-name">Monster 8</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠖⠄⠀⠀⠀⠀⠀⠀⠀⠔⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠈⢆⠀⠀⡀⢀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠢⣀⠉⠉⠑⠒⣴⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣀⢤⠃⠀⠀⠀⠀⠀⠈⢀⡤⠤⡀⠀⢨⠚⠢⡀⣀⡀⠀⠀⠀⠀⠀⠸⡄⠀⠀⠀⢀⣴⠟⠁⢀⣀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠉⠀⠀⠐⠆⠀⢀⠀⠀⢸⡀⠀⡸⠀⠸⡀⢠⠛⠶⠃⡄⠀⠀⠀⠀⠀⢿⡀⠀⣴⠟⡁⡴⡺⠛⢁⠀⠀⠀
+⠀⠀⠀⢀⠀⠀⠀⠀⠀⠐⠄⠀⠀⠈⠒⠄⢉⠉⠁⠀⠀⣀⠠⠪⠀⣤⠆⠀⠀⠀⠀⠀⢸⣇⣼⠟⠀⡪⠊⠀⠀⢸⠄⠒⡉
+⠏⢅⠢⣀⡹⢦⡀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠤⠊⠀⠀⢀⣀⠠⠄⠀⠒⠻⢧⠊⠊⠀⢀⠄⢻⣼⠁⡐⠀
+⠈⢂⠑⢶⣤⡀⠹⣦⡀⠀⠀⠀⠀⠀⠀⠉⠑⠲⠲⠶⠖⠚⠋⠑⠒⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠉⢢⠐⢁⠔⠁⣞⣴⠆⠀
+⡔⠀⠀⠀⠁⡙⣕⠌⣫⡢⡀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⢱⠁⠘⣦⠟⠁⠀⠀
+⠈⠒⠤⣀⠀⠈⠊⠳⣌⠻⣄⣧⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⠀⠀⠀⣠⠆⠀⠀⠀⠀⡶⣇⡞⠀⠀⠀⠀
+⠀⠀⠀⠀⠉⢲⡄⠵⡘⠄⠈⢻⡀⠀⠀⠀⠀⠀⠠⠀⠀⠀⠀⢀⡠⠤⠔⠚⠒⠒⠋⠉⠀⠀⠀⠀⠀⠀⠁⣿⠵⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠐⢄⠛⢊⠼⠀⣇⠀⠀⠀⠀⠀⠀⢑⡤⠖⠉⠁⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡿⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢱⡼⠃⠀⠘⢦⠀⠀⠀⢀⠔⠉⠀⠀⠀⠀⠐⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡘⠁⠀⡄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢠⠰⠊⠁⠀⠀⣠⠴⠇⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡔⠓⢄⠀⠀⠶⠀⠀⠀
+⠀⠀⠀⠀⠀⠐⠎⠤⠐⢮⢋⠄⠀⣀⣀⡤⠁⠀⠀⠀⢀⣀⣀⣀⣐⣡⣀⣀⣀⣀⣀⣀⡀⠠⢔⠊⢀⢸⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠡⠐⠆⢉⡀⠙⠀⠄⠉⠄⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 9</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠞⣽⡃⠀⠀⠀⢀⣀⣀⡀⢀⡴⢻⠃⣀⣀⣀⡀⠀⠀⢸⣯⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⢟⣴⣇⠀⢀⣠⡤⠬⣧⠉⠻⠀⠸⠏⢡⡾⠭⢥⡀⠀⣸⣮⡻⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⢸⡶⣢⠼⣆⣉⠭⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⢭⣉⣰⠧⣔⢶⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢸⣿⣿⠀⠀⠀⠘⣧⣾⡿⠋⠁⠀⠀⡀⢀⡠⠤⠴⠤⢤⡀⠀⠀⢤⡈⠙⢿⣷⣼⠃⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⡿⠋⠀⠀⠀⢀⡞⡴⠋⣠⣤⣤⣤⣄⠈⢣⡀⠀⠈⠢⡀⠙⢯⠀⠀⠀⢿⣿⡿⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡞⠁⠀⠀⠀⠀⢸⢸⢁⣾⣅⢀⣿⣿⣿⣷⡄⣇⠀⠀⠀⠹⡀⠈⢣⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣀⠔⠋⡽⠀⠀⠀⠀⠀⠀⢸⢸⢸⣿⣿⣿⣿⣿⣿⣿⡇⡏⣠⠀⠀⠀⠀⠀⠀⢯⠙⠢⣄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⠞⠁⠀⢰⠃⡎⠀⠀⠀⠀⠀⠀⠀⠳⣿⣿⣿⣿⣿⣿⣿⡟⠑⠃⠀⠀⠀⠀⠀⠀⠸⡄⠀⠈⠳⡀⠀⠀⠀⠀
+⠀⠀⠀⡰⠋⠀⠀⠀⢸⠀⡇⠀⠘⢩⣅⡀⠀⠀⠐⠛⠉⠉⠉⠉⠉⠙⠂⠀⠀⢀⣠⣍⠑⠀⠀⠀⡇⠀⠀⠀⠙⢆⠀⠀⠀
+⠀⠀⡼⠁⠀⠀⠀⠀⣿⠀⡇⠀⠀⣾⢸⡭⠗⢲⠤⣤⣄⣀⣀⣀⣠⠤⡤⢶⣊⡏⠀⢸⠀⠀⠀⠀⣿⠀⠀⠀⠀⠈⢧⠀⠀
+⠀⡼⠁⠀⠀⠀⠀⠀⣯⠆⠘⠀⠀⢻⠀⠀⠀⠘⠞⠁⠈⠦⠋⠀⠙⠶⠁⠀⠙⠁⠀⡏⠀⠀⠀⠸⣽⠀⠀⠀⠀⠀⠈⢧⠀
+⣸⡅⠀⠀⠀⠀⠀⠀⢹⣦⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⣤⡟⠀⠀⠀⠀⠀⠀⢨⣇
+⢻⠁⠀⠀⠀⠀⠀⠀⢠⣿⢠⡄⠀⠀⠙⢆⠀⠀⠀⣀⡤⠤⠤⣴⠒⠦⣄⠀⠀⣠⠋⠀⠀⢠⡄⣿⡄⠀⠀⠀⠀⠀⠀⠈⡟
+⠘⣆⠀⠀⠀⠀⠀⣰⣾⠙⠋⠙⢦⡀⠀⠀⠙⠢⢾⣁⡀⠀⠀⠈⢆⠀⠈⢷⠚⠁⠀⢀⡴⠃⠙⠋⣷⣆⠀⠀⠀⠀⠀⢰⠃
+⠀⠘⠦⣠⣤⡤⡞⠉⡿⠀⠀⠀⠀⠙⠢⣄⡀⠀⠀⠀⠹⡄⠀⠀⠘⠀⠀⠈⣇⣠⠖⠋⠀⠀⠀⠀⢿⠉⢳⢤⣤⣄⠴⠃⠀
+⠀⠀⠀⢧⢸⡳⣷⠀⠀⠀⠀⠀⠀⠀⢠⠏⠉⠓⢶⠤⠤⡇⠀⠀⠀⠀⠀⠀⣯⠹⡄⠀⠀⠀⠀⠀⠀⠀⣼⢞⡇⡼⠀⠀⠀
+⠀⠀⠀⠀⠙⠳⠀⠀⠀⠀⠀⠀⠀⢠⠏⠀⠀⠀⢸⡄⠀⡇⠀⠀⠀⠀⠀⠀⡏⠀⢹⡀⠀⠀⠀⠀⠀⠀⠀⠞⠋⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⢸⡇⠀⡇⠀⠀⠀⠀⠀⣰⠁⠀⠀⣇⠀⠀⠀⠀⠀⠀⠀⠀⣀⣾⣧⣀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⢳⡀⠙⢄⣀⠀⣀⡴⠃⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⠏⠀⠀
+⠀⠀⠀⠀⢀⡠⢤⣖⡶⠶⢾⡉⠙⠀⠀⠀⠀⠀⠀⠀⠱⡀⠀⢨⠏⠁⠀⠀⠀⠀⠀⠈⠉⢉⠷⠶⣖⣲⠤⣄⡀⠀⠀⠀⠀
+⠀⠀⠀⣴⣋⣀⣠⣋⣀⣀⣀⣹⣀⣀⣀⣀⣀⣀⣀⣀⣀⣷⠀⣎⣀⣀⣀⣀⣀⣀⣀⣀⣠⣏⣀⣀⣀⣹⣄⣀⣙⣆⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 10</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⢿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻
+⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠒⢲⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣰⣫⣈⢳⡄⠀⠀⠀⠀⠀⠀⠀⢸⣷⣷⡆⡧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢿⣿⣿⢠⡇⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣷⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠻⡿⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠐⡇⠀⠀⢀⠀⠀⡇⠀⡀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢷⠀⠀⢸⡀⠀⣇⠀⡇⠀⠀⠀⣸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⢧⣀⣠⠗⠛⠉⠙⠓⢦⡀⣰⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠁⠀⠀⠀⠀⠀⠀⠙⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⡴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢰⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⢸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣠⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠈⠻⢦⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⡼⢹⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠦⣄⣀⠀⠉⠉⣳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⡞⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠙⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡞⢀⡤⡏⠀⠀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡶⠆⠀⠀⠀⠀⠀⠈⠙⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠉⠉⠀⡇⠀⠐⠋⠳⢤⣀⠀⠀⠀⠀⠀⢀⣠⠴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣧⠀⠀⠀⠀⠀⠈⠉⠛⠒⠚⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠸⡆⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠘⣆⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⣰⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠘⣦⡀⠀⠐⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⡏⠹⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣆⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣧⠀⢠⠟⠲⢤⣀⣀⠀⠀⠀⣀⣀⣠⠴⠚⢳⡀⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢸⣴⠋⠀⠀⠀⠀⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠉⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 11</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⡶⠶⠟⠛⠛⠛⠻⠶⢶⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡾⣛⠩⠶⠀⢀⣀⣤⣤⣤⣀⡀⠀⠀⠉⠛⢷⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡟⢋⡼⠋⢀⣴⡾⠛⢉⢀⣀⡀⠉⠙⠷⣦⡀⠀⠀⠈⠻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡾⢋⣴⠏⠀⠠⣿⠋⣠⡾⢋⣀⣀⣀⡀⠀⠀⠈⢿⠂⠀⠀⠀⠈⢿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⡟⢡⡾⠁⠀⠀⢰⠇⢰⡏⣰⣿⣿⣿⡿⠃⠀⠀⠀⠈⡇⠀⠀⠀⠀⠀⢻⣆⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢠⡟⢀⡿⠁⠀⠀⠀⢸⠀⠀⠀⣿⣿⣿⣿⣿⣿⣟⠂⠀⠀⣿⠀⠀⠀⠀⠀⠀⢻⣆⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣿⠁⠾⠁⠀⠀⠀⠀⠸⣆⠀⠀⠻⣿⣿⣿⣿⣿⡟⠀⠀⢠⡇⠀⠀⠀⠀⠀⠀⠀⢿⡄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣸⠇⠀⠀⠀⠀⠀⠀⠀⠄⠹⣆⠀⠀⠈⠙⠛⠛⠉⠀⠀⣠⠟⢀⠀⠀⠀⠀⠀⠀⠀⠘⣷⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣤⣤⣾⡟⠀⠀⠀⠀⠈⢦⡈⠛⠦⣤⣀⣀⣀⣠⡴⠞⠁⡠⠂⠀⠀⣄⠀⢸⣷⣤⣤⣿⠄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣀⣴⣾⠇⠀⠀⣤⠀⠀⠀⠉⠂⠀⠀⠀⠀⠀⠀⠀⠔⠊⠀⠀⠀⠀⢹⡄⠈⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⡾⠋⢁⣿⠀⠀⠀⡇⣀⢰⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⣧⠀⢻⡎⠙⢷⣄⠀⠀⠀⠀⠀
+⠀⠀⠀⣠⡾⠋⠀⠀⢸⡇⠀⠀⢸⠷⠻⠋⠀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⠳⣄⣿⢦⣼⡄⠸⣧⠀⠀⠙⢷⣄⠀⠀⠀
+⠀⠀⣰⠟⠀⠀⠀⠀⣿⢁⣄⠀⠀⠀⠀⣠⣾⡷⢶⡶⣶⣶⡶⣶⣶⢶⣶⢶⣿⢦⡀⠁⠀⠀⢠⡀⣿⡀⠀⠀⠀⢻⣆⠀⠀
+⠀⣰⡏⠀⠀⠀⠀⠰⡿⢾⡏⠀⠀⠀⠈⠁⣿⠀⢸⠀⢸⣿⠀⣿⣿⠀⡇⠀⣿⠀⠉⠀⠀⣀⢸⡿⢾⡇⠀⠀⠀⠀⢹⣆⠀
+⢠⡿⠀⠀⠀⠀⠀⠀⠀⣼⠇⠀⠀⠀⠀⠀⣿⠀⢸⠀⢸⣿⠀⣿⣿⠀⡇⠀⣿⠀⠀⠀⠀⢰⡌⣿⠀⠀⠀⠀⠀⠀⠀⢿⡄
+⣸⡇⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⣿⠀⢸⡀⢸⢿⠀⣿⣿⠀⡇⠀⣿⠀⠀⠀⠀⢸⡇⢿⡀⠀⠀⠀⠀⠀⠀⢸⣇
+⣿⠀⠀⠀⠀⠀⠀⠀⢰⡟⠀⠀⠀⠀⠀⠀⢿⡀⠈⠙⠋⠈⠛⠁⠈⠛⠁⠀⣿⠀⠀⠀⠀⠀⣷⢸⡇⠀⠀⠀⠀⠀⠀⠀⣿
+⣿⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⣠⢀⡀⠀⠀⢸⣇⠀⠀⣠⠊⣉⠑⣆⠀⠀⢰⡟⠀⠀⠀⠀⣤⠉⠈⣷⠀⠀⠀⠀⠀⠀⠀⣿
+⣿⡀⠀⠀⠀⠀⠀⠀⣿⠀⣰⣿⢸⡇⣤⢀⠀⠹⣧⣸⠉⣿⠉⣿⠉⣇⣴⠟⠀⠀⠀⢀⠀⣿⣧⡀⣿⡀⠀⠀⠀⠀⠀⠀⣿
+⢸⣷⣦⣄⠀⠀⠀⠀⠿⠞⠋⣿⢸⡇⣿⠸⠂⠀⠈⠙⠻⠿⠶⠿⠿⠛⠁⠀⠀⠀⠀⢸⠀⣿⠉⠻⠿⠇⠀⠀⠀⣠⣴⣾⡇
+⣾⣿⣿⣿⣷⣶⣦⣄⡀⠀⠀⣿⢸⡇⠉⠀⠀⠀⠀⠀⠀⠠⣤⡤⠀⠀⠀⠀⠀⠀⠀⢘⠀⣿⠀⠀⢀⣠⣴⣶⣾⣿⣿⣿⣷
+⣿⣿⣿⣿⣿⣿⡟⠻⣿⡄⠀⣿⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡨⠅⣿⠀⢰⣿⠟⢻⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡀⠉⠁⠀⣿⣤⣾⣿⠀⢀⣀⠀⢀⡀⠀⣀⠀⢀⡀⠀⢀⡀⠀⢸⣷⣤⣿⠀⠈⠉⢀⣿⣿⣿⣿⣿⣿⣿
+⢹⣿⡿⣿⣿⠻⣿⣧⡀⠀⠀⠉⠉⠀⣿⣠⣾⣿⣴⣿⣧⡾⠛⢷⣼⣿⣦⣼⣿⣄⣸⡇⠈⠉⠀⠀⢀⣼⣿⠟⣿⣿⢿⣿⡇
+⠀⢿⣷⡸⣿⣆⠈⠻⣿⡆⠀⠀⠀⠀⠛⠉⠀⠉⠹⣿⣿⠀⠀⠀⣿⣿⠏⠉⠁⠉⠉⠁⠀⠀⠀⢰⣿⠟⠁⣰⣿⢇⣾⡿⠀
+⠀⠈⠿⠗⠹⢿⠆⠀⠀⣀⣀⣀⣀⣀⣀⣀⡀⠀⠀⢻⣿⠀⠀⠀⣿⡿⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⠀⠀⠰⡿⠏⠾⠟⠁⠀
+⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⠀⠀⠀⣿⣷⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⠀⠀⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 12</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.38px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⠶⠞⠛⠛⠛⠛⠶⢦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡾⠋⢁⣤⠶⠚⠛⠛⠓⠶⣄⡈⠻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⣄⠈⢷⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⠞⠛⠛⠛⠶⣦⡶⠖⠀⠀⠀⠀⠀⠀⠀⠀⠘⣃⠘⣯⠉⠙⠳⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣠⡴⠶⠖⣿⠋⠀⠀⠀⠀⠀⢸⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠀⠀⠀⠿⠀⠀⠀⠈⣻⣆⣀⠀⠀⠀⠀⠀⠀
+⠀⠀⣠⡾⢋⣁⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠚⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠷⣤⡀⠀⠀
+⠀⣴⠏⣴⢏⡅⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣆⠀
+⣸⠇⢸⠃⡾⠁⠀⠀⢀⣠⠤⠤⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠃⠀⠀⠀⠀⠀⠀⣀⡤⠤⠤⣄⡀⠀⠀⠀⠀⠐⡀⢹⡆
+⣿⠀⣿⠰⡇⠀⠀⠀⡿⠟⣡⣤⠀⠙⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠫⢋⣤⡄⠈⢳⠀⠀⠀⠀⠀⣂⠀⣿
+⣿⠀⢻⠀⠀⠀⠀⠀⣧⠀⠻⠿⠃⢠⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡄⠘⠿⠟⠀⡼⠀⠀⠀⢀⡿⣿⠀⣿
+⠸⣇⠀⠤⠀⠀⠀⠀⠙⠝⠲⠶⠚⠉⣁⠀⣀⣠⣤⣤⣤⠴⢶⠶⡟⠛⣿⠻⢦⣄⠈⠫⠒⠶⠖⠋⠉⠀⠀⢠⡾⣹⠃⣼⠇
+⠀⠹⣦⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⡾⢡⡾⣏⠀⢹⠀⢻⣀⡼⠀⠳⠴⠋⠀⠀⢻⡆⠀⠀⠀⠀⠀⠀⠀⣀⣤⠞⢁⡼⠋⠀
+⠀⠀⢨⡷⣦⣀⠀⠀⠀⠀⠀⠀⠘⠃⣿⠀⠈⠛⠉⠀⠀⠀⢀⠤⠒⠒⠐⠒⢤⣨⡇⢰⠆⠀⠀⠀⣀⣀⣠⣴⠾⠻⣇⠀⠀
+⠀⠀⣾⠁⠀⠉⢻⡶⠶⠶⠀⡆⠀⠀⢻⣄⠀⢀⡤⣄⢀⡴⢧⣀⡤⢤⡀⠀⣠⡿⢁⡾⠀⠀⠀⠀⠉⠉⠉⡷⠀⠀⢻⡄⠀
+⠀⢰⡇⠀⠀⠀⠘⣧⠀⠀⠀⠻⣤⣀⡀⠙⠳⠿⠶⠾⠿⠦⠴⠿⠶⠶⠷⠛⡉⠒⠋⠀⠀⠀⣠⡼⣣⠟⣸⠇⠀⠀⠘⣇⠀
+⠀⢸⡇⠀⠀⠀⠀⠘⢷⣄⡀⠀⠸⡏⠁⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣦⡀⠀⠀⠴⠶⠚⣩⡼⠋⠀⠀⠀⠀⣿⠀
+⠀⢸⡇⠀⠀⠀⠀⠀⠀⠉⠛⠳⠶⠶⠞⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠋⢁⣼⡟⠛⠶⠶⠖⠛⠉⠀⠀⠀⠀⠀⠀⣿⠀
+⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⠿⢦⣄⣀⠀⠀⠀⢀⣀⣤⡶⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⠀
+⠀⠀⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠈⠉⠛⠛⠛⠋⠉⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣾⡇⠀
+⠀⠀⢿⣿⣿⡉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣽⣿⣿⠁⠀
+⠀⠀⠘⠿⠯⠙⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠘⠱⠿⠏⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 13</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:6.19px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣷⣶⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣶⠶⠶⠶⠶⠶⠾⣿⣷⣶⣶⡶⠶⠶⠶⠶⠶⠶⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣠⣴⠿⢛⣩⡄⠴⠰⠀⠀⠀⠀⠀⠘⠻⠿⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠿⣦⣄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⡾⠋⣡⡶⣛⣭⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢷⣄⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⣼⠟⢠⡾⣫⡾⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣧⡀⠀⠀⠀
+⠀⠀⠀⣾⠏⣰⡟⠰⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣷⠀⠀⠀
+⠀⠀⣸⡏⠠⡟⠀⠀⣴⣿⣉⡙⢶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠞⣉⣻⣷⡄⠀⠀⠀⠀⢹⡇⠀⠀
+⠀⠀⣿⠁⠀⠀⢴⣼⣇⢹⣿⣷⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣇⢰⣿⣿⢉⣿⣴⠄⠀⠀⠈⣿⠀⠀
+⠀⢠⣿⠀⠀⠀⠀⠈⠙⢿⣬⢴⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣷⢬⣼⠟⠉⠀⠀⠀⠀⠀⣿⠀⠀
+⠀⢸⣿⡄⠀⠀⠀⠀⠀⠈⠿⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠸⠏⠀⠀⠀⠀⢀⡃⢠⣿⡇⠀
+⠀⣿⠛⣷⡀⠀⠀⠀⠀⠀⣠⣾⣯⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣽⣷⣄⠀⠀⠀⠀⣤⢀⣾⠛⣷⠀
+⢀⣿⠀⠙⣷⡄⠀⠀⠀⠀⠉⠀⠈⢹⠋⠛⠛⢻⣿⠿⠶⠶⣶⠶⠶⠾⣿⡿⠛⠛⠻⡏⠁⠀⠉⠀⠀⢀⣼⢋⣾⠋⠀⣿⠀
+⢸⡏⠀⠀⠈⠻⣦⣄⠀⠀⠀⠀⠀⣼⠀⠀⠀⣿⣿⠀⠀⠀⣿⠀⠀⠀⣿⣷⠀⠀⠀⣧⠀⠀⠀⠀⠘⣋⣵⠟⠁⠀⠀⢿⡆
+⢸⡇⠀⠀⠀⠀⠈⠙⠻⢶⣦⣤⣤⡏⠀⠀⠀⡟⣿⠀⠀⠀⣿⠀⠀⠀⣿⢹⠀⠀⠀⢿⣤⣤⣤⡶⠟⠋⠁⠀⠀⠀⠀⢸⡇
+⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⡇⠀⠀⢠⡇⣿⠀⠀⠀⣿⠀⠀⠀⣿⢸⡄⠀⠀⣸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⢸⣇
+⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡇⠻⠦⠴⠞⠁⢻⣄⠀⣠⠿⣦⣀⣴⠏⠀⠙⠒⠚⠃⢸⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿
+⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠃⠀⠀⠀⠀⠀⠀⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿
+⣿⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿
+⣿⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿
+⣿⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿
+⣿⡀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿
+⢻⡇⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⣸⡇
+⠸⣷⠀⠀⠀⠀⠀⠀⠀⠀⢿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⡟⠀⠀⠀⠀⠀⠀⠀⠀⣿⠁
+⠀⣿⡀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀
+⠀⢸⣇⠀⠀⠀⠀⠀⠀⠀⠘⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⠁⠀⠀⠀⠀⠀⠀⠀⣸⡇⠀
+⠀⠈⣿⡀⠀⠀⠀⠀⠀⠀⠀⢿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡿⠀⠀⠀⠀⠀⠀⠀⢀⣿⠀⠀
+⠀⠀⢸⣿⣦⣤⣄⠀⠀⠀⠀⢸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠇⠀⠀⠀⠀⣠⣤⣶⣿⡇⠀⠀
+⠀⠀⠸⣿⣿⣿⡉⠀⠀⠀⠀⠀⢿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀⠀⠀⠀⠀⢉⣿⣿⣿⠁⠀⠀
+⠀⠀⠀⠻⣿⣯⠛⠀⠀⠀⠠⠶⠿⠧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠾⠿⠶⠀⠀⠀⠐⠛⣽⣿⠟⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 14</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+<div class="da-card"><div class="da-box"><pre class="da-art" style="font-size:4.71px;line-height:1.0">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣧⢀⣹⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢰⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣦⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣼⢸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡏⣿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⠶⣿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⠛⠛⢷⡀⠀⠀⠀⠀⠀⠀⢀⣤⣀⠀⠀⠀⠀⠀⣀⣤⡀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣾⣿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢹⣷⣶⣾⣧⠀⢠⡴⠶⠦⣤⣬⣿⡙⢷⣄⠀⣠⡾⢋⣿⣧⣤⠴⠶⢦⡄⠀⢠⣿⡿⠿⣿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⣿⡟⠛⢛⣷⣈⣷⣤⡀⠀⠈⠛⠿⠆⠹⣿⠟⠰⠿⠛⠁⠀⢀⣤⣾⣁⣀⣾⣧⣤⣴⡿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣀⣼⠷⠛⠋⠉⠉⠉⠉⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠋⠉⠉⠉⠙⠛⠿⣿⣇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣏⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣹⡇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢈⣹⣿⡿⠟⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⠀⠀⠀⠀⣀⣤⣤⣤⣄⠀⠀⠀⠀⠀⠀⠻⢿⣿⣏⡁⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⣴⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⢠⡾⠋⠉⠉⠻⣆⠀⣼⠋⠀⠀⠈⠹⣷⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣦⡀⠀⠀⠀
+⠀⠀⣠⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠉⠉⣿⠏⠉⢻⠸⣿⠉⠹⣿⠛⠛⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣄⠀⠀
+⠀⢰⣿⣏⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣦⡀⠙⠀⣠⠞⠀⠻⣧⣄⣛⣀⣴⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣹⣿⡆⠀
+⠀⠈⢛⣿⡿⠛⠀⠀⠀⠀⠀⠀⣠⡴⠶⠶⢬⣙⠛⠋⣥⠶⠒⠲⢶⣍⠉⢁⡴⠛⠛⠛⢿⣦⠀⠀⠀⠀⠀⠙⢿⣿⡛⠁⠀
+⠀⢠⣾⠟⠁⠀⠀⠀⠀⠀⠀⢸⣏⣀⣀⣀⣀⣹⡆⣸⣇⣤⣤⣤⣤⣿⡇⣾⡥⠤⣤⡤⠤⢿⡇⠀⠀⠀⠀⠀⠀⠻⣷⡄⠀
+⢠⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⢸⡅⠀⢹⠇⠀⠀⡗⢻⡄⠀⢸⠇⠀⣰⠇⠸⣆⠀⠹⠃⣀⡾⠁⠀⠀⠀⠀⠀⠀⠀⠹⣿⡄
+⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣦⣀⣀⣤⠞⠁⠈⠛⠷⠦⠤⠞⠋⠀⠀⠈⠛⠒⠚⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿
+⢿⣧⣤⣶⣾⡟⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣶⣤⣼⡿
+⠀⠀⠀⣸⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣄⣠⣶⣿⣿⣩⠿⠞⠁⠀⠀⠀⠀⠀⠀⣤⡄⠀⠀⠀⠈⣿⣧⠀⠀⠀
+⠀⠀⠀⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠁⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠙⠃⠀⠀⠀⠀⢹⣿⠀⠀⠀
+⠀⠀⠀⣿⡇⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠿⠘⠋⠀⠀⢀⡀⠀⠀⢸⣿⠃⠀⠀
+⠀⠀⠀⢻⣿⣄⣠⣾⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣷⣄⣠⣿⡟⠀⠀⠀
+⠀⠀⠀⠀⠙⠛⠛⠙⣿⡆⠀⠀⠀⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⠀⠀⠀⢠⣿⠋⠛⠛⠋⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣦⣤⡾⠛⣿⣄⠀⠀⠀⢰⣦⡀⠀⠀⠀⣴⡆⠀⠀⣠⣿⣿⣷⣤⣴⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠈⠻⣷⣤⣠⣼⣿⣿⣦⣤⣼⣿⣄⣠⣾⣿⡿⠛⠻⣿⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡿⠿⠿⠋⠻⢿⣿⠁⠈⢹⣿⠟⠋⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠁⠀⠀⠀⠀⢸⣿⠀⠀⢸⡇⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⢸⣿⠀⠀⢸⡇⠀⠀⠀⠀⠀⢹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⢸⡿⠀⠀⢸⡇⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⠀⠀⠀⠀⠀⢸⡇⠀⠀⢸⣧⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⢸⡇⠀⠀⢸⣿⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⢸⡇⠀⠀⢸⣿⠀⠀⠀⠀⠀⢸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣇⣀⣀⣀⣠⣤⣼⡇⠀⠀⢸⣿⣤⣤⣀⣀⣀⣸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣭⣭⣭⣥⣤⣾⡇⠀⠀⠘⣿⣦⣤⣭⣭⣍⣹⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣧⣤⣤⣴⡤⠴⢾⡇⠀⠀⠀⣿⣤⣤⣤⣀⣉⣙⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠶⠶⠶⠶⠖⢺⡇⠀⠀⢰⣿⣌⣉⣉⣉⡉⢻⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣷⠶⠶⠶⠶⠒⢿⡇⠀⠀⢸⣿⣉⣉⡉⠉⠛⢻⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠶⠶⠶⠖⠚⢻⡇⠀⠀⢸⣿⡛⠛⠛⠛⠛⢻⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣶⡶⠶⠶⠶⢾⣷⠀⠀⢸⣟⠙⠛⠛⠛⠛⢻⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡷⠶⠶⠖⠚⢻⣿⠀⠀⢸⣿⠛⠛⠓⠒⠲⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣾⣛⠒⠾⠛⠛⢻⣿⠀⠀⢸⡟⠛⠛⢛⣛⣛⣻⣶⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⣿⣯⣭⡭⠭⠽⠿⠿⠿⠿⠿⠟⠀⠀⠸⠿⠿⠿⠿⠿⠿⠿⠤⣭⣿⣿⣷⡄⠀⠀⠀⠀⠀</pre></div><div class="da-foot"><span class="da-name">Monster 15</span><span class="da-btns"><button class="da-copy" type="button" onclick="copyArt(this.closest('.da-card'))">Copy</button><button class="da-copy da-copy-dc" type="button" title="Copy wrapped in a code block — perfect alignment when pasted into Discord" onclick="copyDiscord(this.closest('.da-card'))">Discord</button></span></div></div>
+</div></div>
+<p class="intro-sec">Monster dot art turns cute little creature drawings into copy-paste text pictures made of Braille dots. Each piece is a whole chibi monster &mdash; big ears, round eyes, a fluffy tail &mdash; rendered in tiny dots that stay sharp wherever you paste. Made for anyone who loves cute creatures, monster-catching games, and kawaii critters.</p>
+<section class="when-sec">
+  <h2>When to use <span class="sec-grad">Monster dot art</span></h2>
+  <ul class="use-list">
+    <li>Decorating a gaming or monster-catcher Discord server or profile</li>
+    <li>Adding a cute creature mascot to a bio, caption, or username</li>
+    <li>Sending a little critter as a soft reaction in a chat</li>
+  </ul>
+  <p class="plat-tip">&#128161; <strong>Platform tip:</strong> Cute-creature art is everywhere in gaming and kawaii communities. Being plain Braille text, a monster piece pastes into any Discord bio, TikTok caption, or username with no upload &mdash; Copy, paste, done.</p>
+</section>
+<section class="faq-sec">
+  <img src="../../images/Mascot-thinking.svg" alt="" class="faq-combo-mascot" loading="lazy">
+  <div class="faq-hd-badge">FAQ</div>
+  <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
+<details class="faq-item"><summary>What is monster dot art?</summary><div class="faq-ans">Monster dot art is a multi-line text picture of a cute creature built from Braille dot characters (Unicode ⠀&ndash;⣿). Each character holds up to 8 dots, enough to shape the ears, eyes and tail. A single tap grabs the whole critter as text.</div></details>
+<details class="faq-item"><summary>How is it different from an emoji?</summary><div class="faq-ans">An emoji is a fixed thumbnail that never changes. A monster piece is a whole little creature drawn line by line &mdash; ears, tail and all &mdash; so it reads as a character you picked out, not a stock icon dropped mid-sentence.</div></details>
+<details class="faq-item"><summary>Where does monster dot art look best?</summary><div class="faq-ans">It fits right into gaming and kawaii corners &mdash; monster-catcher Discord servers, cute Tumblr blogs, playful TikTok captions. Drop it inside a code block and every part of the critter lines up cleanly.</div></details>
+<details class="faq-item"><summary>Will it work on my phone?</summary><div class="faq-ans">Every up-to-date device already includes these characters, so nothing needs installing. A chunky creature may spill onto extra lines in a narrow chat &mdash; a wider field or landscape mode pulls it back into shape.</div></details>
+<details class="faq-item"><summary>Can I build a little collection?</summary><div class="faq-ans">Yes &mdash; copy a few different critters onto separate lines and you&rsquo;ve got a whole party of monsters in your bio or post. They pair well with the star and heart pieces too.</div></details>
+</section>
+<section class="related-sec">
+  <h2>More Dot Art <span class="sec-grad">Categories</span></h2>
+  <div class="da-rel-grid" style="--ca:#ef4444">
+<a class="da-rel-card" href="/dot-art/heart/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="5" r="3.8" fill="#ef4444"/><circle cx="45" cy="5" r="3.8" fill="#ef4444"/><circle cx="55" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="5" r="3.8" fill="#ef4444"/><circle cx="85" cy="5" r="3.8" fill="#ef4444"/><circle cx="95" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="15" r="3.8" fill="#ef4444"/><circle cx="35" cy="15" r="3.8" fill="#ef4444"/><circle cx="45" cy="15" r="3.8" fill="#ef4444"/><circle cx="55" cy="15" r="3.8" fill="#ef4444"/><circle cx="65" cy="15" r="3.8" fill="#ef4444"/><circle cx="75" cy="15" r="3.8" fill="#ef4444"/><circle cx="85" cy="15" r="3.8" fill="#ef4444"/><circle cx="95" cy="15" r="3.8" fill="#ef4444"/><circle cx="105" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="25" r="3.8" fill="#ef4444"/><circle cx="25" cy="25" r="3.8" fill="#ef4444"/><circle cx="35" cy="25" r="3.8" fill="#ef4444"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="3.8" fill="#ef4444"/><circle cx="65" cy="25" r="3.8" fill="#ef4444"/><circle cx="75" cy="25" r="3.8" fill="#ef4444"/><circle cx="85" cy="25" r="3.8" fill="#ef4444"/><circle cx="95" cy="25" r="3.8" fill="#ef4444"/><circle cx="105" cy="25" r="3.8" fill="#ef4444"/><circle cx="115" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="35" r="3.8" fill="#ef4444"/><circle cx="15" cy="35" r="3.8" fill="#ef4444"/><circle cx="25" cy="35" r="3.8" fill="#ef4444"/><circle cx="35" cy="35" r="3.8" fill="#ef4444"/><circle cx="45" cy="35" r="3.8" fill="#ef4444"/><circle cx="55" cy="35" r="3.8" fill="#ef4444"/><circle cx="65" cy="35" r="3.8" fill="#ef4444"/><circle cx="75" cy="35" r="3.8" fill="#ef4444"/><circle cx="85" cy="35" r="3.8" fill="#ef4444"/><circle cx="95" cy="35" r="3.8" fill="#ef4444"/><circle cx="105" cy="35" r="3.8" fill="#ef4444"/><circle cx="115" cy="35" r="3.8" fill="#ef4444"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="45" r="3.8" fill="#ef4444"/><circle cx="25" cy="45" r="3.8" fill="#ef4444"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="3.8" fill="#ef4444"/><circle cx="95" cy="45" r="3.8" fill="#ef4444"/><circle cx="105" cy="45" r="3.8" fill="#ef4444"/><circle cx="115" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="55" r="3.8" fill="#ef4444"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="3.8" fill="#ef4444"/><circle cx="55" cy="55" r="3.8" fill="#ef4444"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="3.8" fill="#ef4444"/><circle cx="85" cy="55" r="3.8" fill="#ef4444"/><circle cx="95" cy="55" r="3.8" fill="#ef4444"/><circle cx="105" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="65" r="3.8" fill="#ef4444"/><circle cx="45" cy="65" r="3.8" fill="#ef4444"/><circle cx="55" cy="65" r="3.8" fill="#ef4444"/><circle cx="65" cy="65" r="3.8" fill="#ef4444"/><circle cx="75" cy="65" r="3.8" fill="#ef4444"/><circle cx="85" cy="65" r="3.8" fill="#ef4444"/><circle cx="95" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="75" r="3.8" fill="#ef4444"/><circle cx="55" cy="75" r="3.8" fill="#ef4444"/><circle cx="65" cy="75" r="3.8" fill="#ef4444"/><circle cx="75" cy="75" r="3.8" fill="#ef4444"/><circle cx="85" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">🖤</span><span class="da-rel-count">15 pieces</span></div><div class="da-rel-name">Heart</div><div class="da-rel-sub">Dot love hearts</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/cat/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="3.8" fill="#ef4444"/><circle cx="15" cy="5" r="3.8" fill="#ef4444"/><circle cx="25" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="5" r="3.8" fill="#ef4444"/><circle cx="125" cy="5" r="3.8" fill="#ef4444"/><circle cx="5" cy="15" r="3.8" fill="#ef4444"/><circle cx="15" cy="15" r="3.8" fill="#ef4444"/><circle cx="25" cy="15" r="3.8" fill="#ef4444"/><circle cx="35" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="15" r="3.8" fill="#ef4444"/><circle cx="115" cy="15" r="3.8" fill="#ef4444"/><circle cx="125" cy="15" r="3.8" fill="#ef4444"/><circle cx="5" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="25" r="3.8" fill="#ef4444"/><circle cx="25" cy="25" r="3.8" fill="#ef4444"/><circle cx="35" cy="25" r="3.8" fill="#ef4444"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="3.8" fill="#ef4444"/><circle cx="65" cy="25" r="3.8" fill="#ef4444"/><circle cx="75" cy="25" r="3.8" fill="#ef4444"/><circle cx="85" cy="25" r="3.8" fill="#ef4444"/><circle cx="95" cy="25" r="3.8" fill="#ef4444"/><circle cx="105" cy="25" r="3.8" fill="#ef4444"/><circle cx="115" cy="25" r="3.8" fill="#ef4444"/><circle cx="125" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="35" r="3.8" fill="#ef4444"/><circle cx="25" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="35" r="3.8" fill="#ef4444"/><circle cx="55" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="35" r="3.8" fill="#ef4444"/><circle cx="95" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="35" r="3.8" fill="#ef4444"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="45" r="3.8" fill="#ef4444"/><circle cx="25" cy="45" r="3.8" fill="#ef4444"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="3.8" fill="#ef4444"/><circle cx="95" cy="45" r="3.8" fill="#ef4444"/><circle cx="105" cy="45" r="3.8" fill="#ef4444"/><circle cx="115" cy="45" r="3.8" fill="#ef4444"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="55" r="3.8" fill="#ef4444"/><circle cx="25" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="55" r="3.8" fill="#ef4444"/><circle cx="105" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="55" r="3.8" fill="#ef4444"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="65" r="3.8" fill="#ef4444"/><circle cx="35" cy="65" r="3.8" fill="#ef4444"/><circle cx="45" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="65" r="3.8" fill="#ef4444"/><circle cx="65" cy="65" r="3.8" fill="#ef4444"/><circle cx="75" cy="65" r="3.8" fill="#ef4444"/><circle cx="85" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="65" r="3.8" fill="#ef4444"/><circle cx="105" cy="65" r="3.8" fill="#ef4444"/><circle cx="115" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">🐱</span><span class="da-rel-count">27 pieces</span></div><div class="da-rel-name">Cat</div><div class="da-rel-sub">Cat face dot art</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/rose/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="5" r="3.8" fill="#ef4444"/><circle cx="65" cy="5" r="3.8" fill="#ef4444"/><circle cx="75" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="15" r="3.8" fill="#ef4444"/><circle cx="55" cy="15" r="3.8" fill="#ef4444"/><circle cx="65" cy="15" r="3.8" fill="#ef4444"/><circle cx="75" cy="15" r="3.8" fill="#ef4444"/><circle cx="85" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="25" r="3.8" fill="#ef4444"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="25" r="3.8" fill="#ef4444"/><circle cx="85" cy="25" r="3.8" fill="#ef4444"/><circle cx="95" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="35" r="3.8" fill="#ef4444"/><circle cx="35" cy="35" r="3.8" fill="#ef4444"/><circle cx="45" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="35" r="3.8" fill="#ef4444"/><circle cx="65" cy="35" r="3.8" fill="#ef4444"/><circle cx="75" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="35" r="3.8" fill="#ef4444"/><circle cx="95" cy="35" r="3.8" fill="#ef4444"/><circle cx="105" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="45" r="3.8" fill="#ef4444"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="3.8" fill="#ef4444"/><circle cx="95" cy="45" r="3.8" fill="#ef4444"/><circle cx="105" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="3.8" fill="#ef4444"/><circle cx="55" cy="55" r="3.8" fill="#ef4444"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="3.8" fill="#ef4444"/><circle cx="85" cy="55" r="3.8" fill="#ef4444"/><circle cx="95" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="65" r="3.8" fill="#ef4444"/><circle cx="65" cy="65" r="3.8" fill="#ef4444"/><circle cx="75" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="3.8" fill="#ef4444"/><circle cx="45" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="75" r="3.8" fill="#ef4444"/><circle cx="65" cy="75" r="3.8" fill="#ef4444"/><circle cx="75" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="75" r="3.8" fill="#ef4444"/><circle cx="95" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">🌹</span><span class="da-rel-count">12 pieces</span></div><div class="da-rel-name">Rose</div><div class="da-rel-sub">Floral dot designs</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/skull/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="5" r="3.8" fill="#ef4444"/><circle cx="35" cy="5" r="3.8" fill="#ef4444"/><circle cx="45" cy="5" r="3.8" fill="#ef4444"/><circle cx="55" cy="5" r="3.8" fill="#ef4444"/><circle cx="65" cy="5" r="3.8" fill="#ef4444"/><circle cx="75" cy="5" r="3.8" fill="#ef4444"/><circle cx="85" cy="5" r="3.8" fill="#ef4444"/><circle cx="95" cy="5" r="3.8" fill="#ef4444"/><circle cx="105" cy="5" r="3.8" fill="#ef4444"/><circle cx="115" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="15" r="3.8" fill="#ef4444"/><circle cx="25" cy="15" r="3.8" fill="#ef4444"/><circle cx="35" cy="15" r="3.8" fill="#ef4444"/><circle cx="45" cy="15" r="3.8" fill="#ef4444"/><circle cx="55" cy="15" r="3.8" fill="#ef4444"/><circle cx="65" cy="15" r="3.8" fill="#ef4444"/><circle cx="75" cy="15" r="3.8" fill="#ef4444"/><circle cx="85" cy="15" r="3.8" fill="#ef4444"/><circle cx="95" cy="15" r="3.8" fill="#ef4444"/><circle cx="105" cy="15" r="3.8" fill="#ef4444"/><circle cx="115" cy="15" r="3.8" fill="#ef4444"/><circle cx="125" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="25" r="3.8" fill="#ef4444"/><circle cx="15" cy="25" r="3.8" fill="#ef4444"/><circle cx="25" cy="25" r="3.8" fill="#ef4444"/><circle cx="35" cy="25" r="3.8" fill="#ef4444"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="3.8" fill="#ef4444"/><circle cx="65" cy="25" r="3.8" fill="#ef4444"/><circle cx="75" cy="25" r="3.8" fill="#ef4444"/><circle cx="85" cy="25" r="3.8" fill="#ef4444"/><circle cx="95" cy="25" r="3.8" fill="#ef4444"/><circle cx="105" cy="25" r="3.8" fill="#ef4444"/><circle cx="115" cy="25" r="3.8" fill="#ef4444"/><circle cx="125" cy="25" r="3.8" fill="#ef4444"/><circle cx="5" cy="35" r="3.8" fill="#ef4444"/><circle cx="15" cy="35" r="3.8" fill="#ef4444"/><circle cx="25" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="35" r="3.8" fill="#ef4444"/><circle cx="55" cy="35" r="3.8" fill="#ef4444"/><circle cx="65" cy="35" r="3.8" fill="#ef4444"/><circle cx="75" cy="35" r="3.8" fill="#ef4444"/><circle cx="85" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="35" r="3.8" fill="#ef4444"/><circle cx="115" cy="35" r="3.8" fill="#ef4444"/><circle cx="125" cy="35" r="3.8" fill="#ef4444"/><circle cx="5" cy="45" r="3.8" fill="#ef4444"/><circle cx="15" cy="45" r="3.8" fill="#ef4444"/><circle cx="25" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="45" r="3.8" fill="#ef4444"/><circle cx="115" cy="45" r="3.8" fill="#ef4444"/><circle cx="125" cy="45" r="3.8" fill="#ef4444"/><circle cx="5" cy="55" r="3.8" fill="#ef4444"/><circle cx="15" cy="55" r="3.8" fill="#ef4444"/><circle cx="25" cy="55" r="3.8" fill="#ef4444"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="3.8" fill="#ef4444"/><circle cx="55" cy="55" r="3.8" fill="#ef4444"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="3.8" fill="#ef4444"/><circle cx="85" cy="55" r="3.8" fill="#ef4444"/><circle cx="95" cy="55" r="3.8" fill="#ef4444"/><circle cx="105" cy="55" r="3.8" fill="#ef4444"/><circle cx="115" cy="55" r="3.8" fill="#ef4444"/><circle cx="125" cy="55" r="3.8" fill="#ef4444"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="3.8" fill="#ef4444"/><circle cx="25" cy="65" r="3.8" fill="#ef4444"/><circle cx="35" cy="65" r="3.8" fill="#ef4444"/><circle cx="45" cy="65" r="3.8" fill="#ef4444"/><circle cx="55" cy="65" r="3.8" fill="#ef4444"/><circle cx="65" cy="65" r="3.8" fill="#ef4444"/><circle cx="75" cy="65" r="3.8" fill="#ef4444"/><circle cx="85" cy="65" r="3.8" fill="#ef4444"/><circle cx="95" cy="65" r="3.8" fill="#ef4444"/><circle cx="105" cy="65" r="3.8" fill="#ef4444"/><circle cx="115" cy="65" r="3.8" fill="#ef4444"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="75" r="3.8" fill="#ef4444"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="3.8" fill="#ef4444"/><circle cx="45" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="75" r="3.8" fill="#ef4444"/><circle cx="65" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="75" r="3.8" fill="#ef4444"/><circle cx="85" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="75" r="3.8" fill="#ef4444"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="3.8" fill="#ef4444"/><circle cx="125" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">💀</span><span class="da-rel-count">12 pieces</span></div><div class="da-rel-name">Skull</div><div class="da-rel-sub">Skull dot art</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/butterfly/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="3.8" fill="#ef4444"/><circle cx="15" cy="5" r="3.8" fill="#ef4444"/><circle cx="25" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="5" r="3.8" fill="#ef4444"/><circle cx="125" cy="5" r="3.8" fill="#ef4444"/><circle cx="5" cy="15" r="3.8" fill="#ef4444"/><circle cx="15" cy="15" r="3.8" fill="#ef4444"/><circle cx="25" cy="15" r="3.8" fill="#ef4444"/><circle cx="35" cy="15" r="3.8" fill="#ef4444"/><circle cx="45" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="15" r="3.8" fill="#ef4444"/><circle cx="105" cy="15" r="3.8" fill="#ef4444"/><circle cx="115" cy="15" r="3.8" fill="#ef4444"/><circle cx="125" cy="15" r="3.8" fill="#ef4444"/><circle cx="5" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="25" r="3.8" fill="#ef4444"/><circle cx="25" cy="25" r="3.8" fill="#ef4444"/><circle cx="35" cy="25" r="3.8" fill="#ef4444"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="25" r="3.8" fill="#ef4444"/><circle cx="95" cy="25" r="3.8" fill="#ef4444"/><circle cx="105" cy="25" r="3.8" fill="#ef4444"/><circle cx="115" cy="25" r="3.8" fill="#ef4444"/><circle cx="125" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="35" r="3.8" fill="#ef4444"/><circle cx="35" cy="35" r="3.8" fill="#ef4444"/><circle cx="45" cy="35" r="3.8" fill="#ef4444"/><circle cx="55" cy="35" r="3.8" fill="#ef4444"/><circle cx="65" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="35" r="3.8" fill="#ef4444"/><circle cx="85" cy="35" r="3.8" fill="#ef4444"/><circle cx="95" cy="35" r="3.8" fill="#ef4444"/><circle cx="105" cy="35" r="3.8" fill="#ef4444"/><circle cx="115" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="3.8" fill="#ef4444"/><circle cx="95" cy="45" r="3.8" fill="#ef4444"/><circle cx="105" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="55" r="3.8" fill="#ef4444"/><circle cx="55" cy="55" r="3.8" fill="#ef4444"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="3.8" fill="#ef4444"/><circle cx="85" cy="55" r="3.8" fill="#ef4444"/><circle cx="95" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="65" r="3.8" fill="#ef4444"/><circle cx="45" cy="65" r="3.8" fill="#ef4444"/><circle cx="55" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="65" r="3.8" fill="#ef4444"/><circle cx="75" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="65" r="3.8" fill="#ef4444"/><circle cx="95" cy="65" r="3.8" fill="#ef4444"/><circle cx="105" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="75" r="3.8" fill="#ef4444"/><circle cx="75" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">🦋</span><span class="da-rel-count">12 pieces</span></div><div class="da-rel-name">Butterfly</div><div class="da-rel-sub">Butterfly dot designs</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/bear/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="3.8" fill="#ef4444"/><circle cx="15" cy="5" r="3.8" fill="#ef4444"/><circle cx="25" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="5" r="3.8" fill="#ef4444"/><circle cx="45" cy="5" r="3.8" fill="#ef4444"/><circle cx="55" cy="5" r="3.8" fill="#ef4444"/><circle cx="65" cy="5" r="3.8" fill="#ef4444"/><circle cx="75" cy="5" r="3.8" fill="#ef4444"/><circle cx="85" cy="5" r="3.8" fill="#ef4444"/><circle cx="95" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="5" r="3.8" fill="#ef4444"/><circle cx="125" cy="5" r="3.8" fill="#ef4444"/><circle cx="5" cy="15" r="3.8" fill="#ef4444"/><circle cx="15" cy="15" r="3.8" fill="#ef4444"/><circle cx="25" cy="15" r="3.8" fill="#ef4444"/><circle cx="35" cy="15" r="3.8" fill="#ef4444"/><circle cx="45" cy="15" r="3.8" fill="#ef4444"/><circle cx="55" cy="15" r="3.8" fill="#ef4444"/><circle cx="65" cy="15" r="3.8" fill="#ef4444"/><circle cx="75" cy="15" r="3.8" fill="#ef4444"/><circle cx="85" cy="15" r="3.8" fill="#ef4444"/><circle cx="95" cy="15" r="3.8" fill="#ef4444"/><circle cx="105" cy="15" r="3.8" fill="#ef4444"/><circle cx="115" cy="15" r="3.8" fill="#ef4444"/><circle cx="125" cy="15" r="3.8" fill="#ef4444"/><circle cx="5" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="25" r="3.8" fill="#ef4444"/><circle cx="25" cy="25" r="3.8" fill="#ef4444"/><circle cx="35" cy="25" r="3.8" fill="#ef4444"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="3.8" fill="#ef4444"/><circle cx="65" cy="25" r="3.8" fill="#ef4444"/><circle cx="75" cy="25" r="3.8" fill="#ef4444"/><circle cx="85" cy="25" r="3.8" fill="#ef4444"/><circle cx="95" cy="25" r="3.8" fill="#ef4444"/><circle cx="105" cy="25" r="3.8" fill="#ef4444"/><circle cx="115" cy="25" r="3.8" fill="#ef4444"/><circle cx="125" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="35" r="3.8" fill="#ef4444"/><circle cx="25" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="35" r="3.8" fill="#ef4444"/><circle cx="55" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="35" r="3.8" fill="#ef4444"/><circle cx="95" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="35" r="3.8" fill="#ef4444"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="45" r="3.8" fill="#ef4444"/><circle cx="25" cy="45" r="3.8" fill="#ef4444"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="45" r="3.8" fill="#ef4444"/><circle cx="105" cy="45" r="3.8" fill="#ef4444"/><circle cx="115" cy="45" r="3.8" fill="#ef4444"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="55" r="3.8" fill="#ef4444"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="3.8" fill="#ef4444"/><circle cx="55" cy="55" r="3.8" fill="#ef4444"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="3.8" fill="#ef4444"/><circle cx="85" cy="55" r="3.8" fill="#ef4444"/><circle cx="95" cy="55" r="3.8" fill="#ef4444"/><circle cx="105" cy="55" r="3.8" fill="#ef4444"/><circle cx="115" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="65" r="3.8" fill="#ef4444"/><circle cx="45" cy="65" r="3.8" fill="#ef4444"/><circle cx="55" cy="65" r="3.8" fill="#ef4444"/><circle cx="65" cy="65" r="3.8" fill="#ef4444"/><circle cx="75" cy="65" r="3.8" fill="#ef4444"/><circle cx="85" cy="65" r="3.8" fill="#ef4444"/><circle cx="95" cy="65" r="3.8" fill="#ef4444"/><circle cx="105" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">🐻</span><span class="da-rel-count">27 pieces</span></div><div class="da-rel-name">Bear</div><div class="da-rel-sub">Bear dot art</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/star/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="5" r="3.8" fill="#ef4444"/><circle cx="65" cy="5" r="3.8" fill="#ef4444"/><circle cx="75" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="15" r="3.8" fill="#ef4444"/><circle cx="65" cy="15" r="3.8" fill="#ef4444"/><circle cx="75" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="25" r="3.8" fill="#ef4444"/><circle cx="15" cy="25" r="3.8" fill="#ef4444"/><circle cx="25" cy="25" r="3.8" fill="#ef4444"/><circle cx="35" cy="25" r="3.8" fill="#ef4444"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="3.8" fill="#ef4444"/><circle cx="65" cy="25" r="3.8" fill="#ef4444"/><circle cx="75" cy="25" r="3.8" fill="#ef4444"/><circle cx="85" cy="25" r="3.8" fill="#ef4444"/><circle cx="95" cy="25" r="3.8" fill="#ef4444"/><circle cx="105" cy="25" r="3.8" fill="#ef4444"/><circle cx="115" cy="25" r="3.8" fill="#ef4444"/><circle cx="125" cy="25" r="3.8" fill="#ef4444"/><circle cx="5" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="35" r="3.8" fill="#ef4444"/><circle cx="35" cy="35" r="3.8" fill="#ef4444"/><circle cx="45" cy="35" r="3.8" fill="#ef4444"/><circle cx="55" cy="35" r="3.8" fill="#ef4444"/><circle cx="65" cy="35" r="3.8" fill="#ef4444"/><circle cx="75" cy="35" r="3.8" fill="#ef4444"/><circle cx="85" cy="35" r="3.8" fill="#ef4444"/><circle cx="95" cy="35" r="3.8" fill="#ef4444"/><circle cx="105" cy="35" r="3.8" fill="#ef4444"/><circle cx="115" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="3.8" fill="#ef4444"/><circle cx="95" cy="45" r="3.8" fill="#ef4444"/><circle cx="105" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="55" r="3.8" fill="#ef4444"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="55" r="3.8" fill="#ef4444"/><circle cx="105" cy="55" r="3.8" fill="#ef4444"/><circle cx="115" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="3.8" fill="#ef4444"/><circle cx="25" cy="65" r="3.8" fill="#ef4444"/><circle cx="35" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="65" r="3.8" fill="#ef4444"/><circle cx="75" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="65" r="3.8" fill="#ef4444"/><circle cx="115" cy="65" r="3.8" fill="#ef4444"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="3.8" fill="#ef4444"/><circle cx="15" cy="75" r="3.8" fill="#ef4444"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="75" r="3.8" fill="#ef4444"/><circle cx="75" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="3.8" fill="#ef4444"/><circle cx="125" cy="75" r="3.8" fill="#ef4444"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">★</span><span class="da-rel-count">15 pieces</span></div><div class="da-rel-name">Star</div><div class="da-rel-sub">Star dot shapes</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/moon/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="5" r="3.8" fill="#ef4444"/><circle cx="35" cy="5" r="3.8" fill="#ef4444"/><circle cx="45" cy="5" r="3.8" fill="#ef4444"/><circle cx="55" cy="5" r="3.8" fill="#ef4444"/><circle cx="65" cy="5" r="3.8" fill="#ef4444"/><circle cx="75" cy="5" r="3.8" fill="#ef4444"/><circle cx="85" cy="5" r="3.8" fill="#ef4444"/><circle cx="95" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="15" r="3.8" fill="#ef4444"/><circle cx="25" cy="15" r="3.8" fill="#ef4444"/><circle cx="35" cy="15" r="3.8" fill="#ef4444"/><circle cx="45" cy="15" r="3.8" fill="#ef4444"/><circle cx="55" cy="15" r="3.8" fill="#ef4444"/><circle cx="65" cy="15" r="3.8" fill="#ef4444"/><circle cx="75" cy="15" r="3.8" fill="#ef4444"/><circle cx="85" cy="15" r="3.8" fill="#ef4444"/><circle cx="95" cy="15" r="3.8" fill="#ef4444"/><circle cx="105" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="25" r="3.8" fill="#ef4444"/><circle cx="15" cy="25" r="3.8" fill="#ef4444"/><circle cx="25" cy="25" r="3.8" fill="#ef4444"/><circle cx="35" cy="25" r="3.8" fill="#ef4444"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="3.8" fill="#ef4444"/><circle cx="65" cy="25" r="3.8" fill="#ef4444"/><circle cx="75" cy="25" r="3.8" fill="#ef4444"/><circle cx="85" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="35" r="3.8" fill="#ef4444"/><circle cx="15" cy="35" r="3.8" fill="#ef4444"/><circle cx="25" cy="35" r="3.8" fill="#ef4444"/><circle cx="35" cy="35" r="3.8" fill="#ef4444"/><circle cx="45" cy="35" r="3.8" fill="#ef4444"/><circle cx="55" cy="35" r="3.8" fill="#ef4444"/><circle cx="65" cy="35" r="3.8" fill="#ef4444"/><circle cx="75" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="3.8" fill="#ef4444"/><circle cx="15" cy="45" r="3.8" fill="#ef4444"/><circle cx="25" cy="45" r="3.8" fill="#ef4444"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="3.8" fill="#ef4444"/><circle cx="15" cy="55" r="3.8" fill="#ef4444"/><circle cx="25" cy="55" r="3.8" fill="#ef4444"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="3.8" fill="#ef4444"/><circle cx="55" cy="55" r="3.8" fill="#ef4444"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="3.8" fill="#ef4444"/><circle cx="85" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="3.8" fill="#ef4444"/><circle cx="25" cy="65" r="3.8" fill="#ef4444"/><circle cx="35" cy="65" r="3.8" fill="#ef4444"/><circle cx="45" cy="65" r="3.8" fill="#ef4444"/><circle cx="55" cy="65" r="3.8" fill="#ef4444"/><circle cx="65" cy="65" r="3.8" fill="#ef4444"/><circle cx="75" cy="65" r="3.8" fill="#ef4444"/><circle cx="85" cy="65" r="3.8" fill="#ef4444"/><circle cx="95" cy="65" r="3.8" fill="#ef4444"/><circle cx="105" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="75" r="3.8" fill="#ef4444"/><circle cx="35" cy="75" r="3.8" fill="#ef4444"/><circle cx="45" cy="75" r="3.8" fill="#ef4444"/><circle cx="55" cy="75" r="3.8" fill="#ef4444"/><circle cx="65" cy="75" r="3.8" fill="#ef4444"/><circle cx="75" cy="75" r="3.8" fill="#ef4444"/><circle cx="85" cy="75" r="3.8" fill="#ef4444"/><circle cx="95" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">🌙</span><span class="da-rel-count">15 pieces</span></div><div class="da-rel-name">Moon</div><div class="da-rel-sub">Crescent dot art</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/anime/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="5" r="3.8" fill="#ef4444"/><circle cx="45" cy="5" r="3.8" fill="#ef4444"/><circle cx="55" cy="5" r="3.8" fill="#ef4444"/><circle cx="65" cy="5" r="3.8" fill="#ef4444"/><circle cx="75" cy="5" r="3.8" fill="#ef4444"/><circle cx="85" cy="5" r="3.8" fill="#ef4444"/><circle cx="95" cy="5" r="3.8" fill="#ef4444"/><circle cx="105" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="15" r="3.8" fill="#ef4444"/><circle cx="35" cy="15" r="3.8" fill="#ef4444"/><circle cx="45" cy="15" r="3.8" fill="#ef4444"/><circle cx="55" cy="15" r="3.8" fill="#ef4444"/><circle cx="65" cy="15" r="3.8" fill="#ef4444"/><circle cx="75" cy="15" r="3.8" fill="#ef4444"/><circle cx="85" cy="15" r="3.8" fill="#ef4444"/><circle cx="95" cy="15" r="3.8" fill="#ef4444"/><circle cx="105" cy="15" r="3.8" fill="#ef4444"/><circle cx="115" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="25" r="3.8" fill="#ef4444"/><circle cx="25" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="3.8" fill="#ef4444"/><circle cx="65" cy="25" r="3.8" fill="#ef4444"/><circle cx="75" cy="25" r="3.8" fill="#ef4444"/><circle cx="85" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="25" r="3.8" fill="#ef4444"/><circle cx="115" cy="25" r="3.8" fill="#ef4444"/><circle cx="125" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="35" r="3.8" fill="#ef4444"/><circle cx="25" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="35" r="3.8" fill="#ef4444"/><circle cx="55" cy="35" r="3.8" fill="#ef4444"/><circle cx="65" cy="35" r="3.8" fill="#ef4444"/><circle cx="75" cy="35" r="3.8" fill="#ef4444"/><circle cx="85" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="35" r="3.8" fill="#ef4444"/><circle cx="115" cy="35" r="3.8" fill="#ef4444"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="45" r="3.8" fill="#ef4444"/><circle cx="25" cy="45" r="3.8" fill="#ef4444"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="3.8" fill="#ef4444"/><circle cx="95" cy="45" r="3.8" fill="#ef4444"/><circle cx="105" cy="45" r="3.8" fill="#ef4444"/><circle cx="115" cy="45" r="3.8" fill="#ef4444"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="55" r="3.8" fill="#ef4444"/><circle cx="25" cy="55" r="3.8" fill="#ef4444"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="3.8" fill="#ef4444"/><circle cx="55" cy="55" r="3.8" fill="#ef4444"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="3.8" fill="#ef4444"/><circle cx="85" cy="55" r="3.8" fill="#ef4444"/><circle cx="95" cy="55" r="3.8" fill="#ef4444"/><circle cx="105" cy="55" r="3.8" fill="#ef4444"/><circle cx="115" cy="55" r="3.8" fill="#ef4444"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="65" r="3.8" fill="#ef4444"/><circle cx="35" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="65" r="3.8" fill="#ef4444"/><circle cx="105" cy="65" r="3.8" fill="#ef4444"/><circle cx="115" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="3.8" fill="#ef4444"/><circle cx="45" cy="75" r="3.8" fill="#ef4444"/><circle cx="55" cy="75" r="3.8" fill="#ef4444"/><circle cx="65" cy="75" r="3.8" fill="#ef4444"/><circle cx="75" cy="75" r="3.8" fill="#ef4444"/><circle cx="85" cy="75" r="3.8" fill="#ef4444"/><circle cx="95" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">🎌</span><span class="da-rel-count">15 pieces</span></div><div class="da-rel-name">Anime</div><div class="da-rel-sub">Anime dot scenes</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/kawaii/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="5" r="3.8" fill="#ef4444"/><circle cx="55" cy="5" r="3.8" fill="#ef4444"/><circle cx="65" cy="5" r="3.8" fill="#ef4444"/><circle cx="75" cy="5" r="3.8" fill="#ef4444"/><circle cx="85" cy="5" r="3.8" fill="#ef4444"/><circle cx="95" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="15" r="3.8" fill="#ef4444"/><circle cx="45" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="15" r="3.8" fill="#ef4444"/><circle cx="105" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="25" r="3.8" fill="#ef4444"/><circle cx="35" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="25" r="3.8" fill="#ef4444"/><circle cx="95" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="25" r="3.8" fill="#ef4444"/><circle cx="115" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="35" r="3.8" fill="#ef4444"/><circle cx="35" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="35" r="3.8" fill="#ef4444"/><circle cx="65" cy="35" r="3.8" fill="#ef4444"/><circle cx="75" cy="35" r="3.8" fill="#ef4444"/><circle cx="85" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="35" r="3.8" fill="#ef4444"/><circle cx="115" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="45" r="3.8" fill="#ef4444"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="3.8" fill="#ef4444"/><circle cx="95" cy="45" r="3.8" fill="#ef4444"/><circle cx="105" cy="45" r="3.8" fill="#ef4444"/><circle cx="115" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="3.8" fill="#ef4444"/><circle cx="55" cy="55" r="3.8" fill="#ef4444"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="3.8" fill="#ef4444"/><circle cx="85" cy="55" r="3.8" fill="#ef4444"/><circle cx="95" cy="55" r="3.8" fill="#ef4444"/><circle cx="105" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="3.8" fill="#ef4444"/><circle cx="25" cy="65" r="3.8" fill="#ef4444"/><circle cx="35" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="65" r="3.8" fill="#ef4444"/><circle cx="55" cy="65" r="3.8" fill="#ef4444"/><circle cx="65" cy="65" r="3.8" fill="#ef4444"/><circle cx="75" cy="65" r="3.8" fill="#ef4444"/><circle cx="85" cy="65" r="3.8" fill="#ef4444"/><circle cx="95" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="65" r="3.8" fill="#ef4444"/><circle cx="115" cy="65" r="3.8" fill="#ef4444"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="3.8" fill="#ef4444"/><circle cx="15" cy="75" r="3.8" fill="#ef4444"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="3.8" fill="#ef4444"/><circle cx="125" cy="75" r="3.8" fill="#ef4444"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">🎀</span><span class="da-rel-count">14 pieces</span></div><div class="da-rel-name">Kawaii</div><div class="da-rel-sub">Kawaii dot art</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/frog/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="5" r="3.8" fill="#ef4444"/><circle cx="25" cy="5" r="3.8" fill="#ef4444"/><circle cx="35" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="5" r="3.8" fill="#ef4444"/><circle cx="115" cy="5" r="3.8" fill="#ef4444"/><circle cx="125" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="15" r="3.8" fill="#ef4444"/><circle cx="15" cy="15" r="3.8" fill="#ef4444"/><circle cx="25" cy="15" r="3.8" fill="#ef4444"/><circle cx="35" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="15" r="3.8" fill="#ef4444"/><circle cx="115" cy="15" r="3.8" fill="#ef4444"/><circle cx="125" cy="15" r="3.8" fill="#ef4444"/><circle cx="5" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="25" r="3.8" fill="#ef4444"/><circle cx="25" cy="25" r="3.8" fill="#ef4444"/><circle cx="35" cy="25" r="3.8" fill="#ef4444"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="3.8" fill="#ef4444"/><circle cx="65" cy="25" r="3.8" fill="#ef4444"/><circle cx="75" cy="25" r="3.8" fill="#ef4444"/><circle cx="85" cy="25" r="3.8" fill="#ef4444"/><circle cx="95" cy="25" r="3.8" fill="#ef4444"/><circle cx="105" cy="25" r="3.8" fill="#ef4444"/><circle cx="115" cy="25" r="3.8" fill="#ef4444"/><circle cx="125" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="35" r="3.8" fill="#ef4444"/><circle cx="25" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="35" r="3.8" fill="#ef4444"/><circle cx="45" cy="35" r="3.8" fill="#ef4444"/><circle cx="55" cy="35" r="3.8" fill="#ef4444"/><circle cx="65" cy="35" r="3.8" fill="#ef4444"/><circle cx="75" cy="35" r="3.8" fill="#ef4444"/><circle cx="85" cy="35" r="3.8" fill="#ef4444"/><circle cx="95" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="35" r="3.8" fill="#ef4444"/><circle cx="115" cy="35" r="3.8" fill="#ef4444"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="45" r="3.8" fill="#ef4444"/><circle cx="25" cy="45" r="3.8" fill="#ef4444"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="3.8" fill="#ef4444"/><circle cx="95" cy="45" r="3.8" fill="#ef4444"/><circle cx="105" cy="45" r="3.8" fill="#ef4444"/><circle cx="115" cy="45" r="3.8" fill="#ef4444"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="55" r="3.8" fill="#ef4444"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="3.8" fill="#ef4444"/><circle cx="55" cy="55" r="3.8" fill="#ef4444"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="3.8" fill="#ef4444"/><circle cx="85" cy="55" r="3.8" fill="#ef4444"/><circle cx="95" cy="55" r="3.8" fill="#ef4444"/><circle cx="105" cy="55" r="3.8" fill="#ef4444"/><circle cx="115" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="65" r="3.8" fill="#ef4444"/><circle cx="45" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="65" r="3.8" fill="#ef4444"/><circle cx="105" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="3.8" fill="#ef4444"/><circle cx="45" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="75" r="3.8" fill="#ef4444"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">🐸</span><span class="da-rel-count">15 pieces</span></div><div class="da-rel-name">Frog</div><div class="da-rel-sub">Frog dot designs</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/flower/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="5" r="3.8" fill="#ef4444"/><circle cx="65" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="15" r="3.8" fill="#ef4444"/><circle cx="45" cy="15" r="3.8" fill="#ef4444"/><circle cx="55" cy="15" r="3.8" fill="#ef4444"/><circle cx="65" cy="15" r="3.8" fill="#ef4444"/><circle cx="75" cy="15" r="3.8" fill="#ef4444"/><circle cx="85" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="25" r="3.8" fill="#ef4444"/><circle cx="35" cy="25" r="3.8" fill="#ef4444"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="3.8" fill="#ef4444"/><circle cx="65" cy="25" r="3.8" fill="#ef4444"/><circle cx="75" cy="25" r="3.8" fill="#ef4444"/><circle cx="85" cy="25" r="3.8" fill="#ef4444"/><circle cx="95" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="25" r="3.8" fill="#ef4444"/><circle cx="125" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="35" r="3.8" fill="#ef4444"/><circle cx="25" cy="35" r="3.8" fill="#ef4444"/><circle cx="35" cy="35" r="3.8" fill="#ef4444"/><circle cx="45" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="35" r="3.8" fill="#ef4444"/><circle cx="65" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="35" r="3.8" fill="#ef4444"/><circle cx="85" cy="35" r="3.8" fill="#ef4444"/><circle cx="95" cy="35" r="3.8" fill="#ef4444"/><circle cx="105" cy="35" r="3.8" fill="#ef4444"/><circle cx="115" cy="35" r="3.8" fill="#ef4444"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="45" r="3.8" fill="#ef4444"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="3.8" fill="#ef4444"/><circle cx="95" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="45" r="3.8" fill="#ef4444"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="3.8" fill="#ef4444"/><circle cx="55" cy="55" r="3.8" fill="#ef4444"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="3.8" fill="#ef4444"/><circle cx="85" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="65" r="3.8" fill="#ef4444"/><circle cx="65" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="55" cy="75" r="3.8" fill="#ef4444"/><circle cx="65" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="75" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">🌸</span><span class="da-rel-count">15 pieces</span></div><div class="da-rel-name">Flower</div><div class="da-rel-sub">Flower dot art</div></div><span class="da-rel-arrow">→</span></a>
+<a class="da-rel-card" href="/dot-art/strawberry/"><div class="da-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80"><circle cx="5" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="5" r="3.8" fill="#ef4444"/><circle cx="45" cy="5" r="3.8" fill="#ef4444"/><circle cx="55" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="65" cy="5" r="3.8" fill="#ef4444"/><circle cx="75" cy="5" r="3.8" fill="#ef4444"/><circle cx="85" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="5" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="15" r="3.8" fill="#ef4444"/><circle cx="55" cy="15" r="3.8" fill="#ef4444"/><circle cx="65" cy="15" r="3.8" fill="#ef4444"/><circle cx="75" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="15" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="25" r="3.8" fill="#ef4444"/><circle cx="35" cy="25" r="3.8" fill="#ef4444"/><circle cx="45" cy="25" r="3.8" fill="#ef4444"/><circle cx="55" cy="25" r="3.8" fill="#ef4444"/><circle cx="65" cy="25" r="3.8" fill="#ef4444"/><circle cx="75" cy="25" r="3.8" fill="#ef4444"/><circle cx="85" cy="25" r="3.8" fill="#ef4444"/><circle cx="95" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="25" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="35" r="3.8" fill="#ef4444"/><circle cx="25" cy="35" r="3.8" fill="#ef4444"/><circle cx="35" cy="35" r="3.8" fill="#ef4444"/><circle cx="45" cy="35" r="3.8" fill="#ef4444"/><circle cx="55" cy="35" r="3.8" fill="#ef4444"/><circle cx="65" cy="35" r="3.8" fill="#ef4444"/><circle cx="75" cy="35" r="3.8" fill="#ef4444"/><circle cx="85" cy="35" r="3.8" fill="#ef4444"/><circle cx="95" cy="35" r="3.8" fill="#ef4444"/><circle cx="105" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="35" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="45" r="3.8" fill="#ef4444"/><circle cx="25" cy="45" r="3.8" fill="#ef4444"/><circle cx="35" cy="45" r="3.8" fill="#ef4444"/><circle cx="45" cy="45" r="3.8" fill="#ef4444"/><circle cx="55" cy="45" r="3.8" fill="#ef4444"/><circle cx="65" cy="45" r="3.8" fill="#ef4444"/><circle cx="75" cy="45" r="3.8" fill="#ef4444"/><circle cx="85" cy="45" r="3.8" fill="#ef4444"/><circle cx="95" cy="45" r="3.8" fill="#ef4444"/><circle cx="105" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="45" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="55" r="3.8" fill="#ef4444"/><circle cx="35" cy="55" r="3.8" fill="#ef4444"/><circle cx="45" cy="55" r="3.8" fill="#ef4444"/><circle cx="55" cy="55" r="3.8" fill="#ef4444"/><circle cx="65" cy="55" r="3.8" fill="#ef4444"/><circle cx="75" cy="55" r="3.8" fill="#ef4444"/><circle cx="85" cy="55" r="3.8" fill="#ef4444"/><circle cx="95" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="55" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="65" r="3.8" fill="#ef4444"/><circle cx="45" cy="65" r="3.8" fill="#ef4444"/><circle cx="55" cy="65" r="3.8" fill="#ef4444"/><circle cx="65" cy="65" r="3.8" fill="#ef4444"/><circle cx="75" cy="65" r="3.8" fill="#ef4444"/><circle cx="85" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="65" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="5" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="15" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="25" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="35" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="45" cy="75" r="3.8" fill="#ef4444"/><circle cx="55" cy="75" r="3.8" fill="#ef4444"/><circle cx="65" cy="75" r="3.8" fill="#ef4444"/><circle cx="75" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="85" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="95" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="105" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="115" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/><circle cx="125" cy="75" r="1.8" fill="rgba(239,68,68,.13)"/></svg></div><div class="da-rel-body"><div class="da-rel-top"><span class="da-rel-emoji">🍓</span><span class="da-rel-count">15 pieces</span></div><div class="da-rel-name">Strawberry</div><div class="da-rel-sub">Fruit dot art</div></div><span class="da-rel-arrow">→</span></a>
+</div>
+</section>
+</section>
+</section>
+<div id="toast"></div>
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a class="ft-logo" href="/"><div class="ft-ic"><img loading="lazy" src="../../images/favicon.svg" alt="Kactyl" width="36" height="36"></div><span class="ft-name">Kactyl</span></a>
+      <div class="ft-tagline">Every Language. One Tab.<br>No download. No account.</div>
+      <div class="ft-badges"><span class="ft-badge g">✓ 100% Free</span><span class="ft-badge b">⚡ No Install</span></div>
+    </div>
+    <div class="ft-col">
+      <h4>Keyboards</h4>
+      <div class="ft-kb-grid">
+        <a href="/arabic/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
+      </div>
+    </div>
+        <div class="ft-col">
+      <h4>Tools</h4>
+      <div class="ft-legal">
+        <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/text-art/">Text Art</a>
+        <a href="/dot-art/">Dot Art</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/">Hijri Calendar</a>
+        <a href="/arabic-calligraphy/">Arabic Calligraphy</a>
+      </div>
+      <h4 class="ft-h4-gap">Company</h4>
+      <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
+    </div>
+    <div class="ft-col">
+      <h4>Legal</h4>
+      <div class="ft-legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/sitemap.xml">Sitemap</a></div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2025 Kactyl. All rights reserved.</span>
+    <div class="ft-bottom-links"><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms</a></div>
+  </div>
+</footer>
+<script>
+let toastTmr;
+function copyArt(card){
+  const pre=card.querySelector('.da-art');
+  const text=pre.textContent.trim();
+  navigator.clipboard.writeText(text).catch(()=>{
+    const ta=document.createElement('textarea');
+    ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+  });
+  card.classList.add('flashed');
+  setTimeout(()=>card.classList.remove('flashed'),400);
+  showToast('Copied!');
+}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(toastTmr);
+  toastTmr=setTimeout(()=>t.classList.remove('show'),1800);
+}
+function toggleTheme(){
+  const d=document.documentElement;
+  const dark=d.getAttribute('data-theme')==='dark';
+  d.setAttribute('data-theme',dark?'light':'dark');
+  localStorage.setItem('theme',dark?'light':'dark');
+  updateThemeUI();
+}
+function updateThemeUI(){
+  const dark=document.documentElement.getAttribute('data-theme')==='dark';
+  const tt=document.getElementById('tt');const th=document.getElementById('th');const tlbl=document.getElementById('tlbl');
+  if(tt){dark?tt.classList.add('on'):tt.classList.remove('on');}
+  if(th){dark?th.classList.add('on'):th.classList.remove('on');}
+  if(tlbl)tlbl.innerHTML=dark?'Dark<br>Mode':'White<br>Mode';
+}
+(function(){const t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);updateThemeUI();})();
+function toggleLang(){const m=document.getElementById('lang-menu');if(m)m.classList.toggle('show');}
+document.addEventListener('click',function(e){const lw=e.target.closest('.lang-wrap');if(!lw){const m=document.getElementById('lang-menu');if(m)m.classList.remove('show');}    });
+</script>
+<style>header{transition:transform .35s ease}header.hdr-hidden{transform:translateY(-100%)}</style>
+
+<script>
+// Dynamic header — hide on scroll down, show on scroll up
+(function() {
+  var hdr = document.querySelector('header');
+  if (!hdr) return;
+  var lastY = window.scrollY;
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y > lastY && y > 10) hdr.classList.add('hdr-hidden');
+    else hdr.classList.remove('hdr-hidden');
+    lastY = y;
+  }, { passive: true });
+})();
+</script>
+<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+<script>/*DA-JS-START*/
+function copyDiscord(card){var p=card.querySelector('.da-art');var t='```\n'+p.textContent.trim()+'\n```';function done(){card.classList.add('flashed');setTimeout(function(){card.classList.remove('flashed')},400);if(window.showToast)showToast('Copied for Discord!');}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done);}else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);done();}}
+/*DA-JS-END*/</script>
+</body>
+</html>
