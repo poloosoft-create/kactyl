@@ -57,6 +57,53 @@
 .pills-dot{width:7px;height:7px;border-radius:99px;background:rgba(0,0,0,.18);transition:all .3s cubic-bezier(.4,0,.2,1)}
 .pills-dot.active{background:var(--purple);width:20px}
 @media(max-width:700px){.pills-dots{display:flex}}
+
+.how-sec { padding: 24px 20px 40px; position:relative; z-index:1 }
+.how-sec .wrap { max-width: 880px; margin: 0 auto; }
+.how-hd { text-align: center; margin-bottom: 12px; }
+.how-hd h2 { font-size: clamp(32px,5vw,56px); font-weight: 900; color: var(--text); margin: 0 0 10px; letter-spacing:-.8px; }
+.how-hd p { font-size: 13px; color: var(--muted); font-weight: 600; margin: 0; }
+.how-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.how-step-wrap { position: relative; padding-top: 80px; }
+.how-step-wrap::before { content:''; position:absolute; bottom:-4px; left:12%; right:12%; height:44px; border-radius:44px; background:var(--purple); filter:blur(34px); opacity:.34; z-index:0; pointer-events:none; }
+.how-step-icon { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 160px; height: auto; z-index: 2; pointer-events: none; }
+.how-step { background: linear-gradient(135deg,var(--purple) 0%,var(--purple-2) 100%); border-radius: 52px; padding: 84px 24px 12px; position: relative; z-index: 1; display: flex; flex-direction: column; aspect-ratio: 1/1; box-shadow: 0 16px 34px -10px rgba(17,24,39,.28); }
+.how-step h3 { font-size: clamp(28px,3.5vw,38px); font-weight: 900; color: #fff; margin: 6px 0 6px; line-height: 1; letter-spacing: -.5px; }
+.how-step p { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.6; flex: 1; margin: 0; }
+.how-num { font-size: 56px; font-weight: 900; color: rgba(255,255,255,.35); line-height: 1; text-align: right; margin-top: 6px; letter-spacing: -2px; }
+@media(max-width:640px){ .how-steps { grid-template-columns: 1fr; gap: 72px; } .how-step-icon { width: 150px; } .how-step-wrap { padding-top: 90px; } .how-step { aspect-ratio:auto; min-height:280px; } }
+
+.faq-promo { padding:110px 16px 48px; position:relative; z-index:1 }
+.faq-promo .wrap { max-width:860px; margin:0 auto; }
+.faq-promo-grid { display:grid; grid-template-columns:1fr 1.45fr; gap:16px; position:relative; }
+.faq-card-brand { background:#fff; border:1px solid #E2E8F0; border-radius:24px; padding:48px 32px; display:flex; align-items:center; justify-content:center; min-height:240px; position:relative; }
+.faq-card-brand::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.5; z-index:-1; }
+.faq-brand-logo { width:230px; max-width:82%; }
+.faq-mascot { position:absolute; top:-50px; left:calc(41% - 90px); width:180px; z-index:10; pointer-events:none; filter:drop-shadow(0 6px 18px rgba(0,0,0,.15)); }
+.faq-card-dark { background:#0F172A; border-radius:24px; padding:40px 36px; display:flex; flex-direction:column; justify-content:center; min-height:240px; position:relative; }
+.faq-card-dark::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.5; z-index:-1; }
+.faq-dark-h { font-size:clamp(30px,4.5vw,48px); font-weight:800; color:#F1F5F9; line-height:1.05; letter-spacing:-.8px; margin-bottom:14px; }
+.faq-dark-sub { font-size:14px; color:#94A3B8; line-height:1.6; margin:0 0 24px; }
+.faq-dark-pill { display:inline-flex; align-items:center; background:#EC4899; color:#fff; border-radius:24px; padding:11px 32px; font-size:15px; font-weight:700; letter-spacing:.06em; align-self:flex-end; text-decoration:none; transition:opacity .2s; }
+.faq-dark-pill:hover { opacity:.85; }
+.faq-hd { display:flex; align-items:center; justify-content:space-between; gap:32px; margin:0 0 24px; text-align:left; }
+.faq-hd-left { flex:1; }
+.faq-hd-badge { display:inline-flex; align-items:center; background:#111; border-radius:50px; padding:8px 22px; font-size:13px; font-weight:800; color:#fff; letter-spacing:.03em; text-transform:uppercase; margin-bottom:18px; }
+[data-theme="dark"] .faq-hd-badge { background:#fff; color:#111; }
+.faq-hd h2 { font-size:clamp(32px,5vw,56px); font-weight:900; letter-spacing:-.8px; line-height:1.1; margin:0; }
+.faq-hd p { font-size:15px; color:var(--muted); margin-top:10px; }
+.faq-hd-right { position:relative; flex-shrink:0; }
+.faq-mascot-2 { width:230px; display:block; filter:drop-shadow(0 8px 24px rgba(0,0,0,.12)); }
+.faq-sparkle { position:absolute; pointer-events:none; }
+@media(max-width:700px){
+  .faq-promo { padding:100px 16px 40px; }
+  .faq-promo-grid { grid-template-columns:1fr; }
+  .faq-mascot { top:-90px; }
+  .faq-card-dark { padding:32px 24px; }
+  .faq-hd { flex-direction:column; gap:0; align-items:stretch; }
+  .faq-hd-right { align-self:flex-end; margin-top:-20px; }
+  .faq-mascot-2 { width:150px; }
+}
 </style>
 <style>
 :root{
@@ -153,7 +200,10 @@ nav{display:flex;align-items:center;gap:4px}
 .ap-ic img{width:27px;height:27px;object-fit:contain}
 .ap-txt{display:flex;flex-direction:column}
 .ap-lbl{font-size:10px;font-weight:400;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);opacity:.8}
-.ap-name{font-size:13px;font-weight:600}
+.ap-name{font-size:12px;font-weight:600}
+.app-pill{text-decoration:none;padding:7px 15px;gap:5px;font-size:12px}
+.ap-ic,.ap-ic img{width:22px;height:22px}
+.app-pill.active{background:var(--purple);border-color:var(--purple);color:#fff;font-weight:700}
 
 /* ── Input Area ── */
 .input-wrap{position:relative;z-index:1;max-width:760px;margin:0 auto 0}
@@ -279,7 +329,7 @@ nav{display:flex;align-items:center;gap:4px}
 
 /* ── SEO section ── */
 .seo-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 28px;padding:32px;background:rgba(255,255,255,.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.80);border-radius:16px;box-shadow:0 4px 28px rgba(0,0,0,.05)}
-.seo-sec h2{font-size:14px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;margin-bottom:12px;color:var(--muted)}
+.seo-sec h2{font-size:clamp(26px,3.5vw,40px);font-weight:900;letter-spacing:-.5px;margin-bottom:14px;color:var(--text)}
 .seo-sec p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px}
 
 /* ── Toast ── */
@@ -340,20 +390,22 @@ footer{background:#07091A;border-top:none;padding:0}
 .faq-item[open] summary{color:var(--purple)}
 .faq-ans{padding:0 18px 16px;font-size:14px;line-height:1.85;color:var(--muted)}
 .more-tools{padding:40px 24px 56px;max-width:1000px;margin:0 auto;text-align:center}
-.more-tools-title{font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.5px;color:var(--text);margin-bottom:8px}
-.more-tools-sub{font-size:15px;color:var(--muted);margin-bottom:32px}
-.more-tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:left}
+.more-tools-title{font-size:clamp(26px,4vw,45px);font-weight:900;letter-spacing:-.6px;color:var(--text);margin-bottom:8px;text-align:left}
+.more-tools-sub{font-size:15px;color:var(--muted);margin-bottom:32px;text-align:left}
+.more-tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;text-align:left}
 @media(max-width:700px){.more-tools-grid{grid-template-columns:repeat(2,1fr)}}
-.mt-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 16px;text-decoration:none;color:var(--text);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column;gap:10px}
-.mt-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,162,255,.10);border-color:rgba(0,162,255,.25)}
-[data-theme="dark"] .mt-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
-.mt-icon{width:42px;height:42px;border-radius:10px;background:rgba(0,162,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}.mt-icon svg{width:22px;height:22px;color:var(--accent)}
+.mt-card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:14px;padding:18px 16px;text-decoration:none;color:var(--text);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column;gap:10px;box-shadow:0 16px 30px -10px rgba(17,24,39,.22)}
+.mt-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -12px rgba(17,24,39,.26);border-color:rgba(0,0,0,.08)}
+[data-theme="dark"] .mt-card{background:#1a2130;border-color:rgba(255,255,255,.08);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.mt-icon{width:42px;height:42px;border-radius:10px;background:rgba(0,162,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mt-icon img{width:24px;height:24px;object-fit:contain}.mt-icon svg{width:22px;height:22px;color:var(--accent)}
 .mt-name{font-size:14px;font-weight:700;color:var(--text)}
 .mt-desc{font-size:12px;color:var(--muted);line-height:1.5}
 
 /* ── Per-style content section ── */
 .ft-content{max-width:860px;margin:48px auto 0;padding:0 24px}
-.ft-content h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin:32px 0 14px;letter-spacing:-.4px}
+.ft-content h2{font-size:clamp(28px,4vw,42px);font-weight:900;color:var(--text);margin:32px 0 6px;letter-spacing:-.5px;text-align:center}
+.ft-content .ex-sub{text-align:center;font-size:13px;color:var(--muted);font-weight:600;margin:0 0 22px}
 .ft-content p{font-size:15px;line-height:1.75;color:var(--muted);margin-bottom:12px}
 .ft-content p strong{color:var(--text)}
 .ft-ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 32px}
@@ -381,13 +433,13 @@ footer{background:#07091A;border-top:none;padding:0}
 .faq-item[open] summary{color:var(--purple)}
 .faq-ans{padding:0 18px 16px;font-size:14px;line-height:1.85;color:var(--muted)}
 .more-tools{padding:40px 24px 56px;max-width:1000px;margin:0 auto;text-align:center}
-.more-tools-title{font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.5px;color:var(--text);margin-bottom:8px}
-.more-tools-sub{font-size:15px;color:var(--muted);margin-bottom:32px}
-.more-tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:left}
+.more-tools-title{font-size:clamp(26px,4vw,45px);font-weight:900;letter-spacing:-.6px;color:var(--text);margin-bottom:8px;text-align:left}
+.more-tools-sub{font-size:15px;color:var(--muted);margin-bottom:32px;text-align:left}
+.more-tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;text-align:left}
 @media(max-width:700px){.more-tools-grid{grid-template-columns:repeat(2,1fr)}}
-.mt-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 16px;text-decoration:none;color:var(--text);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column;gap:10px}
-.mt-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,162,255,.10);border-color:rgba(0,162,255,.25)}
-[data-theme="dark"] .mt-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
+.mt-card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:14px;padding:18px 16px;text-decoration:none;color:var(--text);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column;gap:10px;box-shadow:0 16px 30px -10px rgba(17,24,39,.22)}
+.mt-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -12px rgba(17,24,39,.26);border-color:rgba(0,0,0,.08)}
+[data-theme="dark"] .mt-card{background:#1a2130;border-color:rgba(255,255,255,.08);box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .mt-icon{width:42px;height:42px;border-radius:10px;background:rgba(0,162,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}.mt-icon svg{width:22px;height:22px;color:var(--accent)}
 .mt-name{font-size:14px;font-weight:700;color:var(--text)}
 .mt-desc{font-size:12px;color:var(--muted);line-height:1.5}
@@ -430,7 +482,7 @@ footer{background:#07091A;border-top:none;padding:0}
 .hs-num{font-size:28px;font-weight:800;color:var(--text)}
 .hs-lbl{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
 </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a fancy text generator?","acceptedAnswer":{"@type":"Answer","text":"A fancy text generator converts regular letters into Unicode mathematical alphabet characters that look like different font styles — bold, italic, cursive, gothic, and more. Because they are actual Unicode characters (not fonts), they copy-paste correctly on every platform."}},{"@type":"Question","name":"Does fancy text work on Instagram, WhatsApp, TikTok and Discord?","acceptedAnswer":{"@type":"Answer","text":"Yes. All styles use Unicode characters supported natively on every modern platform. Instagram bios, WhatsApp status, TikTok usernames, Discord messages, Twitter/X posts — they all display correctly for every reader."}},{"@type":"Question","name":"Are these real fonts?","acceptedAnswer":{"@type":"Answer","text":"No — they are Unicode characters. Each styled letter is a unique Unicode code point that looks italic, bold, or gothic by design. This is why styled text copies and displays everywhere exactly as you see it."}},{"@type":"Question","name":"Why don't styles work for Arabic or Hindi?","acceptedAnswer":{"@type":"Answer","text":"Unicode mathematical alphabet variants only exist for Latin letters. Use the Decoration tab which has 24 styles working for any language including Arabic, Hindi, and Japanese."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% free. No account, no sign-up, no downloads needed."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my styled Roblox name get blocked or turned into hashes?","acceptedAnswer":{"@type":"Answer","text":"Roblox's text filter checks display names and rejects many Unicode symbols, especially on under-13 accounts. Stick to clean bold, small-caps or serif letters — those usually pass."}},{"@type":"Question","name":"What's the Roblox display name character limit?","acceptedAnswer":{"@type":"Answer","text":"20 characters. Some Unicode letters count as more than one, so keep your styled name short — the counter above helps."}},{"@type":"Question","name":"Can I change my Roblox @username to a fancy font?","acceptedAnswer":{"@type":"Answer","text":"No — the @username is permanent and standard-character only. Styling works on your display name, which you can change (first change free, then Robux)."}},{"@type":"Question","name":"Which font styles pass Roblox's filter?","acceptedAnswer":{"@type":"Answer","text":"Clean alphabet styles — bold, small-caps, serif, script. Heavy symbols and bracket combos usually get stripped or blocked."}},{"@type":"Question","name":"Will other players see the same style?","acceptedAnswer":{"@type":"Answer","text":"Yes — display names are Unicode, so everyone sees the same style on PC and mobile."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"The generator is free. Roblox itself only charges Robux if you change your display name after the first free change."}}]}</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -509,15 +561,17 @@ footer{background:#07091A;border-top:none;padding:0}
   <p class="hero-sub">Create cool fonts for your Roblox display name — stand out in every game</p>
   <div class="hero-stats">
     <div class="hs-item"><div class="hs-num">38+</div><div class="hs-lbl">Font Styles</div></div>
-    <div class="hs-item"><div class="hs-num">9</div><div class="hs-lbl">Platforms</div></div>
+    <div class="hs-item"><div class="hs-num">1-Click</div><div class="hs-lbl">Copy</div></div>
     <div class="hs-item"><div class="hs-num">100%</div><div class="hs-lbl">Free</div></div>
   </div>
   <div class="hero-apps">
-    <button class="app-pill" onclick="ftShare('instagram')"><div class="ap-ic"><img src="/images/Icon-Instagram-Clavierarabe-online%20Kopie.svg" alt="Instagram"></div><div class="ap-txt"><span class="ap-lbl">Copy to</span><span class="ap-name">Instagram</span></div></button>
-    <button class="app-pill" onclick="ftShare('tiktok')"><div class="ap-ic"><img src="/images/Icon-TikTok-Clavierarabe-online.svg" alt="TikTok"></div><div class="ap-txt"><span class="ap-lbl">Copy to</span><span class="ap-name">TikTok</span></div></button>
-    <button class="app-pill" onclick="ftShare('whatsapp')"><div class="ap-ic"><img src="/images/Icon-Whatsapp-Clavierarabe-online.svg" alt="WhatsApp"></div><div class="ap-txt"><span class="ap-lbl">Copy to</span><span class="ap-name">WhatsApp</span></div></button>
-    <button class="app-pill" onclick="ftShare('discord')"><div class="ap-ic"><img src="/images/Logos%2C%20textgenerator%20discord.svg" alt="Discord"></div><div class="ap-txt"><span class="ap-lbl">Copy to</span><span class="ap-name">Discord</span></div></button>
-    <button class="app-pill" onclick="ftShare('twitter')"><div class="ap-ic"><img src="/images/Icon-X-Clavierarabe-online.svg" alt="Twitter/X"></div><div class="ap-txt"><span class="ap-lbl">Copy to</span><span class="ap-name">Twitter/X</span></div></button>
+    <a class="app-pill" href="/tiktok-fonts/"><span class="ap-ic"><img src="/images/Icon-TikTok-Clavierarabe-online.svg" alt="TikTok"></span><span class="ap-name">TikTok</span></a>
+    <a class="app-pill" href="/discord-fonts/"><span class="ap-ic"><img src="/images/Logos%2C%20textgenerator%20discord.svg" alt="Discord"></span><span class="ap-name">Discord</span></a>
+    <a class="app-pill" href="/instagram-fonts/"><span class="ap-ic"><img src="/images/Icon-Instagram-Clavierarabe-online%20Kopie.svg" alt="Instagram"></span><span class="ap-name">Instagram</span></a>
+    <a class="app-pill active" href="/roblox-fonts/"><span class="ap-ic"><img src="/images/Roblox.svg" alt="Roblox"></span><span class="ap-name">Roblox</span></a>
+    <a class="app-pill" href="/whatsapp-fonts/"><span class="ap-ic"><img src="/images/Icon-Whatsapp-Clavierarabe-online.svg" alt="WhatsApp"></span><span class="ap-name">WhatsApp</span></a>
+    <a class="app-pill" href="/free-fire-fonts/"><span class="ap-ic"><img src="/images/Free%20fire.svg" alt="Free Fire"></span><span class="ap-name">Free Fire</span></a>
+    <a class="app-pill" href="/pubg-fonts/"><span class="ap-ic"><img src="/images/PUBG.svg" alt="PUBG"></span><span class="ap-name">PUBG</span></a>
   </div>
   <div class="pills-dots" id="pills-dots">
     <div class="pills-dot active"></div>
@@ -525,14 +579,6 @@ footer{background:#07091A;border-top:none;padding:0}
     <div class="pills-dot"></div>
   </div>
 </section>
-
-
-<div class="plat-switch">
-  <a class="ps-pill " href="/tiktok-fonts/">🎵 TikTok</a>
-  <a class="ps-pill " href="/discord-fonts/">🎮 Discord</a>
-  <a class="ps-pill " href="/instagram-fonts/">📸 Instagram</a>
-  <a class="ps-pill active" href="/roblox-fonts/">🕹️ Roblox</a>
-</div>
 
 <!-- INPUT -->
 <div class="input-wrap" style="padding:0 24px;margin-bottom:0">
@@ -572,15 +618,38 @@ footer{background:#07091A;border-top:none;padding:0}
 
 <!-- SEO TEXT -->
 <section class="seo-sec">
-  <h2>What is a Fancy Text <span class="sec-grad">Generator?</span></h2>
-  <p>Roblox display names support Unicode characters, giving you a way to stand out from the 88 million daily players stuck with the default font. Styles like Double Struck (𝔻𝕒𝕣𝕜), Small Caps (ʜᴇʀᴏ), Bold Script (𝓓𝓪𝓻𝓴), and gothic render in your display name, group title, and profile — visible to every player in-game and on the platform.</p>
-  <p>One important Roblox rule: display names cap at 20 characters. Multi-byte Unicode styles use more space, so shorter names work best. Your @username cannot use these styles — only the display name. Paste your chosen style directly into the display name field in Roblox Settings.</p>
-  <h2 style="margin-top:24px">How to use it</h2>
-  <p>Type or paste your text in the box above. All 28 styles update instantly. Click the <strong>Copy</strong> button on any style to copy it to your clipboard, then paste it anywhere. Use the category tabs to filter styles, or search by name.</p>
+<h2>How Roblox Fonts <span class="sec-grad">Actually Work</span></h2>
+<p>Roblox lets you style your <strong>display name</strong> — the name above your avatar and in menus — up to <strong>20 characters</strong>. The @username underneath is permanent and can't use styled text. Your display name can be changed (the first change is free, then it costs Robux), so it's worth getting right.</p>
+<p>The thing that makes Roblox different from every other platform is its <strong>text filter</strong>. Roblox runs one of the strictest moderation systems online and it checks display names too — many Unicode symbols and unusual characters get <strong>blocked, tagged, or replaced with hashes</strong>, especially on accounts under 13. The styles that reliably pass are the clean alphabet ones: bold (𝗥𝗼𝗯𝗹𝗼𝘅), small-caps (ʀᴏʙʟᴏx) and serif or script letters — not heavy symbol combos.</p>
+<p>Because of the 20-character cap, short names work best — some Unicode letters count as more than one, so watch the counter. Keep it to your name plus one clean style, and save the bracket-and-symbol combos (ꣁ ꣂ) for games that allow them, since Roblox's filter usually strips those out.</p>
+</section>
+
+<section class="how-sec">
+<div class="wrap">
+<div class="how-hd">
+<h2>How To <span class="sec-grad">Use</span></h2>
+<p>Three steps. Ten seconds.</p>
+</div>
+<div class="how-steps">
+<div class="how-step-wrap">
+<img class="how-step-icon" src="/images/Type.svg" alt="Type" loading="lazy">
+<div class="how-step"><h3>Type</h3><p>Type your display name — keep it under 20 characters as styles update.</p><div class="how-num">1</div></div>
+</div>
+<div class="how-step-wrap">
+<img class="how-step-icon" src="/images/pick-style.svg" alt="Pick a style" loading="lazy">
+<div class="how-step"><h3>Pick</h3><p>Pick a clean style that passes Roblox's filter, then copy.</p><div class="how-num">2</div></div>
+</div>
+<div class="how-step-wrap">
+<img class="how-step-icon" src="/images/Past.svg" alt="Paste" loading="lazy">
+<div class="how-step"><h3>Paste</h3><p>Open Roblox → Account Info → paste your styled display name → save.</p><div class="how-num">3</div></div>
+</div>
+</div>
+</div>
 </section>
 
 <section class="ft-content">
   <h2><span class="sec-grad">Examples</span></h2>
+  <p class="ex-sub">Ready-made styles — tap Copy, paste anywhere.</p>
     <div class="ft-ex-grid">
     <div class="ft-ex-card">
       <div class="ft-ex-label">Display Name</div>
@@ -599,110 +668,101 @@ footer{background:#07091A;border-top:none;padding:0}
     </div>
   </div>
 
-  <h2>About Roblox Fonts <span class="sec-grad">Generator</span></h2>
-  <p>Roblox allows Unicode characters in your display name (up to 20 characters), which means you can use these stylish font styles to stand out from millions of players with the default font. Your display name is visible in-game, in groups, and on your profile — a unique font style makes you instantly recognizable.</p>
-  <p>The most popular Roblox display name fonts are Double Struck (𝕳𝖊𝖗𝖔), Bold for strength, Small Caps for a clean look, and Circled letters for a unique style. Note: Roblox display names have a 20-character limit, so shorter names work best. Your @username cannot be changed — only the display name.</p>
-
-  <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
-  <div class="ft-faq">
-  <details class="ft-faq-item">
-    <summary>How do I change my Roblox display name font?</summary>
-    <div class="ft-faq-ans">Type your name above (keep it under 20 chars) → click Copy → open Roblox → Profile → click the pencil icon next to your name → paste your styled name → Save. The font will show in-game and on your profile.</div>
-  </details>
-  <details class="ft-faq-item">
-    <summary>What is the Roblox display name character limit?</summary>
-    <div class="ft-faq-ans">Roblox display names can be up to 20 characters long. Some Unicode font characters count as multiple characters, so keep your styled name short. The char counter above will help you track the length.</div>
-  </details>
-  <details class="ft-faq-item">
-    <summary>Do Roblox fonts work on mobile?</summary>
-    <div class="ft-faq-ans">Yes. Unicode font styles work on Roblox for both PC and mobile (iOS and Android). Other players see the same styled name regardless of what device they use.</div>
-  </details>
-  </div>
-</section>
+  </section>
 
 <!-- FAQ section -->
-<section class="faq-sec">
-  <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
+<section class="faq-promo">
+<div class="wrap">
+<div class="faq-promo-grid">
+<div class="faq-card-brand"><img src="/images/kactyl-brand.png" alt="Kactyl" class="faq-brand-logo" loading="lazy"></div>
+<img src="/images/Mascot-2.svg" alt="" class="faq-mascot" loading="lazy">
+<div class="faq-card-dark">
+<div class="faq-dark-h">Got Questions?</div>
+<p class="faq-dark-sub">Your top Roblox font questions, answered.</p>
+<a href="#faq" class="faq-dark-pill">Get Answers</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="faq-sec" id="faq">
+  <div class="faq-hd">
+    <div class="faq-hd-left">
+      <div class="faq-hd-badge">FAQ</div>
+      <h2>Frequently Asked<br><span class="sec-grad">Questions</span></h2>
+      <p>Everything you need to know about this generator</p>
+    </div>
+    <div class="faq-hd-right">
+      <img src="/images/Mascot-pc.svg" alt="" class="faq-mascot-2" loading="lazy">
+          <svg class="faq-sparkle" style="top:-8px;right:52px;width:28px;height:28px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--purple)"/></svg>
+          <svg class="faq-sparkle" style="top:28px;right:12px;width:18px;height:18px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--purple)" opacity=".7"/></svg>
+          <svg class="faq-sparkle" style="top:5px;right:-8px;width:12px;height:12px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--purple)" opacity=".5"/></svg>
+    </div>
+  </div>
   <details class="faq-item">
-    <summary>What is a fancy text generator?</summary>
-    <div class="faq-ans">A fancy text generator converts regular letters into Unicode mathematical alphabet characters that look like different font styles — bold, italic, cursive, gothic, and more. Because they are actual Unicode characters (not fonts), they copy-paste correctly on every platform without any installation.</div>
+    <summary>Why does my styled Roblox name get blocked or turned into hashes?</summary>
+    <div class="faq-ans">Roblox's text filter checks display names and rejects many Unicode symbols, especially on under-13 accounts. Stick to clean bold, small-caps or serif letters — those usually pass.</div>
   </details>
   <details class="faq-item">
-    <summary>Does fancy text work on Instagram, WhatsApp, TikTok &amp; Discord?</summary>
-    <div class="faq-ans">Yes. All 38 styles use Unicode characters supported natively on every modern platform. Instagram bios, WhatsApp status, TikTok usernames, Discord messages, Twitter/X posts — they all display correctly for every reader, with no extra setup.</div>
+    <summary>What's the Roblox display name character limit?</summary>
+    <div class="faq-ans">20 characters. Some Unicode letters count as more than one, so keep your styled name short — the counter above helps.</div>
   </details>
   <details class="faq-item">
-    <summary>Are these real fonts?</summary>
-    <div class="faq-ans">No — they are Unicode characters. For example, 𝑯𝒆𝒍𝒍𝒐 is not a font; each letter is a unique Unicode code point that looks italic by design. This is why styled text copies and displays everywhere, exactly as you see it.</div>
+    <summary>Can I change my Roblox @username to a fancy font?</summary>
+    <div class="faq-ans">No — the @username is permanent and standard-character only. Styling works on your display name, which you can change (first change free, then Robux).</div>
   </details>
   <details class="faq-item">
-    <summary>Why don't styles work for Arabic or Hindi text?</summary>
-    <div class="faq-ans">Unicode mathematical alphabet variants (bold, italic, gothic, etc.) only exist for Latin letters and digits — Arabic and Devanagari have no Unicode styled equivalents. Use the ✦ Decoration tab: 24 styles that work for any language including Arabic, Hindi, Japanese, and more.</div>
+    <summary>Which font styles pass Roblox's filter?</summary>
+    <div class="faq-ans">Clean alphabet styles — bold, small-caps, serif, script. Heavy symbols and bracket combos usually get stripped or blocked.</div>
   </details>
   <details class="faq-item">
-    <summary>How many styles are available?</summary>
-    <div class="faq-ans">38 Latin font styles (bold, italic, cursive, gothic, circled, symbols, and special FX) plus 24 Decoration styles that work for all languages — 62 total. Use the category tabs to filter by type, or search by name.</div>
+    <summary>Will other players see the same style?</summary>
+    <div class="faq-ans">Yes — display names are Unicode, so everyone sees the same style on PC and mobile.</div>
   </details>
   <details class="faq-item">
     <summary>Is it free?</summary>
-    <div class="faq-ans">Yes, 100% free. No account, no sign-up, no downloads. Type your text, pick a style, copy it — done.</div>
-  </details>
-</section>
-
-<!-- Hindi SEO section -->
-<section class="hi-sec" lang="hi">
-  <h2>Roblox के लिए स्टाइलिश फॉन्ट <span class="sec-grad"></span></h2>
-  <p>Roblox display name के लिए Unicode font styles (20 characters limit)। अपना name type करें, style copy करें और Roblox में paste करें।</p>
-      <p>Double Struck और Small Caps Roblox पर बहुत popular हैं।</p>
-  <details>
-    <summary>Roblox display name में fancy font कैसे डालें?</summary>
-    <div class="faq-ans">ऊपर name type करें (20 chars से कम) → Copy दबाएं → Roblox → Profile → Edit Display Name → Paste → Save।</div>
-  </details>
-</section>
-
-<!-- Arabic SEO section -->
-<section class="ar-sec" lang="ar">
-  <h2><span class="sec-grad">خطوط روبلوكس المزخرفة — اسم مميز في اللعبة</span> — بيو وكابشن مميز</h2>
-  <p>هل تريد <strong>اسم روبلوكس مزخرف</strong> يميزك في اللعبة؟ هذا المولد يحول نصك إلى خطوط Unicode جاهزة للنسخ في اسم العرض.</p>
-  <p>تذكر: اسم العرض في روبلوكس لا يتجاوز 20 حرفاً. الستايلات الأكثر شعبية: Double Struck 𝔻𝕒𝕣𝕜 وSmall Caps ʜᴇʀᴏ.</p>
-  <details>
-    <summary>كيف أضع خط مزخرف في اسم العرض في روبلوكس؟</summary>
-    <div class="faq-ans">اكتب الاسم هنا (أقل من 20 حرف) ← انقر Copy ← افتح Roblox ← Profile ← تعديل اسم العرض ← الصق ← Save.</div>
-  </details>
-  <details>
-    <summary>هل الخطوط المزخرفة تجعل بروفايلك مميزاً في روبلوكس؟</summary>
-    <div class="faq-ans">اسم العرض المزخرف يجعلك تبرز بين اللاعبين الآخرين ويترك انطباعاً أكثر تميزاً. لكن الخط وحده لا يزيد أصدقاءك أو نقاطك — النشاط والمحتوى هما الأهم. مع ذلك، اسم مميز دائماً يلفت الانتباه.</div>
+    <div class="faq-ans">The generator is free. Roblox itself only charges Robux if you change your display name after the first free change.</div>
   </details>
 </section>
 <!-- More generators -->
 <section class="more-tools">
-  <div class="more-tools-title">More <span class="sec-grad">Generators</span></div>
-  <p class="more-tools-sub">More fancy text styles — pick your platform.</p>
+  <div class="more-tools-title">Explore Font <span class="sec-grad">Generators</span></div>
+  <p class="more-tools-sub">Every fancy-text generator on Kactyl — pick your platform.</p>
   <div class="more-tools-grid">
+    <a class="mt-card" href="/instagram-fonts/">
+      <div class="mt-icon"><img src="/images/Icon-Instagram-Clavierarabe-online%20Kopie.svg" alt="Instagram 𝓕𝓸𝓷𝓽𝓼"></div>
+      <div class="mt-name">Instagram 𝓕𝓸𝓷𝓽𝓼</div>
+      <div class="mt-desc">Stylish fonts for your bio, captions &amp; username</div>
+    </a>
     <a class="mt-card" href="/tiktok-fonts/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8"/><path d="M5 13.5h8" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">TikTok Fonts</div>
-      <div class="mt-desc">Stylish fonts for TikTok bio &amp; username</div>
+      <div class="mt-icon"><img src="/images/Icon-TikTok-Clavierarabe-online.svg" alt="TikTok 𝓕𝓸𝓷𝓽𝓼"></div>
+      <div class="mt-name">TikTok 𝓕𝓸𝓷𝓽𝓼</div>
+      <div class="mt-desc">Stand out in TikTok bio &amp; comments</div>
     </a>
     <a class="mt-card" href="/discord-fonts/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8"/><path d="M5 13.5h8" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">Discord Fonts</div>
-      <div class="mt-desc">Cool fonts for Discord username &amp; bio</div>
+      <div class="mt-icon"><img src="/images/Logos%2C%20textgenerator%20discord.svg" alt="Discord 𝓕𝓸𝓷𝓽𝓼"></div>
+      <div class="mt-name">Discord 𝓕𝓸𝓷𝓽𝓼</div>
+      <div class="mt-desc">Cool fonts for Discord username &amp; server bio</div>
     </a>
-    <a class="mt-card" href="/instagram-fonts/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8"/><path d="M5 13.5h8" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">Instagram Fonts</div>
-      <div class="mt-desc">Stylish fonts for Instagram bio &amp; username</div>
+    <a class="mt-card" href="/whatsapp-fonts/">
+      <div class="mt-icon"><img src="/images/Icon-Whatsapp-Clavierarabe-online.svg" alt="WhatsApp 𝓕𝓸𝓷𝓽𝓼"></div>
+      <div class="mt-name">WhatsApp 𝓕𝓸𝓷𝓽𝓼</div>
+      <div class="mt-desc">Fancy text for status, name &amp; messages</div>
     </a>
-    <a class="mt-card" href="/fancy-text/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8"/><path d="M5 13.5h8" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">Fancy Text Hub</div>
-      <div class="mt-desc">All 62 font styles — every platform</div>
+    <a class="mt-card" href="/free-fire-name/">
+      <div class="mt-icon"><img src="/images/Free%20fire.svg" alt="Stylish 𝓝𝓪𝓶𝓮𝓼"></div>
+      <div class="mt-name">Stylish 𝓝𝓪𝓶𝓮𝓼</div>
+      <div class="mt-desc">Cool names for Free Fire, PUBG &amp; gaming</div>
     </a>
-    <a class="mt-card" href="/symbols/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8"/><path d="M5 13.5h8" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">Symbols</div>
-      <div class="mt-desc">1000+ copy-paste symbols for your bio</div>
+    <a class="mt-card" href="/fancy-text/arabic/">
+      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10C4 6 6.5 3 10 3C13 3 15 5 15 8C15 11 12.5 12 10 12" stroke-width="1.8"/><path d="M10 12Q10 15 12.5 17Q16 19 18 16" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
+      <div class="mt-name">Arabic Fancy 𝓣𝓮𝔵𝓽</div>
+      <div class="mt-desc">Decorated text for Arabic speakers</div>
+    </a>
+    <a class="mt-card" href="/fancy-text/styles/">
+      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 13.5h8" stroke-width="1.8" stroke-linecap="round"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/><circle cx="21.5" cy="9" r=".8" fill="currentColor" stroke="none"/></svg></div>
+      <div class="mt-name">Style 𝓖𝓾𝓲𝓭𝓮</div>
+      <div class="mt-desc">All 62 font styles explained with examples</div>
     </a>
   </div>
 </section>

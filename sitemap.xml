@@ -519,7 +519,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kactyl.com/fancy-text/whatsapp-fonts/</loc>
+    <loc>https://kactyl.com/free-fire-fonts/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kactyl.com/pubg-fonts/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kactyl.com/whatsapp-fonts/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -57,6 +57,53 @@
 .pills-dot{width:7px;height:7px;border-radius:99px;background:rgba(0,0,0,.18);transition:all .3s cubic-bezier(.4,0,.2,1)}
 .pills-dot.active{background:var(--purple);width:20px}
 @media(max-width:700px){.pills-dots{display:flex}}
+
+.how-sec { padding: 24px 20px 40px; position:relative; z-index:1 }
+.how-sec .wrap { max-width: 880px; margin: 0 auto; }
+.how-hd { text-align: center; margin-bottom: 12px; }
+.how-hd h2 { font-size: clamp(32px,5vw,56px); font-weight: 900; color: var(--text); margin: 0 0 10px; letter-spacing:-.8px; }
+.how-hd p { font-size: 13px; color: var(--muted); font-weight: 600; margin: 0; }
+.how-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.how-step-wrap { position: relative; padding-top: 80px; }
+.how-step-wrap::before { content:''; position:absolute; bottom:-4px; left:12%; right:12%; height:44px; border-radius:44px; background:var(--purple); filter:blur(34px); opacity:.34; z-index:0; pointer-events:none; }
+.how-step-icon { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 160px; height: auto; z-index: 2; pointer-events: none; }
+.how-step { background: linear-gradient(135deg,var(--purple) 0%,var(--purple-2) 100%); border-radius: 52px; padding: 84px 24px 12px; position: relative; z-index: 1; display: flex; flex-direction: column; aspect-ratio: 1/1; box-shadow: 0 16px 34px -10px rgba(17,24,39,.28); }
+.how-step h3 { font-size: clamp(28px,3.5vw,38px); font-weight: 900; color: #fff; margin: 6px 0 6px; line-height: 1; letter-spacing: -.5px; }
+.how-step p { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.6; flex: 1; margin: 0; }
+.how-num { font-size: 56px; font-weight: 900; color: rgba(255,255,255,.35); line-height: 1; text-align: right; margin-top: 6px; letter-spacing: -2px; }
+@media(max-width:640px){ .how-steps { grid-template-columns: 1fr; gap: 72px; } .how-step-icon { width: 150px; } .how-step-wrap { padding-top: 90px; } .how-step { aspect-ratio:auto; min-height:280px; } }
+
+.faq-promo { padding:110px 16px 48px; position:relative; z-index:1 }
+.faq-promo .wrap { max-width:860px; margin:0 auto; }
+.faq-promo-grid { display:grid; grid-template-columns:1fr 1.45fr; gap:16px; position:relative; }
+.faq-card-brand { background:#fff; border:1px solid #E2E8F0; border-radius:24px; padding:48px 32px; display:flex; align-items:center; justify-content:center; min-height:240px; position:relative; }
+.faq-card-brand::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.5; z-index:-1; }
+.faq-brand-logo { width:230px; max-width:82%; }
+.faq-mascot { position:absolute; top:-50px; left:calc(41% - 90px); width:180px; z-index:10; pointer-events:none; filter:drop-shadow(0 6px 18px rgba(0,0,0,.15)); }
+.faq-card-dark { background:#0F172A; border-radius:24px; padding:40px 36px; display:flex; flex-direction:column; justify-content:center; min-height:240px; position:relative; }
+.faq-card-dark::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.5; z-index:-1; }
+.faq-dark-h { font-size:clamp(30px,4.5vw,48px); font-weight:800; color:#F1F5F9; line-height:1.05; letter-spacing:-.8px; margin-bottom:14px; }
+.faq-dark-sub { font-size:14px; color:#94A3B8; line-height:1.6; margin:0 0 24px; }
+.faq-dark-pill { display:inline-flex; align-items:center; background:#EC4899; color:#fff; border-radius:24px; padding:11px 32px; font-size:15px; font-weight:700; letter-spacing:.06em; align-self:flex-end; text-decoration:none; transition:opacity .2s; }
+.faq-dark-pill:hover { opacity:.85; }
+.faq-hd { display:flex; align-items:center; justify-content:space-between; gap:32px; margin:0 0 24px; text-align:left; }
+.faq-hd-left { flex:1; }
+.faq-hd-badge { display:inline-flex; align-items:center; background:#111; border-radius:50px; padding:8px 22px; font-size:13px; font-weight:800; color:#fff; letter-spacing:.03em; text-transform:uppercase; margin-bottom:18px; }
+[data-theme="dark"] .faq-hd-badge { background:#fff; color:#111; }
+.faq-hd h2 { font-size:clamp(32px,5vw,56px); font-weight:900; letter-spacing:-.8px; line-height:1.1; margin:0; }
+.faq-hd p { font-size:15px; color:var(--muted); margin-top:10px; }
+.faq-hd-right { position:relative; flex-shrink:0; }
+.faq-mascot-2 { width:230px; display:block; filter:drop-shadow(0 8px 24px rgba(0,0,0,.12)); }
+.faq-sparkle { position:absolute; pointer-events:none; }
+@media(max-width:700px){
+  .faq-promo { padding:100px 16px 40px; }
+  .faq-promo-grid { grid-template-columns:1fr; }
+  .faq-mascot { top:-90px; }
+  .faq-card-dark { padding:32px 24px; }
+  .faq-hd { flex-direction:column; gap:0; align-items:stretch; }
+  .faq-hd-right { align-self:flex-end; margin-top:-20px; }
+  .faq-mascot-2 { width:150px; }
+}
 </style>
 <style>
 :root{
@@ -153,7 +200,10 @@ nav{display:flex;align-items:center;gap:4px}
 .ap-ic img{width:27px;height:27px;object-fit:contain}
 .ap-txt{display:flex;flex-direction:column}
 .ap-lbl{font-size:10px;font-weight:400;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);opacity:.8}
-.ap-name{font-size:13px;font-weight:600}
+.ap-name{font-size:12px;font-weight:600}
+.app-pill{text-decoration:none;padding:7px 15px;gap:5px;font-size:12px}
+.ap-ic,.ap-ic img{width:22px;height:22px}
+.app-pill.active{background:var(--purple);border-color:var(--purple);color:#fff;font-weight:700}
 
 /* ── Input Area ── */
 .input-wrap{position:relative;z-index:1;max-width:760px;margin:0 auto 0}
@@ -279,7 +329,7 @@ nav{display:flex;align-items:center;gap:4px}
 
 /* ── SEO section ── */
 .seo-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 28px;padding:32px;background:rgba(255,255,255,.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.80);border-radius:16px;box-shadow:0 4px 28px rgba(0,0,0,.05)}
-.seo-sec h2{font-size:14px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;margin-bottom:12px;color:var(--muted)}
+.seo-sec h2{font-size:clamp(26px,3.5vw,40px);font-weight:900;letter-spacing:-.5px;margin-bottom:14px;color:var(--text)}
 .seo-sec p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px}
 
 /* ── Toast ── */
@@ -340,20 +390,22 @@ footer{background:#07091A;border-top:none;padding:0}
 .faq-item[open] summary{color:var(--purple)}
 .faq-ans{padding:0 18px 16px;font-size:14px;line-height:1.85;color:var(--muted)}
 .more-tools{padding:40px 24px 56px;max-width:1000px;margin:0 auto;text-align:center}
-.more-tools-title{font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.5px;color:var(--text);margin-bottom:8px}
-.more-tools-sub{font-size:15px;color:var(--muted);margin-bottom:32px}
-.more-tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:left}
+.more-tools-title{font-size:clamp(26px,4vw,45px);font-weight:900;letter-spacing:-.6px;color:var(--text);margin-bottom:8px;text-align:left}
+.more-tools-sub{font-size:15px;color:var(--muted);margin-bottom:32px;text-align:left}
+.more-tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;text-align:left}
 @media(max-width:700px){.more-tools-grid{grid-template-columns:repeat(2,1fr)}}
-.mt-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 16px;text-decoration:none;color:var(--text);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column;gap:10px}
-.mt-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(225,48,108,.10);border-color:rgba(225,48,108,.25)}
-[data-theme="dark"] .mt-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
-.mt-icon{width:42px;height:42px;border-radius:10px;background:rgba(225,48,108,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}.mt-icon svg{width:22px;height:22px;color:var(--accent)}
+.mt-card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:14px;padding:18px 16px;text-decoration:none;color:var(--text);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column;gap:10px;box-shadow:0 16px 30px -10px rgba(17,24,39,.22)}
+.mt-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -12px rgba(17,24,39,.26);border-color:rgba(0,0,0,.08)}
+[data-theme="dark"] .mt-card{background:#1a2130;border-color:rgba(255,255,255,.08);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.mt-icon{width:42px;height:42px;border-radius:10px;background:rgba(225,48,108,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mt-icon img{width:24px;height:24px;object-fit:contain}.mt-icon svg{width:22px;height:22px;color:var(--accent)}
 .mt-name{font-size:14px;font-weight:700;color:var(--text)}
 .mt-desc{font-size:12px;color:var(--muted);line-height:1.5}
 
 /* ── Per-style content section ── */
 .ft-content{max-width:860px;margin:48px auto 0;padding:0 24px}
-.ft-content h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin:32px 0 14px;letter-spacing:-.4px}
+.ft-content h2{font-size:clamp(28px,4vw,42px);font-weight:900;color:var(--text);margin:32px 0 6px;letter-spacing:-.5px;text-align:center}
+.ft-content .ex-sub{text-align:center;font-size:13px;color:var(--muted);font-weight:600;margin:0 0 22px}
 .ft-content p{font-size:15px;line-height:1.75;color:var(--muted);margin-bottom:12px}
 .ft-content p strong{color:var(--text)}
 .ft-ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 32px}
@@ -381,13 +433,13 @@ footer{background:#07091A;border-top:none;padding:0}
 .faq-item[open] summary{color:var(--purple)}
 .faq-ans{padding:0 18px 16px;font-size:14px;line-height:1.85;color:var(--muted)}
 .more-tools{padding:40px 24px 56px;max-width:1000px;margin:0 auto;text-align:center}
-.more-tools-title{font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.5px;color:var(--text);margin-bottom:8px}
-.more-tools-sub{font-size:15px;color:var(--muted);margin-bottom:32px}
-.more-tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:left}
+.more-tools-title{font-size:clamp(26px,4vw,45px);font-weight:900;letter-spacing:-.6px;color:var(--text);margin-bottom:8px;text-align:left}
+.more-tools-sub{font-size:15px;color:var(--muted);margin-bottom:32px;text-align:left}
+.more-tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;text-align:left}
 @media(max-width:700px){.more-tools-grid{grid-template-columns:repeat(2,1fr)}}
-.mt-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 16px;text-decoration:none;color:var(--text);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column;gap:10px}
-.mt-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(225,48,108,.10);border-color:rgba(225,48,108,.25)}
-[data-theme="dark"] .mt-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
+.mt-card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:14px;padding:18px 16px;text-decoration:none;color:var(--text);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column;gap:10px;box-shadow:0 16px 30px -10px rgba(17,24,39,.22)}
+.mt-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -12px rgba(17,24,39,.26);border-color:rgba(0,0,0,.08)}
+[data-theme="dark"] .mt-card{background:#1a2130;border-color:rgba(255,255,255,.08);box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .mt-icon{width:42px;height:42px;border-radius:10px;background:rgba(225,48,108,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}.mt-icon svg{width:22px;height:22px;color:var(--accent)}
 .mt-name{font-size:14px;font-weight:700;color:var(--text)}
 .mt-desc{font-size:12px;color:var(--muted);line-height:1.5}
@@ -430,7 +482,7 @@ footer{background:#07091A;border-top:none;padding:0}
 .hs-num{font-size:28px;font-weight:800;color:var(--text)}
 .hs-lbl{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
 </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a fancy text generator?","acceptedAnswer":{"@type":"Answer","text":"A fancy text generator converts regular letters into Unicode mathematical alphabet characters that look like different font styles — bold, italic, cursive, gothic, and more. Because they are actual Unicode characters (not fonts), they copy-paste correctly on every platform."}},{"@type":"Question","name":"Does fancy text work on Instagram, WhatsApp, TikTok and Discord?","acceptedAnswer":{"@type":"Answer","text":"Yes. All styles use Unicode characters supported natively on every modern platform. Instagram bios, WhatsApp status, TikTok usernames, Discord messages, Twitter/X posts — they all display correctly for every reader."}},{"@type":"Question","name":"Are these real fonts?","acceptedAnswer":{"@type":"Answer","text":"No — they are Unicode characters. Each styled letter is a unique Unicode code point that looks italic, bold, or gothic by design. This is why styled text copies and displays everywhere exactly as you see it."}},{"@type":"Question","name":"Why don't styles work for Arabic or Hindi?","acceptedAnswer":{"@type":"Answer","text":"Unicode mathematical alphabet variants only exist for Latin letters. Use the Decoration tab which has 24 styles working for any language including Arabic, Hindi, and Japanese."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% free. No account, no sign-up, no downloads needed."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use a fancy font in my Instagram username?","acceptedAnswer":{"@type":"Answer","text":"No — usernames only allow letters, numbers, periods and underscores, so Unicode styles are rejected there. They work in your Name field, bio, captions and comments instead."}},{"@type":"Question","name":"Does a fancy font in my Name field hurt my reach?","acceptedAnswer":{"@type":"Answer","text":"A little, yes. Instagram search reads your Name field, so a fancy font makes those words unsearchable. Keep keywords plain in the Name field for discovery and use fancy styles in the bio."}},{"@type":"Question","name":"How do I get line breaks in my Instagram bio?","acceptedAnswer":{"@type":"Answer","text":"Instagram's editor strips line breaks on some devices. Type your bio in Notes with real returns, style it here, then paste the whole thing at once — the breaks stick."}},{"@type":"Question","name":"Do Instagram fonts work in Stories and Reels?","acceptedAnswer":{"@type":"Answer","text":"Yes. Paste styled text into any Story text box or Reel caption. Instagram's own Story fonts (Classic, Modern, Neon) are separate — these Unicode styles work anywhere you can paste."}},{"@type":"Question","name":"Will every follower see the same style?","acceptedAnswer":{"@type":"Answer","text":"Yes. These are real Unicode characters, not a font file, so everyone sees the identical style on iOS, Android and desktop with no app on their end."}},{"@type":"Question","name":"Is the Instagram font generator free?","acceptedAnswer":{"@type":"Answer","text":"Completely free — no account, no limit. Type, copy, paste."}}]}</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -509,15 +561,17 @@ footer{background:#07091A;border-top:none;padding:0}
   <p class="hero-sub">Create beautiful fonts for your Instagram bio, username, and name field</p>
   <div class="hero-stats">
     <div class="hs-item"><div class="hs-num">38+</div><div class="hs-lbl">Font Styles</div></div>
-    <div class="hs-item"><div class="hs-num">9</div><div class="hs-lbl">Platforms</div></div>
+    <div class="hs-item"><div class="hs-num">1-Click</div><div class="hs-lbl">Copy</div></div>
     <div class="hs-item"><div class="hs-num">100%</div><div class="hs-lbl">Free</div></div>
   </div>
   <div class="hero-apps">
-    <button class="app-pill" onclick="ftShare('instagram')"><div class="ap-ic"><img src="/images/Icon-Instagram-Clavierarabe-online%20Kopie.svg" alt="Instagram"></div><div class="ap-txt"><span class="ap-lbl">Copy to</span><span class="ap-name">Instagram</span></div></button>
-    <button class="app-pill" onclick="ftShare('tiktok')"><div class="ap-ic"><img src="/images/Icon-TikTok-Clavierarabe-online.svg" alt="TikTok"></div><div class="ap-txt"><span class="ap-lbl">Copy to</span><span class="ap-name">TikTok</span></div></button>
-    <button class="app-pill" onclick="ftShare('whatsapp')"><div class="ap-ic"><img src="/images/Icon-Whatsapp-Clavierarabe-online.svg" alt="WhatsApp"></div><div class="ap-txt"><span class="ap-lbl">Copy to</span><span class="ap-name">WhatsApp</span></div></button>
-    <button class="app-pill" onclick="ftShare('discord')"><div class="ap-ic"><img src="/images/Logos%2C%20textgenerator%20discord.svg" alt="Discord"></div><div class="ap-txt"><span class="ap-lbl">Copy to</span><span class="ap-name">Discord</span></div></button>
-    <button class="app-pill" onclick="ftShare('twitter')"><div class="ap-ic"><img src="/images/Icon-X-Clavierarabe-online.svg" alt="Twitter/X"></div><div class="ap-txt"><span class="ap-lbl">Copy to</span><span class="ap-name">Twitter/X</span></div></button>
+    <a class="app-pill" href="/tiktok-fonts/"><span class="ap-ic"><img src="/images/Icon-TikTok-Clavierarabe-online.svg" alt="TikTok"></span><span class="ap-name">TikTok</span></a>
+    <a class="app-pill" href="/discord-fonts/"><span class="ap-ic"><img src="/images/Logos%2C%20textgenerator%20discord.svg" alt="Discord"></span><span class="ap-name">Discord</span></a>
+    <a class="app-pill active" href="/instagram-fonts/"><span class="ap-ic"><img src="/images/Icon-Instagram-Clavierarabe-online%20Kopie.svg" alt="Instagram"></span><span class="ap-name">Instagram</span></a>
+    <a class="app-pill" href="/roblox-fonts/"><span class="ap-ic"><img src="/images/Roblox.svg" alt="Roblox"></span><span class="ap-name">Roblox</span></a>
+    <a class="app-pill" href="/whatsapp-fonts/"><span class="ap-ic"><img src="/images/Icon-Whatsapp-Clavierarabe-online.svg" alt="WhatsApp"></span><span class="ap-name">WhatsApp</span></a>
+    <a class="app-pill" href="/free-fire-fonts/"><span class="ap-ic"><img src="/images/Free%20fire.svg" alt="Free Fire"></span><span class="ap-name">Free Fire</span></a>
+    <a class="app-pill" href="/pubg-fonts/"><span class="ap-ic"><img src="/images/PUBG.svg" alt="PUBG"></span><span class="ap-name">PUBG</span></a>
   </div>
   <div class="pills-dots" id="pills-dots">
     <div class="pills-dot active"></div>
@@ -525,14 +579,6 @@ footer{background:#07091A;border-top:none;padding:0}
     <div class="pills-dot"></div>
   </div>
 </section>
-
-
-<div class="plat-switch">
-  <a class="ps-pill " href="/tiktok-fonts/">🎵 TikTok</a>
-  <a class="ps-pill " href="/discord-fonts/">🎮 Discord</a>
-  <a class="ps-pill active" href="/instagram-fonts/">📸 Instagram</a>
-  <a class="ps-pill " href="/roblox-fonts/">🕹️ Roblox</a>
-</div>
 
 <!-- INPUT -->
 <div class="input-wrap" style="padding:0 24px;margin-bottom:0">
@@ -572,15 +618,38 @@ footer{background:#07091A;border-top:none;padding:0}
 
 <!-- SEO TEXT -->
 <section class="seo-sec">
-  <h2>What is a Fancy Text <span class="sec-grad">Generator?</span></h2>
-  <p>Instagram bios and usernames support Unicode characters — the only legitimate way to change how your text looks to every visitor. Over 2 billion users have the same default Instagram font; Unicode font styles are how top creators make their bio stand out without any app or hack.</p>
-  <p>Copy any style and paste it directly into your Instagram bio, username, or caption. The styled text looks identical for every follower on iOS, Android, and web. Cursive script is the most popular style for personal bios; Bold works best for brand accounts and CTAs.</p>
-  <h2 style="margin-top:24px">How to use it</h2>
-  <p>Type or paste your text in the box above. All 28 styles update instantly. Click the <strong>Copy</strong> button on any style to copy it to your clipboard, then paste it anywhere. Use the category tabs to filter styles, or search by name.</p>
+<h2>How Instagram Fonts <span class="sec-grad">Actually Work</span></h2>
+<p>Instagram supports Unicode characters in the three places that matter: your <strong>bio</strong> (150 characters), your <strong>Name field</strong> (30 characters — the bold line above your bio), and your <strong>captions and comments</strong>. Your @username is locked to letters, numbers, periods and underscores, so styled fonts never work there. Everything you paste shows identically to every follower on iPhone, Android and web — no app, no login.</p>
+<p>One trick most people miss: the <strong>Name field is the part Instagram actually searches</strong>. Put a plain-text keyword there — your niche, city or real name — and you surface when people search it. Wrap it in a fancy font and Instagram can no longer read it. So keep the Name field plain for reach, and save the cursive and script styles for your bio, where looks matter more than search.</p>
+<p>For a clean multi-line bio, type each line in your phone's Notes app with real line breaks, style the words here, then paste the whole thing in — Instagram keeps the breaks. Cursive and script suit personal and aesthetic accounts; bold and small-caps read better for brands and call-to-action lines like 𝗧𝗮𝗽 𝗺𝗲 𝗯𝗶𝗼.</p>
+</section>
+
+<section class="how-sec">
+<div class="wrap">
+<div class="how-hd">
+<h2>How To <span class="sec-grad">Use</span></h2>
+<p>Three steps. Ten seconds.</p>
+</div>
+<div class="how-steps">
+<div class="how-step-wrap">
+<img class="how-step-icon" src="/images/Type.svg" alt="Type" loading="lazy">
+<div class="how-step"><h3>Type</h3><p>Type your name, bio or caption — every style updates live as you type.</p><div class="how-num">1</div></div>
+</div>
+<div class="how-step-wrap">
+<img class="how-step-icon" src="/images/pick-style.svg" alt="Pick a style" loading="lazy">
+<div class="how-step"><h3>Pick</h3><p>Tap any style card to copy the fancy version in one tap.</p><div class="how-num">2</div></div>
+</div>
+<div class="how-step-wrap">
+<img class="how-step-icon" src="/images/Past.svg" alt="Paste" loading="lazy">
+<div class="how-step"><h3>Paste</h3><p>Open Instagram → Edit Profile → paste into your Name field or bio.</p><div class="how-num">3</div></div>
+</div>
+</div>
+</div>
 </section>
 
 <section class="ft-content">
   <h2><span class="sec-grad">Examples</span></h2>
+  <p class="ex-sub">Ready-made styles — tap Copy, paste anywhere.</p>
     <div class="ft-ex-grid">
     <div class="ft-ex-card">
       <div class="ft-ex-label">Instagram Bio</div>
@@ -599,110 +668,101 @@ footer{background:#07091A;border-top:none;padding:0}
     </div>
   </div>
 
-  <h2>About Instagram Fonts <span class="sec-grad">Generator</span></h2>
-  <p>Instagram supports Unicode characters in the bio (150 chars), full name field, and username. By copying text from this Instagram font generator and pasting it into your profile, you instantly stand out from millions of accounts using the default font. No app, no download, no account needed.</p>
-  <p>The most popular Instagram bio fonts are cursive/script for an elegant aesthetic, bold for strong brand statements, small caps for a minimal editorial look, and underline for structured bios. All 38 styles display correctly for every follower, on every device.</p>
-
-  <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
-  <div class="ft-faq">
-  <details class="ft-faq-item">
-    <summary>How do I change my Instagram bio font?</summary>
-    <div class="ft-faq-ans">Type your text above → click Copy → open Instagram → Profile → Edit Profile → Bio field → paste → Done. The styled Unicode font will appear immediately in your bio.</div>
-  </details>
-  <details class="ft-faq-item">
-    <summary>Do Instagram fonts work on iPhone and Android?</summary>
-    <div class="ft-faq-ans">Yes. All 38 Unicode font styles work on Instagram for both iPhone and Android. Every follower sees the exact same styled text regardless of their device.</div>
-  </details>
-  <details class="ft-faq-item">
-    <summary>Can I use fonts in my Instagram username?</summary>
-    <div class="ft-faq-ans">Instagram usernames only allow letters, numbers, underscores, and periods — Unicode styles won't work in the username field. However, they work perfectly in the Full Name field and Bio, which are the most visible parts of your profile.</div>
-  </details>
-  </div>
-</section>
+  </section>
 
 <!-- FAQ section -->
-<section class="faq-sec">
-  <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
-  <details class="faq-item">
-    <summary>What is a fancy text generator?</summary>
-    <div class="faq-ans">A fancy text generator converts regular letters into Unicode mathematical alphabet characters that look like different font styles — bold, italic, cursive, gothic, and more. Because they are actual Unicode characters (not fonts), they copy-paste correctly on every platform without any installation.</div>
-  </details>
-  <details class="faq-item">
-    <summary>Does fancy text work on Instagram, WhatsApp, TikTok &amp; Discord?</summary>
-    <div class="faq-ans">Yes. All 38 styles use Unicode characters supported natively on every modern platform. Instagram bios, WhatsApp status, TikTok usernames, Discord messages, Twitter/X posts — they all display correctly for every reader, with no extra setup.</div>
-  </details>
-  <details class="faq-item">
-    <summary>Are these real fonts?</summary>
-    <div class="faq-ans">No — they are Unicode characters. For example, 𝑯𝒆𝒍𝒍𝒐 is not a font; each letter is a unique Unicode code point that looks italic by design. This is why styled text copies and displays everywhere, exactly as you see it.</div>
-  </details>
-  <details class="faq-item">
-    <summary>Why don't styles work for Arabic or Hindi text?</summary>
-    <div class="faq-ans">Unicode mathematical alphabet variants (bold, italic, gothic, etc.) only exist for Latin letters and digits — Arabic and Devanagari have no Unicode styled equivalents. Use the ✦ Decoration tab: 24 styles that work for any language including Arabic, Hindi, Japanese, and more.</div>
-  </details>
-  <details class="faq-item">
-    <summary>How many styles are available?</summary>
-    <div class="faq-ans">38 Latin font styles (bold, italic, cursive, gothic, circled, symbols, and special FX) plus 24 Decoration styles that work for all languages — 62 total. Use the category tabs to filter by type, or search by name.</div>
-  </details>
-  <details class="faq-item">
-    <summary>Is it free?</summary>
-    <div class="faq-ans">Yes, 100% free. No account, no sign-up, no downloads. Type your text, pick a style, copy it — done.</div>
-  </details>
+<section class="faq-promo">
+<div class="wrap">
+<div class="faq-promo-grid">
+<div class="faq-card-brand"><img src="/images/kactyl-brand.png" alt="Kactyl" class="faq-brand-logo" loading="lazy"></div>
+<img src="/images/Mascot-2.svg" alt="" class="faq-mascot" loading="lazy">
+<div class="faq-card-dark">
+<div class="faq-dark-h">Got Questions?</div>
+<p class="faq-dark-sub">Your top Instagram font questions, answered.</p>
+<a href="#faq" class="faq-dark-pill">Get Answers</a>
+</div>
+</div>
+</div>
 </section>
 
-<!-- Hindi SEO section -->
-<section class="hi-sec" lang="hi">
-  <h2>Instagram के लिए स्टाइलिश फॉन्ट <span class="sec-grad"></span></h2>
-  <p>Instagram bio और name field के लिए Unicode font styles। अपना text type करें, style copy करें और Instagram में paste करें।</p>
-      <p>Cursive और Bold Script Instagram पर बहुत popular हैं।</p>
-  <details>
-    <summary>Instagram bio में fancy text कैसे डालें?</summary>
-    <div class="faq-ans">ऊपर text type करें → Copy दबाएं → Instagram → Profile → Edit Profile → Bio → Paste → Done।</div>
+<section class="faq-sec" id="faq">
+  <div class="faq-hd">
+    <div class="faq-hd-left">
+      <div class="faq-hd-badge">FAQ</div>
+      <h2>Frequently Asked<br><span class="sec-grad">Questions</span></h2>
+      <p>Everything you need to know about this generator</p>
+    </div>
+    <div class="faq-hd-right">
+      <img src="/images/mascot-love.svg" alt="" class="faq-mascot-2" loading="lazy">
+          <svg class="faq-sparkle" style="top:-8px;right:52px;width:28px;height:28px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--purple)"/></svg>
+          <svg class="faq-sparkle" style="top:28px;right:12px;width:18px;height:18px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--purple)" opacity=".7"/></svg>
+          <svg class="faq-sparkle" style="top:5px;right:-8px;width:12px;height:12px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--purple)" opacity=".5"/></svg>
+    </div>
+  </div>
+  <details class="faq-item">
+    <summary>Can I use a fancy font in my Instagram username?</summary>
+    <div class="faq-ans">No — usernames only allow letters, numbers, periods and underscores, so Unicode styles are rejected there. They work in your Name field, bio, captions and comments instead.</div>
   </details>
-</section>
-
-<!-- Arabic SEO section -->
-<section class="ar-sec" lang="ar">
-  <h2><span class="sec-grad">خطوط انستقرام المزخرفة — بيو واسم مميز</span> — بيو وكابشن مميز</h2>
-  <p>هل تريد <strong>بيو انستقرام مزخرف</strong> يجذب المتابعين؟ هذا المولد يحول نصك إلى خطوط Unicode جميلة جاهزة للنسخ في بيو انستقرام.</p>
-  <p>الستايلات الأكثر شعبية على انستقرام: Cursive 𝒜𝒷𝒸 وBold Script 𝓐𝓫𝓬 وSmall Caps ᴀʙᴄ.</p>
-  <details>
-    <summary>كيف أضع خط مزخرف في بيو انستقرام؟</summary>
-    <div class="faq-ans">اكتب نصك ← انقر Copy ← افتح Instagram ← Profile ← Edit Profile ← Bio ← الصق ← Done.</div>
+  <details class="faq-item">
+    <summary>Does a fancy font in my Name field hurt my reach?</summary>
+    <div class="faq-ans">A little, yes. Instagram search reads your Name field, so a fancy font makes those words unsearchable. Keep keywords plain in the Name field for discovery and use fancy styles in the bio.</div>
   </details>
-  <details>
-    <summary>هل الخطوط المزخرفة تزيد المتابعين على انستقرام؟</summary>
-    <div class="faq-ans">البيو المزخرف والمميز يجعل بروفايلك يبدو أكثر احترافاً مما يشجع الزوار على المتابعة. أما عدد المتابعين فيعتمد أساساً على المحتوى وليس الخط. لكن من الناحية البصرية، بيو جميل ومنظم دائماً يترك انطباعاً أفضل.</div>
+  <details class="faq-item">
+    <summary>How do I get line breaks in my Instagram bio?</summary>
+    <div class="faq-ans">Instagram's editor strips line breaks on some devices. Type your bio in Notes with real returns, style it here, then paste the whole thing at once — the breaks stick.</div>
+  </details>
+  <details class="faq-item">
+    <summary>Do Instagram fonts work in Stories and Reels?</summary>
+    <div class="faq-ans">Yes. Paste styled text into any Story text box or Reel caption. Instagram's own Story fonts (Classic, Modern, Neon) are separate — these Unicode styles work anywhere you can paste.</div>
+  </details>
+  <details class="faq-item">
+    <summary>Will every follower see the same style?</summary>
+    <div class="faq-ans">Yes. These are real Unicode characters, not a font file, so everyone sees the identical style on iOS, Android and desktop with no app on their end.</div>
+  </details>
+  <details class="faq-item">
+    <summary>Is the Instagram font generator free?</summary>
+    <div class="faq-ans">Completely free — no account, no limit. Type, copy, paste.</div>
   </details>
 </section>
 <!-- More generators -->
 <section class="more-tools">
-  <div class="more-tools-title">More <span class="sec-grad">Generators</span></div>
-  <p class="more-tools-sub">More fancy text styles — pick your platform.</p>
+  <div class="more-tools-title">Explore Font <span class="sec-grad">Generators</span></div>
+  <p class="more-tools-sub">Every fancy-text generator on Kactyl — pick your platform.</p>
   <div class="more-tools-grid">
+    <a class="mt-card" href="/instagram-fonts/">
+      <div class="mt-icon"><img src="/images/Icon-Instagram-Clavierarabe-online%20Kopie.svg" alt="Instagram 𝓕𝓸𝓷𝓽𝓼"></div>
+      <div class="mt-name">Instagram 𝓕𝓸𝓷𝓽𝓼</div>
+      <div class="mt-desc">Stylish fonts for your bio, captions &amp; username</div>
+    </a>
     <a class="mt-card" href="/tiktok-fonts/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8"/><path d="M5 13.5h8" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">TikTok Fonts</div>
-      <div class="mt-desc">Stylish fonts for TikTok bio &amp; username</div>
+      <div class="mt-icon"><img src="/images/Icon-TikTok-Clavierarabe-online.svg" alt="TikTok 𝓕𝓸𝓷𝓽𝓼"></div>
+      <div class="mt-name">TikTok 𝓕𝓸𝓷𝓽𝓼</div>
+      <div class="mt-desc">Stand out in TikTok bio &amp; comments</div>
     </a>
     <a class="mt-card" href="/discord-fonts/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8"/><path d="M5 13.5h8" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">Discord Fonts</div>
-      <div class="mt-desc">Cool fonts for Discord username &amp; bio</div>
+      <div class="mt-icon"><img src="/images/Logos%2C%20textgenerator%20discord.svg" alt="Discord 𝓕𝓸𝓷𝓽𝓼"></div>
+      <div class="mt-name">Discord 𝓕𝓸𝓷𝓽𝓼</div>
+      <div class="mt-desc">Cool fonts for Discord username &amp; server bio</div>
     </a>
-    <a class="mt-card" href="/roblox-fonts/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8"/><path d="M5 13.5h8" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">Roblox Fonts</div>
-      <div class="mt-desc">Cool display name fonts for Roblox</div>
+    <a class="mt-card" href="/whatsapp-fonts/">
+      <div class="mt-icon"><img src="/images/Icon-Whatsapp-Clavierarabe-online.svg" alt="WhatsApp 𝓕𝓸𝓷𝓽𝓼"></div>
+      <div class="mt-name">WhatsApp 𝓕𝓸𝓷𝓽𝓼</div>
+      <div class="mt-desc">Fancy text for status, name &amp; messages</div>
     </a>
-    <a class="mt-card" href="/fancy-text/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8"/><path d="M5 13.5h8" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">Fancy Text Hub</div>
-      <div class="mt-desc">All 62 font styles — every platform</div>
+    <a class="mt-card" href="/free-fire-name/">
+      <div class="mt-icon"><img src="/images/Free%20fire.svg" alt="Stylish 𝓝𝓪𝓶𝓮𝓼"></div>
+      <div class="mt-name">Stylish 𝓝𝓪𝓶𝓮𝓼</div>
+      <div class="mt-desc">Cool names for Free Fire, PUBG &amp; gaming</div>
     </a>
-    <a class="mt-card" href="/symbols/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8"/><path d="M5 13.5h8" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">Symbols</div>
-      <div class="mt-desc">1000+ copy-paste symbols for your bio</div>
+    <a class="mt-card" href="/fancy-text/arabic/">
+      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10C4 6 6.5 3 10 3C13 3 15 5 15 8C15 11 12.5 12 10 12" stroke-width="1.8"/><path d="M10 12Q10 15 12.5 17Q16 19 18 16" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
+      <div class="mt-name">Arabic Fancy 𝓣𝓮𝔵𝓽</div>
+      <div class="mt-desc">Decorated text for Arabic speakers</div>
+    </a>
+    <a class="mt-card" href="/fancy-text/styles/">
+      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 13.5h8" stroke-width="1.8" stroke-linecap="round"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/><circle cx="21.5" cy="9" r=".8" fill="currentColor" stroke="none"/></svg></div>
+      <div class="mt-name">Style 𝓖𝓾𝓲𝓭𝓮</div>
+      <div class="mt-desc">All 62 font styles explained with examples</div>
     </a>
   </div>
 </section>

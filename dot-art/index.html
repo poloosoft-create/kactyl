@@ -130,15 +130,19 @@ footer{background:#07091A;padding:0}
 .uc-badge{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700}
 .uc-badge svg{flex-shrink:0}
 /* How-to section */
-.how-sec{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:32px;max-width:1100px;margin:0 auto 32px;position:relative;z-index:1}
-[data-theme="dark"] .how-sec{background:rgba(255,255,255,.04)}
-.how-head{font-size:clamp(20px,2.5vw,26px);font-weight:800;margin-bottom:24px;letter-spacing:-.4px}
-.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
-.how-num-bg{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.how-step-title{font-size:14px;font-weight:700;color:var(--text)}
-.how-step-desc{font-size:13px;color:var(--muted);line-height:1.6}
-@media(max-width:600px){.how-steps{grid-template-columns:1fr}}
+.how-sec{background:none;border:none;padding:16px 0 40px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.how-hd{text-align:center;margin-bottom:12px}
+.how-hd h2{font-size:clamp(32px,5vw,56px);font-weight:900;color:var(--text);margin:0 0 10px;letter-spacing:-.8px}
+.how-hd p{font-size:13px;color:var(--muted);font-weight:600;margin:0}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:880px;margin:0 auto}
+.how-step-wrap{position:relative;padding-top:80px}
+.how-step-wrap::before{content:'';position:absolute;bottom:-4px;left:12%;right:12%;height:44px;border-radius:44px;background:#0068ff;filter:blur(34px);opacity:.34;z-index:0;pointer-events:none}
+.how-step-icon{position:absolute;top:0;left:50%;transform:translateX(-50%);width:160px;height:auto;z-index:2;pointer-events:none}
+.how-step{background:linear-gradient(135deg,#0068ff 0%,#4d9fff 100%);border-radius:52px;padding:84px 24px 12px;position:relative;z-index:1;display:flex;flex-direction:column;aspect-ratio:1/1;box-shadow:0 16px 34px -10px rgba(0,104,255,.45)}
+.how-step h3{font-size:clamp(24px,3.2vw,34px);font-weight:900;color:#fff;margin:6px 0 6px;line-height:1.05;letter-spacing:-.5px}
+.how-step p{font-size:13px;color:rgba(255,255,255,.8);line-height:1.6;flex:1;margin:0}
+.how-num{font-size:56px;font-weight:900;color:rgba(255,255,255,.35);line-height:1;text-align:right;margin-top:6px;letter-spacing:-2px}
+@media(max-width:640px){.how-steps{grid-template-columns:1fr;gap:72px}.how-step-icon{width:150px}.how-step-wrap{padding-top:90px}.how-step{aspect-ratio:auto;min-height:280px}}
 /* Standard FAQ */
 .tool-faq{max-width:1100px;margin:0 auto 48px;padding:0 24px;position:relative;z-index:1}
 .tool-faq>h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px}
@@ -178,12 +182,12 @@ footer{background:#07091A;padding:0}
 .gb-sel option{background:#0d1128;color:#c8d4f0}
 .gen-cv-bg{background:#040610;line-height:0;overflow:hidden}
 #gen-cv{cursor:crosshair;image-rendering:pixelated;image-rendering:crisp-edges;display:block;width:100%}
-.gen-upl{margin:9px 12px 11px;border:1.5px dashed rgba(100,140,255,.2);border-radius:11px;padding:13px 10px;text-align:center;cursor:pointer;transition:all .2s;position:relative;background:rgba(0,0,0,.2)}
+.gen-upl{margin:9px 12px 11px;border:1.5px dashed rgba(0,104,255,.35);border-radius:11px;padding:13px 10px;text-align:center;cursor:pointer;transition:all .2s;position:relative;background:#fff}
 .gen-upl:hover,.gen-upl.dov{border-color:rgba(0,104,255,.6);background:rgba(0,104,255,.06);border-style:solid}
-.gen-upl-icon{margin:0 auto 6px;opacity:.3;display:block;color:#70a4ff}
-.gen-upl p{font-size:12.5px;color:#7788aa;margin:0 0 3px;pointer-events:none}
-.gen-upl p strong{color:#8899cc}
-.gen-upl span{font-size:11px;color:#445566;opacity:.9;pointer-events:none}
+.gen-upl-icon{margin:0 auto 6px;opacity:.7;display:block;color:#0068ff}
+.gen-upl p{font-size:12.5px;color:#334155;margin:0 0 3px;pointer-events:none}
+.gen-upl p strong{color:#0068ff}
+.gen-upl span{font-size:11px;color:#64748b;opacity:.9;pointer-events:none}
 .gen-upl input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
 .thresh-row{display:none;align-items:center;gap:8px;padding:4px 12px 10px;font-size:11px;color:#7788aa}
 .thresh-row.show{display:flex}
@@ -204,6 +208,30 @@ pre#gen-out{font-family:'Courier New',monospace;font-size:11px;line-height:1.25;
 .coll-hd p{font-size:13px;color:var(--muted)}
 @media(max-width:760px){.gen-layout{grid-template-columns:1fr}.gen-out-bg{max-height:160px}.gen-wrap{padding:24px 14px 18px}.gen-outer{padding:40px 12px 16px}}
 @media(max-width:480px){.gen-hd h2{letter-spacing:-.8px}}
+
+.faq-promo { padding:110px 16px 48px; position:relative; z-index:1 }
+.faq-promo .wrap { max-width:860px; margin:0 auto; }
+.faq-promo-grid { display:grid; grid-template-columns:1fr 1.45fr; gap:16px; position:relative; }
+.faq-card-brand { background:#fff; border:1px solid #E2E8F0; border-radius:24px; padding:48px 32px; display:flex; align-items:center; justify-content:center; min-height:240px; position:relative; }
+.faq-card-brand::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.5; z-index:-1; }
+.faq-brand-logo { width:230px; max-width:82%; }
+.faq-mascot { position:absolute; top:-50px; left:calc(41% - 90px); width:180px; z-index:10; pointer-events:none; filter:drop-shadow(0 6px 18px rgba(0,0,0,.15)); }
+.faq-card-dark { background:#0F172A; border-radius:24px; padding:40px 36px; display:flex; flex-direction:column; justify-content:center; min-height:240px; position:relative; }
+.faq-card-dark::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.5; z-index:-1; }
+.faq-dark-h { font-size:clamp(30px,4.5vw,48px); font-weight:800; color:#F1F5F9; line-height:1.05; letter-spacing:-.8px; margin-bottom:14px; }
+.faq-dark-sub { font-size:14px; color:#94A3B8; line-height:1.6; margin:0 0 24px; }
+.faq-dark-pill { display:inline-flex; align-items:center; background:#EC4899; color:#fff; border-radius:24px; padding:11px 32px; font-size:15px; font-weight:700; letter-spacing:.06em; align-self:flex-end; text-decoration:none; transition:opacity .2s; }
+.faq-dark-pill:hover { opacity:.85; }
+.faq-hd { display:flex; align-items:center; justify-content:space-between; gap:32px; margin:0 0 24px; text-align:left; }
+.faq-hd-left { flex:1; }
+.faq-hd-badge { display:inline-flex; align-items:center; background:#111; border-radius:50px; padding:8px 22px; font-size:13px; font-weight:800; color:#fff; letter-spacing:.03em; text-transform:uppercase; margin-bottom:18px; }
+[data-theme="dark"] .faq-hd-badge { background:#fff; color:#111; }
+.faq-hd h2 { font-size:clamp(32px,5vw,56px); font-weight:900; letter-spacing:-.8px; line-height:1.1; margin:0; }
+.faq-hd p { font-size:15px; color:var(--muted); margin-top:10px; }
+.faq-hd-right { position:relative; flex-shrink:0; }
+.faq-mascot-2 { width:230px; display:block; filter:drop-shadow(0 8px 24px rgba(0,0,0,.12)); }
+.faq-sparkle { position:absolute; pointer-events:none; }
+@media(max-width:700px){ .faq-promo{padding:100px 16px 40px} .faq-promo-grid{grid-template-columns:1fr} .faq-mascot{top:-90px} .faq-card-dark{padding:32px 24px} .faq-hd{flex-direction:column;gap:0;align-items:stretch} .faq-hd-right{align-self:flex-end;margin-top:-20px} .faq-mascot-2{width:150px} }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"Dot Art — Copy & Paste","description":"Copy and paste 240+ dot art pieces. Emoji pixel art and block character designs. Click any piece to copy instantly.","url":"https://kactyl.com/dot-art/","publisher":{"@type":"Organization","name":"Kactyl","url":"https://kactyl.com"}}
@@ -402,16 +430,42 @@ pre#gen-out{font-family:'Courier New',monospace;font-size:11px;line-height:1.25;
 
 
     <div class="how-sec">
-      <div class="how-head">How to <span style="color:#0068ff;-webkit-text-fill-color:#0068ff">Use</span></div>
+      <div class="how-hd"><h2>How To <span style="color:#0068ff;-webkit-text-fill-color:#0068ff">Use</span></h2><p>Three steps. Ten seconds.</p></div>
       <div class="how-steps">
-        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#0068ff,#0068ff)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/></svg></div><div class="how-step-title">1. Browse Categories</div><div class="how-step-desc">Pick a category — hearts, animals, food, or any of the 14 themes.</div></div>
-        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#0068ff,#0068ff)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 3L6 18L10 14L13 21L15 20L12 13L18 13Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" fill="none"/></svg></div><div class="how-step-title">2. Click Any Piece</div><div class="how-step-desc">Click any dot art piece to instantly copy it to your clipboard.</div></div>
-        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#0068ff,#0068ff)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="2" stroke="#fff" stroke-width="1.8" fill="none"/><path d="M9 3v3h6V3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="13" x2="15" y2="13" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><line x1="9" y1="17" x2="13" y2="17" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="how-step-title">3. Paste Anywhere</div><div class="how-step-desc">Paste into Discord, TikTok, WhatsApp, Instagram, or any chat.</div></div>
+        <div class="how-step-wrap"><img class="how-step-icon" src="/images/search-finde.svg" alt="Browse" loading="lazy"><div class="how-step"><h3>Browse Categories</h3><p>Pick a category — hearts, animals, food, or any of the 14 themes.</p><div class="how-num">1</div></div></div>
+        <div class="how-step-wrap"><img class="how-step-icon" src="/images/pick-style.svg" alt="Click" loading="lazy"><div class="how-step"><h3>Click Any Piece</h3><p>Click any dot art piece to instantly copy it to your clipboard.</p><div class="how-num">2</div></div></div>
+        <div class="how-step-wrap"><img class="how-step-icon" src="/images/Past.svg" alt="Paste" loading="lazy"><div class="how-step"><h3>Paste Anywhere</h3><p>Paste into Discord, TikTok, WhatsApp, Instagram, or any chat.</p><div class="how-num">3</div></div></div>
       </div>
     </div>
 
-    <section class="tool-faq">
-      <h2>Frequently Asked <span style="color:#0068ff;-webkit-text-fill-color:#0068ff">Questions</span></h2>
+    <section class="faq-promo">
+<div class="wrap">
+<div class="faq-promo-grid">
+<div class="faq-card-brand"><img src="/images/kactyl-brand.png" alt="Kactyl" class="faq-brand-logo" loading="lazy"></div>
+<img src="/images/Mascot-2.svg" alt="" class="faq-mascot" loading="lazy">
+<div class="faq-card-dark">
+<div class="faq-dark-h">Got Questions?</div>
+<p class="faq-dark-sub">Your top dot art questions, answered.</p>
+<a href="#faq" class="faq-dark-pill">Get Answers</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="tool-faq" id="faq">
+  <div class="faq-hd">
+    <div class="faq-hd-left">
+      <div class="faq-hd-badge">FAQ</div>
+      <h2>Frequently Asked<br><span style="color:#0068ff;-webkit-text-fill-color:#0068ff">Questions</span></h2>
+      <p>Everything you need to know about dot art</p>
+    </div>
+    <div class="faq-hd-right">
+      <img src="/images/mascot-search.svg" alt="" class="faq-mascot-2" loading="lazy">
+          <svg class="faq-sparkle" style="top:-8px;right:52px;width:28px;height:28px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#0068ff"/></svg>
+          <svg class="faq-sparkle" style="top:28px;right:12px;width:18px;height:18px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#0068ff" opacity=".7"/></svg>
+          <svg class="faq-sparkle" style="top:5px;right:-8px;width:12px;height:12px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#0068ff" opacity=".5"/></svg>
+    </div>
+  </div>
       <details>
         <summary>What is dot art?</summary>
         <div class="faq-ans">Dot art uses Unicode Braille patterns (U+2800–U+28FF) and block characters to create pixel-style images made of dots. Each Braille character represents up to 8 dots in a 2×4 grid — giving fine resolution in pure text.</div>
