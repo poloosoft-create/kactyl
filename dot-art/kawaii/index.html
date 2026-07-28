@@ -106,7 +106,7 @@ nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
 .rel-pill{font-size:13px;padding:7px 16px;border-radius:99px;background:rgba(255,255,255,.65);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.80);color:var(--muted);text-decoration:none;transition:all .15s}
 .rel-pill:hover{border-color:#f43f5e55;color:#f43f5e}
 [data-theme="dark"] .rel-pill{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
-.faq-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 48px;padding:0 24px}
+.faq-sec{position:relative;z-index:1;max-width:760px;margin:96px auto 48px;padding:0 24px}
 .sec-grad{background:linear-gradient(135deg,var(--blue) 0%,#2563eb 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .faq-sec h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin-bottom:20px;letter-spacing:-.5px}
 .faq-item{background:rgba(255,255,255,.65);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.80);border-radius:14px;margin-bottom:10px;overflow:hidden}
@@ -177,10 +177,13 @@ footer{background:#07091A;padding:0}
 [data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
 .faq-sec{position:relative;margin-top:64px}
 .faq-sec>h2{margin-bottom:44px}
-.faq-combo-mascot{width:180px;height:auto;display:block;position:absolute;right:0;top:-24px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
-@media(max-width:640px){.faq-combo-mascot{width:130px;top:-8px}}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
 /*END-DA-MASCOT*/
 </style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div></div>
@@ -637,6 +640,16 @@ footer{background:#07091A;padding:0}
   </ul>
   <p class="plat-tip">&#128161; <strong>Platform tip:</strong> Kawaii is the anchor of the whole soft-cute aesthetic on Tumblr, TikTok and Discord. Being plain Braille text, a kawaii piece pastes anywhere with no upload &mdash; Copy, paste, done.</p>
 </section>
+<section class="intro-sec" style="max-width:760px;margin:0 auto 36px;padding:0 24px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">What makes something kawaii</h3>
+  <p style="font-size:15px;color:var(--muted);line-height:1.8">Kawaii is not just “cute” — it is a specific Japanese design language with real rules. Round shapes over sharp ones, small over large, soft over hard, a slightly helpless or babyish quality that makes you want to protect it: that is the recipe, refined for decades from Sanrio characters to pastel street fashion in Harajuku. It became a global shorthand for a gentle, non-threatening, feel-good aesthetic, and it is why so many bios and servers lean into it. A kawaii dot-art piece works because it keeps those cues — rounded, tiny, unmistakably friendly — in nothing but dots.</p>
+</section>
+
+<section class="intro-sec" style="max-width:760px;margin:0 auto 36px;padding:0 24px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">Building a soft profile with it</h3>
+  <p style="font-size:15px;color:var(--muted);line-height:1.8">A kawaii piece is a building block for a whole aesthetic rather than a one-off. It sits naturally in pastel-themed servers, soft-girl and cottagecore bios, and gentle self-care spaces, and it layers well with other cute motifs — bows, hearts, small animals — to build a consistent, feel-good look. The trick is to keep everything in the same soft register so nothing clashes; one kawaii anchor plus a couple of quiet accents reads far better than a crowd of loud ones. Placed that way it makes a profile feel welcoming and unmistakably gentle at a glance.</p>
+</section>
+
 <section class="faq-sec">
   <img src="../../images/Mascot-3.svg" alt="" class="faq-combo-mascot" loading="lazy">
   <div class="faq-hd-badge">FAQ</div>
@@ -646,6 +659,7 @@ footer{background:#07091A;padding:0}
 <details class="faq-item"><summary>Where does kawaii dot art look best?</summary><div class="faq-ans">Think pastel, dreamy, kidcore spaces &mdash; aesthetic Discord servers, Tumblr blogs, cutesy TikTok captions. As long as the line spacing survives it keeps its look; a code block gives the tidiest result on busy scenes.</div></details>
 <details class="faq-item"><summary>Does kawaii dot art work on phones?</summary><div class="faq-ans">Yep. Braille glyphs ship built into every operating system, so there&rsquo;s nothing to install on iPhone, Android, Mac or Windows. Because these scenes are wide, a small phone may reflow them &mdash; landscape mode or a roomier text box sorts it out instantly.</div></details>
 <details class="faq-item"><summary>Can I pair it with other dot art?</summary><div class="faq-ans">Yes &mdash; kawaii pieces stack beautifully with the flower, heart and strawberry pieces for a full soft / coquette bio. Copy each onto its own line for a little cute collage.</div></details>
+<details class="faq-item"><summary>What counts as kawaii?</summary><div class="faq-ans">Kawaii is a specific Japanese idea of cuteness with real rules: round shapes over sharp ones, small over large, soft over hard, and a gently helpless quality that makes you want to protect it. Refined over decades from Sanrio characters to Harajuku fashion, it has become global shorthand for a gentle, feel-good, non-threatening aesthetic.</div></details>
 </section>
 <section class="related-sec">
   <h2>More Dot Art <span class="sec-grad">Categories</span></h2>

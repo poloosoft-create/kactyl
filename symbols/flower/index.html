@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does the ✿ symbol mean?", "acceptedAnswer": {"@type": "Answer", "text": "✿ is the Black Florette (U+273F), a stylized four-petal flower from the Dingbats Unicode block. Originally a typographic ornament, it's now used decoratively in usernames, bios, and text art. It doesn't carry specific cultural meaning in Western contexts — its appeal is primarily visual. In some online communities, ✿ signals a friendly, soft aesthetic."}}, {"@type": "Question", "name": "How do I type the flower symbol?", "acceptedAnswer": {"@type": "Answer", "text": "Unicode flower text symbols like ✿ ❀ ⚘ are not on standard keyboards. Copy them directly from this page — click any symbol to copy it instantly. On Windows, you can use Win + . to open the emoji panel and search 'flower' for emoji versions. For the typographic text flowers ✿ ❀, this page is the fastest option."}}, {"@type": "Question", "name": "What is the difference between flower emoji 🌸 and flower symbol ✿?", "acceptedAnswer": {"@type": "Answer", "text": "🌸 is the Cherry Blossom emoji (U+1F338) — it renders as a colored image with platform-specific artwork on iOS, Android, and Windows. ✿ is a plain Unicode text character that renders in your system's text font — monochrome and consistent across every device and app. Use ✿ when you need consistent appearance; use 🌸 when you want the colored emoji aesthetic."}}, {"@type": "Question", "name": "What is the meaning of 🌸 in Japanese culture?", "acceptedAnswer": {"@type": "Answer", "text": "Cherry blossoms (sakura) represent mono no aware (物の哀れ) — the bittersweet awareness of impermanence — in Japanese aesthetics. They bloom briefly and fall quickly, symbolizing the beauty and fragility of life. In modern Japanese internet culture, 🌸 marks the spring season, celebrates new beginnings (Japanese school years start in April, coinciding with sakura season), and is used as a general softness and cuteness marker."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -424,6 +434,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/mascot-search.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What does the ✿ symbol mean?</summary>
@@ -461,14 +473,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2>رموز الزهور ✿ 🌸 — نسخ ولصق</h2>
-      <p>رموز الزهور ✿ ❀ ✽ ❁ ❃ وغيرها تُستخدم كثيراً في تزيين حالات واتساب والمنشورات على إنستغرام وسناب شات. إضافة جمالية شائعة في المحتوى العربي الرومانسي واليومي. زهرة 🌸 هي الأكثر استخداماً في المحادثات العربية للتعبير عن الجمال والرقة.</p>
-      <details>
-        <summary>ما هي أجمل رموز الزهور لحالة واتساب؟</summary>
-        <div class="faq-ans">أجمل رموز الزهور لحالة واتساب هي: ✿ الزهرة الكلاسيكية، ❀ الزهرة المفتوحة، 🌸 زهرة الكرز اليابانية، و❁ النجمة الزهرية. يمكنك تركيب أكثر من زهرة معاً مثل: ✿•.•✿ لتزيين الحالة أو الاسم.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -548,7 +553,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

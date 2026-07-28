@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the HTML code for a checkmark?", "acceptedAnswer": {"@type": "Answer", "text": "For ✓ use ✓ or ✓ or the named entity ✓. For the heavy checkmark ✔ use ✔ or ✔. For the ballot box with check ☑ use ☑ or ☑. In CSS, use content: '\\2713' in pseudo-elements for custom checkboxes."}}, {"@type": "Question", "name": "How do I type a checkmark on Windows?", "acceptedAnswer": {"@type": "Answer", "text": "Three methods: (1) Hold Alt and type 10003 on the numpad for ✓ or 10004 for ✔. (2) Press Win + . to open emoji panel, then type 'check.' (3) In Word, use Insert > Symbol and search 'CHECK MARK.' For the fastest method on any device, bookmark this page and click to copy."}}, {"@type": "Question", "name": "Can I use checkmarks in Excel and Google Sheets?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. In Excel on Windows: Insert > Symbol > select Wingdings font > find the checkmark. Or use CHAR(252) in Wingdings. In Google Sheets, insert the Unicode ✓ directly by copying from this page — it's the cleanest approach and preserves correctly when cells are moved or exported."}}, {"@type": "Question", "name": "What is the difference between ✓ and ✅?", "acceptedAnswer": {"@type": "Answer", "text": "✓ (U+2713) is a plain text character that renders in your system's current font — monochrome and consistent across all devices. ✅ (U+2705) is an emoji that renders as a colored, stylized image that looks different on iOS, Android, and Windows. Use ✓ for documents and formal contexts; use ✅ for messaging and casual social media."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -419,6 +429,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/Mascot-3.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What is the HTML code for a checkmark?</summary>
@@ -456,14 +468,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2><span class="sec-grad">رمز الصح ✓ والعلامات</span> — نسخ ولصق</h2>
-      <p>علامة الصح ✓ و✔ من أكثر الرموز استخداماً في القوائم والمهام على واتساب وتيليغرام. تستخدمها كثيراً في قوائم التسوق ومتابعة المهام والمنشورات الإرشادية والإعلانات. علامة الخطأ ✗ و✘ تُستخدم في المقابل للإشارة إلى الأشياء غير المكتملة أو الخاطئة.</p>
-      <details>
-        <summary>كيف أضع علامة الصح ✓ في رسالة واتساب أو ملاحظة؟</summary>
-        <div class="faq-ans">انقر على ✓ أو ✔ من الأعلى لنسخه، ثم الصقه في أي مكان. إذا كنت تريد قائمة مهام في واتساب، اكتب كل مهمة في سطر جديد وضع ✓ أمام المهام المكتملة. يعمل الرمز على جميع أنظمة التشغيل والأجهزة.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -543,7 +548,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

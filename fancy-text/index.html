@@ -425,21 +425,20 @@ footer{background:#07091A;border-top:none;padding:0}
 .faq-promo { padding:120px 16px 56px; }
 .faq-promo .wrap { max-width:860px; margin:0 auto; }
 .faq-promo-grid { display:grid; grid-template-columns:1fr 1.45fr; gap:16px; position:relative; }
-.faq-card-brand { background:#fff; border:1px solid #E2E8F0; border-radius:24px; padding:48px 32px; display:flex; align-items:center; justify-content:center; min-height:240px; position:relative; }
-.faq-card-brand::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.7; z-index:-1; pointer-events:none; }
-.faq-brand-logo { width:230px; max-width:82%; }
-.faq-mascot { position:absolute; top:-50px; left:calc(41% - 90px); width:180px; z-index:10; pointer-events:none; filter:drop-shadow(0 6px 18px rgba(0,0,0,.15)); }
-.faq-card-dark { background:#0F172A; border-radius:24px; padding:40px 36px; display:flex; flex-direction:column; justify-content:center; min-height:240px; position:relative; }
-.faq-card-dark::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.7; z-index:-1; pointer-events:none; }
-.faq-dark-h { font-size:clamp(32px,4.5vw,52px); font-weight:800; color:#F1F5F9; line-height:1.05; letter-spacing:-.8px; margin-bottom:14px; }
-.faq-dark-sub { font-size:14px; color:#64748B; line-height:1.6; margin:0 0 24px; }
-.faq-dark-pill { display:inline-flex; align-items:center; background:#EC4899; color:#fff; border-radius:24px; padding:11px 32px; font-size:15px; font-weight:700; letter-spacing:.06em; align-self:flex-end; text-decoration:none; transition:opacity .2s; }
-.faq-dark-pill:hover { opacity:.85; }
+.faq-card-brand { background:#fff; border:none; border-radius:24px; padding:18px 28px; display:flex; align-items:center; justify-content:center; min-height:122px; position:relative; }
+.faq-card-2 { background:#fff; border:none; border-radius:24px; min-height:122px; position:relative; }
+.faq-card-brand::before, .faq-card-2::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.55; z-index:-1; pointer-events:none; }
+.card-hills-clip { position:absolute; inset:0; border-radius:24px; overflow:hidden; z-index:1; }
+.card-hills { position:absolute; left:0; bottom:0; width:100%; height:126px; display:block; }
+.card-hills .hill-accent{fill:var(--accent,#0068ff)}
+.card-hills .hill-soft{fill:color-mix(in srgb,var(--accent,#0068ff) 30%,#fff)}
+.faq-brand-logo { width:210px; max-width:80%; }
+.faq-mascot { position:absolute; top:-70px; left:74%; transform:translateX(-50%); width:210px; z-index:10; pointer-events:none; filter:drop-shadow(0 6px 18px rgba(0,0,0,.15)); }
 @media(max-width:600px){
-  .faq-promo { padding:100px 16px 48px; }
+  .faq-promo { padding:130px 16px 48px; }
   .faq-promo-grid { grid-template-columns:1fr; }
-  .faq-mascot { top:-90px; }
-  .faq-card-dark { padding:32px 24px; }
+  .faq-card-2 { display:none; }
+  .faq-mascot { top:-128px; left:50%; width:170px; }
 }
 /* FAQ header shell (brand v2: Mascot-3 + sparkles) */
 .faq-hd { display:flex; align-items:center; justify-content:space-between; gap:32px; margin:0 0 24px; text-align:left; }
@@ -502,6 +501,8 @@ footer{background:#07091A;border-top:none;padding:0}
     }
   }
   </script>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 
@@ -610,6 +611,19 @@ footer{background:#07091A;border-top:none;padding:0}
   <h2 style="margin-top:24px">How to use it</h2>
   <p>Type or paste your text in the box above. All 38 styles update instantly. Click the <strong>Copy</strong> button on any style to copy it to your clipboard, then paste it anywhere. Use the category tabs to filter styles, or search by name.</p>
 </section>
+<section class="seo-sec">
+  <h2>How fancy text <span class="sec-grad">actually works</span></h2>
+  <p>Every style here is built from real Unicode code points, not a font file. When you pick the bold-script 𝓗𝓮𝓵𝓵𝓸, you are not applying a typeface — you are swapping each letter for a different character that already exists in the Unicode standard. The cursive letters live in the Mathematical Alphanumeric Symbols block (originally added so equations could use bold and script variables), the circled letters in Enclosed Alphanumerics, and the small-caps and upside-down styles in the Latin Extended and Phonetic blocks. Because the character itself carries the style, it survives copy-and-paste into any app that renders Unicode — the receiving phone never needs your font installed.</p>
+  <p>That also explains why a few styles behave differently once pasted. The true alphabet styles — bold, italic, script, fraktur, monospace, double-struck — have a dedicated character for every letter, so they travel cleanly everywhere. Decorative styles that rely on combining marks — strikethrough, underline, the glitchy layered look — stack invisible characters on top of ordinary letters. Most apps show them, but some strip combining marks in usernames or trim them in search fields. If a style looks perfect in the box but breaks after pasting, it is almost always a combining-mark style meeting an input that filters them out.</p>
+  <h2 style="margin-top:24px">Where each style works — <span class="sec-grad">and where it won't</span></h2>
+  <p><strong>Instagram</strong> accepts Unicode styles in your bio and captions, but not in the @username, and the bio caps at 150 characters — styled letters still count as one character each, so a fancy bio fills up at the same length as a plain one. Bold and script read most reliably; very ornate styles can show as empty boxes on older Android builds.</p>
+  <p><strong>TikTok</strong> allows styled text in the bio (80 characters) and comments but occasionally normalises captions back to plain letters. <strong>Discord</strong> shows Unicode styles in messages, nicknames and server names, but strips them inside code blocks and inline backticks, and its own markdown already handles bold and italic separately. On <strong>X</strong>, styled posts render fine, but search and mentions read the underlying characters, not the visible style — so a fancy @handle would not be findable.</p>
+  <h2 style="margin-top:24px">A note on <span class="sec-grad">readability</span></h2>
+  <p>One thing most generators leave out: screen readers announce these characters by their Unicode names, so a bold-script name can be read aloud as "mathematical bold script capital H", and some styles are skipped entirely. That is fine for a decorative flourish, but keep your real username and anything people actually need to read in plain text, and use the fancy styles as an accent — a highlighted word, a divider, a signature line — rather than a whole paragraph. Used that way they add personality without costing anyone legibility.</p>
+  <h2 style="margin-top:24px">Which style for <span class="sec-grad">which vibe</span></h2>
+  <p><strong>Elegant and soft</strong> — bold script and cursive suit aesthetic bios, poetry captions and wedding or beauty accounts; they read as handwritten and calm. <strong>Bold and loud</strong> — sans bold and serif bold make a name stand out in a crowded comment section without looking like a gimmick, which is why they travel best across every app. <strong>Edgy and gaming</strong> — fraktur (gothic), monospace and the sharper symbol styles fit gaming tags, metal-band energy and anything that wants an underground feel.</p>
+  <p><strong>Cute and aesthetic</strong> — bubble, circled and small-caps styles carry the soft, kawaii look popular on TikTok and Pinterest; they pair well with a couple of sparkle characters. <strong>Subtle emphasis</strong> — small caps and underline let you stress one phrase inside otherwise normal text, useful in a bio line or a pinned comment. <strong>Playful or joking</strong> — strikethrough reads as a crossed-out correction or a wink, and the upside-down style lands a punchline. A good rule: match the style to the account, pick one and stay consistent, and never stack more than two effects on the same word or it stops being readable.</p>
+</section>
 <!-- More generators -->
 <section class="more-tools">
   <div class="more-tools-title">Explore Font <span class="sec-grad">Generators</span></div>
@@ -703,19 +717,25 @@ footer{background:#07091A;border-top:none;padding:0}
     <!-- FAQ PROMO -->
     <section class="faq-promo">
       <div class="wrap">
-        <div class="faq-promo-grid">
-          <div class="faq-card-brand">
-            <img src="../images/kactyl-brand.png" alt="Kactyl" class="faq-brand-logo" loading="lazy">
-          </div>
-          <img src="../images/Mascot-2.svg" alt="" class="faq-mascot" loading="lazy">
-          <div class="faq-card-dark">
-            <div class="faq-dark-h">Got Questions?</div>
-            <p class="faq-dark-sub">Your top fancy text questions, answered.</p>
-            <a href="#faq" class="faq-dark-pill">Get Answers</a>
-          </div>
+    <div class="faq-promo-grid">
+      <div class="faq-card-brand">
+        <img src="../images/kactyl%20brand%20name-svg.svg" alt="Kactyl" class="faq-brand-logo">
+      </div>
+      <div class="faq-card-2">
+        <div class="card-hills-clip">
+          <svg class="card-hills" viewBox="0 0 560 130" preserveAspectRatio="none" aria-hidden="true">
+            <circle cx="38"  cy="135" r="74" class="hill-soft"/>
+            <circle cx="152" cy="120" r="92" class="hill-soft"/>
+            <circle cx="268" cy="144" r="58" class="hill-soft"/>
+            <circle cx="384" cy="126" r="86" class="hill-soft"/>
+            <circle cx="504" cy="138" r="70" class="hill-accent"/>
+          </svg>
         </div>
       </div>
-    </section>
+      <img src="../images/Mascot-3.svg" alt="" class="faq-mascot">
+    </div>
+  </div>
+</section>
 
     <section class="tool-faq" id="faq">
       <div class="faq-hd">
@@ -723,12 +743,6 @@ footer{background:#07091A;border-top:none;padding:0}
           <div class="faq-hd-badge">FAQ</div>
           <h2>Frequently Asked<br><span class="sec-grad">Questions</span></h2>
           <p>Everything you need to know about the fancy text generator</p>
-        </div>
-        <div class="faq-hd-right">
-          <img src="../images/Mascot-thinking.svg" alt="" class="faq-mascot-2" loading="lazy">
-          <svg class="faq-sparkle" style="top:-8px;right:52px;width:28px;height:28px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#7c3aed"/></svg>
-          <svg class="faq-sparkle" style="top:28px;right:12px;width:18px;height:18px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#7c3aed" opacity=".7"/></svg>
-          <svg class="faq-sparkle" style="top:5px;right:-8px;width:12px;height:12px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#7c3aed" opacity=".5"/></svg>
         </div>
       </div>
       <details>
@@ -762,6 +776,18 @@ footer{background:#07091A;border-top:none;padding:0}
       <details>
         <summary>Does fancy text work in WhatsApp?</summary>
         <div class="faq-ans">Yes. WhatsApp messages, statuses, and group names support Unicode fancy text. WhatsApp also has its own native bold (*text*) and italic (_text_) markdown for basic formatting.</div>
+      </details>
+      <details>
+        <summary>Why does a style look perfect here but break after I paste it?</summary>
+        <div class="faq-ans">That happens with styles built from combining marks — strikethrough, underline and the layered glitch look stack invisible characters on top of normal letters. Some inputs, especially usernames and search fields, strip those marks. The core alphabet styles (bold, italic, script, fraktur, monospace) use one dedicated character per letter, so they paste cleanly everywhere. If a style breaks, switch to one of those.</div>
+      </details>
+      <details>
+        <summary>Do fancy characters count against a bio's character limit?</summary>
+        <div class="faq-ans">Yes — each styled letter is a single Unicode character, so a fancy word takes up exactly the same number of characters as the plain version. A 150-character Instagram bio holds the same amount of text whether you style it or not; the fancy look does not cost you extra room.</div>
+      </details>
+      <details>
+        <summary>Are fancy-text usernames searchable?</summary>
+        <div class="faq-ans">Search and @mentions read the underlying Unicode character, not the visible style, so a styled name can be hard for people to find or tag. Keep your real handle in plain text for discoverability and use fancy styling for your display name or bio, where it is decorative rather than something people need to type.</div>
       </details>
     </section>
 
@@ -1135,7 +1161,7 @@ function showToast(msg) {
 }
 
 // ── Language dropdown ─────────────────────────────────────────────────────────
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 // ── Theme ─────────────────────────────────────────────────────────────────────

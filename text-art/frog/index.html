@@ -115,7 +115,7 @@ nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
 .rel-pill{font-size:13px;padding:7px 16px;border-radius:99px;background:rgba(255,255,255,.65);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.80);color:var(--muted);text-decoration:none;transition:all .15s;font-family:monospace}
 .rel-pill:hover{border-color:#16a34a59;color:#16a34a}
 [data-theme="dark"] .rel-pill{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
-.faq-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 48px;padding:0 24px}
+.faq-sec{position:relative;z-index:1;max-width:760px;margin:96px auto 48px;padding:0 24px}
 .sec-grad{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .faq-sec h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin-bottom:20px;letter-spacing:-.5px}
 .faq-item{background:rgba(255,255,255,.65);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.80);border-radius:14px;margin-bottom:10px;overflow:hidden}
@@ -177,6 +177,15 @@ footer{background:#07091A;border-top:none;padding:0}
 .ta-rel-arrow{position:absolute;bottom:17px;right:18px;font-size:16px;font-weight:700;color:var(--ca);opacity:0;transform:translateX(-5px);transition:opacity .2s,transform .2s}
 .ta-rel-card:hover .ta-rel-arrow{opacity:1;transform:translateX(0)}
 </style>
+<style>
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div></div>
@@ -279,7 +288,26 @@ footer{background:#07091A;border-top:none;padding:0}
   <p class="plat-tip">&#128161; <strong>Platform tip:</strong> Frog text art peaked in 2021 with the cottagecore trend and never stopped growing. The leaf-hug frog (づᵔᗜᵔ)づ🍃 is consistently viral on TikTok comments under anything nature-related.</p>
 </section>
 
+<section class="intro-sec" style="margin:0 auto 40px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">The frog kaomoji and meme culture</h3>
+  <p style="margin-bottom:12px">The frog is one of the harder animals to render in text, which is part of its charm. Builders use curved brackets and small symbols to suggest bulging eyes and a wide mouth, and multi-line versions add a squat body and webbed feet. The results range from cute and friendly to deliberately cursed, and the imperfection is often the joke.</p>
+  <p>Frogs carry real meme weight online, from reaction posts to the general silly-amphibian energy of Discord and Twitter/X. A frog kaomoji dropped into a chat signals playful, low-stakes humour better than any emoji. The compact faces fit inside bios, while the taller ASCII frogs are best pasted into a message or comment where their shape has room to land.</p>
+</section>
+
+<section class="intro-sec" style="margin:0 auto 40px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">Cute frog versus cursed frog</h3>
+  <p style="margin-bottom:12px">Frog art lives on a spectrum. On the cute end, tidy brackets and round eyes make a small, friendly frog that fits neatly in a bio. On the other end sit deliberately lumpy, asymmetric frogs whose wonky proportions are the entire joke, the text equivalent of a cursed-image meme. Multi-line frogs add a squat body and splayed feet for a full little creature rather than just a face.</p>
+  <p>Choose based on tone: the neat frog suits a wholesome or nature-themed profile, while the messy frog lands better in a chaotic group chat or meme channel. The one-line faces slot into usernames and status fields, and the taller ASCII frogs belong in messages and comments where their shape has the space to read the way it was drawn.</p>
+</section>
+
+<section class="intro-sec" style="margin:0 auto 40px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">What makes frog art different</h3>
+  <p>Unlike cats or bears, the frog has no single canonical face, so its art is more inventive and varied. Some builders lean on rounded brackets for a smooth cartoon frog; others use jagged or mismatched symbols on purpose to get that lovable, slightly-wrong look. Multi-line frogs often include a wide grin and outstretched legs, giving them a mid-leap energy that a static emoji cannot match. This flexibility is why frog pieces feel more hand-made and personal than most other animal kaomoji.</p>
+</section>
+
 <section class="faq-sec">
+  <img src="../../images/mascot-search.svg" alt="" class="faq-combo-mascot" loading="lazy">
+  <div class="faq-hd-badge">FAQ</div>
   <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
 <details class="faq-item"><summary>What is the frog kaomoji?</summary><div class="faq-ans">(ᵔᗜᵔ) is the most popular frog face — the ᗜ character creates the wide, flat frog mouth. (づ ᴗ _ᴗ)づ♡ is the love frog variant, holding its heart out. Both are widely used in cottagecore and meme communities.</div></details>
 <details class="faq-item"><summary>Why are frog emojis so popular online?</summary><div class="faq-ans">Frogs became a beloved internet aesthetic through meme culture (Pepe the Frog, Kermit) and later through cottagecore TikTok. They represent a mix of cosy vibes, weird humour, and genuine cuteness that resonates across communities.</div></details>
@@ -292,7 +320,7 @@ footer{background:#07091A;border-top:none;padding:0}
 <section class="related-sec">
   <h2>More Text Art <span class="sec-grad">Categories</span></h2>
   <div class="ta-rel-grid">
-<a class="ta-rel-card" href="/text-art/hello-kitty/" style="--ca:#16a34a"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#16a34a">ﾐ・◦・ﾐ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#16a34a">(=^‥^=)</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🎀</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Hello Kitty</div><div class="ta-rel-sub">Kawaii cat text art</div></div><span class="ta-rel-arrow">→</span></a>
+<a class="ta-rel-card" href="/text-art/kawaii-cat/" style="--ca:#16a34a"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#16a34a">ﾐ・◦・ﾐ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#16a34a">(=^‥^=)</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🎀</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Kawaii Cat</div><div class="ta-rel-sub">Kawaii cat text art</div></div><span class="ta-rel-arrow">→</span></a>
 <a class="ta-rel-card" href="/text-art/bear/" style="--ca:#16a34a"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#16a34a">ʕ•ᴥ•ʔ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#16a34a">ʕ◕ᴥ◕ʔ</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🐻</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Bear</div><div class="ta-rel-sub">Cute bear emoticons</div></div><span class="ta-rel-arrow">→</span></a>
 <a class="ta-rel-card" href="/text-art/flower/" style="--ca:#16a34a"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="22" fill="#16a34a">✾ ✿ ❀ ✿ ✾</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="20" fill="#16a34a">‧₊˚❀༉‧₊˚.</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🌸</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Flower</div><div class="ta-rel-sub">Floral text symbols</div></div><span class="ta-rel-arrow">→</span></a>
 <a class="ta-rel-card" href="/text-art/strawberry/" style="--ca:#16a34a"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#16a34a">ʚ🍓ɞ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="22" fill="#16a34a">‧₊˚🍓˚₊‧</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🍓</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Strawberry</div><div class="ta-rel-sub">Cute fruit text art</div></div><span class="ta-rel-arrow">→</span></a>

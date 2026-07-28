@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the crescent moon symbol called?", "acceptedAnswer": {"@type": "Answer", "text": "☽ is officially named 'First Quarter Moon' (U+263D) and ☾ is 'Last Quarter Moon' (U+263E) in Unicode. Despite their astronomical names, both are commonly called 'crescent moons' in everyday use. They're from the Miscellaneous Symbols block and originally appeared in astronomical and astrological charts. The emoji variant 🌙 is simply called 'Crescent Moon' (U+1F319)."}}, {"@type": "Question", "name": "What does 🌙 mean in social media?", "acceptedAnswer": {"@type": "Answer", "text": "In general use, 🌙 means nighttime, bedtime, or sleepiness. In specific subcultural contexts: in 'dark academia' and 'witchcore' aesthetics, it signals mystical or celestial interests; in Muslim contexts, it's used for the holy month of Ramadan or Islamic content; as a simple good-night emoji in group chats and messaging. Context and the surrounding content determine which meaning applies."}}, {"@type": "Question", "name": "What do the 8 moon phase symbols represent?", "acceptedAnswer": {"@type": "Answer", "text": "Starting from New Moon: 🌑 (New) → 🌒 (Waxing Crescent) → 🌓 (First Quarter) → 🌔 (Waxing Gibbous) → 🌕 (Full Moon) → 🌖 (Waning Gibbous) → 🌗 (Last Quarter) → 🌘 (Waning Crescent) → back to 🌑. Many cultures time agricultural activities, spiritual practices, and ritual events around these phases."}}, {"@type": "Question", "name": "Can I use crescent moon symbol ☽ in a username?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ☽ and ☾ work in most social media usernames, Discord nicknames, and profile bios. They're plain Unicode text characters from the Miscellaneous Symbols block, supported on all modern systems. The emoji variant 🌙 may not be allowed in some username fields that restrict emoji — in that case, ☽ is the reliable text character alternative."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -414,6 +424,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/Mascot-3.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What is the crescent moon symbol called?</summary>
@@ -451,14 +463,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2>رموز القمر ☽ 🌙 — نسخ ولصق</h2>
-      <p>رموز القمر ☽ ☾ 🌙 🌛 🌜 تُستخدم في حالات واتساب والمنشورات الليلية والمحتوى الروحاني والديني. شائعة جداً في شهر رمضان المبارك وفي رسائل السهر والدعوات الرمضانية على منصات التواصل الاجتماعي العربية. انقر على رمز القمر لنسخه.</p>
-      <details>
-        <summary>ما هي رموز القمر المناسبة للمحتوى الرمضاني؟</summary>
-        <div class="faq-ans">للمحتوى الرمضاني تُستخدم عادةً: ☽ الهلال الكلاسيكي، 🌙 الهلال الإيموجي، و🌛 الهلال مع الوجه. يمكنك تركيب رموز النجوم معها: ☽✦ أو ★ ☽ ★ لتصميم رسائل رمضانية جميلة.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -538,7 +543,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

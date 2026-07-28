@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the crown symbol called in Unicode?", "acceptedAnswer": {"@type": "Answer", "text": "The chess queen crowns are officially named: ♛ 'Black Chess Queen' (U+265B) and ♕ 'White Chess Queen' (U+2655). The king variants are ♚ 'Black Chess King' (U+265A) and ♔ 'White Chess King' (U+2654). The emoji 👑 is named 'Crown' (U+1F451). The Fleur-de-lis ⚜ is 'Fleur-De-Lis' (U+269C)."}}, {"@type": "Question", "name": "Can I use crown symbols in my Discord username?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ♛ ♕ ♚ 👑 all work in Discord usernames, nicknames, and status messages. The chess crowns ♛ ♕ are popular because they're text characters (always visible, no emoji rendering differences). The 👑 emoji may show slightly differently between desktop and mobile Discord apps."}}, {"@type": "Question", "name": "What is the ⚜ symbol?", "acceptedAnswer": {"@type": "Answer", "text": "⚜ is the Fleur-de-lis (U+269C), a stylized lily used in heraldry since medieval France. It appears on the Quebec provincial flag, the New Orleans Saints NFL logo, and the Boy Scouts of America emblem. Its name means 'flower of the lily' in French. It's a popular decorative symbol in both formal and aesthetic social media content."}}, {"@type": "Question", "name": "How do you use chess crown symbols in text?", "acceptedAnswer": {"@type": "Answer", "text": "Copy ♛ ♕ ♚ ♔ from this page and paste them anywhere. These chess symbols work in all text fields — they're plain Unicode characters with broad support. In a username like ♛ KingRoyal ♛, they create a distinctive visual frame. For formal chess notation, algebraic notation uses K and Q letters rather than the Unicode symbols."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -419,6 +429,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/mascot-hat-up.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What is the crown symbol called in Unicode?</summary>
@@ -456,14 +468,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2>رموز التاج ♛ 👑 — نسخ ولصق</h2>
-      <p>رموز التاج ♛ ♚ ♕ ♔ و👑 شائعة جداً في أسماء اللاعبين في فري فاير وبوبجي وكلاش أوف كلانز وغيرها من الألعاب. تُستخدم أيضاً في بيوغرافيا إنستغرام وأسماء المجموعات للتعبير عن القوة والتميز والزعامة. انقر على أي رمز تاج لنسخه فوراً.</p>
-      <details>
-        <summary>كيف أضع رمز التاج في اسمي في اللعبة؟</summary>
-        <div class="faq-ans">انقر على رمز التاج الذي تريده من الأعلى لنسخه، ثم افتح اللعبة واذهب إلى تعديل الاسم والصق الرمز. رموز ♛ ♚ مدعومة في معظم الألعاب. للحصول على مظهر أفضل يمكنك وضع التاج في بداية الاسم: ♛YourName أو في النهاية: YourName♛.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -543,7 +548,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

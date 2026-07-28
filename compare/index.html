@@ -217,8 +217,8 @@
   .faq-q { width:100%; text-align:left; background:none; padding:20px 24px; font-size:14.5px; font-weight:600; color:var(--text); display:flex; align-items:center; justify-content:space-between; gap:12px; cursor:pointer; transition:background .15s; font-family:inherit; }
   .faq-q:hover { background:var(--bg); }
   [data-theme="dark"] .faq-q:hover { background:rgba(255,255,255,.04); }
-  .faq-arrow { width:20px; height:20px; flex-shrink:0; border:1.5px solid var(--border); border-radius:6px; display:flex; align-items:center; justify-content:center; transition:transform .25s; color:var(--muted); font-size:11px; }
-  .faq-item.open .faq-arrow { transform:rotate(180deg); }
+  .faq-arrow { width:20px; height:20px; flex-shrink:0; border:1.5px solid var(--border); border-radius:6px; display:flex; align-items:center; justify-content:center; transition:transform .25s; color:var(--muted); font-size:16px; font-weight:600; }
+  .faq-item.open .faq-arrow { transform:rotate(45deg); }
   .faq-a { display:none; padding:0 24px 20px; font-size:14px; color:var(--muted); line-height:1.72; }
   .faq-item.open .faq-a { display:block; }
 
@@ -261,6 +261,8 @@
   @media(max-width:860px){ .ft-inner { grid-template-columns:200px 1fr 130px; } .ft-inner .ft-col:last-child { grid-column:2; grid-row:2; } }
   @media(max-width:640px){ .ft-inner { grid-template-columns:1fr 1fr; gap:32px; padding:40px 20px 32px; } .ft-brand { grid-column:1/-1; } .ft-bottom { flex-direction:column; gap:8px; text-align:center; padding:14px 20px; } .ft-bottom-links { flex-wrap:wrap; justify-content:center; } .hero { padding:48px 20px 40px; } .sec { padding:40px 0; } .cta-banner { padding:36px 24px; } .verdict-grid { grid-template-columns:1fr 1fr; } .use-grid { grid-template-columns:1fr 1fr; } }
   </style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 
@@ -680,39 +682,39 @@
       <p class="sec-sub">Common questions about these tools compared.</p>
       <div class="faq-list">
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Is Kactyl better than Lexilogos? <span class="faq-arrow">▾</span></button>
+          <button class="faq-q" onclick="toggleFaq(this)">Is Kactyl better than Lexilogos? <span class="faq-arrow">+</span></button>
           <div class="faq-a">Kactyl and Lexilogos serve different strengths. Kactyl is better for mobile use, modern design, and a growing library of 300+ keyboard languages. Lexilogos is a long-established resource with broad language tools including dictionaries — but its keyboard interface is dated and mobile experience is poor. For typing on any device in 2026, Kactyl is the stronger choice.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">What is the best alternative to Lexilogos? <span class="faq-arrow">▾</span></button>
+          <button class="faq-q" onclick="toggleFaq(this)">What is the best alternative to Lexilogos? <span class="faq-arrow">+</span></button>
           <div class="faq-a">Kactyl (kactyl.com) is the best alternative to Lexilogos in 2026. It supports 300+ keyboard languages, works on mobile, has a modern interface with dark mode, and adds Unicode tools like fancy text, symbols, and kaomoji. No installation required and completely free.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">How does Kactyl compare to Gate2home? <span class="faq-arrow">▾</span></button>
+          <button class="faq-q" onclick="toggleFaq(this)">How does Kactyl compare to Gate2home? <span class="faq-arrow">+</span></button>
           <div class="faq-a">Kactyl supports significantly more languages than Gate2home (300+ vs ~60), has a modern mobile-first design, includes dark mode and a one-click copy button, and offers additional Unicode tools. Gate2home provides a simple familiar keyboard interface but hasn't been significantly updated and shows ads during typing.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Which online keyboard tool has the most languages? <span class="faq-arrow">▾</span></button>
+          <button class="faq-q" onclick="toggleFaq(this)">Which online keyboard tool has the most languages? <span class="faq-arrow">+</span></button>
           <div class="faq-a">Kactyl has the largest keyboard language library with 300+ languages and scripts, including modern languages, ancient scripts, gaming keyboards, and African languages. Lexilogos covers 100+ language resources, Gate2home supports approximately 60 languages, and Branah supports approximately 50 keyboard layouts.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Does Lexilogos work on mobile? <span class="faq-arrow">▾</span></button>
+          <button class="faq-q" onclick="toggleFaq(this)">Does Lexilogos work on mobile? <span class="faq-arrow">+</span></button>
           <div class="faq-a">Lexilogos has limited mobile support. Its interface was designed for desktop and keyboard interaction on mobile browsers is difficult to use accurately. Kactyl is built mobile-first with a touch-optimized on-screen keyboard that works on both iPhone and Android.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Is Kactyl better than Branah? <span class="faq-arrow">▾</span></button>
+          <button class="faq-q" onclick="toggleFaq(this)">Is Kactyl better than Branah? <span class="faq-arrow">+</span></button>
           <div class="faq-a">Yes. Kactyl supports significantly more languages than Branah, has a modern responsive design that works on mobile, offers dark mode, and adds tools beyond keyboards — symbols, fancy text, kaomoji. Branah is a functional tool for basic keyboard layouts but lacks mobile optimization and has not been updated in recent years.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">What tools does Kactyl have that Lexilogos and Gate2home don't? <span class="faq-arrow">▾</span></button>
+          <button class="faq-q" onclick="toggleFaq(this)">What tools does Kactyl have that Lexilogos and Gate2home don't? <span class="faq-arrow">+</span></button>
           <div class="faq-a">Kactyl offers a full suite of Unicode text tools that Lexilogos and Gate2home do not: Fancy Text Generator, Symbols Library, Kaomoji, Invisible Character generator, Zalgo Text, Text Art, Dot Art, and Free Fire/PUBG Name generators. These tools make Kactyl a complete Unicode text platform, not just a keyboard tool.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Which online keyboard is best for Arabic typing? <span class="faq-arrow">▾</span></button>
+          <button class="faq-q" onclick="toggleFaq(this)">Which online keyboard is best for Arabic typing? <span class="faq-arrow">+</span></button>
           <div class="faq-a">Kactyl is the best tool for Arabic typing online in 2026. It offers a full Arabic keyboard at kactyl.com/arabic/ with no installation, works on mobile and desktop, supports right-to-left text, and provides the full Arabic Unicode block. Lexilogos, Gate2home, and Branah also offer Arabic keyboards but Kactyl provides the most modern and mobile-friendly experience.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Which online keyboard is best for Hindi typing? <span class="faq-arrow">▾</span></button>
+          <button class="faq-q" onclick="toggleFaq(this)">Which online keyboard is best for Hindi typing? <span class="faq-arrow">+</span></button>
           <div class="faq-a">Kactyl offers the best Hindi typing experience online. The Hindi keyboard at kactyl.com/hindi/ supports both Devanagari script input and transliteration (typing in English to get Hindi letters). It works on mobile and desktop without any installation. Lexilogos also has a Hindi keyboard but with a less modern interface and poor mobile support.</div>
         </div>
       </div>
@@ -800,8 +802,8 @@
 
 <script>
 let isDark = false;
-function toggleLang(){ document.getElementById('lang-menu').classList.toggle('show'); }
-function closeLang(){ document.getElementById('lang-menu').classList.remove('show'); }
+function toggleLang(){ document.getElementById('lang-menu')?.classList.toggle('show'); }
+function closeLang(){ document.getElementById('lang-menu')?.classList.remove('show'); }
 function setLang(code,label){ document.getElementById('lang-btn').textContent=label+' ▾'; document.querySelectorAll('.lang-opt').forEach(el=>el.classList.remove('active')); event.target.classList.add('active'); closeLang(); }
 document.addEventListener('click',function(e){ if(!e.target.closest('.lang-wrap')) closeLang(); });
 function toggleTheme(){ isDark=!isDark; applyTheme(); localStorage.setItem('arabi-theme',isDark?'dark':'light'); }

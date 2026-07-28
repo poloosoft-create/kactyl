@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between ♥ and ❤?", "acceptedAnswer": {"@type": "Answer", "text": "♥ (U+2665) is a text symbol from the Playing Cards Unicode block — it renders as a solid heart in your system's current font. ❤ (U+2764) is the Heavy Black Heart from the Dingbats block, slightly larger and bolder. On most platforms ❤ also has a red emoji variant (❤️ with variation selector U+FE0F), while ♥ remains a pure text character."}}, {"@type": "Question", "name": "Can I use heart symbols in usernames and social media bios?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Unicode heart symbols like ♥ ♡ work in Instagram bios, Twitter bios, TikTok usernames, Discord usernames, and most platforms. The classic ♥ and ♡ are the safest — they're part of the base Unicode standard supported everywhere. Some platforms filter emoji but allow text symbols."}}, {"@type": "Question", "name": "How do I type a heart symbol on a keyboard?", "acceptedAnswer": {"@type": "Answer", "text": "On Windows, press Win + . to open the emoji panel and search \\\"heart,\\\" or hold Alt and type 3 on the numpad for ♥. On Mac, press Ctrl + Cmd + Space to open Character Viewer and search \\\"heart.\\\" The fastest method is to bookmark this page and click any symbol to copy it instantly."}}, {"@type": "Question", "name": "Why does the red heart emoji look different on iPhone vs Android?", "acceptedAnswer": {"@type": "Answer", "text": "❤️ is rendered by each platform's own emoji font — Apple, Google, and Samsung all designed their own version of the same Unicode codepoint (U+2764 + U+FE0F). The underlying character is identical; only the visual rendering differs. Text hearts like ♥ avoid this issue since they use your system's body font."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -429,6 +439,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/mascot-thumsup.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What is the difference between ♥ and ❤?</summary>
@@ -466,14 +478,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2><span class="sec-grad">رموز القلب ❤</span> — نسخ ولصق</h2>
-      <p>رموز القلب هي من أكثر الرموز استخداماً في العالم العربي، خاصةً على واتساب وإنستغرام وسناب شات. القلب ♥ و❤ وما يشابههما من رموز الحب تُستخدم يومياً في الرسائل والتعليقات وحالات واتساب. كل ما عليك فعله هو النقر على أي رمز لنسخه فوراً، ثم لصقه في أي مكان تريد.</p>
-      <details>
-        <summary>كيف أضع رمز القلب في بيو إنستغرام أو واتساب؟</summary>
-        <div class="faq-ans">انقر على رمز القلب الذي تريده في الأعلى — سيُنسخ تلقائياً. ثم افتح إنستغرام أو واتساب، اذهب إلى تعديل الملف الشخصي أو حالة واتساب، وألصق الرمز مباشرةً. رموز ♥ ♡ ❤ تعمل على جميع الأجهزة والمنصات دون أي مشاكل.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -553,7 +558,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

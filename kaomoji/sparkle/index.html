@@ -70,8 +70,9 @@ nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
 .hero-sub{font-size:16px;color:var(--muted);max-width:640px;margin:0 auto;line-height:1.55}
 .grid-wrap{position:relative;z-index:1;max-width:1100px;margin:28px auto 0;padding:0 24px 60px}
 .km-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.km-card.wide{order:-1}
 @media(max-width:860px){.km-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:560px){.km-grid{grid-template-columns:repeat(2,1fr)}}
-.km-card{background:rgba(255,255,255,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:16px;padding:20px 14px 40px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;user-select:none}
+.km-card{background:rgba(255,255,255,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid transparent;border-radius:16px;box-shadow:0 16px 28px -12px rgba(8,14,30,.42);padding:20px 14px 40px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;user-select:none}
 [data-theme="dark"] .km-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
 .km-card:hover{border-color:#db2777;box-shadow:0 0 0 1px rgba(219,39,119,.25),0 16px 40px rgba(219,39,119,.22),0 4px 12px rgba(0,0,0,.06);transform:translateY(-5px) scale(1.02)}
 .km-card:active{transform:translateY(-2px) scale(1.01)}.km-card.flashed{animation:km-pulse .45s ease}
@@ -83,7 +84,7 @@ nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
 .intro-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 32px;padding:0 24px;font-size:15px;color:var(--muted);line-height:1.8}
 .related-sec{position:relative;z-index:1;max-width:1100px;margin:0 auto 40px;padding:0 24px}
 .related-sec h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin-bottom:20px;letter-spacing:-.4px}
-.faq-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 48px;padding:0 24px}
+.faq-sec{position:relative;z-index:1;max-width:760px;margin:96px auto 48px;padding:0 24px}
 .faq-sec h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin-bottom:20px;letter-spacing:-.5px}
 .faq-item{background:rgba(255,255,255,.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.80);border-radius:14px;margin-bottom:10px;overflow:hidden}
 [data-theme="dark"] .faq-item{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
@@ -137,6 +138,28 @@ footer{background:#07091A;padding:0}.ft-inner{max-width:1000px;margin:0 auto;pad
 .faq-hd-spark{position:absolute;pointer-events:none}
 @media(max-width:640px){.faq-hd{gap:12px}.faq-hd-mascot{width:86px}}
 </style>
+<style>
+/* Sibling category tiles (matches the hub 'Browse by Category') */
+.kcats{max-width:960px;margin:0 auto 40px;padding:8px 24px;text-align:center}
+.kcats-hd h2{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.4px;color:var(--text);margin-bottom:18px}
+.kcats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.kcat{display:flex;flex-direction:column;background:var(--surface);border:none;border-radius:14px;overflow:hidden;text-decoration:none;box-shadow:0 16px 28px -12px rgba(8,14,30,.42);transition:transform .15s,box-shadow .15s}
+.kcat:hover{transform:translateY(-3px);box-shadow:0 16px 32px -8px rgba(219,39,119,.24)}
+.kcat-face{display:flex;align-items:center;justify-content:center;height:58px;padding:0 6px;font-size:19px;line-height:1;color:var(--text);white-space:nowrap;overflow:hidden;background:var(--surface);font-family:'Segoe UI',system-ui,-apple-system,Roboto,'Noto Sans',sans-serif;letter-spacing:-.3px}
+.kcat-name{padding:10px 6px;text-align:center;font-size:12.5px;font-weight:700;color:var(--text);background:var(--surface);letter-spacing:.02em;border-top:1px solid var(--border)}
+.kcat-face.kf-sm{font-size:13px}
+@media(max-width:520px){.kcat-face.kf-sm{font-size:11px}}
+.kcat:hover .kcat-name{color:var(--pink)}
+@media(max-width:820px){.kcats-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:520px){.kcats-grid{grid-template-columns:repeat(3,1fr)};.kcat-face{font-size:16px;height:52px}}
+</style>
+<style>
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div></div>
@@ -186,18 +209,18 @@ footer{background:#07091A;padding:0}.ft-inner{max-width:1000px;margin:0 auto;pad
 <div class="km-card" onclick="copyKm('(ﾉ◕ワ◕)ﾉ*:･ﾟ✧')"><div class="km-txt">(ﾉ◕ワ◕)ﾉ*:･ﾟ✧</div><div class="km-lbl">Joyful Sparkle</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('*:･ﾟ✧*:･ﾟ✧')"><div class="km-txt">*:･ﾟ✧*:･ﾟ✧</div><div class="km-lbl">Pure Sparkle</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('✨(ノ^ワ^ノ)✨')"><div class="km-txt">✨(ノ^ワ^ノ)✨</div><div class="km-lbl">Glitter Hands</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
-<div class="km-card" onclick="copyKm('☆*:.｡.o(≧▽≦)o.｡..:*☆')"><div class="km-txt">☆*:.｡.o(≧▽≦)o.｡..:*☆</div><div class="km-lbl">Star Joy</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
-<div class="km-card" onclick="copyKm('✧*。٩(ˊᴗˋ*)و✧*。')"><div class="km-txt">✧*。٩(ˊᴗˋ*)و✧*。</div><div class="km-lbl">Cheering Sparkle</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
-<div class="km-card" onclick="copyKm('(◕‿◕)♫*¨*•․¸¸✨')"><div class="km-txt">(◕‿◕)♫*¨*•․¸¸✨</div><div class="km-lbl">Music Sparkle</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
+<div class="km-card wide" onclick="copyKm('☆*:.｡.o(≧▽≦)o.｡..:*☆')"><div class="km-txt">☆*:.｡.o(≧▽≦)o.｡..:*☆</div><div class="km-lbl">Star Joy</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
+<div class="km-card wide" onclick="copyKm('✧*。٩(ˊᴗˋ*)و✧*。')"><div class="km-txt">✧*。٩(ˊᴗˋ*)و✧*。</div><div class="km-lbl">Cheering Sparkle</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
+<div class="km-card wide" onclick="copyKm('(◕‿◕)♫*¨*•․¸¸✨')"><div class="km-txt">(◕‿◕)♫*¨*•․¸¸✨</div><div class="km-lbl">Music Sparkle</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('ﾟ✧.(ﾟ∀ﾟ).✧ﾟ')"><div class="km-txt">ﾟ✧.(ﾟ∀ﾟ).✧ﾟ</div><div class="km-lbl">Glowing Face</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('✦(^ω^)✦')"><div class="km-txt">✦(^ω^)✦</div><div class="km-lbl">Star Frame</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('⋆｡°✩')"><div class="km-txt">⋆｡°✩</div><div class="km-lbl">Tiny Stars</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('(♡˙︶˙♡)')"><div class="km-txt">(♡˙︶˙♡)</div><div class="km-lbl">Heart Sparkle</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('⊂(^▽^)⊃✨')"><div class="km-txt">⊂(^▽^)⊃✨</div><div class="km-lbl">Excited Sparkle</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('★彡(°◇°)彡★')"><div class="km-txt">★彡(°◇°)彡★</div><div class="km-lbl">Star Body</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
-<div class="km-card" onclick="copyKm('✫*ﾟ･ﾟ｡.☆(^◡^)☆.*｡')"><div class="km-txt">✫*ﾟ･ﾟ｡.☆(^◡^)☆.*｡</div><div class="km-lbl">Glitter Hug</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
+<div class="km-card wide" onclick="copyKm('✫*ﾟ･ﾟ｡.☆(^◡^)☆.*｡')"><div class="km-txt">✫*ﾟ･ﾟ｡.☆(^◡^)☆.*｡</div><div class="km-lbl">Glitter Hug</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('✩₊˚.⋆☸⋆⁺₊✧')"><div class="km-txt">✩₊˚.⋆☸⋆⁺₊✧</div><div class="km-lbl">Moon Stars</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
-<div class="km-card" onclick="copyKm('.:･･(°ω°)｡..｡..:*:')"><div class="km-txt">.:･･(°ω°)｡..｡..:*:</div><div class="km-lbl">Soft Star</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
+<div class="km-card wide" onclick="copyKm('.:･･(°ω°)｡..｡..:*:')"><div class="km-txt">.:･･(°ω°)｡..｡..:*:</div><div class="km-lbl">Soft Star</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('(◠‿◠)✨')"><div class="km-txt">(◠‿◠)✨</div><div class="km-lbl">Shine Face</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('~(˘▾˘~) ✦')"><div class="km-txt">~(˘▾˘~) ✦</div><div class="km-lbl">Float Sparkle</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
 <div class="km-card" onclick="copyKm('˚₊‧˚‧₊˚')"><div class="km-txt">˚₊‧˚‧₊˚</div><div class="km-lbl">Soft Sparkle</div><span class="cp-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span></div>
@@ -213,16 +236,27 @@ footer{background:#07091A;padding:0}.ft-inner{max-width:1000px;margin:0 auto;pad
   <p class="plat-tip">&#128161; <strong>Platform tip:</strong> Sparkle kaomoji are extremely popular on TikTok bios, Instagram captions, and Tumblr posts. ✧･ﾟ: *✧ is one of the most-used decorative text patterns on the internet.</p>
 </section>
 
+<section class="intro-sec" style="margin:0 auto 36px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">Sparkles as emphasis</h3>
+  <p>Sparkle kaomoji are less about a face and more about atmosphere: small star and twinkle characters scattered around text to make it feel special, magical or celebratory. Framing a word or name between sparkles is a way of putting it in the spotlight, the text equivalent of a shimmer effect. Because the sparkle characters are plain Unicode, the glow copies anywhere without turning into an image.</p>
+</section>
+
+<section class="intro-sec" style="margin:0 auto 36px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">When to add a little shine</h3>
+  <p>Sparkles suit announcements, praise, aesthetic bios and anything you want to feel a bit precious or exciting. Wrap a name for a soft, decorative frame, or trail them after a sentence to add warmth. They read best in moderation — a pair on each side of a word looks intentional, while a long row starts to feel cluttered. They pair naturally with cute and celebrate kaomoji for an extra lift.</p>
+</section>
+
+<section class="intro-sec" style="margin:0 auto 36px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">Where to place the sparkles</h3>
+  <p>Placement changes the effect entirely. A single sparkle trailing a word adds a soft afterglow; a matched pair framing a name on both sides reads as a deliberate spotlight; a scatter above and below a short phrase makes it feel like it is shimmering. The rule of thumb is symmetry — mirrored sparkles look intentional and designed, while a lopsided cluster reads as an accident. Two per side is usually the sweet spot.</p>
+</section>
+
 <section class="faq-sec">
+  <img src="../../images/mascot-search.svg" alt="" class="faq-combo-mascot" loading="lazy">
   <div class="faq-hd">
     <div class="faq-hd-left">
       <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
-    </div>
-    <div class="faq-hd-right">
-      <img src="../../images/mascot-love.svg" alt="" class="faq-hd-mascot" loading="lazy">
-      <svg class="faq-hd-spark" style="top:-6px;right:40px;width:22px;height:22px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--pink)"/></svg>
-      <svg class="faq-hd-spark" style="top:22px;right:6px;width:14px;height:14px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--pink)" opacity=".6"/></svg>
     </div>
   </div>
 <details class="faq-item"><summary>What are sparkle kaomoji?</summary><div class="faq-ans">Sparkle kaomoji are Unicode emoticons and decorative text patterns using star and sparkle characters like ✧, ✦, ✨, ☆, and ﾟ to create a glittery, magical look.</div></details>
@@ -232,17 +266,42 @@ footer{background:#07091A;padding:0}.ft-inner{max-width:1000px;margin:0 auto;pad
 <details class="faq-item"><summary>Can I use sparkle kaomoji in my username or bio?</summary><div class="faq-ans">Yes — sparkle kaomoji are widely used in usernames, display names, bios, and social media captions on TikTok, Instagram, Discord, and Twitter.</div></details>
 </section>
 
-<section class="related-sec">
-  <h2>More Kaomoji <span class="sec-grad">Categories</span></h2>
-  <div class="more-tools-grid">
-<a class="mt-card" href="/kaomoji/happy/"><div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="10" r="2.2" fill="currentColor" stroke="none"/><circle cx="16" cy="10" r="2.2" fill="currentColor" stroke="none"/><path d="M6 15 Q12 21 18 15" stroke-width="2"/></svg></div><div class="mt-name">Happy</div><div class="mt-desc">( ◕‿◕ ) — joyful faces</div></a>
-<a class="mt-card" href="/kaomoji/cute/"><div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="10" r="1.6" fill="currentColor" stroke="none"/><circle cx="15.5" cy="10" r="1.6" fill="currentColor" stroke="none"/><circle cx="7" cy="13" r="2.2" fill="currentColor" stroke="none" opacity=".18"/><circle cx="17" cy="13" r="2.2" fill="currentColor" stroke="none" opacity=".18"/><path d="M9.5 16 Q12 18.5 14.5 16" stroke-width="1.8"/></svg></div><div class="mt-name">Cute</div><div class="mt-desc">(｡•‿•｡) — adorable</div></a>
-<a class="mt-card" href="/kaomoji/love/"><div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9C5 8 5.8 7 7 7C7.5 7 8 7.4 8 7.8C8 7.4 8.5 7 9 7C10.2 7 11 8 11 9C11 11.5 8 13 8 13C8 13 5 11.5 5 9Z" fill="currentColor" stroke="none"/><path d="M13 9C13 8 13.8 7 15 7C15.5 7 16 7.4 16 7.8C16 7.4 16.5 7 17 7C18.2 7 19 8 19 9C19 11.5 16 13 16 13C16 13 13 11.5 13 9Z" fill="currentColor" stroke="none"/><path d="M8 18 Q12 21 16 18" stroke-width="2"/></svg></div><div class="mt-name">Love</div><div class="mt-desc">(♡‿♡) — hearts</div></a>
-<a class="mt-card" href="/kaomoji/animals/"><div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10 a2.5 2.5 0 0 0 5 0" stroke-width="1.8"/><path d="M13 10 a2.5 2.5 0 0 0 5 0" stroke-width="1.8"/><circle cx="9.5" cy="12.5" r="1.5" fill="currentColor" stroke="none"/><circle cx="14.5" cy="12.5" r="1.5" fill="currentColor" stroke="none"/><ellipse cx="12" cy="16.5" rx="3.5" ry="2.5" stroke-width="1.6"/><circle cx="12" cy="15.5" r=".8" fill="currentColor" stroke="none"/><path d="M10 17.5 L12 17 L14 17.5" stroke-width="1.3"/></svg></div><div class="mt-name">Animals</div><div class="mt-desc">ʕ•ᵥ•ʔ — bears &amp; more</div></a>
-<a class="mt-card" href="/kaomoji/table-flip/"><div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 h18" stroke-width="2"/><path d="M7 17 L7 20" stroke-width="1.8"/><path d="M17 17 L17 20" stroke-width="1.8"/><path d="M8 13 L4 17" stroke-width="1.8"/><circle cx="16" cy="8" r="2.5" stroke-width="1.8"/><path d="M13 12 Q17 5 21 10" stroke-width="1.8" fill="none"/></svg></div><div class="mt-name">Table Flip</div><div class="mt-desc">(╯°□°）╯︵ ┻━┻</div></a>
-<a class="mt-card" href="/kaomoji/bear/"><div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="6" stroke-width="1.8"/><circle cx="7.5" cy="8" r="3" stroke-width="1.8"/><circle cx="16.5" cy="8" r="3" stroke-width="1.8"/><circle cx="10" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="14" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="12" cy="15" r="1.6" fill="currentColor" stroke="none"/></svg></div><div class="mt-name">Bear</div><div class="mt-desc">ʕ•ᵥ•ʔ — fluffy bears</div></a>
-<a class="mt-card" href="/kaomoji/wink/"><div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5" stroke-width="1.8"/><circle cx="9" cy="10" r="1.8" fill="currentColor" stroke="none"/><path d="M14 9.5 L17 10.5" stroke-width="1.8"/><path d="M8 15 Q12 19 16 15" stroke-width="1.8"/></svg></div><div class="mt-name">Wink</div><div class="mt-desc">(｡◕‿◕｡) — charming winks</div></a>
-<a class="mt-card" href="/kaomoji/running/"><div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="5" r="2.2" fill="currentColor" stroke="none"/><path d="M13 8 L10 14" stroke-width="1.8"/><path d="M10 14 L7 11" stroke-width="1.8"/><path d="M10 14 L8 19" stroke-width="1.8"/><path d="M10 14 L13 19" stroke-width="1.8"/><path d="M13 8 L17 11 L20 9" stroke-width="1.8"/></svg></div><div class="mt-name">Running</div><div class="mt-desc">ε=ε=ε=┌(;＿▽＿)┘ — full speed</div></a>
+<section class="kcats">
+  <div class="kcats-hd"><h2>More Kaomoji <span class="sec-grad">Categories</span></h2></div>
+  <div class="kcats-grid">
+    <a class="kcat" href="/kaomoji/angry/"><span class="kcat-face">(`ω´)</span><span class="kcat-name">Angry</span></a>
+    <a class="kcat" href="/kaomoji/animals/"><span class="kcat-face">(=ω=)</span><span class="kcat-name">Animals</span></a>
+    <a class="kcat" href="/kaomoji/bear/"><span class="kcat-face">ʕ^ᵥ^ʔ</span><span class="kcat-name">Bear</span></a>
+    <a class="kcat" href="/kaomoji/bunny/"><span class="kcat-face">(ᐢᗜᐢ)</span><span class="kcat-name">Bunny</span></a>
+    <a class="kcat" href="/kaomoji/cat/"><span class="kcat-face">ᓚᘏᗢ</span><span class="kcat-name">Cat</span></a>
+    <a class="kcat" href="/kaomoji/celebrate/"><span class="kcat-face">\(^v^)/</span><span class="kcat-name">Celebrate</span></a>
+    <a class="kcat" href="/kaomoji/confused/"><span class="kcat-face">(?_?)</span><span class="kcat-name">Confused</span></a>
+    <a class="kcat" href="/kaomoji/cool/"><span class="kcat-face">(⌐■_■)</span><span class="kcat-name">Cool</span></a>
+    <a class="kcat" href="/kaomoji/crying/"><span class="kcat-face">(;_;)</span><span class="kcat-name">Crying</span></a>
+    <a class="kcat" href="/kaomoji/cute/"><span class="kcat-face">OwO</span><span class="kcat-name">Cute</span></a>
+    <a class="kcat" href="/kaomoji/dancing/"><span class="kcat-face">(´▽`)ﾉ♬</span><span class="kcat-name">Dancing</span></a>
+    <a class="kcat" href="/kaomoji/eating/"><span class="kcat-face">(ᗒᗨᗕ)</span><span class="kcat-name">Eating</span></a>
+    <a class="kcat" href="/kaomoji/embarrassed/"><span class="kcat-face">(/ω\)</span><span class="kcat-name">Embarrassed</span></a>
+    <a class="kcat" href="/kaomoji/facepalm/"><span class="kcat-face">(-_-)</span><span class="kcat-name">Facepalm</span></a>
+    <a class="kcat" href="/kaomoji/flower/"><span class="kcat-face">(ᵕ̈✿)</span><span class="kcat-name">Flower</span></a>
+    <a class="kcat" href="/kaomoji/ghost/"><span class="kcat-face">(°ο°)</span><span class="kcat-name">Ghost</span></a>
+    <a class="kcat" href="/kaomoji/happy/"><span class="kcat-face">(^ω^)</span><span class="kcat-name">Happy</span></a>
+    <a class="kcat" href="/kaomoji/kiss/"><span class="kcat-face">(˘ε˘)</span><span class="kcat-name">Kiss</span></a>
+    <a class="kcat" href="/kaomoji/korean/"><span class="kcat-face">(ᵕ̈)</span><span class="kcat-name">Korean</span></a>
+    <a class="kcat" href="/kaomoji/lenny/"><span class="kcat-face">( ͡° ͜ʖ ͡°)</span><span class="kcat-name">Lenny</span></a>
+    <a class="kcat" href="/kaomoji/love/"><span class="kcat-face">♥‿♥</span><span class="kcat-name">Love</span></a>
+    <a class="kcat" href="/kaomoji/nervous/"><span class="kcat-face">(;o;)</span><span class="kcat-name">Nervous</span></a>
+    <a class="kcat" href="/kaomoji/running/"><span class="kcat-face">ﾍ(^▽^)ﾍ</span><span class="kcat-name">Running</span></a>
+    <a class="kcat" href="/kaomoji/sad/"><span class="kcat-face">ಥ_ಥ</span><span class="kcat-name">Sad</span></a>
+    <a class="kcat" href="/kaomoji/shrug/"><span class="kcat-face">¯\_(ツ)_/¯</span><span class="kcat-name">Shrug</span></a>
+    <a class="kcat" href="/kaomoji/sick/"><span class="kcat-face">(+_+)</span><span class="kcat-name">Sick</span></a>
+    <a class="kcat" href="/kaomoji/sleeping/"><span class="kcat-face">(˘▾˘)</span><span class="kcat-name">Sleeping</span></a>
+    <a class="kcat" href="/kaomoji/special/"><span class="kcat-face">⊙▽⊙</span><span class="kcat-name">Special</span></a>
+    <a class="kcat" href="/kaomoji/surprised/"><span class="kcat-face">(゜゜)</span><span class="kcat-name">Surprised</span></a>
+    <a class="kcat" href="/kaomoji/table-flip/"><span class="kcat-face kf-sm">(╯°□°)╯︵┻━┻</span><span class="kcat-name">Table Flip</span></a>
+    <a class="kcat" href="/kaomoji/thinking/"><span class="kcat-face">(・・?)</span><span class="kcat-name">Thinking</span></a>
+    <a class="kcat" href="/kaomoji/wave/"><span class="kcat-face">(^^)/</span><span class="kcat-name">Wave</span></a>
+    <a class="kcat" href="/kaomoji/wink/"><span class="kcat-face">(^_~)</span><span class="kcat-name">Wink</span></a>
   </div>
 </section>
 

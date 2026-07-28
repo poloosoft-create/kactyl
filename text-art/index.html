@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Text Art — Copy &amp; Paste (210+) | Kactyl</title>
-<meta name="description" content="Copy and paste 210+ text art pieces — Hello Kitty, bears, frogs, flowers, strawberries, cats and more. Click any piece to copy instantly. Works on">
+<meta name="description" content="Copy and paste 210+ text art pieces — Kawaii Cat, bears, frogs, flowers, strawberries, cats and more. Click any piece to copy instantly. Works on">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://kactyl.com/text-art/">
 <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-circle.svg">
 <link rel="manifest" href="/manifest.json">
 <meta property="og:title" content="Text Art — Copy &amp; Paste (210+) | Kactyl">
-<meta property="og:description" content="Copy and paste 210+ text art pieces — Hello Kitty, bears, frogs, flowers and more. Click any piece to copy instantly.">
+<meta property="og:description" content="Copy and paste 210+ text art pieces — Kawaii Cat, bears, frogs, flowers and more. Click any piece to copy instantly.">
     <meta property="og:image" content="https://kactyl.com/images/og-images/text-art.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -21,7 +21,7 @@
 <link rel="alternate" hreflang="en" href="https://kactyl.com/text-art/">
 <link rel="alternate" hreflang="x-default" href="https://kactyl.com/text-art/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kactyl.com/"},{"@type":"ListItem","position":2,"name":"Text Art","item":"https://kactyl.com/text-art/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Text Art Categories","description":"Browse 210+ kawaii text art pieces across 6 categories","itemListElement":[{"@type":"ListItem","position":1,"name":"Hello Kitty Text Art","url":"https://kactyl.com/text-art/hello-kitty/"},{"@type":"ListItem","position":2,"name":"Bear Text Art","url":"https://kactyl.com/text-art/bear/"},{"@type":"ListItem","position":3,"name":"Frog Text Art","url":"https://kactyl.com/text-art/frog/"},{"@type":"ListItem","position":4,"name":"Flower Text Art","url":"https://kactyl.com/text-art/flower/"},{"@type":"ListItem","position":5,"name":"Strawberry Text Art","url":"https://kactyl.com/text-art/strawberry/"},{"@type":"ListItem","position":6,"name":"Cat Text Art","url":"https://kactyl.com/text-art/cat/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Text Art Categories","description":"Browse 210+ kawaii text art pieces across 6 categories","itemListElement":[{"@type":"ListItem","position":1,"name":"Kawaii Cat Text Art","url":"https://kactyl.com/text-art/kawaii-cat/"},{"@type":"ListItem","position":2,"name":"Bear Text Art","url":"https://kactyl.com/text-art/bear/"},{"@type":"ListItem","position":3,"name":"Frog Text Art","url":"https://kactyl.com/text-art/frog/"},{"@type":"ListItem","position":4,"name":"Flower Text Art","url":"https://kactyl.com/text-art/flower/"},{"@type":"ListItem","position":5,"name":"Strawberry Text Art","url":"https://kactyl.com/text-art/strawberry/"},{"@type":"ListItem","position":6,"name":"Cat Text Art","url":"https://kactyl.com/text-art/cat/"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -129,15 +129,17 @@ footer{background:#07091A;padding:0}
 .uc-badge{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700}
 .uc-badge svg{flex-shrink:0}
 /* How-to section */
-.how-sec{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:32px;max-width:1100px;margin:0 auto 32px;position:relative;z-index:1}
-[data-theme="dark"] .how-sec{background:rgba(255,255,255,.04)}
-.how-head{font-size:clamp(20px,2.5vw,26px);font-weight:800;margin-bottom:24px;letter-spacing:-.4px}
+.how-sec{background:none;border:none;padding:8px 20px 44px;max-width:940px;margin:0 auto 24px;position:relative;z-index:1}
+.how-head{font-size:clamp(30px,4.5vw,46px);font-weight:900;margin-bottom:28px;letter-spacing:-.8px;text-align:center;color:var(--text)}
 .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
-.how-num-bg{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.how-step-title{font-size:14px;font-weight:700;color:var(--text)}
-.how-step-desc{font-size:13px;color:var(--muted);line-height:1.6}
-@media(max-width:600px){.how-steps{grid-template-columns:1fr}}
+.how-step-wrap{position:relative;padding-top:80px}
+.how-step-wrap::before{content:'';position:absolute;bottom:-4px;left:12%;right:12%;height:44px;border-radius:44px;background:var(--orange);filter:blur(34px);opacity:.34;z-index:0;pointer-events:none}
+.how-step-icon{position:absolute;top:0;left:50%;transform:translateX(-50%);width:160px;height:auto;z-index:2;pointer-events:none}
+.how-step{background:linear-gradient(135deg,var(--orange) 0%,var(--orange-2) 100%);border-radius:52px;padding:84px 24px 12px;position:relative;z-index:1;display:flex;flex-direction:column;aspect-ratio:1/1;box-shadow:0 16px 34px -10px rgba(17,24,39,.28)}
+.how-step h3{font-size:clamp(28px,3.5vw,38px);font-weight:900;color:#fff;margin:6px 0 6px;line-height:1;letter-spacing:-.5px}
+.how-step p{font-size:13px;color:rgba(255,255,255,.82);line-height:1.6;flex:1;margin:0}
+.how-num{font-size:56px;font-weight:900;color:rgba(255,255,255,.35);line-height:1;text-align:right;margin-top:6px;letter-spacing:-2px}
+@media(max-width:640px){.how-steps{grid-template-columns:1fr;gap:72px}.how-step-icon{width:150px}.how-step-wrap{padding-top:90px}.how-step{aspect-ratio:auto;min-height:280px}}
 /* Standard FAQ */
 .tool-faq{max-width:1100px;margin:0 auto 48px;padding:0 24px;position:relative;z-index:1}
 .tool-faq>h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px}
@@ -159,7 +161,7 @@ footer{background:#07091A;padding:0}
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Text Art Copy Paste","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://kactyl.com/text-art/","description":"Copy 210+ kawaii text art pieces across 6 categories. Works on Discord, TikTok, WhatsApp.","featureList":["210+ text art pieces","6 categories","One-click copy","Kawaii style"]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HowTo","name":"How to Copy Text Art","totalTime":"PT1M","step":[{"@type":"HowToStep","position":1,"name":"Browse Categories","text":"Pick a category from Hello Kitty, Bear, Frog, Flower, Strawberry, or Cat."},{"@type":"HowToStep","position":2,"name":"Click Any Piece","text":"Click any text art piece to instantly copy it to your clipboard."},{"@type":"HowToStep","position":3,"name":"Paste Anywhere","text":"Paste into Discord, TikTok bio, WhatsApp, Instagram, or any chat."}]}
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Copy Text Art","totalTime":"PT1M","step":[{"@type":"HowToStep","position":1,"name":"Browse Categories","text":"Pick a category from Kawaii Cat, Bear, Frog, Flower, Strawberry, or Cat."},{"@type":"HowToStep","position":2,"name":"Click Any Piece","text":"Click any text art piece to instantly copy it to your clipboard."},{"@type":"HowToStep","position":3,"name":"Paste Anywhere","text":"Paste into Discord, TikTok bio, WhatsApp, Instagram, or any chat."}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is text art?","acceptedAnswer":{"@type":"Answer","text":"Text art uses keyboard characters, Unicode symbols, and special characters to create multi-line images or designs. Kawaii text art uses cute characters to form animals, flowers, and characters."}},{"@type":"Question","name":"Where can I use text art?","acceptedAnswer":{"@type":"Answer","text":"Discord messages and bios, TikTok bios and comments, WhatsApp messages, Instagram bios, Twitter/X posts, Reddit posts, and most social media bios."}},{"@type":"Question","name":"Does text art work in TikTok bios?","acceptedAnswer":{"@type":"Answer","text":"Yes. TikTok bios support multi-line text art. Shorter 3-5 line pieces look best in bios. Longer pieces work great in comment sections."}},{"@type":"Question","name":"Why does text art look wrong after pasting?","acceptedAnswer":{"@type":"Answer","text":"Text art relies on monospace alignment. If it looks scrambled, try pasting in a different app — some platforms use proportional fonts that break the alignment. Discord and Reddit preserve text art best."}}]}
@@ -187,6 +189,24 @@ footer{background:#07091A;padding:0}
     }
   }
   </script>
+<style>
+.faq-promo{position:relative;z-index:1;padding:70px 16px 64px}
+.faq-promo-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:16px;position:relative;max-width:760px;margin:0 auto}
+.faq-card-brand{background:#fff;border:none;border-radius:24px;padding:18px 28px;display:flex;align-items:center;justify-content:center;min-height:122px;position:relative}
+.faq-card-2{background:#fff;border:none;border-radius:24px;min-height:122px;position:relative}
+.faq-card-brand::before,.faq-card-2::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.55;z-index:-1;pointer-events:none}
+.card-hills-clip{position:absolute;inset:0;border-radius:24px;overflow:hidden;z-index:1}
+.card-hills{position:absolute;left:0;bottom:0;width:100%;height:126px;display:block}
+.card-hills .hill-soft{fill:color-mix(in srgb,var(--accent,#0068ff) 30%,#fff)}
+.card-hills .hill-accent{fill:var(--accent,#0068ff)}
+.faq-brand-logo{width:210px;max-width:80%}
+.faq-mascot{position:absolute;top:-70px;left:74%;transform:translateX(-50%);width:210px;z-index:10;pointer-events:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.15))}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:8px 22px;font-size:13px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:18px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+@media(max-width:600px){.faq-promo-grid{grid-template-columns:1fr}.faq-card-2{display:none}.faq-mascot{top:-128px;left:50%;width:170px}}
+</style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div></div>
@@ -230,7 +250,7 @@ footer{background:#07091A;padding:0}
 </section>
 
 <div class="hub-grid">
-<a class="hub-card" href="/text-art/hello-kitty/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#f97316">ﾐ・◦・ﾐ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#f97316">(=^‥^=)</text></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🎀</span><span class="hub-count">35 pieces</span></div><div class="hub-name">Hello Kitty</div><div class="hub-sub">Kawaii cat text art</div></div><span class="hub-arrow">→</span></a>
+<a class="hub-card" href="/text-art/kawaii-cat/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#f97316">ﾐ・◦・ﾐ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#f97316">(=^‥^=)</text></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🎀</span><span class="hub-count">35 pieces</span></div><div class="hub-name">Kawaii Cat</div><div class="hub-sub">Kawaii cat text art</div></div><span class="hub-arrow">→</span></a>
 <a class="hub-card" href="/text-art/bear/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="28" fill="#f97316">ʕ•ᴥ•ʔ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="28" fill="#f97316">ʕ◕ᴥ◕ʔ</text></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🐻</span><span class="hub-count">35 pieces</span></div><div class="hub-name">Bear</div><div class="hub-sub">Cute bear emoticons</div></div><span class="hub-arrow">→</span></a>
 <a class="hub-card" href="/text-art/frog/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="28" fill="#f97316">(ᵔᗜᵔ)</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#f97316">ヽ(ᵔᗜᵔ)ノ</text></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🐸</span><span class="hub-count">35 pieces</span></div><div class="hub-name">Frog</div><div class="hub-sub">Frog face text art</div></div><span class="hub-arrow">→</span></a>
 <a class="hub-card" href="/text-art/flower/"><div class="hub-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#f97316">✾ ✿ ❀ ❁ ✿ ✾</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="22" fill="#f97316">‧₊˚❀༉‧₊˚.</text></svg></div><div class="hub-body"><div class="hub-top"><span class="hub-emoji">🌸</span><span class="hub-count">35 pieces</span></div><div class="hub-name">Flower</div><div class="hub-sub">Floral text symbols</div></div><span class="hub-arrow">→</span></a>
@@ -244,19 +264,58 @@ footer{background:#07091A;padding:0}
   <p style="font-size:15px;color:var(--muted);line-height:1.85">Popular on TikTok bios, Discord nicknames, WhatsApp statuses and Twitter profiles. Browse 6 categories above and click any piece to copy it instantly.</p>
 </section>
 
+<section style="position:relative;z-index:1;max-width:760px;margin:0 auto 56px;padding:0 24px">
+  <h3 style="font-size:clamp(18px,2.4vw,22px);font-weight:800;color:var(--text);margin-bottom:12px">Where kawaii text art comes from</h3>
+  <p style="font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:14px">Long before emoji existed, users on Japanese and Korean message boards such as 2channel built expressive faces out of punctuation and Unicode — a style called <em>kaomoji</em> (顔文字, "face characters"). Because they are plain text rather than images, these faces travel anywhere a keyboard reaches, and the look spread west through anime and gaming communities. The same building blocks power the multi-line scenes above: cats, bears, frogs and flowers assembled one row at a time.</p>
+  <h3 style="font-size:clamp(18px,2.4vw,22px);font-weight:800;color:var(--text);margin:22px 0 12px">Single-line vs multi-line — and keeping it aligned</h3>
+  <p style="font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:14px">Two kinds live on this page. <strong>Single-line kaomoji</strong> like <code style="background:rgba(249,115,22,.08);color:var(--orange);padding:1px 6px;border-radius:4px;font-size:13px">(｡•ᴗ•｡)</code> drop cleanly into any sentence, bio or username. <strong>Multi-line pieces</strong> are small pictures spread across several rows, and they only look right when every row stays vertically aligned. That alignment holds up in monospace-friendly places — Discord, Reddit, code editors and most Android name fields — but can wobble in apps that render proportional fonts. If a piece looks scrambled after pasting, it is the app's font at fault, not the art: switch apps, or reach for a shorter single-line design instead.</p>
+  <h3 style="font-size:clamp(18px,2.4vw,22px);font-weight:800;color:var(--text);margin:22px 0 12px">Which piece fits where</h3>
+  <p style="font-size:15px;color:var(--muted);line-height:1.85">For a bio or username, shorter one- or two-line pieces read best and never get clipped by character limits. For chat messages, comments and Discord posts, larger multi-line scenes have room to breathe. The cat and bear sets lean cute and friendly, frogs and strawberries read playful, and the flower pieces work as tidy dividers between lines of a bio. Every design here is one tap to copy — no account, no app, no font install.</p>
+</section>
+
 
 
 
     <div class="how-sec">
       <div class="how-head">How to <span style="background:linear-gradient(135deg,#f97316,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Use</span></div>
       <div class="how-steps">
-        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#f97316,#f59e0b)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="1.8" fill="none"/></svg></div><div class="how-step-title">1. Browse Categories</div><div class="how-step-desc">Pick a category — Hello Kitty, Bear, Frog, Flower, Strawberry, or Cat.</div></div>
-        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#f97316,#f59e0b)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 3L6 18L10 14L13 21L15 20L12 13L18 13Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" fill="none"/></svg></div><div class="how-step-title">2. Click Any Piece</div><div class="how-step-desc">Click any text art piece to instantly copy it to your clipboard.</div></div>
-        <div class="how-step"><div class="how-num-bg" style="background:linear-gradient(135deg,#f97316,#f59e0b)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="2" stroke="#fff" stroke-width="1.8" fill="none"/><path d="M9 3v3h6V3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="13" x2="15" y2="13" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><line x1="9" y1="17" x2="13" y2="17" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="how-step-title">3. Paste Anywhere</div><div class="how-step-desc">Paste into TikTok, Discord, WhatsApp, Instagram, or any chat.</div></div>
+        <div class="how-step-wrap">
+          <img class="how-step-icon" src="../images/search-finde.svg" alt="Browse" loading="lazy">
+          <div class="how-step"><h3>Browse</h3><p>Pick a category — Kawaii Cat, Bear, Frog, Flower, Strawberry, or Cat.</p><div class="how-num">1</div></div>
+        </div>
+        <div class="how-step-wrap">
+          <img class="how-step-icon" src="../images/pick-style.svg" alt="Copy" loading="lazy">
+          <div class="how-step"><h3>Copy</h3><p>Click any text art piece to instantly copy it to your clipboard.</p><div class="how-num">2</div></div>
+        </div>
+        <div class="how-step-wrap">
+          <img class="how-step-icon" src="../images/Past.svg" alt="Paste" loading="lazy">
+          <div class="how-step"><h3>Paste</h3><p>Paste into TikTok, Discord, WhatsApp, Instagram, or any chat.</p><div class="how-num">3</div></div>
+        </div>
       </div>
     </div>
 
+    <section class="faq-promo">
+      <div class="faq-promo-grid">
+        <div class="faq-card-brand">
+          <img src="../images/kactyl%20brand%20name-svg.svg" alt="Kactyl" class="faq-brand-logo">
+        </div>
+        <div class="faq-card-2">
+          <div class="card-hills-clip">
+            <svg class="card-hills" viewBox="0 0 560 130" preserveAspectRatio="none" aria-hidden="true">
+              <circle cx="38"  cy="135" r="74" class="hill-soft"/>
+              <circle cx="152" cy="120" r="92" class="hill-soft"/>
+              <circle cx="268" cy="144" r="58" class="hill-soft"/>
+              <circle cx="384" cy="126" r="86" class="hill-soft"/>
+              <circle cx="504" cy="138" r="70" class="hill-accent"/>
+            </svg>
+          </div>
+        </div>
+        <img src="../images/Mascot-thinking.svg" alt="" class="faq-mascot">
+      </div>
+    </section>
+
     <section class="tool-faq">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span style="background:linear-gradient(135deg,#f97316,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Questions</span></h2>
       <details>
         <summary>What is text art?</summary>

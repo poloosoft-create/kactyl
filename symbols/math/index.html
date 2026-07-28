@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between − (minus) and - (hyphen)?", "acceptedAnswer": {"@type": "Answer", "text": "- (U+002D Hyphen-Minus) is on every keyboard and serves as both a hyphen and a minus sign in most casual contexts. − (U+2212 Minus Sign) is the proper mathematical minus sign, slightly wider and positioned at the correct height for arithmetic. In typesetting academic papers and math rendering engines like LaTeX or MathJax, − (U+2212) is preferred for proper spacing and alignment."}}, {"@type": "Question", "name": "How do I type math symbols on a keyboard?", "acceptedAnswer": {"@type": "Answer", "text": "Basic operators via Alt codes on Windows numpad: × is Alt+0215, ÷ is Alt+0247, ≠ is Alt+8800, ≤ is Alt+8804. Mac: Option + = gives ≠, Option + < gives ≤. For complex symbols (∑ ∫ π ∞ √), bookmark this page and click to copy. In LaTeX: \\sum, \\int, \\pi, \\infty, \\sqrt. In HTML: ∑ (∑), ∫ (∫), π (π)."}}, {"@type": "Question", "name": "What is the ∑ symbol?", "acceptedAnswer": {"@type": "Answer", "text": "∑ (U+2211 N-Ary Summation) is the capital sigma, used in mathematics to represent the sum of a series. '∑(i=1 to n) i' means 'add all integers from 1 to n.' It comes from the Greek letter Σ (sigma) but is a distinct Unicode character in the Mathematical Operators block — the Greek letter Σ is at U+03A3. They look similar but carry different meaning in formal mathematical contexts."}}, {"@type": "Question", "name": "Can I use math symbols in social media bios?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Simple math symbols like ∞ (infinity), ≠ (not equal), ± (plus-minus), π, and √ work reliably in Instagram, TikTok, Twitter, and Discord bios. They're text characters with broad Unicode support. More complex symbols from Supplemental Mathematical Operators may render as squares on older devices — stick to symbols in the core Mathematical Operators block (U+2200–U+22FF) for maximum compatibility."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -429,6 +439,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/Mascot-2.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What is the difference between − (minus) and - (hyphen)?</summary>
@@ -466,14 +478,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2><span class="sec-grad">رموز الرياضيات ∑ π</span> — نسخ ولصق</h2>
-      <p>الرموز الرياضية مثل π (باي) و∑ (سيغما) و√ (الجذر التربيعي) و∞ (اللانهاية) و≠ (لا يساوي) ضرورية للطلاب والمعلمين العرب في كتابة المعادلات والشرح الرقمي على واتساب وتيليغرام والمنتديات العلمية والمجموعات الدراسية.</p>
-      <details>
-        <summary>كيف أكتب رمز π (باي) أو √ (جذر) على لوحة المفاتيح؟</summary>
-        <div class="faq-ans">لا تحتوي معظم لوحات المفاتيح على رموز الرياضيات مباشرةً. الطريقة الأسهل هي النقر على الرمز في الأعلى لنسخه ولصقه. على Windows يمكنك استخدام خريطة الأحرف (Character Map) والبحث عن اسم الرمز. على Word أو Google Docs يمكنك إدراج رموز رياضية عبر قائمة "إدراج رمز".</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -553,7 +558,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are all 12 zodiac symbols in order?", "acceptedAnswer": {"@type": "Answer", "text": "♈ Aries (Mar 21–Apr 19) • ♉ Taurus (Apr 20–May 20) • ♊ Gemini (May 21–Jun 20) • ♋ Cancer (Jun 21–Jul 22) • ♌ Leo (Jul 23–Aug 22) • ♍ Virgo (Aug 23–Sep 22) • ♎ Libra (Sep 23–Oct 22) • ♏ Scorpio (Oct 23–Nov 21) • ♐ Sagittarius (Nov 22–Dec 21) • ♑ Capricorn (Dec 22–Jan 19) • ♒ Aquarius (Jan 20–Feb 18) • ♓ Pisces (Feb 19–Mar 20)."}}, {"@type": "Question", "name": "How do I type my zodiac symbol?", "acceptedAnswer": {"@type": "Answer", "text": "Unicode zodiac symbols aren't on standard keyboards. Copy your sign from this page and paste it anywhere — they work on all social media platforms, in bios, usernames, and posts. Alternatively, on Windows, Win + . opens the emoji panel where you can search your sign's name to find the colored emoji version."}}, {"@type": "Question", "name": "What is the Ophiuchus symbol ⛎ and is it a real zodiac sign?", "acceptedAnswer": {"@type": "Answer", "text": "⛎ (U+26CE) represents Ophiuchus, the Serpent Bearer constellation. The sun passes through it each year approximately November 29 – December 17. Traditional Western astrology divides the zodiac into 12 equal 30° signs and doesn't include Ophiuchus. Some modern astrologers recognize it as a 13th sign. The zodiac signs and their date ranges are fixed to the calendar, not the actual astronomical positions of constellations today."}}, {"@type": "Question", "name": "Are zodiac symbols safe to use in usernames?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All 12 zodiac symbols ♈–♓ plus ⛎ work in Instagram, TikTok, Twitter, Discord, and most social platform usernames and bios. They're plain text characters from the Miscellaneous Symbols block with broad Unicode support. They render consistently across devices since their shapes are simple glyphs, not colored emoji."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -414,6 +424,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/mascot-thumsup.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What are all 12 zodiac symbols in order?</summary>
@@ -451,14 +463,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2><span class="sec-grad">رموز الأبراج الاثني عشر ♈</span> — نسخ ولصق</h2>
-      <p>رموز الأبراج الاثني عشر ♈ الحمل ♉ الثور ♊ الجوزاء ♋ السرطان ♌ الأسد ♍ العذراء ♎ الميزان ♏ العقرب ♐ القوس ♑ الجدي ♒ الدلو ♓ الحوت — تُستخدم في المحتوى التنجيمي العربي الشائع على إنستغرام وتيك توك وتويتر. انقر على رمز برجك لنسخه فوراً.</p>
-      <details>
-        <summary>ما هو رمز برجي وكيف أنسخه؟</summary>
-        <div class="faq-ans">ابحث عن برجك في القائمة: ♈ الحمل (21 مارس–19 أبريل)، ♉ الثور (20 أبريل–20 مايو)، ♊ الجوزاء (21 مايو–20 يونيو)، ♋ السرطان (21 يونيو–22 يوليو)، ♌ الأسد (23 يوليو–22 أغسطس)، ♍ العذراء (23 أغسطس–22 سبتمبر)، ♎ الميزان (23 سبتمبر–22 أكتوبر)، ♏ العقرب (23 أكتوبر–21 نوفمبر)، ♐ القوس (22 نوفمبر–21 ديسمبر)، ♑ الجدي (22 ديسمبر–19 يناير)، ♒ الدلو (20 يناير–18 فبراير)، ♓ الحوت (19 فبراير–20 مارس). ثم انقر على الرمز في الأعلى لنسخه.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -538,7 +543,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

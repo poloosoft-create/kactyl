@@ -61,7 +61,7 @@
   --blue:#0068ff;--bg:#fff;--surface:#fff;--text:#1E293B;--muted:#64748B;
   --border:#E2E8F0;--shadow:rgba(0,0,0,.07);--nav-bg:rgba(237,240,248,.88);
   --nav-txt:#1E293B;--card-bg:#fff;
-  --purple:#7c3aed;--purple-2:#a855f7;--purple-glow:rgba(124,58,237,.15);
+  --purple:#7c3aed;--purple-2:#a855f7;--purple-glow:rgba(124,58,237,.15);--accent:#7c3aed;
 }
 [data-theme="dark"]{
   --bg:#0F172A;--surface:#1E293B;--text:#F1F5F9;--muted:#94A3B8;
@@ -326,12 +326,13 @@ footer{background:#07091A;border-top:none;padding:0}
 .more-tools{padding:40px 24px 56px;max-width:1000px;margin:0 auto;text-align:center}
 .more-tools-title{font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.5px;color:var(--text);margin-bottom:8px}
 .more-tools-sub{font-size:15px;color:var(--muted);margin-bottom:32px}
-.more-tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:left}
+.more-tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;text-align:left}
 @media(max-width:700px){.more-tools-grid{grid-template-columns:repeat(2,1fr)}}
-.mt-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 16px;text-decoration:none;color:var(--text);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column;gap:10px}
+.mt-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 16px;text-decoration:none;color:var(--text);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column;gap:10px;box-shadow:0 16px 30px -10px rgba(17,24,39,.22)}
 .mt-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(124,58,237,.10);border-color:rgba(124,58,237,.25)}
 [data-theme="dark"] .mt-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
 .mt-icon{width:42px;height:42px;border-radius:10px;background:rgba(124,58,237,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}.mt-icon svg{width:22px;height:22px;color:var(--accent)}
+.mt-icon img{width:24px;height:24px;object-fit:contain}
 .mt-name{font-size:14px;font-weight:700;color:var(--text)}
 .mt-desc{font-size:12px;color:var(--muted);line-height:1.5}
 
@@ -358,8 +359,13 @@ footer{background:#07091A;border-top:none;padding:0}
 .guide-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:middle}
 .guide-table td:first-child{font-weight:600;color:var(--text)}
 .guide-table td .style-ex{font-size:15px}
-.guide-faq{margin-top:48px}
-.guide-faq h2{font-size:22px;font-weight:800;color:var(--text);margin-bottom:20px}
+.guide-faq{margin-top:96px;position:relative}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:8px 22px;font-size:13px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:18px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.guide-faq h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin-bottom:24px;letter-spacing:-.6px;line-height:1.1}
 .gfaq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
 .gfaq-item summary{padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text)}
 .gfaq-item summary::-webkit-details-marker{display:none}
@@ -414,7 +420,9 @@ footer{background:#07091A;border-top:none;padding:0}
 .hs-num{font-size:28px;font-weight:800;color:var(--text)}
 .hs-lbl{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
 </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a fancy text generator?","acceptedAnswer":{"@type":"Answer","text":"A fancy text generator converts regular letters into Unicode mathematical alphabet characters that look like different font styles — bold, italic, cursive, gothic, and more. Because they are actual Unicode characters (not fonts), they copy-paste correctly on every platform."}},{"@type":"Question","name":"Does fancy text work on Instagram, WhatsApp, TikTok and Discord?","acceptedAnswer":{"@type":"Answer","text":"Yes. All styles use Unicode characters supported natively on every modern platform. Instagram bios, WhatsApp status, TikTok usernames, Discord messages, Twitter/X posts — they all display correctly for every reader."}},{"@type":"Question","name":"Are these real fonts?","acceptedAnswer":{"@type":"Answer","text":"No — they are Unicode characters. Each styled letter is a unique Unicode code point that looks italic, bold, or gothic by design. This is why styled text copies and displays everywhere exactly as you see it."}},{"@type":"Question","name":"Why don't styles work for Arabic or Hindi?","acceptedAnswer":{"@type":"Answer","text":"Unicode mathematical alphabet variants only exist for Latin letters. Use the Decoration tab which has 24 styles working for any language including Arabic, Hindi, and Japanese."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% free. No account, no sign-up, no downloads needed."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do Unicode font styles work on every platform?","acceptedAnswer":{"@type":"Answer","text":"Most modern platforms — Instagram, TikTok, Twitter/X, Discord, WhatsApp, Facebook, Reddit, Telegram — support Unicode Mathematical Alphanumeric characters fully. If a platform shows your text as boxes or question marks, it does not support that Unicode block; try a simpler style like Small Caps or Bold."}},{"@type":"Question","name":"Why does my fancy text show as boxes on some devices?","acceptedAnswer":{"@type":"Answer","text":"Boxes appear when a device's system font does not include the Unicode characters you used — common on older Android (pre-9) and old Windows. Modern devices (iOS 14+, Android 10+, Windows 10+, macOS 11+) display all 38 styles correctly."}},{"@type":"Question","name":"Can I mix different font styles in the same text?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each character is independently converted to its Unicode equivalent, so you can freely combine styles in one sentence — for example a Bold Script name followed by Small Caps details in the same bio."}},{"@type":"Question","name":"What is the most compatible Unicode font style?","acceptedAnswer":{"@type":"Answer","text":"Small Caps and Superscript are the most universally compatible because they use the IPA and Phonetic Extensions blocks, included in virtually every modern font. Small Caps is the safest choice for older devices."}},{"@type":"Question","name":"Do these styles work for gaming usernames (Free Fire, PUBG, Fortnite, Roblox)?","acceptedAnswer":{"@type":"Answer","text":"Most styles work in Free Fire, PUBG Mobile, Roblox and other games that support Unicode in name fields. The most reliable are Bold Script, Fraktur/Gothic, Small Caps, and Fullwidth. Test in the name preview before confirming."}}]}</script>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 
@@ -889,6 +897,8 @@ footer{background:#07091A;border-top:none;padding:0}
 
   <!-- ── FAQ ── -->
   <div class="guide-faq">
+    <img src="../../images/Mascot-joy.svg" alt="" class="faq-combo-mascot" loading="lazy">
+    <div class="faq-hd-badge">FAQ</div>
     <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
 
     <details class="gfaq-item">
@@ -945,95 +955,45 @@ footer{background:#07091A;border-top:none;padding:0}
 </div>
 
 
-<!-- FAQ section -->
-<section class="faq-sec">
-  <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
-  <details class="faq-item">
-    <summary>What is a fancy text generator?</summary>
-    <div class="faq-ans">A fancy text generator converts regular letters into Unicode mathematical alphabet characters that look like different font styles — bold, italic, cursive, gothic, and more. Because they are actual Unicode characters (not fonts), they copy-paste correctly on every platform without any installation.</div>
-  </details>
-  <details class="faq-item">
-    <summary>Does fancy text work on Instagram, WhatsApp, TikTok &amp; Discord?</summary>
-    <div class="faq-ans">Yes. All 38 styles use Unicode characters supported natively on every modern platform. Instagram bios, WhatsApp status, TikTok usernames, Discord messages, Twitter/X posts — they all display correctly for every reader, with no extra setup.</div>
-  </details>
-  <details class="faq-item">
-    <summary>Are these real fonts?</summary>
-    <div class="faq-ans">No — they are Unicode characters. For example, 𝑯𝒆𝒍𝒍𝒐 is not a font; each letter is a unique Unicode code point that looks italic by design. This is why styled text copies and displays everywhere, exactly as you see it.</div>
-  </details>
-  <details class="faq-item">
-    <summary>Why don't styles work for Arabic or Hindi text?</summary>
-    <div class="faq-ans">Unicode mathematical alphabet variants (bold, italic, gothic, etc.) only exist for Latin letters and digits — Arabic and Devanagari have no Unicode styled equivalents. Use the ✦ Decoration tab: 24 styles that work for any language including Arabic, Hindi, Japanese, and more.</div>
-  </details>
-  <details class="faq-item">
-    <summary>How many styles are available?</summary>
-    <div class="faq-ans">38 Latin font styles (bold, italic, cursive, gothic, circled, symbols, and special FX) plus 24 Decoration styles that work for all languages — 62 total. Use the category tabs to filter by type, or search by name.</div>
-  </details>
-  <details class="faq-item">
-    <summary>Is it free?</summary>
-    <div class="faq-ans">Yes, 100% free. No account, no sign-up, no downloads. Type your text, pick a style, copy it — done.</div>
-  </details>
-</section>
-
-<!-- Hindi SEO section -->
-<section class="hi-sec" lang="hi">
-  <h2>Unicode फॉन्ट स्टाइल गाइड — हिंदी में समझें</h2>
-  <p>यह page सभी available Unicode font styles का complete guide है। हर style में example देखें, characters की range समझें और जानें कि कौन सी style किस platform पर best काम करती है — Instagram, WhatsApp, TikTok, Discord, या gaming।</p>
-      <p>Bold, Italic, Cursive, Gothic (Fraktur), Double Struck, Monospace, Fullwidth — ये सभी असल Unicode characters हैं जो हर device पर same दिखते हैं। Copy बटन से किसी भी style को तुरंत copy करें।</p>
-  <details>
-    <summary>कौन सी Unicode style सबसे ज़्यादा use होती है?</summary>
-    <div class="faq-ans">Instagram और WhatsApp के लिए 𝓒𝓾𝓻𝓼𝓲𝓿𝓮 (Bold Script) और 𝑰𝒕𝒂𝒍𝒊𝒄 सबसे popular हैं। Free Fire और PUBG के लिए 𝐁𝐨𝐥𝐝 और ℭ𝔬𝔱𝔥𝔦𝔠 ज़्यादा use होते हैं। Discord usernames के लिए 𝕯𝖔𝖚𝖇𝖑𝖊 𝕾𝖙𝖗𝖚𝖈𝖐 और Monospace काफी trendy हैं।</div>
-  </details>
-</section>
-
-<!-- Arabic SEO section -->
-<section class="ar-sec" lang="ar">
-  <h2><span class="sec-grad">دليل أنواع الخطوط المزخرفة</span> — كل الستايلات شرح وأمثلة</h2>
-  <p>هذه الصفحة هي المرجع الكامل لجميع أنواع خطوط Unicode المزخرفة المتاحة. لكل ستايل مثال واضح وشرح للاستخدام المثالي — سواء كان لواتساب أو إنستغرام أو تيك توك أو الألعاب.</p>
-  <p>من أشهر الستايلات المزخرفة: <strong>Bold 𝐀𝐛𝐜</strong> للمظهر القوي، و<strong>Cursive 𝒜𝒷𝒸</strong> للمظهر الأنيق الرومانسي، و<strong>Gothic ℭ𝔟𝔠</strong> للمظهر الغامض، و<strong>Double Struck 𝔸𝕓𝕔</strong> للمظهر الأكاديمي. كل الستايلات تعمل في جميع المنصات والتطبيقات.</p>
-  <details>
-    <summary>أي ستايل مزخرف الأفضل للواتساب وإنستغرام؟</summary>
-    <div class="faq-ans">للواتساب وإنستغرام يُفضَّل Cursive 𝒜𝒷𝒸 للمظهر الأنيق، أو Bold Cursive 𝓐𝓫𝓬 للمظهر الرومانسي. للألعاب مثل فري فاير وببجي يُفضَّل Gothic أو Bold. جرب أكثر من ستايل واختر ما يناسب أسلوبك.</div>
-  </details>
-</section>
 <!-- More generators -->
 <section class="more-tools">
-  <div class="more-tools-title">More <span class="sec-grad">Generators</span></div>
-  <p class="more-tools-sub">More fancy text styles — pick your platform.</p>
+  <div class="more-tools-title">Explore Font <span class="sec-grad">Generators</span></div>
+  <p class="more-tools-sub">Every fancy-text generator on Kactyl — pick your platform.</p>
   <div class="more-tools-grid">
-    <a class="mt-card" href="/fancy-text/instagram-fonts/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 13.5h8" stroke-width="1.8" stroke-linecap="round"/><rect x="16" y="2.5" width="7" height="6" rx="1.5" stroke-width="1.5"/><circle cx="19.5" cy="5.5" r="1.4" stroke-width="1.5"/><circle cx="21.5" cy="3.4" r=".6" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">Instagram Fonts</div>
-      <div class="mt-desc">Stylish fonts for bio, captions &amp; username</div>
+    <a class="mt-card" href="/instagram-fonts/">
+      <div class="mt-icon"><img src="/images/Icon-Instagram-Clavierarabe-online%20Kopie.svg" alt=""></div>
+      <div class="mt-name">Instagram 𝓕𝓸𝓷𝓽𝓼</div>
+      <div class="mt-desc">Stylish fonts for your bio, captions &amp; username</div>
     </a>
-    <a class="mt-card" href="/fancy-text/tiktok-fonts/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 13.5h8" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="5.5" r=".9" fill="currentColor" stroke="none"/><path d="M17.5 4 Q20 5.5 17.5 7" stroke-width="1.5"/><path d="M19.5 3 Q22 5.5 19.5 8" stroke-width="1.4" opacity=".65"/><path d="M21.5 2 Q24 5.5 21.5 9" stroke-width="1.2" opacity=".3"/></svg></div>
-      <div class="mt-name">TikTok Fonts</div>
+    <a class="mt-card" href="/tiktok-fonts/">
+      <div class="mt-icon"><img src="/images/Icon-TikTok-Clavierarabe-online.svg" alt=""></div>
+      <div class="mt-name">TikTok 𝓕𝓸𝓷𝓽𝓼</div>
       <div class="mt-desc">Stand out in TikTok bio &amp; comments</div>
     </a>
-    <a class="mt-card" href="/fancy-text/discord-fonts/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 13.5h8" stroke-width="1.8" stroke-linecap="round"/><path d="M16.5 5.5a3 3 0 016 0" stroke-width="1.5"/><rect x="15.5" y="5" width="2" height="3" rx="1" fill="currentColor" stroke="none"/><rect x="21.5" y="5" width="2" height="3" rx="1" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">Discord Fonts</div>
+    <a class="mt-card" href="/discord-fonts/">
+      <div class="mt-icon"><img src="/images/Logos%2C%20textgenerator%20discord.svg" alt=""></div>
+      <div class="mt-name">Discord 𝓕𝓸𝓷𝓽𝓼</div>
       <div class="mt-desc">Cool fonts for Discord username &amp; server bio</div>
     </a>
-    <a class="mt-card" href="/fancy-text/whatsapp-fonts/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 13.5h8" stroke-width="1.8" stroke-linecap="round"/><rect x="16" y="2.5" width="7.5" height="5.5" rx="1.5" stroke-width="1.4"/><path d="M18.5 8 L17 10.5" stroke-width="1.4"/></svg></div>
-      <div class="mt-name">WhatsApp Fonts</div>
+    <a class="mt-card" href="/whatsapp-fonts/">
+      <div class="mt-icon"><img src="/images/Icon-Whatsapp-Clavierarabe-online.svg" alt=""></div>
+      <div class="mt-name">WhatsApp 𝓕𝓸𝓷𝓽𝓼</div>
       <div class="mt-desc">Fancy text for status, name &amp; messages</div>
     </a>
-    <a class="mt-card" href="/fancy-text/free-fire/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 13.5h8" stroke-width="1.8" stroke-linecap="round"/><path d="M16 9L16 6 17.75 7.5 19.5 4 21.25 7.5 23 6 23 9Z" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
-      <div class="mt-name">Stylish Names</div>
+    <a class="mt-card" href="/free-fire-name/">
+      <div class="mt-icon"><img src="/images/Free%20fire.svg" alt=""></div>
+      <div class="mt-name">Stylish 𝓝𝓪𝓶𝓮𝓼</div>
       <div class="mt-desc">Cool names for Free Fire, PUBG &amp; gaming</div>
-    </a>
-    <a class="mt-card" href="/fancy-text/pubg/">
-      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 13.5h8" stroke-width="1.8" stroke-linecap="round"/><circle cx="19.5" cy="5.5" r="3" stroke-width="1.5"/><line x1="19.5" y1="1.5" x2="19.5" y2="2.5" stroke-width="1.5"/><line x1="19.5" y1="8.5" x2="19.5" y2="9.5" stroke-width="1.5"/><line x1="15.5" y1="5.5" x2="16.5" y2="5.5" stroke-width="1.5"/><line x1="22.5" y1="5.5" x2="23.5" y2="5.5" stroke-width="1.5"/><circle cx="19.5" cy="5.5" r=".8" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">PUBG Names</div>
-      <div class="mt-desc">Stylish names for PUBG &amp; gaming</div>
     </a>
     <a class="mt-card" href="/fancy-text/arabic/">
       <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10C4 6 6.5 3 10 3C13 3 15 5 15 8C15 11 12.5 12 10 12" stroke-width="1.8"/><path d="M10 12Q10 15 12.5 17Q16 19 18 16" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/></svg></div>
-      <div class="mt-name">Arabic Fancy Text</div>
+      <div class="mt-name">Arabic Fancy 𝓣𝓮𝔁𝓽</div>
       <div class="mt-desc">Decorated text for Arabic speakers</div>
+    </a>
+    <a class="mt-card" href="/fancy-text/">
+      <div class="mt-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L7.5 5.5h2L13.5 17.5" stroke-width="1.8"/><path d="M5 13.5h8" stroke-width="1.8"/><path d="M18.5 3l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="currentColor" stroke="none"/><circle cx="21.5" cy="9" r=".8" fill="currentColor" stroke="none"/></svg></div>
+      <div class="mt-name">Fancy Text 𝓖𝓮𝓷</div>
+      <div class="mt-desc">All 62 styles in one generator</div>
     </a>
   </div>
 </section>
@@ -1413,7 +1373,7 @@ function showToast(msg) {
 }
 
 // ── Language dropdown ─────────────────────────────────────────────────────────
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 // ── Theme ─────────────────────────────────────────────────────────────────────

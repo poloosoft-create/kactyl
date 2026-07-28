@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the oldest smiley symbol?", "acceptedAnswer": {"@type": "Answer", "text": "☺ (U+263A White Smiling Face) appeared as Character #1 in the IBM PC's original Code Page 437 character set in 1981 — before the public internet, before Windows, before the World Wide Web. It was placed first in the extended ASCII set (after control characters) because it was considered a universally positive symbol. Its filled variant ☻ was Character #2. These two characters have the longest continuous digital history of any smiley representation."}}, {"@type": "Question", "name": "What does 🙂 actually mean?", "acceptedAnswer": {"@type": "Answer", "text": "In American English, 🙂 typically signals a genuine but mild smile — neutral to positive. However, in British English digital contexts and increasingly in American English, 🙂 has taken on a passive-aggressive or even ominous undertone. Messages ending with 🙂 can feel cold or threatening to some receivers. Emoji meaning is deeply cultural and generational — the same symbol carries different weight across demographics."}}, {"@type": "Question", "name": "What is the difference between ☺ and 🙂?", "acceptedAnswer": {"@type": "Answer", "text": "☺ (U+263A) is a plain text smiley face from the Miscellaneous Symbols block — it renders in your system's text font as a simple outlined face, consistent across all devices. 🙂 (U+1F642 Slightly Smiling Face) is an emoji that renders as a colored, stylized face image — different on iOS vs Android vs Windows. Use ☺ for consistent appearance across all devices; use 🙂 for messages where the emoji aesthetic is expected."}}, {"@type": "Question", "name": "What is the most popular emoji in the world?", "acceptedAnswer": {"@type": "Answer", "text": "According to Unicode Consortium emoji frequency tracking and multiple social media analytics studies, 😂 (Face With Tears of Joy, U+1F602) held the #1 spot for most years. As of 2022–2023, ❤️ (Red Heart) surpassed 😂 on some platforms. Rankings vary significantly by platform, country, and demographic — 😂 dominates in the US, while 🥰 and 💕 rank higher in East Asian markets."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -419,6 +429,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/mascot-hat-up.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What is the oldest smiley symbol?</summary>
@@ -456,14 +468,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2><span class="sec-grad">رموز الابتسامة ☺</span> — نسخ ولصق</h2>
-      <p>رموز الابتسامة ☺ ☻ ツ ㋡ هي من الرموز الكلاسيكية التي تسبق الإيموجي الحديثة. لا تزال تُستخدم في الرسائل النصية ومنصات الدردشة للتعبير عن الفرح والودّ بطريقة بسيطة وخفيفة. رمز ツ (الحرف الياباني "tsu") شائع جداً في العالم العربي كابتسامة مميزة في أسماء المستخدمين وحالات واتساب.</p>
-      <details>
-        <summary>ما الفرق بين رموز الابتسامة النصية ☺ والإيموجي 😊؟</summary>
-        <div class="faq-ans">رموز الابتسامة النصية مثل ☺ ☻ هي أحرف Unicode عادية تظهر باستخدام خط النظام — مما يجعلها ثابتة ومتسقة على جميع الأجهزة. أما إيموجي الابتسامة 😊 فتُرسم بواسطة خط الإيموجي الخاص بكل منصة، مما يجعل مظهرها يختلف بين Apple وSamsung وGoogle.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -543,7 +548,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

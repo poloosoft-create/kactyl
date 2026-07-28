@@ -107,7 +107,7 @@ nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
 .rel-pill{font-size:13px;padding:7px 16px;border-radius:99px;background:rgba(255,255,255,.65);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.80);color:var(--muted);text-decoration:none;transition:all .15s}
 .rel-pill:hover{border-color:#dc262655;color:#dc2626}
 [data-theme="dark"] .rel-pill{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
-.faq-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 48px;padding:0 24px}
+.faq-sec{position:relative;z-index:1;max-width:760px;margin:96px auto 48px;padding:0 24px}
 .sec-grad{background:linear-gradient(135deg,var(--blue) 0%,#2563eb 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .faq-sec h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin-bottom:20px;letter-spacing:-.5px}
 .faq-item{background:rgba(255,255,255,.65);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.80);border-radius:14px;margin-bottom:10px;overflow:hidden}
@@ -178,10 +178,13 @@ footer{background:#07091A;padding:0}
 [data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
 .faq-sec{position:relative;margin-top:64px}
 .faq-sec>h2{margin-bottom:44px}
-.faq-combo-mascot{width:180px;height:auto;display:block;position:absolute;right:0;top:-24px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
-@media(max-width:640px){.faq-combo-mascot{width:130px;top:-8px}}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
 /*END-DA-MASCOT*/
 </style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div></div>
@@ -666,6 +669,16 @@ footer{background:#07091A;padding:0}
   </ul>
   <p class="plat-tip">&#128161; <strong>Platform tip:</strong> The strawberry is a signature cute / coquette motif, so strawberry dot art fits soft-aesthetic Tumblr, TikTok and Discord bios. Being plain Braille text, it pastes anywhere with no upload &mdash; Copy, paste, done.</p>
 </section>
+<section class="intro-sec" style="max-width:760px;margin:0 auto 36px;padding:0 24px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">The strawberry as an aesthetic</h3>
+  <p style="font-size:15px;color:var(--muted);line-height:1.8">The strawberry has become shorthand for a whole look — the soft, sweet “strawberry girl” and coquette aesthetics that took over Pinterest and TikTok, all blushing reds, cottagecore picnics and a little playful innocence. A strawberry sitting in someone's bio or next to their name reads instantly as warm, feminine and a bit whimsical, which is why it shows up on cottagecore servers, baking accounts and soft-aesthetic profiles far more than any literal fruit reference. It carries a homemade, hand-picked feeling that a polished logo never quite manages, and that is exactly the mood a dot-art berry is reaching for.</p>
+</section>
+
+<section class="intro-sec" style="max-width:760px;margin:0 auto 36px;padding:0 24px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">Where a strawberry piece lands best</h3>
+  <p style="font-size:15px;color:var(--muted);line-height:1.8">A strawberry dot-art piece is at home anywhere the mood is soft and homemade — a baking or dessert account, a cottagecore Discord, a coquette-leaning bio, or a sweet sign-off on a message to a friend. It pairs naturally with other gentle motifs like flowers, bows and little hearts, and a single berry usually reads better than a whole cluster; the restraint keeps it looking curated rather than busy. Think of it as a small signature that tells people, before they read a word, that your corner of the internet is warm and a little sweet.</p>
+</section>
+
 <section class="faq-sec">
   <img src="../../images/Mascot-joy.svg" alt="" class="faq-combo-mascot" loading="lazy">
   <div class="faq-hd-badge">FAQ</div>
@@ -675,6 +688,8 @@ footer{background:#07091A;padding:0}
 <details class="faq-item"><summary>Where does strawberry dot art look best?</summary><div class="faq-ans">It shines in soft-girl and cottagecore corners &mdash; Tumblr posts, Discord bios, TikTok captions. Anywhere the line breaks are preserved it holds together; drop it in a code block (backticks) if you want every seed lined up.</div></details>
 <details class="faq-item"><summary>Does strawberry dot art work on phones?</summary><div class="faq-ans">It does. Every Braille character is part of Unicode, which every modern phone and laptop already supports with no keyboard or app to add. On a really narrow phone the berry can break onto extra lines &mdash; widen the box or turn your screen and it pulls back together.</div></details>
 <details class="faq-item"><summary>Can I pair it with other dot art?</summary><div class="faq-ans">Yes &mdash; strawberries stack beautifully with flower and heart pieces for a full coquette / cottagecore bio. Copy each piece onto its own line and you&rsquo;ve got a little garden of text art.</div></details>
+<details class="faq-item"><summary>What does a strawberry symbolize?</summary><div class="faq-ans">The strawberry has come to stand for the sweet, soft “strawberry girl” and coquette aesthetics — feminine, playful and a little cottagecore. Beyond the fruit itself it signals warmth, innocence and a homemade, hand-picked charm, which is why it decorates baking accounts, soft-aesthetic bios and cosy servers more than any literal berry reference.</div></details>
+<details class="faq-item"><summary>Why use strawberry dot art instead of the 🍓 emoji?</summary><div class="faq-ans">The 🍓 emoji is one small fixed icon that renders a little differently on every device. A strawberry dot art piece is a larger, hand-drawn-looking berry you can size to your font, and it keeps the same crafted look wherever it lands — so it reads as something you made and arranged rather than a button you tapped, which is exactly the homemade charm the strawberry aesthetic is going for.</div></details>
 </section>
 <section class="related-sec">
   <h2>More Dot Art <span class="sec-grad">Categories</span></h2>

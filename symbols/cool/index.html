@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the ツ symbol and where does it come from?", "acceptedAnswer": {"@type": "Answer", "text": "ツ is the Japanese Katakana character for the sound 'tsu' (as in 'tsunami'). It became popular online because its shape looks like a smiling face to Western users. It's from the Katakana Unicode block (U+30A0–U+30FF), which encodes the syllabic writing system used in Japanese for foreign loanwords and emphasis."}}, {"@type": "Question", "name": "Can I use ツ in a gaming username?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ツ works in most gaming platforms — Roblox, Free Fire, PUBG Mobile, Minecraft, Discord — and most social media. It's been a popular choice for over a decade. Keep in mind that on Japanese-language systems, users will read it as the syllable 'tsu,' not as a smiley face."}}, {"@type": "Question", "name": "Why do cool symbols look different on some phones?", "acceptedAnswer": {"@type": "Answer", "text": "Unicode symbols render using each device's installed fonts. A symbol that appears bold and decorated on one phone might look plain on another depending on which fonts are installed. Emoji symbols have standardized colored renderings; pure Unicode text symbols depend on the system font."}}, {"@type": "Question", "name": "What are the most popular cool symbols for Instagram bios?", "acceptedAnswer": {"@type": "Answer", "text": "The consistent top choices are: ✦ ✧ (sparkle stars), ♥ ♡ (hearts), ✿ (flower), ★ ☆ (stars), ∞ (infinity), and ツ (katakana smiley). These are text characters — not emoji — so they look clean and consistent across all devices in Instagram bios."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -439,6 +449,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/Mascot-joy.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What is the ツ symbol and where does it come from?</summary>
@@ -476,14 +488,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2><span class="sec-grad">رموز جميلة ومميزة</span> — نسخ ولصق</h2>
-      <p>مجموعة من الرموز الجميلة والمميزة التي يمكن استخدامها لتزيين الأسماء والنصوص والبيوغرافيا على إنستغرام وتيك توك وواتساب وتيليغرام. هذه الرموز تعمل على جميع الأجهزة ولا تحتاج إلى أي تطبيق. انقر على أي رمز لنسخه ولصقه مباشرةً.</p>
-      <details>
-        <summary>كيف أزيّن اسمي أو بيوغرافيا بالرموز الجميلة؟</summary>
-        <div class="faq-ans">اختر الرموز التي تعجبك من الصفحة وانقر عليها لنسخها. يمكنك دمج أكثر من رمز معاً — مثلاً: ꧁★ اسمك ★꧂. الصق الرموز في بداية ونهاية اسمك أو بيوغرافيا لتحصل على مظهر مميز واحترافي.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -563,7 +568,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

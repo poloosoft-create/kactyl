@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Unicode code for the euro sign?", "acceptedAnswer": {"@type": "Answer", "text": "The euro sign € is U+20AC. In HTML use € or €. In CSS use content: '\\20AC'. On Windows, hold Alt and type 0128 on the numpad. On Mac, hold Option + Shift + 2. The euro sign was specifically designed for Unicode (added 1998), with input methods built into all major operating systems from the start."}}, {"@type": "Question", "name": "How do I type the Indian rupee symbol ₹?", "acceptedAnswer": {"@type": "Answer", "text": "On Windows 10/11 with the Indian keyboard layout active, the ₹ key is available directly. On standard keyboards, you need to copy it from this page or use the emoji panel (Win + .). On Mac with US keyboard, Option + 4 gives ¥ (yen), not rupee — copy ₹ from this page instead. Most mobile keyboards include ₹ in their currency symbol section."}}, {"@type": "Question", "name": "When was Bitcoin's ₿ added to Unicode?", "acceptedAnswer": {"@type": "Answer", "text": "Bitcoin's currency symbol ₿ (U+20BF) was officially added in Unicode 10.0, released in June 2017. This was a significant milestone — it took nearly 9 years from Bitcoin's 2009 launch for it to receive official Unicode recognition. Before that, websites used various workarounds: the letter B with strokes, custom fonts, or image-based representations."}}, {"@type": "Question", "name": "What is the difference between $ and ＄?", "acceptedAnswer": {"@type": "Answer", "text": "$ (U+0024) is the standard ASCII dollar sign used in virtually all computing contexts. ＄ (U+FF04) is the Fullwidth Dollar Sign from the Fullwidth Latin block, used in East Asian typography where characters are sized to fit a square cell matching Chinese/Japanese character widths. The fullwidth version should only appear in specifically formatted East Asian text — using it in code or standard text causes problems."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -424,6 +434,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/mascot-love.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What is the Unicode code for the euro sign?</summary>
@@ -461,14 +473,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2>رموز العملات $ € £ — نسخ ولصق</h2>
-      <p>رموز العملات العالمية مثل $ الدولار الأمريكي، و€ اليورو الأوروبي، و£ الجنيه الإسترليني، و¥ الين الياباني، و₿ البيتكوين ضرورية في كتابة الأسعار والمعاملات التجارية الإلكترونية والمحتوى المالي باللغة العربية. انقر على أي رمز لنسخه مباشرةً.</p>
-      <details>
-        <summary>كيف أكتب رمز الدولار $ أو اليورو € على لوحة المفاتيح العربية؟</summary>
-        <div class="faq-ans">إذا لم تجد رمز العملة على لوحة مفاتيحك العربية، فالطريقة الأسهل هي النقر عليه في الأعلى لنسخه ولصقه. على Windows يمكنك استخدام Win+. لفتح لوحة الإيموجي والبحث عن اسم العملة. على الجوال تأكد من التبديل إلى لوحة المفاتيح الإنجليزية للوصول إلى $.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -548,7 +553,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

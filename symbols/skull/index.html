@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does ☠ mean vs 💀?", "acceptedAnswer": {"@type": "Answer", "text": "☠ (U+2620 Skull And Crossbones) emphasizes danger, piracy, or death in a literal or serious sense — it's the same symbol used on hazardous materials. 💀 (U+1F480 Skull emoji) has largely become an ironic expression online — 'I'm 💀' means something was so funny or embarrassing that the speaker metaphorically died. Context determines meaning: ☠ on a chemical label means danger; 💀 in a TikTok comment means laughter."}}, {"@type": "Question", "name": "Can I use ☠ in a Discord or gaming username?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ☠ and 💀 work in Discord usernames, nicknames, and server names. They're popular in gaming communities, horror-themed servers, and edgy aesthetic contexts. ☠ is a text character (consistent rendering); 💀 is an emoji (varies slightly between platforms). Both are widely supported on all major gaming and social platforms."}}, {"@type": "Question", "name": "What is the ☣ biohazard symbol?", "acceptedAnswer": {"@type": "Answer", "text": "☣ (U+2623) is the International Biohazard Symbol, designed by Dow Chemical in 1966 specifically to be distinctive, memorable, and non-culturally specific. It's used on biological samples, lab equipment, and medical waste containers. Like ☠, it appears in Unicode's Miscellaneous Symbols block and has been adopted by internet culture for aesthetic purposes beyond its original hazard meaning."}}, {"@type": "Question", "name": "What Halloween symbols are in Unicode?", "acceptedAnswer": {"@type": "Answer", "text": "Key Halloween Unicode symbols: ☠ Skull and Crossbones (U+2620), 💀 Skull (U+1F480), 🎃 Jack-O-Lantern (U+1F383), 👻 Ghost (U+1F47B), 🦇 Bat (U+1F987), 🕸 Spider Web (U+1F578), 🕷 Spider (U+1F577), 🧟 Zombie (U+1F9DF), 🩸 Drop of Blood (U+1FA78), ⚰ Coffin (U+26B0). The 🎃 jack-o-lantern is the most universally recognized Halloween symbol in digital communication."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -409,6 +419,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/Mascot-thinking.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What does ☠ mean vs 💀?</summary>
@@ -446,14 +458,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2>رموز الجمجمة ☠ 💀 — نسخ ولصق</h2>
-      <p>رموز الجمجمة ☠ 💀 تُستخدم بشكل واسع في أسماء اللاعبين في فري فاير وبوبجي وكود موبايل وغيرها من ألعاب الأكشن العربية. تُعطي الاسم طابعاً قوياً ومخيفاً في اللعبة وعلى وسائل التواصل الاجتماعي. شائعة أيضاً في المحتوى الهارد كور والتحديات.</p>
-      <details>
-        <summary>كيف أضع رمز الجمجمة ☠ في اسم فري فاير؟</summary>
-        <div class="faq-ans">انقر على ☠ أو 💀 من الأعلى لنسخه، افتح فري فاير واذهب إلى تغيير الاسم والصق الرمز. يمكنك دمجه مع رموز أخرى: ☠اسمك☠ أو 💀YourName💀 للحصول على مظهر مميز. تأكد أن الاسم الكامل لا يتجاوز 20 حرفاً.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -533,7 +538,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

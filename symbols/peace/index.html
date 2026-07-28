@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who invented the peace symbol ☮ and what does it mean?", "acceptedAnswer": {"@type": "Answer", "text": "The peace symbol was designed by Gerald Holtom in 1958 for the UK Campaign for Nuclear Disarmament (CND). It combines the semaphore letters N and D (for 'Nuclear Disarmament') inside a circle. Holtom deliberately made it public domain. It became a universal peace symbol during the 1960s American anti-war and civil rights movements, spreading globally through protest culture, music, and fashion."}}, {"@type": "Question", "name": "What does ☯ mean?", "acceptedAnswer": {"@type": "Answer", "text": "☯ is the Yin Yang (or Taijitu) — a Taoist symbol representing the dynamic balance of opposing but complementary forces: yin (dark, passive, feminine) and yang (light, active, masculine). The dots within each half show that each force contains the seed of its opposite. In modern digital culture, ☯ is used for balance, harmony, philosophical content, and East Asian aesthetic themes."}}, {"@type": "Question", "name": "Can I use ☮ in my social media bio?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ☮ works in all social media bios, usernames, and posts. It's a plain text Unicode character from the Miscellaneous Symbols block with universal support. It displays as a simple outlined circle with the CND design in any system font. Many users include it in peace and harmony-themed bios alongside ✌ ☯ 🕊 for a complete peace aesthetic."}}, {"@type": "Question", "name": "What is the difference between ✌ and ☮?", "acceptedAnswer": {"@type": "Answer", "text": "✌ (U+270C Victory Hand) is a hand gesture emoji showing two fingers raised — it can mean 'peace,' 'victory,' or function as a cute expression in selfies. ☮ (U+262E) is the specific CND peace symbol. For explicitly communicating peace-as-concept or anti-war sentiment, ☮ is the more historically specific and politically loaded symbol. ✌ has broader, more culturally varied uses globally."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -409,6 +419,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/Mascot-pc.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>Who invented the peace symbol ☮ and what does it mean?</summary>
@@ -446,14 +458,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2><span class="sec-grad">رمز السلام ☮</span> — نسخ ولصق</h2>
-      <p>رمز السلام ☮ رمز عالمي للسلم والوئام والتسامح، يُستخدم في المحتوى السلمي والإنساني والديني على وسائل التواصل الاجتماعي العربية. يُستخدم أيضاً في التعليقات والمنشورات الداعية إلى الحوار والتفاهم بين الشعوب. رمز الحمامة 🕊 يُستخدم معه كثيراً كرمز للسلام في الثقافة العربية والإسلامية.</p>
-      <details>
-        <summary>ما معنى رمز السلام ☮ وكيف يُستخدم؟</summary>
-        <div class="faq-ans">رمز السلام ☮ (U+262E) صُمِّم عام 1958 كرمز لحركة نزع الأسلحة النووية البريطانية، وأصبح لاحقاً رمزاً عالمياً للسلام. يُستخدم في التعليقات والمنشورات للتعبير عن الرغبة في السلام وإنهاء النزاعات. انقر عليه لنسخه ولصقه أينما تشاء.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -533,7 +538,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

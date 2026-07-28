@@ -3679,8 +3679,8 @@ function switchFaqLang(lang, btn) {
 }
 
 /* ── LANGUAGE ── */
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
-function closeLang()  { document.getElementById('lang-menu').classList.remove('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
+function closeLang()  { document.getElementById('lang-menu')?.classList.remove('show'); }
 const I18N = {
   en: {
     'hero.h1':        'Arabic Keyboard Online<span class="h1-arabic">لوحة المفاتيح العربية</span>',

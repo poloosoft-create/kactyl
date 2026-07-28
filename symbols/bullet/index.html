@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Unicode code for a bullet point?", "acceptedAnswer": {"@type": "Answer", "text": "The standard bullet point is U+2022 (•). In HTML, use • or •. In CSS, you can set content: '\\2022' in ::before pseudo-elements for custom list styles. The middle dot · is a separate character at U+00B7, commonly confused with the bullet but smaller and centered vertically."}}, {"@type": "Question", "name": "How do I add a bullet point on iPhone or Android?", "acceptedAnswer": {"@type": "Answer", "text": "On iPhone, go to Settings > General > Keyboard > Text Replacement and add a shortcut like 'bpt' that expands to •. On Android, long-press the period key on most keyboards to access bullet-like symbols. The fastest method is to bookmark this page and tap any symbol to copy it instantly."}}, {"@type": "Question", "name": "Can I use bullet points in Instagram captions?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Instagram captions support Unicode characters including •, ▪, ➤, and other bullet symbols. Copy the symbol here, paste it into your caption in the Instagram app. Many popular accounts use bullet points between items in their bio or to format multi-line captions for better readability."}}, {"@type": "Question", "name": "What is the difference between • and ·?", "acceptedAnswer": {"@type": "Answer", "text": "The bullet • (U+2022) is a large, centered black dot used for list items. The middle dot · (U+00B7) is a small, vertically centered dot used as a separator (like 06·12·2025) or in linguistics. The interpunct · also appears as a multiplication sign in some European countries and as a decimal separator in certain math contexts."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -429,6 +439,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/Mascot-2.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What is the Unicode code for a bullet point?</summary>
@@ -466,14 +478,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2>رموز النقاط والتعداد • — نسخ ولصق</h2>
-      <p>نقطة التعداد • ورموز النقاط المختلفة ◦ ‣ ⁃ تُستخدم على نطاق واسع في تنسيق النصوص العربية، سواء في قوائم واتساب أو في تصميم المنشورات على إنستغرام وتيليغرام. تمنح النقاط النص مظهراً منظماً وسهل القراءة.</p>
-      <details>
-        <summary>كيف أضع نقاط تعداد في رسائل واتساب؟</summary>
-        <div class="faq-ans">انقر على رمز النقطة من الأعلى لنسخه، ثم افتح محادثة واتساب والصق النقطة في بداية كل سطر تريده. يمكنك أيضاً استخدام رموز أخرى مثل ◆ أو ► لإضافة تنوع بصري لقوائمك.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -553,7 +558,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

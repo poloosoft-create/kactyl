@@ -115,7 +115,7 @@ nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
 .rel-pill{font-size:13px;padding:7px 16px;border-radius:99px;background:rgba(255,255,255,.65);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.80);color:var(--muted);text-decoration:none;transition:all .15s;font-family:monospace}
 .rel-pill:hover{border-color:#7c3aed59;color:#7c3aed}
 [data-theme="dark"] .rel-pill{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
-.faq-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 48px;padding:0 24px}
+.faq-sec{position:relative;z-index:1;max-width:760px;margin:96px auto 48px;padding:0 24px}
 .sec-grad{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .faq-sec h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin-bottom:20px;letter-spacing:-.5px}
 .faq-item{background:rgba(255,255,255,.65);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.80);border-radius:14px;margin-bottom:10px;overflow:hidden}
@@ -177,6 +177,15 @@ footer{background:#07091A;border-top:none;padding:0}
 .ta-rel-arrow{position:absolute;bottom:17px;right:18px;font-size:16px;font-weight:700;color:var(--ca);opacity:0;transform:translateX(-5px);transition:opacity .2s,transform .2s}
 .ta-rel-card:hover .ta-rel-arrow{opacity:1;transform:translateX(0)}
 </style>
+<style>
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div></div>
@@ -278,7 +287,31 @@ footer{background:#07091A;border-top:none;padding:0}
   <p class="plat-tip">&#128161; <strong>Platform tip:</strong> Cat text art is the #1 animal category on every copy-paste site. ฅ^•ﻌ•^ฅ is especially popular in Japanese LINE culture and directly inspired real LINE sticker packs.</p>
 </section>
 
+<section class="intro-sec" style="margin:0 auto 40px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">Why the cat is the number-one kaomoji</h3>
+  <p style="margin-bottom:12px">The cat face packs an unusual amount of detail into plain text: the outer marks frame the whiskers and cheeks, the middle forms the eyes and a small mouth, and trailing Katakana characters add motion lines, as if the cat is darting past. Longer cat pieces stack Braille or block characters into a full multi-line portrait with ears, body and tail included, the kind of art that reads best in monospace-friendly apps.</p>
+  <p>Cats dominate because neko culture runs deep in Japanese internet history, and LINE, Japan's default messenger, built entire sticker economies around cat characters that these text versions imitate for free. English-speaking communities adopted them through anime and catcore aesthetics. Use the compact one-line versions in bios and usernames, and save the tall multi-line cats for Discord messages and Reddit comments where the alignment survives.</p>
+</section>
+
+<section class="intro-sec" style="margin:0 auto 40px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">From one-line cat to full ASCII portrait</h3>
+  <p style="margin-bottom:12px">There are two families of cat art here. The compact one-line cats keep the whole animal inside a single row, ideal for names and bios. The larger multi-line cats are true portraits, drawn with Braille or block characters across several rows so the ears, curled tail and rounded body all appear. These bigger pieces rely on every row lining up, so they look crisp in Discord, Reddit and code editors and can wobble in apps that use proportional fonts.</p>
+  <p>You can also tune the mood of a one-line cat: content eyes for a calm cat, wide eyes for a startled one, or a small open mouth for a meow. Add a raised paw for a greeting or a curl of motion lines for a cat on the move. Start compact for usernames, and reach for the full multi-line portrait when you have a message or comment with room to show it off.</p>
+</section>
+
+<section class="intro-sec" style="margin:0 auto 40px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">Why cats lead every collection</h3>
+  <p>Cat text art has more variants than any other animal, from the tiny compact face that predates most emoji to elaborate Braille portraits that fill a whole message. Part of the reason is practical: the cat's key features, its pointed ears, whiskers and curved tail, map neatly onto common keyboard and Unicode marks, so artists can suggest a recognisable cat with very few characters. That efficiency is why cat faces spread faster than any other animal across early messengers and still lead every copy-paste collection today.</p>
+</section>
+
+<section class="intro-sec" style="margin:0 auto 40px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">The classic cat faces, read one by one</h3>
+  <p>A few cat faces are worth knowing by name. The oldest and shortest keeps only whiskers and a pair of eyes, a design so minimal it still renders on the most basic devices. Adding a small central mark gives the cat a nose and a hint of a mouth; widening the eyes turns it curious or startled; and trailing motion marks send it scampering across the line. Learning these building blocks means you can adjust any cat you copy here rather than settling for the first one that looks close.</p>
+</section>
+
 <section class="faq-sec">
+  <img src="../../images/Mascot-thinking.svg" alt="" class="faq-combo-mascot" loading="lazy">
+  <div class="faq-hd-badge">FAQ</div>
   <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
 <details class="faq-item"><summary>What is the cat kaomoji?</summary><div class="faq-ans">ฅ^•ﻌ•^ฅ is the most iconic cat kaomoji — ฅ is a Thai character that looks like a raised cat paw, ^ forms the ears, •ﻌ• represents the cat nose and whiskers, and the ^ and ฅ mirror to complete the face.</div></details>
 <details class="faq-item"><summary>What does neko mean?</summary><div class="faq-ans">Neko (ねこ) means cat in Japanese. In internet culture, neko refers to both real cats and catgirl/catboy characters in anime — human characters with cat ears and tails. Cat text art is used in both contexts.</div></details>
@@ -291,7 +324,7 @@ footer{background:#07091A;border-top:none;padding:0}
 <section class="related-sec">
   <h2>More Text Art <span class="sec-grad">Categories</span></h2>
   <div class="ta-rel-grid">
-<a class="ta-rel-card" href="/text-art/hello-kitty/" style="--ca:#7c3aed"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#7c3aed">ﾐ・◦・ﾐ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#7c3aed">(=^‥^=)</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🎀</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Hello Kitty</div><div class="ta-rel-sub">Kawaii cat text art</div></div><span class="ta-rel-arrow">→</span></a>
+<a class="ta-rel-card" href="/text-art/kawaii-cat/" style="--ca:#7c3aed"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#7c3aed">ﾐ・◦・ﾐ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#7c3aed">(=^‥^=)</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🎀</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Kawaii Cat</div><div class="ta-rel-sub">Kawaii cat text art</div></div><span class="ta-rel-arrow">→</span></a>
 <a class="ta-rel-card" href="/text-art/bear/" style="--ca:#7c3aed"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#7c3aed">ʕ•ᴥ•ʔ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#7c3aed">ʕ◕ᴥ◕ʔ</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🐻</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Bear</div><div class="ta-rel-sub">Cute bear emoticons</div></div><span class="ta-rel-arrow">→</span></a>
 <a class="ta-rel-card" href="/text-art/frog/" style="--ca:#7c3aed"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#7c3aed">(ᵔᗜᵔ)</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="22" fill="#7c3aed">ヽ(ᵔᗜᵔ)ノ</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🐸</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Frog</div><div class="ta-rel-sub">Frog face text art</div></div><span class="ta-rel-arrow">→</span></a>
 <a class="ta-rel-card" href="/text-art/flower/" style="--ca:#7c3aed"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="22" fill="#7c3aed">✾ ✿ ❀ ✿ ✾</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="20" fill="#7c3aed">‧₊˚❀༉‧₊˚.</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🌸</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Flower</div><div class="ta-rel-sub">Floral text symbols</div></div><span class="ta-rel-arrow">→</span></a>

@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What star symbol is used for ratings?", "acceptedAnswer": {"@type": "Answer", "text": "The filled star ★ (U+2605) is the standard rating symbol — used by Google Reviews, Amazon, IMDb, and most review platforms. The outline star ☆ represents an empty rating slot. Some sites use ⭐ (the emoji variant) which renders as a yellow star on most platforms."}}, {"@type": "Question", "name": "How do I type the star symbol on a keyboard?", "acceptedAnswer": {"@type": "Answer", "text": "On Windows, use the numeric keypad: Alt + 9733 for ★ (filled) or Alt + 9734 for ☆ (outline). On Mac, open Character Viewer (Ctrl + Cmd + Space) and search \\\"star.\\\" On mobile, most emoji keyboards include ⭐ — for text stars like ★ ☆, bookmark this page and click to copy."}}, {"@type": "Question", "name": "What is the difference between ✦ and ★?", "acceptedAnswer": {"@type": "Answer", "text": "★ (U+2605) is a five-pointed star from the Miscellaneous Symbols block — the classic pentagram shape. ✦ (U+2726) is a Black Four Pointed Star from the Dingbats block with a diamond-like angular shape. ✦ looks more elegant and decorative; ★ is more universally recognized as a star."}}, {"@type": "Question", "name": "Which star symbols work best in Instagram bios?", "acceptedAnswer": {"@type": "Answer", "text": "The most reliable are ★ ☆ ✦ ✧ ✩ because they're text characters rather than emoji, giving consistent appearance across devices. The sparkle ✨ is extremely popular but renders differently on iOS vs Android. For uniform appearance, stick to Unicode text stars from the Miscellaneous Symbols and Dingbats blocks."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -429,6 +439,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/mascot-love.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What star symbol is used for ratings?</summary>
@@ -466,14 +478,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2><span class="sec-grad">رموز النجوم ★</span> — نسخ ولصق</h2>
-      <p>رموز النجوم ★ و☆ و✦ و✧ من أكثر الرموز شيوعاً في المحتوى العربي على منصات التواصل الاجتماعي. تُستخدم لتزيين الأسماء في الألعاب مثل فري فاير وبوبجي وماين كرافت، وكذلك في حالات واتساب وأسماء المجموعات والبيوغرافيا. انقر على أي نجمة لنسخها ولصقها فوراً.</p>
-      <details>
-        <summary>كيف أضع رمز نجمة في اسم فري فاير أو بوبجي؟</summary>
-        <div class="faq-ans">انقر على النجمة التي تريدها من الأعلى لنسخها، ثم افتح اللعبة واذهب إلى تغيير الاسم، والصق النجمة في المكان الذي تريده في الاسم. رموز ★ و☆ و✦ مدعومة في معظم الألعاب.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -553,7 +558,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

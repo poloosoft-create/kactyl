@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I type the copyright symbol © on keyboard?", "acceptedAnswer": {"@type": "Answer", "text": "Windows: Hold Alt and type 0169 on the numpad. Mac: Hold Option + G. iPhone: Long-press the C key — © appears in the popup. Android: Varies by keyboard; try long-pressing C or accessing the symbols page. In HTML, use © or ©. The quickest way on any device is to click © on this page to copy it."}}, {"@type": "Question", "name": "What is the difference between © ® and ™?", "acceptedAnswer": {"@type": "Answer", "text": "© (copyright) protects original creative works — books, music, software, art. It exists automatically when the work is created. ® (registered trademark) identifies a brand officially registered with a government trademark office — using ® on an unregistered mark is illegal. ™ (trademark) claims brand rights without formal registration. It's legally weaker but signals intent to assert trademark rights."}}, {"@type": "Question", "name": "Do I need to put © on my website?", "acceptedAnswer": {"@type": "Answer", "text": "Copyright exists automatically under the Berne Convention for all original works in most countries — you don't legally need the © notice. However, including it (© 2025 YourName) is strongly recommended because it puts potential infringers on constructive notice, which strengthens your position in any infringement claim. Include it in your website footer."}}, {"@type": "Question", "name": "What is the ℗ symbol used for?", "acceptedAnswer": {"@type": "Answer", "text": "℗ (U+2117 Sound Recording Copyright) appears on music releases to identify the copyright holder of the specific master recording, as distinct from © which covers the song composition. On a CD or streaming release you'll typically see both: © for the composition and ℗ for the master recording. This distinction matters significantly in music licensing and royalty negotiations."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -419,6 +429,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/Mascot-pc.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>How do I type the copyright symbol © on keyboard?</summary>
@@ -456,14 +468,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2><span class="sec-grad">رمز حقوق النشر © والعلامة التجارية</span> — نسخ ولصق</h2>
-      <p>رمز حقوق النشر © يُستخدم على نطاق واسع في المواقع الإلكترونية والمحتوى الرقمي العربي لحماية الملكية الفكرية. رمز التسجيل التجاري ® ورمز العلامة التجارية ™ مهمان أيضاً للشركات والعلامات التجارية العربية. انقر على أي رمز لنسخه.</p>
-      <details>
-        <summary>كيف أكتب رمز © حقوق النشر في النص العربي؟</summary>
-        <div class="faq-ans">انقر على رمز © من الأعلى لنسخه ولصقه. يُكتب عادةً على شكل: © 2026 اسم الشركة أو المنشئ. على Windows اضغط Alt+0169 على لوحة الأرقام الجانبية للحصول على ©، أو استخدم Win+. للبحث عنه في لوحة الإيموجي.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -543,7 +548,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

@@ -115,7 +115,7 @@ nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
 .rel-pill{font-size:13px;padding:7px 16px;border-radius:99px;background:rgba(255,255,255,.65);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.80);color:var(--muted);text-decoration:none;transition:all .15s;font-family:monospace}
 .rel-pill:hover{border-color:#92400e59;color:#92400e}
 [data-theme="dark"] .rel-pill{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
-.faq-sec{position:relative;z-index:1;max-width:760px;margin:0 auto 48px;padding:0 24px}
+.faq-sec{position:relative;z-index:1;max-width:760px;margin:96px auto 48px;padding:0 24px}
 .sec-grad{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .faq-sec h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--text);margin-bottom:20px;letter-spacing:-.5px}
 .faq-item{background:rgba(255,255,255,.65);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.80);border-radius:14px;margin-bottom:10px;overflow:hidden}
@@ -177,6 +177,15 @@ footer{background:#07091A;border-top:none;padding:0}
 .ta-rel-arrow{position:absolute;bottom:17px;right:18px;font-size:16px;font-weight:700;color:var(--ca);opacity:0;transform:translateX(-5px);transition:opacity .2s,transform .2s}
 .ta-rel-card:hover .ta-rel-arrow{opacity:1;transform:translateX(0)}
 </style>
+<style>
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div></div>
@@ -279,7 +288,26 @@ footer{background:#07091A;border-top:none;padding:0}
   <p class="plat-tip">&#128161; <strong>Platform tip:</strong> Bear text art dominates cosy Discord servers, study channels, and TikTok aesthetic posts. ʕ•ᴥ•ʔ alone generates millions of searches — it's one of the top 10 most-searched kaomoji globally.</p>
 </section>
 
+<section class="intro-sec" style="margin:0 auto 40px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">The story behind the bear kaomoji</h3>
+  <p style="margin-bottom:12px">The bear's face is a clever reuse of Unicode phonetic letters. The outer brackets are the pharyngeal and glottal-stop symbols from the International Phonetic Alphabet, curved here into the bear's rounded ears and paws, while the middle uses a tiny snout glyph set between two dot eyes. That accidental resemblance is why the same handful of symbols reads instantly as a bear on every device, with no image or emoji involved.</p>
+  <p>The bear became a mainstay of Korean and Japanese messaging culture, then spread through K-pop fandoms where it works as shorthand for affection under bias photos and comeback posts. On Discord it anchors cosy study-server aesthetics; on TikTok it decorates soft, muted-tone bios. Because it is a single line, it fits inside username and status fields that reject the taller multi-line pieces, which is a big reason it out-ranks almost every other animal kaomoji in search.</p>
+</section>
+
+<section class="intro-sec" style="margin:0 auto 40px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">Popular bear variations</h3>
+  <p style="margin-bottom:12px">The base bear is only the start. Swapping the eyes gives a sleepy bear with closed lids, a surprised bear with wide round eyes, or a loving bear with heart-shaped eyes. Raising one paw makes a waving bear, and adding small hearts or sparkles beside it turns a plain greeting into an affectionate one. Because every version is still a single line of real characters, you can mix and match freely and the result copies cleanly into any bio, comment or username field.</p>
+  <p>When picking one, match the eyes to the feeling: neutral dots for a calm hello, closed eyes for something cosy and content, sparkles for excitement. Shorter bears without extra decoration are the safest for username slots with tight limits, while the decorated versions shine in message bodies and status lines where a little extra flourish reads as warmth rather than clutter.</p>
+</section>
+
+<section class="intro-sec" style="margin:0 auto 40px">
+  <h3 style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-.3px">Why the bear endures</h3>
+  <p>The bear's staying power comes from a rare balance: it is detailed enough to be unmistakable yet compact enough to fit anywhere. Most animal kaomoji force a trade-off between recognisability and length, but the bear's ear-and-snout shape stays legible even at its shortest, so the same piece works in a two-word username and a long message alike. That versatility, more than any single trend, is why it remains the reference point other animal kaomoji are measured against.</p>
+</section>
+
 <section class="faq-sec">
+  <img src="../../images/Mascot-pc.svg" alt="" class="faq-combo-mascot" loading="lazy">
+  <div class="faq-hd-badge">FAQ</div>
   <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
 <details class="faq-item"><summary>What is the bear emoji in text?</summary><div class="faq-ans">ʕ•ᴥ•ʔ is the bear kaomoji — the ʕ and ʔ are phonetic characters that form ears and paws, while •ᴥ• represents the snout. It's one of the most recognised Unicode text characters on the internet.</div></details>
 <details class="faq-item"><summary>How do I type the bear kaomoji?</summary><div class="faq-ans">The ʕ and ʔ characters require special Unicode input — the easiest way is to copy from this page. ʕ (U+02D5) and ʔ (U+0294) are Latin phonetic characters rarely used in normal typing.</div></details>
@@ -292,7 +320,7 @@ footer{background:#07091A;border-top:none;padding:0}
 <section class="related-sec">
   <h2>More Text Art <span class="sec-grad">Categories</span></h2>
   <div class="ta-rel-grid">
-<a class="ta-rel-card" href="/text-art/hello-kitty/" style="--ca:#b45309"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#b45309">ﾐ・◦・ﾐ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#b45309">(=^‥^=)</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🎀</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Hello Kitty</div><div class="ta-rel-sub">Kawaii cat text art</div></div><span class="ta-rel-arrow">→</span></a>
+<a class="ta-rel-card" href="/text-art/kawaii-cat/" style="--ca:#b45309"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#b45309">ﾐ・◦・ﾐ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="24" fill="#b45309">(=^‥^=)</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🎀</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Kawaii Cat</div><div class="ta-rel-sub">Kawaii cat text art</div></div><span class="ta-rel-arrow">→</span></a>
 <a class="ta-rel-card" href="/text-art/frog/" style="--ca:#b45309"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#b45309">(ᵔᗜᵔ)</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="22" fill="#b45309">ヽ(ᵔᗜᵔ)ノ</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🐸</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Frog</div><div class="ta-rel-sub">Frog face text art</div></div><span class="ta-rel-arrow">→</span></a>
 <a class="ta-rel-card" href="/text-art/flower/" style="--ca:#b45309"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="22" fill="#b45309">✾ ✿ ❀ ✿ ✾</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="20" fill="#b45309">‧₊˚❀༉‧₊˚.</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🌸</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Flower</div><div class="ta-rel-sub">Floral text symbols</div></div><span class="ta-rel-arrow">→</span></a>
 <a class="ta-rel-card" href="/text-art/strawberry/" style="--ca:#b45309"><div class="ta-rel-preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="100%" height="100"><text x="130" y="38" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="26" fill="#b45309">ʚ🍓ɞ</text><text x="130" y="74" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="22" fill="#b45309">‧₊˚🍓˚₊‧</text></svg></div><div class="ta-rel-body"><div class="ta-rel-top"><span class="ta-rel-emoji">🍓</span><span class="ta-rel-count">20 pieces</span></div><div class="ta-rel-name">Strawberry</div><div class="ta-rel-sub">Cute fruit text art</div></div><span class="ta-rel-arrow">→</span></a>

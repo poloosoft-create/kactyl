@@ -128,10 +128,10 @@ nav{display:flex;align-items:center;gap:4px;margin-left:auto;flex-wrap:wrap}
   display:flex;flex-direction:column;gap:12px}
 .search-row{display:flex;align-items:center;gap:12px}
 .search-wrap{position:relative;flex:1;max-width:420px}
-#search{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+#search{background:var(--surface);border:1px solid transparent;border-radius:12px;
   padding:10px 16px 10px 40px;font-size:14px;font-family:inherit;color:var(--text);
-  outline:none;width:100%;transition:border-color .2s;box-sizing:border-box}
-#search:focus{border-color:var(--pink)}
+  outline:none;width:100%;box-shadow:0 7px 16px -8px rgba(8,14,30,.28);transition:box-shadow .2s;box-sizing:border-box}
+#search:focus{box-shadow:0 8px 24px -6px rgba(219,39,119,.28)}
 .search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);
   color:var(--muted);pointer-events:none;display:flex;align-items:center}
 .results-meta{font-size:13px;color:var(--muted);font-weight:500;flex:1;text-align:right}
@@ -166,7 +166,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:auto;flex-wrap:wrap}
 }
 
 /* ── Kaomoji Card ── */
-.km-card{background:rgba(255,255,255,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:16px;
+.km-card{background:rgba(255,255,255,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid transparent;border-radius:16px;box-shadow:0 16px 28px -12px rgba(8,14,30,.42);
   padding:20px 20px 16px;cursor:pointer;transition:all .18s;position:relative;overflow:hidden;
   display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;
   user-select:none}
@@ -219,17 +219,16 @@ nav{display:flex;align-items:center;gap:4px;margin-left:auto;flex-wrap:wrap}
 /* ── FAQ promo + header ── */
 .faq-promo{padding:60px 16px 36px;position:relative;z-index:1}
 .faq-promo .wrap{max-width:760px;margin:0 auto}
-.faq-promo-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:16px;position:relative}
-.faq-card-brand{background:#fff;border:1px solid #E2E8F0;border-radius:24px;padding:48px 32px;display:flex;align-items:center;justify-content:center;min-height:240px;position:relative}
-.faq-card-brand::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.5;z-index:-1}
-.faq-brand-logo{width:230px;max-width:82%}
-.faq-mascot{position:absolute;top:-50px;left:calc(41% - 90px);width:180px;z-index:10;pointer-events:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.15))}
-.faq-card-dark{background:#0F172A;border-radius:24px;padding:40px 36px;display:flex;flex-direction:column;justify-content:center;min-height:240px;position:relative}
-.faq-card-dark::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.5;z-index:-1}
-.faq-dark-h{font-size:clamp(30px,4.5vw,48px);font-weight:800;color:#F1F5F9;line-height:1.05;letter-spacing:-.8px;margin-bottom:14px}
-.faq-dark-sub{font-size:14px;color:#94A3B8;line-height:1.6;margin:0 0 24px}
-.faq-dark-pill{display:inline-flex;align-items:center;background:var(--pink);color:#fff;border-radius:24px;padding:11px 32px;font-size:15px;font-weight:700;letter-spacing:.06em;align-self:flex-end;text-decoration:none;transition:opacity .2s}
-.faq-dark-pill:hover{opacity:.85}
+.faq-promo-grid { display:grid; grid-template-columns:1fr 1.45fr; gap:16px; position:relative; }
+.faq-card-brand { background:#fff; border:none; border-radius:24px; padding:18px 28px; display:flex; align-items:center; justify-content:center; min-height:122px; position:relative; }
+.faq-card-2 { background:#fff; border:none; border-radius:24px; min-height:122px; position:relative; }
+.faq-card-brand::before, .faq-card-2::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.55; z-index:-1; pointer-events:none; }
+.card-hills-clip { position:absolute; inset:0; border-radius:24px; overflow:hidden; z-index:1; }
+.card-hills { position:absolute; left:0; bottom:0; width:100%; height:126px; display:block; }
+.card-hills .hill-accent{fill:var(--accent,#0068ff)}
+.card-hills .hill-soft{fill:color-mix(in srgb,var(--accent,#0068ff) 30%,#fff)}
+.faq-brand-logo { width:210px; max-width:80%; }
+.faq-mascot { position:absolute; top:-70px; left:74%; transform:translateX(-50%); width:210px; z-index:10; pointer-events:none; filter:drop-shadow(0 6px 18px rgba(0,0,0,.15)); }
 .faq-hd{display:flex;align-items:center;justify-content:space-between;gap:32px;margin:0 0 24px;text-align:left}
 .faq-hd-left{flex:1}
 .faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:8px 22px;font-size:13px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:18px}
@@ -239,7 +238,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:auto;flex-wrap:wrap}
 .faq-hd-right{position:relative;flex-shrink:0}
 .faq-mascot-2{width:190px;display:block;filter:drop-shadow(0 8px 24px rgba(0,0,0,.12))}
 .faq-sparkle{position:absolute;pointer-events:none}
-@media(max-width:700px){.faq-promo{padding:60px 16px 28px}.faq-promo-grid{grid-template-columns:1fr}.faq-mascot{top:-90px}.faq-card-dark{padding:32px 24px}.faq-hd{flex-direction:column;gap:0;align-items:stretch}.faq-hd-right{align-self:flex-end;margin-top:-20px}.faq-mascot-2{width:140px}}
+@media(max-width:700px){.faq-promo{padding:60px 16px 28px}.faq-promo-grid{grid-template-columns:1fr}.faq-card-2{display:none}.faq-mascot{top:-128px;left:50%;width:170px}.faq-hd{flex-direction:column;gap:0;align-items:stretch}.faq-hd-right{align-self:flex-end;margin-top:-20px}.faq-mascot-2{width:140px}}
 
 /* ── Korean + Arabic sections ── */
 .ko-sec{background:var(--surface);border:1.5px solid var(--border);border-radius:16px;padding:32px;max-width:760px;margin:0 auto 28px;font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif}
@@ -428,13 +427,15 @@ footer{background:#07091A;border-top:none;padding:0}
 .kcats-hd h2{font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.5px;color:var(--text);margin-bottom:6px}
 .kcats-hd p{font-size:14px;color:var(--muted);margin:0}
 .kcats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-.kcat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 6px;min-height:92px;text-decoration:none;transition:transform .15s,border-color .15s,box-shadow .15s}
-.kcat:hover{transform:translateY(-3px);border-color:var(--pink);box-shadow:0 10px 24px rgba(219,39,119,.15)}
-.kcat-face{font-size:clamp(14px,1.5vw,19px);color:var(--text);line-height:1.15;white-space:nowrap;font-weight:600}
-.kcat-name{font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:.01em}
+.kcat{display:flex;flex-direction:column;background:var(--surface);border:none;border-radius:14px;overflow:hidden;text-decoration:none;box-shadow:0 16px 28px -12px rgba(8,14,30,.42);transition:transform .15s,box-shadow .15s}
+.kcat:hover{transform:translateY(-3px);box-shadow:0 16px 32px -8px rgba(219,39,119,.24)}
+.kcat-face{display:flex;align-items:center;justify-content:center;height:58px;padding:0 6px;font-size:19px;line-height:1;color:var(--text);white-space:nowrap;overflow:hidden;background:var(--surface);font-family:'Segoe UI',system-ui,-apple-system,Roboto,'Noto Sans',sans-serif;letter-spacing:-.3px}
+.kcat-name{padding:10px 6px;text-align:center;font-size:12.5px;font-weight:700;color:var(--text);background:var(--surface);letter-spacing:.02em;border-top:1px solid var(--border)}
+.kcat-face.kf-sm{font-size:13px}
+@media(max-width:520px){.kcat-face.kf-sm{font-size:11px}}
 .kcat:hover .kcat-name{color:var(--pink)}
 @media(max-width:820px){.kcats-grid{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:520px){.kcats-grid{grid-template-columns:repeat(3,1fr)};.kcat-face{font-size:15px}}
+@media(max-width:520px){.kcats-grid{grid-template-columns:repeat(3,1fr)};.kcat-face{font-size:16px;height:52px}}
 </style>
   <script type="application/ld+json">
   {
@@ -459,6 +460,8 @@ footer{background:#07091A;border-top:none;padding:0}
     }
   }
   </script>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 
@@ -600,16 +603,24 @@ footer{background:#07091A;border-top:none;padding:0}
 <!-- FAQ PROMO -->
 <section class="faq-promo">
 <div class="wrap">
-<div class="faq-promo-grid">
-<div class="faq-card-brand"><img src="/images/kactyl-brand.png" alt="Kactyl" class="faq-brand-logo" loading="lazy"></div>
-<img src="/images/Mascot-2.svg" alt="" class="faq-mascot" loading="lazy">
-<div class="faq-card-dark">
-<div class="faq-dark-h">Got Questions?</div>
-<p class="faq-dark-sub">Your top kaomoji questions, answered.</p>
-<a href="#faq" class="faq-dark-pill">Get Answers</a>
-</div>
-</div>
-</div>
+    <div class="faq-promo-grid">
+      <div class="faq-card-brand">
+        <img src="../images/kactyl%20brand%20name-svg.svg" alt="Kactyl" class="faq-brand-logo">
+      </div>
+      <div class="faq-card-2">
+        <div class="card-hills-clip">
+          <svg class="card-hills" viewBox="0 0 560 130" preserveAspectRatio="none" aria-hidden="true">
+            <circle cx="38"  cy="135" r="74" class="hill-soft"/>
+            <circle cx="152" cy="120" r="92" class="hill-soft"/>
+            <circle cx="268" cy="144" r="58" class="hill-soft"/>
+            <circle cx="384" cy="126" r="86" class="hill-soft"/>
+            <circle cx="504" cy="138" r="70" class="hill-accent"/>
+          </svg>
+        </div>
+      </div>
+      <img src="../images/Mascot-thinking.svg" alt="" class="faq-mascot">
+    </div>
+  </div>
 </section>
 
 <!-- FAQ -->
@@ -619,12 +630,6 @@ footer{background:#07091A;border-top:none;padding:0}
       <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked<br><span class="sec-grad">Questions</span></h2>
       <p>Everything you need to know about kaomoji</p>
-    </div>
-    <div class="faq-hd-right">
-      <img src="/images/Mascot-joy.svg" alt="" class="faq-mascot-2" loading="lazy">
-      <svg class="faq-sparkle" style="top:-8px;right:52px;width:28px;height:28px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--pink)"/></svg>
-      <svg class="faq-sparkle" style="top:28px;right:12px;width:18px;height:18px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--pink)" opacity=".7"/></svg>
-      <svg class="faq-sparkle" style="top:5px;right:-8px;width:12px;height:12px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--pink)" opacity=".5"/></svg>
     </div>
   </div>
 
@@ -715,7 +720,7 @@ footer{background:#07091A;border-top:none;padding:0}
     <a class="kcat" href="/kaomoji/sparkle/"><span class="kcat-face">⋆｡°✩</span><span class="kcat-name">Sparkle</span></a>
     <a class="kcat" href="/kaomoji/special/"><span class="kcat-face">⊙▽⊙</span><span class="kcat-name">Special</span></a>
     <a class="kcat" href="/kaomoji/surprised/"><span class="kcat-face">(゜゜)</span><span class="kcat-name">Surprised</span></a>
-    <a class="kcat" href="/kaomoji/table-flip/"><span class="kcat-face">(╯°□°)╯︵┻━┻</span><span class="kcat-name">Table Flip</span></a>
+    <a class="kcat" href="/kaomoji/table-flip/"><span class="kcat-face kf-sm">(╯°□°)╯︵┻━┻</span><span class="kcat-name">Table Flip</span></a>
     <a class="kcat" href="/kaomoji/thinking/"><span class="kcat-face">(・・?)</span><span class="kcat-name">Thinking</span></a>
     <a class="kcat" href="/kaomoji/wave/"><span class="kcat-face">(^^)/</span><span class="kcat-name">Wave</span></a>
     <a class="kcat" href="/kaomoji/wink/"><span class="kcat-face">(^_~)</span><span class="kcat-name">Wink</span></a>

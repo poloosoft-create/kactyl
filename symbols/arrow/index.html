@@ -286,6 +286,16 @@ footer { background:#07091A;border-top:none;padding:0; }
 .sec-grad{background:linear-gradient(135deg,#0891b2,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between → and ⇒?", "acceptedAnswer": {"@type": "Answer", "text": "→ (U+2192 Rightwards Arrow) is the standard directional arrow used for navigation, process flow, and casual 'leads to' notation. ⇒ (U+21D2 Rightwards Double Arrow) is the mathematical implication arrow, meaning 'therefore' or 'implies.' In logic, P ⇒ Q means 'if P, then Q' — these are semantically different symbols, not just visual variants."}}, {"@type": "Question", "name": "Which arrow symbols work in social media bios?", "acceptedAnswer": {"@type": "Answer", "text": "→ ← ↑ ↓ ⇒ ➤ ➡ all work reliably on Instagram, Twitter, TikTok, and Discord. The plain arrows from the Arrows block (U+2190–U+21FF) are safest. Highly decorative arrows from the Supplemental Arrows-C block may render as empty squares on older devices."}}, {"@type": "Question", "name": "How do I make an arrow in plain text?", "acceptedAnswer": {"@type": "Answer", "text": "ASCII arrow alternatives: -> (right),  (both directions), => (implies), ==> (strong implies). Unicode arrows are better for final presentation but ASCII arrows work universally in code, emails, and plain text files. For a proper → arrow, copy it from this page — it works in all modern systems."}}, {"@type": "Question", "name": "What is the arrow symbol for 'back' in navigation?", "acceptedAnswer": {"@type": "Answer", "text": "← (U+2190) is the standard left-pointing arrow used for back navigation. In breadcrumbs, › (U+203A Single Right-Pointing Angle Quotation Mark) and ‹ (U+2039) are commonly used. For a bold back arrow, ⬅ (U+2B05) is a popular choice. The right-pointing ❯ (U+276F) and ❱ (U+276A) are used in many modern UI frameworks."}}]}</script>
+<style>
+.sym-faq{position:relative;margin-top:104px}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:7px 20px;font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+.faq-combo-mascot{width:220px;height:auto;display:block;position:absolute;right:0;top:-74px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.10));pointer-events:none;z-index:0}
+.faq-combo-mascot~*{position:relative;z-index:1}
+@media(max-width:640px){.faq-combo-mascot{width:150px;top:-8px}}
+</style>
+<style>/* unified section width — kactyl */
+.wrap{max-width:880px}</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -450,6 +460,8 @@ footer { background:#07091A;border-top:none;padding:0; }
     </div>
 
     <section class="sym-faq">
+      <img src="../../images/Mascot-1.svg" alt="" class="faq-combo-mascot" loading="lazy">
+      <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
       <details>
         <summary>What is the difference between → and ⇒?</summary>
@@ -487,14 +499,7 @@ footer { background:#07091A;border-top:none;padding:0; }
       </div>
     </section>
 
-    <section class="sym-ar" lang="ar">
-      <h2><span class="sec-grad">رموز الأسهم ← → ↑ ↓</span> — نسخ ولصق</h2>
-      <p>رموز الأسهم بجميع اتجاهاتها ← → ↑ ↓ ↗ ↘ وغيرها تُستخدم كثيراً في المحتوى العربي للإشارة والتوجيه. مفيدة في تصميم المنشورات والإعلانات والرسائل التفاعلية على واتساب وتيليغرام وإنستغرام. الأسهم العربية تسير من اليمين إلى اليسار، لذا فإن رمز ← هو الأنسب للمحتوى العربي.</p>
-      <details>
-        <summary>كيف أنسخ رمز سهم للاستخدام في النص العربي؟</summary>
-        <div class="faq-ans">انقر على السهم الذي تريده في الأعلى — سيُنسخ تلقائياً. للمحتوى العربي الذي يسير من اليمين إلى اليسار، السهم ← (إلى اليسار) هو الأكثر طبيعية في الاتجاه. يمكنك لصقه في أي نص أو رسالة فوراً.</div>
-      </details>
-    </section>
+    
   </div>
 </main>
 
@@ -574,7 +579,7 @@ function applyTheme() {
   if(lb) lb.innerHTML = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
 }
 function loadTheme() { isDark = localStorage.getItem('arabi-theme') === 'dark'; applyTheme(); }
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 var tTimer;

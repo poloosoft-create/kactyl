@@ -76,16 +76,15 @@
 .faq-promo { padding:110px 16px 48px; position:relative; z-index:1 }
 .faq-promo .wrap { max-width:860px; margin:0 auto; }
 .faq-promo-grid { display:grid; grid-template-columns:1fr 1.45fr; gap:16px; position:relative; }
-.faq-card-brand { background:#fff; border:1px solid #E2E8F0; border-radius:24px; padding:48px 32px; display:flex; align-items:center; justify-content:center; min-height:240px; position:relative; }
-.faq-card-brand::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.5; z-index:-1; }
-.faq-brand-logo { width:230px; max-width:82%; }
-.faq-mascot { position:absolute; top:-50px; left:calc(41% - 90px); width:180px; z-index:10; pointer-events:none; filter:drop-shadow(0 6px 18px rgba(0,0,0,.15)); }
-.faq-card-dark { background:#0F172A; border-radius:24px; padding:40px 36px; display:flex; flex-direction:column; justify-content:center; min-height:240px; position:relative; }
-.faq-card-dark::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.5; z-index:-1; }
-.faq-dark-h { font-size:clamp(30px,4.5vw,48px); font-weight:800; color:#F1F5F9; line-height:1.05; letter-spacing:-.8px; margin-bottom:14px; }
-.faq-dark-sub { font-size:14px; color:#94A3B8; line-height:1.6; margin:0 0 24px; }
-.faq-dark-pill { display:inline-flex; align-items:center; background:#EC4899; color:#fff; border-radius:24px; padding:11px 32px; font-size:15px; font-weight:700; letter-spacing:.06em; align-self:flex-end; text-decoration:none; transition:opacity .2s; }
-.faq-dark-pill:hover { opacity:.85; }
+.faq-card-brand { background:#fff; border:none; border-radius:24px; padding:18px 28px; display:flex; align-items:center; justify-content:center; min-height:122px; position:relative; }
+.faq-card-2 { background:#fff; border:none; border-radius:24px; min-height:122px; position:relative; }
+.faq-card-brand::before, .faq-card-2::before { content:''; position:absolute; bottom:-14px; left:6%; right:6%; height:26px; border-radius:14px; background:#080E1E; filter:blur(14px); opacity:.55; z-index:-1; pointer-events:none; }
+.card-hills-clip { position:absolute; inset:0; border-radius:24px; overflow:hidden; z-index:1; }
+.card-hills { position:absolute; left:0; bottom:0; width:100%; height:126px; display:block; }
+.card-hills .hill-accent{fill:var(--accent,#0068ff)}
+.card-hills .hill-soft{fill:color-mix(in srgb,var(--accent,#0068ff) 30%,#fff)}
+.faq-brand-logo { width:210px; max-width:80%; }
+.faq-mascot { position:absolute; top:-70px; left:74%; transform:translateX(-50%); width:210px; z-index:10; pointer-events:none; filter:drop-shadow(0 6px 18px rgba(0,0,0,.15)); }
 .faq-hd { display:flex; align-items:center; justify-content:space-between; gap:32px; margin:0 0 24px; text-align:left; }
 .faq-hd-left { flex:1; }
 .faq-hd-badge { display:inline-flex; align-items:center; background:#111; border-radius:50px; padding:8px 22px; font-size:13px; font-weight:800; color:#fff; letter-spacing:.03em; text-transform:uppercase; margin-bottom:18px; }
@@ -97,9 +96,9 @@
 .faq-sparkle { position:absolute; pointer-events:none; }
 @media(max-width:700px){
   .faq-promo { padding:100px 16px 40px; }
-  .faq-promo-grid { grid-template-columns:1fr; }
-  .faq-mascot { top:-90px; }
-  .faq-card-dark { padding:32px 24px; }
+  .faq-promo-grid { grid-template-columns:1fr; }.faq-card-2{display:none}
+  .faq-mascot{top:-128px;left:50%;width:170px}
+  
   .faq-hd { flex-direction:column; gap:0; align-items:stretch; }
   .faq-hd-right { align-self:flex-end; margin-top:-20px; }
   .faq-mascot-2 { width:150px; }
@@ -506,6 +505,8 @@ footer{background:#07091A;border-top:none;padding:0}
     }
   }
   </script>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
 </head>
 <body>
 
@@ -663,18 +664,32 @@ footer{background:#07091A;border-top:none;padding:0}
   </section>
 
 <!-- FAQ section -->
+<section class="seo-sec">
+  <h2>Fonts across your <span class="sec-grad">Instagram profile</span></h2>
+  <p>Instagram supports Unicode styling in your <strong>bio</strong> and <strong>captions</strong>, and in the text tool on <strong>Stories</strong>, but not in the <strong>@username</strong>, which stays plain. The bio caps at 150 characters, and a styled letter counts as one character just like a plain one — so a fancy bio holds exactly as much text as an unstyled one, with no penalty for the look. Line breaks and a couple of styled keywords are usually more effective than styling the whole bio, which can get hard to read.</p>
+  <p>Reliability varies by style. Bold, italic and script render consistently across iOS and Android and even carry over to Threads, which shares Instagram's text handling. The most ornate styles — heavy gothic, some symbol-laden looks — occasionally show as empty boxes on older Android devices, so if reach matters, preview on a second phone or stick to the widely-supported styles. Use fancy text to make one line — a tagline, a call to action — stand out, not to restyle every word.</p>
+  <p>On Stories and Reels, the styled text you paste sits inside Instagram's own text tool, so you can still resize, recolour and animate it like normal text — the Unicode styling just changes the letterforms underneath. That makes fancy text a fast way to give a Story caption personality without relying on a third-party font sticker that might not match your feed.</p>
+</section>
 <section class="faq-promo">
 <div class="wrap">
-<div class="faq-promo-grid">
-<div class="faq-card-brand"><img src="/images/kactyl-brand.png" alt="Kactyl" class="faq-brand-logo" loading="lazy"></div>
-<img src="/images/Mascot-2.svg" alt="" class="faq-mascot" loading="lazy">
-<div class="faq-card-dark">
-<div class="faq-dark-h">Got Questions?</div>
-<p class="faq-dark-sub">Your top Instagram font questions, answered.</p>
-<a href="#faq" class="faq-dark-pill">Get Answers</a>
-</div>
-</div>
-</div>
+    <div class="faq-promo-grid">
+      <div class="faq-card-brand">
+        <img src="../images/kactyl%20brand%20name-svg.svg" alt="Kactyl" class="faq-brand-logo">
+      </div>
+      <div class="faq-card-2">
+        <div class="card-hills-clip">
+          <svg class="card-hills" viewBox="0 0 560 130" preserveAspectRatio="none" aria-hidden="true">
+            <circle cx="38"  cy="135" r="74" class="hill-soft"/>
+            <circle cx="152" cy="120" r="92" class="hill-soft"/>
+            <circle cx="268" cy="144" r="58" class="hill-soft"/>
+            <circle cx="384" cy="126" r="86" class="hill-soft"/>
+            <circle cx="504" cy="138" r="70" class="hill-accent"/>
+          </svg>
+        </div>
+      </div>
+      <img src="../images/Mascot-pc.svg" alt="" class="faq-mascot">
+    </div>
+  </div>
 </section>
 
 <section class="faq-sec" id="faq">
@@ -683,12 +698,6 @@ footer{background:#07091A;border-top:none;padding:0}
       <div class="faq-hd-badge">FAQ</div>
       <h2>Frequently Asked<br><span class="sec-grad">Questions</span></h2>
       <p>Everything you need to know about this generator</p>
-    </div>
-    <div class="faq-hd-right">
-      <img src="/images/mascot-love.svg" alt="" class="faq-mascot-2" loading="lazy">
-          <svg class="faq-sparkle" style="top:-8px;right:52px;width:28px;height:28px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--purple)"/></svg>
-          <svg class="faq-sparkle" style="top:28px;right:12px;width:18px;height:18px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--purple)" opacity=".7"/></svg>
-          <svg class="faq-sparkle" style="top:5px;right:-8px;width:12px;height:12px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="var(--purple)" opacity=".5"/></svg>
     </div>
   </div>
   <details class="faq-item">
@@ -1144,7 +1153,7 @@ function showToast(msg) {
 }
 
 // ── Language dropdown ─────────────────────────────────────────────────────────
-function toggleLang() { document.getElementById('lang-menu').classList.toggle('show'); }
+function toggleLang() { document.getElementById('lang-menu')?.classList.toggle('show'); }
 document.addEventListener('click', function(e) { if(!e.target.closest('.lang-wrap')) { var m=document.getElementById('lang-menu'); if(m) m.classList.remove('show'); } });
 
 // ── Theme ─────────────────────────────────────────────────────────────────────
