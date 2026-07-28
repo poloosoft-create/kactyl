@@ -497,7 +497,7 @@ footer{background:#07091A;border-top:none;padding:0}
       <span id="char-count">0 / 200</span>
       <div class="inp-btns">
         <button class="btn-ghost" onclick="clearInput()">✕ Clear</button>
-        <button class="btn-primary" id="copy-all-btn" onclick="copyAll()" style="display:inline-flex;align-items:center;gap:6px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy All</button>
+        <button class="btn-primary" id="copy-all-btn" onclick="copyAll()" style="display:inline-flex;align-items:center;gap:6px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>نسخ الكل</button>
       </div>
     </div>
   </div>
@@ -505,18 +505,18 @@ footer{background:#07091A;border-top:none;padding:0}
 
 <!-- FILTER BAR -->
 <div class="filter-bar">
-  <div class="cat-tabs" id="cat-tabs">
-    <button class="cat-tab active" data-cat="all">All <span class="cnt" id="cnt-all">38</span></button>
-    <button class="cat-tab" data-cat="cursive">Cursive <span class="cnt">5</span></button>
-    <button class="cat-tab" data-cat="bold">Bold &amp; Italic <span class="cnt">8</span></button>
-    <button class="cat-tab" data-cat="symbols">Symbols <span class="cnt">7</span></button>
-    <button class="cat-tab" data-cat="deco">✦ Decoration <span class="cnt">24</span></button>
-    <button class="cat-tab" data-cat="special">Special FX <span class="cnt">18</span></button>
-    <button class="cat-tab" data-cat="favs">★ Favorites <span class="cnt" id="cnt-favs">0</span></button>
+  <div class="cat-tabs" id="cat-tabs" dir="rtl">
+    <button class="cat-tab active" data-cat="deco">✦ زخرفة <span class="cnt">24</span></button>
+    <button class="cat-tab" data-cat="all">الكل <span class="cnt" id="cnt-all">38</span></button>
+    <button class="cat-tab" data-cat="cursive">متصل <span class="cnt">5</span></button>
+    <button class="cat-tab" data-cat="bold">عريض ومائل <span class="cnt">8</span></button>
+    <button class="cat-tab" data-cat="symbols">رموز <span class="cnt">7</span></button>
+    <button class="cat-tab" data-cat="special">مؤثرات <span class="cnt">18</span></button>
+    <button class="cat-tab" data-cat="favs">★ المفضلة <span class="cnt" id="cnt-favs">0</span></button>
   </div>
   <div class="search-wrap">
     <span class="search-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-    <input type="text" id="search" placeholder="Search styles…" oninput="renderAll()">
+    <input type="text" id="search" placeholder="ابحث عن نمط…" oninput="renderAll()" dir="rtl">
   </div>
   <div class="results-meta" id="results-meta"></div>
 </div>
@@ -819,7 +819,7 @@ const LEET_MAP = {
 };
 
 // ── State ─────────────────────────────────────────────────────────────────────
-let curCat   = 'all';
+let curCat   = 'deco';
 let favs     = JSON.parse(localStorage.getItem('ft_favs') || '[]');
 let toastTmr = null;
 const PLACEHOLDER = 'اسمك';
@@ -895,7 +895,7 @@ function renderAll() {
       <div class="card-top">
         <span class="cat-chip ${chipClass}">${s.cat}</span>
         <div class="card-actions">
-          <button class="fav-btn ${isFav?'active':''}" onclick="toggleFav('${s.id}')" title="Favorite">
+          <button class="fav-btn ${isFav?'active':''}" onclick="toggleFav('${s.id}')" title="المفضلة">
             ${isFav?'♥':'♡'}
           </button>
         </div>
@@ -903,13 +903,13 @@ function renderAll() {
       <div class="card-text ${isEmpty?'empty':''}" id="text-${s.id}">${converted}</div>
       <div class="card-bottom">
         <span class="style-name">${s.name}</span>
-        <button class="copy-btn" id="btn-${s.id}" onclick="copyStyle('${s.id}')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+        <button class="copy-btn" id="btn-${s.id}" onclick="copyStyle('${s.id}')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>نسخ</button>
       </div>
     </div>`;
   });
 
   if (visible === 0) {
-    html = `<div class="no-results"><h3>No styles found</h3><p>Try a different search or category.</p></div>`;
+    html = `<div class="no-results"><h3>لا توجد أنماط</h3><p>جرّب بحثاً أو تصنيفاً آخر.</p></div>`;
   }
 
   grid.innerHTML = html;
@@ -965,12 +965,12 @@ function copyStyle(id) {
   if (!el) return;
   const text = el.textContent;
   navigator.clipboard.writeText(text).then(function() {
-    btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Copied!';
+    btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>تم النسخ!';
     btn.classList.add('copied');
     card.classList.add('flashed');
-    showToast('Copied: ' + text.slice(0, 24) + (text.length > 24 ? '…' : ''));
+    showToast('تم النسخ: ' + text.slice(0, 24) + (text.length > 24 ? '…' : ''));
     setTimeout(function() {
-      btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy';
+      btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>نسخ';
       btn.classList.remove('copied');
       card.classList.remove('flashed');
     }, 1500);
@@ -980,7 +980,7 @@ function copyStyle(id) {
     document.body.appendChild(ta); ta.select();
     document.execCommand('copy');
     document.body.removeChild(ta);
-    showToast('Copied!');
+    showToast('تم النسخ!');
   });
 }
 
@@ -991,7 +991,7 @@ function copyAll() {
     .filter(s => curCat === 'all' || s.cat === curCat)
     .map(s => s.name + ': ' + convertText(text, s));
   navigator.clipboard.writeText(lines.join('\n')).then(function() {
-    showToast('Copied all ' + lines.length + ' styles!');
+    showToast('تم نسخ ' + lines.length + ' نمط!');
   });
 }
 
@@ -1083,7 +1083,7 @@ function updateThemeUI(t) {
 // ── Share ─────────────────────────────────────────────────────────────────────
 function ftShare(app) {
   const text = document.getElementById('inp').value.trim();
-  if (!text) { showToast('Type some text first'); return; }
+  if (!text) { showToast('اكتب نصاً أولاً'); return; }
   if (app === 'whatsapp') {
     window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
   } else if (app === 'twitter') {
