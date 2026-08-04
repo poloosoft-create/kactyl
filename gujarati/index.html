@@ -2182,7 +2182,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="card editor-card">
       <div class="textarea-wrap">
         <textarea id="arabic-text"
-          placeholder="Type Gujarati here... or click the letters below ✍️"
+          placeholder="Type in Gujarati…"
           oninput="onInput()" onkeydown="playClick()" spellcheck="false" inputmode="none"></textarea>
         <span class="char-num" id="char-counter">0 / 5000</span>
         <div class="char-progress" id="char-bar"></div>
@@ -3327,6 +3327,12 @@ function init() {
   buildKB(); buildEmoji(); buildTash(); buildSpec(); buildNum(); initEmojiHub();
 /* ── Amazigh custom flag button in emoji hub ── */
   setupPhys(); loadTheme(); updateStats();
+  /* desktop: activate PC keyboard on load so you can just start typing (mobile has no physical keyboard) */
+  if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    qwertyOn = true;
+    const pb = document.getElementById('pc-btn'); if (pb) pb.classList.add('on');
+    const ta0 = document.getElementById('arabic-text'); if (ta0) ta0.focus({preventScroll:true});
+  }
   document.addEventListener('click', e => {
     if (!e.target.closest('#epop') && !e.target.closest('.k-emoji')) closeEmoji();
     if (!e.target.closest('#tpop') && !e.target.closest('.k-tashkeel')) closeTashkeel();
@@ -3850,15 +3856,59 @@ function toggleQwerty() {
 }
 
 /* ── PHYSICAL KB ── */
+/* Phonetic (Franco/Arabizi) maps, derived by inverting the on-screen hint map FL so
+   every language reuses its OWN hints. 1-char latin = single, 2-char = digraph
+   (type-then-upgrade: 's'->س, then 'h' upgrades it to ش). Capitals = emphatics. */
+const PH_SINGLE = {}, PH_DIGRAPH = {};
+(function buildPhonetic(){
+  for (const ar in FL) {
+    const lat = FL[ar];
+    if (!lat || lat === ',') continue;
+    if (lat.length === 1) { if (!PH_SINGLE[lat]) PH_SINGLE[lat] = ar; }
+    else if (lat.length === 2) { PH_DIGRAPH[lat] = ar; }
+  }
+  for (const d in PH_DIGRAPH) { if (!PH_SINGLE[d[0]]) PH_SINGLE[d[0]] = PH_DIGRAPH[d]; }
+})();
+let lastPh = '';
+function replaceLast(newCh) {
+  const ta = document.getElementById('arabic-text');
+  const s = ta.selectionStart;
+  if (s < 1) return ins(newCh);
+  ta.value = ta.value.slice(0, s - 1) + newCh + ta.value.slice(s);
+  ta.selectionStart = ta.selectionEnd = s - 1 + newCh.length;
+  ta.focus({preventScroll:true});
+  if (typeof updateStats === 'function') updateStats();
+  if (typeof updateSugs === 'function') updateSugs();
+}
+/* physical key POSITION (e.code) -> US-QWERTY char, so the standard layout works on
+   ANY keyboard (QWERTY, AZERTY, Mac, overlay) — a hardware keyboard is defined by
+   position, not the Latin letter printed on the key. */
+const CODE2CHAR = {};
+'qwertyuiopasdfghjklzxcvbnm'.split('').forEach(c => { CODE2CHAR['Key' + c.toUpperCase()] = c; });
+Object.assign(CODE2CHAR, {BracketLeft:'[', BracketRight:']', Semicolon:';', Quote:"'", Comma:',', Period:'.', Slash:'/', Backquote:'`'});
 function setupPhys() {
+  const ta = document.getElementById('arabic-text');
+  ta.addEventListener('pointerdown', () => { lastPh = ''; });
   document.addEventListener('keydown', e => {
     if (!qwertyOn) return;
-    const ta = document.getElementById('arabic-text');
     if (document.activeElement !== ta || e.ctrlKey || e.metaKey || e.altKey) return;
     const skip = ['Backspace','Delete','Tab','Enter','Arrow','Home','End'];
-    if (skip.some(s => e.key.startsWith(s))) return;
-    const ch = PHYS[e.key?.toLowerCase()];
-    if (ch) { e.preventDefault(); ins(ch); }
+    if (skip.some(s => (e.key || '').startsWith(s))) { lastPh = ''; return; }
+    if (francoOn) {                                   /* phonetic — sound (e.key), CASE-sensitive: Shift = emphatic */
+      let raw = e.key || '';
+      if (e.code === 'Digit2') raw = '2';
+      else if (e.code === 'Digit3') raw = '3';
+      else if (e.code === 'Digit7') raw = '7';
+      if (raw.length !== 1) return;
+      const low = raw.toLowerCase();
+      if (lastPh && PH_DIGRAPH[lastPh + low]) { e.preventDefault(); replaceLast(PH_DIGRAPH[lastPh + low]); lastPh = ''; return; }
+      if (PH_SINGLE[raw]) { e.preventDefault(); ins(PH_SINGLE[raw]); lastPh = (raw === low) ? low : ''; return; }
+      if (PH_SINGLE[low]) { e.preventDefault(); ins(PH_SINGLE[low]); lastPh = low; return; }
+      lastPh = '';
+    } else {                                          /* standard layout — by physical position */
+      const ch = PHYS[CODE2CHAR[e.code]];
+      if (ch) { e.preventDefault(); ins(ch); }
+    }
   });
 }
 
@@ -3918,7 +3968,7 @@ const I18N = {
     'qwerty.title':'Type Gujarati with your keyboard','qwerty.sub':'QWERTY phonetic',
     'brand.tag':'Type Gujarati from any device without installation',
     'brand.badge1':'✓ 100% Free','brand.badge2':'⚡ No Install','brand.badge3':'📱 All Devices',
-    'placeholder':'Type Gujarati here... or click the letters below ✍️',
+    'placeholder':'Type in Gujarati…',
     'ehub.title':'😊 Gujarati <span class="red">Emoji</span> Hub <span class="ar">— ગુજરાતી ઇમોજી</span>',
     'ehub.sub':'Click any emoji to insert it into your text above — or grab a ready-made Gujarati combo for social media',
     'ehub.tab.popular':'⭐ Popular','ehub.tab.islamic':'☪️ Islamic','ehub.tab.culture':'🦚 Culture','ehub.tab.flags':'🏳️ Flags','ehub.tab.social':'📱 Social',
@@ -4516,8 +4566,9 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
   kbc.parentNode.insertBefore(spacer, kbc);
 
   let docked = false;
+  let dockOff = false;
   function dock() {
-    if (docked || !mq.matches) return;
+    if (docked || !mq.matches || dockOff) return;
     spacer.style.height = kbc.offsetHeight + 'px';
     spacer.style.display = 'block';
     /* portal: #kbc lives inside .wrap (z-index:1 stacking context), so later
@@ -4568,9 +4619,15 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
   }
 
   let hy = null;
-  handle.addEventListener('pointerdown', e => { hy = e.clientY; handle.setPointerCapture(e.pointerId); });
-  handle.addEventListener('pointermove', e => { if (hy !== null && e.clientY - hy > 40) { hy = null; undock(); } });
-  handle.addEventListener('pointerup',   e => { if (hy !== null) undock(); hy = null; });
+  function dismissDock(e) {
+    dockOff = true;
+    if (e && e.pointerId != null) { try { handle.releasePointerCapture(e.pointerId); } catch (_) {} }
+    undock();
+  }
+  handle.addEventListener('pointerdown', e => { hy = e.clientY; try { handle.setPointerCapture(e.pointerId); } catch (_) {} });
+  handle.addEventListener('pointermove', e => { if (hy !== null && e.clientY - hy > 40) { hy = null; dismissDock(e); } });
+  handle.addEventListener('pointerup',   e => { if (hy !== null) dismissDock(e); hy = null; });
+  handle.addEventListener('pointercancel', () => { hy = null; });
   window.addEventListener('resize', () => { if (!mq.matches) undock(); });
 
   /* selecting text: never auto-scroll while the user's pointer is down in the
