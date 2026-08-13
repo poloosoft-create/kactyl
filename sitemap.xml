@@ -5,7 +5,7 @@
   <!-- Root — Arabic keyboard (EN/FR/DE/NL/ES/IT) -->
   <url>
     <loc>https://kactyl.com/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,7 +13,7 @@
   <!-- Arabic keyboard — French interface -->
   <url>
     <loc>https://kactyl.com/fr/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/arabic/"/>
@@ -28,7 +28,7 @@
   <!-- Arabic keyboard — German interface -->
   <url>
     <loc>https://kactyl.com/de/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/arabic/"/>
@@ -43,7 +43,7 @@
   <!-- Arabic keyboard — Dutch interface -->
   <url>
     <loc>https://kactyl.com/nl/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/arabic/"/>
@@ -58,7 +58,7 @@
   <!-- Arabic keyboard — Spanish interface -->
   <url>
     <loc>https://kactyl.com/es/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/arabic/"/>
@@ -73,7 +73,7 @@
   <!-- Arabic keyboard — Italian interface -->
   <url>
     <loc>https://kactyl.com/it/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/arabic/"/>
@@ -88,7 +88,7 @@
   <!-- Hindi keyboard -->
   <url>
     <loc>https://kactyl.com/hindi/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="hi" href="https://kactyl.com/hindi/"/>
@@ -99,7 +99,7 @@
   <!-- Urdu keyboard -->
   <url>
     <loc>https://kactyl.com/urdu/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ur" href="https://kactyl.com/urdu/"/>
@@ -110,7 +110,7 @@
   <!-- Bengali keyboard -->
   <url>
     <loc>https://kactyl.com/bengali/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="bn" href="https://kactyl.com/bengali/"/>
@@ -121,7 +121,7 @@
   <!-- Persian (Farsi) keyboard -->
   <url>
     <loc>https://kactyl.com/persian/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fa" href="https://kactyl.com/persian/"/>
@@ -132,7 +132,7 @@
   <!-- Pashto keyboard -->
   <url>
     <loc>https://kactyl.com/pashto/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ps" href="https://kactyl.com/pashto/"/>
@@ -143,7 +143,7 @@
   <!-- Sindhi keyboard -->
   <url>
     <loc>https://kactyl.com/sindhi/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="sd" href="https://kactyl.com/sindhi/"/>
@@ -154,7 +154,7 @@
   <!-- Kurdish keyboard -->
   <url>
     <loc>https://kactyl.com/kurdish/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ckb" href="https://kactyl.com/kurdish/"/>
@@ -165,7 +165,7 @@
   <!-- Uyghur keyboard -->
   <url>
     <loc>https://kactyl.com/uyghur/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ug" href="https://kactyl.com/uyghur/"/>
@@ -176,7 +176,7 @@
   <!-- Marathi keyboard -->
   <url>
     <loc>https://kactyl.com/marathi/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="mr" href="https://kactyl.com/marathi/"/>
@@ -187,7 +187,7 @@
   <!-- Nepali keyboard -->
   <url>
     <loc>https://kactyl.com/nepali/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ne" href="https://kactyl.com/nepali/"/>
@@ -198,7 +198,7 @@
   <!-- Punjabi keyboard -->
   <url>
     <loc>https://kactyl.com/punjabi/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="pa" href="https://kactyl.com/punjabi/"/>
@@ -209,7 +209,7 @@
   <!-- Tamil keyboard -->
   <url>
     <loc>https://kactyl.com/tamil/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ta" href="https://kactyl.com/tamil/"/>
@@ -220,7 +220,7 @@
   <!-- Turkish keyboard -->
   <url>
     <loc>https://kactyl.com/turkish/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://kactyl.com/turkish/"/>
@@ -231,7 +231,7 @@
   <!-- Russian keyboard -->
   <url>
     <loc>https://kactyl.com/russian/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://kactyl.com/russian/"/>
@@ -242,7 +242,7 @@
   <!-- Greek keyboard -->
   <url>
     <loc>https://kactyl.com/greek/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="el" href="https://kactyl.com/greek/"/>
@@ -253,7 +253,7 @@
   <!-- Filipino keyboard -->
   <url>
     <loc>https://kactyl.com/filipino/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fil" href="https://kactyl.com/filipino/"/>
@@ -264,7 +264,7 @@
   <!-- Somali keyboard -->
   <url>
     <loc>https://kactyl.com/somali/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="so" href="https://kactyl.com/somali/"/>
@@ -275,7 +275,7 @@
   <!-- Amazigh keyboard -->
   <url>
     <loc>https://kactyl.com/amazigh/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="zgh" href="https://kactyl.com/amazigh/"/>
@@ -286,7 +286,7 @@
   <!-- Amharic keyboard -->
   <url>
     <loc>https://kactyl.com/amharic/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="am" href="https://kactyl.com/amharic/"/>
@@ -297,7 +297,7 @@
   <!-- Kannada keyboard -->
   <url>
     <loc>https://kactyl.com/kannada/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="kn" href="https://kactyl.com/kannada/"/>
@@ -308,7 +308,7 @@
   <!-- Telugu keyboard -->
   <url>
     <loc>https://kactyl.com/telugu/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="te" href="https://kactyl.com/telugu/"/>
@@ -319,7 +319,7 @@
   <!-- Gujarati keyboard -->
   <url>
     <loc>https://kactyl.com/gujarati/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="gu" href="https://kactyl.com/gujarati/"/>
@@ -330,7 +330,7 @@
   <!-- Malayalam keyboard -->
   <url>
     <loc>https://kactyl.com/malayalam/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ml" href="https://kactyl.com/malayalam/"/>
@@ -341,7 +341,7 @@
   <!-- Vietnamese keyboard -->
   <url>
     <loc>https://kactyl.com/vietnamese/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://kactyl.com/vietnamese/"/>
@@ -352,7 +352,7 @@
   <!-- Yoruba keyboard -->
   <url>
     <loc>https://kactyl.com/yoruba/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="yo" href="https://kactyl.com/yoruba/"/>
@@ -363,7 +363,7 @@
   <!-- Hausa keyboard -->
   <url>
     <loc>https://kactyl.com/hausa/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ha" href="https://kactyl.com/hausa/"/>
@@ -374,7 +374,7 @@
   <!-- Igbo keyboard -->
   <url>
     <loc>https://kactyl.com/igbo/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ig" href="https://kactyl.com/igbo/"/>
@@ -385,7 +385,7 @@
   <!-- Tigrinya keyboard -->
   <url>
     <loc>https://kactyl.com/tigrinya/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ti" href="https://kactyl.com/tigrinya/"/>
@@ -396,7 +396,7 @@
   <!-- Burmese keyboard -->
   <url>
     <loc>https://kactyl.com/burmese/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="my" href="https://kactyl.com/burmese/"/>
@@ -407,7 +407,7 @@
   <!-- Mongolian keyboard -->
   <url>
     <loc>https://kactyl.com/mongolian/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="mn" href="https://kactyl.com/mongolian/"/>
@@ -418,7 +418,7 @@
   <!-- Thai keyboard -->
   <url>
     <loc>https://kactyl.com/thai/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="th" href="https://kactyl.com/thai/"/>
@@ -429,7 +429,7 @@
   <!-- Chinese keyboard -->
   <url>
     <loc>https://kactyl.com/chinese/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="zh" href="https://kactyl.com/chinese/"/>
@@ -440,7 +440,7 @@
   <!-- Korean keyboard -->
   <url>
     <loc>https://kactyl.com/korean/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://kactyl.com/korean/"/>
@@ -451,7 +451,7 @@
   <!-- Japanese keyboard -->
   <url>
     <loc>https://kactyl.com/japanese/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kactyl.com/japanese/"/>
@@ -462,7 +462,7 @@
   <!-- Franco Arab page -->
   <url>
     <loc>https://kactyl.com/franco-arab</loc>
-    <lastmod>2026-05-23</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -470,7 +470,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://kactyl.com/privacy</loc>
-    <lastmod>2026-05-02</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -478,61 +478,61 @@
   <!-- ── Fancy Text Generator ── -->
   <url>
     <loc>https://kactyl.com/fancy-text/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kactyl.com/fancy-text/styles/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kactyl.com/fancy-text/arabic/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/tiktok-fonts/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/discord-fonts/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/instagram-fonts/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/roblox-fonts/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/free-fire-fonts/</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/pubg-fonts/</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/whatsapp-fonts/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -540,41 +540,41 @@
   <!-- Symbols hub -->
   <url>
     <loc>https://kactyl.com/symbols/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Symbol category pages -->
-  <url><loc>https://kactyl.com/symbols/heart/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/star/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/cross/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/cool/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/bullet/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/arrow/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/checkmark/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/infinity/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/crown/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/flower/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/music/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/currency/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/copyright/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/moon/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/sun/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/skull/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/zodiac/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/peace/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/math/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/symbols/smiley/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/invisible-character/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/zalgo-text/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kactyl.com/free-fire-name/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kactyl.com/symbols/heart/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/star/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/cross/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/cool/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/bullet/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/arrow/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/checkmark/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/infinity/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/crown/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/flower/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/music/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/currency/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/copyright/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/moon/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/sun/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/skull/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/zodiac/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/peace/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/math/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/symbols/smiley/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/invisible-character/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/zalgo-text/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kactyl.com/free-fire-name/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
 
   <!-- ── Additional Keyboard Pages ── -->
   <url>
     <loc>https://kactyl.com/arabic/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://kactyl.com/arabic/"/>
@@ -587,13 +587,13 @@
   </url>
   <url>
     <loc>https://kactyl.com/egyptian-hieroglyphics/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/keyboards/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -601,337 +601,337 @@
   <!-- ── Tool Pages ── -->
   <url>
     <loc>https://kactyl.com/dot-art/anime/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/bear/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/butterfly/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/cat/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/flower/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/frog/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/kawaii/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/moon/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/monster/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/rose/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/skull/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/star/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/dot-art/strawberry/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/angry/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/animals/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/bear/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/bunny/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/cat/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/celebrate/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/confused/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/cool/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/crying/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/cute/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/dancing/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/eating/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/embarrassed/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/facepalm/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/flower/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/ghost/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/happy/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/kiss/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/korean/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/lenny/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/love/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/nervous/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/running/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/sad/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/shrug/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/sick/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/sleeping/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/sparkle/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/special/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/surprised/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/table-flip/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/thinking/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/wave/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/kaomoji/wink/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/text-art/bear/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/text-art/cat/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/text-art/flower/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/text-art/frog/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/text-art/kawaii-cat/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/text-art/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kactyl.com/text-art/strawberry/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -939,121 +939,121 @@
   <!-- ── Blog Posts ── -->
   <url>
     <loc>https://kactyl.com/blog/arabic-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/arabic-free-fire-names/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/bengali-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/chinese-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/free-fire-name-symbols/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/free-fire-names-for-boys/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/greek-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/hindi-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/japanese-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/korean-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/malayalam-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/marathi-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/persian-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/punjabi-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/russian-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/tamil-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/telugu-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/turkish-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/urdu-alphabet-guide/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1061,31 +1061,31 @@
   <!-- ── Other Pages ── -->
   <url>
     <loc>https://kactyl.com/about/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/contact/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kactyl.com/cookies</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://kactyl.com/terms</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://kactyl.com/compare/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1094,167 +1094,167 @@
   <!-- Arabic Calligraphy Generator -->
   <url>
     <loc>https://kactyl.com/arabic-calligraphy/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Hijri Calendar -->
   <url>
     <loc>https://kactyl.com/hijri-calendar/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Hijri Calendar AR -->
   <url>
     <loc>https://kactyl.com/ar/hijri-calendar/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Belarusian keyboard -->
   <url>
     <loc>https://kactyl.com/belarusian/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Bulgarian keyboard -->
   <url>
     <loc>https://kactyl.com/bulgarian/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Macedonian keyboard -->
   <url>
     <loc>https://kactyl.com/macedonian/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Serbian keyboard -->
   <url>
     <loc>https://kactyl.com/serbian/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Ukrainian keyboard -->
   <url>
     <loc>https://kactyl.com/ukrainian/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Minecraft Enchantment keyboard -->
   <url>
     <loc>https://kactyl.com/minecraft-enchantment/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Google Input Tools alternative -->
   <url>
     <loc>https://kactyl.com/google-input-tools-alternative/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://kactyl.com/blog/type-arabic-on-whatsapp/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/type-hindi-on-whatsapp/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/type-urdu-on-whatsapp/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/type-bengali-on-whatsapp/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/type-persian-on-whatsapp/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/type-russian-on-whatsapp/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/type-turkish-on-whatsapp/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/type-korean-on-whatsapp/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/arabic-keyboard-iphone-android/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/hindi-keyboard-iphone-android/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/urdu-keyboard-iphone-android/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/bengali-keyboard-iphone-android/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/persian-keyboard-iphone-android/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/russian-keyboard-iphone-android/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/turkish-keyboard-iphone-android/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kactyl.com/blog/korean-keyboard-iphone-android/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1264,4 +1264,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+
+
 </urlset>

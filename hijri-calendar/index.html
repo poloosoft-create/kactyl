@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
   <title>Hijri Calendar 2026 — Today's Islamic Date | Kactyl</title>
-  <meta name="description" content="Today's Hijri date in Arabic and English. Free Hijri to Gregorian converter, full Islamic calendar 1447 AH, upcoming Islamic events countdown. No">
+  <meta name="description" content="Today's Hijri date in Arabic and English. Free Hijri to Gregorian converter, full Islamic calendar 1448 AH, upcoming Islamic events countdown. No">
   <link rel="canonical" href="https://kactyl.com/hijri-calendar/">
   <link rel="alternate" hreflang="en" href="https://kactyl.com/hijri-calendar/">
   <link rel="alternate" hreflang="ar" href="https://kactyl.com/ar/hijri-calendar/">
@@ -315,7 +315,7 @@ footer{background:#07091A;border-top:none;padding:0}
   <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
-            <nav>
+                      <nav>
     <a href="/" class="nav-link">Home</a>
     <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <div class="tools-wrap">
@@ -351,7 +351,7 @@ footer{background:#07091A;border-top:none;padding:0}
 <div class="wrap">
 
   <div class="page-hero">
-    <div class="hero-badge">☽ Islamic Calendar · 1447 AH</div>
+    <div class="hero-badge">☽ Islamic Calendar · <span id="badge-hyear">1448</span> AH</div>
     <h1>Hijri Calendar — Today's Islamic Date</h1>
     <p class="hero-sub">Today's date in Hijri and Gregorian. Convert any date, explore the full Islamic calendar, and track upcoming events.</p>
   </div>
@@ -399,7 +399,7 @@ footer{background:#07091A;border-top:none;padding:0}
   </div>
 
   <!-- CONVERTER -->
-  <div class="converter-section">
+  <section class="converter-section">
     <h2 class="section-title"><span class="sec-grad">Date Converter</span></h2>
     <div class="conv-card">
       <div class="conv-grid" id="conv-grid">
@@ -426,10 +426,10 @@ footer{background:#07091A;border-top:none;padding:0}
         <div class="conv-result-ar" id="result-ar">—</div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- CALENDAR GRID -->
-  <div class="cal-section">
+  <section class="cal-section">
     <h2 class="section-title"><span class="sec-grad">Islamic Calendar</span></h2>
     <div class="cal-card">
       <div class="cal-nav">
@@ -453,16 +453,16 @@ footer{background:#07091A;border-top:none;padding:0}
         <span class="cal-legend"><span class="legend-dot" style="background:rgba(217,119,6,.2);border:1px solid rgba(217,119,6,.4)"></span> Islamic Event</span>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- ISLAMIC EVENTS -->
-  <div class="events-section">
-    <h2 class="section-title"><span class="sec-grad">Islamic Events</span> <span style="font-size:16px;font-weight:600;color:var(--muted)">1447–1448 AH</span></h2>
+  <section class="events-section">
+    <h2 class="section-title"><span class="sec-grad">Islamic Events</span> <span style="font-size:16px;font-weight:600;color:var(--muted)" id="events-hrange">1448–1449 AH</span></h2>
     <div class="events-grid" id="events-grid"></div>
-  </div>
+  </section>
 
   <!-- HOW TO — premium dark card style -->
-  <div class="how-sec">
+  <section class="how-sec">
     <h2 class="how-head">How to Use <span class="sec-grad">This Calendar</span></h2>
     <div class="how-steps">
 
@@ -658,7 +658,7 @@ footer{background:#07091A;border-top:none;padding:0}
       </div>
 
     </div>
-  </div>
+  </section>
 
   <section class="faq-promo">
     <div class="faq-promo-grid">
@@ -698,7 +698,7 @@ footer{background:#07091A;border-top:none;padding:0}
     </details>
     <details>
       <summary>What year is it in the Hijri calendar?</summary>
-      <div class="faq-ans">The current Hijri year is 1447 AH (Anno Hegirae). The Islamic year 1448 AH begins when the new moon of Muharram is sighted, expected around early July 2026. The Hijri calendar started in 622 CE, the year of the Prophet Muhammad's migration (Hijra) from Mecca to Medina.</div>
+      <div class="faq-ans">The current Hijri year is <span id="faq-hyear">1448</span> AH (Anno Hegirae) — shown live at the top of this page. Each Islamic year begins when the new moon of Muharram is sighted, so it starts about 11 days earlier in the Gregorian calendar each year. The Hijri calendar counts from 622 CE, the year of the Prophet Muhammad's migration (Hijra) from Mecca to Medina.</div>
     </details>
     <details>
       <summary>How do I convert a Hijri date to Gregorian?</summary>
@@ -746,16 +746,16 @@ footer{background:#07091A;border-top:none;padding:0}
     <div class="ft-col">
       <h4>Legal</h4>
       <div class="ft-legal">
-        <a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a>
-        <a href="/cookies.html">Cookie Policy</a><a href="/sitemap.xml">Sitemap</a>
+        <a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Use</a>
+        <a href="/cookies">Cookie Policy</a><a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
   </div>
   <div class="ft-bottom">
     <span class="ft-copy">© 2026 Kactyl. All rights reserved.</span>
     <div class="ft-bottom-links">
-      <a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a>
-      <a href="/cookies.html">Cookies</a><a href="/sitemap.xml">Sitemap</a>
+      <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+      <a href="/cookies">Cookies</a><a href="/sitemap.xml">Sitemap</a>
     </div>
   </div>
 </footer>
@@ -833,6 +833,12 @@ function renderToday() {
   document.getElementById('h-day').textContent = h.day;
   document.getElementById('h-month').textContent = HIJRI_MONTHS_EN[h.month];
   document.getElementById('h-year').textContent = h.year + ' AH';
+  // Keep every other on-page mention of the Hijri year in step with the computed
+  // one. These were hardcoded (1447) and had already gone stale by 1448 AH.
+  const _setY = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
+  _setY('badge-hyear', h.year);
+  _setY('faq-hyear', h.year);
+  _setY('events-hrange', h.year + '\u2013' + (h.year + 1) + ' AH');
   document.getElementById('g-date').textContent = today.getDate() + ' ' + GREG_MONTHS[today.getMonth()] + ' ' + today.getFullYear();
   document.getElementById('g-day').textContent = DAYS_EN[today.getDay()];
   document.getElementById('h-arabic').textContent = toArabicNum(h.day) + ' ' + HIJRI_MONTHS_AR[h.month] + ' ' + toArabicNum(h.year) + ' هـ';
