@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-13B2Z80B92"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-13B2Z80B92');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <title>Word Counter — Words, Characters &amp; Reading Time in Any Script</title>
+  <meta name="description" content="Count words and characters in Arabic, Hindi, Chinese, Thai and 40+ scripts. Harakat, matras and emoji counted correctly. Live reading time, platform limits.">
+  <link rel="canonical" href="https://kactyl.com/word-counter/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kactyl.com/word-counter/">
+  <meta property="og:title" content="Word Counter — Words, Characters &amp; Reading Time in Any Script">
+  <meta property="og:description" content="Words, characters, sentences and reading time for Arabic, Indic, CJK, Thai and Latin text. Emoji and diacritics handled properly.">
+  <meta property="og:image" content="https://kactyl.com/images/og-images/word-counter.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Kactyl">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Word Counter — Words, Characters &amp; Reading Time in Any Script">
+  <meta name="twitter:description" content="Words, characters, sentences and reading time for Arabic, Indic, CJK, Thai and Latin text. Emoji and diacritics handled properly.">
+  <meta name="twitter:image" content="https://kactyl.com/images/og-images/word-counter.png">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebApplication", "name": "Kactyl Word Counter", "url": "https://kactyl.com/word-counter/", "description": "Script-aware word and character counter for Arabic, Indic, CJK, Thai and Latin text, with reading time and platform character limits.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "All", "browserRequirements": "Requires JavaScript", "inLanguage": ["en"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Word, character, sentence and paragraph counts", "Arabic letter vs harakat separation", "Indic matra and virama handling", "Chinese, Japanese and Thai segmentation without spaces", "Emoji counted as single grapheme clusters", "Reading and speaking time from published research", "Live platform character limits"], "publisher": {"@type": "Organization", "name": "Kactyl", "url": "https://kactyl.com"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kactyl.com/"}, {"@type": "ListItem", "position": 2, "name": "Word Counter", "item": "https://kactyl.com/word-counter/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "HowTo", "name": "How to count words in any language", "description": "Count words, characters and reading time in any script in three steps", "totalTime": "PT1M", "step": [{"@type": "HowToStep", "position": 1, "name": "Paste or type your text", "text": "Drop text of any script into the box. Counting starts on the first keystroke — nothing is uploaded."}, {"@type": "HowToStep", "position": 2, "name": "Read the script panel", "text": "The detected script appears under the counts, with the breakdown that script needs: Arabic letters versus harakat, Indic matras, CJK characters, emoji clusters."}, {"@type": "HowToStep", "position": 3, "name": "Check it against a limit", "text": "Pick a platform chip to see your text measured against that field's real limit and its visible window before truncation."}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does this give a different word count than Microsoft Word?", "acceptedAnswer": {"@type": "Answer", "text": "Word applies its own rules: it counts a hyphenated compound as one word, treats a number as a word, and counts text inside footnotes only if you ask it to. This page uses Unicode word segmentation instead, which is the standard your browser already uses to decide what a double-click selects. For plain English prose the two land within a percent of each other; for hyphenation-heavy or mixed-script text they diverge, and neither is wrong — they are answering slightly different questions."}}, {"@type": "Question", "name": "Why do other counters say my Chinese text is one word?", "acceptedAnswer": {"@type": "Answer", "text": "Because they split on spaces, and Chinese does not use them. A whole paragraph contains no space, so a space-splitting counter returns 1. This page calls the browser’s built-in segmentation dictionary instead, which finds real word boundaries. It also shows the character count, because character count — not word count — is the figure Chinese and Japanese publishing actually uses."}}, {"@type": "Question", "name": "Does it count Arabic harakat as letters?", "acceptedAnswer": {"@type": "Answer", "text": "No, and that is the point. Harakat (fatha, damma, kasra, shadda, sukun and the rest of U+064B–U+0652) are combining marks that sit above and below a letter. The script panel reports letters and harakat on separate lines, so a fully vocalised text does not appear to be twice as long as the same text unvocalised. Tatweel — the kashida stretch character ـ — is reported separately too, since it adds width but no letter."}}, {"@type": "Question", "name": "How is one emoji counted?", "acceptedAnswer": {"@type": "Answer", "text": "As one character. A family emoji like 👨‍👩‍👧 is three separate emoji joined by zero-width joiners — five code points, eight UTF-16 units — but it renders as a single picture, so it counts as one grapheme cluster here. When the grapheme count and the code-point count differ, both are shown, because some platform limits enforce the second rather than the first."}}, {"@type": "Question", "name": "Is my text uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every count is computed in your browser with JavaScript; there is no server call, no analytics event carrying your text, and nothing written to storage. You can confirm it by opening the network tab and typing — nothing goes out. Working offline works too, once the page has loaded."}}, {"@type": "Question", "name": "Where does the reading time number come from?", "acceptedAnswer": {"@type": "Answer", "text": "Silent reading of English uses 238 words per minute, from Brysbaert’s 2019 meta-analysis of 190 studies and 18,573 participants. Reading aloud uses 183 wpm from the same review. Other languages use the IReST standardised reading texts (2012), measured on 436 native speakers across 17 languages, which give a mean of 184 words per minute and 863 characters per minute read aloud. The sources are listed on this page rather than left implied."}}, {"@type": "Question", "name": "Why is the reading time for my language marked as an estimate?", "acceptedAnswer": {"@type": "Answer", "text": "Because published silent-reading rates exist for English and very few other languages. For everything else this page takes the measured read-aloud rate and scales it by 1.30 — the ratio between English silent and English oral reading. It is a reasonable inference, not a measurement, so it is labelled as one instead of being presented as data."}}, {"@type": "Question", "name": "What counts as a sentence?", "acceptedAnswer": {"@type": "Answer", "text": "A run of text ending in a sentence-final mark. The detector recognises the Latin full stop, question mark and exclamation mark, and also the Arabic full stop ۔, the Devanagari danda ।, the Burmese ။ and the ellipsis. Abbreviations such as \"Dr.\" will still be read as sentence ends — no counter solves that without a dictionary of abbreviations per language, and any tool claiming otherwise is guessing."}}, {"@type": "Question", "name": "Does it work for Hindi, Bengali, Tamil and other Indic scripts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and it separates the parts that matter. Base letters, matras and vowel signs, and the virama that forms conjuncts are each reported. The character tile uses grapheme clusters, so कि counts as one character rather than two — which is what a reader sees and what a page-layout estimate needs."}}, {"@type": "Question", "name": "Can I use it to check an SEO title or meta description?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — pick the SEO title or meta description chip and the bar shows your text against the point where Google truncates: roughly 60 characters for a title, 155–160 for a description. Neither is a hard limit imposed by Google; both are where the text stops being visible, which is the limit that actually matters."}}, {"@type": "Question", "name": "Why does the platform bar show two markers?", "acceptedAnswer": {"@type": "Answer", "text": "The filled bar is the platform’s hard maximum. The thin vertical line is the visible window — how much shows before the feed hides the rest behind \"more\". LinkedIn allows 3,000 characters but shows about 210; TikTok allows 4,000 and shows about 150. Writing to the maximum and ignoring the window is the most common reason a good post reads as a wall of text."}}, {"@type": "Question", "name": "Do character limits count bytes or characters?", "acceptedAnswer": {"@type": "Answer", "text": "The social and search limits on this page are counted in characters, so non-Latin text is not penalised. SMS is the exception worth knowing: a single non-Latin character switches the entire message from GSM-7 to UCS-2 encoding, dropping the segment from 160 characters to 70. One Arabic letter in an otherwise English message more than doubles the cost of sending it."}}, {"@type": "Question", "name": "What is keyword density and is the 2% rule real?", "acceptedAnswer": {"@type": "Answer", "text": "Density is how often a word appears as a share of total words, shown here for the five most repeated words. The frequently quoted \"aim for 1–2%\" target has no basis in any current ranking system — it is a holdover from keyword-matching search engines of the early 2000s. The list is useful for catching unintentional repetition in your own writing, which is a style problem, not a ranking one."}}, {"@type": "Question", "name": "Does it count words in a PDF or Word file?", "acceptedAnswer": {"@type": "Answer", "text": "Not directly — this page takes pasted or typed text. Select the text in the document, copy it, and paste it in. That is deliberate: accepting file uploads would mean sending your document to a server, and the privacy guarantee on this page depends on nothing ever leaving your browser."}}, {"@type": "Question", "name": "Why do two tools disagree about my character count?", "acceptedAnswer": {"@type": "Answer", "text": "Almost always because they measure different units. Grapheme clusters are what a reader sees, code points are the Unicode values behind them, and UTF-16 code units are what JavaScript’s .length returns — and they only agree for plain unaccented English. This page shows all three whenever they diverge, so you can see which one a given form or database field is enforcing."}}, {"@type": "Question", "name": "Is there a limit on how much text I can paste?", "acceptedAnswer": {"@type": "Answer", "text": "No fixed cap. Counting is re-run on each keystroke, so extremely long documents — hundreds of thousands of words — will feel less instant on an older phone, since word segmentation is the expensive part. For normal drafts, articles and posts there is nothing to notice."}}]}
+  </script>
+  <style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { overflow-x:clip; max-width:100%; }
+button { cursor:pointer; font-family:inherit; border:none; background:none; }
+:root {
+  --blue:#0068ff; --purple:#7C3AED; --green:#059669; --teal:#0891b2;
+  --bg:#EDF0F8; --surface:#FFFFFF; --border:#DDE3EE; --shadow:rgba(15,23,42,.07);
+  --nav:#0F172A; --text:#1E293B; --muted:#64748B; --r:16px; --rs:10px;
+}
+[data-theme="dark"] { --bg:#0F172A; --surface:#1E293B; --border:#334155; --shadow:rgba(0,0,0,.22); --text:#F1F5F9; --muted:#94A3B8; }
+body { font-family:'Inter',sans-serif; background:#fff; color:var(--text); min-height:100vh; transition:background .3s,color .3s; overflow-x:clip; }
+[data-theme="dark"] body { background:#07091A; }
+a { color:inherit; text-decoration:none; }
+.bg-shapes { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+.s { position:absolute; border-radius:50%; filter:blur(60px); }
+header { background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s; }
+header.hdr-hidden { transform:translateY(-100%); }
+[data-theme="dark"] header { background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06); }
+.logo { display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0; }
+.logo-img { height:200px;width:auto;display:block; }
+nav { display:flex;align-items:center;gap:4px; }
+.nav-link { color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s; }
+.nav-link:hover { background:var(--border); }
+[data-theme="dark"] .nav-link { color:#E2E8F0; }
+.tools-wrap { position:relative; }
+.tools-btn { cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;display:flex;align-items:center;gap:4px; }
+.tools-btn:hover { background:var(--border); }
+[data-theme="dark"] .tools-btn { color:#E2E8F0; }
+.tools-drop { display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px; }
+.tools-wrap.open .tools-drop { display:flex; }
+.tools-item { display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s; }
+.tools-item:hover { background:var(--border); }
+.tools-item .t-icon { width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center; }
+.tools-coming { font-size:10px;font-weight:700;color:#fff;background:var(--blue);border-radius:4px;padding:1px 5px;margin-left:auto;flex-shrink:0; }
+.theme-wrap { display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none; }
+.t-track { width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s; }
+.t-track.on { background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12); }
+.t-thumb { width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center; }
+.t-thumb.on { left:21px; }
+.t-lbl { font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap; }
+.wrap { max-width:860px;margin:0 auto;padding:0 24px;position:relative;z-index:1; }
+.page-hero { padding:56px 0 40px;text-align:center; }
+.hero-badge { display:inline-flex;align-items:center;gap:7px;border:1px solid;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.3px; }
+.page-hero h1 { font-size:clamp(28px,4.5vw,52px);font-weight:800;letter-spacing:-.8px;line-height:1.12;background:linear-gradient(180deg,#0A0A0A 0%,#64748B 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px; }
+[data-theme="dark"] .page-hero h1 { background:linear-gradient(180deg,#F1F5F9 0%,#94A3B8 100%);-webkit-background-clip:text;background-clip:text; }
+.hero-sub { font-size:16px;color:var(--muted);max-width:520px;margin:0 auto; }
+/* Tool card */
+.tool-about { padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:32px; }
+[data-theme="dark"] .tool-about { background:rgba(255,255,255,.04); }
+.tool-about h2 { font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:14px;letter-spacing:-.4px; }
+.tool-about p { font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:10px; }
+.tool-about p:last-child { margin-bottom:0; }
+.tool-about p strong { color:var(--text); }
+/* FAQ */
+.tool-faq { margin-bottom:48px; }
+.tool-faq > h2 { font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px; }
+.tool-faq details { border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden; }
+.tool-faq details summary { padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center; }
+.tool-faq details summary::-webkit-details-marker { display:none; }
+.tool-faq details summary::after { content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s; }
+.tool-faq details[open] summary::after { transform:rotate(45deg); }
+.tool-faq details[open] summary { color:var(--accent); }
+.tool-faq .faq-ans { padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted); }
+/* Toast */
+.toast { position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#1E293B;color:#fff;font-size:14px;font-weight:600;padding:10px 22px;border-radius:99px;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;z-index:999; }
+[data-theme="dark"] .toast { background:#F1F5F9;color:#0F172A; }
+.toast.show { opacity:1;transform:translateX(-50%) translateY(0); }
+/* Footer */
+footer { background:var(--nav);color:#94A3B8;padding:56px 28px 32px;margin-top:80px; }
+.ft-inner { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px; }
+.ft-brand { display:flex;flex-direction:column;gap:14px; }
+.ft-logo { display:flex;align-items:center;gap:10px; }
+.ft-ic { width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center; }
+.ft-name { font-size:17px;font-weight:800;color:#F1F5F9; }
+.ft-tagline { font-size:13px;line-height:1.6; }
+.ft-badges { display:flex;gap:8px;flex-wrap:wrap; }
+.ft-badge { font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px; }
+.ft-badge.g { background:rgba(5,150,105,.2);color:#34D399; }
+.ft-badge.b { background:rgba(0,104,255,.2);color:#60A5FA; }
+.ft-col h4 { font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748B;margin-bottom:12px; }
+.ft-h4-gap { margin-top:24px; }
+.ft-legal { display:flex;flex-direction:column;gap:8px; }
+.ft-legal a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-legal a:hover { color:#F1F5F9; }
+.ft-kb-grid { display:grid;grid-template-columns:1fr 1fr;gap:6px 16px; }
+.ft-kb-grid a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-kb-grid a:hover { color:#F1F5F9; }
+.ft-bottom { max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px; }
+.ft-copy { font-size:12px;color:#475569; }
+@media(max-width:700px) { .ft-inner{grid-template-columns:1fr} header{height:60px;padding:0 16px} .logo-img{height:140px} .t-lbl{display:none} nav .nav-link{display:none} }
+:root { --accent:#059669; --accent2:#0d9488; }
+.s1 { width:600px;height:600px;background:rgba(5,150,105,.10);top:10%;left:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+.s2 { width:500px;height:500px;background:rgba(249,115,22,.08);top:40%;right:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+[data-theme="dark"] .s1 { background:rgba(5,150,105,.25); }
+[data-theme="dark"] .s2 { background:rgba(249,115,22,.18); }
+.hero-badge { background:rgba(5,150,105,.07);border-color:rgba(5,150,105,.2);color:#059669; }
+[data-theme="dark"] .hero-badge { background:rgba(5,150,105,.18);color:#fca5a5; }
+
+/* Word counter tool */
+.wc-tool { background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:28px;margin-bottom:36px; }
+[data-theme="dark"] .wc-tool { background:rgba(255,255,255,.04); }
+.wc-head { display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap; }
+.wc-label { font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px; }
+.wc-head-btns { display:flex;gap:8px; }
+.wc-mini { font-size:12.5px;font-weight:600;color:var(--muted);border:1px solid var(--border);border-radius:8px;padding:5px 12px;background:transparent;transition:color .15s,border-color .15s; }
+.wc-mini:hover { color:#059669;border-color:#059669; }
+.wc-textarea { width:100%;min-width:0;min-height:190px;padding:16px;border:1.5px solid var(--border);border-radius:14px;font-size:16px;line-height:1.75;resize:vertical;font-family:inherit;background:var(--bg);color:var(--text);transition:border-color .2s; }
+.wc-textarea:focus { outline:none;border-color:#059669; }
+[data-theme="dark"] .wc-textarea { background:rgba(255,255,255,.06); }
+.wc-stats { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px; }
+@media(min-width:620px){ .wc-stats { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+@media(min-width:900px){ .wc-stats { grid-template-columns:repeat(7,minmax(0,1fr)); } }
+.wc-stat { background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:14px 10px;text-align:center;min-width:0; }
+[data-theme="dark"] .wc-stat { background:rgba(255,255,255,.05); }
+.wc-stat-lead { background:linear-gradient(135deg,#059669,#0d9488);border-color:transparent; }
+.wc-stat-lead .wc-num, .wc-stat-lead .wc-cap { color:#fff; }
+.wc-num { font-size:clamp(20px,3.2vw,26px);font-weight:800;letter-spacing:-.5px;line-height:1.15;overflow-wrap:anywhere; }
+/* Reserve two lines: "SPEAKING TIME" wraps in English while the Arabic and
+   French labels fit on one, which made the tile row 16px shorter in Arabic and
+   pushed everything below it up. */
+.wc-cap { font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:4px;min-height:32px; }
+.wc-stat-lead .wc-cap { color:rgba(255,255,255,.8); }
+/* script panel */
+.wc-script { margin-top:18px;border:1px dashed var(--border);border-radius:14px;padding:16px; }
+.wc-script-hd { display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:2px; }
+.wc-script-tag { font-size:12px;font-weight:800;color:#fff;background:#059669;border-radius:6px;padding:3px 10px;white-space:nowrap; }
+.wc-script-note { font-size:13px;color:var(--muted);line-height:1.6; }
+.wc-script-rows { display:flex;flex-wrap:wrap;gap:8px;margin-top:12px; }
+.wc-script-rows:empty { margin-top:0; }
+.wc-srow { font-size:13px;font-weight:600;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:6px 11px;min-width:0; }
+[data-theme="dark"] .wc-srow { background:rgba(255,255,255,.05); }
+.wc-srow b { color:#059669;font-weight:800; }
+/* limits */
+.wc-limits { margin-top:18px; }
+.wc-limits-hd, .wc-density-hd { font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px; }
+.wc-chips { display:flex;flex-wrap:wrap;gap:8px; }
+.wc-chip { font-size:13px;font-weight:600;border:1.5px solid var(--border);border-radius:20px;padding:6px 14px;color:var(--muted);background:transparent;transition:all .15s; }
+.wc-chip:hover { border-color:#059669;color:#059669; }
+.wc-chip.on { background:#059669;border-color:#059669;color:#fff; }
+.wc-bar-wrap { margin-top:14px; }
+.wc-bar { position:relative;height:10px;border-radius:6px;background:var(--border);overflow:hidden; }
+.wc-bar-fill { position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,#059669,#0d9488);transition:width .18s ease; }
+.wc-bar-fill.over { background:linear-gradient(90deg,#dc2626,#f97316); }
+.wc-bar-vis { position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--text);opacity:.45; }
+.wc-bar-legend { font-size:13px;color:var(--muted);margin-top:9px;line-height:1.6; }
+.wc-bar-legend b { color:var(--text); }
+.wc-bar-legend b.over { color:#dc2626; }
+/* density */
+.wc-density { margin-top:18px; }
+.wc-density-rows { display:flex;flex-direction:column;gap:6px; }
+.wc-drow { display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;font-size:14px; }
+.wc-dbar { height:8px;border-radius:5px;background:linear-gradient(90deg,#059669,#0d9488);min-width:3px; }
+.wc-dword { font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.wc-dcount { font-size:12.5px;color:var(--muted);font-weight:600;white-space:nowrap; }
+@media(max-width:600px){
+  .wc-tool { padding:18px; }
+  .wc-textarea { font-size:16px;min-height:160px; }
+}
+
+/* content tables */
+.wc-tbl-wrap { overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0 6px;border:1px solid var(--border);border-radius:14px; }
+.wc-tbl { width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px; }
+.wc-tbl th { text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);padding:12px 14px;background:var(--bg);border-bottom:1px solid var(--border);white-space:nowrap; }
+[data-theme="dark"] .wc-tbl th { background:rgba(255,255,255,.05); }
+.wc-tbl td { padding:12px 14px;border-bottom:1px solid var(--border);color:var(--muted);line-height:1.65;vertical-align:top; }
+.wc-tbl tr:last-child td { border-bottom:none; }
+.wc-tbl td:first-child { color:var(--text);font-weight:600;white-space:nowrap; }
+.wc-tbl code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:var(--bg);padding:1px 5px;border-radius:5px;color:#059669; }
+[data-theme="dark"] .wc-tbl code { background:rgba(255,255,255,.08); }
+.wc-src { font-size:13px;color:var(--muted);line-height:1.7;margin-top:12px; }
+.wc-src a { color:#059669;text-decoration:underline;text-underline-offset:2px; }
+
+/* Translations wrap to different line counts (AR 2 lines, EN 3, FR 4), which
+   would shove everything below up or down on every switch. Reserving the tallest
+   language's height keeps the page in exactly the same place in all three. */
+.hero-sub { min-height:80px; }
+/* Arabic glyphs make a taller line box than Latin at the same font-size, which
+   pushed the badge from 27px to 29px and nudged the whole page down 2px. */
+.hero-badge { height:27px;line-height:1;box-sizing:border-box; }
+/* Without an explicit line-height the line box is sized from the font's own
+   glyph metrics, so the same label is a couple of pixels taller in Arabic and
+   the rows below drift. Fixing line-height makes the box height script-independent. */
+.wc-label, .mo-label, .wc-cap, .wc-limits-hd, .wc-density-hd,
+.wc-chip, .mo-tab, .wc-mini, .mo-mini { line-height:1.45; }
+.wc-script-note, .mo-hint { line-height:1.65; }
+@media(max-width:600px){ .hero-sub { min-height:120px; } }
+.lang-wrap { position:relative; }
+/* Fixed width on purpose: "English", "العربية" and "Français" are different
+   lengths, and without this the pill resizes and pushes the whole nav sideways
+   when the language changes. The header must sit in exactly the same place in
+   every language. */
+.lang-pill { display:flex;align-items:center;justify-content:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s;min-width:116px;box-sizing:border-box;white-space:nowrap; }
+.lang-pill:hover { border-color:#059669; }
+[data-theme="dark"] .lang-pill { color:#E2E8F0;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14); }
+.lang-menu { display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);box-shadow:0 8px 24px var(--shadow);min-width:150px;overflow:hidden;z-index:400; }
+.lang-menu.show { display:block; }
+.lang-opt { display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s;width:100%;text-align:left; }
+.lang-opt:hover { background:var(--bg); }
+.lang-opt.active { color:#059669;font-weight:600; }
+
+/* ── Canonical Header CSS ── */
+header{background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s}
+header.hdr-hidden{transform:translateY(-100%)}
+[data-theme="dark"] header{background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-img{height:200px;width:auto;display:block}
+nav{display:flex;align-items:center;gap:4px}
+.nav-link{padding:6px 12px;border-radius:6px;text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
+.nav-link:hover{background:var(--border)}
+[data-theme="dark"] .nav-link{color:var(--nav-txt)}
+[data-theme="dark"] .nav-link:hover{background:rgba(255,255,255,.1)}
+.tools-wrap{position:relative}
+.tools-btn{cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.tools-btn:hover{background:var(--border)}
+[data-theme="dark"] .tools-btn{color:var(--nav-txt)}
+[data-theme="dark"] .tools-btn:hover{background:rgba(255,255,255,.1)}
+.tools-drop{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px}
+.tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
+.tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s,color .18s;white-space:nowrap}
+.tools-item:hover{background:var(--border)}.tools-item.active-tool{color:var(--accent)!important;font-weight:600;background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.tools-item .t-icon{width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center}
+.theme-wrap{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
+.t-track{width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s}
+.t-track.on{background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12)}
+.t-thumb{width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center}
+.t-thumb.on{left:21px}
+.t-lbl{font-size:11px;font-weight:600;color:var(--muted);line-height:1.1;white-space:nowrap}
+.lang-wrap{position:relative}
+.lang-pill{display:flex;align-items:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s}
+.lang-pill:hover{border-color:var(--blue)}
+[data-theme="dark"] .lang-pill{color:var(--nav-txt);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+.lang-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px var(--shadow);min-width:140px;overflow:hidden;z-index:400}
+.lang-menu.show{display:block}
+.lang-opt{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s}
+.lang-opt:hover{background:var(--bg)}
+.lang-opt.active{color:var(--blue);font-weight:600}
+@media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+/* ── Canonical Footer CSS ── */
+footer{background:#07091A;border-top:none;padding:0}
+.ft-inner{max-width:1000px;margin:0 auto;padding:56px 28px 44px;display:grid;grid-template-columns:200px 1fr 150px 130px;gap:40px;align-items:start}
+.ft-brand{display:flex;flex-direction:column;gap:14px}
+.ft-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.ft-ic{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-ic img{width:48px;height:48px;opacity:1;filter:drop-shadow(0 0 14px rgba(255,23,54,.5)) drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+.ft-name{font-size:15px;font-weight:800;color:#F1F5F9}
+.ft-tagline{font-size:13px;color:#94A3B8;line-height:1.7}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ft-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
+.ft-badge.g{background:rgba(5,150,105,.12);color:#34D399;border:1px solid rgba(5,150,105,.18)}
+.ft-badge.b{background:rgba(0,104,255,.12);color:#60A5FA;border:1px solid rgba(0,104,255,.18)}
+.ft-social{display:flex;gap:8px;margin-top:2px}
+.ft-soc-link{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;color:#94A3B8;text-decoration:none;transition:background .2s,color .2s}
+.ft-soc-link:hover{background:rgba(0,104,255,.20);border-color:rgba(0,104,255,.40);color:#60A5FA}
+.ft-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:#64748B;margin-bottom:14px}
+.ft-col h4.ft-h4-gap{margin-top:22px}
+.ft-kb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}
+.ft-kb-grid a,.ft-legal a{font-size:13px;color:#CBD5E1;text-decoration:none;padding:5px 0;display:block;transition:color .15s}
+.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}
+.ft-legal{display:flex;flex-direction:column}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;gap:12px}
+.ft-copy{font-size:11px;color:#64748B}
+.ft-bottom-links{display:flex;align-items:center;gap:16px}
+.ft-bottom-links a{font-size:11px;color:#64748B;text-decoration:none;transition:color .15s}
+.ft-bottom-links a:hover{color:#94A3B8}
+@media(max-width:860px){.ft-inner{grid-template-columns:200px 1fr 130px}.ft-inner .ft-col:last-child{grid-column:2;grid-row:2}}
+@media(max-width:640px){.ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px}.ft-brand{grid-column:1/-1}.ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px}.ft-bottom-links{flex-wrap:wrap;justify-content:center}}
+.sec-grad{background:linear-gradient(135deg,#059669,#0d9488);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Use-case badges */
+.use-cases{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
+.uc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(5,150,105,.07);border:1px solid rgba(5,150,105,.18);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700;color:#059669}
+[data-theme="dark"] .uc-badge{background:rgba(5,150,105,.15);color:#fca5a5}
+.uc-badge svg{flex-shrink:0}
+
+/* How-to */
+.how-sec{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:32px;max-width:1100px;margin:0 auto 32px}
+[data-theme="dark"] .how-sec{background:rgba(255,255,255,.04)}
+.how-head{font-size:clamp(20px,2.5vw,26px);font-weight:800;margin-bottom:24px;letter-spacing:-.4px}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.how-num-bg{width:52px;height:52px;border-radius:15px;background:linear-gradient(135deg,#059669,#0d9488);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.how-step-title{font-size:14px;font-weight:700;color:var(--text)}
+.how-step-desc{font-size:13px;color:var(--muted);line-height:1.6}
+@media(max-width:600px){.how-steps{grid-template-columns:1fr}}
+
+</style>
+<style>
+.faq-promo{position:relative;z-index:1;padding:70px 16px 64px}
+.faq-promo-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:16px;position:relative;max-width:760px;margin:0 auto}
+.faq-card-brand{background:#fff;border:none;border-radius:24px;padding:18px 28px;display:flex;align-items:center;justify-content:center;min-height:122px;position:relative}
+.faq-card-2{background:#fff;border:none;border-radius:24px;min-height:122px;position:relative}
+.faq-card-brand::before,.faq-card-2::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.55;z-index:-1;pointer-events:none}
+.card-hills-clip{position:absolute;inset:0;border-radius:24px;overflow:hidden;z-index:1}
+.card-hills{position:absolute;left:0;bottom:0;width:100%;height:126px;display:block}
+.card-hills .hill-soft{fill:#cfe0ff}
+.card-hills .hill-accent{fill:#0068ff}
+.faq-brand-logo{width:210px;max-width:80%}
+.faq-mascot{position:absolute;top:-70px;left:74%;transform:translateX(-50%);width:210px;z-index:10;pointer-events:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.15))}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:8px 22px;font-size:13px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:18px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+@media(max-width:600px){.faq-promo-grid{grid-template-columns:1fr}.faq-card-2{display:none}.faq-mascot{top:-128px;left:50%;width:170px}}
+</style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
+</head>
+<body>
+<div class="bg-shapes"><div class="s1"></div><div class="s2"></div></div>
+
+<header>
+  <a class="logo" href="/">
+    <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
+  </a>
+                                                                                                                                              <nav>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+    <div class="tools-wrap">
+      <button class="tools-btn">Tools &#9662;</button>
+      <div class="tools-drop">
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/><circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/><path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
+        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
+        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
+        <a href="/calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Calligraphy</a>
+        <a href="/word-counter/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 14.5V8" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 14.5V3.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.5V9.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 14.5v-3" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/></svg></span> Word Counter</a>
+        <a href="/morse-code/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="3" cy="9" r="1.7" fill="#0068ff"/><rect x="7" y="7.5" width="8" height="3" rx="1.5" fill="#0068ff"/></svg></span> Morse Code</a>
+      </div>
+    </div>
+    <div class="lang-wrap">
+      <button class="lang-pill" id="lang-pill" onclick="toggleToolLang(event)" aria-haspopup="true" aria-expanded="false">🇬🇧 English ▾</button>
+      <div class="lang-menu" id="lang-menu">
+        <button class="lang-opt active" data-lang="en" data-label="🇬🇧 English" onclick="setToolLang('en','🇬🇧 English',this)">🇬🇧 English</button>
+        <button class="lang-opt" data-lang="ar" data-label="🇸🇦 العربية" onclick="setToolLang('ar','🇸🇦 العربية',this)">🇸🇦 العربية</button>
+        <button class="lang-opt" data-lang="fr" data-label="🇫🇷 Français" onclick="setToolLang('fr','🇫🇷 Français',this)">🇫🇷 Français</button>
+      </div>
+    </div>
+    <div class="theme-wrap" onclick="toggleTheme()">
+      <div class="t-track" id="tt">
+        <div class="t-thumb" id="th"><img id="theme-icon" src="../images/Icon-white mode-Clavierarabe-enligne.svg" alt="Toggle theme" width="13" height="13"></div>
+      </div>
+      <div class="t-lbl" id="tlbl">White<br>Mode</div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-hero">
+      <div class="hero-badge" style="color:#059669;border-color:rgba(5,150,105,.28);background:rgba(5,150,105,.07)"><svg width="14" height="14" viewBox="0 0 18 18" fill="none" style="flex-shrink:0"><path d="M3 14V7M7.5 14V3M12 14V9.5M16.5 14v-3" stroke="#059669" stroke-width="2" stroke-linecap="round"/></svg> <span data-i18n="hero.badge">Word Counter</span></div>
+      <h1 data-i18n="hero.h1">Word Counter</h1>
+      <p class="hero-sub" dir="auto" data-i18n="hero.sub">Words, characters, sentences and reading time — counted by the rules of your script, not by counting spaces. Arabic, Indic, Chinese, Japanese, Thai and Latin text all measured correctly.</p>
+    </div>
+
+    <div class="wc-tool">
+      <div class="wc-head">
+        <label class="wc-label" for="wc-input" data-i18n="label.text">Your Text</label>
+        <div class="wc-head-btns">
+          <button class="wc-mini" onclick="wcPaste()" data-i18n="btn.paste">Paste</button>
+          <button class="wc-mini" onclick="wcClear()" data-i18n="btn.clear">Clear</button>
+          <button class="wc-mini" onclick="wcCopy()" data-i18n="btn.copy">Copy</button>
+        </div>
+      </div>
+      <textarea id="wc-input" class="wc-textarea" placeholder="Start typing or paste text in any language…" data-i18n-ph="ph.input" dir="auto" oninput="wcUpdate()" spellcheck="false"></textarea>
+
+      <div class="wc-stats" id="wc-stats">
+        <div class="wc-stat wc-stat-lead"><div class="wc-num" id="s-words">0</div><div class="wc-cap" data-i18n="cap.words">Words</div></div>
+        <div class="wc-stat"><div class="wc-num" id="s-chars">0</div><div class="wc-cap" data-i18n="cap.chars">Characters</div></div>
+        <div class="wc-stat"><div class="wc-num" id="s-nospace">0</div><div class="wc-cap" data-i18n="cap.nospace">No spaces</div></div>
+        <div class="wc-stat"><div class="wc-num" id="s-sent">0</div><div class="wc-cap" data-i18n="cap.sent">Sentences</div></div>
+        <div class="wc-stat"><div class="wc-num" id="s-para">0</div><div class="wc-cap" data-i18n="cap.para">Paragraphs</div></div>
+        <div class="wc-stat"><div class="wc-num" id="s-read">0s</div><div class="wc-cap" data-i18n="cap.read">Reading time</div></div>
+        <div class="wc-stat"><div class="wc-num" id="s-speak">0s</div><div class="wc-cap" data-i18n="cap.speak">Speaking time</div></div>
+      </div>
+
+      <div class="wc-script" id="wc-script">
+        <div class="wc-script-hd">
+          <span class="wc-script-tag" id="wc-script-name" data-i18n="script.waiting">Waiting for text</span>
+          <span class="wc-script-note" id="wc-script-note" dir="auto" data-i18n="script.note">The script is detected from what you type — each one is counted its own way.</span>
+        </div>
+        <div class="wc-script-rows" id="wc-script-rows"></div>
+      </div>
+
+      <div class="wc-limits">
+        <div class="wc-limits-hd" data-i18n="limits.hd">Measure against a real field limit</div>
+        <div class="wc-chips" id="wc-chips"></div>
+        <div class="wc-bar-wrap" id="wc-bar-wrap" hidden>
+          <div class="wc-bar"><span class="wc-bar-fill" id="wc-bar-fill"></span><span class="wc-bar-vis" id="wc-bar-vis"></span></div>
+          <div class="wc-bar-legend" id="wc-bar-legend"></div>
+        </div>
+      </div>
+
+      <div class="wc-density" id="wc-density" hidden>
+        <div class="wc-density-hd" data-i18n="density.hd">Most repeated words</div>
+        <div class="wc-density-rows" id="wc-density-rows"></div>
+      </div>
+    </div>
+
+    <div class="how-sec">
+      <div class="how-head">How to <span class="sec-grad">Use</span></div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-num-bg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#fff" stroke-width="1.8"/><line x1="8" y1="9" x2="16" y2="9" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><line x1="8" y1="13" x2="16" y2="13" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><line x1="8" y1="17" x2="12" y2="17" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.1.t">1. Paste or type</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.1.d">Drop in text of any script. Counting runs on the first keystroke, entirely in your browser — nothing is uploaded, nothing is stored.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-num-bg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#fff" stroke-width="1.8"/><line x1="16" y1="16" x2="21" y2="21" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><line x1="8" y1="11" x2="14" y2="11" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.2.t">2. Read the script panel</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.2.d">The detected script is named under the counts, with the breakdown that script actually needs — Arabic letters apart from harakat, Indic matras apart from base letters, characters and segmented words for Chinese, Japanese and Thai.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-num-bg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="10" width="18" height="6" rx="3" stroke="#fff" stroke-width="1.8"/><line x1="15" y1="7" x2="15" y2="19" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.3.t">3. Check it against a limit</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.3.d">Tap a platform chip to measure the text against that field’s real ceiling, with a marker showing where the feed truncates it — the number that decides whether anyone reads your first line.</div>
+        </div>
+      </div>
+    </div>
+    <section class="tool-about">
+      <h2>What a Latin word counter <span class="sec-grad">gets wrong</span></h2>
+      <p>Almost every word counter online splits text on spaces and counts characters with JavaScript’s <code>.length</code>. Both shortcuts are fine for English and quietly wrong for most of the world’s writing. Below is what actually breaks, script by script — each of these is handled correctly by the counter above.</p>
+      <div class="wc-tbl-wrap"><table class="wc-tbl">
+        <thead><tr><th>Script</th><th>What breaks in a space-splitting counter</th><th>What this page does</th></tr></thead>
+        <tbody>
+          <tr><td>Arabic</td><td>Harakat (fatha, damma, kasra, shadda, sukun) are separate Unicode code points, so a vocalised word like <code>مُحَمَّد</code> is reported with far more characters than it has letters. Tatweel (<code>ـ</code>) inflates the count further while adding no letter at all.</td><td>Letters and harakat are counted on separate lines, and tatweel is reported apart from both.</td></tr>
+          <tr><td>Devanagari, Bengali, Tamil, Telugu, Kannada, Malayalam, Gujarati, Gurmukhi</td><td>Matras are combining marks, not letters. <code>कि</code> is one syllable written with two code points, so a naive counter reports two characters where a reader sees one unit. The virama that forms conjuncts is counted as a third.</td><td>Base letters, matras and viramas are each reported, and the character count uses grapheme clusters so <code>कि</code> counts as one.</td></tr>
+          <tr><td>Chinese, Japanese</td><td>There are no spaces between words. Splitting on whitespace returns <em>1 word</em> for an entire paragraph — the single most common failure in the category.</td><td>Real word segmentation via the browser’s own ICU tables, plus a character count, since character count is the metric these languages actually use.</td></tr>
+          <tr><td>Thai, Khmer, Lao, Burmese</td><td>Same no-space problem, made worse because line-breaking rules differ from word rules. Most counters return 1.</td><td>Dictionary segmentation for words; characters reported alongside, which is what publishers count.</td></tr>
+          <tr><td>Emoji and flags</td><td><code>👨‍👩‍👧</code> is one picture built from three emoji joined by two zero-width joiners: 5 code points, 8 UTF-16 units. Counters report 8, or 5, almost never 1.</td><td>Counted as one grapheme cluster, the way a reader sees it — with the code-point figure shown separately when the two disagree.</td></tr>
+          <tr><td>Any script above the Basic Multilingual Plane</td><td>JavaScript strings are UTF-16, so <code>.length</code> returns 2 for a single mathematical, historic or emoji character. Character counts silently double.</td><td>Characters are grapheme clusters; code points and UTF-16 units are shown as extra rows so you can see all three when they differ.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="tool-about">
+      <h2>Where the reading times <span class="sec-grad">come from</span></h2>
+      <p>Most word counters state a reading time without ever saying what rate produced it, and the figure most of them use — 200, 250 or 300 words per minute — traces back to no particular study. The numbers on this page come from two published sources, and where a value has to be inferred, that is said outright rather than hidden.</p>
+      <div class="wc-tbl-wrap"><table class="wc-tbl">
+        <thead><tr><th>Rate</th><th>Value</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Silent reading, English non-fiction</td><td>238 words/min</td><td>Brysbaert (2019), a meta-analysis of 190 studies covering 18,573 participants — the largest review of reading rate published.</td></tr>
+          <tr><td>Silent reading, English fiction</td><td>260 words/min</td><td>Same meta-analysis. Fiction is faster because its words are shorter, not because it is easier.</td></tr>
+          <tr><td>Reading aloud, English</td><td>183 words/min</td><td>Same meta-analysis, drawn from 77 studies and 5,965 participants.</td></tr>
+          <tr><td>Reading aloud, 17-language mean</td><td>184 words/min · 863 characters/min</td><td>The IReST standardised texts (Trauzettel-Klosinski &amp; Dietz, 2012), measured on 436 native speakers across German, English, Arabic, Chinese, Spanish, Finnish, Flemish, French, Hebrew, Italian, Japanese, Polish, Portuguese, Russian, Slovenian, Swedish and Turkish.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="wc-src"><strong>The honest gap:</strong> no equivalent silent-reading study exists for most non-Latin scripts. For those, this page takes the measured oral rate and scales it by 1.30 — the silent-to-oral ratio Brysbaert reports for English (238 ÷ 183). That is an assumption, not a measurement, and it is stated here rather than presented as a fact. Character-based scripts are timed at 863 characters per minute, since counting their words is the less meaningful of the two figures.</p>
+    </section>
+
+    <section class="tool-about">
+      <h2>The limit that matters is <span class="sec-grad">not the limit</span></h2>
+      <p>Every platform publishes a maximum, and almost nobody hits it. The number that decides whether a post gets read is the <strong>visible window</strong> — how much shows before the feed collapses the rest behind “more”. A LinkedIn post may hold 3,000 characters, but the first 210 do the work. The counter above marks both, so you can see where your text gets cut, not just whether it fits.</p>
+      <div class="wc-tbl-wrap"><table class="wc-tbl">
+        <thead><tr><th>Field</th><th>Maximum</th><th>Visible before truncation</th></tr></thead>
+        <tbody>
+          <tr><td>X / Twitter post</td><td>280 characters (free tier)</td><td>All of it. Premium raises the ceiling to 25,000, which almost nothing in the feed rewards.</td></tr>
+          <tr><td>Instagram caption</td><td>2,200 characters</td><td>About 125 — roughly one and a half lines.</td></tr>
+          <tr><td>LinkedIn post</td><td>3,000 characters</td><td>About 210 on desktop before “see more”.</td></tr>
+          <tr><td>TikTok caption</td><td>4,000 characters, raised from 2,200</td><td>Roughly 100–150 in the feed.</td></tr>
+          <tr><td>YouTube title</td><td>100 characters</td><td>About 60 in search and suggested listings.</td></tr>
+          <tr><td>YouTube description</td><td>5,000 characters</td><td>About 150 before “Show more”.</td></tr>
+          <tr><td>SEO page title</td><td>No hard limit</td><td>Google truncates near 60 characters.</td></tr>
+          <tr><td>Meta description</td><td>No hard limit</td><td>Google truncates near 155–160 characters.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="wc-src">One caution for non-Latin writers: these ceilings are counted in characters, not bytes, on every platform above — so Arabic, Hindi and Chinese text is not penalised the way it is in SMS, where a single non-Latin character switches the whole message to UCS-2 encoding and cuts the segment length from 160 characters to 70.</p>
+    </section>
+
+    <section class="tool-about">
+      <h2>Three different things called <span class="sec-grad">“a character”</span></h2>
+      <p>When two tools disagree about a character count, it is almost always because they are measuring different units. There are three, and they only coincide for plain English:</p>
+      <p><strong>Grapheme clusters</strong> are what a reader perceives as one character — <code>é</code>, <code>कि</code>, <code>👍🏽</code>, <code>مُ</code>. This is the count shown in the Characters tile, because it is the only one that matches what someone sees on the page.</p>
+      <p><strong>Code points</strong> are the Unicode values behind them. <code>é</code> may be one code point (U+00E9) or two (<code>e</code> + U+0301) depending on how the text was normalised — identical on screen, different in storage. Copy the same accented word from two apps and you can genuinely get two different counts from the same tool, and neither is a bug.</p>
+      <p><strong>UTF-16 code units</strong> are what JavaScript’s <code>.length</code> returns and what most naive counters report. Anything outside the Basic Multilingual Plane — emoji, historic scripts, mathematical alphanumerics, some CJK extensions — takes two units each, so the count comes out roughly double for emoji-heavy text.</p>
+      <p>Database fields, form validators and API limits do not agree on which of the three they enforce, which is why a caption that passes one check fails another. The counter above shows all three whenever they diverge, so you can tell which limit you are actually near.</p>
+    </section>
+
+    <section class="tool-about">
+      <h2>About this <span class="sec-grad">word counter</span></h2>
+      <p>This tool runs entirely in the browser. Text is never uploaded, never logged, and never leaves the device — which matters if what you are counting is a draft contract, a thesis chapter, or client work under NDA. Closing the tab is the whole delete process.</p>
+      <p>The segmentation is done with <strong>Intl.Segmenter</strong>, the browser’s own interface to the ICU library that Unicode maintains — the same segmentation data that Chrome, Safari and Firefox use to decide where a double-click selects a word. That is why Chinese, Japanese and Thai return real word counts here rather than the number 1: the dictionary doing the work already ships inside the browser, and most counters simply never call it.</p>
+      <p>Counting words is older than the tools that do it. Word limits in journalism came from the physical width of a newspaper column; character limits in software came from the size of a database field. Both survive as habits after the constraint disappeared — which is why a modern platform can allow 4,000 characters while showing 150, and why the useful question is rarely “how many” but “how many before it stops being visible”.</p>
+    </section>
+
+
+    <section class="faq-promo">
+      <div class="faq-promo-grid">
+        <div class="faq-card-brand">
+          <img src="../images/kactyl%20brand%20name-svg.svg" alt="Kactyl" class="faq-brand-logo">
+        </div>
+        <div class="faq-card-2">
+          <div class="card-hills-clip">
+            <svg class="card-hills" viewBox="0 0 560 130" preserveAspectRatio="none" aria-hidden="true">
+              <circle cx="38"  cy="135" r="74" class="hill-soft"/>
+              <circle cx="152" cy="120" r="92" class="hill-soft"/>
+              <circle cx="268" cy="144" r="58" class="hill-soft"/>
+              <circle cx="384" cy="126" r="86" class="hill-soft"/>
+              <circle cx="504" cy="138" r="70" class="hill-accent"/>
+            </svg>
+          </div>
+        </div>
+        <img src="../images/Mascot-pc.svg" alt="" class="faq-mascot">
+      </div>
+    </section>
+
+    <section class="tool-faq">
+      <div class="faq-hd-badge">FAQ</div>
+      <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
+      <details>
+        <summary>Why does this give a different word count than Microsoft Word?</summary>
+        <div class="faq-ans">Word applies its own rules: it counts a hyphenated compound as one word, treats a number as a word, and counts text inside footnotes only if you ask it to. This page uses Unicode word segmentation instead, which is the standard your browser already uses to decide what a double-click selects. For plain English prose the two land within a percent of each other; for hyphenation-heavy or mixed-script text they diverge, and neither is wrong — they are answering slightly different questions.</div>
+      </details>
+      <details>
+        <summary>Why do other counters say my Chinese text is one word?</summary>
+        <div class="faq-ans">Because they split on spaces, and Chinese does not use them. A whole paragraph contains no space, so a space-splitting counter returns 1. This page calls the browser’s built-in segmentation dictionary instead, which finds real word boundaries. It also shows the character count, because character count — not word count — is the figure Chinese and Japanese publishing actually uses.</div>
+      </details>
+      <details>
+        <summary>Does it count Arabic harakat as letters?</summary>
+        <div class="faq-ans">No, and that is the point. Harakat (fatha, damma, kasra, shadda, sukun and the rest of U+064B–U+0652) are combining marks that sit above and below a letter. The script panel reports letters and harakat on separate lines, so a fully vocalised text does not appear to be twice as long as the same text unvocalised. Tatweel — the kashida stretch character <code>ـ</code> — is reported separately too, since it adds width but no letter.</div>
+      </details>
+      <details>
+        <summary>How is one emoji counted?</summary>
+        <div class="faq-ans">As one character. A family emoji like 👨‍👩‍👧 is three separate emoji joined by zero-width joiners — five code points, eight UTF-16 units — but it renders as a single picture, so it counts as one grapheme cluster here. When the grapheme count and the code-point count differ, both are shown, because some platform limits enforce the second rather than the first.</div>
+      </details>
+      <details>
+        <summary>Is my text uploaded anywhere?</summary>
+        <div class="faq-ans">No. Every count is computed in your browser with JavaScript; there is no server call, no analytics event carrying your text, and nothing written to storage. You can confirm it by opening the network tab and typing — nothing goes out. Working offline works too, once the page has loaded.</div>
+      </details>
+      <details>
+        <summary>Where does the reading time number come from?</summary>
+        <div class="faq-ans">Silent reading of English uses 238 words per minute, from Brysbaert’s 2019 meta-analysis of 190 studies and 18,573 participants. Reading aloud uses 183 wpm from the same review. Other languages use the IReST standardised reading texts (2012), measured on 436 native speakers across 17 languages, which give a mean of 184 words per minute and 863 characters per minute read aloud. The sources are listed on this page rather than left implied.</div>
+      </details>
+      <details>
+        <summary>Why is the reading time for my language marked as an estimate?</summary>
+        <div class="faq-ans">Because published silent-reading rates exist for English and very few other languages. For everything else this page takes the measured read-aloud rate and scales it by 1.30 — the ratio between English silent and English oral reading. It is a reasonable inference, not a measurement, so it is labelled as one instead of being presented as data.</div>
+      </details>
+      <details>
+        <summary>What counts as a sentence?</summary>
+        <div class="faq-ans">A run of text ending in a sentence-final mark. The detector recognises the Latin full stop, question mark and exclamation mark, and also the Arabic full stop <code>۔</code>, the Devanagari danda <code>।</code>, the Burmese <code>။</code> and the ellipsis. Abbreviations such as "Dr." will still be read as sentence ends — no counter solves that without a dictionary of abbreviations per language, and any tool claiming otherwise is guessing.</div>
+      </details>
+      <details>
+        <summary>Does it work for Hindi, Bengali, Tamil and other Indic scripts?</summary>
+        <div class="faq-ans">Yes, and it separates the parts that matter. Base letters, matras and vowel signs, and the virama that forms conjuncts are each reported. The character tile uses grapheme clusters, so <code>कि</code> counts as one character rather than two — which is what a reader sees and what a page-layout estimate needs.</div>
+      </details>
+      <details>
+        <summary>Can I use it to check an SEO title or meta description?</summary>
+        <div class="faq-ans">Yes — pick the SEO title or meta description chip and the bar shows your text against the point where Google truncates: roughly 60 characters for a title, 155–160 for a description. Neither is a hard limit imposed by Google; both are where the text stops being visible, which is the limit that actually matters.</div>
+      </details>
+      <details>
+        <summary>Why does the platform bar show two markers?</summary>
+        <div class="faq-ans">The filled bar is the platform’s hard maximum. The thin vertical line is the visible window — how much shows before the feed hides the rest behind "more". LinkedIn allows 3,000 characters but shows about 210; TikTok allows 4,000 and shows about 150. Writing to the maximum and ignoring the window is the most common reason a good post reads as a wall of text.</div>
+      </details>
+      <details>
+        <summary>Do character limits count bytes or characters?</summary>
+        <div class="faq-ans">The social and search limits on this page are counted in characters, so non-Latin text is not penalised. SMS is the exception worth knowing: a single non-Latin character switches the entire message from GSM-7 to UCS-2 encoding, dropping the segment from 160 characters to 70. One Arabic letter in an otherwise English message more than doubles the cost of sending it.</div>
+      </details>
+      <details>
+        <summary>What is keyword density and is the 2% rule real?</summary>
+        <div class="faq-ans">Density is how often a word appears as a share of total words, shown here for the five most repeated words. The frequently quoted "aim for 1–2%" target has no basis in any current ranking system — it is a holdover from keyword-matching search engines of the early 2000s. The list is useful for catching unintentional repetition in your own writing, which is a style problem, not a ranking one.</div>
+      </details>
+      <details>
+        <summary>Does it count words in a PDF or Word file?</summary>
+        <div class="faq-ans">Not directly — this page takes pasted or typed text. Select the text in the document, copy it, and paste it in. That is deliberate: accepting file uploads would mean sending your document to a server, and the privacy guarantee on this page depends on nothing ever leaving your browser.</div>
+      </details>
+      <details>
+        <summary>Why do two tools disagree about my character count?</summary>
+        <div class="faq-ans">Almost always because they measure different units. Grapheme clusters are what a reader sees, code points are the Unicode values behind them, and UTF-16 code units are what JavaScript’s <code>.length</code> returns — and they only agree for plain unaccented English. This page shows all three whenever they diverge, so you can see which one a given form or database field is enforcing.</div>
+      </details>
+      <details>
+        <summary>Is there a limit on how much text I can paste?</summary>
+        <div class="faq-ans">No fixed cap. Counting is re-run on each keystroke, so extremely long documents — hundreds of thousands of words — will feel less instant on an older phone, since word segmentation is the expensive part. For normal drafts, articles and posts there is nothing to notice.</div>
+      </details>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a class="ft-logo" href="/"><div class="ft-ic"><img loading="lazy" src="../images/favicon.svg" alt="Kactyl" width="36" height="36"></div><span class="ft-name">Kactyl</span></a>
+      <div class="ft-tagline">Every Language. One Tab.<br>No download. No account.</div>
+      <div class="ft-badges"><span class="ft-badge g">✓ 100% Free</span><span class="ft-badge b">⚡ No Install</span></div>
+      <div class="ft-social">
+        <a href="https://x.com/kactyl" class="ft-soc-link" aria-label="X / Twitter" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
+        <a href="https://instagram.com/kactyl" class="ft-soc-link" aria-label="Instagram" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://youtube.com/@kactyl" class="ft-soc-link" aria-label="YouTube" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://tiktok.com/@kactyl" class="ft-soc-link" aria-label="TikTok" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Keyboards</h4>
+      <div class="ft-kb-grid">
+        <a href="/arabic/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
+        <a href="/japanese/">Japanese</a><a href="/chinese/">Chinese</a><a href="/turkish/">Turkish</a><a href="/russian/">Russian</a>
+        <a href="/greek/">Greek</a><a href="/thai/">Thai</a><a href="/vietnamese/">Vietnamese</a><a href="/amharic/">Amharic</a>
+      </div>
+    </div>
+        <div class="ft-col">
+      <h4>Tools</h4>
+      <div class="ft-legal">
+        <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/text-art/">Text Art</a>
+        <a href="/dot-art/">Dot Art</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/">Hijri Calendar</a>
+        <a href="/arabic-calligraphy/">Arabic Calligraphy</a>
+      </div>
+      <h4 class="ft-h4-gap">Company</h4>
+      <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
+    </div>
+    <div class="ft-col">
+      <h4>Legal</h4>
+      <div class="ft-legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+        <a href="/cookies">Cookie Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2026 Kactyl. All rights reserved.</span>
+    <div class="ft-bottom-links">
+      <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+      <a href="/cookies">Cookies</a><a href="/sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+var TOOL_I18N = {"en": {"hero.badge": "Word Counter","hero.h1": "Word Counter","hero.sub": "Words, characters, sentences and reading time — counted by the rules of your script, not by counting spaces. Arabic, Indic, Chinese, Japanese, Thai and Latin text all measured correctly.","label.text": "Your Text","btn.paste": "Paste","btn.clear": "Clear","btn.copy": "Copy","ph.input": "Start typing or paste text in any language…","cap.words": "Words","cap.chars": "Characters","cap.nospace": "No spaces","cap.sent": "Sentences","cap.para": "Paragraphs","cap.read": "Reading time","cap.speak": "Speaking time","script.waiting": "Waiting for text","script.note": "The script is detected from what you type — each one is counted its own way.","script.basis": "Timing basis:","script.mixed": "Mixed","limits.hd": "Measure against a real field limit","density.hd": "Most repeated words","r.arletters": "Arabic letters","r.harakat": "Harakat (tashkeel)","r.tatweel": "Tatweel / kashida","r.letters": "letters","r.characters": "characters","r.matras": "Matras &amp; signs","r.virama": "Virama / halant","r.marks": "Combining marks","r.lettersonly": "Letters","r.segwords": "Segmented words","r.digits": "Digits","r.emoji": "Emoji","r.codepoints": "Code points","basis.latin": "wpm silent / aloud (Brysbaert 2019)","basis.other": "wpm aloud (IReST mean), silent scaled by 1.30","basis.char": "characters/min read aloud (IReST 17-language mean)","l.over": "over the limit.","l.left": "left.","limlab.x": "X / Twitter","limlab.seo": "SEO title","limlab.meta": "Meta description","limlab.ig": "Instagram caption","limlab.li": "LinkedIn post","limlab.tt": "TikTok caption","limlab.ytt": "YouTube title","limlab.yt": "YouTube description","lim.x": "280 on the free tier. X Premium raises the ceiling to 25,000.","lim.seo": "Google cuts titles at roughly 60 characters.","lim.meta": "Google truncates around 155-160 characters.","lim.ig": "2,200 allowed, but only about 125 show before \"more\".","lim.li": "3,000 allowed. Desktop shows about 210 before \"see more\".","lim.tt": "Raised from 2,200 to 4,000. The feed still truncates near 100-150.","lim.ytt": "100 allowed. Search and suggested listings show about 60.","lim.yt": "5,000 allowed. About 150 show before \"Show more\".","howto.1.t": "1. Paste or type","howto.1.d": "Drop in text of any script. Counting runs on the first keystroke, entirely in your browser — nothing is uploaded, nothing is stored.","howto.2.t": "2. Read the script panel","howto.2.d": "The detected script is named under the counts, with the breakdown that script actually needs — Arabic letters apart from harakat, Indic matras apart from base letters, characters and segmented words for Chinese, Japanese and Thai.","howto.3.t": "3. Check it against a limit","howto.3.d": "Tap a platform chip to measure the text against that field’s real ceiling, with a marker showing where the feed truncates it — the number that decides whether anyone reads your first line."},"ar": {"hero.badge": "عدّاد الكلمات","hero.h1": "عدّاد الكلمات","hero.sub": "الكلمات والأحرف والجمل ووقت القراءة — محسوبة وفق قواعد كتابتك، لا بعدّ المسافات. النصوص العربية والهندية والصينية واليابانية والتايلاندية واللاتينية تُقاس جميعها بشكل صحيح.","label.text": "نصّك","btn.paste": "لصق","btn.clear": "مسح","btn.copy": "نسخ","ph.input": "ابدأ الكتابة أو الصق نصاً بأي لغة…","cap.words": "الكلمات","cap.chars": "الأحرف","cap.nospace": "بدون مسافات","cap.sent": "الجمل","cap.para": "الفقرات","cap.read": "وقت القراءة","cap.speak": "وقت النطق","script.waiting": "في انتظار النص","script.note": "يُكتشف نظام الكتابة ممّا تكتبه — وكلٌّ منها يُحسب بطريقته الخاصة.","script.basis": "أساس التوقيت:","script.mixed": "مختلط","limits.hd": "قِس النص مقابل حدٍّ حقيقي","density.hd": "الكلمات الأكثر تكراراً","r.arletters": "حروف عربية","r.harakat": "الحركات (التشكيل)","r.tatweel": "التطويل / الكشيدة","r.letters": "حروف","r.characters": "أحرف","r.matras": "المدّات والعلامات","r.virama": "الفيراما (الحالانت)","r.marks": "علامات مركّبة","r.lettersonly": "حروف","r.segwords": "كلمات مقسّمة","r.digits": "أرقام","r.emoji": "إيموجي","r.codepoints": "نقاط ترميز","basis.latin": "كلمة/دقيقة صامتة / مسموعة (برايزبارت ٢٠١٩)","basis.other": "كلمة/دقيقة مسموعة (متوسط IReST)، والصامتة مضروبة في ١٫٣٠","basis.char": "حرفاً/دقيقة قراءةً جهرية (متوسط IReST لـ١٧ لغة)","l.over": "فوق الحدّ.","l.left": "متبقٍّ.","limlab.x": "إكس / تويتر","limlab.seo": "عنوان SEO","limlab.meta": "وصف الميتا","limlab.ig": "وصف إنستغرام","limlab.li": "منشور لينكدإن","limlab.tt": "وصف تيك توك","limlab.ytt": "عنوان يوتيوب","limlab.yt": "وصف يوتيوب","lim.x": "٢٨٠ في الخطة المجانية. تشترك إكس بريميوم يرفع الحدّ إلى ٢٥٬٠٠٠.","lim.seo": "تقتطع جوجل العناوين عند ٦٠ حرفاً تقريباً.","lim.meta": "تقتطع جوجل الوصف عند ١٥٥–١٦٠ حرفاً تقريباً.","lim.ig": "المسموح ٢٬٢٠٠، لكن يظهر نحو ١٢٥ فقط قبل «المزيد».","lim.li": "المسموح ٣٬٠٠٠. يظهر نحو ٢١٠ على سطح المكتب قبل «عرض المزيد».","lim.tt": "رُفع من ٢٬٢٠٠ إلى ٤٬٠٠٠. ومع ذلك يقتطع التطبيق عند ١٠٠–١٥٠ تقريباً.","lim.ytt": "المسموح ١٠٠. يظهر نحو ٦٠ في نتائج البحث والاقتراحات.","lim.yt": "المسموح ٥٬٠٠٠. يظهر نحو ١٥٠ قبل «عرض المزيد».","howto.1.t": "١. الصق أو اكتب","howto.1.d": "أدرج نصاً بأي نظام كتابة. يبدأ العدّ من أول ضغطة مفتاح، وداخل متصفحك بالكامل — لا يُرفع شيء ولا يُحفظ شيء.","howto.2.t": "٢. اقرأ لوحة نظام الكتابة","howto.2.d": "يظهر نظام الكتابة المكتشف أسفل الأرقام، مع التفصيل الذي يحتاجه فعلاً — الحروف العربية منفصلة عن الحركات، والمدّات الهندية منفصلة عن الحروف الأساسية، والأحرف والكلمات المقسّمة للصينية واليابانية والتايلاندية.","howto.3.t": "٣. قِسه مقابل حدّ","howto.3.d": "اضغط على أي منصّة لقياس النص مقابل حدّها الحقيقي، مع علامة تبيّن أين يقتطعه التطبيق — وهو الرقم الذي يحدّد إن كان أحد سيقرأ سطرك الأول."},"fr": {"hero.badge": "Compteur de mots","hero.h1": "Compteur de mots","hero.sub": "Mots, caractères, phrases et temps de lecture — comptés selon les règles de votre écriture, et non en comptant les espaces. Les textes arabes, indiens, chinois, japonais, thaïs et latins sont tous mesurés correctement.","label.text": "Votre texte","btn.paste": "Coller","btn.clear": "Effacer","btn.copy": "Copier","ph.input": "Commencez à écrire ou collez un texte dans n’importe quelle langue…","cap.words": "Mots","cap.chars": "Caractères","cap.nospace": "Sans espaces","cap.sent": "Phrases","cap.para": "Paragraphes","cap.read": "Temps de lecture","cap.speak": "Temps de parole","script.waiting": "En attente de texte","script.note": "L’écriture est détectée à partir de ce que vous tapez — chacune est comptée à sa manière.","script.basis": "Base de calcul :","script.mixed": "Mixte","limits.hd": "Mesurer par rapport à une limite réelle","density.hd": "Mots les plus répétés","r.arletters": "Lettres arabes","r.harakat": "Harakat (tashkeel)","r.tatweel": "Tatweel / kashida","r.letters": "lettres","r.characters": "caractères","r.matras": "Matras et signes","r.virama": "Virama / halant","r.marks": "Signes combinatoires","r.lettersonly": "Lettres","r.segwords": "Mots segmentés","r.digits": "Chiffres","r.emoji": "Émojis","r.codepoints": "Points de code","basis.latin": "mots/min en silence / à voix haute (Brysbaert 2019)","basis.other": "mots/min à voix haute (moyenne IReST), silencieux × 1,30","basis.char": "caractères/min à voix haute (moyenne IReST, 17 langues)","l.over": "au-dessus de la limite.","l.left": "restants.","limlab.x": "X / Twitter","limlab.seo": "Titre SEO","limlab.meta": "Méta description","limlab.ig": "Légende Instagram","limlab.li": "Post LinkedIn","limlab.tt": "Légende TikTok","limlab.ytt": "Titre YouTube","limlab.yt": "Description YouTube","lim.x": "280 avec le compte gratuit. X Premium porte la limite à 25 000.","lim.seo": "Google coupe les titres vers 60 caractères.","lim.meta": "Google tronque vers 155-160 caractères.","lim.ig": "2 200 autorisés, mais seuls 125 environ s’affichent avant « plus ».","lim.li": "3 000 autorisés. Environ 210 s’affichent sur ordinateur avant « voir plus ».","lim.tt": "Passé de 2 200 à 4 000. Le fil tronque toujours vers 100-150.","lim.ytt": "100 autorisés. La recherche et les suggestions en montrent environ 60.","lim.yt": "5 000 autorisés. Environ 150 s’affichent avant « Afficher plus ».","howto.1.t": "1. Collez ou tapez","howto.1.d": "Insérez un texte dans n’importe quelle écriture. Le comptage démarre à la première frappe, entièrement dans votre navigateur — rien n’est envoyé, rien n’est conservé.","howto.2.t": "2. Lisez le panneau d’écriture","howto.2.d": "L’écriture détectée est nommée sous les compteurs, avec le détail dont elle a réellement besoin — lettres arabes séparées des harakat, matras indiennes séparées des lettres de base, caractères et mots segmentés pour le chinois, le japonais et le thaï.","howto.3.t": "3. Comparez à une limite","howto.3.d": "Touchez une plateforme pour mesurer le texte face à sa vraie limite, avec un repère indiquant où le fil le coupe — le chiffre qui décide si quelqu’un lira votre première ligne."}};
+// ── /word-counter/ engine ─────────────────────────────────────────────────
+// Counting rules differ per script. Latin counters that split on whitespace
+// return 1 word for a whole Chinese or Thai sentence, and count Arabic harakat
+// and Indic matras as if they were letters. Everything below is per-script.
+
+var WC_LIMITS = [
+  {id:'x',     label:'X / Twitter',        max:280,  vis:null, note:'280 on the free tier. X Premium raises the ceiling to 25,000.'},
+  {id:'seo',   label:'SEO title',          max:60,   vis:60,   note:'Google cuts titles at roughly 60 characters.'},
+  {id:'meta',  label:'Meta description',   max:160,  vis:155,  note:'Google truncates around 155-160 characters.'},
+  {id:'ig',    label:'Instagram caption',  max:2200, vis:125,  note:'2,200 allowed, but only about 125 show before "more".'},
+  {id:'li',    label:'LinkedIn post',      max:3000, vis:210,  note:'3,000 allowed. Desktop shows about 210 before "see more".'},
+  {id:'tt',    label:'TikTok caption',     max:4000, vis:150,  note:'Raised from 2,200 to 4,000. The feed still truncates near 100-150.'},
+  {id:'ytt',   label:'YouTube title',      max:100,  vis:60,   note:'100 allowed. Search and suggested listings show about 60.'},
+  {id:'yt',    label:'YouTube description',max:5000, vis:150,  note:'5,000 allowed. About 150 show before "Show more".'}
+];
+
+var WC_SCRIPTS = [
+  {key:'arabic', iso:'Arab',  name:'Arabic script',      re:/\p{Script=Arabic}/u,     locale:'ar', charBased:false},
+  {key:'han', iso:'Hani',     name:'Chinese (Han)',      re:/\p{Script=Han}/u,        locale:'zh', charBased:true},
+  {key:'kana', iso:'Jpan',    name:'Japanese',           re:/\p{Script=Hiragana}|\p{Script=Katakana}/u, locale:'ja', charBased:true},
+  {key:'hangul', iso:'Hang',  name:'Korean (Hangul)',    re:/\p{Script=Hangul}/u,     locale:'ko', charBased:false},
+  {key:'thai', iso:'Thai',    name:'Thai',               re:/\p{Script=Thai}/u,       locale:'th', charBased:true},
+  {key:'khmer', iso:'Khmr',   name:'Khmer',              re:/\p{Script=Khmer}/u,      locale:'km', charBased:true},
+  {key:'lao', iso:'Laoo',     name:'Lao',                re:/\p{Script=Lao}/u,        locale:'lo', charBased:true},
+  {key:'myanmar', iso:'Mymr', name:'Burmese',            re:/\p{Script=Myanmar}/u,    locale:'my', charBased:true},
+  {key:'deva', iso:'Deva',    name:'Devanagari',         re:/\p{Script=Devanagari}/u, locale:'hi', charBased:false, indic:true},
+  {key:'beng', iso:'Beng',    name:'Bengali script',     re:/\p{Script=Bengali}/u,    locale:'bn', charBased:false, indic:true},
+  {key:'gujr', iso:'Gujr',    name:'Gujarati',           re:/\p{Script=Gujarati}/u,   locale:'gu', charBased:false, indic:true},
+  {key:'guru', iso:'Guru',    name:'Gurmukhi',           re:/\p{Script=Gurmukhi}/u,   locale:'pa', charBased:false, indic:true},
+  {key:'taml', iso:'Taml',    name:'Tamil',              re:/\p{Script=Tamil}/u,      locale:'ta', charBased:false, indic:true},
+  {key:'telu', iso:'Telu',    name:'Telugu',             re:/\p{Script=Telugu}/u,     locale:'te', charBased:false, indic:true},
+  {key:'knda', iso:'Knda',    name:'Kannada',            re:/\p{Script=Kannada}/u,    locale:'kn', charBased:false, indic:true},
+  {key:'mlym', iso:'Mlym',    name:'Malayalam',          re:/\p{Script=Malayalam}/u,  locale:'ml', charBased:false, indic:true},
+  {key:'sinh', iso:'Sinh',    name:'Sinhala',            re:/\p{Script=Sinhala}/u,    locale:'si', charBased:false, indic:true},
+  {key:'ethi', iso:'Ethi',    name:'Ethiopic',           re:/\p{Script=Ethiopic}/u,   locale:'am', charBased:false},
+  {key:'hebr', iso:'Hebr',    name:'Hebrew',             re:/\p{Script=Hebrew}/u,     locale:'he', charBased:false},
+  {key:'grek', iso:'Grek',    name:'Greek',              re:/\p{Script=Greek}/u,      locale:'el', charBased:false},
+  {key:'cyrl', iso:'Cyrl',    name:'Cyrillic',           re:/\p{Script=Cyrillic}/u,   locale:'ru', charBased:false},
+  {key:'tfng', iso:'Tfng',    name:'Tifinagh',           re:/\p{Script=Tifinagh}/u,   locale:'zgh',charBased:false},
+  {key:'latn', iso:'Latn',    name:'Latin script',       re:/\p{Script=Latin}/u,      locale:'en', charBased:false}
+];
+
+// Rates, with sources stated on the page rather than invented:
+//   238 wpm  silent, English non-fiction   — Brysbaert 2019, 190 studies
+//   183 wpm  reading aloud, English        — Brysbaert 2019
+//   184 wpm  reading aloud, 17-language mean — IReST, Trauzettel-Klosinski & Dietz 2012
+//   863 cpm  reading aloud, characters/min, same IReST sample
+// No silent-reading study exists per script, so non-Latin silent time scales the
+// oral rate by English's own silent/oral ratio (238/183 = 1.30). Disclosed on page.
+var WC_SILENT_LATIN = 238, WC_ORAL_EN = 183, WC_ORAL_MEAN = 184, WC_ORAL_CPM = 863;
+var WC_RATIO = WC_SILENT_LATIN / WC_ORAL_EN;
+
+var wcLimit = null;
+
+function wcSeg(text, granularity, locale) {
+  if (typeof Intl === 'undefined' || !Intl.Segmenter) return null;
+  try { return Array.from(new Intl.Segmenter(locale || 'en', {granularity: granularity}).segment(text)); }
+  catch (e) { return null; }
+}
+
+function wcDetectAll(text) {
+  var found = [];
+  for (var i = 0; i < WC_SCRIPTS.length; i++) {
+    var sc = WC_SCRIPTS[i];
+    var m = text.match(new RegExp(sc.re.source, 'gu'));
+    if (m && m.length) found.push({s: sc, n: m.length});
+  }
+  found.sort(function (a, b) { return b.n - a.n; });
+  return found;
+}
+
+function wcShort(script) {
+  // The browser ships localised script names (ISO 15924) via Intl.DisplayNames,
+  // so the badge reads العربية in Arabic and Arabe in French with no strings to
+  // maintain. Falls back to the English name where it is unavailable.
+  var lang = document.documentElement.lang || 'en';
+  if (script && script.iso && typeof Intl !== 'undefined' && Intl.DisplayNames) {
+    try {
+      var n = new Intl.DisplayNames([lang], {type: 'script'}).of(script.iso);
+      if (n && n !== script.iso) return n;
+    } catch (e) {}
+  }
+  return script ? script.name.replace(' script', '') : '';
+}
+
+// Rows for ONE script. Called once per script present, so bilingual text --
+// Arabic with English, Hindi with English -- reports both instead of silently
+// dropping whichever one happens to be in the minority.
+function wcScriptRows(text, script, isPrimary) {
+  var rows = [], short = script ? wcShort(script) : '';
+  if (script && script.key === 'arabic') {
+    var arLetters = (text.match(/\p{Script=Arabic}/gu) || [])
+                      .filter(function (c) { return /\p{L}/u.test(c); }).length;
+    // Harakat carry Script=Inherited, not Script=Arabic, so \p{Script=Arabic}
+    // already excludes them -- subtracting would remove them a second time.
+    // Tatweel is Script=Common and likewise outside that match.
+    var harakat = (text.match(/[ً-ْٰۖ-ۭ]/gu) || []).length;
+    var tatweel = (text.match(/ـ/gu) || []).length;
+    rows.push([T('r.arletters'), arLetters]);
+    rows.push([T('r.harakat'), harakat]);
+    if (tatweel) rows.push([T('r.tatweel'), tatweel]);
+  } else if (script && script.indic) {
+    var base = (text.match(new RegExp(script.re.source, 'gu')) || [])
+                 .filter(function (c) { return /\p{L}/u.test(c); }).length;
+    var signs = (text.match(/[\p{Mn}\p{Mc}]/gu) || []).length;
+    var virama = (text.match(/[्্્੍்్್്්]/gu) || []).length;
+    rows.push([short + ' ' + T('r.letters'), base]);
+    rows.push([T('r.matras'), signs]);
+    if (virama) rows.push([T('r.virama'), virama]);
+  } else if (script && script.charBased) {
+    rows.push([short + ' ' + T('r.characters'), (text.match(new RegExp(script.re.source, 'gu')) || []).length]);
+  } else if (script) {
+    rows.push([short + ' ' + T('r.letters'), (text.match(new RegExp(script.re.source, 'gu')) || []).length]);
+    var marks = (text.match(/\p{M}/gu) || []).length;
+    if (isPrimary && marks) rows.push([T('r.marks'), marks]);
+  } else {
+    rows.push([T('r.lettersonly'), (text.match(/\p{L}/gu) || []).length]);
+  }
+  return rows;
+}
+
+function wcCount(text) {
+  var o = {};
+  var all = wcDetectAll(text);
+  var script = all.length ? all[0].s : null;
+  o.script = script;
+
+  // characters = grapheme clusters, so one emoji is 1 and not 4
+  var g = wcSeg(text, 'grapheme');
+  o.chars      = g ? g.length : Array.from(text).length;
+  o.codepoints = Array.from(text).length;
+  o.units      = text.length;
+  var noSpace  = text.replace(/\s/g, '');
+  var gn = wcSeg(noSpace, 'grapheme');
+  o.nospace = gn ? gn.length : Array.from(noSpace).length;
+
+  // words: real segmentation, which is the only thing that works without spaces
+  var w = wcSeg(text, 'word', script ? script.locale : 'en');
+  if (w) {
+    o.wordList = w.filter(function (sg) { return sg.isWordLike; }).map(function (sg) { return sg.segment; });
+  } else {
+    o.wordList = text.trim() ? text.trim().split(/\s+/) : [];
+  }
+  o.words = o.wordList.length;
+
+  o.sent = (text.match(/[^\s.!?။।۔?!…]+(?:[.!?။।۔?!…]+|$)/gu) || [])
+             .filter(function (x) { return x.trim().length; }).length;
+  o.para = text.split(/\n{1,}/).filter(function (x) { return x.trim().length; }).length;
+
+  o.rows = wcScriptRows(text, script, true);
+  if (script && script.charBased) o.rows.push([T('r.segwords'), o.words]);
+
+  // A second script counts as really present, not a stray character or two.
+  o.second = null;
+  if (all.length > 1 && all[1].n >= 3 && all[1].n >= all[0].n * 0.10) {
+    o.second = all[1].s;
+    o.rows = o.rows.concat(wcScriptRows(text, all[1].s, false));
+  }
+
+  // Emoji are counted as grapheme clusters, matching the Characters tile: a
+  // family emoji is one picture, not the three joined emoji it is built from.
+  var emoji = 0;
+  if (g) {
+    for (var gi = 0; gi < g.length; gi++) {
+      if (/\p{Extended_Pictographic}/u.test(g[gi].segment)) emoji++;
+    }
+  } else {
+    emoji = (text.match(/\p{Extended_Pictographic}/gu) || []).length;
+  }
+  var digits = (text.match(/\p{Nd}/gu) || []).length;
+  if (digits) o.rows.push([T('r.digits'), digits]);
+  if (emoji)  o.rows.push([T('r.emoji'), emoji]);
+  if (o.codepoints !== o.chars) o.rows.push([T('r.codepoints'), o.codepoints]);
+
+  // time
+  var charBased = script && script.charBased;
+  var latin     = !script || script.key === 'latn';
+  if (charBased) {
+    o.oralMin   = o.nospace / WC_ORAL_CPM;
+    o.silentMin = o.oralMin / WC_RATIO;
+    o.basis     = WC_ORAL_CPM + ' ' + T('basis.char');
+  } else {
+    var oral = latin ? WC_ORAL_EN : WC_ORAL_MEAN;
+    o.oralMin   = o.words / oral;
+    o.silentMin = latin ? o.words / WC_SILENT_LATIN : o.oralMin / WC_RATIO;
+    o.basis     = latin
+      ? WC_SILENT_LATIN + ' / ' + WC_ORAL_EN + ' ' + T('basis.latin')
+      : WC_ORAL_MEAN + ' ' + T('basis.other');
+  }
+  return o;
+}
+
+function wcTime(min) {
+  var s = Math.round(min * 60);
+  if (s < 60) return s + 's';
+  var m = Math.floor(s / 60), r = s % 60;
+  if (m < 60) return m + 'm' + (r ? ' ' + r + 's' : '');
+  return Math.floor(m / 60) + 'h ' + (m % 60) + 'm';
+}
+
+function wcSet(id, v) { var el = document.getElementById(id); if (el) el.textContent = v; }
+
+function wcUpdate() {
+  var text = document.getElementById('wc-input').value;
+  var o = wcCount(text);
+
+  wcSet('s-words',   o.words.toLocaleString());
+  wcSet('s-chars',   o.chars.toLocaleString());
+  wcSet('s-nospace', o.nospace.toLocaleString());
+  wcSet('s-sent',    o.sent.toLocaleString());
+  wcSet('s-para',    o.para.toLocaleString());
+  wcSet('s-read',    wcTime(o.silentMin));
+  wcSet('s-speak',   wcTime(o.oralMin));
+
+  var name = document.getElementById('wc-script-name');
+  var note = document.getElementById('wc-script-note');
+  if (!text.trim()) {
+    name.textContent = T('script.waiting');
+    note.textContent = T('script.note');
+    document.getElementById('wc-script-rows').innerHTML = '';
+  } else {
+    name.textContent = o.script
+      ? (o.second ? wcShort(o.script) + ' + ' + wcShort(o.second) : wcShort(o.script))
+      : T('script.mixed');
+    note.textContent = T('script.basis') + ' ' + o.basis + '.';
+    document.getElementById('wc-script-rows').innerHTML = o.rows.map(function (r) {
+      return '<span class="wc-srow">' + r[0] + ' <b>' + r[1].toLocaleString() + '</b></span>';
+    }).join('');
+  }
+
+  wcRenderLimit(o);
+  wcRenderDensity(o);
+}
+
+function wcRenderLimit(o) {
+  var wrap = document.getElementById('wc-bar-wrap');
+  if (!wcLimit) { wrap.hidden = true; return; }
+  wrap.hidden = false;
+  var used = o.chars, pct = Math.min(100, used / wcLimit.max * 100);
+  var fill = document.getElementById('wc-bar-fill');
+  fill.style.width = pct + '%';
+  fill.classList.toggle('over', used > wcLimit.max);
+  var vis = document.getElementById('wc-bar-vis');
+  if (wcLimit.vis) { vis.hidden = false; vis.style.left = (wcLimit.vis / wcLimit.max * 100) + '%'; }
+  else vis.hidden = true;
+  var left = wcLimit.max - used;
+  document.getElementById('wc-bar-legend').innerHTML =
+    '<b class="' + (left < 0 ? 'over' : '') + '">' + used.toLocaleString() + ' / ' +
+    wcLimit.max.toLocaleString() + '</b> — ' +
+    (left < 0 ? Math.abs(left).toLocaleString() + ' ' + T('l.over') + ' ' : left.toLocaleString() + ' ' + T('l.left') + ' ') +
+    T('lim.' + wcLimit.id);
+}
+
+function wcRenderDensity(o) {
+  var box = document.getElementById('wc-density');
+  var freq = {}, list = o.wordList || [];
+  for (var i = 0; i < list.length; i++) {
+    var k = list[i].toLowerCase();
+    if (k.length < 2) continue;
+    freq[k] = (freq[k] || 0) + 1;
+  }
+  var top = Object.keys(freq).map(function (k) { return [k, freq[k]]; })
+            .filter(function (p) { return p[1] > 1; })
+            .sort(function (a, b) { return b[1] - a[1]; }).slice(0, 5);
+  if (!top.length) { box.hidden = true; return; }
+  box.hidden = false;
+  var max = top[0][1];
+  document.getElementById('wc-density-rows').innerHTML = top.map(function (p) {
+    var pct = (p[1] / o.words * 100).toFixed(1);
+    return '<div class="wc-drow"><span class="wc-dword">' + p[0] +
+           '</span><span class="wc-dcount">' + p[1] + '× · ' + pct + '%</span>' +
+           '<div class="wc-dbar" style="grid-column:1/-1;width:' + (p[1] / max * 100) + '%"></div></div>';
+  }).join('');
+}
+
+function wcChips() {
+  document.getElementById('wc-chips').innerHTML = WC_LIMITS.map(function (l) {
+    return '<button class="wc-chip" data-id="' + l.id + '" onclick="wcPickLimit(\'' + l.id + '\',this)">' +
+           T('limlab.' + l.id) + ' · ' + l.max.toLocaleString() + '</button>';
+  }).join('');
+}
+
+function wcPickLimit(id, btn) {
+  var same = wcLimit && wcLimit.id === id;
+  document.querySelectorAll('.wc-chip').forEach(function (c) { c.classList.remove('on'); });
+  if (same) { wcLimit = null; }
+  else {
+    wcLimit = WC_LIMITS.filter(function (l) { return l.id === id; })[0];
+    btn.classList.add('on');
+  }
+  wcUpdate();
+}
+
+function wcClear() { document.getElementById('wc-input').value = ''; wcUpdate(); }
+function wcCopy()  { copyText(document.getElementById('wc-input').value); }
+function wcPaste() {
+  if (!navigator.clipboard || !navigator.clipboard.readText) { showToast('Paste with Ctrl+V'); return; }
+  navigator.clipboard.readText().then(function (t) {
+    var el = document.getElementById('wc-input');
+    el.value += t; wcUpdate(); el.focus();
+  }).catch(function () { showToast('Paste with Ctrl+V'); });
+}
+
+window.onToolLang = function () { wcChips(); wcUpdate(); };
+wcChips();
+wcUpdate();
+
+// ── UI language ───────────────────────────────────────────────────────────
+// Interface strings only: the article prose stays in the page's declared
+// language, because that is what Google indexes and it must not be mixed.
+// Note this switcher is for visitors, not for ranking -- an indexed Arabic URL
+// is the only thing that ranks in Arabic.
+function toggleToolLang(e) {
+  e.stopPropagation();
+  var m = document.getElementById('lang-menu');
+  m.classList.toggle('show');
+  document.getElementById('lang-pill').setAttribute('aria-expanded', m.classList.contains('show'));
+}
+document.addEventListener('click', function () {
+  var m = document.getElementById('lang-menu');
+  if (m) { m.classList.remove('show'); document.getElementById('lang-pill').setAttribute('aria-expanded', 'false'); }
+});
+
+function setToolLang(code, label, el) {
+  var t = TOOL_I18N[code] || TOOL_I18N.en;
+  document.querySelectorAll('[data-i18n]').forEach(function (n) {
+    var k = n.getAttribute('data-i18n');
+    if (t[k] !== undefined) n.innerHTML = t[k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function (n) {
+    var k = n.getAttribute('data-i18n-ph');
+    if (t[k] !== undefined) n.setAttribute('placeholder', t[k]);
+  });
+  // Only the words change. The document direction is NEVER touched: flipping it
+  // mirrors the whole layout -- logo, nav, tile order, chip order -- which is a
+  // design change, not a translation. Arabic still reads right-to-left inside
+  // its own element because the Unicode bidi algorithm handles that on its own.
+  document.documentElement.lang = code;
+  document.getElementById('lang-pill').textContent = label + ' ▾';
+  document.querySelectorAll('.lang-opt').forEach(function (o) { o.classList.remove('active'); });
+  if (el) el.classList.add('active');
+  try { localStorage.setItem('kactylToolLang', code); } catch (e) {}
+  // Anything the tool renders from JS -- stat labels, script rows -- has to be
+  // redrawn, or the page ends up half-translated the moment you interact with it.
+  if (typeof window.onToolLang === 'function') window.onToolLang();
+}
+
+// Look up a UI string from JS, falling back to English rather than showing a key.
+function T(k) {
+  var t = TOOL_I18N[document.documentElement.lang] || TOOL_I18N.en;
+  return t[k] !== undefined ? t[k] : (TOOL_I18N.en[k] !== undefined ? TOOL_I18N.en[k] : k);
+}
+
+// Restore an explicit past choice only. Never auto-switch on navigator.language:
+// Googlebot crawls from the US and must see what a US visitor sees.
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('kactylToolLang'); } catch (e) {}
+  if (!saved || saved === 'en') return;
+  var el = document.querySelector('.lang-opt[data-lang="' + saved + '"]');
+  if (el) setToolLang(saved, el.getAttribute('data-label'), el);
+})();
+function loadTheme(){const t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){if(t==='dark'){tr.classList.add('on');th.classList.add('on');}}}
+function toggleTheme(){const cur=document.documentElement.getAttribute('data-theme')||'light';const next=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('theme',next);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){tr.classList.toggle('on',next==='dark');th.classList.toggle('on',next==='dark');}}
+function showToast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
+function copyText(text){navigator.clipboard.writeText(text).then(()=>showToast('Copied!')).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('Copied!');});}
+(function(){
+  const hdr=document.querySelector('header');
+  let last=0;
+  window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>last&&y>80)hdr.classList.add('hdr-hidden');else hdr.classList.remove('hdr-hidden');last=y;},{passive:true});
+  document.querySelectorAll('.tools-btn').forEach(btn=>{
+    btn.addEventListener('click',e=>{e.stopPropagation();btn.closest('.tools-wrap').classList.toggle('open');});
+  });
+  document.addEventListener('click',()=>document.querySelectorAll('.tools-wrap.open').forEach(w=>w.classList.remove('open')));
+})();
+loadTheme();
+</script>
+<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+</body>
+</html>

@@ -295,7 +295,7 @@ nav { display:flex; align-items:center; gap:4px; }
 .tools-btn:hover { background:var(--border); }
 [data-theme="dark"] .tools-btn { color:var(--nav-txt); }
 [data-theme="dark"] .tools-btn:hover { background:rgba(255,255,255,.1); }
-.tools-drop { display:none; position:absolute; top:100%; right:0; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 6px 6px; min-width:230px; box-shadow:0 8px 28px rgba(0,0,0,.12); z-index:200; flex-direction:column; gap:2px; }
+.tools-drop { display:none; position:absolute; top:100%; right:0; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:6px; min-width:230px; box-shadow:0 8px 28px rgba(0,0,0,.12); z-index:200; flex-direction:column; gap:2px; }
 .tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
 .tools-item { display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:8px; text-decoration:none; color:var(--text); font-size:13.5px; font-weight:500; transition:background .15s; white-space:nowrap; }
 .tools-item:hover { background:var(--border); }
@@ -1498,8 +1498,16 @@ footer {
   /* Share bar — horizontal scroll on mobile */
   .share-bar { gap:5px; padding:4px 0 32px; margin:16px 0 -10px; }
   .sh-btn { min-width:110px; padding:8px 10px; gap:4px; }
-  .sh-action { font-size:8px; }
-  .sh-name { font-size:11px; }
+  /* legibility floor: 12px. .sh-action/.hs-label carry global !important
+     rules later in the sheet, so the mobile bump must !important too.
+     Desktop sizes deliberately left untouched. */
+  .sh-action { font-size:11px !important; }
+  .sh-name { font-size:12px; }
+  .hs-label { font-size:12px !important; }
+
+  /* 44px tap-target floor on header controls */
+  .tools-btn  { padding:11px 12px; }
+  .theme-wrap { min-height:44px; }
   .sh-ic { width:21px; height:21px; }
   .sh-ic img { width:21px; height:21px; }
 
@@ -1528,7 +1536,7 @@ footer {
 
   /* ── Keyboard: fix overflow with flex:1 ── */
   .kb-card { padding:10px 8px 12px; }
-  .kb-rows { gap:5px; }
+  .kb-rows { gap:8px; }
   .kb-row  { gap:2px; }
 
   /* All keys: shrink to fill row evenly */
@@ -1536,9 +1544,9 @@ footer {
     min-width:0 !important;
     flex:1;
     flex-shrink:1;
-    height:40px;
-    font-size:15px;
-    border-radius:6px;
+    height:46px;
+    font-size:19px;
+    border-radius:7px;
     background:#fff;
     border:1.5px solid rgba(0,0,0,.10);
     box-shadow:
@@ -1546,7 +1554,7 @@ footer {
       0 3px 0 rgba(0,0,0,.18),
       0 4px 10px rgba(8,14,30,.07);
   }
-  .franco-on .key { height:50px; font-size:13px; }
+  .franco-on .key { height:56px; font-size:15px; }
   .fl { font-size:11px; }
 
   /* Special key flex ratios */
@@ -1554,7 +1562,7 @@ footer {
   .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:8px; }
   .k-franco  { flex:1.5; min-width:0 !important; font-size:8px; }
   .k-emoji   { flex:1;   min-width:0 !important; font-size:18px; }
-  .k-123     { flex:1;   min-width:0 !important; font-size:10px; }
+  .k-123     { flex:1;   min-width:0 !important; font-size:12px; }
   .k-enter   { flex:1.5; min-width:0 !important; font-size:13px; }
   .k-shift   { flex:1.5; min-width:0 !important; font-size:16px; }
   .k-bsp     { flex:1.5; min-width:0 !important; font-size:14px; }
@@ -2074,7 +2082,7 @@ body { background: #F8FAFC; }
 /* more-forms indicator: subtle +6, becomes ✕ while its picker is open */
 .fidel-base { position:relative; }
 .fidel-base::after {
-  content:'+6';
+  content:'+' attr(data-more);
   position:absolute;
   top:4px; right:6px;
   font-size:9px;
@@ -2121,6 +2129,15 @@ body { background: #F8FAFC; }
 
 .fidel-picker.show { display:grid; }
 .fidel-base { height:38px !important; font-size:15px !important; }
+/* MOBILE ONLY — match the 46px key height rolled out to every keyboard
+   (2026-08-15 mobile audit). Must sit AFTER the global .fidel-base rule
+   above: same specificity + !important, so source order decides. Desktop
+   Ethiopic sizing is deliberately left untouched. */
+@media (max-width:640px) {
+  .fidel-base { height:46px !important; font-size:19px !important; }
+  /* 34 base letters must still fit 5 rows */
+  .fidel-grid { grid-template-columns:repeat(7,1fr) !important; }
+}
 .fidel-base').forEach(b => b.classList.remove('fam-active'));
   el.classList.add('fam-active');
   const ORDERS = ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7'];
@@ -2187,7 +2204,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
-                                                                            <nav>
+                                                                                                                                                                                    <nav>
     <a href="/" class="nav-link">Home</a>
     <a href="/franco-arab" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
     <a href="#faq" class="nav-link">FAQ</a>
@@ -2203,7 +2220,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
         <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
         <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
-        <a href="/arabic-calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Arabic Calligraphy</a>
+        <a href="/calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Calligraphy</a>
+        <a href="/word-counter/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 14.5V8" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 14.5V3.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.5V9.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 14.5v-3" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/></svg></span> Word Counter</a>
+        <a href="/morse-code/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="3" cy="9" r="1.7" fill="#0068ff"/><rect x="7" y="7.5" width="8" height="3" rx="1.5" fill="#0068ff"/></svg></span> Morse Code</a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -2685,7 +2704,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 <section class="brand-sec" style="display:none">
   <div class="brand-card">
     <div class="b-icon">
-      <img loading="lazy" id="brand-logo-img" src="../images/LOGO-Footer-Keyboardarabe-online.svg" alt="Arabi Keyboard">
+      <img loading="lazy" id="brand-logo-img" src="../images/LOGO-Footer-Keyboardarabe-online.svg" alt="Kactyl">
     </div>
     <div class="b-div"></div>
     <div class="b-info">
@@ -3332,21 +3351,44 @@ const FRANCO_CHIPS = [
 ];
 
 const FIDEL = [
-  ['ሀ','ሁ','ሂ','ሃ','ሄ','ህ','ሆ'],['ለ','ሉ','ሊ','ላ','ሌ','ል','ሎ'],
-  ['ሐ','ሑ','ሒ','ሓ','ሔ','ሕ','ሖ'],['መ','ሙ','ሚ','ማ','ሜ','ም','ሞ'],
-  ['ረ','ሩ','ሪ','ራ','ሬ','ር','ሮ'],['ሰ','ሱ','ሲ','ሳ','ሴ','ስ','ሶ'],
-  ['ሸ','ሹ','ሺ','ሻ','ሼ','ሽ','ሾ'],['ቀ','ቁ','ቂ','ቃ','ቄ','ቅ','ቆ'],
-  ['በ','ቡ','ቢ','ባ','ቤ','ብ','ቦ'],['ቨ','ቩ','ቪ','ቫ','ቬ','ቭ','ቮ'],
-  ['ተ','ቱ','ቲ','ታ','ቴ','ት','ቶ'],['ቸ','ቹ','ቺ','ቻ','ቼ','ች','ቾ'],
-  ['ነ','ኑ','ኒ','ና','ኔ','ን','ኖ'],['ኘ','ኙ','ኚ','ኛ','ኜ','ኝ','ኞ'],
-  ['አ','ኡ','ኢ','ኣ','ኤ','እ','ኦ'],['ከ','ኩ','ኪ','ካ','ኬ','ክ','ኮ'],
-  ['ወ','ዉ','ዊ','ዋ','ዌ','ው','ዎ'],['ዐ','ዑ','ዒ','ዓ','ዔ','ዕ','ዖ'],
-  ['ዘ','ዙ','ዚ','ዛ','ዜ','ዝ','ዞ'],['ዠ','ዡ','ዢ','ዣ','ዤ','ዥ','ዦ'],
-  ['የ','ዩ','ዪ','ያ','ዬ','ይ','ዮ'],['ደ','ዱ','ዲ','ዳ','ዴ','ድ','ዶ'],
-  ['ጀ','ጁ','ጂ','ጃ','ጄ','ጅ','ጆ'],['ገ','ጉ','ጊ','ጋ','ጌ','ግ','ጎ'],
-  ['ጠ','ጡ','ጢ','ጣ','ጤ','ጥ','ጦ'],['ጨ','ጩ','ጪ','ጫ','ጬ','ጭ','ጮ'],
-  ['ጰ','ጱ','ጲ','ጳ','ጴ','ጵ','ጶ'],['ጸ','ጹ','ጺ','ጻ','ጼ','ጽ','ጾ'],
-  ['ፈ','ፉ','ፊ','ፋ','ፌ','ፍ','ፎ'],['ፐ','ፑ','ፒ','ፓ','ፔ','ፕ','ፖ'],
+  ['ሀ','ሁ','ሂ','ሃ','ሄ','ህ','ሆ','ሇ'],['ለ','ሉ','ሊ','ላ','ሌ','ል','ሎ','ሏ'],
+  ['ሐ','ሑ','ሒ','ሓ','ሔ','ሕ','ሖ','ሗ'],['መ','ሙ','ሚ','ማ','ሜ','ም','ሞ','ሟ'],
+  ['ሠ','ሡ','ሢ','ሣ','ሤ','ሥ','ሦ','ሧ'],['ረ','ሩ','ሪ','ራ','ሬ','ር','ሮ','ሯ'],
+  ['ሰ','ሱ','ሲ','ሳ','ሴ','ስ','ሶ','ሷ'],['ሸ','ሹ','ሺ','ሻ','ሼ','ሽ','ሾ','ሿ'],
+  ['ቀ','ቁ','ቂ','ቃ','ቄ','ቅ','ቆ','ቇ','ቈ','ቊ','ቋ','ቌ','ቍ'],['በ','ቡ','ቢ','ባ','ቤ','ብ','ቦ','ቧ'],
+  ['ቨ','ቩ','ቪ','ቫ','ቬ','ቭ','ቮ','ቯ'],['ተ','ቱ','ቲ','ታ','ቴ','ት','ቶ','ቷ'],
+  ['ቸ','ቹ','ቺ','ቻ','ቼ','ች','ቾ','ቿ'],['ኀ','ኁ','ኂ','ኃ','ኄ','ኅ','ኆ','ኇ','ኈ','ኊ','ኋ','ኌ','ኍ'],
+  ['ነ','ኑ','ኒ','ና','ኔ','ን','ኖ','ኗ'],['ኘ','ኙ','ኚ','ኛ','ኜ','ኝ','ኞ','ኟ'],
+  ['አ','ኡ','ኢ','ኣ','ኤ','እ','ኦ','ኧ'],['ከ','ኩ','ኪ','ካ','ኬ','ክ','ኮ','ኯ','ኰ','ኲ','ኳ','ኴ','ኵ'],
+  ['ኸ','ኹ','ኺ','ኻ','ኼ','ኽ','ኾ','ዀ','ዂ','ዃ','ዄ','ዅ'],['ወ','ዉ','ዊ','ዋ','ዌ','ው','ዎ','ዏ'],
+  ['ዐ','ዑ','ዒ','ዓ','ዔ','ዕ','ዖ'],['ዘ','ዙ','ዚ','ዛ','ዜ','ዝ','ዞ','ዟ'],
+  ['ዠ','ዡ','ዢ','ዣ','ዤ','ዥ','ዦ','ዧ'],['የ','ዩ','ዪ','ያ','ዬ','ይ','ዮ','ዯ'],
+  ['ደ','ዱ','ዲ','ዳ','ዴ','ድ','ዶ','ዷ'],['ጀ','ጁ','ጂ','ጃ','ጄ','ጅ','ጆ','ጇ'],
+  ['ገ','ጉ','ጊ','ጋ','ጌ','ግ','ጎ','ጏ','ጐ','ጒ','ጓ','ጔ','ጕ'],['ጠ','ጡ','ጢ','ጣ','ጤ','ጥ','ጦ','ጧ'],
+  ['ጨ','ጩ','ጪ','ጫ','ጬ','ጭ','ጮ','ጯ'],['ጰ','ጱ','ጲ','ጳ','ጴ','ጵ','ጶ','ጷ'],
+  ['ጸ','ጹ','ጺ','ጻ','ጼ','ጽ','ጾ','ጿ'],['ፀ','ፁ','ፂ','ፃ','ፄ','ፅ','ፆ','ፇ'],
+  ['ፈ','ፉ','ፊ','ፋ','ፌ','ፍ','ፎ','ፏ'],['ፐ','ፑ','ፒ','ፓ','ፔ','ፕ','ፖ','ፗ']
+];
+/* order label per cell — families carry 7 vowel orders, plus the
+   labialized -wa form and any labiovelar sub-block, so rows vary in length. */
+const FIDEL_ORD = [
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','oa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','oa','wä','wi','wa','we','wə'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','oa','wä','wi','wa','we','wə'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','oa','wä','wi','wa','we','wə'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wä','wi','wa','we','wə'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','oa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','oa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','oa','wä','wi','wa','we','wə'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','oa'],
+  ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa'],['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7','wa']
 ];
 
 const ROWS = [
@@ -3533,8 +3575,8 @@ function selectFamily(famIdx, el) {
   activeFam = famIdx;
   document.querySelectorAll('.fidel-base').forEach(b => b.classList.remove('fam-active'));
   el.classList.add('fam-active');
-  const ORDERS = ['ä·1','u·2','i·3','a·4','e·5','ə·6','o·7'];
-  const VOW = ['ä','u','i','a','e','ə','o'];
+  const ORDERS = FIDEL_ORD[famIdx];
+  const VOW = ORDERS.map(o => o.split('·')[0]);
   const stem = (FL[FIDEL[famIdx][0]] || '').replace(/[aeiouäə]$/i, '');
   const picker = document.getElementById('fidel-picker');
   picker.innerHTML = '';
@@ -3599,13 +3641,14 @@ function buildKB() {
   picker.className = 'fidel-picker';
   wrap.appendChild(picker);
 
-  // Compact 6-col grid of 30 base consonants (4th order = "a" vowel)
+  // Grid of base consonants (4th order = "a" vowel); count is per-language
   const grid = document.createElement('div');
   grid.className = 'fidel-grid';
   FIDEL.forEach((family, idx) => {
     const btn = document.createElement('button');
     btn.className = 'key fidel-base';
     btn.innerHTML = `<span class="fl">${FL[family[0]] || ''}</span>${family[3]}`;
+    btn.dataset.more = family.length - 1;   /* drives the +N badge */
     btn.onclick = e => { e.stopPropagation(); selectFamily(idx, btn); };
     grid.appendChild(btn);
   });

@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-13B2Z80B92"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-13B2Z80B92');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <title>Morse Code Translator — Hear It, Flash It, Decode It</title>
+  <meta name="description" content="Translate text to Morse and back, then play it at real ITU timing with sound and a flashing light. Adjustable WPM and Farnsworth spacing. Full chart.">
+  <link rel="canonical" href="https://kactyl.com/morse-code/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kactyl.com/morse-code/">
+  <meta property="og:title" content="Morse Code Translator — Hear It, Flash It, Decode It">
+  <meta property="og:description" content="Text to Morse and back, played at true ITU-R M.1677 timing with audio and a flashing signal light. Adjustable speed.">
+  <meta property="og:image" content="https://kactyl.com/images/og-images/morse-code.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Kactyl">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Morse Code Translator — Hear It, Flash It, Decode It">
+  <meta name="twitter:description" content="Text to Morse and back, played at true ITU-R M.1677 timing with audio and a flashing signal light. Adjustable speed.">
+  <meta name="twitter:image" content="https://kactyl.com/images/og-images/morse-code.png">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebApplication", "name": "Kactyl Morse Code Translator", "url": "https://kactyl.com/morse-code/", "description": "Two-way Morse code translator with audio playback, visual flash and adjustable ITU-standard timing.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "All", "browserRequirements": "Requires JavaScript", "inLanguage": ["en"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Text to Morse and Morse to text", "Audio playback at ITU-R M.1677-1 timing", "Visual flashing signal light", "Adjustable speed in words per minute", "Farnsworth spacing for learning", "Full chart of letters, numbers, punctuation and prosigns"], "publisher": {"@type": "Organization", "name": "Kactyl", "url": "https://kactyl.com"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kactyl.com/"}, {"@type": "ListItem", "position": 2, "name": "Morse Code", "item": "https://kactyl.com/morse-code/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "HowTo", "name": "How to translate and play Morse code", "description": "Convert text to Morse code and hear it at a real transmission speed", "totalTime": "PT1M", "step": [{"@type": "HowToStep", "position": 1, "name": "Type either side", "text": "Type plain text on the left or dots and dashes on the right. Each side fills the other as you type."}, {"@type": "HowToStep", "position": 2, "name": "Set the speed", "text": "Choose words per minute. Set a higher character speed for Farnsworth spacing, which keeps letters at full speed while widening the gaps."}, {"@type": "HowToStep", "position": 3, "name": "Play it", "text": "Press Play to hear the signal at true ITU timing while the lamp flashes in step with the tone."}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I read Morse code?", "acceptedAnswer": {"@type": "Answer", "text": "Each letter is a short group of dots and dashes, separated from the next letter by a gap three times the length of a dot. Words are separated by a gap of seven dots. Paste any Morse into the right-hand box above and the text appears on the left — including messages written with middots, hyphens or long dashes, which different sources all use for the same thing."}}, {"@type": "Question", "name": "What is SOS in Morse code?", "acceptedAnswer": {"@type": "Answer", "text": "...---... — three dots, three dashes, three dots, sent as one unbroken run with no gaps between the letters. It was adopted at the 1906 Berlin radiotelegraph convention and came into force in 1908. It is not an abbreviation: it was chosen because the rhythm is unmistakable through interference. \"Save Our Souls\" was invented later to explain it."}}, {"@type": "Question", "name": "Why does the same message sound different at different speeds?", "acceptedAnswer": {"@type": "Answer", "text": "Because Morse is defined by ratios, not by absolute times. A dash is always three times a dot, whatever the speed. At 5 words per minute a dot lasts 240 milliseconds; at 40 it lasts 30. The pattern is identical — only the clock changes, which is why an operator who can read 20 wpm can read 10 without relearning anything."}}, {"@type": "Question", "name": "What is Farnsworth spacing and should I use it?", "acceptedAnswer": {"@type": "Answer", "text": "It sends the letters themselves at a fast speed while stretching the gaps between them, so the overall pace stays slow. Use it if you are learning. Counting dots works up to about 8 wpm and then fails completely, and anyone who learned by counting has to unlearn it. Farnsworth forces you to hear each letter as one sound from the start. Set character speed to 18–20 and plain speed to 8–10 above to try it."}}, {"@type": "Question", "name": "What speed should I aim for?", "acceptedAnswer": {"@type": "Answer", "text": "For general amateur radio conversation, 20 words per minute is a comfortable target, and 13 wpm was the long-standing US General-class threshold. Contest operators work well above 30. There is no need to rush: the gap between letters is the part you shrink as you improve, and it shrinks on its own with practice."}}, {"@type": "Question", "name": "Is Morse code still used today?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, in four places. Aviation VOR and NDB beacons transmit their identifiers in Morse continuously, and checking them is still part of an instrument approach. Amateur radio operators use CW because it crosses distance on less power and less bandwidth than voice. Morse input lets people with severe motor impairments type with a single switch. And navies still train signal-lamp work, which emits no radio signal at all."}}, {"@type": "Question", "name": "Do I need to know Morse code for a ham radio licence?", "acceptedAnswer": {"@type": "Answer", "text": "Not in the United States. The Federal Communications Commission removed the Morse requirement from every amateur licence class effective 23 February 2007. Most other national regulators have since done the same. Operators kept using it regardless, which says something about the mode."}}, {"@type": "Question", "name": "Why is the letter E just one dot?", "acceptedAnswer": {"@type": "Answer", "text": "Because it is the most common letter in English, and Morse assigned the shortest codes to the most frequent letters so ordinary text would take the least time to send. The frequency data came from Alfred Vail counting the type in a New Jersey newspaper’s compositor case — printers had already sorted their type by how often each letter was needed. It is frequency-weighted compression, worked out by hand more than a century before Huffman coding formalised the same idea."}}, {"@type": "Question", "name": "Does Morse code work for languages other than English?", "acceptedAnswer": {"@type": "Answer", "text": "Partly. The international code covers A–Z, the digits and common punctuation, so any language written in basic Latin letters can be sent directly. Accented letters have regional extensions that are not universally agreed. Non-Latin scripts use separate systems entirely — Russian has Cyrillic Morse, Japanese has Wabun code for kana, and Arabic, Greek and Hebrew each have their own tables. This page implements the international code, so accented and non-Latin characters are skipped rather than mistranslated."}}, {"@type": "Question", "name": "Why do some prosigns look like punctuation?", "acceptedAnswer": {"@type": "Answer", "text": "Because they are the same signal. Prosigns are sent as one run-together character with no gap inside, and several coincide exactly with a punctuation mark: AR (end of message) and + are both .-.-.; BT (new paragraph) and = are both -...-. Nothing in the transmission separates them — the operator tells them apart from where they appear in the message."}}, {"@type": "Question", "name": "Can I hear individual letters instead of a whole message?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Tap any card in the chart and that character plays on its own at your current speed and tone settings. That is the most useful way to use the chart while learning, since the target is to recognise each letter as a sound rather than to read it as a shape."}}, {"@type": "Question", "name": "Why does the tone frequency matter?", "acceptedAnswer": {"@type": "Answer", "text": "Because a narrow filter and a tired ear both work better at some pitches than others. Most operators settle somewhere between 500 and 700 Hz, and the slider here covers 400 to 900 so you can find what is comfortable. It changes nothing about the code — only how easy it is to listen to for an hour."}}, {"@type": "Question", "name": "Is the audio timing accurate or approximate?", "acceptedAnswer": {"@type": "Answer", "text": "Accurate. The tones are scheduled through the Web Audio clock rather than by JavaScript timers, so the element lengths hold to the ITU ratios even if the page is busy. The dot length in milliseconds is shown next to the duration so you can check it against any other source."}}, {"@type": "Question", "name": "Why does my decoded text have question marks in it?", "acceptedAnswer": {"@type": "Answer", "text": "A question mark means that group of dots and dashes is not a valid character in the international code. It is usually a spacing problem: letters need a single space between them and words need a slash or a clear gap. If the whole message decodes to question marks, the spacing has probably been lost entirely in copying."}}, {"@type": "Question", "name": "Does this send anything over the internet?", "acceptedAnswer": {"@type": "Answer", "text": "No. The translation, the audio and the light all run in your browser. Nothing is uploaded and nothing is stored, so the page keeps working with the network disconnected once it has loaded."}}, {"@type": "Question", "name": "What is CW and is it the same as Morse code?", "acceptedAnswer": {"@type": "Answer", "text": "CW stands for continuous wave, and on the air the two terms are used interchangeably. Strictly, Morse is the code and CW is the transmission mode — a carrier switched on and off, with no modulation at all. That simplicity is the reason a CW signal gets through when a voice signal on the same equipment does not."}}]}
+  </script>
+  <style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { overflow-x:clip; max-width:100%; }
+button { cursor:pointer; font-family:inherit; border:none; background:none; }
+:root {
+  --blue:#0068ff; --purple:#7C3AED; --green:#059669; --teal:#0891b2;
+  --bg:#EDF0F8; --surface:#FFFFFF; --border:#DDE3EE; --shadow:rgba(15,23,42,.07);
+  --nav:#0F172A; --text:#1E293B; --muted:#64748B; --r:16px; --rs:10px;
+}
+[data-theme="dark"] { --bg:#0F172A; --surface:#1E293B; --border:#334155; --shadow:rgba(0,0,0,.22); --text:#F1F5F9; --muted:#94A3B8; }
+body { font-family:'Inter',sans-serif; background:#fff; color:var(--text); min-height:100vh; transition:background .3s,color .3s; overflow-x:clip; }
+[data-theme="dark"] body { background:#07091A; }
+a { color:inherit; text-decoration:none; }
+.bg-shapes { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+.s { position:absolute; border-radius:50%; filter:blur(60px); }
+header { background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s; }
+header.hdr-hidden { transform:translateY(-100%); }
+[data-theme="dark"] header { background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06); }
+.logo { display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0; }
+.logo-img { height:200px;width:auto;display:block; }
+nav { display:flex;align-items:center;gap:4px; }
+.nav-link { color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s; }
+.nav-link:hover { background:var(--border); }
+[data-theme="dark"] .nav-link { color:#E2E8F0; }
+.tools-wrap { position:relative; }
+.tools-btn { cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;display:flex;align-items:center;gap:4px; }
+.tools-btn:hover { background:var(--border); }
+[data-theme="dark"] .tools-btn { color:#E2E8F0; }
+.tools-drop { display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px; }
+.tools-wrap.open .tools-drop { display:flex; }
+.tools-item { display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s; }
+.tools-item:hover { background:var(--border); }
+.tools-item .t-icon { width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center; }
+.tools-coming { font-size:10px;font-weight:700;color:#fff;background:var(--blue);border-radius:4px;padding:1px 5px;margin-left:auto;flex-shrink:0; }
+.theme-wrap { display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none; }
+.t-track { width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s; }
+.t-track.on { background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12); }
+.t-thumb { width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center; }
+.t-thumb.on { left:21px; }
+.t-lbl { font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap; }
+.wrap { max-width:860px;margin:0 auto;padding:0 24px;position:relative;z-index:1; }
+.page-hero { padding:56px 0 40px;text-align:center; }
+.hero-badge { display:inline-flex;align-items:center;gap:7px;border:1px solid;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.3px; }
+.page-hero h1 { font-size:clamp(28px,4.5vw,52px);font-weight:800;letter-spacing:-.8px;line-height:1.12;background:linear-gradient(180deg,#0A0A0A 0%,#64748B 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px; }
+[data-theme="dark"] .page-hero h1 { background:linear-gradient(180deg,#F1F5F9 0%,#94A3B8 100%);-webkit-background-clip:text;background-clip:text; }
+.hero-sub { font-size:16px;color:var(--muted);max-width:520px;margin:0 auto; }
+/* Tool card */
+.tool-about { padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:32px; }
+[data-theme="dark"] .tool-about { background:rgba(255,255,255,.04); }
+.tool-about h2 { font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:14px;letter-spacing:-.4px; }
+.tool-about p { font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:10px; }
+.tool-about p:last-child { margin-bottom:0; }
+.tool-about p strong { color:var(--text); }
+/* FAQ */
+.tool-faq { margin-bottom:48px; }
+.tool-faq > h2 { font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px; }
+.tool-faq details { border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden; }
+.tool-faq details summary { padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center; }
+.tool-faq details summary::-webkit-details-marker { display:none; }
+.tool-faq details summary::after { content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s; }
+.tool-faq details[open] summary::after { transform:rotate(45deg); }
+.tool-faq details[open] summary { color:var(--accent); }
+.tool-faq .faq-ans { padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted); }
+/* Toast */
+.toast { position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#1E293B;color:#fff;font-size:14px;font-weight:600;padding:10px 22px;border-radius:99px;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;z-index:999; }
+[data-theme="dark"] .toast { background:#F1F5F9;color:#0F172A; }
+.toast.show { opacity:1;transform:translateX(-50%) translateY(0); }
+/* Footer */
+footer { background:var(--nav);color:#94A3B8;padding:56px 28px 32px;margin-top:80px; }
+.ft-inner { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px; }
+.ft-brand { display:flex;flex-direction:column;gap:14px; }
+.ft-logo { display:flex;align-items:center;gap:10px; }
+.ft-ic { width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center; }
+.ft-name { font-size:17px;font-weight:800;color:#F1F5F9; }
+.ft-tagline { font-size:13px;line-height:1.6; }
+.ft-badges { display:flex;gap:8px;flex-wrap:wrap; }
+.ft-badge { font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px; }
+.ft-badge.g { background:rgba(5,150,105,.2);color:#34D399; }
+.ft-badge.b { background:rgba(0,104,255,.2);color:#60A5FA; }
+.ft-col h4 { font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748B;margin-bottom:12px; }
+.ft-h4-gap { margin-top:24px; }
+.ft-legal { display:flex;flex-direction:column;gap:8px; }
+.ft-legal a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-legal a:hover { color:#F1F5F9; }
+.ft-kb-grid { display:grid;grid-template-columns:1fr 1fr;gap:6px 16px; }
+.ft-kb-grid a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-kb-grid a:hover { color:#F1F5F9; }
+.ft-bottom { max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px; }
+.ft-copy { font-size:12px;color:#475569; }
+@media(max-width:700px) { .ft-inner{grid-template-columns:1fr} header{height:60px;padding:0 16px} .logo-img{height:140px} .t-lbl{display:none} nav .nav-link{display:none} }
+:root { --accent:#d97706; --accent2:#f59e0b; }
+.s1 { width:600px;height:600px;background:rgba(217,119,6,.10);top:10%;left:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+.s2 { width:500px;height:500px;background:rgba(249,115,22,.08);top:40%;right:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+[data-theme="dark"] .s1 { background:rgba(217,119,6,.25); }
+[data-theme="dark"] .s2 { background:rgba(249,115,22,.18); }
+.hero-badge { background:rgba(217,119,6,.07);border-color:rgba(217,119,6,.2);color:#d97706; }
+[data-theme="dark"] .hero-badge { background:rgba(217,119,6,.18);color:#fca5a5; }
+
+/* Morse translator */
+.mo-tool { background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:28px;margin-bottom:36px; }
+[data-theme="dark"] .mo-tool { background:rgba(255,255,255,.04); }
+.mo-grid { display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:center; }
+.mo-col { min-width:0; }
+.mo-grid.mo-flip .mo-col:first-child { order:3; }
+.mo-grid.mo-flip .mo-col:last-child { order:1; }
+.mo-grid.mo-flip .mo-swap { order:2; }
+.mo-head { display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px; }
+.mo-label { font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px; }
+.mo-mini { font-size:12.5px;font-weight:600;color:var(--muted);border:1px solid var(--border);border-radius:8px;padding:4px 11px;background:transparent;transition:color .15s,border-color .15s; }
+.mo-mini:hover { color:#d97706;border-color:#d97706; }
+.mo-ta { width:100%;min-width:0;min-height:150px;padding:14px 16px;border:1.5px solid var(--border);border-radius:14px;font-size:16px;line-height:1.7;resize:vertical;font-family:inherit;background:var(--bg);color:var(--text);transition:border-color .2s; }
+.mo-ta:focus { outline:none;border-color:#d97706; }
+[data-theme="dark"] .mo-ta { background:rgba(255,255,255,.06); }
+.mo-mono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:17px;letter-spacing:.06em;word-break:break-word; }
+.mo-swap { width:38px;height:38px;border-radius:50%;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:17px;flex-shrink:0;transition:all .15s; }
+.mo-swap:hover { border-color:#d97706;color:#d97706;transform:rotate(180deg); }
+/* stage */
+.mo-stage { display:flex;align-items:center;gap:18px;margin-top:20px;flex-wrap:wrap; }
+.mo-lamp { width:56px;height:56px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background .04s,box-shadow .04s; }
+.mo-lamp.on { background:#f59e0b;box-shadow:0 0 0 6px rgba(245,158,11,.18),0 0 34px 6px rgba(245,158,11,.6); }
+.mo-play { display:flex;align-items:center;gap:10px;flex-wrap:wrap; }
+.mo-btn-p { background:linear-gradient(135deg,#d97706,#f59e0b);color:#fff;font-size:14px;font-weight:700;padding:11px 26px;border-radius:12px;box-shadow:0 4px 16px rgba(217,119,6,.3);transition:transform .15s; }
+.mo-btn-p:hover { transform:translateY(-1px); }
+.mo-btn-p:active { transform:scale(.97); }
+.mo-btn-s { font-size:14px;font-weight:600;color:var(--muted);border:1.5px solid var(--border);border-radius:12px;padding:10px 20px;background:transparent; }
+.mo-btn-s:hover { border-color:#d97706;color:#d97706; }
+.mo-dur { font-size:13px;color:var(--muted);font-weight:600; }
+/* controls */
+.mo-controls { display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:22px; }
+.mo-ctl label { display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:7px; }
+.mo-ctl label b { color:#d97706;font-weight:800; }
+.mo-ctl input[type=range] { width:100%;accent-color:#d97706; }
+.mo-hint { font-size:13px;color:var(--muted);line-height:1.65;margin-top:12px; }
+/* chart */
+.mo-chart { margin-top:26px;border-top:1px solid var(--border);padding-top:22px; }
+.mo-chart-hd { font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px; }
+.mo-chart-sub { text-transform:none;letter-spacing:0;font-weight:500;opacity:.75;margin-left:6px; }
+.mo-chart-tabs { display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px; }
+.mo-tab { font-size:13px;font-weight:600;border:1.5px solid var(--border);border-radius:20px;padding:6px 15px;color:var(--muted);background:transparent;transition:all .15s; }
+.mo-tab:hover { border-color:#d97706;color:#d97706; }
+.mo-tab.on { background:#d97706;border-color:#d97706;color:#fff; }
+.mo-chart-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px; }
+.mo-cell { background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:10px 6px;text-align:center;transition:border-color .15s,transform .1s;min-width:0; }
+[data-theme="dark"] .mo-cell { background:rgba(255,255,255,.05); }
+.mo-cell:hover { border-color:#d97706;transform:translateY(-1px); }
+.mo-cell.lit { border-color:#f59e0b;background:rgba(245,158,11,.12); }
+.mo-ch { font-size:17px;font-weight:800;line-height:1.2; }
+.mo-cd { font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#d97706;margin-top:3px;letter-spacing:.08em;overflow-wrap:anywhere; }
+.mo-cn { font-size:10.5px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere; }
+@media(max-width:640px){
+  .mo-tool { padding:18px; }
+  .mo-grid { grid-template-columns:minmax(0,1fr);gap:10px; }
+  .mo-swap { transform:rotate(90deg);margin:0 auto; }
+  .mo-swap:hover { transform:rotate(270deg); }
+  .mo-chart-grid { grid-template-columns:repeat(auto-fill,minmax(78px,1fr)); }
+}
+/* content tables */
+.mo-tbl-wrap { overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0 6px;border:1px solid var(--border);border-radius:14px; }
+.mo-tbl { width:100%;border-collapse:collapse;font-size:14.5px;min-width:480px; }
+.mo-tbl th { text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);padding:12px 14px;background:var(--bg);border-bottom:1px solid var(--border);white-space:nowrap; }
+[data-theme="dark"] .mo-tbl th { background:rgba(255,255,255,.05); }
+.mo-tbl td { padding:12px 14px;border-bottom:1px solid var(--border);color:var(--muted);line-height:1.65;vertical-align:top; }
+.mo-tbl tr:last-child td { border-bottom:none; }
+.mo-tbl td:first-child { color:var(--text);font-weight:600;white-space:nowrap; }
+.mo-tbl code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--bg);padding:1px 5px;border-radius:5px;color:#d97706;letter-spacing:.06em; }
+[data-theme="dark"] .mo-tbl code { background:rgba(255,255,255,.08); }
+.mo-src { font-size:13px;color:var(--muted);line-height:1.7;margin-top:12px; }
+
+/* Translations wrap to different line counts (AR 2 lines, EN 3, FR 4), which
+   would shove everything below up or down on every switch. Reserving the tallest
+   language's height keeps the page in exactly the same place in all three. */
+.hero-sub { min-height:80px; }
+/* Arabic glyphs make a taller line box than Latin at the same font-size, which
+   pushed the badge from 27px to 29px and nudged the whole page down 2px. */
+.hero-badge { height:27px;line-height:1;box-sizing:border-box; }
+/* Without an explicit line-height the line box is sized from the font's own
+   glyph metrics, so the same label is a couple of pixels taller in Arabic and
+   the rows below drift. Fixing line-height makes the box height script-independent. */
+.wc-label, .mo-label, .wc-cap, .wc-limits-hd, .wc-density-hd,
+.wc-chip, .mo-tab, .wc-mini, .mo-mini { line-height:1.45; }
+.wc-script-note, .mo-hint { line-height:1.65; }
+@media(max-width:600px){ .hero-sub { min-height:120px; } }
+.lang-wrap { position:relative; }
+/* Fixed width on purpose: "English", "العربية" and "Français" are different
+   lengths, and without this the pill resizes and pushes the whole nav sideways
+   when the language changes. The header must sit in exactly the same place in
+   every language. */
+.lang-pill { display:flex;align-items:center;justify-content:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s;min-width:116px;box-sizing:border-box;white-space:nowrap; }
+.lang-pill:hover { border-color:#d97706; }
+[data-theme="dark"] .lang-pill { color:#E2E8F0;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14); }
+.lang-menu { display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);box-shadow:0 8px 24px var(--shadow);min-width:150px;overflow:hidden;z-index:400; }
+.lang-menu.show { display:block; }
+.lang-opt { display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s;width:100%;text-align:left; }
+.lang-opt:hover { background:var(--bg); }
+.lang-opt.active { color:#d97706;font-weight:600; }
+
+/* ── Canonical Header CSS ── */
+header{background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s}
+header.hdr-hidden{transform:translateY(-100%)}
+[data-theme="dark"] header{background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-img{height:200px;width:auto;display:block}
+nav{display:flex;align-items:center;gap:4px}
+.nav-link{padding:6px 12px;border-radius:6px;text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
+.nav-link:hover{background:var(--border)}
+[data-theme="dark"] .nav-link{color:var(--nav-txt)}
+[data-theme="dark"] .nav-link:hover{background:rgba(255,255,255,.1)}
+.tools-wrap{position:relative}
+.tools-btn{cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.tools-btn:hover{background:var(--border)}
+[data-theme="dark"] .tools-btn{color:var(--nav-txt)}
+[data-theme="dark"] .tools-btn:hover{background:rgba(255,255,255,.1)}
+.tools-drop{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px}
+.tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
+.tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s,color .18s;white-space:nowrap}
+.tools-item:hover{background:var(--border)}.tools-item.active-tool{color:var(--accent)!important;font-weight:600;background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.tools-item .t-icon{width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center}
+.theme-wrap{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
+.t-track{width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s}
+.t-track.on{background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12)}
+.t-thumb{width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center}
+.t-thumb.on{left:21px}
+.t-lbl{font-size:11px;font-weight:600;color:var(--muted);line-height:1.1;white-space:nowrap}
+.lang-wrap{position:relative}
+.lang-pill{display:flex;align-items:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s}
+.lang-pill:hover{border-color:var(--blue)}
+[data-theme="dark"] .lang-pill{color:var(--nav-txt);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+.lang-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px var(--shadow);min-width:140px;overflow:hidden;z-index:400}
+.lang-menu.show{display:block}
+.lang-opt{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s}
+.lang-opt:hover{background:var(--bg)}
+.lang-opt.active{color:var(--blue);font-weight:600}
+@media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+/* ── Canonical Footer CSS ── */
+footer{background:#07091A;border-top:none;padding:0}
+.ft-inner{max-width:1000px;margin:0 auto;padding:56px 28px 44px;display:grid;grid-template-columns:200px 1fr 150px 130px;gap:40px;align-items:start}
+.ft-brand{display:flex;flex-direction:column;gap:14px}
+.ft-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.ft-ic{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-ic img{width:48px;height:48px;opacity:1;filter:drop-shadow(0 0 14px rgba(255,23,54,.5)) drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+.ft-name{font-size:15px;font-weight:800;color:#F1F5F9}
+.ft-tagline{font-size:13px;color:#94A3B8;line-height:1.7}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ft-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
+.ft-badge.g{background:rgba(5,150,105,.12);color:#34D399;border:1px solid rgba(5,150,105,.18)}
+.ft-badge.b{background:rgba(0,104,255,.12);color:#60A5FA;border:1px solid rgba(0,104,255,.18)}
+.ft-social{display:flex;gap:8px;margin-top:2px}
+.ft-soc-link{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;color:#94A3B8;text-decoration:none;transition:background .2s,color .2s}
+.ft-soc-link:hover{background:rgba(0,104,255,.20);border-color:rgba(0,104,255,.40);color:#60A5FA}
+.ft-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:#64748B;margin-bottom:14px}
+.ft-col h4.ft-h4-gap{margin-top:22px}
+.ft-kb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}
+.ft-kb-grid a,.ft-legal a{font-size:13px;color:#CBD5E1;text-decoration:none;padding:5px 0;display:block;transition:color .15s}
+.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}
+.ft-legal{display:flex;flex-direction:column}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;gap:12px}
+.ft-copy{font-size:11px;color:#64748B}
+.ft-bottom-links{display:flex;align-items:center;gap:16px}
+.ft-bottom-links a{font-size:11px;color:#64748B;text-decoration:none;transition:color .15s}
+.ft-bottom-links a:hover{color:#94A3B8}
+@media(max-width:860px){.ft-inner{grid-template-columns:200px 1fr 130px}.ft-inner .ft-col:last-child{grid-column:2;grid-row:2}}
+@media(max-width:640px){.ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px}.ft-brand{grid-column:1/-1}.ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px}.ft-bottom-links{flex-wrap:wrap;justify-content:center}}
+.sec-grad{background:linear-gradient(135deg,#d97706,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Use-case badges */
+.use-cases{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
+.uc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(217,119,6,.07);border:1px solid rgba(217,119,6,.18);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700;color:#d97706}
+[data-theme="dark"] .uc-badge{background:rgba(217,119,6,.15);color:#fca5a5}
+.uc-badge svg{flex-shrink:0}
+
+/* How-to */
+.how-sec{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:32px;max-width:1100px;margin:0 auto 32px}
+[data-theme="dark"] .how-sec{background:rgba(255,255,255,.04)}
+.how-head{font-size:clamp(20px,2.5vw,26px);font-weight:800;margin-bottom:24px;letter-spacing:-.4px}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.how-num-bg{width:52px;height:52px;border-radius:15px;background:linear-gradient(135deg,#d97706,#f59e0b);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.how-step-title{font-size:14px;font-weight:700;color:var(--text)}
+.how-step-desc{font-size:13px;color:var(--muted);line-height:1.6}
+@media(max-width:600px){.how-steps{grid-template-columns:1fr}}
+
+</style>
+<style>
+.faq-promo{position:relative;z-index:1;padding:70px 16px 64px}
+.faq-promo-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:16px;position:relative;max-width:760px;margin:0 auto}
+.faq-card-brand{background:#fff;border:none;border-radius:24px;padding:18px 28px;display:flex;align-items:center;justify-content:center;min-height:122px;position:relative}
+.faq-card-2{background:#fff;border:none;border-radius:24px;min-height:122px;position:relative}
+.faq-card-brand::before,.faq-card-2::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.55;z-index:-1;pointer-events:none}
+.card-hills-clip{position:absolute;inset:0;border-radius:24px;overflow:hidden;z-index:1}
+.card-hills{position:absolute;left:0;bottom:0;width:100%;height:126px;display:block}
+.card-hills .hill-soft{fill:#cfe0ff}
+.card-hills .hill-accent{fill:#0068ff}
+.faq-brand-logo{width:210px;max-width:80%}
+.faq-mascot{position:absolute;top:-70px;left:74%;transform:translateX(-50%);width:210px;z-index:10;pointer-events:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.15))}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:8px 22px;font-size:13px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:18px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+@media(max-width:600px){.faq-promo-grid{grid-template-columns:1fr}.faq-card-2{display:none}.faq-mascot{top:-128px;left:50%;width:170px}}
+</style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
+</head>
+<body>
+<div class="bg-shapes"><div class="s1"></div><div class="s2"></div></div>
+
+<header>
+  <a class="logo" href="/">
+    <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
+  </a>
+                                                                                                                                              <nav>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+    <div class="tools-wrap">
+      <button class="tools-btn">Tools &#9662;</button>
+      <div class="tools-drop">
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/><circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/><path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
+        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
+        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
+        <a href="/calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Calligraphy</a>
+        <a href="/word-counter/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 14.5V8" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 14.5V3.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.5V9.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 14.5v-3" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/></svg></span> Word Counter</a>
+        <a href="/morse-code/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="3" cy="9" r="1.7" fill="#0068ff"/><rect x="7" y="7.5" width="8" height="3" rx="1.5" fill="#0068ff"/></svg></span> Morse Code</a>
+      </div>
+    </div>
+    <div class="lang-wrap">
+      <button class="lang-pill" id="lang-pill" onclick="toggleToolLang(event)" aria-haspopup="true" aria-expanded="false">🇬🇧 English ▾</button>
+      <div class="lang-menu" id="lang-menu">
+        <button class="lang-opt active" data-lang="en" data-label="🇬🇧 English" onclick="setToolLang('en','🇬🇧 English',this)">🇬🇧 English</button>
+        <button class="lang-opt" data-lang="ar" data-label="🇸🇦 العربية" onclick="setToolLang('ar','🇸🇦 العربية',this)">🇸🇦 العربية</button>
+        <button class="lang-opt" data-lang="fr" data-label="🇫🇷 Français" onclick="setToolLang('fr','🇫🇷 Français',this)">🇫🇷 Français</button>
+      </div>
+    </div>
+    <div class="theme-wrap" onclick="toggleTheme()">
+      <div class="t-track" id="tt">
+        <div class="t-thumb" id="th"><img id="theme-icon" src="../images/Icon-white mode-Clavierarabe-enligne.svg" alt="Toggle theme" width="13" height="13"></div>
+      </div>
+      <div class="t-lbl" id="tlbl">White<br>Mode</div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-hero">
+      <div class="hero-badge" style="color:#d97706;border-color:rgba(217,119,6,.28);background:rgba(217,119,6,.07)"><svg width="14" height="14" viewBox="0 0 18 18" fill="none" style="flex-shrink:0"><circle cx="3" cy="9" r="1.6" fill="#d97706"/><rect x="7" y="7.6" width="8" height="2.8" rx="1.4" fill="#d97706"/></svg> <span data-i18n="hero.badge">Morse Code</span></div>
+      <h1 data-i18n="hero.h1">Morse Code Translator</h1>
+      <p class="hero-sub" dir="auto" data-i18n="hero.sub">Type text, get Morse — or paste dots and dashes and get the message back. Then hear it and watch it flash at genuine ITU transmission timing, at any speed from a beginner’s 5 words per minute to an operator’s 40.</p>
+    </div>
+
+    <div class="mo-tool">
+      <div class="mo-grid">
+        <div class="mo-col">
+          <div class="mo-head"><label class="mo-label" for="mo-text" data-i18n="label.text">Text</label><button class="mo-mini" onclick="moCopy('mo-text')" data-i18n="btn.copy">Copy</button></div>
+          <textarea id="mo-text" class="mo-ta" placeholder="Type a message…" data-i18n-ph="ph.text" dir="auto" oninput="moFromText()" spellcheck="false"></textarea>
+        </div>
+        <button class="mo-swap" onclick="moSwap()" title="Swap sides" aria-label="Swap sides">⇄</button>
+        <div class="mo-col">
+          <div class="mo-head"><label class="mo-label" for="mo-code" data-i18n="label.morse">Morse</label><button class="mo-mini" onclick="moCopy('mo-code')" data-i18n="btn.copy">Copy</button></div>
+          <textarea id="mo-code" class="mo-ta mo-mono" placeholder="... --- ..." dir="ltr" oninput="moFromCode()" spellcheck="false"></textarea>
+        </div>
+      </div>
+
+      <div class="mo-stage">
+        <div class="mo-lamp" id="mo-lamp" aria-hidden="true"></div>
+        <div class="mo-play">
+          <button class="mo-btn-p" id="mo-play" onclick="moPlay()" data-i18n="btn.play">▶ Play</button>
+          <button class="mo-btn-s" onclick="moStop()" data-i18n="btn.stop">Stop</button>
+          <span class="mo-dur" id="mo-dur">—</span>
+        </div>
+      </div>
+
+      <div class="mo-controls">
+        <div class="mo-ctl">
+          <label for="mo-wpm"><span data-i18n="ctl.speed">Speed</span> <b id="mo-wpm-v">15</b> <span data-i18n="ctl.wpm">wpm</span></label>
+          <input type="range" id="mo-wpm" min="5" max="40" value="15" oninput="moRate()">
+        </div>
+        <div class="mo-ctl">
+          <label for="mo-cwpm"><span data-i18n="ctl.cspeed">Character speed</span> <b id="mo-cwpm-v">15</b> <span data-i18n="ctl.wpm">wpm</span></label>
+          <input type="range" id="mo-cwpm" min="5" max="40" value="15" oninput="moRate()">
+        </div>
+        <div class="mo-ctl mo-ctl-narrow">
+          <label for="mo-tone"><span data-i18n="ctl.tone">Tone</span> <b id="mo-tone-v">600</b> Hz</label>
+          <input type="range" id="mo-tone" min="400" max="900" step="10" value="600" oninput="moRate()">
+        </div>
+      </div>
+      <div class="mo-hint" id="mo-hint" dir="auto" data-i18n="hint.off">Character speed above the plain speed gives Farnsworth spacing — letters stay fast, gaps stretch. It is how Morse is taught.</div>
+
+      <div class="mo-chart">
+        <div class="mo-chart-hd"><span data-i18n="chart.hd">Full chart</span> <span class="mo-chart-sub" data-i18n="chart.sub">tap any card to hear that character</span></div>
+        <div class="mo-chart-tabs">
+          <button class="mo-tab on" onclick="moTab('letters',this)" data-i18n="tab.letters">Letters</button>
+          <button class="mo-tab" onclick="moTab('digits',this)" data-i18n="tab.digits">Numbers</button>
+          <button class="mo-tab" onclick="moTab('punct',this)" data-i18n="tab.punct">Punctuation</button>
+          <button class="mo-tab" onclick="moTab('pro',this)" data-i18n="tab.pro">Prosigns</button>
+        </div>
+        <div class="mo-chart-grid" id="mo-chart-grid"></div>
+      </div>
+    </div>
+
+    <div class="how-sec">
+      <div class="how-head">How to <span class="sec-grad">Use</span></div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-num-bg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.8"/><circle cx="8" cy="12" r="1.6" fill="#fff"/><rect x="12" y="10.6" width="6" height="2.8" rx="1.4" fill="#fff"/></svg></div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.1.t">1. Type either side</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.1.d">Put plain text on the left or dots and dashes on the right — each side fills the other as you type. Pasted Morse is accepted with dots, middots, hyphens or dashes, since every source writes it differently.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-num-bg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="7" stroke="#fff" stroke-width="1.8"/><path d="M12 13l3.5-3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M9 3h6" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.2.t">2. Set the speed</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.2.d">Choose words per minute the way an operator would. Raise the character speed above it for Farnsworth spacing — letters stay at full speed while the gaps widen, which is how Morse is actually taught.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-num-bg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="#fff"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.3.t">3. Hear it and see it</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.3.d">Press Play. The tone sounds at true ITU timing and the lamp flashes in step with it, so you can learn by ear or read the signal by eye the way a ship’s signal light is read.</div>
+        </div>
+      </div>
+    </div>
+    <section class="tool-about">
+      <h2>The timing is the <span class="sec-grad">whole code</span></h2>
+      <p>Morse is not really dots and dashes. It is one signal — on or off — and the meaning lives entirely in how long each state lasts. Get the ratios wrong and a fluent operator cannot read it, even though the dots and dashes on paper look identical. The standard is <strong>ITU-R M.1677-1</strong>, and it fixes five durations against a single dot-unit:</p>
+      <div class="mo-tbl-wrap"><table class="mo-tbl">
+        <thead><tr><th>Element</th><th>Length</th><th>What it separates</th></tr></thead>
+        <tbody>
+          <tr><td>Dot (dit)</td><td>1 unit</td><td>—</td></tr>
+          <tr><td>Dash (dah)</td><td>3 units</td><td>—</td></tr>
+          <tr><td>Gap inside a letter</td><td>1 unit</td><td>Between the elements of one character</td></tr>
+          <tr><td>Gap between letters</td><td>3 units</td><td>Between characters of one word</td></tr>
+          <tr><td>Gap between words</td><td>7 units</td><td>Between words</td></tr>
+        </tbody>
+      </table></div>
+      <p>Speed is calibrated on one reference word: <strong>PARIS</strong>. Counted with its trailing word gap it is exactly 50 units, and it was chosen because it sits close to the average length of an English word. Sending PARIS once per minute is 1&nbsp;wpm, so a dot-unit is simply <code>1.2 ÷ wpm</code> seconds.</p>
+      <div class="mo-tbl-wrap"><table class="mo-tbl">
+        <thead><tr><th>Speed</th><th>Dot length</th><th>In practice</th></tr></thead>
+        <tbody>
+          <tr><td>5 wpm</td><td>240 ms</td><td>The old entry-level licence standard — slow enough to count elements</td></tr>
+          <tr><td>13 wpm</td><td>92 ms</td><td>Long the US General-class threshold</td></tr>
+          <tr><td>20 wpm</td><td>60 ms</td><td>Comfortable conversational speed on the air</td></tr>
+          <tr><td>40 wpm</td><td>30 ms</td><td>Contest and high-speed operators; well past counting</td></tr>
+        </tbody>
+      </table></div>
+      <p class="mo-src">The player above uses these exact figures, which is why a message sounds the same here as it would from a real transmitter at the same speed — and why the dot length in milliseconds is shown next to the duration.</p>
+    </section>
+
+    <section class="tool-about">
+      <h2>Why E is a single dot: <span class="sec-grad">compression, in 1838</span></h2>
+      <p>The letter codes are not arbitrary and they are not alphabetical. The most frequent letters in English were given the shortest codes, so that ordinary text takes the least time to send. E, the commonest letter, is one dot. T, the second commonest, is one dash. Q and Y, which are rare, run to four elements each.</p>
+      <p>The frequencies came from counting. Alfred Vail, working with Samuel Morse, went to a newspaper office in Morristown, New Jersey and counted the pieces of type in the compositor’s case — the printers had already sorted their type by how often each letter was needed, so the case itself was a frequency table. The codes were assigned from that count.</p>
+      <div class="mo-tbl-wrap"><table class="mo-tbl">
+        <thead><tr><th>Letter</th><th>Code</th><th>Elements</th></tr></thead>
+        <tbody>
+          <tr><td>E — commonest</td><td><code>.</code></td><td>1</td></tr>
+          <tr><td>T</td><td><code>-</code></td><td>1</td></tr>
+          <tr><td>A, I, N, M</td><td><code>.-</code> <code>..</code> <code>-.</code> <code>--</code></td><td>2</td></tr>
+          <tr><td>S, O, H</td><td><code>...</code> <code>---</code> <code>....</code></td><td>3–4</td></tr>
+          <tr><td>Q — rare</td><td><code>--.-</code></td><td>4</td></tr>
+          <tr><td>Y — rare</td><td><code>-.--</code></td><td>4</td></tr>
+        </tbody>
+      </table></div>
+      <p>This is variable-length encoding weighted by frequency — the same principle behind Huffman coding, which formalised it in 1952. Morse code got there by hand, more than a century earlier, by counting type in a drawer.</p>
+    </section>
+
+    <section class="tool-about">
+      <h2>Still transmitting in <span class="sec-grad">2026</span></h2>
+      <p>Morse stopped being the backbone of communication a long time ago, and never quite stopped being used. Where it survives, it survives because it is unusually robust: a human ear can pull a Morse signal out of noise that would make speech unintelligible, and the equipment to send it can be almost nothing.</p>
+      <div class="mo-tbl-wrap"><table class="mo-tbl">
+        <thead><tr><th>Where</th><th>What it is doing</th></tr></thead>
+        <tbody>
+          <tr><td>Aviation navigation</td><td>VOR and NDB ground stations transmit their identifier in Morse on a continuous loop. Pilots confirm they have tuned the right beacon by listening to the code, and it is still a checked item on instrument approaches.</td></tr>
+          <tr><td>Amateur radio</td><td>CW remains an active mode. The US dropped the Morse test for every licence class on 23 February 2007, and operators kept using it anyway — it needs less power and less bandwidth than voice to cross the same distance.</td></tr>
+          <tr><td>Assistive technology</td><td>Morse input lets people with very limited movement type with a single switch, one contact at a time. Both major mobile platforms ship a Morse keyboard for exactly this.</td></tr>
+          <tr><td>Signal lamps</td><td>Navies still train on light signalling between ships, which needs no radio emission at all — useful precisely when you do not want to be heard.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="mo-src">Commercial maritime distress moved to the satellite-based GMDSS system on 1 February 1999, which is when the famous shipboard Morse watch formally ended. SOS survives as the one pattern almost everyone still recognises.</p>
+    </section>
+
+    <section class="tool-about">
+      <h2>Why counting dots stops <span class="sec-grad">working</span></h2>
+      <p>Nearly everyone learns Morse the same wrong way: memorise the chart, then decode letter by letter by counting elements. It works up to about 8 words per minute, and then it collapses — at 20&nbsp;wpm a dot lasts 60 milliseconds, and there is simply no time to count anything.</p>
+      <p>The method that works is to learn each letter as a single <em>sound</em>, a rhythm rather than a sequence. That is what <strong>Farnsworth spacing</strong> is for, and it is why this page has two speed sliders. Characters are sent at a fast speed — fast enough that counting is impossible from the very first day — while the gaps between them are stretched so the overall pace stays slow enough to follow. You get thinking time between letters without ever learning the wrong habit inside them.</p>
+      <p>Set the character speed to 18–20 and the plain speed to 8–10 to try it. The individual letters will sound quick and the message slow. That mismatch is the point: the gaps are what you shrink as you improve, and the letters never have to be relearned.</p>
+      <p>The same reasoning explains the other standard practice — learning by ear before ever looking at a chart. A printed table teaches the eye a shape, and the shape has to be translated before it means anything. The sound can be recognised directly, and recognition is what speed is made of.</p>
+    </section>
+
+    <section class="tool-about">
+      <h2>About Morse <span class="sec-grad">code</span></h2>
+      <p>The code sent on this page is <strong>International Morse</strong>, and it is not the code Samuel Morse’s system originally used. The 1844 American Morse had internal spaces inside some characters and dashes of two different lengths, which made it awkward on long or noisy circuits. Friedrich Gerke simplified it in Germany in 1848 into a version with only two element lengths and uniform spacing; that version was adopted internationally in 1865 and is what the ITU standardises today. American Morse persisted on US railroad and landline telegraph circuits for decades after, which is why old American telegraph recordings can sound wrong against a modern chart.</p>
+      <p>Prosigns are the other thing a plain chart hides. They are procedural signals sent as one run-together character with no internal letter gap — <code>AR</code> for end of message, <code>SK</code> for end of contact, <code>BT</code> to break a paragraph. Because they are run together, several are identical on paper to a punctuation mark: <code>AR</code> and <code>+</code> are both <code>.-.-.</code>, <code>BT</code> and <code>=</code> are both <code>-...-</code>. Nothing in the signal distinguishes them. Position and context do, which is a reminder that Morse was always a code for people, not for parsers.</p>
+      <p>SOS belongs to the same logic. It was adopted at the 1906 Berlin radiotelegraph convention and came into force in 1908, and it stands for nothing at all — it was chosen because <code>...---...</code> is an unmistakable rhythm that survives interference and cannot easily be confused with anything else. “Save Our Souls” was invented afterwards to explain a pattern that was picked purely for how it sounds.</p>
+    </section>
+
+
+    <section class="faq-promo">
+      <div class="faq-promo-grid">
+        <div class="faq-card-brand">
+          <img src="../images/kactyl%20brand%20name-svg.svg" alt="Kactyl" class="faq-brand-logo">
+        </div>
+        <div class="faq-card-2">
+          <div class="card-hills-clip">
+            <svg class="card-hills" viewBox="0 0 560 130" preserveAspectRatio="none" aria-hidden="true">
+              <circle cx="38"  cy="135" r="74" class="hill-soft"/>
+              <circle cx="152" cy="120" r="92" class="hill-soft"/>
+              <circle cx="268" cy="144" r="58" class="hill-soft"/>
+              <circle cx="384" cy="126" r="86" class="hill-soft"/>
+              <circle cx="504" cy="138" r="70" class="hill-accent"/>
+            </svg>
+          </div>
+        </div>
+        <img src="../images/Mascot-pc.svg" alt="" class="faq-mascot">
+      </div>
+    </section>
+
+    <section class="tool-faq">
+      <div class="faq-hd-badge">FAQ</div>
+      <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
+      <details>
+        <summary>How do I read Morse code?</summary>
+        <div class="faq-ans">Each letter is a short group of dots and dashes, separated from the next letter by a gap three times the length of a dot. Words are separated by a gap of seven dots. Paste any Morse into the right-hand box above and the text appears on the left — including messages written with middots, hyphens or long dashes, which different sources all use for the same thing.</div>
+      </details>
+      <details>
+        <summary>What is SOS in Morse code?</summary>
+        <div class="faq-ans"><code>...---...</code> — three dots, three dashes, three dots, sent as one unbroken run with no gaps between the letters. It was adopted at the 1906 Berlin radiotelegraph convention and came into force in 1908. It is not an abbreviation: it was chosen because the rhythm is unmistakable through interference. "Save Our Souls" was invented later to explain it.</div>
+      </details>
+      <details>
+        <summary>Why does the same message sound different at different speeds?</summary>
+        <div class="faq-ans">Because Morse is defined by ratios, not by absolute times. A dash is always three times a dot, whatever the speed. At 5 words per minute a dot lasts 240 milliseconds; at 40 it lasts 30. The pattern is identical — only the clock changes, which is why an operator who can read 20 wpm can read 10 without relearning anything.</div>
+      </details>
+      <details>
+        <summary>What is Farnsworth spacing and should I use it?</summary>
+        <div class="faq-ans">It sends the letters themselves at a fast speed while stretching the gaps between them, so the overall pace stays slow. Use it if you are learning. Counting dots works up to about 8 wpm and then fails completely, and anyone who learned by counting has to unlearn it. Farnsworth forces you to hear each letter as one sound from the start. Set character speed to 18–20 and plain speed to 8–10 above to try it.</div>
+      </details>
+      <details>
+        <summary>What speed should I aim for?</summary>
+        <div class="faq-ans">For general amateur radio conversation, 20 words per minute is a comfortable target, and 13 wpm was the long-standing US General-class threshold. Contest operators work well above 30. There is no need to rush: the gap between letters is the part you shrink as you improve, and it shrinks on its own with practice.</div>
+      </details>
+      <details>
+        <summary>Is Morse code still used today?</summary>
+        <div class="faq-ans">Yes, in four places. Aviation VOR and NDB beacons transmit their identifiers in Morse continuously, and checking them is still part of an instrument approach. Amateur radio operators use CW because it crosses distance on less power and less bandwidth than voice. Morse input lets people with severe motor impairments type with a single switch. And navies still train signal-lamp work, which emits no radio signal at all.</div>
+      </details>
+      <details>
+        <summary>Do I need to know Morse code for a ham radio licence?</summary>
+        <div class="faq-ans">Not in the United States. The Federal Communications Commission removed the Morse requirement from every amateur licence class effective 23 February 2007. Most other national regulators have since done the same. Operators kept using it regardless, which says something about the mode.</div>
+      </details>
+      <details>
+        <summary>Why is the letter E just one dot?</summary>
+        <div class="faq-ans">Because it is the most common letter in English, and Morse assigned the shortest codes to the most frequent letters so ordinary text would take the least time to send. The frequency data came from Alfred Vail counting the type in a New Jersey newspaper’s compositor case — printers had already sorted their type by how often each letter was needed. It is frequency-weighted compression, worked out by hand more than a century before Huffman coding formalised the same idea.</div>
+      </details>
+      <details>
+        <summary>Does Morse code work for languages other than English?</summary>
+        <div class="faq-ans">Partly. The international code covers A–Z, the digits and common punctuation, so any language written in basic Latin letters can be sent directly. Accented letters have regional extensions that are not universally agreed. Non-Latin scripts use separate systems entirely — Russian has Cyrillic Morse, Japanese has Wabun code for kana, and Arabic, Greek and Hebrew each have their own tables. This page implements the international code, so accented and non-Latin characters are skipped rather than mistranslated.</div>
+      </details>
+      <details>
+        <summary>Why do some prosigns look like punctuation?</summary>
+        <div class="faq-ans">Because they are the same signal. Prosigns are sent as one run-together character with no gap inside, and several coincide exactly with a punctuation mark: <code>AR</code> (end of message) and <code>+</code> are both <code>.-.-.</code>; <code>BT</code> (new paragraph) and <code>=</code> are both <code>-...-</code>. Nothing in the transmission separates them — the operator tells them apart from where they appear in the message.</div>
+      </details>
+      <details>
+        <summary>Can I hear individual letters instead of a whole message?</summary>
+        <div class="faq-ans">Yes. Tap any card in the chart and that character plays on its own at your current speed and tone settings. That is the most useful way to use the chart while learning, since the target is to recognise each letter as a sound rather than to read it as a shape.</div>
+      </details>
+      <details>
+        <summary>Why does the tone frequency matter?</summary>
+        <div class="faq-ans">Because a narrow filter and a tired ear both work better at some pitches than others. Most operators settle somewhere between 500 and 700 Hz, and the slider here covers 400 to 900 so you can find what is comfortable. It changes nothing about the code — only how easy it is to listen to for an hour.</div>
+      </details>
+      <details>
+        <summary>Is the audio timing accurate or approximate?</summary>
+        <div class="faq-ans">Accurate. The tones are scheduled through the Web Audio clock rather than by JavaScript timers, so the element lengths hold to the ITU ratios even if the page is busy. The dot length in milliseconds is shown next to the duration so you can check it against any other source.</div>
+      </details>
+      <details>
+        <summary>Why does my decoded text have question marks in it?</summary>
+        <div class="faq-ans">A question mark means that group of dots and dashes is not a valid character in the international code. It is usually a spacing problem: letters need a single space between them and words need a slash or a clear gap. If the whole message decodes to question marks, the spacing has probably been lost entirely in copying.</div>
+      </details>
+      <details>
+        <summary>Does this send anything over the internet?</summary>
+        <div class="faq-ans">No. The translation, the audio and the light all run in your browser. Nothing is uploaded and nothing is stored, so the page keeps working with the network disconnected once it has loaded.</div>
+      </details>
+      <details>
+        <summary>What is CW and is it the same as Morse code?</summary>
+        <div class="faq-ans">CW stands for continuous wave, and on the air the two terms are used interchangeably. Strictly, Morse is the code and CW is the transmission mode — a carrier switched on and off, with no modulation at all. That simplicity is the reason a CW signal gets through when a voice signal on the same equipment does not.</div>
+      </details>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a class="ft-logo" href="/"><div class="ft-ic"><img loading="lazy" src="../images/favicon.svg" alt="Kactyl" width="36" height="36"></div><span class="ft-name">Kactyl</span></a>
+      <div class="ft-tagline">Every Language. One Tab.<br>No download. No account.</div>
+      <div class="ft-badges"><span class="ft-badge g">✓ 100% Free</span><span class="ft-badge b">⚡ No Install</span></div>
+      <div class="ft-social">
+        <a href="https://x.com/kactyl" class="ft-soc-link" aria-label="X / Twitter" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
+        <a href="https://instagram.com/kactyl" class="ft-soc-link" aria-label="Instagram" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://youtube.com/@kactyl" class="ft-soc-link" aria-label="YouTube" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://tiktok.com/@kactyl" class="ft-soc-link" aria-label="TikTok" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Keyboards</h4>
+      <div class="ft-kb-grid">
+        <a href="/arabic/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
+        <a href="/japanese/">Japanese</a><a href="/chinese/">Chinese</a><a href="/turkish/">Turkish</a><a href="/russian/">Russian</a>
+        <a href="/greek/">Greek</a><a href="/thai/">Thai</a><a href="/vietnamese/">Vietnamese</a><a href="/amharic/">Amharic</a>
+      </div>
+    </div>
+        <div class="ft-col">
+      <h4>Tools</h4>
+      <div class="ft-legal">
+        <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/text-art/">Text Art</a>
+        <a href="/dot-art/">Dot Art</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/">Hijri Calendar</a>
+        <a href="/arabic-calligraphy/">Arabic Calligraphy</a>
+      </div>
+      <h4 class="ft-h4-gap">Company</h4>
+      <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
+    </div>
+    <div class="ft-col">
+      <h4>Legal</h4>
+      <div class="ft-legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+        <a href="/cookies">Cookie Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2026 Kactyl. All rights reserved.</span>
+    <div class="ft-bottom-links">
+      <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+      <a href="/cookies">Cookies</a><a href="/sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+var TOOL_I18N = {"en": {"hero.badge": "Morse Code","hero.h1": "Morse Code Translator","hero.sub": "Type text, get Morse — or paste dots and dashes and get the message back. Then hear it and watch it flash at genuine ITU transmission timing, at any speed from a beginner’s 5 words per minute to an operator’s 40.","label.text": "Text","label.morse": "Morse","btn.copy": "Copy","ph.text": "Type a message…","btn.play": "▶ Play","btn.playing": "■ Playing","btn.stop": "Stop","ctl.speed": "Speed","ctl.cspeed": "Character speed","ctl.tone": "Tone","ctl.wpm": "wpm","chart.hd": "Full chart","chart.sub": "tap any card to hear that character","tab.letters": "Letters","tab.digits": "Numbers","tab.punct": "Punctuation","tab.pro": "Prosigns","hint.off": "Character speed above the plain speed gives Farnsworth spacing — letters stay fast, gaps stretch. It is how Morse is taught.","hint.on": "Farnsworth spacing is on: letters are sent at full speed and only the gaps stretch, so you learn the sound of a whole letter instead of counting dots.","skipped": "characters not in the international code","noaudio": "Audio not supported here","pro.sos": "distress","pro.ar": "end of message","pro.sk": "end of contact","pro.bt": "new paragraph","pro.kn": "go ahead, named station only","pro.as": "wait","pro.hh": "error","pro.ct": "starting transmission","howto.1.t": "1. Type either side","howto.1.d": "Put plain text on the left or dots and dashes on the right — each side fills the other as you type. Pasted Morse is accepted with dots, middots, hyphens or dashes, since every source writes it differently.","howto.2.t": "2. Set the speed","howto.2.d": "Choose words per minute the way an operator would. Raise the character speed above it for Farnsworth spacing — letters stay at full speed while the gaps widen, which is how Morse is actually taught.","howto.3.t": "3. Hear it and see it","howto.3.d": "Press Play. The tone sounds at true ITU timing and the lamp flashes in step with it, so you can learn by ear or read the signal by eye the way a ship’s signal light is read."},"ar": {"hero.badge": "شفرة مورس","hero.h1": "مترجم شفرة مورس","hero.sub": "اكتب نصاً لتحصل على شفرة مورس — أو الصق النقاط والشرطات لتستعيد الرسالة. ثم استمع إليها وشاهدها تومض بتوقيت الإرسال الحقيقي المعتمد من الاتحاد الدولي للاتصالات، بأي سرعة من ٥ كلمات في الدقيقة للمبتدئ إلى ٤٠ للمشغّل المحترف.","label.text": "النص","label.morse": "مورس","btn.copy": "نسخ","ph.text": "اكتب رسالة…","btn.play": "▶ تشغيل","btn.playing": "■ جارٍ التشغيل","btn.stop": "إيقاف","ctl.speed": "السرعة","ctl.cspeed": "سرعة الحروف","ctl.tone": "النغمة","ctl.wpm": "كلمة/دقيقة","chart.hd": "الجدول الكامل","chart.sub": "اضغط أي بطاقة لسماع الحرف","tab.letters": "الحروف","tab.digits": "الأرقام","tab.punct": "علامات الترقيم","tab.pro": "الإشارات الإجرائية","hint.off": "رفع سرعة الحروف فوق السرعة العادية يمنحك تباعد فارنزورث — تبقى الحروف سريعة وتتّسع الفواصل. هكذا تُدرَّس شفرة مورس.","hint.on": "تباعد فارنزورث مُفعّل: تُرسَل الحروف بالسرعة الكاملة وتتّسع الفواصل وحدها، فتتعلّم صوت الحرف كاملاً بدل عدّ النقاط.","skipped": "حرفاً خارج الشفرة الدولية","noaudio": "الصوت غير مدعوم هنا","pro.sos": "استغاثة","pro.ar": "نهاية الرسالة","pro.sk": "نهاية الاتصال","pro.bt": "فقرة جديدة","pro.kn": "تفضّل، للمحطة المسمّاة فقط","pro.as": "انتظر","pro.hh": "خطأ","pro.ct": "بدء الإرسال","howto.1.t": "١. اكتب في أي جهة","howto.1.d": "ضع النص العادي على جهة والنقاط والشرطات على الأخرى — كل جهة تملأ الأخرى أثناء الكتابة. ويُقبل مورس الملصوق بالنقطة أو النقطة الوسطى أو الشرطة القصيرة أو الطويلة، لأن كل مصدر يكتبها بطريقته.","howto.2.t": "٢. اضبط السرعة","howto.2.d": "اختر عدد الكلمات في الدقيقة كما يفعل المشغّل. وارفع سرعة الحروف فوقها للحصول على تباعد فارنزورث — تبقى الحروف بسرعتها الكاملة بينما تتّسع الفواصل، وهي الطريقة التي تُدرَّس بها الشفرة فعلاً.","howto.3.t": "٣. استمع وشاهد","howto.3.d": "اضغط تشغيل. تصدر النغمة بالتوقيت الدولي الحقيقي ويومض المصباح معها، فتتعلّم بالأذن أو تقرأ الإشارة بالعين كما يُقرأ مصباح إشارة السفن."},"fr": {"hero.badge": "Code Morse","hero.h1": "Traducteur de code Morse","hero.sub": "Tapez du texte, obtenez du Morse — ou collez des points et des traits pour retrouver le message. Écoutez-le ensuite et regardez-le clignoter au vrai rythme de transmission UIT, de 5 mots par minute pour un débutant à 40 pour un opérateur.","label.text": "Texte","label.morse": "Morse","btn.copy": "Copier","ph.text": "Tapez un message…","btn.play": "▶ Lecture","btn.playing": "■ En cours","btn.stop": "Arrêter","ctl.speed": "Vitesse","ctl.cspeed": "Vitesse des lettres","ctl.tone": "Tonalité","ctl.wpm": "mots/min","chart.hd": "Tableau complet","chart.sub": "touchez une carte pour entendre le caractère","tab.letters": "Lettres","tab.digits": "Chiffres","tab.punct": "Ponctuation","tab.pro": "Prosignes","hint.off": "Une vitesse de lettres supérieure à la vitesse normale donne l’espacement Farnsworth — les lettres restent rapides, les silences s’allongent. C’est ainsi que le Morse s’apprend.","hint.on": "Espacement Farnsworth activé : les lettres sont envoyées à pleine vitesse et seuls les silences s’allongent, pour apprendre le son entier d’une lettre au lieu de compter les points.","skipped": "caractères absents du code international","noaudio": "Audio non pris en charge ici","pro.sos": "détresse","pro.ar": "fin de message","pro.sk": "fin de contact","pro.bt": "nouveau paragraphe","pro.kn": "à vous, station nommée uniquement","pro.as": "attendez","pro.hh": "erreur","pro.ct": "début de transmission","howto.1.t": "1. Tapez d’un côté ou de l’autre","howto.1.d": "Mettez le texte à gauche ou les points et traits à droite — chaque côté remplit l’autre pendant la frappe. Le Morse collé est accepté avec des points, points médians, tirets courts ou longs, car chaque source l’écrit différemment.","howto.2.t": "2. Réglez la vitesse","howto.2.d": "Choisissez les mots par minute comme le ferait un opérateur. Montez la vitesse des lettres au-dessus pour l’espacement Farnsworth — les lettres gardent leur pleine vitesse tandis que les silences s’allongent, ce qui est la vraie méthode d’apprentissage.","howto.3.t": "3. Écoutez et regardez","howto.3.d": "Appuyez sur Lecture. La tonalité sonne au vrai rythme UIT et la lampe clignote en rythme, pour apprendre à l’oreille ou lire le signal à l’œil comme on lit un projecteur de signalisation."}};
+// ── /morse-code/ engine ───────────────────────────────────────────────────
+// Timing follows ITU-R M.1677-1: a dash is 3 dot-units, the gap inside a
+// letter is 1, between letters 3, between words 7. Speed is calibrated on
+// PARIS, which is exactly 50 units including its trailing word gap -- so one
+// dot-unit is 1.2/wpm seconds.
+
+var MORSE = {
+  A:'.-',    B:'-...',  C:'-.-.',  D:'-..',   E:'.',     F:'..-.',
+  G:'--.',   H:'....',  I:'..',    J:'.---',  K:'-.-',   L:'.-..',
+  M:'--',    N:'-.',    O:'---',   P:'.--.',  Q:'--.-',  R:'.-.',
+  S:'...',   T:'-',     U:'..-',   V:'...-',  W:'.--',   X:'-..-',
+  Y:'-.--',  Z:'--..',
+  '0':'-----','1':'.----','2':'..---','3':'...--','4':'....-',
+  '5':'.....','6':'-....','7':'--...','8':'---..','9':'----.',
+  '.':'.-.-.-', ',':'--..--', '?':'..--..', "'":'.----.', '!':'-.-.--',
+  '/':'-..-.',  '(':'-.--.',  ')':'-.--.-', '&':'.-...',  ':':'---...',
+  ';':'-.-.-.', '=':'-...-',  '+':'.-.-.',  '-':'-....-', '_':'..--.-',
+  '"':'.-..-.', '$':'...-..-','@':'.--.-.'
+};
+
+// Prosigns are sent as one run-together character, which is why several share a
+// pattern with a punctuation mark -- context, not the code, tells them apart.
+var PROSIGNS = [
+  ['SOS', '...---...', 'pro.sos'],
+  ['AR',  '.-.-.',     'pro.ar'],
+  ['SK',  '...-.-',    'pro.sk'],
+  ['BT',  '-...-',     'pro.bt'],
+  ['KN',  '-.--.',     'pro.kn'],
+  ['AS',  '.-...',     'pro.as'],
+  ['HH',  '........',  'pro.hh'],
+  ['CT',  '-.-.-',     'pro.ct']
+];
+
+var REV = {};
+for (var k in MORSE) { if (!REV[MORSE[k]]) REV[MORSE[k]] = k; }
+
+var moAudio = null, moTimers = [], moPlaying = false;
+
+// Accept every dot and dash character people actually paste
+function moNormalise(s) {
+  return s.replace(/[·•∙]/g, '.').replace(/[–—−]/g, '-').replace(/_/g, '-');
+}
+
+// International Morse has no accented letters. Dropping them silently turns
+// "cafe" with an accent into CAF, so fold accents to their base letter first --
+// e-acute becomes E, a-ring becomes A -- and count only what is genuinely
+// unsendable (non-Latin scripts) so the page can say so instead of hiding it.
+function moFold(text) {
+  var t = text;
+  if (String.prototype.normalize) t = t.normalize('NFD').replace(/\p{M}/gu, '');
+  return t.replace(/[ØøÐð]/g, 'D').replace(/[Ææ]/g, 'AE').replace(/[Œœ]/g, 'OE')
+          .replace(/[Þþ]/g, 'TH').replace(/[ß]/g, 'SS').replace(/[Łł]/g, 'L');
+}
+
+var moSkipped = 0;
+
+function moEncode(text) {
+  var words = moFold(text).toUpperCase().trim().split(/\s+/);
+  var out = [];
+  moSkipped = 0;
+  for (var i = 0; i < words.length; i++) {
+    var letters = [];
+    for (var j = 0; j < words[i].length; j++) {
+      var c = words[i][j];
+      if (MORSE[c]) letters.push(MORSE[c]);
+      else moSkipped++;
+    }
+    if (letters.length) out.push(letters.join(' '));
+  }
+  return out.join(' / ');
+}
+
+function moDecode(code) {
+  var words = moNormalise(code).trim().split(/\s*[/|]\s*|\s{3,}/);
+  var out = [];
+  for (var i = 0; i < words.length; i++) {
+    var letters = words[i].trim().split(/\s+/), word = '';
+    for (var j = 0; j < letters.length; j++) {
+      if (!letters[j]) continue;
+      word += REV[letters[j]] !== undefined ? REV[letters[j]] : '?';
+    }
+    if (word) out.push(word);
+  }
+  return out.join(' ');
+}
+
+function moFromText() {
+  document.getElementById('mo-code').value = moEncode(document.getElementById('mo-text').value);
+  moRate();
+}
+function moFromCode() {
+  document.getElementById('mo-text').value = moDecode(document.getElementById('mo-code').value);
+  moRate();
+}
+// The two boxes are always kept in sync, so exchanging their contents would be
+// a no-op. What is actually useful -- especially stacked on a phone -- is
+// putting whichever side you work in on top, so this swaps their positions.
+function moSwap() {
+  var g = document.querySelector('.mo-grid');
+  g.classList.toggle('mo-flip');
+}
+function moCopy(id) { copyText(document.getElementById(id).value); }
+
+// ── timing ────────────────────────────────────────────────────────────────
+function moTiming() {
+  var wpm  = +document.getElementById('mo-wpm').value;
+  var cwpm = Math.max(+document.getElementById('mo-cwpm').value, wpm);
+  var unit = 1.2 / cwpm;                       // dot length at character speed
+  // Farnsworth: PARIS is 31 units of elements and 19 units of gaps. Hold the
+  // characters at cwpm and stretch only the gaps so the whole thing lands on wpm.
+  var gap = (60 / wpm - 37.2 / cwpm) / 19;
+  if (!isFinite(gap) || gap < unit) gap = unit;
+  return {unit: unit, gap: gap, tone: +document.getElementById('mo-tone').value};
+}
+
+function moSchedule(code, t) {
+  // returns [{on:bool, dur:seconds}] for the whole message
+  var seq = [], i;
+  for (i = 0; i < code.length; i++) {
+    var c = code[i];
+    if (c === '.' || c === '-') {
+      seq.push({on: true, dur: c === '.' ? t.unit : t.unit * 3});
+      seq.push({on: false, dur: t.unit});                   // intra-character
+    } else if (c === ' ') {
+      if (seq.length) seq[seq.length - 1].dur = t.gap * 3;  // between letters
+    } else if (c === '/') {
+      if (seq.length) seq[seq.length - 1].dur = t.gap * 7;  // between words
+    }
+  }
+  return seq;
+}
+
+function moDuration(seq) {
+  var d = 0;
+  for (var i = 0; i < seq.length; i++) d += seq[i].dur;
+  return d;
+}
+
+function moRate() {
+  // Character speed can never be below plain speed. Clamp the SLIDER, not just
+  // the label -- otherwise the handle sits at 15 while the readout says 30 and
+  // the control silently disagrees with itself.
+  var wIn = document.getElementById('mo-wpm'), cIn = document.getElementById('mo-cwpm');
+  if (+cIn.value < +wIn.value) cIn.value = wIn.value;
+  var t = moTiming();
+  document.getElementById('mo-wpm-v').textContent  = wIn.value;
+  document.getElementById('mo-cwpm-v').textContent = cIn.value;
+  document.getElementById('mo-tone-v').textContent = t.tone;
+  var code = moNormalise(document.getElementById('mo-code').value);
+  var d = moDuration(moSchedule(code, t));
+  document.getElementById('mo-dur').textContent =
+    (d ? d.toFixed(1) + 's · dot ' + Math.round(t.unit * 1000) + 'ms' : '—')
+    + (moSkipped ? '  ·  ' + moSkipped + ' ' + T('skipped') : '');
+  var far = +cIn.value > +wIn.value;
+  document.getElementById('mo-hint').textContent = far ? T('hint.on') : T('hint.off');
+}
+
+function moStop() {
+  moPlaying = false;
+  for (var i = 0; i < moTimers.length; i++) clearTimeout(moTimers[i]);
+  moTimers = [];
+  if (moAudio) { try { moAudio.close(); } catch (e) {} moAudio = null; }
+  document.getElementById('mo-lamp').classList.remove('on');
+  document.getElementById('mo-play').textContent = T('btn.play');
+  var lit = document.querySelector('.mo-cell.lit');
+  if (lit) lit.classList.remove('lit');
+}
+
+function moPlaySeq(seq, tone) {
+  moStop();
+  if (!seq.length) return;
+  var AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) { showToast(T('noaudio')); return; }
+  moAudio = new AC();
+  moPlaying = true;
+  document.getElementById('mo-play').textContent = T('btn.playing');
+
+  var osc = moAudio.createOscillator(), gain = moAudio.createGain();
+  osc.type = 'sine';
+  osc.frequency.value = tone;
+  gain.gain.value = 0;
+  osc.connect(gain); gain.connect(moAudio.destination);
+  osc.start();
+
+  var t = moAudio.currentTime + 0.06, lamp = document.getElementById('mo-lamp');
+  var elapsed = 0.06;
+  for (var i = 0; i < seq.length; i++) {
+    var s = seq[i];
+    if (s.on) {
+      // short ramps, or every element starts and ends with an audible click
+      gain.gain.setValueAtTime(0, t);
+      gain.gain.linearRampToValueAtTime(0.28, t + 0.004);
+      gain.gain.setValueAtTime(0.28, t + s.dur - 0.004);
+      gain.gain.linearRampToValueAtTime(0, t + s.dur);
+      (function (ms, dur) {
+        moTimers.push(setTimeout(function () { lamp.classList.add('on'); }, ms));
+        moTimers.push(setTimeout(function () { lamp.classList.remove('on'); }, ms + dur));
+      })(elapsed * 1000, s.dur * 1000);
+    }
+    t += s.dur; elapsed += s.dur;
+  }
+  osc.stop(t + 0.05);
+  moTimers.push(setTimeout(moStop, elapsed * 1000 + 120));
+}
+
+function moPlay() {
+  if (moPlaying) { moStop(); return; }
+  var t = moTiming();
+  moPlaySeq(moSchedule(moNormalise(document.getElementById('mo-code').value), t), t.tone);
+}
+
+// ── chart ─────────────────────────────────────────────────────────────────
+function moChartData(tab) {
+  var rows = [], k;
+  if (tab === 'letters') {
+    for (k in MORSE) if (/[A-Z]/.test(k)) rows.push([k, MORSE[k], '']);
+  } else if (tab === 'digits') {
+    for (k in MORSE) if (/[0-9]/.test(k)) rows.push([k, MORSE[k], '']);
+  } else if (tab === 'punct') {
+    for (k in MORSE) if (!/[A-Z0-9]/.test(k)) rows.push([k, MORSE[k], '']);
+  } else {
+    for (var i = 0; i < PROSIGNS.length; i++) rows.push(PROSIGNS[i]);
+  }
+  return rows;
+}
+
+function moTab(tab, btn) {
+  document.querySelectorAll('.mo-tab').forEach(function (b) { b.classList.remove('on'); });
+  btn.classList.add('on');
+  document.getElementById('mo-chart-grid').innerHTML = moChartData(tab).map(function (r) {
+    return '<button class="mo-cell" onclick="moCell(this,\'' + r[1] + '\')">' +
+           '<div class="mo-ch">' + (r[0] === '&' ? '&amp;' : r[0] === '"' ? '&quot;' : r[0] === '<' ? '&lt;' : r[0]) + '</div>' +
+           '<div class="mo-cd">' + r[1] + '</div>' +
+           (r[2] ? '<div class="mo-cn">' + T(r[2]) + '</div>' : '') + '</button>';
+  }).join('');
+}
+
+function moCell(el, code) {
+  var t = moTiming();
+  moPlaySeq(moSchedule(code, t), t.tone);
+  el.classList.add('lit');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var first = document.querySelector('.mo-tab');
+  if (first) moTab('letters', first);
+  moRate();
+  window.onToolLang = function () {
+    var on = document.querySelector('.mo-tab.on');
+    var tabs = ['letters', 'digits', 'punct', 'pro'];
+    var idx = on ? [].indexOf.call(on.parentNode.children, on) : 0;
+    if (on) moTab(tabs[idx], on);
+    moRate();
+  };
+});
+
+// ── UI language ───────────────────────────────────────────────────────────
+// Interface strings only: the article prose stays in the page's declared
+// language, because that is what Google indexes and it must not be mixed.
+// Note this switcher is for visitors, not for ranking -- an indexed Arabic URL
+// is the only thing that ranks in Arabic.
+function toggleToolLang(e) {
+  e.stopPropagation();
+  var m = document.getElementById('lang-menu');
+  m.classList.toggle('show');
+  document.getElementById('lang-pill').setAttribute('aria-expanded', m.classList.contains('show'));
+}
+document.addEventListener('click', function () {
+  var m = document.getElementById('lang-menu');
+  if (m) { m.classList.remove('show'); document.getElementById('lang-pill').setAttribute('aria-expanded', 'false'); }
+});
+
+function setToolLang(code, label, el) {
+  var t = TOOL_I18N[code] || TOOL_I18N.en;
+  document.querySelectorAll('[data-i18n]').forEach(function (n) {
+    var k = n.getAttribute('data-i18n');
+    if (t[k] !== undefined) n.innerHTML = t[k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function (n) {
+    var k = n.getAttribute('data-i18n-ph');
+    if (t[k] !== undefined) n.setAttribute('placeholder', t[k]);
+  });
+  // Only the words change. The document direction is NEVER touched: flipping it
+  // mirrors the whole layout -- logo, nav, tile order, chip order -- which is a
+  // design change, not a translation. Arabic still reads right-to-left inside
+  // its own element because the Unicode bidi algorithm handles that on its own.
+  document.documentElement.lang = code;
+  document.getElementById('lang-pill').textContent = label + ' ▾';
+  document.querySelectorAll('.lang-opt').forEach(function (o) { o.classList.remove('active'); });
+  if (el) el.classList.add('active');
+  try { localStorage.setItem('kactylToolLang', code); } catch (e) {}
+  // Anything the tool renders from JS -- stat labels, script rows -- has to be
+  // redrawn, or the page ends up half-translated the moment you interact with it.
+  if (typeof window.onToolLang === 'function') window.onToolLang();
+}
+
+// Look up a UI string from JS, falling back to English rather than showing a key.
+function T(k) {
+  var t = TOOL_I18N[document.documentElement.lang] || TOOL_I18N.en;
+  return t[k] !== undefined ? t[k] : (TOOL_I18N.en[k] !== undefined ? TOOL_I18N.en[k] : k);
+}
+
+// Restore an explicit past choice only. Never auto-switch on navigator.language:
+// Googlebot crawls from the US and must see what a US visitor sees.
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('kactylToolLang'); } catch (e) {}
+  if (!saved || saved === 'en') return;
+  var el = document.querySelector('.lang-opt[data-lang="' + saved + '"]');
+  if (el) setToolLang(saved, el.getAttribute('data-label'), el);
+})();
+function loadTheme(){const t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){if(t==='dark'){tr.classList.add('on');th.classList.add('on');}}}
+function toggleTheme(){const cur=document.documentElement.getAttribute('data-theme')||'light';const next=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('theme',next);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){tr.classList.toggle('on',next==='dark');th.classList.toggle('on',next==='dark');}}
+function showToast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
+function copyText(text){navigator.clipboard.writeText(text).then(()=>showToast('Copied!')).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('Copied!');});}
+(function(){
+  const hdr=document.querySelector('header');
+  let last=0;
+  window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>last&&y>80)hdr.classList.add('hdr-hidden');else hdr.classList.remove('hdr-hidden');last=y;},{passive:true});
+  document.querySelectorAll('.tools-btn').forEach(btn=>{
+    btn.addEventListener('click',e=>{e.stopPropagation();btn.closest('.tools-wrap').classList.toggle('open');});
+  });
+  document.addEventListener('click',()=>document.querySelectorAll('.tools-wrap.open').forEach(w=>w.classList.remove('open')));
+})();
+loadTheme();
+</script>
+<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+</body>
+</html>

@@ -25,6 +25,9 @@
 <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Kactyl">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hijri Calendar 2026 — Today's Islamic Date | Kactyl">
+  <meta name="twitter:description" content="Today's Hijri date + Hijri/Gregorian converter. Full Islamic calendar with event countdowns.">
+  <meta name="twitter:image" content="https://kactyl.com/images/og-images/home.png">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Hijri Calendar","url":"https://kactyl.com/hijri-calendar/","description":"Free Islamic Hijri calendar. Today's date, full month view, Gregorian converter, Islamic events.","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":["en","ar"]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is today's Hijri date?","acceptedAnswer":{"@type":"Answer","text":"Today's Hijri date is calculated automatically from the current Gregorian date using the standard Tabular Islamic Calendar algorithm and displayed in both Arabic and English."}},{"@type":"Question","name":"How accurate is this Hijri calendar?","acceptedAnswer":{"@type":"Answer","text":"This calendar uses the algorithmic (calculated) Hijri date which is accurate to within 1-2 days. Actual Hijri months in many countries begin upon confirmed moon sighting, which may differ by 1 day."}},{"@type":"Question","name":"How do I convert Hijri to Gregorian?","acceptedAnswer":{"@type":"Answer","text":"Enter a Hijri date in the converter below and click Convert. The result shows the equivalent Gregorian date instantly."}},{"@type":"Question","name":"What is the Islamic New Year date in 2026?","acceptedAnswer":{"@type":"Answer","text":"Islamic New Year 1448 AH (1 Muharram) falls around July 7, 2026 in the Gregorian calendar, though the exact date depends on moon sighting."}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,7 +83,7 @@ nav{display:flex;align-items:center;gap:4px}
 .tools-btn{cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
 .tools-btn:hover{background:var(--border)}
 [data-theme="dark"] .tools-btn{color:var(--nav-txt)}
-.tools-drop{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 6px 6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px}
+.tools-drop{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px}
 .tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
 .tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s,color .18s;white-space:nowrap}
 .tools-item:hover{background:var(--border)}
@@ -305,7 +308,31 @@ footer{background:#07091A;border-top:none;padding:0}
 @media(max-width:600px){.faq-promo-grid{grid-template-columns:1fr}.faq-card-2{display:none}.faq-mascot{top:-128px;left:50%;width:170px}}
 </style>
 <style>/* unified section width — kactyl */
-.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}
+/* The pill has no nowrap and no compact mobile size, so in the narrow header it
+   wrapped onto three lines and shoved the theme toggle past the right edge of
+   the viewport (measured on /hijri-calendar/ at 360-430px). Flag + caret only
+   below 600px; the label returns on wider screens. */
+.lang-pill{white-space:nowrap}
+.lang-pill .lp-label{display:inline}
+@media (max-width:600px){
+  /* Flag only. Measured: with label + caret the header ran 36px past a 360px
+     viewport and clipped the theme toggle. Tightening the header gap on pages
+     that carry the switcher reclaims the rest. */
+  .lang-pill{padding:4px 6px;gap:0}
+  .lang-pill .lp-label,.lang-pill .lp-caret{display:none}
+  header:has(.lang-wrap){gap:8px}
+  header:has(.lang-wrap) nav{gap:10px}
+}
+@media (max-width:400px){
+  /* These tool pages set .logo-img to 200px at every width, while the home page
+     — the header standard — uses 140px on mobile. That extra 60px is why the
+     header overran a 360px viewport once the language pill was added. Scoped to
+     switcher pages only: aligning the whole fleet to the home standard is a
+     separate, site-wide call. */
+  header:has(.lang-wrap) .logo-img{height:150px}
+}
+</style>
 </head>
 <body>
 <div class="bg-shapes"><div class="s s1"></div><div class="s s2"></div><div class="s s3"></div></div>
@@ -315,7 +342,7 @@ footer{background:#07091A;border-top:none;padding:0}
   <a class="logo" href="/">
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
-                      <nav>
+                                                                                                                                <nav>
     <a href="/" class="nav-link">Home</a>
     <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <div class="tools-wrap">
@@ -330,11 +357,13 @@ footer{background:#07091A;border-top:none;padding:0}
         <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
         <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
         <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
-        <a href="/arabic-calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Arabic Calligraphy</a>
+        <a href="/calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Calligraphy</a>
+        <a href="/word-counter/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 14.5V8" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 14.5V3.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.5V9.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 14.5v-3" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/></svg></span> Word Counter</a>
+        <a href="/morse-code/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="3" cy="9" r="1.7" fill="#0068ff"/><rect x="7" y="7.5" width="8" height="3" rx="1.5" fill="#0068ff"/></svg></span> Morse Code</a>
       </div>
     </div>
     <div class="lang-wrap">
-      <button class="lang-pill" id="lang-btn" onclick="toggleLang()">🇺🇸 English ▾</button>
+      <button class="lang-pill" id="lang-btn" onclick="toggleLang()">🇺🇸<span class="lp-label"> English</span><span class="lp-caret"> ▾</span></button>
       <div class="lang-menu" id="lang-menu">
         <div class="lang-opt active" onclick="setLang('en')">🇺🇸 English</div>
         <a class="lang-opt" href="/ar/hijri-calendar/" style="text-decoration:none">🇸🇦 العربية</a>
@@ -361,8 +390,8 @@ footer{background:#07091A;border-top:none;padding:0}
     <div class="today-inner">
       <div class="today-hijri">
         <div class="today-label">Hijri Date Today</div>
-        <div class="day-num" id="h-day">—</div>
-        <div class="month-name" id="h-month">—</div>
+        <div class="day-num" id="h-day">24</div>
+        <div class="month-name" id="h-month">Rabi al-Awwal</div>
         <div class="year-num" id="h-year">— AH</div>
       </div>
       <div class="today-divider">
@@ -373,15 +402,15 @@ footer{background:#07091A;border-top:none;padding:0}
       </div>
       <div class="today-greg">
         <div class="today-label" style="text-align:right">Gregorian</div>
-        <div class="greg-date" id="g-date">—</div>
-        <div class="greg-day" id="g-day">—</div>
+        <div class="greg-date" id="g-date">September 7, 2026</div>
+        <div class="greg-day" id="g-day">Monday</div>
         <button class="greg-copy" onclick="copyTodayDate()">
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="3" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M4 3V2a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1" stroke="currentColor" stroke-width="1.3"/></svg>
           Copy Date
         </button>
       </div>
     </div>
-    <div class="today-arabic" id="h-arabic">—</div>
+    <div class="today-arabic" id="h-arabic">24 ربيع الأول 1448</div>
   </div>
 
   <!-- NEXT EVENT BANNER -->
@@ -389,11 +418,11 @@ footer{background:#07091A;border-top:none;padding:0}
     <div class="ne-icon">🌙</div>
     <div class="ne-text">
       <div class="ne-label">Next Islamic Event</div>
-      <div class="ne-name" id="ne-name">Loading…</div>
+      <div class="ne-name" id="ne-name">Isra and Miraj</div>
       <div class="ne-name-ar" id="ne-name-ar"></div>
     </div>
     <div class="ne-countdown">
-      <div class="ne-days" id="ne-days">—</div>
+      <div class="ne-days" id="ne-days">121</div>
       <div class="ne-days-lbl">days away</div>
     </div>
   </div>
@@ -435,9 +464,9 @@ footer{background:#07091A;border-top:none;padding:0}
       <div class="cal-nav">
         <button class="cal-nav-btn" onclick="navMonth(-1)">‹</button>
         <div class="cal-month-label">
-          <div class="cal-month-h" id="cal-month-h">—</div>
-          <div class="cal-month-ar" id="cal-month-ar">—</div>
-          <div class="cal-year-h" id="cal-year-h">—</div>
+          <div class="cal-month-h" id="cal-month-h">Rabi al-Awwal</div>
+          <div class="cal-month-ar" id="cal-month-ar">ربيع الأول</div>
+          <div class="cal-year-h" id="cal-year-h">1448</div>
         </div>
         <button class="cal-nav-btn" onclick="navMonth(1)">›</button>
       </div>
@@ -706,7 +735,7 @@ footer{background:#07091A;border-top:none;padding:0}
     </details>
     <details>
       <summary>When is Ramadan 2026?</summary>
-      <div class="faq-ans">Ramadan 1447 AH began in early March 2026. Ramadan 1448 AH is expected to begin around late February 2027. The exact start date depends on the moon sighting in your country.</div>
+      <div class="faq-ans">Ramadan 1447 AH began on February 18, 2026. Ramadan 1448 AH begins on February 8, 2027. The exact start date depends on the moon sighting in your country.</div>
     </details>
   </div>
 

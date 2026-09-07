@@ -311,7 +311,7 @@ nav { display:flex; align-items:center; gap:4px; }
 .tools-btn:hover { background:var(--border); }
 [data-theme="dark"] .tools-btn { color:var(--nav-txt); }
 [data-theme="dark"] .tools-btn:hover { background:rgba(255,255,255,.1); }
-.tools-drop { display:none; position:absolute; top:100%; right:0; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 6px 6px; min-width:230px; box-shadow:0 8px 28px rgba(0,0,0,.12); z-index:200; flex-direction:column; gap:2px; }
+.tools-drop { display:none; position:absolute; top:100%; right:0; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:6px; min-width:230px; box-shadow:0 8px 28px rgba(0,0,0,.12); z-index:200; flex-direction:column; gap:2px; }
 .tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
 .tools-item { display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:8px; text-decoration:none; color:var(--text); font-size:13.5px; font-weight:500; transition:background .15s; white-space:nowrap; }
 .tools-item:hover { background:var(--border); }
@@ -1514,8 +1514,16 @@ footer {
   /* Share bar — horizontal scroll on mobile */
   .share-bar { gap:5px; padding:4px 0 32px; margin:16px 0 -10px; }
   .sh-btn { min-width:110px; padding:8px 10px; gap:4px; }
-  .sh-action { font-size:8px; }
-  .sh-name { font-size:11px; }
+  /* legibility floor: 12px. .sh-action/.hs-label carry global !important
+     rules later in the sheet, so the mobile bump must !important too.
+     Desktop sizes deliberately left untouched. */
+  .sh-action { font-size:11px !important; }
+  .sh-name { font-size:12px; }
+  .hs-label { font-size:12px !important; }
+
+  /* 44px tap-target floor on header controls */
+  .tools-btn  { padding:11px 12px; }
+  .theme-wrap { min-height:44px; }
   .sh-ic { width:21px; height:21px; }
   .sh-ic img { width:21px; height:21px; }
 
@@ -1544,7 +1552,7 @@ footer {
 
   /* ── Keyboard: fix overflow with flex:1 ── */
   .kb-card { padding:10px 8px 12px; }
-  .kb-rows { gap:5px; }
+  .kb-rows { gap:8px; }
   .kb-row  { gap:2px; }
 
   /* All keys: shrink to fill row evenly */
@@ -1552,9 +1560,9 @@ footer {
     min-width:0 !important;
     flex:1;
     flex-shrink:1;
-    height:40px;
-    font-size:15px;
-    border-radius:6px;
+    height:46px;
+    font-size:19px;
+    border-radius:7px;
     background:#fff;
     border:1.5px solid rgba(0,0,0,.10);
     box-shadow:
@@ -1562,7 +1570,7 @@ footer {
       0 3px 0 rgba(0,0,0,.18),
       0 4px 10px rgba(8,14,30,.07);
   }
-  .franco-on .key { height:50px; font-size:13px; }
+  .franco-on .key { height:56px; font-size:15px; }
   .fl { font-size:11px; }
 
   /* Special key flex ratios */
@@ -1570,7 +1578,7 @@ footer {
   .k-tashkeel{ flex:1.5; min-width:0 !important; font-size:8px; }
   .k-franco  { flex:1.5; min-width:0 !important; font-size:8px; }
   .k-emoji   { flex:1;   min-width:0 !important; font-size:18px; }
-  .k-123     { flex:1;   min-width:0 !important; font-size:10px; }
+  .k-123     { flex:1;   min-width:0 !important; font-size:12px; }
   .k-enter   { flex:1.5; min-width:0 !important; font-size:13px; }
   .k-shift   { flex:1.5; min-width:0 !important; font-size:16px; }
   .k-bsp     { flex:1.5; min-width:0 !important; font-size:14px; }
@@ -2057,7 +2065,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
-                                                                      <nav>
+                                                                                                                                                                                <nav>
     <a href="/" class="nav-link">Home</a>
     <a href="/franco-arab" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
     <a href="#faq" class="nav-link">FAQ</a>
@@ -2073,7 +2081,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
         <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
         <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
-        <a href="/arabic-calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Arabic Calligraphy</a>
+        <a href="/calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Calligraphy</a>
+        <a href="/word-counter/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 14.5V8" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 14.5V3.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.5V9.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 14.5v-3" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/></svg></span> Word Counter</a>
+        <a href="/morse-code/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="3" cy="9" r="1.7" fill="#0068ff"/><rect x="7" y="7.5" width="8" height="3" rx="1.5" fill="#0068ff"/></svg></span> Morse Code</a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -2555,7 +2565,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 <section class="brand-sec" style="display:none">
   <div class="brand-card">
     <div class="b-icon">
-      <img loading="lazy" id="brand-logo-img" src="../images/LOGO-Footer-Keyboardarabe-online.svg" alt="Arabi Keyboard">
+      <img loading="lazy" id="brand-logo-img" src="../images/LOGO-Footer-Keyboardarabe-online.svg" alt="Kactyl">
     </div>
     <div class="b-div"></div>
     <div class="b-info">
