@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-13B2Z80B92"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-13B2Z80B92');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <title>Typing Test in Your Own Script — Hindi, Bengali, Arabic and more</title>
+  <meta name="description" content="Typing speed tests in Hindi, Bengali, Gujarati, Marathi, Nepali and Arabic — each with its own on-screen keyboard, so nothing needs installing.">
+  <link rel="canonical" href="https://kactyl.com/typing-test/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kactyl.com/typing-test/">
+  <meta property="og:title" content="Typing Test in Your Own Script — Hindi, Bengali, Arabic and more">
+  <meta property="og:description" content="Typing speed tests in Hindi, Bengali, Gujarati, Marathi, Nepali and Arabic — each with its own on-screen keyboard, so nothing needs installing.">
+  <meta property="og:image" content="/images/og-images/home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Kactyl">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Typing Test in Your Own Script — Hindi, Bengali, Arabic and more">
+  <meta name="twitter:description" content="Typing speed tests in Hindi, Bengali, Gujarati, Marathi, Nepali and Arabic — each with its own on-screen keyboard, so nothing needs installing.">
+  <meta name="twitter:image" content="/images/og-images/home.png">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which languages can I test my typing speed in?", "acceptedAnswer": {"@type": "Answer", "text": "Hindi, Bengali, Gujarati, Marathi, Nepali and Arabic, each on its own page with its own word list and keyboard. More follow as their word lists are verified."}}, {"@type": "Question", "name": "Do I need the keyboard installed for my language?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every test carries an on-screen keyboard for its script, taken from that language's keyboard page, and you can click it."}}, {"@type": "Question", "name": "Why do you report three different speed numbers?", "acceptedAnswer": {"@type": "Answer", "text": "Because one number cannot be honest across these scripts. Words per minute counts finished words, letters per minute counts visual units, keystrokes per minute counts what your fingers did. In Devanagari those three diverge sharply; in Arabic they nearly agree."}}, {"@type": "Question", "name": "Is this the same as a normal WPM test?", "acceptedAnswer": {"@type": "Answer", "text": "Not quite, and deliberately. A normal test divides characters by five — an English convention that inflates Devanagari scores by close to two to one. The table above shows the size of the gap per language."}}, {"@type": "Question", "name": "Where do the words come from?", "acceptedAnswer": {"@type": "Answer", "text": "Real frequency lists built from language corpora, the same verified lists the keyboards on this site use for autocomplete. None of them were written by hand."}}, {"@type": "Question", "name": "Why compare whole words instead of letters?", "acceptedAnswer": {"@type": "Answer", "text": "Because being half correct on a conjunct like क्ष is not a real state. Word-level comparison is the only one that means the same thing in every script here."}}, {"@type": "Question", "name": "Can I use this to prepare for a government typing exam?", "acceptedAnswer": {"@type": "Answer", "text": "For speed and accuracy, yes. Exams specify particular layouts and software — Remington GAIL, Bijoy, Preeti — and each language page explains what its exams expect and where this test does and does not match."}}, {"@type": "Question", "name": "Does it work on a phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, using your phone keyboard, which for most of these languages will be phonetic."}}, {"@type": "Question", "name": "Is anything I type sent to you?", "acceptedAnswer": {"@type": "Answer", "text": "No. The test runs entirely in your browser and your best score is stored there."}}, {"@type": "Question", "name": "Why is Arabic so different from the others in the table?", "acceptedAnswer": {"@type": "Answer", "text": "Unvocalised Arabic barely stacks — one letter, one keystroke, one visual unit. The Indic scripts build letters out of several keystrokes, which is what the ratio column is showing."}}, {"@type": "Question", "name": "Will more languages be added?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as each one's word list is verified. Urdu, Punjabi, Tamil and Malayalam are next in line, all of them languages this site already has keyboards for."}}, {"@type": "Question", "name": "Why does this site have typing tests at all?", "acceptedAnswer": {"@type": "Answer", "text": "People kept arriving at our keyboard pages searching for typing tests in their script, and the keyboards could not measure anything. This is the missing half."}}]}</script>
+
+  <style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { overflow-x:clip; max-width:100%; }
+button { cursor:pointer; font-family:inherit; border:none; background:none; }
+:root {
+  --blue:#0068ff; --purple:#7C3AED; --green:#059669; --teal:#0891b2;
+  --bg:#EDF0F8; --surface:#FFFFFF; --border:#DDE3EE; --shadow:rgba(15,23,42,.07);
+  --nav:#0F172A; --text:#1E293B; --muted:#64748B; --r:16px; --rs:10px;
+}
+[data-theme="dark"] { --bg:#0F172A; --surface:#1E293B; --border:#334155; --shadow:rgba(0,0,0,.22); --text:#F1F5F9; --muted:#94A3B8; }
+body { font-family:'Inter',sans-serif; background:#fff; color:var(--text); min-height:100vh; transition:background .3s,color .3s; overflow-x:clip; }
+[data-theme="dark"] body { background:#07091A; }
+a { color:inherit; text-decoration:none; }
+.bg-shapes { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+.s { position:absolute; border-radius:50%; filter:blur(60px); }
+header { background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s; }
+header.hdr-hidden { transform:translateY(-100%); }
+[data-theme="dark"] header { background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06); }
+.logo { display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0; }
+.logo-img { height:200px;width:auto;display:block; }
+nav { display:flex;align-items:center;gap:4px; }
+.nav-link { color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s; }
+.nav-link:hover { background:var(--border); }
+[data-theme="dark"] .nav-link { color:#E2E8F0; }
+.tools-wrap { position:relative; }
+.tools-btn { cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;display:flex;align-items:center;gap:4px; }
+.tools-btn:hover { background:var(--border); }
+[data-theme="dark"] .tools-btn { color:#E2E8F0; }
+.tools-drop { display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px; }
+.tools-wrap.open .tools-drop { display:flex; }
+.tools-item { display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s; }
+.tools-item:hover { background:var(--border); }
+.tools-item .t-icon { width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center; }
+.tools-coming { font-size:10px;font-weight:700;color:#fff;background:var(--blue);border-radius:4px;padding:1px 5px;margin-left:auto;flex-shrink:0; }
+.theme-wrap { display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none; }
+.t-track { width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s; }
+.t-track.on { background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12); }
+.t-thumb { width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center; }
+.t-thumb.on { left:21px; }
+.t-lbl { font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap; }
+.wrap { max-width:860px;margin:0 auto;padding:0 24px;position:relative;z-index:1; }
+.page-hero { padding:56px 0 40px;text-align:center; }
+.hero-badge { display:inline-flex;align-items:center;gap:7px;border:1px solid;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.3px; }
+.page-hero h1 { font-size:clamp(28px,4.5vw,52px);font-weight:800;letter-spacing:-.8px;line-height:1.12;background:linear-gradient(180deg,#0A0A0A 0%,#64748B 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px; }
+[data-theme="dark"] .page-hero h1 { background:linear-gradient(180deg,#F1F5F9 0%,#94A3B8 100%);-webkit-background-clip:text;background-clip:text; }
+.hero-sub { font-size:16px;color:var(--muted);max-width:520px;margin:0 auto; }
+/* Tool card */
+.tool-about { padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:32px; }
+[data-theme="dark"] .tool-about { background:rgba(255,255,255,.04); }
+.tool-about h2 { font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:14px;letter-spacing:-.4px; }
+.tool-about p { font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:10px; }
+.tool-about p:last-child { margin-bottom:0; }
+.tool-about p strong { color:var(--text); }
+/* FAQ */
+.tool-faq { margin-bottom:48px; }
+.tool-faq > h2 { font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px; }
+.tool-faq details { border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden; }
+.tool-faq details summary { padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center; }
+.tool-faq details summary::-webkit-details-marker { display:none; }
+.tool-faq details summary::after { content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s; }
+.tool-faq details[open] summary::after { transform:rotate(45deg); }
+.tool-faq details[open] summary { color:var(--accent); }
+.tool-faq .faq-ans { padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted); }
+/* Toast */
+.toast { position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#1E293B;color:#fff;font-size:14px;font-weight:600;padding:10px 22px;border-radius:99px;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;z-index:999; }
+[data-theme="dark"] .toast { background:#F1F5F9;color:#0F172A; }
+.toast.show { opacity:1;transform:translateX(-50%) translateY(0); }
+/* Footer */
+footer { background:var(--nav);color:#94A3B8;padding:56px 28px 32px;margin-top:80px; }
+.ft-inner { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px; }
+.ft-brand { display:flex;flex-direction:column;gap:14px; }
+.ft-logo { display:flex;align-items:center;gap:10px; }
+.ft-ic { width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center; }
+.ft-name { font-size:17px;font-weight:800;color:#F1F5F9; }
+.ft-tagline { font-size:13px;line-height:1.6; }
+.ft-badges { display:flex;gap:8px;flex-wrap:wrap; }
+.ft-badge { font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px; }
+.ft-badge.g { background:rgba(5,150,105,.2);color:#34D399; }
+.ft-badge.b { background:rgba(0,104,255,.2);color:#60A5FA; }
+.ft-col h4 { font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748B;margin-bottom:12px; }
+.ft-h4-gap { margin-top:24px; }
+.ft-legal { display:flex;flex-direction:column;gap:8px; }
+.ft-legal a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-legal a:hover { color:#F1F5F9; }
+.ft-kb-grid { display:grid;grid-template-columns:1fr 1fr;gap:6px 16px; }
+.ft-kb-grid a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-kb-grid a:hover { color:#F1F5F9; }
+.ft-bottom { max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px; }
+.ft-copy { font-size:12px;color:#475569; }
+@media(max-width:700px) { .ft-inner{grid-template-columns:1fr} header{height:60px;padding:0 16px} .logo-img{height:140px} .t-lbl{display:none} nav .nav-link{display:none} }
+:root { --accent:#0068ff; --accent2:#7c3aed; }
+.s1 { width:600px;height:600px;background:rgba(0,104,255,.10);top:10%;left:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+.s2 { width:500px;height:500px;background:rgba(249,115,22,.08);top:40%;right:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+[data-theme="dark"] .s1 { background:rgba(0,104,255,.25); }
+[data-theme="dark"] .s2 { background:rgba(249,115,22,.18); }
+.hero-badge { background:rgba(0,104,255,.07);border-color:rgba(0,104,255,.2);color:#0068ff; }
+[data-theme="dark"] .hero-badge { background:rgba(0,104,255,.18);color:#fca5a5; }
+
+/* Typing test */
+.tt-tool{background:var(--surface);border-radius:22px;padding:22px;box-shadow:0 10px 30px rgba(15,23,42,.07);max-width:880px;margin:0 auto}
+.tt-langbar{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid var(--bg)}
+.tt-langbtn{border:1px solid var(--bg);background:var(--surface);color:var(--muted);line-height:1;padding:7px 14px;border-radius:10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px}
+.tt-lb-native{font-size:17px;line-height:1.15}
+.tt-lb-latin{font-size:11px;font-weight:600;letter-spacing:.02em;opacity:.72;font-family:'Inter',system-ui,sans-serif}
+.tt-now{margin:0 0 15px;font-size:13px;color:var(--muted)}
+.tt-now b{color:var(--text,inherit);font-weight:700}
+.tt-langbtn:hover{border-color:#0068ff}
+.tt-langbtn.active{background:#0068ff;border-color:#0068ff;color:#fff}
+.tt-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.tt-durs{display:flex;gap:6px;background:var(--bg);padding:5px;border-radius:12px}
+.tt-dur{border:0;background:transparent;font:600 13px/1 Inter,system-ui,sans-serif;color:var(--muted);padding:8px 13px;border-radius:8px;cursor:pointer}
+.tt-dur.active{background:var(--surface);color:var(--text);box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.tt-live{display:flex;align-items:baseline;gap:6px}
+.tt-clock{font:800 26px/1 Inter,system-ui,sans-serif;color:#0068ff;font-variant-numeric:tabular-nums}
+.tt-unit{font:500 12px/1 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-passage{font-family:var(--tt-face);font-size:25px;line-height:2;min-height:110px;
+  padding:16px 18px;background:var(--bg);border-radius:14px;
+  display:flex;flex-wrap:wrap;gap:0 12px;align-content:flex-start;overflow:hidden;user-select:none}
+.tt-w{padding:0 2px;border-radius:5px;color:var(--muted);transition:color .1s}
+.tt-w.done{color:#16a34a}
+.tt-w.bad{color:#dc2626;text-decoration:underline wavy #dc2626 1px;text-underline-offset:5px}
+.tt-w.now{color:var(--text);background:rgba(0,0,0,.06);box-shadow:inset 0 -2px 0 #0068ff}
+.tt-srlabel{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tt-input{width:100%;margin-top:14px;font-family:var(--tt-face);font-size:21px;padding:13px 15px;
+  border:2px solid var(--bg);border-radius:12px;background:var(--surface);color:var(--text);outline:0}
+.tt-input:focus{border-color:#0068ff}
+.tt-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:13px}
+.tt-restart{border:0;background:var(--bg);color:var(--text);font:600 13px/1 Inter,system-ui,sans-serif;padding:10px 16px;border-radius:10px;cursor:pointer}
+.tt-restart:hover{background:#e2e8f0}
+.tt-kbhint{font:500 12px/1.4 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-kb{margin-top:16px;display:flex;flex-direction:column;gap:6px}
+.tt-krow{display:flex;gap:5px;justify-content:center}
+.tt-key{flex:1 1 0;min-width:0;height:44px;border:0;border-radius:9px;background:var(--bg);
+  color:var(--text);font-family:var(--tt-face);font-size:19px;cursor:pointer;
+  box-shadow:0 1px 0 rgba(15,23,42,.13);padding:0}
+.tt-key:hover{background:#e2e8f0}
+.tt-key.hit{background:#0068ff;color:#fff}
+.tt-space{flex:4 1 0}
+.tt-bsp{flex:1.6 1 0;font-size:16px}
+.tt-result{margin-top:16px;padding:18px;border-radius:16px;background:linear-gradient(135deg,#0068ff0d,#7c3aed14);border:1px solid #0068ff22}
+.tt-rhead{font:700 13px/1 Inter,system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#0068ff;margin-bottom:14px}
+.tt-figs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tt-fig{text-align:center}
+.tt-fig b{display:block;font:800 30px/1.1 Inter,system-ui,sans-serif;color:var(--text);font-variant-numeric:tabular-nums}
+.tt-fig span{font:500 11px/1.3 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-rmeta{display:flex;gap:18px;flex-wrap:wrap;margin-top:15px;font:500 12.5px/1.5 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-rmeta b{color:var(--text)}
+.tt-again{margin-top:15px;border:0;border-radius:10px;background:#0068ff;color:#fff;font:700 13px/1 Inter,system-ui,sans-serif;padding:12px 20px;cursor:pointer}
+.tt-passage[dir="rtl"],.tt-input[dir="rtl"]{direction:rtl;text-align:right}
+@media(max-width:640px){
+  .tt-tool{padding:15px;border-radius:18px}
+  .tt-passage{font-size:21px;line-height:1.9;min-height:96px}
+  .tt-figs{grid-template-columns:repeat(2,1fr)}
+  .tt-key{height:38px;font-size:17px}
+  .tt-fig b{font-size:25px}
+}
+
+/* Per-language sections */
+.tt-sec{max-width:880px;margin:38px auto 0;background:var(--surface);border-radius:20px;padding:28px 30px;box-shadow:0 6px 22px rgba(15,23,42,.05)}
+.tt-sec h2{font:800 25px/1.3 Inter,system-ui,sans-serif;color:var(--text);margin:0 0 16px}
+.tt-sec p{font:400 15.5px/1.75 Inter,system-ui,sans-serif;color:#475569;margin:0 0 15px}
+.tt-sec p:last-child{margin-bottom:0}
+.tt-sec strong{color:var(--text);font-weight:700}
+.tt-miss{display:grid;gap:12px;margin-top:4px}
+.tt-missrow{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;
+  padding:15px;border-radius:13px;background:var(--bg)}
+.tt-glyph{font-family:var(--tt-face);font-size:31px;line-height:1.25;text-align:center;color:#0068ff}
+.tt-missrow h3{font:700 14.5px/1.4 Inter,system-ui,sans-serif;color:var(--text);margin:0 0 5px}
+.tt-missrow p{font:400 14px/1.65 Inter,system-ui,sans-serif;color:#475569;margin:0}
+.tt-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:13px;margin-top:6px}
+.tt-stat{padding:17px;border-radius:14px;background:linear-gradient(135deg,#0068ff0d,#7c3aed14);border:1px solid #0068ff1f}
+.tt-stat b{display:block;font:800 27px/1.15 Inter,system-ui,sans-serif;color:var(--text);font-variant-numeric:tabular-nums}
+.tt-stat span{font:500 12px/1.45 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-src{margin-top:22px;padding-top:16px;border-top:1px solid var(--bg);font:400 12.5px/1.7 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-src a{color:#0068ff}
+.tt-tbl-wrap{overflow-x:auto;margin-top:6px}
+.tt-tbl{width:100%;border-collapse:collapse;font:400 14px/1.6 Inter,system-ui,sans-serif;min-width:660px}
+.tt-tbl th{text-align:left;font-weight:700;color:var(--text);padding:11px 13px;border-bottom:2px solid var(--bg);white-space:nowrap}
+.tt-tbl td{padding:11px 13px;border-bottom:1px solid var(--bg);color:#475569}
+.tt-tbl td:first-child{font-weight:600;color:var(--text)}
+.tt-langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:15px;max-width:880px;margin:0 auto}
+.tt-lcard{display:block;text-decoration:none;padding:23px;border-radius:18px;background:var(--surface);
+  box-shadow:0 6px 20px rgba(15,23,42,.06);transition:box-shadow .15s}
+.tt-lcard:hover{box-shadow:0 10px 28px rgba(15,23,42,.12)}
+.tt-lnative{font-size:34px;line-height:1.3;color:var(--text);margin-bottom:9px}
+.tt-lname{font:700 16px/1.3 Inter,system-ui,sans-serif;color:var(--text)}
+.tt-lnote{font:400 13px/1.6 Inter,system-ui,sans-serif;color:var(--muted);margin-top:5px}
+@media(max-width:640px){.tt-sec{padding:21px 18px;border-radius:16px;margin-top:26px}.tt-sec h2{font-size:21px}}
+
+.tt-tool,.tt-sec{--tt-face:'Baloo 2', sans-serif}
+
+/* Translations wrap to different line counts (AR 2 lines, EN 3, FR 4), which
+   would shove everything below up or down on every switch. Reserving the tallest
+   language's height keeps the page in exactly the same place in all three. */
+.hero-sub { min-height:80px; }
+
+/* ── Tool-page brand mascot (shared: generator + injector) ── */
+.tool-stage { position:relative; }
+/* right:0, never negative. On generated tools the hero sits inside an 880px
+   column so a negative offset was harmless, but the older pages' heroes run to
+   the viewport edge -- there a -14px tuck pushed the image to 1294px in a
+   1280px window and created horizontal scroll. */
+.tool-mascot { position:absolute;bottom:100%;right:0;width:0;height:auto;
+  z-index:0;pointer-events:none;opacity:0;margin-bottom:-14px;
+  transition:opacity .25s;filter:drop-shadow(0 6px 18px rgba(0,0,0,.13)); }
+/* Two anchors, two offsets. Generated tools hang the mascot off the TOP of the
+   tool card (bottom:100% of .tool-stage). The older pages have no consistently
+   named card, so the mascot lives inside the hero instead -- there bottom:100%
+   would throw it above the hero and off the top of the page, so it pins to the
+   hero's lower edge. */
+.tool-mascot-hero { bottom:0;margin-bottom:0; }
+/* No room beside the content on a phone, and it would force horizontal scroll. */
+@media(max-width:900px){ .tool-mascot { display:none; } }
+
+/* Arabic glyphs make a taller line box than Latin at the same font-size, which
+   pushed the badge from 27px to 29px and nudged the whole page down 2px. */
+.hero-badge { height:27px;line-height:1;box-sizing:border-box; }
+/* Without an explicit line-height the line box is sized from the font's own
+   glyph metrics, so the same label is a couple of pixels taller in Arabic and
+   the rows below drift. Fixing line-height makes the box height script-independent. */
+.wc-label, .mo-label, .wc-cap, .wc-limits-hd, .wc-density-hd,
+.wc-chip, .mo-tab, .wc-mini, .mo-mini { line-height:1.45; }
+.wc-script-note, .mo-hint { line-height:1.65; }
+@media(max-width:600px){ .hero-sub { min-height:120px; } }
+.lang-wrap { position:relative; }
+/* Fixed width on purpose: "English", "العربية" and "Français" are different
+   lengths, and without this the pill resizes and pushes the whole nav sideways
+   when the language changes. The header must sit in exactly the same place in
+   every language. */
+.lang-pill { display:flex;align-items:center;justify-content:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s;min-width:116px;box-sizing:border-box;white-space:nowrap; }
+.lang-pill:hover { border-color:#0068ff; }
+[data-theme="dark"] .lang-pill { color:#E2E8F0;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14); }
+.lang-menu { display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);box-shadow:0 8px 24px var(--shadow);min-width:150px;overflow:hidden;z-index:400; }
+.lang-menu.show { display:block; }
+.lang-opt { display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s;width:100%;text-align:left; }
+.lang-opt:hover { background:var(--bg); }
+.lang-opt.active { color:#0068ff;font-weight:600; }
+
+/* ── Canonical Header CSS ── */
+header{background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s}
+header.hdr-hidden{transform:translateY(-100%)}
+[data-theme="dark"] header{background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-img{height:200px;width:auto;display:block}
+nav{display:flex;align-items:center;gap:4px}
+.nav-link{padding:6px 12px;border-radius:6px;text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
+.nav-link:hover{background:var(--border)}
+[data-theme="dark"] .nav-link{color:var(--nav-txt)}
+[data-theme="dark"] .nav-link:hover{background:rgba(255,255,255,.1)}
+.tools-wrap{position:relative}
+.tools-btn{cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.tools-btn:hover{background:var(--border)}
+[data-theme="dark"] .tools-btn{color:var(--nav-txt)}
+[data-theme="dark"] .tools-btn:hover{background:rgba(255,255,255,.1)}
+.tools-drop{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px}
+.tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
+.tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s,color .18s;white-space:nowrap}
+.tools-item:hover{background:var(--border)}.tools-item.active-tool{color:var(--accent)!important;font-weight:600;background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.tools-item .t-icon{width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center}
+.theme-wrap{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
+.t-track{width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s}
+.t-track.on{background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12)}
+.t-thumb{width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center}
+.t-thumb.on{left:21px}
+.t-lbl{font-size:11px;font-weight:600;color:var(--muted);line-height:1.1;white-space:nowrap}
+.lang-wrap{position:relative}
+.lang-pill{display:flex;align-items:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s}
+.lang-pill:hover{border-color:var(--blue)}
+[data-theme="dark"] .lang-pill{color:var(--nav-txt);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+.lang-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px var(--shadow);min-width:140px;overflow:hidden;z-index:400}
+.lang-menu.show{display:block}
+.lang-opt{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s}
+.lang-opt:hover{background:var(--bg)}
+.lang-opt.active{color:var(--blue);font-weight:600}
+@media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+/* ── Canonical Footer CSS ── */
+footer{background:#07091A;border-top:none;padding:0}
+.ft-inner{max-width:1000px;margin:0 auto;padding:56px 28px 44px;display:grid;grid-template-columns:200px 1fr 150px 130px;gap:40px;align-items:start}
+.ft-brand{display:flex;flex-direction:column;gap:14px}
+.ft-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.ft-ic{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-ic img{width:48px;height:48px;opacity:1;filter:drop-shadow(0 0 14px rgba(255,23,54,.5)) drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+.ft-name{font-size:15px;font-weight:800;color:#F1F5F9}
+.ft-tagline{font-size:13px;color:#94A3B8;line-height:1.7}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ft-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
+.ft-badge.g{background:rgba(5,150,105,.12);color:#34D399;border:1px solid rgba(5,150,105,.18)}
+.ft-badge.b{background:rgba(0,104,255,.12);color:#60A5FA;border:1px solid rgba(0,104,255,.18)}
+.ft-social{display:flex;gap:8px;margin-top:2px}
+.ft-soc-link{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;color:#94A3B8;text-decoration:none;transition:background .2s,color .2s}
+.ft-soc-link:hover{background:rgba(0,104,255,.20);border-color:rgba(0,104,255,.40);color:#60A5FA}
+.ft-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:#64748B;margin-bottom:14px}
+.ft-col h4.ft-h4-gap{margin-top:22px}
+.ft-kb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}
+.ft-kb-grid a,.ft-legal a{font-size:13px;color:#CBD5E1;text-decoration:none;padding:5px 0;display:block;transition:color .15s}
+.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}
+.ft-legal{display:flex;flex-direction:column}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;gap:12px}
+.ft-copy{font-size:11px;color:#64748B}
+.ft-bottom-links{display:flex;align-items:center;gap:16px}
+.ft-bottom-links a{font-size:11px;color:#64748B;text-decoration:none;transition:color .15s}
+.ft-bottom-links a:hover{color:#94A3B8}
+@media(max-width:860px){.ft-inner{grid-template-columns:200px 1fr 130px}.ft-inner .ft-col:last-child{grid-column:2;grid-row:2}}
+@media(max-width:640px){.ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px}.ft-brand{grid-column:1/-1}.ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px}.ft-bottom-links{flex-wrap:wrap;justify-content:center}}
+.sec-grad{background:linear-gradient(135deg,#0068ff,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Use-case badges */
+.use-cases{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
+.uc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,104,255,.07);border:1px solid rgba(0,104,255,.18);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700;color:#0068ff}
+[data-theme="dark"] .uc-badge{background:rgba(0,104,255,.15);color:#fca5a5}
+.uc-badge svg{flex-shrink:0}
+
+/* How-to */
+.how-sec{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:32px;max-width:1100px;margin:0 auto 32px}
+[data-theme="dark"] .how-sec{background:rgba(255,255,255,.04)}
+.how-head{font-size:clamp(20px,2.5vw,26px);font-weight:800;margin-bottom:24px;letter-spacing:-.4px}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.how-num-bg{width:52px;height:52px;border-radius:15px;background:linear-gradient(135deg,#0068ff,#7c3aed);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.how-step-title{font-size:14px;font-weight:700;color:var(--text)}
+.how-step-desc{font-size:13px;color:var(--muted);line-height:1.6}
+@media(max-width:600px){.how-steps{grid-template-columns:1fr}}
+
+</style>
+<style>
+.faq-promo{position:relative;z-index:1;padding:70px 16px 64px}
+.faq-promo-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:16px;position:relative;max-width:760px;margin:0 auto}
+.faq-card-brand{background:#fff;border:none;border-radius:24px;padding:18px 28px;display:flex;align-items:center;justify-content:center;min-height:122px;position:relative}
+.faq-card-2{background:#fff;border:none;border-radius:24px;min-height:122px;position:relative}
+.faq-card-brand::before,.faq-card-2::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.55;z-index:-1;pointer-events:none}
+.card-hills-clip{position:absolute;inset:0;border-radius:24px;overflow:hidden;z-index:1}
+.card-hills{position:absolute;left:0;bottom:0;width:100%;height:126px;display:block}
+.card-hills .hill-soft{fill:#cfe0ff}
+.card-hills .hill-accent{fill:#0068ff}
+.faq-brand-logo{width:210px;max-width:80%}
+.faq-mascot{position:absolute;top:-70px;left:74%;transform:translateX(-50%);width:210px;z-index:10;pointer-events:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.15))}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:8px 22px;font-size:13px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:18px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+@media(max-width:600px){.faq-promo-grid{grid-template-columns:1fr}.faq-card-2{display:none}.faq-mascot{top:-128px;left:50%;width:170px}}
+</style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
+<style>
+/* ── Tool-page brand mascot (shared: generator + injector) ── */
+.tool-stage { position:relative; }
+/* right:0, never negative. On generated tools the hero sits inside an 880px
+   column so a negative offset was harmless, but the older pages' heroes run to
+   the viewport edge -- there a -14px tuck pushed the image to 1294px in a
+   1280px window and created horizontal scroll. */
+.tool-mascot { position:absolute;bottom:100%;right:0;width:0;height:auto;
+  z-index:0;pointer-events:none;opacity:0;margin-bottom:-14px;
+  transition:opacity .25s;filter:drop-shadow(0 6px 18px rgba(0,0,0,.13)); }
+/* Two anchors, two offsets. Generated tools hang the mascot off the TOP of the
+   tool card (bottom:100% of .tool-stage). The older pages have no consistently
+   named card, so the mascot lives inside the hero instead -- there bottom:100%
+   would throw it above the hero and off the top of the page, so it pins to the
+   hero's lower edge. */
+.tool-mascot-hero { bottom:0;margin-bottom:0; }
+/* No room beside the content on a phone, and it would force horizontal scroll. */
+@media(max-width:900px){ .tool-mascot { display:none; } }
+.page-hero { position:relative; }
+</style>
+</head>
+<body>
+<div class="bg-shapes"><div class="s1"></div><div class="s2"></div></div>
+
+<header>
+  <a class="logo" href="/">
+    <img class="logo-img" id="logo-img" src="/images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
+  </a>
+                                                                                                                                                      <nav>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+    <div class="tools-wrap">
+      <button class="tools-btn">Tools &#9662;</button>
+      <div class="tools-drop">
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/><circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/><path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
+        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
+        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
+        <a href="/calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Calligraphy</a>
+        <a href="/word-counter/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 14.5V8" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 14.5V3.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.5V9.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 14.5v-3" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/></svg></span> Word Counter</a>
+        <a href="/morse-code/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="3" cy="9" r="1.7" fill="#0068ff"/><rect x="7" y="7.5" width="8" height="3" rx="1.5" fill="#0068ff"/></svg></span> Morse Code</a>
+        <a href="/text-repeater/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M5 3.5h8a2 2 0 0 1 2 2v2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 14.5H5a2 2 0 0 1-2-2v-2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 9.5 15 7.5 17 9.5M5 8.5 3 10.5 1 8.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Text Repeater</a>
+        <a href="/typing-test/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="9" cy="10" r="5.5" stroke="#0068ff" stroke-width="1.6"/><path d="M9 7.5V10l1.8 1.4" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.2 2.2h3.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M9 2.2v1.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/></svg></span> Typing Test</a>
+      </div>
+    </div>
+        <div class="lang-wrap">
+      <button class="lang-pill" id="lang-pill" onclick="toggleToolLang(event)" aria-haspopup="true" aria-expanded="false">🇬🇧 English ▾</button>
+      <div class="lang-menu" id="lang-menu">
+        <button class="lang-opt active" data-lang="en" data-label="🇬🇧 English" onclick="setToolLang('en','🇬🇧 English',this)">🇬🇧 English</button>
+        <button class="lang-opt" data-lang="ar" data-label="🇸🇦 العربية" onclick="setToolLang('ar','🇸🇦 العربية',this)">🇸🇦 العربية</button>
+        <button class="lang-opt" data-lang="fr" data-label="🇫🇷 Français" onclick="setToolLang('fr','🇫🇷 Français',this)">🇫🇷 Français</button>
+      </div>
+    </div>
+    <div class="theme-wrap" onclick="toggleTheme()">
+      <div class="t-track" id="tt">
+        <div class="t-thumb" id="th"><img id="theme-icon" src="/images/Icon-white mode-Clavierarabe-enligne.svg" alt="Toggle theme" width="13" height="13"></div>
+      </div>
+      <div class="t-lbl" id="tlbl">White<br>Mode</div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-hero">
+      <h1>Typing speed test, measured in your own script</h1>
+      <p class="page-sub">Six languages, each with its own word list, its own keyboard and a word count that respects how the script actually works.</p>
+    </div>
+
+    <div class="tt-tool" dir="ltr">
+      <div class="tt-langbar" role="group" aria-label="test language">
+          <button class="tt-langbtn active" data-lang="hindi" type="button" aria-label="Hindi"><span class="tt-lb-native" style="font-family:'Baloo 2', sans-serif">हिन्दी</span><span class="tt-lb-latin">Hindi</span></button>
+          <button class="tt-langbtn" data-lang="bengali" type="button" aria-label="Bengali"><span class="tt-lb-native" style="font-family:'Baloo Da 2', sans-serif">বাংলা</span><span class="tt-lb-latin">Bengali</span></button>
+          <button class="tt-langbtn" data-lang="gujarati" type="button" aria-label="Gujarati"><span class="tt-lb-native" style="font-family:'Baloo Bhai 2', sans-serif">ગુજરાતી</span><span class="tt-lb-latin">Gujarati</span></button>
+          <button class="tt-langbtn" data-lang="marathi" type="button" aria-label="Marathi"><span class="tt-lb-native" style="font-family:'Baloo 2', sans-serif">मराठी</span><span class="tt-lb-latin">Marathi</span></button>
+          <button class="tt-langbtn" data-lang="nepali" type="button" aria-label="Nepali"><span class="tt-lb-native" style="font-family:'Baloo 2', sans-serif">नेपाली</span><span class="tt-lb-latin">Nepali</span></button>
+          <button class="tt-langbtn" data-lang="arabic" type="button" aria-label="Arabic"><span class="tt-lb-native" style="font-family:'Tajawal', sans-serif">العربية</span><span class="tt-lb-latin">Arabic</span></button>
+      </div>
+      <p class="tt-now"><span data-i18n="tt.now">Now testing:</span> <b id="ttNowLang">Hindi</b><span id="ttNowScript"> · Devanagari</span> · <span id="ttNowCount">600</span> <span data-i18n="tt.nwords">words</span></p>
+      <div class="tt-bar">
+        <div class="tt-durs" role="group" aria-label="test length">
+          <button class="tt-dur active" data-s="15" type="button">15s</button>
+          <button class="tt-dur" data-s="30" type="button">30s</button>
+          <button class="tt-dur" data-s="60" type="button">60s</button>
+          <button class="tt-dur" data-s="120" type="button">2m</button>
+        </div>
+        <div class="tt-live">
+          <span class="tt-clock" id="ttClock">15</span>
+          <span class="tt-unit" data-i18n="tt.time">left</span>
+        </div>
+      </div>
+
+      <div class="tt-passage" id="ttPassage" lang="hi" dir="ltr" aria-live="off"></div>
+
+      <label class="tt-srlabel" for="ttInput">Type the words shown above</label>
+      <input id="ttInput" class="tt-input" type="text" lang="hi" dir="ltr"
+             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+             placeholder="" data-i18n-ph="tt.begin">
+
+      <div class="tt-result" id="ttResult" hidden>
+        <div class="tt-rhead" data-i18n="tt.result">Your result</div>
+        <div class="tt-figs">
+          <div class="tt-fig"><b id="ttWpm">0</b><span data-i18n="tt.wpm">words / min</span></div>
+          <div class="tt-fig"><b id="ttCpm">0</b><span data-i18n="tt.cpm">letters / min</span></div>
+          <div class="tt-fig"><b id="ttKpm">0</b><span data-i18n="tt.kpm">keystrokes / min</span></div>
+          <div class="tt-fig"><b id="ttAcc">0%</b><span data-i18n="tt.acc">accuracy</span></div>
+        </div>
+        <div class="tt-rmeta">
+          <span><b id="ttWords">0</b> <span data-i18n="tt.words">words typed</span></span>
+          <span><span data-i18n="tt.best">Personal best</span>: <b id="ttBest">—</b></span>
+          <span><span data-i18n="tt.missed">Most missed</span>: <b id="ttMissed">—</b></span>
+        </div>
+        <button class="tt-again" id="ttAgain" type="button" data-i18n="tt.again">Go again</button>
+      </div>
+
+      <div class="tt-foot">
+        <button class="tt-restart" id="ttRestart" type="button" data-i18n="tt.restart">Restart</button>
+        <span class="tt-kbhint" data-i18n="tt.kbhint">No keyboard installed? Click the keys.</span>
+      </div>
+
+      <div class="tt-kb" id="ttKb" aria-hidden="true">
+        <div class="tt-kbset" data-lang="hindi">
+        <div class="tt-krow"><button class="tt-key" data-k="अ" type="button">अ</button><button class="tt-key" data-k="आ" type="button">आ</button><button class="tt-key" data-k="इ" type="button">इ</button><button class="tt-key" data-k="ई" type="button">ई</button><button class="tt-key" data-k="उ" type="button">उ</button><button class="tt-key" data-k="ऊ" type="button">ऊ</button><button class="tt-key" data-k="ए" type="button">ए</button><button class="tt-key" data-k="ऐ" type="button">ऐ</button><button class="tt-key" data-k="ओ" type="button">ओ</button><button class="tt-key" data-k="औ" type="button">औ</button><button class="tt-key" data-k="ं" type="button">ं</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="क" type="button">क</button><button class="tt-key" data-k="ख" type="button">ख</button><button class="tt-key" data-k="ग" type="button">ग</button><button class="tt-key" data-k="घ" type="button">घ</button><button class="tt-key" data-k="च" type="button">च</button><button class="tt-key" data-k="छ" type="button">छ</button><button class="tt-key" data-k="ज" type="button">ज</button><button class="tt-key" data-k="झ" type="button">झ</button><button class="tt-key" data-k="ट" type="button">ट</button><button class="tt-key" data-k="ठ" type="button">ठ</button><button class="tt-key" data-k="ड" type="button">ड</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ढ" type="button">ढ</button><button class="tt-key" data-k="त" type="button">त</button><button class="tt-key" data-k="थ" type="button">थ</button><button class="tt-key" data-k="द" type="button">द</button><button class="tt-key" data-k="ध" type="button">ध</button><button class="tt-key" data-k="न" type="button">न</button><button class="tt-key" data-k="प" type="button">प</button><button class="tt-key" data-k="फ" type="button">फ</button><button class="tt-key" data-k="ब" type="button">ब</button><button class="tt-key" data-k="भ" type="button">भ</button><button class="tt-key tt-bsp" data-k="⌫" type="button" aria-label="backspace">&#9003;</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="म" type="button">म</button><button class="tt-key" data-k="य" type="button">य</button><button class="tt-key" data-k="र" type="button">र</button><button class="tt-key" data-k="ल" type="button">ल</button><button class="tt-key" data-k="व" type="button">व</button><button class="tt-key" data-k="श" type="button">श</button><button class="tt-key" data-k="ष" type="button">ष</button><button class="tt-key" data-k="स" type="button">स</button><button class="tt-key" data-k="ह" type="button">ह</button><button class="tt-key" data-k="क्ष" type="button">क्ष</button><button class="tt-key" data-k="त्र" type="button">त्र</button><button class="tt-key" data-k="ज्ञ" type="button">ज्ञ</button></div>
+        <div class="tt-krow"><button class="tt-key tt-space" data-k=" " type="button" aria-label="space"></button></div>
+        </div>
+        <div class="tt-kbset" data-lang="bengali" hidden>
+        <div class="tt-krow"><button class="tt-key" data-k="অ" type="button">অ</button><button class="tt-key" data-k="আ" type="button">আ</button><button class="tt-key" data-k="ই" type="button">ই</button><button class="tt-key" data-k="ঈ" type="button">ঈ</button><button class="tt-key" data-k="উ" type="button">উ</button><button class="tt-key" data-k="ঊ" type="button">ঊ</button><button class="tt-key" data-k="এ" type="button">এ</button><button class="tt-key" data-k="ঐ" type="button">ঐ</button><button class="tt-key" data-k="ও" type="button">ও</button><button class="tt-key" data-k="ঔ" type="button">ঔ</button><button class="tt-key" data-k="ং" type="button">ং</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ক" type="button">ক</button><button class="tt-key" data-k="খ" type="button">খ</button><button class="tt-key" data-k="গ" type="button">গ</button><button class="tt-key" data-k="ঘ" type="button">ঘ</button><button class="tt-key" data-k="চ" type="button">চ</button><button class="tt-key" data-k="ছ" type="button">ছ</button><button class="tt-key" data-k="জ" type="button">জ</button><button class="tt-key" data-k="ঝ" type="button">ঝ</button><button class="tt-key" data-k="ট" type="button">ট</button><button class="tt-key" data-k="ঠ" type="button">ঠ</button><button class="tt-key" data-k="ড" type="button">ড</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ঢ" type="button">ঢ</button><button class="tt-key" data-k="ত" type="button">ত</button><button class="tt-key" data-k="থ" type="button">থ</button><button class="tt-key" data-k="দ" type="button">দ</button><button class="tt-key" data-k="ধ" type="button">ধ</button><button class="tt-key" data-k="ন" type="button">ন</button><button class="tt-key" data-k="প" type="button">প</button><button class="tt-key" data-k="ফ" type="button">ফ</button><button class="tt-key" data-k="ব" type="button">ব</button><button class="tt-key" data-k="ভ" type="button">ভ</button><button class="tt-key tt-bsp" data-k="⌫" type="button" aria-label="backspace">&#9003;</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ম" type="button">ম</button><button class="tt-key" data-k="য" type="button">য</button><button class="tt-key" data-k="র" type="button">র</button><button class="tt-key" data-k="ল" type="button">ল</button><button class="tt-key" data-k="শ" type="button">শ</button><button class="tt-key" data-k="ষ" type="button">ষ</button><button class="tt-key" data-k="স" type="button">স</button><button class="tt-key" data-k="হ" type="button">হ</button><button class="tt-key" data-k="ড়" type="button">ড়</button><button class="tt-key" data-k="ঢ়" type="button">ঢ়</button><button class="tt-key" data-k="য়" type="button">য়</button></div>
+        <div class="tt-krow"><button class="tt-key tt-space" data-k=" " type="button" aria-label="space"></button></div>
+        </div>
+        <div class="tt-kbset" data-lang="gujarati" hidden>
+        <div class="tt-krow"><button class="tt-key" data-k="અ" type="button">અ</button><button class="tt-key" data-k="આ" type="button">આ</button><button class="tt-key" data-k="ઇ" type="button">ઇ</button><button class="tt-key" data-k="ઈ" type="button">ઈ</button><button class="tt-key" data-k="ઉ" type="button">ઉ</button><button class="tt-key" data-k="ઊ" type="button">ઊ</button><button class="tt-key" data-k="એ" type="button">એ</button><button class="tt-key" data-k="ઐ" type="button">ઐ</button><button class="tt-key" data-k="ઓ" type="button">ઓ</button><button class="tt-key" data-k="ઔ" type="button">ઔ</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ક" type="button">ક</button><button class="tt-key" data-k="ખ" type="button">ખ</button><button class="tt-key" data-k="ગ" type="button">ગ</button><button class="tt-key" data-k="ઘ" type="button">ઘ</button><button class="tt-key" data-k="ચ" type="button">ચ</button><button class="tt-key" data-k="છ" type="button">છ</button><button class="tt-key" data-k="જ" type="button">જ</button><button class="tt-key" data-k="ઝ" type="button">ઝ</button><button class="tt-key" data-k="ટ" type="button">ટ</button><button class="tt-key" data-k="ઠ" type="button">ઠ</button><button class="tt-key" data-k="ડ" type="button">ડ</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ઢ" type="button">ઢ</button><button class="tt-key" data-k="ણ" type="button">ણ</button><button class="tt-key" data-k="ત" type="button">ત</button><button class="tt-key" data-k="થ" type="button">થ</button><button class="tt-key" data-k="દ" type="button">દ</button><button class="tt-key" data-k="ધ" type="button">ધ</button><button class="tt-key" data-k="ન" type="button">ન</button><button class="tt-key" data-k="પ" type="button">પ</button><button class="tt-key" data-k="ફ" type="button">ફ</button><button class="tt-key" data-k="બ" type="button">બ</button><button class="tt-key tt-bsp" data-k="⌫" type="button" aria-label="backspace">&#9003;</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ભ" type="button">ભ</button><button class="tt-key" data-k="મ" type="button">મ</button><button class="tt-key" data-k="ય" type="button">ય</button><button class="tt-key" data-k="ર" type="button">ર</button><button class="tt-key" data-k="લ" type="button">લ</button><button class="tt-key" data-k="ળ" type="button">ળ</button><button class="tt-key" data-k="વ" type="button">વ</button><button class="tt-key" data-k="શ" type="button">શ</button><button class="tt-key" data-k="ષ" type="button">ષ</button><button class="tt-key" data-k="સ" type="button">સ</button><button class="tt-key" data-k="હ" type="button">હ</button></div>
+        <div class="tt-krow"><button class="tt-key tt-space" data-k=" " type="button" aria-label="space"></button></div>
+        </div>
+        <div class="tt-kbset" data-lang="marathi" hidden>
+        <div class="tt-krow"><button class="tt-key" data-k="अ" type="button">अ</button><button class="tt-key" data-k="आ" type="button">आ</button><button class="tt-key" data-k="इ" type="button">इ</button><button class="tt-key" data-k="ई" type="button">ई</button><button class="tt-key" data-k="उ" type="button">उ</button><button class="tt-key" data-k="ऊ" type="button">ऊ</button><button class="tt-key" data-k="ए" type="button">ए</button><button class="tt-key" data-k="ऐ" type="button">ऐ</button><button class="tt-key" data-k="ओ" type="button">ओ</button><button class="tt-key" data-k="औ" type="button">औ</button><button class="tt-key" data-k="ं" type="button">ं</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="क" type="button">क</button><button class="tt-key" data-k="ख" type="button">ख</button><button class="tt-key" data-k="ग" type="button">ग</button><button class="tt-key" data-k="घ" type="button">घ</button><button class="tt-key" data-k="च" type="button">च</button><button class="tt-key" data-k="छ" type="button">छ</button><button class="tt-key" data-k="ज" type="button">ज</button><button class="tt-key" data-k="झ" type="button">झ</button><button class="tt-key" data-k="ट" type="button">ट</button><button class="tt-key" data-k="ठ" type="button">ठ</button><button class="tt-key" data-k="ड" type="button">ड</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ढ" type="button">ढ</button><button class="tt-key" data-k="त" type="button">त</button><button class="tt-key" data-k="थ" type="button">थ</button><button class="tt-key" data-k="द" type="button">द</button><button class="tt-key" data-k="ध" type="button">ध</button><button class="tt-key" data-k="न" type="button">न</button><button class="tt-key" data-k="प" type="button">प</button><button class="tt-key" data-k="फ" type="button">फ</button><button class="tt-key" data-k="ब" type="button">ब</button><button class="tt-key" data-k="भ" type="button">भ</button><button class="tt-key tt-bsp" data-k="⌫" type="button" aria-label="backspace">&#9003;</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="म" type="button">म</button><button class="tt-key" data-k="य" type="button">य</button><button class="tt-key" data-k="र" type="button">र</button><button class="tt-key" data-k="ल" type="button">ल</button><button class="tt-key" data-k="व" type="button">व</button><button class="tt-key" data-k="श" type="button">श</button><button class="tt-key" data-k="ष" type="button">ष</button><button class="tt-key" data-k="स" type="button">स</button><button class="tt-key" data-k="ह" type="button">ह</button><button class="tt-key" data-k="ळ" type="button">ळ</button></div>
+        <div class="tt-krow"><button class="tt-key tt-space" data-k=" " type="button" aria-label="space"></button></div>
+        </div>
+        <div class="tt-kbset" data-lang="nepali" hidden>
+        <div class="tt-krow"><button class="tt-key" data-k="अ" type="button">अ</button><button class="tt-key" data-k="आ" type="button">आ</button><button class="tt-key" data-k="इ" type="button">इ</button><button class="tt-key" data-k="ई" type="button">ई</button><button class="tt-key" data-k="उ" type="button">उ</button><button class="tt-key" data-k="ऊ" type="button">ऊ</button><button class="tt-key" data-k="ए" type="button">ए</button><button class="tt-key" data-k="ऐ" type="button">ऐ</button><button class="tt-key" data-k="ओ" type="button">ओ</button><button class="tt-key" data-k="औ" type="button">औ</button><button class="tt-key" data-k="ं" type="button">ं</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="क" type="button">क</button><button class="tt-key" data-k="ख" type="button">ख</button><button class="tt-key" data-k="ग" type="button">ग</button><button class="tt-key" data-k="घ" type="button">घ</button><button class="tt-key" data-k="च" type="button">च</button><button class="tt-key" data-k="छ" type="button">छ</button><button class="tt-key" data-k="ज" type="button">ज</button><button class="tt-key" data-k="झ" type="button">झ</button><button class="tt-key" data-k="ट" type="button">ट</button><button class="tt-key" data-k="ठ" type="button">ठ</button><button class="tt-key" data-k="ड" type="button">ड</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ढ" type="button">ढ</button><button class="tt-key" data-k="त" type="button">त</button><button class="tt-key" data-k="थ" type="button">थ</button><button class="tt-key" data-k="द" type="button">द</button><button class="tt-key" data-k="ध" type="button">ध</button><button class="tt-key" data-k="न" type="button">न</button><button class="tt-key" data-k="प" type="button">प</button><button class="tt-key" data-k="फ" type="button">फ</button><button class="tt-key" data-k="ब" type="button">ब</button><button class="tt-key" data-k="भ" type="button">भ</button><button class="tt-key tt-bsp" data-k="⌫" type="button" aria-label="backspace">&#9003;</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="म" type="button">म</button><button class="tt-key" data-k="य" type="button">य</button><button class="tt-key" data-k="र" type="button">र</button><button class="tt-key" data-k="ल" type="button">ल</button><button class="tt-key" data-k="व" type="button">व</button><button class="tt-key" data-k="श" type="button">श</button><button class="tt-key" data-k="ष" type="button">ष</button><button class="tt-key" data-k="स" type="button">स</button><button class="tt-key" data-k="ह" type="button">ह</button></div>
+        <div class="tt-krow"><button class="tt-key tt-space" data-k=" " type="button" aria-label="space"></button></div>
+        </div>
+        <div class="tt-kbset" data-lang="arabic" hidden>
+        <div class="tt-krow"><button class="tt-key" data-k="ض" type="button">ض</button><button class="tt-key" data-k="ص" type="button">ص</button><button class="tt-key" data-k="ث" type="button">ث</button><button class="tt-key" data-k="ق" type="button">ق</button><button class="tt-key" data-k="ف" type="button">ف</button><button class="tt-key" data-k="غ" type="button">غ</button><button class="tt-key" data-k="ع" type="button">ع</button><button class="tt-key" data-k="ه" type="button">ه</button><button class="tt-key" data-k="خ" type="button">خ</button><button class="tt-key" data-k="ح" type="button">ح</button><button class="tt-key" data-k="ج" type="button">ج</button><button class="tt-key" data-k="د" type="button">د</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ش" type="button">ش</button><button class="tt-key" data-k="س" type="button">س</button><button class="tt-key" data-k="ي" type="button">ي</button><button class="tt-key" data-k="ب" type="button">ب</button><button class="tt-key" data-k="ل" type="button">ل</button><button class="tt-key" data-k="ا" type="button">ا</button><button class="tt-key" data-k="ت" type="button">ت</button><button class="tt-key" data-k="ن" type="button">ن</button><button class="tt-key" data-k="م" type="button">م</button><button class="tt-key" data-k="ك" type="button">ك</button><button class="tt-key" data-k="ط" type="button">ط</button><button class="tt-key" data-k="ظ" type="button">ظ</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ئ" type="button">ئ</button><button class="tt-key" data-k="ء" type="button">ء</button><button class="tt-key" data-k="ؤ" type="button">ؤ</button><button class="tt-key" data-k="ر" type="button">ر</button><button class="tt-key" data-k="لا" type="button">لا</button><button class="tt-key" data-k="ى" type="button">ى</button><button class="tt-key" data-k="ة" type="button">ة</button><button class="tt-key" data-k="و" type="button">و</button><button class="tt-key" data-k="ز" type="button">ز</button><button class="tt-key" data-k="," type="button">,</button><button class="tt-key tt-bsp" data-k="⌫" type="button" aria-label="backspace">&#9003;</button></div>
+        <div class="tt-krow"><button class="tt-key tt-space" data-k=" " type="button" aria-label="space"></button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="how-sec">
+      <div class="how-head">How to <span class="sec-grad">Use</span></div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-num-bg">1</div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.1.t">1. Pick a length</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.1.d">Fifteen seconds to see where you are, two minutes to see whether you can hold it. Exam passages are long, so practise long.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-num-bg">2</div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.2.t">2. Type the words shown</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.2.d">Space moves you to the next word. A word counts only if the whole word matches — there is no partial credit for half a conjunct.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-num-bg">3</div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.3.t">3. Read all three numbers</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.3.d">Words, visual letters and keystrokes per minute measure different things. The section below explains which one you want.</div>
+        </div>
+      </div>
+    </div>
+    <section class="tt-sec"><h2>Pick your language</h2>
+      <p>Each one has its own word list, its own keyboard and its own measurements — not this page with the labels swapped.</p></section>
+
+    <div class="tt-langs">
+      <a class="tt-lcard" href="/typing-test/hindi/">
+        <div class="tt-lnative" style="font-family:'Baloo 2', sans-serif">हिन्दी</div>
+        <div class="tt-lname">Hindi typing test</div>
+        <div class="tt-lnote">Devanagari · 2.55 visual units per word</div>
+      </a>
+      <a class="tt-lcard" href="/typing-test/bengali/">
+        <div class="tt-lnative" style="font-family:'Baloo Da 2', sans-serif">বাংলা</div>
+        <div class="tt-lname">Bengali typing test</div>
+        <div class="tt-lnote">Bengali · 2.53 visual units per word</div>
+      </a>
+      <a class="tt-lcard" href="/typing-test/gujarati/">
+        <div class="tt-lnative" style="font-family:'Baloo Bhai 2', sans-serif">ગુજરાતી</div>
+        <div class="tt-lname">Gujarati typing test</div>
+        <div class="tt-lnote">Gujarati · 2.79 visual units per word</div>
+      </a>
+      <a class="tt-lcard" href="/typing-test/marathi/">
+        <div class="tt-lnative" style="font-family:'Baloo 2', sans-serif">मराठी</div>
+        <div class="tt-lname">Marathi typing test</div>
+        <div class="tt-lnote">Devanagari · 2.87 visual units per word</div>
+      </a>
+      <a class="tt-lcard" href="/typing-test/nepali/">
+        <div class="tt-lnative" style="font-family:'Baloo 2', sans-serif">नेपाली</div>
+        <div class="tt-lname">Nepali typing test</div>
+        <div class="tt-lnote">Devanagari · 3.01 visual units per word</div>
+      </a>
+      <a class="tt-lcard" href="/typing-test/arabic/">
+        <div class="tt-lnative" style="font-family:'Tajawal', sans-serif">العربية</div>
+        <div class="tt-lname">Arabic typing test</div>
+        <div class="tt-lnote">Arabic · 3.94 visual units per word</div>
+      </a>
+    </div>
+
+    <section class="tt-sec">
+      <h2>How each script measures up</h2>
+      <p>Each row is measured over that language's own word list, using the same
+      grapheme segmentation a browser uses. The last three columns are the ones worth
+      reading: they say how far a conventional character-based typing test would be off
+      for that script.</p>
+      <div class="tt-tbl-wrap">
+        <table class="tt-tbl">
+          <thead><tr><th>Language</th><th>Script</th><th>Words</th><th>Visual units / word</th>
+          <th>Codepoints / word</th><th>Ratio</th><th>Words that stack</th><th>Distinct shapes</th></tr></thead>
+          <tbody>
+          <tr><td>Hindi</td><td>Devanagari</td><td>600</td><td>2.55</td><td>4.36</td><td>1.71×</td><td>90%</td><td>310</td></tr>
+          <tr><td>Bengali</td><td>Bengali</td><td>600</td><td>2.53</td><td>4.21</td><td>1.66×</td><td>91%</td><td>228</td></tr>
+          <tr><td>Gujarati</td><td>Gujarati</td><td>600</td><td>2.79</td><td>4.93</td><td>1.77×</td><td>94%</td><td>282</td></tr>
+          <tr><td>Marathi</td><td>Devanagari</td><td>600</td><td>2.87</td><td>5.34</td><td>1.86×</td><td>96%</td><td>304</td></tr>
+          <tr><td>Nepali</td><td>Devanagari</td><td>600</td><td>3.01</td><td>5.47</td><td>1.82×</td><td>96%</td><td>340</td></tr>
+          <tr><td>Arabic</td><td>Arabic</td><td>600</td><td>3.94</td><td>4.02</td><td>1.02×</td><td>7%</td><td>53</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="tt-sec">
+      <h2>Why we do not divide characters by five</h2>
+      <p>Nearly every typing test in existence computes speed the same way: count the
+      characters typed, divide by five, divide by the minutes elapsed. The five comes from
+      the average length of an English word. It has been the convention since mechanical
+      typewriters and it works fine for English.</p>
+
+      <p>It does not survive contact with an Indic script. In Devanagari a single visual
+      letter is routinely three or four codepoints — क्ष is क, virama, ष — so counting
+      characters counts keystrokes that never appear on screen as separate letters. Measured
+      across the word lists in the table above, that inflates a Devanagari score by close to
+      two to one. Arabic, which barely stacks at all, is almost unaffected.</p>
+
+      <p>So these tests report three numbers instead of one, and say which is which.
+      <strong>Words per minute</strong> counts whole words you finished correctly — the only
+      figure that means the same thing in every language here. <strong>Letters per minute</strong>
+      counts visual units, using the browser's own Unicode segmentation.
+      <strong>Keystrokes per minute</strong> counts what your fingers did, which is the figure
+      closest to what typewriter-era exam standards were describing.</p>
+
+      <p>The comparison is also why words are compared whole rather than character by
+      character. Being "half correct" on क्ष is not a state a typist can be in.</p>
+    </section>
+
+    <section class="tt-sec">
+      <h2>A test you can take without installing a keyboard</h2>
+      <p>The other reason these pages exist. Search for a Bengali or Gujarati typing test
+      and you will find plenty — all of which assume you already have that keyboard installed.
+      The people searching are largely searching <em>because</em> they do not.</p>
+
+      <p>So every test here carries its language's own on-screen keyboard, taken from the
+      keyboard page for that language, and you can click it. It is slower than touch typing
+      and that is fine: it means you can measure where you are, on any machine, without
+      installing anything first.</p>
+    </section>
+
+
+    <section class="faq-promo">
+      <div class="faq-promo-grid">
+        <div class="faq-card-brand">
+          <img src="/images/kactyl%20brand%20name-svg.svg" alt="Kactyl" class="faq-brand-logo">
+        </div>
+        <div class="faq-card-2">
+          <div class="card-hills-clip">
+            <svg class="card-hills" viewBox="0 0 560 130" preserveAspectRatio="none" aria-hidden="true">
+              <circle cx="38"  cy="135" r="74" class="hill-soft"/>
+              <circle cx="152" cy="120" r="92" class="hill-soft"/>
+              <circle cx="268" cy="144" r="58" class="hill-soft"/>
+              <circle cx="384" cy="126" r="86" class="hill-soft"/>
+              <circle cx="504" cy="138" r="70" class="hill-accent"/>
+            </svg>
+          </div>
+        </div>
+        <img src="/images/Mascot-pc.svg" alt="" class="faq-mascot">
+      </div>
+    </section>
+
+    <section class="tool-faq">
+      <div class="faq-hd-badge">FAQ</div>
+      <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
+      <details>
+        <summary>Which languages can I test my typing speed in?</summary>
+        <div class="faq-ans">Hindi, Bengali, Gujarati, Marathi, Nepali and Arabic, each on its own page with its own word list and keyboard. More follow as their word lists are verified.</div>
+      </details>
+      <details>
+        <summary>Do I need the keyboard installed for my language?</summary>
+        <div class="faq-ans">No. Every test carries an on-screen keyboard for its script, taken from that language's keyboard page, and you can click it.</div>
+      </details>
+      <details>
+        <summary>Why do you report three different speed numbers?</summary>
+        <div class="faq-ans">Because one number cannot be honest across these scripts. Words per minute counts finished words, letters per minute counts visual units, keystrokes per minute counts what your fingers did. In Devanagari those three diverge sharply; in Arabic they nearly agree.</div>
+      </details>
+      <details>
+        <summary>Is this the same as a normal WPM test?</summary>
+        <div class="faq-ans">Not quite, and deliberately. A normal test divides characters by five — an English convention that inflates Devanagari scores by close to two to one. The table above shows the size of the gap per language.</div>
+      </details>
+      <details>
+        <summary>Where do the words come from?</summary>
+        <div class="faq-ans">Real frequency lists built from language corpora, the same verified lists the keyboards on this site use for autocomplete. None of them were written by hand.</div>
+      </details>
+      <details>
+        <summary>Why compare whole words instead of letters?</summary>
+        <div class="faq-ans">Because being half correct on a conjunct like क्ष is not a real state. Word-level comparison is the only one that means the same thing in every script here.</div>
+      </details>
+      <details>
+        <summary>Can I use this to prepare for a government typing exam?</summary>
+        <div class="faq-ans">For speed and accuracy, yes. Exams specify particular layouts and software — Remington GAIL, Bijoy, Preeti — and each language page explains what its exams expect and where this test does and does not match.</div>
+      </details>
+      <details>
+        <summary>Does it work on a phone?</summary>
+        <div class="faq-ans">Yes, using your phone keyboard, which for most of these languages will be phonetic.</div>
+      </details>
+      <details>
+        <summary>Is anything I type sent to you?</summary>
+        <div class="faq-ans">No. The test runs entirely in your browser and your best score is stored there.</div>
+      </details>
+      <details>
+        <summary>Why is Arabic so different from the others in the table?</summary>
+        <div class="faq-ans">Unvocalised Arabic barely stacks — one letter, one keystroke, one visual unit. The Indic scripts build letters out of several keystrokes, which is what the ratio column is showing.</div>
+      </details>
+      <details>
+        <summary>Will more languages be added?</summary>
+        <div class="faq-ans">Yes, as each one's word list is verified. Urdu, Punjabi, Tamil and Malayalam are next in line, all of them languages this site already has keyboards for.</div>
+      </details>
+      <details>
+        <summary>Why does this site have typing tests at all?</summary>
+        <div class="faq-ans">People kept arriving at our keyboard pages searching for typing tests in their script, and the keyboards could not measure anything. This is the missing half.</div>
+      </details>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a class="ft-logo" href="/"><div class="ft-ic"><img loading="lazy" src="/images/favicon.svg" alt="Kactyl" width="36" height="36"></div><span class="ft-name">Kactyl</span></a>
+      <div class="ft-tagline">Every Language. One Tab.<br>No download. No account.</div>
+      <div class="ft-badges"><span class="ft-badge g">✓ 100% Free</span><span class="ft-badge b">⚡ No Install</span></div>
+      <div class="ft-social">
+        <span class="ft-soc-link" aria-label="X / Twitter">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+        </span>
+        <span class="ft-soc-link" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </span>
+        <span class="ft-soc-link" aria-label="YouTube">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </span>
+        <span class="ft-soc-link" aria-label="TikTok">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </span>
+      </div></div>
+    <div class="ft-col">
+      <h4>Keyboards</h4>
+      <div class="ft-kb-grid">
+        <a href="/arabic/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
+        <a href="/japanese/">Japanese</a><a href="/chinese/">Chinese</a><a href="/turkish/">Turkish</a><a href="/russian/">Russian</a>
+        <a href="/greek/">Greek</a><a href="/thai/">Thai</a><a href="/vietnamese/">Vietnamese</a><a href="/amharic/">Amharic</a>
+      </div>
+    </div>
+        <div class="ft-col">
+      <h4>Tools</h4>
+      <div class="ft-legal">
+        <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/text-art/">Text Art</a>
+        <a href="/dot-art/">Dot Art</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/">Hijri Calendar</a>
+        <a href="/arabic-calligraphy/">Arabic Calligraphy</a>
+      </div>
+      <h4 class="ft-h4-gap">Company</h4>
+      <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
+    </div>
+    <div class="ft-col">
+      <h4>Legal</h4>
+      <div class="ft-legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+        <a href="/cookies">Cookie Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2026 Kactyl. All rights reserved.</span>
+    <div class="ft-bottom-links">
+      <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+      <a href="/cookies">Cookies</a><a href="/sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+var TOOL_I18N = {"en": {"tt.begin": "Start typing to begin","tt.time": "left","tt.wpm": "words / min","tt.cpm": "letters / min","tt.kpm": "keystrokes / min","tt.acc": "accuracy","tt.restart": "Restart","tt.result": "Your result","tt.best": "Personal best","tt.missed": "Most missed","tt.again": "Go again","tt.kbhint": "No keyboard installed? Click the keys.","tt.words": "words typed","tt.none": "nothing missed","tt.now": "Now testing:","tt.nwords": "words","howto.1.t": "Pick a length","howto.1.d": "Fifteen seconds to see where you are, two minutes to see whether you can hold it. Exam passages are long, so practise long.","howto.2.t": "Type the words shown","howto.2.d": "Space moves you to the next word. A word counts only if the whole word matches — there is no partial credit for half a conjunct.","howto.3.t": "Read all three numbers","howto.3.d": "Words, visual letters and keystrokes per minute measure different things. The section below explains which one you want."},"ar": {"tt.begin": "ابدأ الكتابة للبدء","tt.time": "متبقٍ","tt.wpm": "كلمة / دقيقة","tt.cpm": "حرف / دقيقة","tt.kpm": "ضغطة / دقيقة","tt.acc": "الدقة","tt.restart": "إعادة","tt.result": "نتيجتك","tt.best": "أفضل نتيجة","tt.missed": "الأكثر خطأً","tt.again": "حاول مجددًا","tt.kbhint": "لا توجد لوحة مفاتيح مثبّتة؟ انقر على الأزرار.","tt.words": "كلمة مكتوبة","tt.none": "لا أخطاء","tt.now": "اللغة المختبَرة:","tt.nwords": "كلمة","howto.1.t": "اختر المدة","howto.1.d": "خمس عشرة ثانية لتعرف أين أنت، ودقيقتان لتعرف إن كنت تستطيع الثبات. نصوص الامتحانات طويلة، فتدرّب على مدد طويلة.","howto.2.t": "اكتب الكلمات الظاهرة","howto.2.d": "المسافة تنقلك إلى الكلمة التالية. لا تُحتسب الكلمة إلا إذا طابقت بالكامل — لا نصف درجة لنصف حرف مركّب.","howto.3.t": "اقرأ الأرقام الثلاثة","howto.3.d": "الكلمات والحروف والضغطات في الدقيقة تقيس أشياء مختلفة. القسم أدناه يوضّح أيّها يهمّك."},"fr": {"tt.begin": "Commencez à taper pour démarrer","tt.time": "restant","tt.wpm": "mots / min","tt.cpm": "lettres / min","tt.kpm": "frappes / min","tt.acc": "précision","tt.restart": "Recommencer","tt.result": "Votre résultat","tt.best": "Record personnel","tt.missed": "Erreurs fréquentes","tt.again": "Relancer","tt.kbhint": "Pas de clavier installé ? Cliquez sur les touches.","tt.words": "mots tapés","tt.none": "aucune erreur","tt.now": "Langue testée :","tt.nwords": "mots","howto.1.t": "Choisissez une durée","howto.1.d": "Quinze secondes pour situer votre niveau, deux minutes pour voir si vous le tenez. Les épreuves d'examen sont longues : entraînez-vous long.","howto.2.t": "Tapez les mots affichés","howto.2.d": "La barre d'espace passe au mot suivant. Un mot ne compte que s'il correspond entièrement — pas de demi-point pour une demi-ligature.","howto.3.t": "Lisez les trois chiffres","howto.3.d": "Mots, lettres et frappes par minute ne mesurent pas la même chose. La section ci-dessous explique lequel vous concerne."}};
+var WORDS = ["के", "में", "है", "की", "को", "से", "ने", "और", "हैं", "का", "कि", "पर", "भी", "इस", "नहीं", "एक", "लिए", "कर", "था", "कहा", "ही", "किया", "गया", "हो", "कोरोना", "तो", "रहे", "बाद", "करने", "साथ", "दिया", "ये", "रहा", "सरकार", "तक", "यह", "लेकिन", "गई", "लोगों", "थी", "रही", "जा", "थे", "हुए", "उन्होंने", "अब", "भारत", "अपने", "पहले", "इसके", "जो", "दिल्ली", "गए", "कुछ", "दी", "पुलिस", "वो", "बात", "लेकर", "कई", "वायरस", "वाले", "देश", "कोई", "साल", "होने", "हुई", "लोग", "उनके", "अपनी", "तरह", "उन्हें", "बताया", "बीच", "मामले", "जब", "चीन", "करते", "हुआ", "किसी", "काम", "या", "सिंह", "कांग्रेस", "इन", "सभी", "वह", "दिन", "दौरान", "पार्टी", "होगा", "हम", "ऐसे", "दो", "क्या", "बार", "शुरू", "जारी", "फिर", "सकता", "प्रदेश", "लिया", "मोदी", "लॉकडाउन", "दोनों", "सबसे", "समय", "घर", "उनकी", "वहीं", "वे", "सामने", "बीजेपी", "भारतीय", "जाने", "करना", "कम", "हालांकि", "इससे", "ज्यादा", "अगर", "मंत्री", "वजह", "यहां", "चुनाव", "राज्य", "चाहिए", "बहुत", "सकते", "अभी", "आज", "नाम", "पास", "किए", "खिलाफ", "मौत", "मैं", "रुपये", "मुताबिक", "जाएगा", "जाता", "शामिल", "ओर", "पिछले", "वाली", "हर", "बता", "दें", "काफी", "देने", "कोर्ट", "बिहार", "संख्या", "बारे", "आने", "उस", "जांच", "आप", "पूरी", "अलावा", "तीन", "प्रधानमंत्री", "आए", "कारण", "लाख", "ऐसा", "होगी", "दे", "मुख्यमंत्री", "इसे", "दुनिया", "टीम", "होता", "जानकारी", "फिल्म", "रूप", "वीडियो", "कहना", "उसके", "इसी", "सकती", "कहते", "क्योंकि", "नेता", "पाकिस्तान", "उसे", "जबकि", "दिनों", "मीडिया", "करोड़", "संक्रमण", "इसमें", "परिवार", "जिसमें", "केंद्र", "आगे", "लगा", "उनका", "अपना", "बंद", "चुके", "जहां", "जैसे", "नए", "कंपनी", "देशों", "अन्य", "अस्पताल", "अधिक", "दर्ज", "दूसरे", "रिपोर्ट", "दिए", "वहां", "ले", "आरोप", "चुकी", "सोशल", "बड़ी", "केस", "इसका", "बाहर", "गांधी", "सवाल", "पूर्व", "करीब", "कुमार", "आई", "महीने", "लगातार", "उत्तर", "करें", "टेस्ट", "मदद", "तब", "तौर", "क्षेत्र", "मुझे", "ट्वीट", "हमें", "मिल", "इसलिए", "स्थिति", "होती", "स्वास्थ्य", "राष्ट्रपति", "लिखा", "चल", "अमेरिका", "मुंबई", "आया", "हूं", "इसकी", "कोशिश", "आपको", "फीसदी", "पता", "महामारी", "बयान", "पीएम", "सेना", "रहने", "थीं", "बैंक", "द्वारा", "बैठक", "जाएगी", "बना", "मंत्रालय", "उन", "जाए", "तहत", "अनुसार", "इस्तेमाल", "नरेंद्र", "तरफ", "बनाने", "वैक्सीन", "सिर्फ", "करेंगे", "जिसके", "महिला", "जनता", "ट्रंप", "हमारे", "वाला", "यानी", "कुल", "राज्यों", "करता", "विधानसभा", "पूरे", "तैयार", "अध्यक्ष", "रखा", "किसानों", "घटना", "सुरक्षा", "फैसला", "मिली", "हजार", "ली", "मांग", "दूसरी", "बड़े", "बड़ा", "महाराष्ट्र", "पूरा", "वक्त", "नजर", "ना", "जवाब", "पहली", "शेयर", "जगह", "खुद", "बातचीत", "बजे", "विकास", "बढ़", "आदेश", "पहुंच", "मार्च", "सुशांत", "क्यों", "राहुल", "वापस", "ठीक", "राजस्थान", "ऐसी", "खान", "मामलों", "रात", "संकट", "वालों", "संक्रमित", "विरोध", "जिस", "उसकी", "कैसे", "लगाया", "अधिकारी", "मंदिर", "चार", "चीनी", "प्रदर्शन", "हाल", "सोमवार", "इंडिया", "दावा", "होंगे", "जाती", "होते", "मरीजों", "विधायक", "देखा", "करती", "सीमा", "चर्चा", "अधिकारियों", "बन", "रन", "हमने", "कानून", "किसान", "कभी", "बल्कि", "अलग", "राष्ट्रीय", "लेने", "विभाग", "चलते", "यादव", "मामला", "सीएम", "मंगलवार", "केंद्रीय", "सुप्रीम", "आम", "देते", "नेताओं", "व्यक्ति", "यही", "जरिए", "शुरुआत", "चुका", "डॉक्टर", "मेरे", "मैंने", "सरकारी", "ज़्यादा", "इलाज", "गांव", "लागू", "राम", "जाना", "मिला", "पांच", "होना", "राजनीतिक", "इलाके", "मिलने", "नई", "पिता", "सब", "सुबह", "करके", "घंटे", "पॉजिटिव", "देखने", "आर्थिक", "मौजूद", "स्तर", "चाहते", "देखते", "यूपी", "ऑफ", "लगता", "कार्रवाई", "प्रशासन", "रह", "जरूरत", "लगे", "जिससे", "परीक्षा", "मई", "जाते", "शो", "ध्यान", "बच्चों", "जिले", "प्रमुख", "समर्थन", "हिस्सा", "दरअसल", "समेत", "रखने", "मध्य", "हत्या", "उसने", "विदेश", "असर", "भर्ती", "रविवार", "बनाया", "गिरफ्तार", "तय", "जीत", "बनाए", "बिना", "बुधवार", "शहर", "भाजपा", "नीतीश", "माना", "अगले", "जान", "शुक्रवार", "लगभग", "उम्मीद", "पीछे", "भर", "प्रतिशत", "चला", "तेजी", "जुड़े", "मैच", "हाथ", "हिंसा", "आधार", "शादी", "योजना", "इनमें", "पाया", "अप्रैल", "केजरीवाल", "शाह", "प्रति", "सके", "जल्द", "जून", "योगी", "गृह", "संगठन", "लगी", "गुरुवार", "ऐलान", "पंजाब", "केवल", "ताकि", "शर्मा", "जिसे", "फिलहाल", "हालात", "मिले", "दूर", "हमारी", "पाए", "जाएंगे", "कदम", "कश्मीर", "रोक", "बने", "बोर्ड", "बीते", "बेहद", "खबर", "याचिका", "दल", "पड़ा", "पद", "भारी", "अपील", "वर्ष", "विधायकों", "बच्चे", "कहीं", "व्यवस्था", "उसका", "मेडिकल", "घोषणा", "प्रभावित", "विवाद", "शनिवार", "हमला", "पायलट", "मजदूरों", "स्थित", "रहते", "मरीज", "कार्यक्रम", "महिलाओं", "राजनीति", "हासिल", "अमरीका", "वायरल", "साफ", "अहम", "राजधानी", "सांसद", "खत्म", "मुख्य", "कह", "जेल", "मां", "बंगाल", "देख", "पालन", "पानी", "कंपनियों", "ईरान", "फोन", "जरूरी", "पत्र", "अमित", "बावजूद", "अगस्त", "बाजार", "स्कूल", "अंदर", "बेहतर", "विश्व", "उससे", "सही", "जी", "नुकसान", "मास्क", "आरोपी", "प्रक्रिया", "लग", "भाई", "अलग-अलग", "गंभीर", "पत्नी", "तस्वीर", "नंबर", "खास", "बताते", "नया", "मुश्किल", "हमले", "अमेरिकी", "निर्माण", "बदलाव", "तनाव", "दिसंबर", "अच्छा", "छात्रों", "पूछताछ", "सुनवाई", "शाम", "नेपाल", "रोकने", "जैसी", "शिकायत", "आपके", "कराया", "कृषि", "लगाने", "कहती"];
+// ── Typing test ───────────────────────────────────────────────────────────────
+// Words are compared WHOLE, never character by character. Per-character
+// comparison is meaningless in a stacking script: half of a conjunct is not
+// something a typist can be right or wrong about. A word is right or it is not.
+// (No example glyph here on purpose -- a shipped comment is a page layer, and
+// LANGUAGE PURITY applies to it like any other.)
+var TT_LOCALE = document.getElementById('ttPassage').getAttribute('lang');
+var ttSeg = null;
+function ttMakeSeg() {
+  try { ttSeg = new Intl.Segmenter(TT_LOCALE, { granularity: 'grapheme' }); }
+  catch (e) { ttSeg = null; }
+}
+ttMakeSeg();
+
+// Visual letter units. Intl.Segmenter implements Unicode 15.1 Indic Conjunct
+// Break, so a three-codepoint conjunct counts as one unit. Without it we fall
+// back to codepoints, which over-counts.
+function ttUnits(s) {
+  if (!ttSeg) return Array.from(s);
+  var out = [];
+  var it = ttSeg.segment(s);
+  for (var i = it[Symbol.iterator](), r = i.next(); !r.done; r = i.next()) out.push(r.value.segment);
+  return out;
+}
+
+var ttPassage = document.getElementById('ttPassage');
+var ttInput   = document.getElementById('ttInput');
+var ttClock   = document.getElementById('ttClock');
+var ttResult  = document.getElementById('ttResult');
+var ttKb      = document.getElementById('ttKb');
+
+// The hub carries one key grid per language and reveals the active one, so key
+// lookups always run against what the visitor can actually see.
+function ttActiveKeys() {
+  var set = ttKb.querySelector('.tt-kbset:not([hidden])') || ttKb;
+  return set.querySelectorAll('.tt-key');
+}
+
+var ttDur = 15, ttLeft = 15, ttTimer = null, ttRunning = false;
+var ttQueue = [], ttIdx = 0, ttOk = 0, ttUnitsOk = 0, ttKeys = 0;
+var ttPrevVal = '';
+var ttAttemptUnits = 0, ttOkUnits = 0, ttMiss = {};
+
+function ttPick(n) {
+  var out = [];
+  for (var i = 0; i < n; i++) out.push(WORDS[Math.floor(Math.random() * WORDS.length)]);
+  return out;
+}
+
+function ttRender() {
+  var html = '';
+  for (var i = ttIdx; i < Math.min(ttIdx + 26, ttQueue.length); i++) {
+    var cls = i === ttIdx ? 'tt-w now' : 'tt-w';
+    html += '<span class="' + cls + '">' + ttQueue[i].replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>';
+  }
+  ttPassage.innerHTML = html;
+  ttHint();
+}
+
+// Light up the next key to press. Only the first unit of the current word --
+// highlighting a whole conjunct would mean lighting three keys at once.
+function ttHint() {
+  var keys = ttActiveKeys();
+  for (var i = 0; i < keys.length; i++) keys[i].classList.remove('hit');
+  var word = ttQueue[ttIdx];
+  if (!word) return;
+  var typed = ttInput.value;
+  var target = word.slice(typed.length);
+  var next = target ? Array.from(target)[0] : ' ';
+  for (var j = 0; j < keys.length; j++) {
+    if (keys[j].getAttribute('data-k') === next) { keys[j].classList.add('hit'); break; }
+  }
+}
+
+function ttReset() {
+  clearInterval(ttTimer);
+  ttRunning = false;
+  ttLeft = ttDur;
+  ttIdx = 0; ttOk = 0; ttUnitsOk = 0; ttKeys = 0;
+  ttPrevVal = '';
+  ttAttemptUnits = 0; ttOkUnits = 0; ttMiss = {};
+  ttQueue = ttPick(240);
+  ttInput.value = '';
+  ttClock.textContent = ttDur;
+  ttResult.hidden = true;
+  ttRender();
+}
+
+function ttStart() {
+  if (ttRunning) return;
+  ttRunning = true;
+  ttTimer = setInterval(function () {
+    ttLeft--;
+    ttClock.textContent = ttLeft;
+    if (ttLeft <= 0) ttStop();
+  }, 1000);
+}
+
+function ttScoreWord(typed, target) {
+  var t = ttUnits(typed), g = ttUnits(target);
+  ttAttemptUnits += Math.max(t.length, g.length);
+  var same = typed === target;
+  if (same) { ttOk++; ttUnitsOk += g.length; ttOkUnits += g.length; return true; }
+  // Count the units that did land, and remember which expected unit was missed.
+  var n = Math.min(t.length, g.length), hit = 0;
+  for (var i = 0; i < n; i++) if (t[i] === g[i]) hit++; else { ttMiss[g[i]] = (ttMiss[g[i]] || 0) + 1; break; }
+  ttOkUnits += hit;
+  return false;
+}
+
+function ttStop() {
+  clearInterval(ttTimer);
+  ttRunning = false;
+  var mins = ttDur / 60;
+  var wpm = Math.round(ttOk / mins);
+  var cpm = Math.round(ttUnitsOk / mins);
+  var kpm = Math.round(ttKeys / mins);
+  var acc = ttAttemptUnits ? Math.round(100 * ttOkUnits / ttAttemptUnits) : 0;
+
+  document.getElementById('ttWpm').textContent = wpm;
+  document.getElementById('ttCpm').textContent = cpm;
+  document.getElementById('ttKpm').textContent = kpm;
+  document.getElementById('ttAcc').textContent = acc + '%';
+  document.getElementById('ttWords').textContent = ttOk;
+
+  var worst = Object.keys(ttMiss).sort(function (a, b) { return ttMiss[b] - ttMiss[a]; }).slice(0, 4);
+  document.getElementById('ttMissed').textContent = worst.length ? worst.join('  ') : T('tt.none');
+
+  // Personal best is a convenience, not data we need. Every access is guarded:
+  // private windows and blocked site-data make localStorage throw outright.
+  var key = 'kactylTT.' + TT_LOCALE + '.' + ttDur, best = null;
+  try { best = localStorage.getItem(key); } catch (e) {}
+  if (best === null || wpm > +best) { try { localStorage.setItem(key, wpm); } catch (e) {} best = wpm; }
+  document.getElementById('ttBest').textContent = best;
+
+  ttResult.hidden = false;
+  ttInput.value = '';
+  ttPrevVal = '';
+}
+
+// Keystrokes are counted from what actually lands in the field, never from
+// keydown. A phone keyboard or an IME — which this page itself says is how most
+// people type these scripts — commits text without firing a keydown that
+// carries a single character. The old counter therefore reported 0 keystrokes
+// per minute for exactly the visitors this test is written for, while words per
+// minute and accuracy worked fine, so the result panel looked broken on mobile.
+// A codepoint delta covers physical keys, the on-screen keyboard and IME input
+// identically, and it matches this page's own framing, where a word that "takes
+// about N keystrokes to build" means its codepoint count.
+function ttCountKeys(v) {
+  var d = Array.from(v).length - Array.from(ttPrevVal).length;
+  if (d > 0) ttKeys += d;        // characters that arrived
+  else if (d < 0) ttKeys += 1;   // a deletion is still a keystroke
+  ttPrevVal = v;
+}
+
+ttInput.addEventListener('input', function () {
+  if (!ttRunning && ttInput.value) ttStart();
+  var v = ttInput.value;
+  ttCountKeys(v);
+  if (v.slice(-1) === ' ') {
+    var typed = v.trim();
+    if (!typed) { ttInput.value = ''; ttPrevVal = ''; return; }
+    ttScoreWord(typed, ttQueue[ttIdx]);
+    ttIdx++;
+    ttInput.value = '';
+    ttPrevVal = '';
+    if (ttIdx > ttQueue.length - 30) ttQueue = ttQueue.concat(ttPick(120));
+    ttRender();
+  } else {
+    ttHint();
+  }
+});
+
+ttKb.addEventListener('click', function (e) {
+  var b = e.target.closest('.tt-key');
+  if (!b) return;
+  var k = b.getAttribute('data-k');
+  if (k === '⌫') ttInput.value = ttInput.value.slice(0, -1);
+  else { ttInput.value += k; }   // counted by the input handler
+  ttInput.focus();
+  ttInput.dispatchEvent(new Event('input'));
+});
+
+document.querySelectorAll('.tt-dur').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.tt-dur').forEach(function (x) { x.classList.remove('active'); });
+    b.classList.add('active');
+    ttDur = +b.getAttribute('data-s');
+    ttReset();
+  });
+});
+
+document.getElementById('ttRestart').addEventListener('click', ttReset);
+document.getElementById('ttAgain').addEventListener('click', function () { ttReset(); ttInput.focus(); });
+ttPassage.addEventListener('click', function () { ttInput.focus(); });
+
+ttReset();
+
+
+// ── hub only: switch the whole test to another language ──────────────────────
+// The hub promises six languages in its own heading, so it has to deliver six,
+// not load one silently. Each language ships its own word bank and its own key
+// grid; switching swaps the bank, the grid, the locale, the font and the text
+// direction together, because getting any one of them out of step is how a page
+// ends up showing Arabic words on a left-to-right line.
+var TT_BANKS = {"hindi": {"words": ["के", "में", "है", "की", "को", "से", "ने", "और", "हैं", "का", "कि", "पर", "भी", "इस", "नहीं", "एक", "लिए", "कर", "था", "कहा", "ही", "किया", "गया", "हो", "कोरोना", "तो", "रहे", "बाद", "करने", "साथ", "दिया", "ये", "रहा", "सरकार", "तक", "यह", "लेकिन", "गई", "लोगों", "थी", "रही", "जा", "थे", "हुए", "उन्होंने", "अब", "भारत", "अपने", "पहले", "इसके", "जो", "दिल्ली", "गए", "कुछ", "दी", "पुलिस", "वो", "बात", "लेकर", "कई", "वायरस", "वाले", "देश", "कोई", "साल", "होने", "हुई", "लोग", "उनके", "अपनी", "तरह", "उन्हें", "बताया", "बीच", "मामले", "जब", "चीन", "करते", "हुआ", "किसी", "काम", "या", "सिंह", "कांग्रेस", "इन", "सभी", "वह", "दिन", "दौरान", "पार्टी", "होगा", "हम", "ऐसे", "दो", "क्या", "बार", "शुरू", "जारी", "फिर", "सकता", "प्रदेश", "लिया", "मोदी", "लॉकडाउन", "दोनों", "सबसे", "समय", "घर", "उनकी", "वहीं", "वे", "सामने", "बीजेपी", "भारतीय", "जाने", "करना", "कम", "हालांकि", "इससे", "ज्यादा", "अगर", "मंत्री", "वजह", "यहां", "चुनाव", "राज्य", "चाहिए", "बहुत", "सकते", "अभी", "आज", "नाम", "पास", "किए", "खिलाफ", "मौत", "मैं", "रुपये", "मुताबिक", "जाएगा", "जाता", "शामिल", "ओर", "पिछले", "वाली", "हर", "बता", "दें", "काफी", "देने", "कोर्ट", "बिहार", "संख्या", "बारे", "आने", "उस", "जांच", "आप", "पूरी", "अलावा", "तीन", "प्रधानमंत्री", "आए", "कारण", "लाख", "ऐसा", "होगी", "दे", "मुख्यमंत्री", "इसे", "दुनिया", "टीम", "होता", "जानकारी", "फिल्म", "रूप", "वीडियो", "कहना", "उसके", "इसी", "सकती", "कहते", "क्योंकि", "नेता", "पाकिस्तान", "उसे", "जबकि", "दिनों", "मीडिया", "करोड़", "संक्रमण", "इसमें", "परिवार", "जिसमें", "केंद्र", "आगे", "लगा", "उनका", "अपना", "बंद", "चुके", "जहां", "जैसे", "नए", "कंपनी", "देशों", "अन्य", "अस्पताल", "अधिक", "दर्ज", "दूसरे", "रिपोर्ट", "दिए", "वहां", "ले", "आरोप", "चुकी", "सोशल", "बड़ी", "केस", "इसका", "बाहर", "गांधी", "सवाल", "पूर्व", "करीब", "कुमार", "आई", "महीने", "लगातार", "उत्तर", "करें", "टेस्ट", "मदद", "तब", "तौर", "क्षेत्र", "मुझे", "ट्वीट", "हमें", "मिल", "इसलिए", "स्थिति", "होती", "स्वास्थ्य", "राष्ट्रपति", "लिखा", "चल", "अमेरिका", "मुंबई", "आया", "हूं", "इसकी", "कोशिश", "आपको", "फीसदी", "पता", "महामारी", "बयान", "पीएम", "सेना", "रहने", "थीं", "बैंक", "द्वारा", "बैठक", "जाएगी", "बना", "मंत्रालय", "उन", "जाए", "तहत", "अनुसार", "इस्तेमाल", "नरेंद्र", "तरफ", "बनाने", "वैक्सीन", "सिर्फ", "करेंगे", "जिसके", "महिला", "जनता", "ट्रंप", "हमारे", "वाला", "यानी", "कुल", "राज्यों", "करता", "विधानसभा", "पूरे", "तैयार", "अध्यक्ष", "रखा", "किसानों", "घटना", "सुरक्षा", "फैसला", "मिली", "हजार", "ली", "मांग", "दूसरी", "बड़े", "बड़ा", "महाराष्ट्र", "पूरा", "वक्त", "नजर", "ना", "जवाब", "पहली", "शेयर", "जगह", "खुद", "बातचीत", "बजे", "विकास", "बढ़", "आदेश", "पहुंच", "मार्च", "सुशांत", "क्यों", "राहुल", "वापस", "ठीक", "राजस्थान", "ऐसी", "खान", "मामलों", "रात", "संकट", "वालों", "संक्रमित", "विरोध", "जिस", "उसकी", "कैसे", "लगाया", "अधिकारी", "मंदिर", "चार", "चीनी", "प्रदर्शन", "हाल", "सोमवार", "इंडिया", "दावा", "होंगे", "जाती", "होते", "मरीजों", "विधायक", "देखा", "करती", "सीमा", "चर्चा", "अधिकारियों", "बन", "रन", "हमने", "कानून", "किसान", "कभी", "बल्कि", "अलग", "राष्ट्रीय", "लेने", "विभाग", "चलते", "यादव", "मामला", "सीएम", "मंगलवार", "केंद्रीय", "सुप्रीम", "आम", "देते", "नेताओं", "व्यक्ति", "यही", "जरिए", "शुरुआत", "चुका", "डॉक्टर", "मेरे", "मैंने", "सरकारी", "ज़्यादा", "इलाज", "गांव", "लागू", "राम", "जाना", "मिला", "पांच", "होना", "राजनीतिक", "इलाके", "मिलने", "नई", "पिता", "सब", "सुबह", "करके", "घंटे", "पॉजिटिव", "देखने", "आर्थिक", "मौजूद", "स्तर", "चाहते", "देखते", "यूपी", "ऑफ", "लगता", "कार्रवाई", "प्रशासन", "रह", "जरूरत", "लगे", "जिससे", "परीक्षा", "मई", "जाते", "शो", "ध्यान", "बच्चों", "जिले", "प्रमुख", "समर्थन", "हिस्सा", "दरअसल", "समेत", "रखने", "मध्य", "हत्या", "उसने", "विदेश", "असर", "भर्ती", "रविवार", "बनाया", "गिरफ्तार", "तय", "जीत", "बनाए", "बिना", "बुधवार", "शहर", "भाजपा", "नीतीश", "माना", "अगले", "जान", "शुक्रवार", "लगभग", "उम्मीद", "पीछे", "भर", "प्रतिशत", "चला", "तेजी", "जुड़े", "मैच", "हाथ", "हिंसा", "आधार", "शादी", "योजना", "इनमें", "पाया", "अप्रैल", "केजरीवाल", "शाह", "प्रति", "सके", "जल्द", "जून", "योगी", "गृह", "संगठन", "लगी", "गुरुवार", "ऐलान", "पंजाब", "केवल", "ताकि", "शर्मा", "जिसे", "फिलहाल", "हालात", "मिले", "दूर", "हमारी", "पाए", "जाएंगे", "कदम", "कश्मीर", "रोक", "बने", "बोर्ड", "बीते", "बेहद", "खबर", "याचिका", "दल", "पड़ा", "पद", "भारी", "अपील", "वर्ष", "विधायकों", "बच्चे", "कहीं", "व्यवस्था", "उसका", "मेडिकल", "घोषणा", "प्रभावित", "विवाद", "शनिवार", "हमला", "पायलट", "मजदूरों", "स्थित", "रहते", "मरीज", "कार्यक्रम", "महिलाओं", "राजनीति", "हासिल", "अमरीका", "वायरल", "साफ", "अहम", "राजधानी", "सांसद", "खत्म", "मुख्य", "कह", "जेल", "मां", "बंगाल", "देख", "पालन", "पानी", "कंपनियों", "ईरान", "फोन", "जरूरी", "पत्र", "अमित", "बावजूद", "अगस्त", "बाजार", "स्कूल", "अंदर", "बेहतर", "विश्व", "उससे", "सही", "जी", "नुकसान", "मास्क", "आरोपी", "प्रक्रिया", "लग", "भाई", "अलग-अलग", "गंभीर", "पत्नी", "तस्वीर", "नंबर", "खास", "बताते", "नया", "मुश्किल", "हमले", "अमेरिकी", "निर्माण", "बदलाव", "तनाव", "दिसंबर", "अच्छा", "छात्रों", "पूछताछ", "सुनवाई", "शाम", "नेपाल", "रोकने", "जैसी", "शिकायत", "आपके", "कराया", "कृषि", "लगाने", "कहती"], "locale": "hi", "rtl": false, "face": "'Baloo 2', sans-serif", "name": "Hindi", "script": "Devanagari", "count": 600}, "bengali": {"words": ["আমি", "না", "তুমি", "আমার", "কি", "এটা", "আর", "তোমার", "আছে", "সে", "এই", "আমরা", "করে", "হবে", "জন্য", "আমাদের", "করতে", "একটা", "আমাকে", "ঠিক", "আপনি", "তো", "যে", "তার", "থেকে", "কিছু", "সাথে", "কিন্তু", "এখানে", "তোমাকে", "এখন", "কোন", "কথা", "মনে", "কী", "যদি", "এবং", "হয়", "আপনার", "নিয়ে", "ছিল", "তাকে", "তারা", "নেই", "হয়ে", "তাহলে", "অনেক", "কেন", "করা", "হ্যাঁ", "করো", "তাই", "সব", "এক", "এর", "হচ্ছে", "যাও", "কাজ", "হয়েছে", "কে", "কাছে", "শুধু", "একটি", "স্যার", "দাও", "তাদের", "ভালো", "যা", "একজন", "ভাল", "জানি", "যেতে", "দিয়ে", "খুব", "কোথায়", "করবে", "যাবে", "চাই", "পারে", "শেষ", "করার", "ধন্যবাদ", "যখন", "বলতে", "কেউ", "করি", "সময়", "তুই", "গেছে", "বাবা", "ওকে", "মত", "সেটা", "হতে", "চলে", "ওহ", "নয়", "হ্যা", "একটু", "পারি", "দেখতে", "সবাই", "আগে", "দেখা", "করছি", "তিনি", "বের", "বলে", "কর", "আবার", "দিতে", "নাম", "যায়", "ওর", "পারবে", "নাকি", "কিভাবে", "মধ্যে", "তোমরা", "ফিরে", "আচ্ছা", "সাহায্য", "আপনাকে", "মানুষ", "তা", "মা", "করেছে", "দিকে", "দরকার", "সেই", "আসলে", "শুরু", "ওটা", "দুঃখিত", "দিন", "চলো", "মানে", "কিন্ত", "তোর", "তোমাদের", "করছে", "বলছি", "বিশ্বাস", "বন্ধ", "করেছি", "এমন", "অবশ্যই", "নিজের", "কারণ", "বড়", "করবো", "বেশি", "বছর", "উপর", "যাচ্ছে", "আসো", "চেষ্টা", "তারপর", "হল", "হয়", "হেই", "এসব", "দেখো", "কিছুই", "কোনো", "এটাই", "আছি", "টাকা", "যাচ্ছি", "জানো", "বুঝতে", "আজ", "ছিলো", "বলো", "মতো", "ধরে", "কখনো", "খারাপ", "কেমন", "প্লিজ", "মারা", "পছন্দ", "সেখানে", "চাও", "নাও", "সমস্যা", "দেখে", "নি", "পর", "থাকে", "এখনো", "সুন্দর", "তখন", "ভুল", "ভাই", "ওখানে", "পর্যন্ত", "করব", "নতুন", "পরে", "থাকতে", "ওরা", "যাই", "অন্য", "হলো", "খুঁজে", "ভয়", "ব্যাপারে", "ছেড়ে", "আরো", "নিতে", "থাকবে", "করুন", "লোক", "আরে", "ফোন", "বন্ধু", "হাত", "লাগবে", "এসো", "ওই", "যেন", "সত্যি", "জীবন", "বল", "চিন্তা", "সম্পর্কে", "ছেলে", "এত", "যেটা", "সামনে", "জিনিস", "খুবই", "পারবো", "এটি", "হ্যালো", "ছিলাম", "অপেক্ষা", "করবেন", "সবকিছু", "উচিত", "ব্যাপার", "নিচে", "থাকো", "পারো", "নিশ্চিত", "হলে", "এসেছে", "বা", "প্রথম", "এখান", "জলদি", "কত", "জানতে", "মেয়ে", "আসবে", "হও", "এসে", "করছ", "এরকম", "ওদের", "দুই", "দেখ", "তৈরি", "জন", "পারেন", "ছাড়া", "হাতে", "সবচেয়ে", "হয়তো", "আসছে", "একদম", "নাই", "লাগছে", "যাক", "মেরে", "সত্যিই", "বাইরে", "বেশ", "আসতে", "গুলি", "বলা", "এটার", "এসেছি", "পড়ে", "পুরো", "যান", "এগুলো", "ছোট", "দিয়েছে", "আমিও", "সবসময়", "চল", "পেয়েছি", "মিনিট", "চায়", "মজা", "আশা", "গিয়ে", "বলেছে", "তোকে", "যেখানে", "এবার", "আরও", "থামো", "পুলিশ", "কাউকে", "যাবো", "হোক", "নিজেকে", "পারব", "যারা", "শুনতে", "মানুষের", "জায়গা", "তাড়াতাড়ি", "কীভাবে", "বসে", "ফেলে", "দয়া", "জানে", "উপরে", "মাথা", "বাড়ি", "মি", "দেখি", "টা", "খুন", "আসে", "সঙ্গে", "মাত্র", "অথবা", "আসছি", "করলে", "মাঝে", "দিচ্ছি", "আপনাদের", "রাতে", "গাড়ি", "হয়েছিল", "চুপ", "ভুলে", "দাঁড়াও", "ব্যবহার", "আছো", "অবস্থা", "উচিৎ", "এখনও", "মিস", "করেন", "করছো", "যাব", "সবাইকে", "তবে", "এটাকে", "সবার", "পেতে", "বাচ্চা", "বেঁচে", "হিসেবে", "পারছি", "প্রয়োজন", "একা", "যাওয়া", "উনি", "চেয়ে", "তাঁর", "বলেছি", "এভাবে", "পাবে", "দেখেছি", "দ্রুত", "আয়", "প্রতি", "ভিতরে", "পাগল", "যাওয়ার", "কারন", "আপনারা", "দূরে", "দেয়", "যুদ্ধ", "যার", "পাওয়া", "দিবে", "নই", "জানেন", "লাগে", "শান্ত", "শুভ", "আসল", "একই", "করেছ", "খবর", "একবার", "মিঃ", "বাবার", "খুশি", "বলবে", "আগেই", "পার", "রাখো", "গেল", "চান", "নিশ্চয়ই", "সুযোগ", "কাজে", "গিয়েছে", "আসলেই", "সম্ভব", "আছেন", "হয়নি", "বলছে", "দেবে", "বিয়ে", "যথেষ্ট", "দরজা", "রেখে", "এখানেই", "এমনকি", "পথ", "হওয়ার", "কিনা", "তিন", "জানিনা", "চোখ", "ভেতরে", "যাতে", "কোথাও", "প্রশ্ন", "রাখতে", "উত্তর", "এদিকে", "ভাবে", "জায়গায়", "ব্যাপারটা", "প্রস্তুত", "আমাদেরকে", "করছেন", "দেখছি", "চমৎকার", "সোনা", "খাবার", "বলার", "দেয়া", "হাই", "আছ", "করেছিলাম", "হুম", "রয়েছে", "দে", "আহ", "ভেবেছিলাম", "করেছেন", "পানি", "গেলে", "বলি", "জ্যাক", "কেবল", "শুধুমাত্র", "দেওয়া", "দেখুন", "শব্দ", "ক্ষমা", "নষ্ট", "হত্যা", "একসাথে", "সম্ভবত", "সহজ", "ক্যাপ্টেন", "রাস্তা", "বলুন", "রে", "বলেছিলাম", "প্রায়", "আমায়", "রক্ষা", "বাকি", "দিয়েছি", "কাছ", "কারো", "তুমিই", "কঠিন", "কল", "বস", "গেলো", "নাম্বার", "খোদা", "রাজা", "এতো", "ধ্বংস", "কেনো", "জীবনের", "থাকার", "সত্য", "কষ্ট", "পিছনে", "ধরো", "মন", "শোন", "আমিই", "মুখ", "এখনই", "মিথ্যা", "চুরি", "একে", "যেমন", "থাক", "সেটাই", "ঈশ্বর", "আঘাত", "একমাত্র", "কখনোই", "আসুন", "পাচ্ছি", "কম", "থাকা", "জানতাম", "কার", "রাখা", "জান", "দিব", "কখনও", "হাজার", "গেছি", "হ্যারি", "আসার", "জিজ্ঞেস", "করেছো", "শক্তি", "সিদ্ধান্ত", "খেলা", "বেশী", "সরে", "পরিষ্কার", "করলাম", "নিরাপদ", "খেতে", "ছিলে", "দেবো", "বাদ", "বলবো", "ছবি", "পেছনে", "মহান", "এতে", "পেয়ে", "কাজের", "বললে", "সকল", "করেছিল", "কিসের", "দেরি", "আসা", "বিদায়", "জানা", "তাইনা", "বাসায়", "থাকলে", "থেকেই", "হওয়া", "অস্ত্র", "শালা", "পারবেন", "স্বাগতম", "আরেকটা", "ওহ্", "কারণে", "তাদেরকে", "খুজে", "নামে", "খুলে", "দাড়াও", "ইচ্ছা", "সঠিক", "চাচ্ছি", "তোমায়", "ঘরে", "পরিবার", "পা", "জন্যে", "মিস্টার", "পৃথিবীর", "মাফ", "বলছ", "মৃত্যুর", "দ্বারা", "চেক", "নিজে", "দেই", "ধরনের", "হারিয়ে", "বিশেষ", "আজকে", "বাড়িতে", "কাল", "ফিরিয়ে", "কখন", "ডাক্তার", "হয়েছে"], "locale": "bn", "rtl": false, "face": "'Baloo Da 2', sans-serif", "name": "Bengali", "script": "Bengali", "count": 600}, "gujarati": {"words": ["છે", "અને", "કે", "પણ", "કરી", "માટે", "હતી", "પર", "હતા", "સાથે", "આવી", "કરવામાં", "હતું", "એક", "હતો", "કોરોના", "દ્વારા", "તો", "વધુ", "તે", "નથી", "રાજ્યમાં", "કહ્યું", "બાદ", "જે", "આવ્યા", "જણાવ્યું", "રહ્યા", "થઈ", "ત્યારે", "રહી", "સુધી", "જ્યારે", "આજે", "કરવા", "સામે", "નહીં", "પોલીસ", "કેસ", "કુલ", "જો", "તેમણે", "સરકાર", "લોકો", "જેમાં", "હોય", "બે", "કારણે", "હવે", "પરંતુ", "મળી", "કોરોનાના", "રીતે", "કર્યો", "આપી", "ગુજરાત", "રહ્યો", "આવ્યો", "શકે", "અંગે", "ગુજરાતમાં", "શરૂ", "તમામ", "આવશે", "થયા", "આવે", "છેલ્લા", "કોઈ", "કરતા", "બહાર", "અમદાવાદ", "અન્ય", "લોકોને", "સરકારે", "સૌથી", "આવ્યું", "આપવામાં", "નવા", "તેની", "વચ્ચે", "તેઓ", "દરમિયાન", "નિર્ણય", "ગયા", "જોવા", "તથા", "તેમના", "તેમને", "થાય", "કરીને", "ત્રણ", "વાત", "તરફ", "તેમજ", "રહેશે", "તેના", "ઉપરાંત", "તેને", "કરે", "પોઝિટિવ", "દર્દીઓ", "થઇ", "મોત", "થયો", "રહ્યું", "સાજા", "કલાકમાં", "તેમની", "રાજ્યના", "જાહેર", "સ્થિતિ", "લઈ", "કેટલાક", "પછી", "બીજી", "કરવાની", "રાજ્ય", "તેમ", "કર્યા", "વરસાદ", "કોંગ્રેસના", "પોતાના", "મુજબ", "અનેક", "ખાતે", "બંધ", "હાલ", "કેસો", "સારવાર", "તપાસ", "અમે", "કર્યું", "એટલે", "પહોંચી", "પોલીસે", "મુખ્યમંત્રી", "હોસ્પિટલમાં", "ત્યાં", "ભારે", "ના", "કામ", "ગયો", "ટકા", "માત્ર", "પગલે", "અમદાવાદમાં", "નોંધાયા", "રૂા", "તેવી", "સમગ્ર", "હોવાનું", "ઉપર", "ટેસ્ટ", "બની", "થશે", "દાખલ", "આરોગ્ય", "જોઈએ", "વર્ષ", "લાખ", "વિસ્તારમાં", "વધી", "સંખ્યા", "ભારત", "અત્યાર", "ચાર", "આવતા", "દિવસ", "વધારો", "પાસે", "રોજ", "કેન્દ્ર", "સહિત", "હેઠળ", "એમ", "ગઈ", "ચૂંટણી", "જેથી", "તરીકે", "કાર્યવાહી", "પાંચ", "સરકારી", "સુરત", "ભાજપ", "જરૂરી", "આમ", "જાહેરાત", "બેઠક", "કોંગ્રેસ", "કોઇ", "વાયરસના", "પડશે", "આગામી", "થતાં", "સુધીમાં", "હાથ", "તા", "પ્રથમ", "આવેલા", "જેને", "પોતાની", "છતાં", "જિલ્લામાં", "રાજયમાં", "લઈને", "બંને", "મામલે", "થયું", "દેશમાં", "પહેલા", "કરોડ", "થવા", "તેમાં", "પડી", "ફરી", "હું", "આપવા", "રાખવામાં", "વિસ્તારોમાં", "શકાય", "આવેલ", "કોરોનાની", "લોકડાઉન", "વિવિધ", "હોવાથી", "જાય", "શિક્ષણ", "સરકારના", "જેના", "લોકોએ", "હજુ", "ફરિયાદ", "લેવામાં", "સતત", "દિવસે", "ચાલી", "રહેતા", "સમય", "જેટલા", "ભારતમાં", "મૃત્યુ", "સોશિયલ", "ભારતીય", "જોકે", "જ્યાં", "ફરજ", "રહે", "રિપોર્ટ", "સમયે", "હજાર", "ગંભીર", "મુખ્ય", "રહેલા", "વડાપ્રધાન", "દેવામાં", "નેતા", "મોટી", "વાયરસ", "સુરતમાં", "આગળ", "જારી", "પટેલ", "સહિતના", "એવા", "ચાલુ", "જરૂર", "દીધી", "માહિતી", "લોકોની", "શહેરમાં", "સરકારની", "ઘટાડો", "દિલ્હી", "પહોંચ્યો", "કરવાનો", "ઘરે", "જયારે", "આવેલી", "જવા", "ઈંચ", "તરફથી", "પ્રમુખ", "ભાજપના", "વિરૂદ્ધ", "ખાસ", "મંજૂરી", "વિરોધ", "આદેશ", "આવા", "ખાનગી", "ત્યારબાદ", "દરમ્યાન", "પૂર્વ", "માસ્ક", "લેવા", "વધારે", "સુપ્રીમ", "અગાઉ", "સવારે", "મોટા", "ટીમ", "તૈયાર", "પાસેથી", "વધીને", "હોસ્પિટલ", "એવી", "કામગીરી", "કેસોમાં", "ગયું", "લોકોના", "વધુમાં", "વર્ષે", "અમદાવાદના", "અરજી", "કોઈપણ", "કોરોનાને", "કોર્ટે", "તંત્ર", "થયેલા", "ધારાસભ્ય", "રૂપિયા", "આર્થિક", "કરશે", "પૈકી", "કારણ", "છીએ", "દરેક", "નોંધાયો", "લીધે", "ઉપયોગ", "એવું", "જવાબ", "રાહત", "અથવા", "કરીએ", "કેન્દ્રીય", "કોરોનાનો", "ખેડૂતો", "નવી", "બીજા", "મહિલા", "મોદી", "મોદીએ", "વિજય", "ખૂબ", "ઉલ્લેખનીય", "મળે", "અનુસાર", "ઓનલાઈન", "ઓફ", "ધરપકડ", "પટેલે", "પ્રમાણે", "મળશે", "મારી", "વડોદરા", "આપણે", "છું", "કરાયા", "જતા", "તેનો", "પાલન", "વ્યવસ્થા", "સામાન્ય", "ટ્રમ્પ", "અધિકારીઓ", "અસર", "કરતાં", "ચર્ચા", "જાણવા", "દિવસથી", "દેશના", "રાજ્યભરમાં", "વખતે", "સરકારને", "સ્થાનિક", "આંક", "કેસમાં", "ઘટના", "થતા", "પરત", "મુસ્લિમ", "રાજકોટ", "લઇ", "હશે", "કેસોની", "ગુજરાતના", "નામ", "પાણી", "મીડિયા", "રજૂ", "શક્યતા", "સંખ્યામાં", "સ્થળોએ", "આરોપી", "રાષ્ટ્રીય", "જઈ", "તેવા", "પહેલાં", "પ્રતિબંધ", "મુદ્દે", "સંપૂર્ણ", "સેવા", "હાજર", "હાલમાં", "ગુનો", "જેવા", "મંત્રી", "વિગતો", "વ્યક્તિ", "જશે", "દર", "અલગ", "કોરોનામાંથી", "મંગળવારે", "લાગી", "હોવાની", "આપતા", "ખેડૂતોને", "થવાની", "નજીક", "મુલાકાત", "વીડિયો", "સફળ", "આંકડો", "કરાશે", "ગત", "જિલ્લા", "તાત્કાલિક", "દાવો", "પડે", "મુખ્યમંત્રીએ", "રહ્યાં", "વધતા", "સાત", "સામેલ", "સિવિલ", "ખેડૂત", "મને", "તમે", "યોજના", "આયોજન", "કરાયો", "જાણ", "પશ્ચિમ", "મદદ", "રજૂઆત", "રાખી", "રાજકીય", "લીધી", "વિદ્યાર્થીઓને", "વિભાગ", "શકશે", "કરવાના", "કેમ", "ગુજરાતની", "તેણે", "દર્દી", "મૃત્યુઆંક", "સુનાવણી", "સુરક્ષા", "હોવા", "આપવાની", "આપ્યો", "આરોપ", "એવો", "તેનું", "નક્કી", "પાર", "પ્રવેશ", "મારા", "લાગુ", "શહેરના", "સ્પષ્ટ", "હોસ્પિટલના", "જોઇએ", "કરાઈ", "કૃષિ", "કોર્પોરેશન", "ઘણા", "તેઓએ", "નરેન્દ્ર", "પરીક્ષા", "યોગ્ય", "રાજ્યની", "સંક્રમણ", "અમારી", "કરવાનું", "થયેલ", "દિવસમાં", "પરથી", "પ્રદેશ", "ફી", "વિશેષ", "આપણા", "જેવી", "દૂર", "લીધા", "વિભાગના", "સૂચના", "આધારે", "ઓછા", "કરવો", "કાયદા", "જતાં", "જમીન", "દર્દીઓની", "ધ્યાનમાં", "ભારતના", "લઇને", "લીધો", "વગર", "વિદ્યાર્થીઓ", "શરૂઆત", "સમર્થન", "આથી", "કડક", "કહી", "કહેવામાં", "ખાલી", "જીવ", "નંબર", "પગલાં", "પૂર્ણ", "પ્રયાસ", "બેઠકમાં", "મળ્યા", "રદ", "રાહુલ", "વિશે", "સમાવેશ", "સામનો", "અહીં", "ગઇ", "આંદોલન", "આપ્યું", "ગાંધી", "ચિંતાજનક", "જેમ", "દેશ", "દેશની", "ધરી", "પરિવાર", "પીએમ", "બાબત", "મળ્યું", "રહેલ", "રાત્રે", "લાભ", "અમિત", "આઠ", "ઉત્તર", "કરવી", "કેસોનો", "કોંગ્રેસે", "જણાવ્યા", "જવાબદારી", "જિલ્લાના", "ડૉ", "દર્દીઓને", "દીધો", "નિવેદન", "બધા", "બેઠકો", "મોતને", "મ્યુનિસિપલ", "વિના", "વ્યક્ત", "શું", "સમયમાં", "અધિકારી", "અમલ", "અમારા", "આપ્યા", "કોરોનામાં", "કોર્ટમાં", "પસાર", "પ્રમાણ", "બદલે", "મહામારી", "માંગ", "લોકોનાં", "વખત", "શહેર", "સહાય", "અપીલ", "આગ", "કાયદો", "કેસની", "નુકસાન", "પરિણામ", "બનાવી", "માગણી", "માહોલ", "શૈક્ષણિક", "સારી", "આપે", "કરનારા", "કહેર", "ગાંધીનગર"], "locale": "gu", "rtl": false, "face": "'Baloo Bhai 2', sans-serif", "name": "Gujarati", "script": "Gujarati", "count": 600}, "marathi": {"words": ["आहे", "या", "आणि", "आहेत", "यांनी", "हे", "नाही", "तर", "केली", "करण्यात", "ते", "होते", "काही", "असून", "हा", "ही", "एक", "असे", "केला", "केले", "त्यामुळे", "आले", "होती", "मात्र", "आली", "होता", "आता", "त्यांनी", "झाला", "झाली", "सुरू", "पण", "हजार", "असं", "दिली", "माहिती", "आला", "झाले", "दोन", "अशी", "एका", "अनेक", "होत", "करत", "काम", "त्या", "अशा", "आपल्या", "सर्व", "तसेच", "करोना", "केलं", "त्यांना", "की", "करून", "म्हणून", "देण्यात", "सध्या", "यांच्या", "जात", "येत", "त्यांच्या", "तो", "पोलीस", "रुग्ण", "मी", "निर्णय", "सांगितले", "असल्याचे", "असा", "दाखल", "संख्या", "काय", "अधिक", "दरम्यान", "येथील", "ती", "आपण", "तरी", "यांना", "का", "मृत्यू", "म्हणाले", "आज", "किंवा", "तीन", "कमी", "असलेल्या", "होतं", "व्यक्त", "झालेल्या", "घेतला", "लाख", "दिले", "येथे", "म्हणजे", "गेल्या", "मुंबई", "करण्यासाठी", "दिला", "भारतीय", "प्रयत्न", "येणार", "पुन्हा", "असताना", "त्यानंतर", "निर्माण", "मागणी", "राज्य", "होणार", "बंद", "ठाकरे", "मुख्यमंत्री", "असल्याने", "घेऊन", "त्याला", "कोरोना", "मला", "असेल", "काळात", "परंतु", "सुरु", "आम्ही", "आरोग्य", "विचार", "घरी", "पोलिसांनी", "चर्चा", "रोजी", "मोदी", "आर्थिक", "आलं", "यावेळी", "टक्के", "पाटील", "मदत", "रुपये", "असते", "दिवस", "नवीन", "नाहीत", "केंद्र", "सरकारने", "सोशल", "होऊ", "ठिकाणी", "तयार", "त्यांची", "आलेल्या", "देखील", "समोर", "अधिकारी", "कारण", "पुढे", "इतर", "करण्याची", "जिल्हा", "येईल", "प्रश्न", "स्पष्ट", "एकूण", "करताना", "पंतप्रधान", "पूर्ण", "म्हटलं", "भूमिका", "सरकार", "अहवाल", "उपचार", "केलेल्या", "रुग्णालयात", "होईल", "उपलब्ध", "डॉ", "वेळ", "करता", "जाहीर", "दिसत", "सुरुवात", "उत्तर", "जास्त", "गेले", "नये", "आदेश", "करणे", "घेतली", "चार", "विशेष", "त्याच्या", "महिला", "करण्याचा", "यासाठी", "रुग्णांची", "त्यात", "यांचा", "यांची", "राज्यात", "विविध", "शहरातील", "उद्धव", "कर्मचारी", "खासगी", "घेत", "पाच", "प्रमाणात", "मध्ये", "अध्यक्ष", "जे", "राज्यातील", "करोनाचा", "उपस्थित", "कारवाई", "तेव्हा", "त्याचा", "त्याने", "लोक", "करणाऱ्या", "करुन", "दिलेल्या", "दोन्ही", "पवार", "म्हटले", "करू", "संपूर्ण", "असतात", "आल्या", "करीत", "जाणार", "पुढील", "प्रत्येक", "जाते", "पुणे", "माजी", "यामुळे", "समावेश", "जाईल", "भारत", "आमदार", "आवश्यक", "सांगितलं", "अन्य", "आतापर्यंत", "कोटी", "गेली", "माध्यमातून", "यामध्ये", "तुम्ही", "देत", "बाहेर", "याची", "वापर", "होत्या", "आपला", "आणखी", "नेते", "यात", "महाराष्ट्र", "केवळ", "गेला", "लक्ष", "शहरात", "योग्य", "त्याची", "पॉझिटिव्ह", "वर", "होतो", "असल्याची", "त्यांचा", "मंत्री", "वेळी", "शिक्षण", "जर", "ज्या", "करण्याचे", "त्यांचे", "नव्या", "सेवा", "आपल्याला", "घटना", "मागील", "मुख्य", "राजकीय", "वैद्यकीय", "असतो", "करावा", "नरेंद्र", "परवानगी", "मोठय़ा", "याबाबत", "सर्वाधिक", "करतात", "आहोत", "काळजी", "घेण्यात", "तसंच", "दिलं", "नाव", "प्रमुख", "लक्षात", "खरेदी", "देशातील", "पैसे", "मीडियावर", "याचा", "शक्यता", "प्रचंड", "के", "टीका", "फक्त", "भागात", "भारतात", "मंगळवारी", "यांचे", "याच", "लोकांना", "व्हिडीओ", "सहा", "होऊन", "पाणी", "झालं", "पाहिजे", "आरोप", "आवाहन", "गरज", "पार्श्वभूमीवर", "शेअर", "सूचना", "कधी", "त्यासाठी", "करणार", "घरात", "जण", "ट्रम्प", "तिने", "दिसून", "देशात", "परिस्थिती", "प्रसिद्ध", "वर्षे", "सामाजिक", "मुंबईत", "संजय", "सिंह", "चित्रपट", "च्या", "फोटो", "भाग", "यंदा", "रात्री", "लागले", "लागू", "केंद्रीय", "नका", "क्षेत्रात", "खूप", "गंभीर", "गुन्हा", "घोषणा", "ट्विट", "दर", "निवडणूक", "पद्धतीने", "मोठा", "मोठ्या", "वाढ", "होण्याची", "असल्याचं", "कायम", "खासदार", "वाहतूक", "शनिवारी", "संसर्ग", "सकाळी", "सांगण्यात", "व्यक्ती", "येते", "चाचणी", "त्यावर", "परिणाम", "पार", "महाराष्ट्रात", "वर्षीय", "स्थानिक", "करावी", "काँग्रेस", "शकतो", "आढळले", "थेट", "मग", "महिन्यात", "माहितीनुसार", "रेल्वे", "संबंधित", "अद्याप", "असंही", "असता", "करण्यास", "केल्या", "गांधी", "जणांचा", "झाल्याचे", "झाल्यानंतर", "ठाणे", "तालुक्यातील", "दुसऱ्या", "प्रमाण", "बोलताना", "राऊत", "लागणार", "वाजता", "सामना", "क्रिकेट", "मे", "शेतकरी", "आंदोलन", "ग्रामीण", "तिला", "परिसरात", "भर", "भाजपा", "मिळाली", "मिळेल", "लागण", "लागली", "विकास", "विश्वास", "सर्वात", "सामन्यात", "एकदा", "प्रवास", "संधी", "आपली", "एकत्र", "कोणत्याही", "परीक्षा", "पहिल्या", "प्रशासनाने", "बाधित", "बुधवारी", "मोठी", "वाढत", "शरद", "आम्हाला", "दिल्ली", "माझ्या", "असेही", "किती", "जाऊन", "तपासणी", "त्यानुसार", "नंतर", "नुकसान", "प्रकार", "प्राप्त", "बरे", "रविवारी", "रस्त्यावर", "वातावरण", "विरोध", "जबाबदारी", "राष्ट्रीय", "लागेल", "ना", "असणाऱ्या", "आनंद", "करोनाची", "करोनाच्या", "कृषी", "घेतले", "जागतिक", "झालेली", "नोंद", "फटका", "फडणवीस", "फोन", "बदल", "मत", "मागे", "मिळत", "रक्कम", "राहुल", "शकते", "विद्यार्थी", "सरकारी", "अटक", "अभिनेता", "आठ", "खर्च", "त्यामध्ये", "नवी", "नियम", "पर्याय", "प्रतिक्रिया", "फार", "मिळाला", "म्हणजेच", "यांच्यावर", "यावर", "रद्द", "शासनाने", "शुक्रवारी", "सहकारी", "सुविधा", "सोमवारी", "हात", "मराठी", "अनुभव", "अनेकदा", "आंतरराष्ट्रीय", "करोनामुळे", "कसा", "गर्दी", "चौकशी", "त्यावेळी", "दिवशी", "देश", "बोलत", "मार्च", "यापूर्वी", "लवकरच", "लागला", "व्यवस्था", "सातत्याने", "दावा", "शकत", "अगदी", "अभिनेत्री", "आपले", "आयुक्त", "करणारे", "जवळपास", "जातो", "झालेले", "डॉक्टर", "प्रवेश", "शकतात", "शाळा", "तरीही", "आधी", "करा", "असलेले", "एकाच", "कामे", "घेता", "जागा", "झालेला", "तिसऱ्या", "तुम्हाला", "त्याच", "त्यापैकी", "परत", "पालिका", "पुरवठा", "प्रादुर्भाव", "मनात", "येणाऱ्या", "सहभागी", "जी", "प्रक्रिया", "असतील", "अतिशय", "ऑफ", "करायला", "जिल्ह्यात", "झाल्याने", "तक्रार", "तपास", "तिच्या", "त्यातील", "नसल्याने", "नियंत्रण", "प्रतिसाद", "मार्ग", "मिळाले", "रुग्णांचा", "लागत", "वरिष्ठ", "वाटत", "विजय", "सर्वोच्च", "सादर", "आमच्या", "नव्हती", "अंतिम", "असल्यामुळे", "आदी", "इतकी", "उत्तम", "केल्यानंतर", "जणांना", "जेव्हा", "त्याचे", "देऊन", "नागरिकांना", "निधी", "पत्नी", "परिस्थितीत", "पश्चिम", "पाहून", "बळी"], "locale": "mr", "rtl": false, "face": "'Baloo 2', sans-serif", "name": "Marathi", "script": "Devanagari", "count": 600}, "nepali": {"words": ["पनि", "छन्", "भएको", "गरेको", "लागि", "हो", "भने", "गर्न", "थियो", "गर्ने", "तथा", "नै", "थिए", "एक", "यो", "उनले", "हुने", "कोरोना", "तर", "हजार", "गरिएको", "गरेका", "बताए", "रहेको", "जना", "नेपाल", "अनुसार", "कारण", "गरी", "भएका", "काम", "दुई", "स्वास्थ्य", "सरकारले", "जानकारी", "अहिले", "छैन", "मा", "लाख", "गर्दै", "मात्र", "मृत्यु", "अध्यक्ष", "को", "उनी", "भन्ने", "समेत", "नेपाली", "दिन", "प्रहरी", "गरेर", "बढी", "सबै", "धेरै", "केही", "संख्या", "संक्रमण", "हुन", "निर्णय", "प्रमुख", "गरे", "हुन्", "रहेका", "आएको", "जनाएको", "संक्रमित", "रु", "दिए", "नयाँ", "वर्ष", "उनको", "आफ्नो", "जिल्ला", "प्रधानमन्त्री", "बताउँछन्", "तीन", "भए", "दिएको", "पुगेको", "सय", "स्थानीय", "विभिन्न", "हुन्छ", "आर्थिक", "अन्य", "कुनै", "प्रदेश", "उक्त", "रुपमा", "भयो", "थप", "मात्रै", "व्यवस्था", "का", "वा", "त्यो", "भन्दै", "जनाको", "कुरा", "सहयोग", "निर्माण", "गएको", "नेपालमा", "समस्या", "घर", "यस", "राष्ट्रिय", "भनेर", "पहिलो", "देखिएको", "गर्दा", "वटा", "विकास", "सेवा", "आवश्यक", "करोड", "भइरहेको", "जारी", "समय", "दिने", "सार्वजनिक", "एउटा", "पार्टी", "कार्यालय", "प्रतिशत", "अवस्थामा", "क्षेत्रमा", "भन्छन्", "आज", "उल्लेख", "पोखरा", "डा", "भन्दा", "प्रयोग", "भएकाले", "परेको", "कार्यक्रम", "सञ्चालन", "आएका", "माग", "शुरु", "अवस्था", "प्रहरीले", "मन्त्री", "बैठक", "यस्तो", "परीक्षण", "रूपमा", "भएपछि", "ठूलो", "अब", "तयारी", "पछिल्लो", "सदस्य", "गर्नुपर्ने", "ती", "अस्पताल", "पुष्टि", "भएर", "समयमा", "छलफल", "मन्त्रालयले", "गत", "नेपालको", "बन्द", "बनाउन", "भनाइ", "रकम", "सबैभन्दा", "सरकार", "बेला", "संक्रमितको", "हुँदा", "चार", "विषयमा", "हामी", "कम", "बताएका", "सामाजिक", "क्रममा", "उपचार", "वर्षीय", "सरकारको", "काठमाडौं", "सरकारी", "गरिने", "पक्राउ", "सक्ने", "तयार", "देखि", "यी", "अस्पतालमा", "यस्तै", "शर्मा", "आग्रह", "आउने", "उनका", "नभएको", "यसअघि", "होइन", "वडा", "पाँच", "योजना", "खर्च", "घोषणा", "बनाउने", "गरिरहेको", "नेकपा", "पर्ने", "बिहान", "त्यहाँ", "पर्यटन", "व्यवस्थापन", "उडान", "उच्च", "हुँदै", "अगाडि", "साथै", "सूचना", "उत्पादन", "कार्यक्रममा", "कृषि", "भारतीय", "महिला", "यसको", "ले", "सडक", "गण्डकी", "नेता", "क्षेत्र", "दोस्रो", "लिएर", "हामीले", "नियमित", "ओलीले", "करीब", "जोखिम", "दिएका", "पछि", "यही", "लामो", "सो", "स्थानमा", "अर्को", "अघि", "सन्", "के", "हाम्रो", "राजनीतिक", "हाल", "विशेष", "उनलाई", "पटक", "बस्ने", "सम्बन्धित", "अनुसन्धान", "उपलब्ध", "गरेपछि", "प्राप्त", "सुरक्षा", "कायम", "प्रवक्ता", "बाँकी", "कतिपय", "आधारमा", "बजेट", "लागेको", "वितरण", "त्यसपछि", "आगामी", "बढेको", "मन्त्रालयका", "सम्पन्न", "निर्देशन", "बनेको", "छैनन्", "परेका", "अहिलेसम्म", "जस्तो", "नागरिक", "सफल", "सामान्य", "कोरोनाभाइरस", "अर्ब", "गरिरहेका", "निको", "भाइरस", "सोमबार", "आयोजना", "जनामा", "राहत", "मेरो", "मैले", "त्यसको", "विषय", "स्थायी", "गोल", "त्यस्तै", "नाममा", "निजी", "प्रस्ताव", "बैठकले", "सम्बन्धी", "कि", "समिति", "पूर्व", "समितिले", "साथ", "सामग्री", "थिएन", "जनसंख्या", "नहुने", "भइसकेको", "शुक्रबार", "सहित", "बसेको", "सचिव", "आउन", "केन्द्रीय", "थाहा", "दर्ता", "हरेक", "हालसम्म", "सकिन्छ", "छु", "छौं", "अध्ययन", "घटना", "ठाउँमा", "बन्दाबन्दी", "अन्तर्राष्ट्रिय", "देखिन्छ", "अमेरिकी", "केपी", "जस्ता", "प्रदेशमा", "फेरि", "वर्षको", "ओली", "त्यही", "थालेको", "बनाएको", "मार्फत", "यसले", "लगानी", "सङ्क्रमण", "जाने", "कार्यान्वयन", "गते", "बाहिर", "शुरू", "आफू", "एवं", "क्षेत्रको", "दुवै", "दैनिक", "बुधबार", "बैठकमा", "यस्ता", "राष्ट्रपति", "लगायत", "हुनेको", "त्यसैले", "कम्युनिष्ट", "कुल", "क्वारेन्टिनमा", "ज्यान", "तत्कालीन", "नाम", "प्रदान", "प्रभावित", "बारेमा", "सीमा", "अहिलेको", "मलाई", "गर्नुपर्छ", "अझै", "आइतबार", "खेलमा", "दिइएको", "नेपालले", "प्रवेश", "महत्वपूर्ण", "रिपोर्ट", "लिन", "शनिबार", "नीति", "विश्व", "व्यक्ति", "आफ्ना", "उपचारका", "औषधि", "मुख्य", "राखिएको", "अधिकारी", "संघीय", "घरमा", "व्यक्त", "सकेको", "पानी", "गठन", "थापाले", "वन", "विश्वास", "संकलन", "लकडाउन", "सक्छ", "आइसोलेसनमा", "दाबी", "पूरा", "प्रभावकारी", "भाइरसको", "राख्ने", "राम्रो", "उनीहरुको", "नियन्त्रणमा", "पत्रकार", "मापदण्ड", "राख्न", "सकिने", "सभापति", "समितिका", "सहभागी", "सांसद", "सुझाव", "स्थगित", "कमिटी", "महामारी", "मुद्दा", "अन्तिम", "क्षमता", "जान", "दिनमा", "पुगेका", "भनेको", "मंगलबार", "मूल्य", "रहने", "सवारी", "सहज", "स्थापना", "पुग्ने", "कोभिड", "हुनेछ", "असर", "आदेश", "कर्मचारी", "कानून", "गम्भीर", "गाउँपालिका", "घाइते", "जनालाई", "जिल्लामा", "तत्काल", "निर्देशक", "प्रस्तुत", "मुलुकमा", "रोग", "विद्यार्थी", "विरुद्ध", "संक्रमणको", "सक्रिय", "उद्योग", "करिब", "कसरी", "कोरोनाको", "क्षेत्रका", "खेल", "गर्नु", "नियन्त्रण", "बनाएर", "रुपैयाँ", "लिएको", "विवाद", "सम्बन्ध", "कति", "पर्छ", "गर्छ", "अरु", "उद्धार", "उपाध्यक्ष", "नं", "नेपालका", "बसेका", "बाटो", "भारतमा", "भूमिका", "युवा", "राखेर", "संस्था", "जम्मा", "झण्डै", "देशमा", "ध्यान", "निकै", "पीसीआर", "बजार", "बजे", "भएपनि", "संक्रमणबाट", "परिवर्तन", "संविधान", "संसदीय", "अधिकार", "आन्तरिक", "केन्द्र", "खोप", "जोड", "दिनको", "राति", "लक्ष्य", "वर्षीया", "विदेशी", "व्यापार", "शिक्षा", "सञ्चालनमा", "सर्वोच्च", "सहमति", "देश", "व्यवसाय", "संरक्षण", "गर्छन्", "अधिकांश", "अन्तर्गत", "अर्थ", "आफ्नै", "खाना", "जग्गा", "त्यसलाई", "पक्षमा", "पर्यटक", "भारतले", "मन्त्रालयको", "विद्यालय", "संयोजक", "सालमा", "कारोबार", "सुविधा", "अधिकारीले", "अधिकृत", "अनलाइन", "आरोप", "कम्पनी", "कार्य", "गुरुङ", "घण्टामा", "चिनियाँ", "ठूला", "तेस्रो", "नेतृत्व", "पूर्वाधार", "पोखरामा", "प्रयास", "प्रश्न", "मास्क", "वडाध्यक्ष", "सङ्क्रमित", "साँझ", "दाहाल", "श्रेष्ठ", "रहेछ", "अनुगमन", "जिम्मेवारी", "नसकेको", "पाउने", "पुनः", "पुरुष", "बताउँदै", "भनिएको", "भवन", "भौतिक", "राष्ट्र", "वरिष्ठ", "संघ", "समन्वय", "सरकारलाई", "सोही", "बजारमा", "बताइन्", "अनुमान", "उनीहरु", "उपत्यकामा", "जुन", "दक्षिण", "नगरपालिका", "पौडेलले", "प्रभाव", "बिहीबार", "यसरी", "यहाँ", "लगायतका", "ल्याउन", "विवरण", "वृद्धि", "संचालन", "संयुक्त", "सचिवालय", "समितिको", "सशस्त्र", "सामुदायिक"], "locale": "ne", "rtl": false, "face": "'Baloo 2', sans-serif", "name": "Nepali", "script": "Devanagari", "count": 600}, "arabic": {"words": ["لا", "من", "في", "أن", "هذا", "على", "ما", "أنا", "هل", "يا", "ذلك", "لقد", "لم", "ماذا", "كان", "هنا", "إلى", "أنت", "هو", "هذه", "عن", "نعم", "ان", "هناك", "كل", "حسناً", "ليس", "كنت", "فقط", "شيء", "الآن", "مع", "الذي", "لكن", "أجل", "لك", "يجب", "لن", "كيف", "حسنا", "انا", "لي", "إنه", "سوف", "نحن", "إذا", "كانت", "عندما", "أي", "قد", "لماذا", "هي", "الأمر", "أنه", "فى", "حتى", "بعد", "كذلك", "أو", "ولكن", "قبل", "التي", "انه", "إنها", "لو", "ربما", "أين", "هيا", "تلك", "أعرف", "الى", "إن", "يكون", "بعض", "أريد", "أعتقد", "انت", "عليك", "مثل", "صحيح", "به", "أنك", "الوقت", "بخير", "أعلم", "أحد", "شخص", "جداً", "رجل", "شكراً", "لذا", "يمكن", "كما", "كلا", "أكثر", "يبدو", "جيد", "تكون", "علي", "اليوم", "يمكنك", "انها", "أليس", "مرحباً", "لدي", "عليه", "آخر", "لست", "منذ", "غير", "أيها", "لديك", "حقاً", "أنتِ", "تريد", "أستطيع", "الرجل", "تعرف", "له", "مرة", "لدينا", "أنها", "يمكنني", "بأن", "واحد", "أنني", "أوه", "سيكون", "الناس", "ليست", "حدث", "بها", "أيضاً", "أفضل", "الكثير", "علينا", "سيدي", "مكان", "تفعل", "وقت", "يكن", "شئ", "بهذا", "وأنا", "اذا", "جدا", "بي", "أخرى", "آسف", "بك", "رائع", "بذلك", "كم", "إذاً", "ثم", "شيئاً", "يوجد", "واحدة", "ولا", "قلت", "يحدث", "بالطبع", "شكرا", "مرحبا", "يوم", "أبي", "معك", "لها", "معي", "سيد", "تعلم", "إذن", "العمل", "تم", "المكان", "الليلة", "إلهي", "لهذا", "فعل", "هكذا", "أمي", "لذلك", "ألا", "لـ", "الان", "حول", "بما", "حقا", "الحقيقة", "الجميع", "يمكننا", "بالتأكيد", "لأن", "لديه", "لنا", "خلال", "بشكل", "العالم", "فحسب", "حال", "الذهاب", "عليها", "بـ", "أعني", "فعلت", "قال", "هم", "المنزل", "عنه", "ها", "بشأن", "أفعل", "أكون", "اللعنة", "للغاية", "فيه", "بين", "أننا", "منك", "وهذا", "لكِ", "جيدة", "يعني", "مجرد", "أظن", "انك", "مني", "أنّ", "بالنسبة", "الأمور", "فكرة", "أم", "متى", "الشيء", "المال", "كنا", "أقول", "عمل", "أبداً", "ستكون", "عليّ", "أيّ", "أمر", "تقول", "توقف", "هؤلاء", "السيد", "انظر", "لما", "منه", "الطريق", "أشعر", "حصلت", "الحياة", "أني", "نفس", "معه", "بحاجة", "بسبب", "الذين", "تستطيع", "بأس", "اي", "بدون", "لكم", "تبدو", "أرى", "الجحيم", "تكن", "اعتقد", "عند", "آسفة", "حيث", "دائماً", "وأنت", "تحت", "حسنًا", "تعال", "بالفعل", "بل", "فضلك", "الأشياء", "ليلة", "نفسك", "لكي", "تعتقد", "وهو", "بحق", "مشكلة", "شيئا", "أرجوك", "أذهب", "يريد", "تماماً", "الـ", "الوحيد", "قتل", "إنهم", "الشخص", "رأيت", "عزيزتي", "طوال", "بهذه", "الشرطة", "الأن", "أحب", "الذى", "أيضا", "بنا", "أردت", "أكن", "كلّ", "النار", "سمعت", "اجل", "جميع", "أَنْ", "قليلاً", "مالذي", "بأنه", "والآن", "إلي", "انتظر", "فتاة", "كبير", "يعرف", "او", "فيها", "حسنٌ", "الرجال", "اريد", "لأنه", "السبب", "سنوات", "الباب", "نذهب", "دون", "حياتي", "لابد", "السيارة", "تريدين", "خارج", "ومن", "ثلاثة", "فعله", "تذهب", "كانوا", "اذهب", "الحصول", "يقول", "الواقع", "كثيراً", "اعرف", "أنهم", "سبب", "كبيرة", "مما", "أحتاج", "قمت", "إنّه", "منها", "كنتُ", "للتو", "استطيع", "نوع", "هنالك", "تعرفين", "جميلة", "بكل", "دولار", "بأنك", "لأنني", "الأفضل", "دائما", "جديد", "الامر", "اين", "بالضبط", "جون", "دعنا", "أنظر", "المدينة", "الخاص", "تعلمين", "جميل", "بسرعة", "الأرض", "لحظة", "الطريقة", "طريقة", "رائعة", "سعيد", "دقيقة", "لكنه", "غرفة", "إليه", "التحدث", "ثانية", "دعني", "لكنني", "الفتاة", "لمَ", "ولم", "أنتم", "عظيم", "انهم", "اوه", "جيداً", "لديّ", "بينما", "نفسي", "إليك", "قام", "لديها", "عام", "اعلم", "يعمل", "سأكون", "عيد", "رفاق", "ألم", "لهم", "تعمل", "تتحدث", "القيام", "الله", "ساعة", "المرة", "هيّا", "ترى", "مهلاً", "جاك", "أنتَ", "الخير", "متأكد", "جميعاً", "أحاول", "شيئ", "الموت", "رقم", "منهم", "سيارة", "مجدداً", "ايها", "عنك", "يفعل", "فقد", "ذهبت", "المزيد", "أتمنى", "مات", "يتم", "لكني", "طريق", "وجدت", "وقد", "أول", "معها", "سعيدة", "لدى", "أقصد", "إلا", "صباح", "الرئيس", "احد", "فرصة", "الأولى", "تباً", "يرام", "عليكِ", "يكفي", "علاقة", "صغيرة", "الأقل", "لأنك", "غريب", "لنذهب", "المدرسة", "ــ", "الصباح", "أفهم", "حين", "صديقي", "سأذهب", "أنكِ", "تأتي", "الخاصة", "أخبرني", "تقوم", "نستطيع", "نفسه", "التى", "الأطفال", "حالة", "لى", "هى", "يستطيع", "يجري", "سنة", "نفعل", "أتعلم", "نهاية", "أفكر", "أود", "عشر", "شىء", "أقوم", "الحب", "أنّه", "كنتِ", "معاً", "أى", "انني", "لديهم", "جديدة", "يعلم", "قالت", "بدأت", "الأول", "دقائق", "عني", "سيدة", "حالك", "إنني", "عزيزي", "رجال", "نعرف", "الجنس", "رؤية", "ينبغي", "الي", "حصل", "معنا", "الطفل", "وليس", "كي", "تحتاج", "قليلا", "حياة", "اسمع", "الساعة", "أكبر", "اليس", "فهمت", "عنها", "أريدك", "رجاءً", "تفعله", "وماذا", "ظننت", "سيدتي", "البعض", "الصغير", "تعني", "إنّها", "البيت", "رأيك", "تكوني", "هُنا", "والدك", "مهما", "العودة", "تماما", "لطيف", "يقوم", "السجن", "الليل", "السيدة", "أخي", "بأنني", "طويلة", "والدي", "وهي", "حان", "أقل", "الهاتف", "عبر", "مهلا", "ترجمة", "نحتاج", "أيتها", "وما", "اكثر", "أتحدث", "أيام", "أحدهم", "أولاً", "الماضي", "أحبك", "الطعام", "البقاء", "معرفة", "العام", "أية", "أصبح", "ذات", "الجديد", "مِنْ", "لكنك", "أبدا"], "locale": "ar", "rtl": true, "face": "'Tajawal', sans-serif", "name": "Arabic", "script": "Arabic", "count": 600}};
+
+function ttSetLang(slug, btn) {
+  var b = TT_BANKS[slug];
+  if (!b) return;
+  WORDS = b.words;
+  TT_LOCALE = b.locale;
+  ttMakeSeg();
+  ttPassage.setAttribute('lang', b.locale);
+  // Only the CONTENT mirrors. The tool frame, the controls and above all the
+  // KEY GRID stay left-to-right: a physical Arabic keyboard is not mirrored --
+  // the live /arabic/ page renders row 1 as ض ص ث ق ف ... left to right, and an
+  // on-screen keyboard that disagrees with the hardware is worse than none.
+  // Same rule the site already follows for /ar/ pages.
+  var tool = document.querySelector('.tt-tool');
+  tool.style.setProperty('--tt-face', b.face);
+  var d = b.rtl ? 'rtl' : 'ltr';
+  ttPassage.setAttribute('dir', d);
+  ttInput.setAttribute('dir', d);
+  ttInput.setAttribute('lang', b.locale);
+  var sets = ttKb.querySelectorAll('.tt-kbset');
+  for (var i = 0; i < sets.length; i++) sets[i].hidden = sets[i].getAttribute('data-lang') !== slug;
+  document.querySelectorAll('.tt-langbtn').forEach(function (x) { x.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+  // The status line is the only thing naming the loaded language, so it must
+  // never lag the tab.
+  var nl = document.getElementById('ttNowLang');
+  if (nl) nl.textContent = b.name;
+  var ns = document.getElementById('ttNowScript');
+  if (ns) ns.textContent = (b.script && b.script !== b.name) ? ' · ' + b.script : '';
+  var nc = document.getElementById('ttNowCount');
+  if (nc) nc.textContent = b.count;
+  ttReset();
+}
+
+document.querySelectorAll('.tt-langbtn').forEach(function (b) {
+  b.addEventListener('click', function () { ttSetLang(b.getAttribute('data-lang'), b); });
+});
+
+// ── UI language ───────────────────────────────────────────────────────────
+// Interface strings only: the article prose stays in the page's declared
+// language, because that is what Google indexes and it must not be mixed.
+// Note this switcher is for visitors, not for ranking -- an indexed Arabic URL
+// is the only thing that ranks in Arabic.
+function toggleToolLang(e) {
+  e.stopPropagation();
+  var m = document.getElementById('lang-menu');
+  m.classList.toggle('show');
+  document.getElementById('lang-pill').setAttribute('aria-expanded', m.classList.contains('show'));
+}
+document.addEventListener('click', function () {
+  var m = document.getElementById('lang-menu');
+  if (m) { m.classList.remove('show'); document.getElementById('lang-pill').setAttribute('aria-expanded', 'false'); }
+});
+
+function setToolLang(code, label, el) {
+  var t = TOOL_I18N[code] || TOOL_I18N.en;
+  document.querySelectorAll('[data-i18n]').forEach(function (n) {
+    var k = n.getAttribute('data-i18n');
+    if (t[k] !== undefined) n.innerHTML = t[k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function (n) {
+    var k = n.getAttribute('data-i18n-ph');
+    if (t[k] !== undefined) n.setAttribute('placeholder', t[k]);
+  });
+  // Only the words change. The document direction is NEVER touched: flipping it
+  // mirrors the whole layout -- logo, nav, tile order, chip order -- which is a
+  // design change, not a translation. Arabic still reads right-to-left inside
+  // its own element because the Unicode bidi algorithm handles that on its own.
+  document.documentElement.lang = code;
+  document.getElementById('lang-pill').textContent = label + ' ▾';
+  document.querySelectorAll('.lang-opt').forEach(function (o) { o.classList.remove('active'); });
+  if (el) el.classList.add('active');
+  try { localStorage.setItem('kactylToolLang', code); } catch (e) {}
+  // Anything the tool renders from JS -- stat labels, script rows -- has to be
+  // redrawn, or the page ends up half-translated the moment you interact with it.
+  if (typeof window.onToolLang === 'function') window.onToolLang();
+  fitMascot();
+}
+
+
+/* ── Tool-page brand mascot: fit to the space this page actually has ── */
+function fitMascot() {
+  var m = document.querySelector('.tool-mascot');
+  if (!m) return;
+  if (window.innerWidth <= 900) { m.style.opacity = 0; return; }
+
+  /* Widest ink in the 200px band ending at footY. Factored out so the mascot can
+     compare several heights and stand where there is actually room, instead of
+     being pinned to the hero's lower edge -- on /symbols/ that left it hovering
+     in mid-hero whitespace with nothing beside it. */
+  function widestIn(scope, footY, skip) {
+    var bandTop = footY - 200, widest = 0;
+    var BOXY = ['IMG', 'SVG', 'BUTTON', 'A', 'INPUT', 'SELECT'];
+    Array.prototype.forEach.call(scope.querySelectorAll('*'), function (el) {
+      if (el === skip || el.contains(skip)) return;
+      var st = getComputedStyle(el);
+      if (st.display === 'none' || st.visibility === 'hidden' || st.position === 'absolute') return;
+      var box = el.getBoundingClientRect();
+      if (!box.width || box.bottom < bandTop || box.top > footY) return;
+      if (BOXY.indexOf(el.tagName) !== -1) {
+        if (box.right > widest) widest = box.right;
+        return;
+      }
+      if (el.children.length) return;
+      var r = document.createRange();
+      r.selectNodeContents(el);
+      Array.prototype.forEach.call(r.getClientRects(), function (line) {
+        if (line.bottom >= bandTop && line.top <= footY && line.right > widest) widest = line.right;
+      });
+    });
+    return widest;
+  }
+
+  var heroAnchored = m.classList.contains('tool-mascot-hero');
+  var host = m.offsetParent || m.parentElement;
+  if (!host) return;
+  var hostBox = host.getBoundingClientRect();
+
+  /* Where the mascot's feet land: on the hero's lower edge, or on the top edge
+     of the tool card it perches on. The band above that is what it occupies. */
+  var footY = heroAnchored ? hostBox.bottom : hostBox.top;
+  var bandTop = footY - 200;
+
+  /* One standing height: the hero's lower edge (or the card's top edge on the
+     generated tools). An earlier attempt picked the "roomiest" band automatically
+     and got it wrong -- most free space is not the same as looking right, and it
+     shifted three pages that were already fine. Pages that need a different
+     height get an explicit per-page offset instead. */
+  var hero = document.querySelector('.page-hero, .hero, .kbdir-hero') || document.body;
+  /* Read the per-page nudge FIRST: the measurement has to happen in the band the
+     mascot will actually occupy. Measuring low and then lifting is how it ended
+     up sitting on the /symbols/ headline. */
+  var lift = parseInt(m.getAttribute('data-lift') || '0', 10);
+  var baseFoot = (heroAnchored ? hero.getBoundingClientRect().bottom : hostBox.top) - lift;
+  /* margin-bottom moves an absolutely-positioned, bottom-anchored element:
+     positive lifts it, negative drops it. Apply the offset exactly -- an extra
+     constant tuck here pushed the /symbols/ mascot 14px into the grid and it
+     clipped two tiles. */
+  m.style.marginBottom = lift ? lift + 'px' : '';
+  var widest = widestIn(hero, baseFoot, m);
+
+  var edge = hostBox.right;
+  if (heroAnchored) {
+    var col = document.querySelector('.wrap, .container');
+    if (!col) {
+      var best = null, bestW = 0, vw = window.innerWidth;
+      Array.prototype.forEach.call(document.querySelectorAll('main *, body > div > *'), function (el) {
+        var r2 = el.getBoundingClientRect();
+        if (r2.width > bestW && r2.width < vw - 40 && r2.width > 420 && r2.height > 40) {
+          bestW = r2.width; best = el;
+        }
+      });
+      col = best;
+    }
+    if (col) {
+      var colRight = col.getBoundingClientRect().right;
+      if (colRight < edge - 1) { m.style.right = Math.round(edge - colRight) + 'px'; edge = colRight; }
+    }
+  }
+
+  if (!widest) { m.style.opacity = 0; return; }
+
+  var w = Math.min(164, Math.floor(edge - widest));
+  /* Floor calibrated against rendered pages, not guessed: fancy-text at 95px
+     looked squeezed, while symbols at 106 and compare at 101 read fine. Width
+     alone was never the problem -- fancy-text sat hard against a pill with no
+     air. 100 is the line where the two groups actually separate. */
+  if (w < 100) { m.style.width = '0px'; m.style.opacity = 0; return; }
+  m.style.width = w + 'px';
+  m.style.opacity = 1;
+
+}
+window.addEventListener('resize', fitMascot, {passive:true});
+if (document.readyState !== 'loading') setTimeout(fitMascot, 0);
+else document.addEventListener('DOMContentLoaded', fitMascot);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitMascot);
+
+
+// Look up a UI string from JS, falling back to English rather than showing a key.
+function T(k) {
+  var t = TOOL_I18N[document.documentElement.lang] || TOOL_I18N.en;
+  return t[k] !== undefined ? t[k] : (TOOL_I18N.en[k] !== undefined ? TOOL_I18N.en[k] : k);
+}
+
+// Restore an explicit past choice only. Never auto-switch on navigator.language:
+// Googlebot crawls from the US and must see what a US visitor sees.
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('kactylToolLang'); } catch (e) {}
+  if (!saved || saved === 'en') return;
+  var el = document.querySelector('.lang-opt[data-lang="' + saved + '"]');
+  if (el) setToolLang(saved, el.getAttribute('data-label'), el);
+})();
+function loadTheme(){const t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){if(t==='dark'){tr.classList.add('on');th.classList.add('on');}}}
+function toggleTheme(){const cur=document.documentElement.getAttribute('data-theme')||'light';const next=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('theme',next);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){tr.classList.toggle('on',next==='dark');th.classList.toggle('on',next==='dark');}}
+function showToast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
+function copyText(text){navigator.clipboard.writeText(text).then(()=>showToast('Copied!')).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('Copied!');});}
+(function(){
+  const hdr=document.querySelector('header');
+  let last=0;
+  window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>last&&y>80)hdr.classList.add('hdr-hidden');else hdr.classList.remove('hdr-hidden');last=y;},{passive:true});
+  document.querySelectorAll('.tools-btn').forEach(btn=>{
+    btn.addEventListener('click',e=>{e.stopPropagation();btn.closest('.tools-wrap').classList.toggle('open');});
+  });
+  document.addEventListener('click',()=>document.querySelectorAll('.tools-wrap.open').forEach(w=>w.classList.remove('open')));
+})();
+loadTheme();
+</script>
+<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+<script>
+/* ── Tool-page brand mascot: fit to the space this page actually has ── */
+function fitMascot() {
+  var m = document.querySelector('.tool-mascot');
+  if (!m) return;
+  if (window.innerWidth <= 900) { m.style.opacity = 0; return; }
+
+  /* Widest ink in the 200px band ending at footY. Factored out so the mascot can
+     compare several heights and stand where there is actually room, instead of
+     being pinned to the hero's lower edge -- on /symbols/ that left it hovering
+     in mid-hero whitespace with nothing beside it. */
+  function widestIn(scope, footY, skip) {
+    var bandTop = footY - 200, widest = 0;
+    var BOXY = ['IMG', 'SVG', 'BUTTON', 'A', 'INPUT', 'SELECT'];
+    Array.prototype.forEach.call(scope.querySelectorAll('*'), function (el) {
+      if (el === skip || el.contains(skip)) return;
+      var st = getComputedStyle(el);
+      if (st.display === 'none' || st.visibility === 'hidden' || st.position === 'absolute') return;
+      var box = el.getBoundingClientRect();
+      if (!box.width || box.bottom < bandTop || box.top > footY) return;
+      if (BOXY.indexOf(el.tagName) !== -1) {
+        if (box.right > widest) widest = box.right;
+        return;
+      }
+      if (el.children.length) return;
+      var r = document.createRange();
+      r.selectNodeContents(el);
+      Array.prototype.forEach.call(r.getClientRects(), function (line) {
+        if (line.bottom >= bandTop && line.top <= footY && line.right > widest) widest = line.right;
+      });
+    });
+    return widest;
+  }
+
+  var heroAnchored = m.classList.contains('tool-mascot-hero');
+  var host = m.offsetParent || m.parentElement;
+  if (!host) return;
+  var hostBox = host.getBoundingClientRect();
+
+  /* Where the mascot's feet land: on the hero's lower edge, or on the top edge
+     of the tool card it perches on. The band above that is what it occupies. */
+  var footY = heroAnchored ? hostBox.bottom : hostBox.top;
+  var bandTop = footY - 200;
+
+  /* One standing height: the hero's lower edge (or the card's top edge on the
+     generated tools). An earlier attempt picked the "roomiest" band automatically
+     and got it wrong -- most free space is not the same as looking right, and it
+     shifted three pages that were already fine. Pages that need a different
+     height get an explicit per-page offset instead. */
+  var hero = document.querySelector('.page-hero, .hero, .kbdir-hero') || document.body;
+  /* Read the per-page nudge FIRST: the measurement has to happen in the band the
+     mascot will actually occupy. Measuring low and then lifting is how it ended
+     up sitting on the /symbols/ headline. */
+  var lift = parseInt(m.getAttribute('data-lift') || '0', 10);
+  var baseFoot = (heroAnchored ? hero.getBoundingClientRect().bottom : hostBox.top) - lift;
+  m.style.marginBottom = lift ? (-14 + lift) + 'px' : '';
+  var widest = widestIn(hero, baseFoot, m);
+
+  var edge = hostBox.right;
+  if (heroAnchored) {
+    var col = document.querySelector('.wrap, .container');
+    if (!col) {
+      var best = null, bestW = 0, vw = window.innerWidth;
+      Array.prototype.forEach.call(document.querySelectorAll('main *, body > div > *'), function (el) {
+        var r2 = el.getBoundingClientRect();
+        if (r2.width > bestW && r2.width < vw - 40 && r2.width > 420 && r2.height > 40) {
+          bestW = r2.width; best = el;
+        }
+      });
+      col = best;
+    }
+    if (col) {
+      var colRight = col.getBoundingClientRect().right;
+      if (colRight < edge - 1) { m.style.right = Math.round(edge - colRight) + 'px'; edge = colRight; }
+    }
+  }
+
+  if (!widest) { m.style.opacity = 0; return; }
+
+  var w = Math.min(164, Math.floor(edge - widest));
+  /* Floor calibrated against rendered pages, not guessed: fancy-text at 95px
+     looked squeezed, while symbols at 106 and compare at 101 read fine. Width
+     alone was never the problem -- fancy-text sat hard against a pill with no
+     air. 100 is the line where the two groups actually separate. */
+  if (w < 100) { m.style.width = '0px'; m.style.opacity = 0; return; }
+  m.style.width = w + 'px';
+  m.style.opacity = 1;
+
+}
+window.addEventListener('resize', fitMascot, {passive:true});
+if (document.readyState !== 'loading') setTimeout(fitMascot, 0);
+else document.addEventListener('DOMContentLoaded', fitMascot);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitMascot);
+</script>
+</body>
+</html>

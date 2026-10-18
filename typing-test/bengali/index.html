@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-13B2Z80B92"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-13B2Z80B92');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <title>Bengali Typing Test — Bangla Speed in Unicode (Avro / Bijoy layouts)</title>
+  <meta name="description" content="Bangla typing speed test with an on-screen Bengali keyboard. Real word list, accuracy tracking, and juktakkhor counted as letters, not codepoints.">
+  <link rel="canonical" href="https://kactyl.com/typing-test/bengali/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kactyl.com/typing-test/bengali/">
+  <meta property="og:title" content="Bengali Typing Test — Bangla Speed in Unicode (Avro / Bijoy layouts)">
+  <meta property="og:description" content="Bangla typing speed test with an on-screen Bengali keyboard. Real word list, accuracy tracking, and juktakkhor counted as letters, not codepoints.">
+  <meta property="og:image" content="/images/og-images/bengali.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Kactyl">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bengali Typing Test — Bangla Speed in Unicode (Avro / Bijoy layouts)">
+  <meta name="twitter:description" content="Bangla typing speed test with an on-screen Bengali keyboard. Real word list, accuracy tracking, and juktakkhor counted as letters, not codepoints.">
+  <meta name="twitter:image" content="/images/og-images/bengali.png">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is speed measured here?", "acceptedAnswer": {"@type": "Answer", "text": "Whole words typed correctly per minute, with visual letter units per minute shown beside it. On this word list that convention would report roughly 1.7 times the words-per-minute figure shown here, because it counts the keystrokes hidden inside conjuncts as if they were separate letters."}}, {"@type": "Question", "name": "Can I take this test with the Avro keyboard?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Avro produces Unicode Bengali, which is exactly what this test reads. Type as you normally would."}}, {"@type": "Question", "name": "Does Bijoy work here?", "acceptedAnswer": {"@type": "Answer", "text": "Classic Bijoy does not — it outputs ANSI, not Unicode, so the page receives Latin characters rather than Bengali. UniBijoy has the same key positions and does work, because it emits Unicode."}}, {"@type": "Question", "name": "Do I need Bengali installed to take the test?", "acceptedAnswer": {"@type": "Answer", "text": "No. The on-screen Bengali keyboard below the test is the key grid from our Bengali keyboard page and you can click through it."}}, {"@type": "Question", "name": "Why is my Bangla speed lower than my English speed?", "acceptedAnswer": {"@type": "Answer", "text": "A word in this list averages 2.53 visual units and 4.21 codepoints — 91% of them contain at least one cluster that takes more keystrokes than it shows. More work per finished word."}}, {"@type": "Question", "name": "Where do the words come from?", "acceptedAnswer": {"@type": "Answer", "text": "A Bengali frequency corpus, the same verified list our Bengali keyboard autocompletes from. Not hand-written."}}, {"@type": "Question", "name": "Does it handle juktakkhor correctly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and that is most of the point of building this separately from an English typing test. ক্ষ counts as one visual unit, not three, because that is what it is."}}, {"@type": "Question", "name": "Is this useful for BCS typing preparation?", "acceptedAnswer": {"@type": "Answer", "text": "For speed and accuracy, yes. For the exam itself, only if you confirm the layout it requires — BCS specifies Bijoy, which this test cannot read."}}, {"@type": "Question", "name": "What is the longest word in the test?", "acceptedAnswer": {"@type": "Answer", "text": "সবসময়, at 5 visual units."}}, {"@type": "Question", "name": "Does it work on a phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with your phone keyboard, which will normally be phonetic."}}, {"@type": "Question", "name": "Is my score stored anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "Only in your own browser. Nothing is sent to us."}}, {"@type": "Question", "name": "Is Bangla the same as Bengali here?", "acceptedAnswer": {"@type": "Answer", "text": "Same language, two names for it. The test is the same either way."}}]}</script>
+
+  <style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { overflow-x:clip; max-width:100%; }
+button { cursor:pointer; font-family:inherit; border:none; background:none; }
+:root {
+  --blue:#0068ff; --purple:#7C3AED; --green:#059669; --teal:#0891b2;
+  --bg:#EDF0F8; --surface:#FFFFFF; --border:#DDE3EE; --shadow:rgba(15,23,42,.07);
+  --nav:#0F172A; --text:#1E293B; --muted:#64748B; --r:16px; --rs:10px;
+}
+[data-theme="dark"] { --bg:#0F172A; --surface:#1E293B; --border:#334155; --shadow:rgba(0,0,0,.22); --text:#F1F5F9; --muted:#94A3B8; }
+body { font-family:'Inter',sans-serif; background:#fff; color:var(--text); min-height:100vh; transition:background .3s,color .3s; overflow-x:clip; }
+[data-theme="dark"] body { background:#07091A; }
+a { color:inherit; text-decoration:none; }
+.bg-shapes { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+.s { position:absolute; border-radius:50%; filter:blur(60px); }
+header { background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s; }
+header.hdr-hidden { transform:translateY(-100%); }
+[data-theme="dark"] header { background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06); }
+.logo { display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0; }
+.logo-img { height:200px;width:auto;display:block; }
+nav { display:flex;align-items:center;gap:4px; }
+.nav-link { color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s; }
+.nav-link:hover { background:var(--border); }
+[data-theme="dark"] .nav-link { color:#E2E8F0; }
+.tools-wrap { position:relative; }
+.tools-btn { cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;display:flex;align-items:center;gap:4px; }
+.tools-btn:hover { background:var(--border); }
+[data-theme="dark"] .tools-btn { color:#E2E8F0; }
+.tools-drop { display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px; }
+.tools-wrap.open .tools-drop { display:flex; }
+.tools-item { display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s; }
+.tools-item:hover { background:var(--border); }
+.tools-item .t-icon { width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center; }
+.tools-coming { font-size:10px;font-weight:700;color:#fff;background:var(--blue);border-radius:4px;padding:1px 5px;margin-left:auto;flex-shrink:0; }
+.theme-wrap { display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none; }
+.t-track { width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s; }
+.t-track.on { background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12); }
+.t-thumb { width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center; }
+.t-thumb.on { left:21px; }
+.t-lbl { font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap; }
+.wrap { max-width:860px;margin:0 auto;padding:0 24px;position:relative;z-index:1; }
+.page-hero { padding:56px 0 40px;text-align:center; }
+.hero-badge { display:inline-flex;align-items:center;gap:7px;border:1px solid;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.3px; }
+.page-hero h1 { font-size:clamp(28px,4.5vw,52px);font-weight:800;letter-spacing:-.8px;line-height:1.12;background:linear-gradient(180deg,#0A0A0A 0%,#64748B 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px; }
+[data-theme="dark"] .page-hero h1 { background:linear-gradient(180deg,#F1F5F9 0%,#94A3B8 100%);-webkit-background-clip:text;background-clip:text; }
+.hero-sub { font-size:16px;color:var(--muted);max-width:520px;margin:0 auto; }
+/* Tool card */
+.tool-about { padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:32px; }
+[data-theme="dark"] .tool-about { background:rgba(255,255,255,.04); }
+.tool-about h2 { font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:14px;letter-spacing:-.4px; }
+.tool-about p { font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:10px; }
+.tool-about p:last-child { margin-bottom:0; }
+.tool-about p strong { color:var(--text); }
+/* FAQ */
+.tool-faq { margin-bottom:48px; }
+.tool-faq > h2 { font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px; }
+.tool-faq details { border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden; }
+.tool-faq details summary { padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center; }
+.tool-faq details summary::-webkit-details-marker { display:none; }
+.tool-faq details summary::after { content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s; }
+.tool-faq details[open] summary::after { transform:rotate(45deg); }
+.tool-faq details[open] summary { color:var(--accent); }
+.tool-faq .faq-ans { padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted); }
+/* Toast */
+.toast { position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#1E293B;color:#fff;font-size:14px;font-weight:600;padding:10px 22px;border-radius:99px;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;z-index:999; }
+[data-theme="dark"] .toast { background:#F1F5F9;color:#0F172A; }
+.toast.show { opacity:1;transform:translateX(-50%) translateY(0); }
+/* Footer */
+footer { background:var(--nav);color:#94A3B8;padding:56px 28px 32px;margin-top:80px; }
+.ft-inner { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px; }
+.ft-brand { display:flex;flex-direction:column;gap:14px; }
+.ft-logo { display:flex;align-items:center;gap:10px; }
+.ft-ic { width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center; }
+.ft-name { font-size:17px;font-weight:800;color:#F1F5F9; }
+.ft-tagline { font-size:13px;line-height:1.6; }
+.ft-badges { display:flex;gap:8px;flex-wrap:wrap; }
+.ft-badge { font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px; }
+.ft-badge.g { background:rgba(5,150,105,.2);color:#34D399; }
+.ft-badge.b { background:rgba(0,104,255,.2);color:#60A5FA; }
+.ft-col h4 { font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748B;margin-bottom:12px; }
+.ft-h4-gap { margin-top:24px; }
+.ft-legal { display:flex;flex-direction:column;gap:8px; }
+.ft-legal a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-legal a:hover { color:#F1F5F9; }
+.ft-kb-grid { display:grid;grid-template-columns:1fr 1fr;gap:6px 16px; }
+.ft-kb-grid a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-kb-grid a:hover { color:#F1F5F9; }
+.ft-bottom { max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px; }
+.ft-copy { font-size:12px;color:#475569; }
+@media(max-width:700px) { .ft-inner{grid-template-columns:1fr} header{height:60px;padding:0 16px} .logo-img{height:140px} .t-lbl{display:none} nav .nav-link{display:none} }
+:root { --accent:#0d9488; --accent2:#0891b2; }
+.s1 { width:600px;height:600px;background:rgba(13,148,136,.10);top:10%;left:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+.s2 { width:500px;height:500px;background:rgba(249,115,22,.08);top:40%;right:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+[data-theme="dark"] .s1 { background:rgba(13,148,136,.25); }
+[data-theme="dark"] .s2 { background:rgba(249,115,22,.18); }
+.hero-badge { background:rgba(13,148,136,.07);border-color:rgba(13,148,136,.2);color:#0d9488; }
+[data-theme="dark"] .hero-badge { background:rgba(13,148,136,.18);color:#fca5a5; }
+
+/* Typing test */
+.tt-tool{background:var(--surface);border-radius:22px;padding:22px;box-shadow:0 10px 30px rgba(15,23,42,.07);max-width:880px;margin:0 auto}
+.tt-langbar{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid var(--bg)}
+.tt-langbtn{border:1px solid var(--bg);background:var(--surface);color:var(--muted);line-height:1;padding:7px 14px;border-radius:10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px}
+.tt-lb-native{font-size:17px;line-height:1.15}
+.tt-lb-latin{font-size:11px;font-weight:600;letter-spacing:.02em;opacity:.72;font-family:'Inter',system-ui,sans-serif}
+.tt-now{margin:0 0 15px;font-size:13px;color:var(--muted)}
+.tt-now b{color:var(--text,inherit);font-weight:700}
+.tt-langbtn:hover{border-color:#0d9488}
+.tt-langbtn.active{background:#0d9488;border-color:#0d9488;color:#fff}
+.tt-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.tt-durs{display:flex;gap:6px;background:var(--bg);padding:5px;border-radius:12px}
+.tt-dur{border:0;background:transparent;font:600 13px/1 Inter,system-ui,sans-serif;color:var(--muted);padding:8px 13px;border-radius:8px;cursor:pointer}
+.tt-dur.active{background:var(--surface);color:var(--text);box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.tt-live{display:flex;align-items:baseline;gap:6px}
+.tt-clock{font:800 26px/1 Inter,system-ui,sans-serif;color:#0d9488;font-variant-numeric:tabular-nums}
+.tt-unit{font:500 12px/1 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-passage{font-family:var(--tt-face);font-size:25px;line-height:2;min-height:110px;
+  padding:16px 18px;background:var(--bg);border-radius:14px;
+  display:flex;flex-wrap:wrap;gap:0 12px;align-content:flex-start;overflow:hidden;user-select:none}
+.tt-w{padding:0 2px;border-radius:5px;color:var(--muted);transition:color .1s}
+.tt-w.done{color:#16a34a}
+.tt-w.bad{color:#dc2626;text-decoration:underline wavy #dc2626 1px;text-underline-offset:5px}
+.tt-w.now{color:var(--text);background:rgba(0,0,0,.06);box-shadow:inset 0 -2px 0 #0d9488}
+.tt-srlabel{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tt-input{width:100%;margin-top:14px;font-family:var(--tt-face);font-size:21px;padding:13px 15px;
+  border:2px solid var(--bg);border-radius:12px;background:var(--surface);color:var(--text);outline:0}
+.tt-input:focus{border-color:#0d9488}
+.tt-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:13px}
+.tt-restart{border:0;background:var(--bg);color:var(--text);font:600 13px/1 Inter,system-ui,sans-serif;padding:10px 16px;border-radius:10px;cursor:pointer}
+.tt-restart:hover{background:#e2e8f0}
+.tt-kbhint{font:500 12px/1.4 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-kb{margin-top:16px;display:flex;flex-direction:column;gap:6px}
+.tt-krow{display:flex;gap:5px;justify-content:center}
+.tt-key{flex:1 1 0;min-width:0;height:44px;border:0;border-radius:9px;background:var(--bg);
+  color:var(--text);font-family:var(--tt-face);font-size:19px;cursor:pointer;
+  box-shadow:0 1px 0 rgba(15,23,42,.13);padding:0}
+.tt-key:hover{background:#e2e8f0}
+.tt-key.hit{background:#0d9488;color:#fff}
+.tt-space{flex:4 1 0}
+.tt-bsp{flex:1.6 1 0;font-size:16px}
+.tt-result{margin-top:16px;padding:18px;border-radius:16px;background:linear-gradient(135deg,#0d94880d,#0891b214);border:1px solid #0d948822}
+.tt-rhead{font:700 13px/1 Inter,system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#0d9488;margin-bottom:14px}
+.tt-figs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tt-fig{text-align:center}
+.tt-fig b{display:block;font:800 30px/1.1 Inter,system-ui,sans-serif;color:var(--text);font-variant-numeric:tabular-nums}
+.tt-fig span{font:500 11px/1.3 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-rmeta{display:flex;gap:18px;flex-wrap:wrap;margin-top:15px;font:500 12.5px/1.5 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-rmeta b{color:var(--text)}
+.tt-again{margin-top:15px;border:0;border-radius:10px;background:#0d9488;color:#fff;font:700 13px/1 Inter,system-ui,sans-serif;padding:12px 20px;cursor:pointer}
+.tt-passage[dir="rtl"],.tt-input[dir="rtl"]{direction:rtl;text-align:right}
+@media(max-width:640px){
+  .tt-tool{padding:15px;border-radius:18px}
+  .tt-passage{font-size:21px;line-height:1.9;min-height:96px}
+  .tt-figs{grid-template-columns:repeat(2,1fr)}
+  .tt-key{height:38px;font-size:17px}
+  .tt-fig b{font-size:25px}
+}
+
+/* Per-language sections */
+.tt-sec{max-width:880px;margin:38px auto 0;background:var(--surface);border-radius:20px;padding:28px 30px;box-shadow:0 6px 22px rgba(15,23,42,.05)}
+.tt-sec h2{font:800 25px/1.3 Inter,system-ui,sans-serif;color:var(--text);margin:0 0 16px}
+.tt-sec p{font:400 15.5px/1.75 Inter,system-ui,sans-serif;color:#475569;margin:0 0 15px}
+.tt-sec p:last-child{margin-bottom:0}
+.tt-sec strong{color:var(--text);font-weight:700}
+.tt-miss{display:grid;gap:12px;margin-top:4px}
+.tt-missrow{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;
+  padding:15px;border-radius:13px;background:var(--bg)}
+.tt-glyph{font-family:var(--tt-face);font-size:31px;line-height:1.25;text-align:center;color:#0d9488}
+.tt-missrow h3{font:700 14.5px/1.4 Inter,system-ui,sans-serif;color:var(--text);margin:0 0 5px}
+.tt-missrow p{font:400 14px/1.65 Inter,system-ui,sans-serif;color:#475569;margin:0}
+.tt-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:13px;margin-top:6px}
+.tt-stat{padding:17px;border-radius:14px;background:linear-gradient(135deg,#0d94880d,#0891b214);border:1px solid #0d94881f}
+.tt-stat b{display:block;font:800 27px/1.15 Inter,system-ui,sans-serif;color:var(--text);font-variant-numeric:tabular-nums}
+.tt-stat span{font:500 12px/1.45 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-src{margin-top:22px;padding-top:16px;border-top:1px solid var(--bg);font:400 12.5px/1.7 Inter,system-ui,sans-serif;color:var(--muted)}
+.tt-src a{color:#0d9488}
+.tt-tbl-wrap{overflow-x:auto;margin-top:6px}
+.tt-tbl{width:100%;border-collapse:collapse;font:400 14px/1.6 Inter,system-ui,sans-serif;min-width:660px}
+.tt-tbl th{text-align:left;font-weight:700;color:var(--text);padding:11px 13px;border-bottom:2px solid var(--bg);white-space:nowrap}
+.tt-tbl td{padding:11px 13px;border-bottom:1px solid var(--bg);color:#475569}
+.tt-tbl td:first-child{font-weight:600;color:var(--text)}
+.tt-langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:15px;max-width:880px;margin:0 auto}
+.tt-lcard{display:block;text-decoration:none;padding:23px;border-radius:18px;background:var(--surface);
+  box-shadow:0 6px 20px rgba(15,23,42,.06);transition:box-shadow .15s}
+.tt-lcard:hover{box-shadow:0 10px 28px rgba(15,23,42,.12)}
+.tt-lnative{font-size:34px;line-height:1.3;color:var(--text);margin-bottom:9px}
+.tt-lname{font:700 16px/1.3 Inter,system-ui,sans-serif;color:var(--text)}
+.tt-lnote{font:400 13px/1.6 Inter,system-ui,sans-serif;color:var(--muted);margin-top:5px}
+@media(max-width:640px){.tt-sec{padding:21px 18px;border-radius:16px;margin-top:26px}.tt-sec h2{font-size:21px}}
+
+.tt-tool,.tt-sec{--tt-face:'Baloo Da 2', sans-serif}
+
+/* Translations wrap to different line counts (AR 2 lines, EN 3, FR 4), which
+   would shove everything below up or down on every switch. Reserving the tallest
+   language's height keeps the page in exactly the same place in all three. */
+.hero-sub { min-height:80px; }
+
+/* ── Tool-page brand mascot (shared: generator + injector) ── */
+.tool-stage { position:relative; }
+/* right:0, never negative. On generated tools the hero sits inside an 880px
+   column so a negative offset was harmless, but the older pages' heroes run to
+   the viewport edge -- there a -14px tuck pushed the image to 1294px in a
+   1280px window and created horizontal scroll. */
+.tool-mascot { position:absolute;bottom:100%;right:0;width:0;height:auto;
+  z-index:0;pointer-events:none;opacity:0;margin-bottom:-14px;
+  transition:opacity .25s;filter:drop-shadow(0 6px 18px rgba(0,0,0,.13)); }
+/* Two anchors, two offsets. Generated tools hang the mascot off the TOP of the
+   tool card (bottom:100% of .tool-stage). The older pages have no consistently
+   named card, so the mascot lives inside the hero instead -- there bottom:100%
+   would throw it above the hero and off the top of the page, so it pins to the
+   hero's lower edge. */
+.tool-mascot-hero { bottom:0;margin-bottom:0; }
+/* No room beside the content on a phone, and it would force horizontal scroll. */
+@media(max-width:900px){ .tool-mascot { display:none; } }
+
+/* Arabic glyphs make a taller line box than Latin at the same font-size, which
+   pushed the badge from 27px to 29px and nudged the whole page down 2px. */
+.hero-badge { height:27px;line-height:1;box-sizing:border-box; }
+/* Without an explicit line-height the line box is sized from the font's own
+   glyph metrics, so the same label is a couple of pixels taller in Arabic and
+   the rows below drift. Fixing line-height makes the box height script-independent. */
+.wc-label, .mo-label, .wc-cap, .wc-limits-hd, .wc-density-hd,
+.wc-chip, .mo-tab, .wc-mini, .mo-mini { line-height:1.45; }
+.wc-script-note, .mo-hint { line-height:1.65; }
+@media(max-width:600px){ .hero-sub { min-height:120px; } }
+.lang-wrap { position:relative; }
+/* Fixed width on purpose: "English", "العربية" and "Français" are different
+   lengths, and without this the pill resizes and pushes the whole nav sideways
+   when the language changes. The header must sit in exactly the same place in
+   every language. */
+.lang-pill { display:flex;align-items:center;justify-content:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s;min-width:116px;box-sizing:border-box;white-space:nowrap; }
+.lang-pill:hover { border-color:#0d9488; }
+[data-theme="dark"] .lang-pill { color:#E2E8F0;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14); }
+.lang-menu { display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);box-shadow:0 8px 24px var(--shadow);min-width:150px;overflow:hidden;z-index:400; }
+.lang-menu.show { display:block; }
+.lang-opt { display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s;width:100%;text-align:left; }
+.lang-opt:hover { background:var(--bg); }
+.lang-opt.active { color:#0d9488;font-weight:600; }
+
+/* ── Canonical Header CSS ── */
+header{background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s}
+header.hdr-hidden{transform:translateY(-100%)}
+[data-theme="dark"] header{background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-img{height:200px;width:auto;display:block}
+nav{display:flex;align-items:center;gap:4px}
+.nav-link{padding:6px 12px;border-radius:6px;text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
+.nav-link:hover{background:var(--border)}
+[data-theme="dark"] .nav-link{color:var(--nav-txt)}
+[data-theme="dark"] .nav-link:hover{background:rgba(255,255,255,.1)}
+.tools-wrap{position:relative}
+.tools-btn{cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.tools-btn:hover{background:var(--border)}
+[data-theme="dark"] .tools-btn{color:var(--nav-txt)}
+[data-theme="dark"] .tools-btn:hover{background:rgba(255,255,255,.1)}
+.tools-drop{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px}
+.tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
+.tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s,color .18s;white-space:nowrap}
+.tools-item:hover{background:var(--border)}.tools-item.active-tool{color:var(--accent)!important;font-weight:600;background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.tools-item .t-icon{width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center}
+.theme-wrap{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
+.t-track{width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s}
+.t-track.on{background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12)}
+.t-thumb{width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center}
+.t-thumb.on{left:21px}
+.t-lbl{font-size:11px;font-weight:600;color:var(--muted);line-height:1.1;white-space:nowrap}
+.lang-wrap{position:relative}
+.lang-pill{display:flex;align-items:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s}
+.lang-pill:hover{border-color:var(--blue)}
+[data-theme="dark"] .lang-pill{color:var(--nav-txt);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+.lang-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px var(--shadow);min-width:140px;overflow:hidden;z-index:400}
+.lang-menu.show{display:block}
+.lang-opt{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s}
+.lang-opt:hover{background:var(--bg)}
+.lang-opt.active{color:var(--blue);font-weight:600}
+@media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+/* ── Canonical Footer CSS ── */
+footer{background:#07091A;border-top:none;padding:0}
+.ft-inner{max-width:1000px;margin:0 auto;padding:56px 28px 44px;display:grid;grid-template-columns:200px 1fr 150px 130px;gap:40px;align-items:start}
+.ft-brand{display:flex;flex-direction:column;gap:14px}
+.ft-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.ft-ic{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-ic img{width:48px;height:48px;opacity:1;filter:drop-shadow(0 0 14px rgba(255,23,54,.5)) drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+.ft-name{font-size:15px;font-weight:800;color:#F1F5F9}
+.ft-tagline{font-size:13px;color:#94A3B8;line-height:1.7}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ft-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
+.ft-badge.g{background:rgba(5,150,105,.12);color:#34D399;border:1px solid rgba(5,150,105,.18)}
+.ft-badge.b{background:rgba(0,104,255,.12);color:#60A5FA;border:1px solid rgba(0,104,255,.18)}
+.ft-social{display:flex;gap:8px;margin-top:2px}
+.ft-soc-link{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;color:#94A3B8;text-decoration:none;transition:background .2s,color .2s}
+.ft-soc-link:hover{background:rgba(0,104,255,.20);border-color:rgba(0,104,255,.40);color:#60A5FA}
+.ft-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:#64748B;margin-bottom:14px}
+.ft-col h4.ft-h4-gap{margin-top:22px}
+.ft-kb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}
+.ft-kb-grid a,.ft-legal a{font-size:13px;color:#CBD5E1;text-decoration:none;padding:5px 0;display:block;transition:color .15s}
+.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}
+.ft-legal{display:flex;flex-direction:column}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;gap:12px}
+.ft-copy{font-size:11px;color:#64748B}
+.ft-bottom-links{display:flex;align-items:center;gap:16px}
+.ft-bottom-links a{font-size:11px;color:#64748B;text-decoration:none;transition:color .15s}
+.ft-bottom-links a:hover{color:#94A3B8}
+@media(max-width:860px){.ft-inner{grid-template-columns:200px 1fr 130px}.ft-inner .ft-col:last-child{grid-column:2;grid-row:2}}
+@media(max-width:640px){.ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px}.ft-brand{grid-column:1/-1}.ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px}.ft-bottom-links{flex-wrap:wrap;justify-content:center}}
+.sec-grad{background:linear-gradient(135deg,#0d9488,#0891b2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Use-case badges */
+.use-cases{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
+.uc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(13,148,136,.07);border:1px solid rgba(13,148,136,.18);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700;color:#0d9488}
+[data-theme="dark"] .uc-badge{background:rgba(13,148,136,.15);color:#fca5a5}
+.uc-badge svg{flex-shrink:0}
+
+/* How-to */
+.how-sec{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:32px;max-width:1100px;margin:0 auto 32px}
+[data-theme="dark"] .how-sec{background:rgba(255,255,255,.04)}
+.how-head{font-size:clamp(20px,2.5vw,26px);font-weight:800;margin-bottom:24px;letter-spacing:-.4px}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.how-num-bg{width:52px;height:52px;border-radius:15px;background:linear-gradient(135deg,#0d9488,#0891b2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.how-step-title{font-size:14px;font-weight:700;color:var(--text)}
+.how-step-desc{font-size:13px;color:var(--muted);line-height:1.6}
+@media(max-width:600px){.how-steps{grid-template-columns:1fr}}
+
+</style>
+<style>
+.faq-promo{position:relative;z-index:1;padding:70px 16px 64px}
+.faq-promo-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:16px;position:relative;max-width:760px;margin:0 auto}
+.faq-card-brand{background:#fff;border:none;border-radius:24px;padding:18px 28px;display:flex;align-items:center;justify-content:center;min-height:122px;position:relative}
+.faq-card-2{background:#fff;border:none;border-radius:24px;min-height:122px;position:relative}
+.faq-card-brand::before,.faq-card-2::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.55;z-index:-1;pointer-events:none}
+.card-hills-clip{position:absolute;inset:0;border-radius:24px;overflow:hidden;z-index:1}
+.card-hills{position:absolute;left:0;bottom:0;width:100%;height:126px;display:block}
+.card-hills .hill-soft{fill:#cfe0ff}
+.card-hills .hill-accent{fill:#0068ff}
+.faq-brand-logo{width:210px;max-width:80%}
+.faq-mascot{position:absolute;top:-70px;left:74%;transform:translateX(-50%);width:210px;z-index:10;pointer-events:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.15))}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:8px 22px;font-size:13px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:18px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+@media(max-width:600px){.faq-promo-grid{grid-template-columns:1fr}.faq-card-2{display:none}.faq-mascot{top:-128px;left:50%;width:170px}}
+</style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
+<style>
+/* ── Tool-page brand mascot (shared: generator + injector) ── */
+.tool-stage { position:relative; }
+/* right:0, never negative. On generated tools the hero sits inside an 880px
+   column so a negative offset was harmless, but the older pages' heroes run to
+   the viewport edge -- there a -14px tuck pushed the image to 1294px in a
+   1280px window and created horizontal scroll. */
+.tool-mascot { position:absolute;bottom:100%;right:0;width:0;height:auto;
+  z-index:0;pointer-events:none;opacity:0;margin-bottom:-14px;
+  transition:opacity .25s;filter:drop-shadow(0 6px 18px rgba(0,0,0,.13)); }
+/* Two anchors, two offsets. Generated tools hang the mascot off the TOP of the
+   tool card (bottom:100% of .tool-stage). The older pages have no consistently
+   named card, so the mascot lives inside the hero instead -- there bottom:100%
+   would throw it above the hero and off the top of the page, so it pins to the
+   hero's lower edge. */
+.tool-mascot-hero { bottom:0;margin-bottom:0; }
+/* No room beside the content on a phone, and it would force horizontal scroll. */
+@media(max-width:900px){ .tool-mascot { display:none; } }
+.page-hero { position:relative; }
+</style>
+</head>
+<body>
+<div class="bg-shapes"><div class="s1"></div><div class="s2"></div></div>
+
+<header>
+  <a class="logo" href="/">
+    <img class="logo-img" id="logo-img" src="/images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
+  </a>
+                                                                                                                                                      <nav>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+    <div class="tools-wrap">
+      <button class="tools-btn">Tools &#9662;</button>
+      <div class="tools-drop">
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/><circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/><path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
+        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
+        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
+        <a href="/calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Calligraphy</a>
+        <a href="/word-counter/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 14.5V8" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 14.5V3.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.5V9.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 14.5v-3" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/></svg></span> Word Counter</a>
+        <a href="/morse-code/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="3" cy="9" r="1.7" fill="#0068ff"/><rect x="7" y="7.5" width="8" height="3" rx="1.5" fill="#0068ff"/></svg></span> Morse Code</a>
+        <a href="/text-repeater/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M5 3.5h8a2 2 0 0 1 2 2v2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 14.5H5a2 2 0 0 1-2-2v-2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 9.5 15 7.5 17 9.5M5 8.5 3 10.5 1 8.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Text Repeater</a>
+        <a href="/typing-test/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="9" cy="10" r="5.5" stroke="#0068ff" stroke-width="1.6"/><path d="M9 7.5V10l1.8 1.4" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.2 2.2h3.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M9 2.2v1.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/></svg></span> Typing Test</a>
+      </div>
+    </div>
+        <div class="lang-wrap">
+      <button class="lang-pill" id="lang-pill" onclick="toggleToolLang(event)" aria-haspopup="true" aria-expanded="false">🇬🇧 English ▾</button>
+      <div class="lang-menu" id="lang-menu">
+        <button class="lang-opt active" data-lang="en" data-label="🇬🇧 English" onclick="setToolLang('en','🇬🇧 English',this)">🇬🇧 English</button>
+        <button class="lang-opt" data-lang="ar" data-label="🇸🇦 العربية" onclick="setToolLang('ar','🇸🇦 العربية',this)">🇸🇦 العربية</button>
+        <button class="lang-opt" data-lang="fr" data-label="🇫🇷 Français" onclick="setToolLang('fr','🇫🇷 Français',this)">🇫🇷 Français</button>
+      </div>
+    </div>
+    <div class="theme-wrap" onclick="toggleTheme()">
+      <div class="t-track" id="tt">
+        <div class="t-thumb" id="th"><img id="theme-icon" src="/images/Icon-white mode-Clavierarabe-enligne.svg" alt="Toggle theme" width="13" height="13"></div>
+      </div>
+      <div class="t-lbl" id="tlbl">White<br>Mode</div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-hero">
+      <h1>Bengali typing test</h1>
+      <p class="page-sub">Bangla as it is actually written — the 600 most frequent words, conjuncts included, counted the way the script reads.</p>
+    </div>
+
+    <div class="tt-tool" dir="ltr">
+      <div class="tt-bar">
+        <div class="tt-durs" role="group" aria-label="test length">
+          <button class="tt-dur active" data-s="15" type="button">15s</button>
+          <button class="tt-dur" data-s="30" type="button">30s</button>
+          <button class="tt-dur" data-s="60" type="button">60s</button>
+          <button class="tt-dur" data-s="120" type="button">2m</button>
+        </div>
+        <div class="tt-live">
+          <span class="tt-clock" id="ttClock">15</span>
+          <span class="tt-unit" data-i18n="tt.time">left</span>
+        </div>
+      </div>
+
+      <div class="tt-passage" id="ttPassage" lang="bn" dir="ltr" aria-live="off"></div>
+
+      <label class="tt-srlabel" for="ttInput">Type the Bengali words shown above</label>
+      <input id="ttInput" class="tt-input" type="text" lang="bn" dir="ltr"
+             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+             placeholder="" data-i18n-ph="tt.begin">
+
+      <div class="tt-result" id="ttResult" hidden>
+        <div class="tt-rhead" data-i18n="tt.result">Your result</div>
+        <div class="tt-figs">
+          <div class="tt-fig"><b id="ttWpm">0</b><span data-i18n="tt.wpm">words / min</span></div>
+          <div class="tt-fig"><b id="ttCpm">0</b><span data-i18n="tt.cpm">letters / min</span></div>
+          <div class="tt-fig"><b id="ttKpm">0</b><span data-i18n="tt.kpm">keystrokes / min</span></div>
+          <div class="tt-fig"><b id="ttAcc">0%</b><span data-i18n="tt.acc">accuracy</span></div>
+        </div>
+        <div class="tt-rmeta">
+          <span><b id="ttWords">0</b> <span data-i18n="tt.words">words typed</span></span>
+          <span><span data-i18n="tt.best">Personal best</span>: <b id="ttBest">—</b></span>
+          <span><span data-i18n="tt.missed">Most missed</span>: <b id="ttMissed">—</b></span>
+        </div>
+        <button class="tt-again" id="ttAgain" type="button" data-i18n="tt.again">Go again</button>
+      </div>
+
+      <div class="tt-foot">
+        <button class="tt-restart" id="ttRestart" type="button" data-i18n="tt.restart">Restart</button>
+        <span class="tt-kbhint" data-i18n="tt.kbhint">No keyboard installed? Click the keys.</span>
+      </div>
+
+      <div class="tt-kb" id="ttKb" aria-hidden="true">
+        <div class="tt-krow"><button class="tt-key" data-k="অ" type="button">অ</button><button class="tt-key" data-k="আ" type="button">আ</button><button class="tt-key" data-k="ই" type="button">ই</button><button class="tt-key" data-k="ঈ" type="button">ঈ</button><button class="tt-key" data-k="উ" type="button">উ</button><button class="tt-key" data-k="ঊ" type="button">ঊ</button><button class="tt-key" data-k="এ" type="button">এ</button><button class="tt-key" data-k="ঐ" type="button">ঐ</button><button class="tt-key" data-k="ও" type="button">ও</button><button class="tt-key" data-k="ঔ" type="button">ঔ</button><button class="tt-key" data-k="ং" type="button">ং</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ক" type="button">ক</button><button class="tt-key" data-k="খ" type="button">খ</button><button class="tt-key" data-k="গ" type="button">গ</button><button class="tt-key" data-k="ঘ" type="button">ঘ</button><button class="tt-key" data-k="চ" type="button">চ</button><button class="tt-key" data-k="ছ" type="button">ছ</button><button class="tt-key" data-k="জ" type="button">জ</button><button class="tt-key" data-k="ঝ" type="button">ঝ</button><button class="tt-key" data-k="ট" type="button">ট</button><button class="tt-key" data-k="ঠ" type="button">ঠ</button><button class="tt-key" data-k="ড" type="button">ড</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ঢ" type="button">ঢ</button><button class="tt-key" data-k="ত" type="button">ত</button><button class="tt-key" data-k="থ" type="button">থ</button><button class="tt-key" data-k="দ" type="button">দ</button><button class="tt-key" data-k="ধ" type="button">ধ</button><button class="tt-key" data-k="ন" type="button">ন</button><button class="tt-key" data-k="প" type="button">প</button><button class="tt-key" data-k="ফ" type="button">ফ</button><button class="tt-key" data-k="ব" type="button">ব</button><button class="tt-key" data-k="ভ" type="button">ভ</button><button class="tt-key tt-bsp" data-k="⌫" type="button" aria-label="backspace">&#9003;</button></div>
+        <div class="tt-krow"><button class="tt-key" data-k="ম" type="button">ম</button><button class="tt-key" data-k="য" type="button">য</button><button class="tt-key" data-k="র" type="button">র</button><button class="tt-key" data-k="ল" type="button">ল</button><button class="tt-key" data-k="শ" type="button">শ</button><button class="tt-key" data-k="ষ" type="button">ষ</button><button class="tt-key" data-k="স" type="button">স</button><button class="tt-key" data-k="হ" type="button">হ</button><button class="tt-key" data-k="ড়" type="button">ড়</button><button class="tt-key" data-k="ঢ়" type="button">ঢ়</button><button class="tt-key" data-k="য়" type="button">য়</button></div>
+        <div class="tt-krow"><button class="tt-key tt-space" data-k=" " type="button" aria-label="space"></button></div>
+      </div>
+    </div>
+
+    <section class="tt-sec">
+      <h2>Bijoy, Avro and UniBijoy — the split that decides your speed</h2>
+
+<p>Bengali typing carries a division that most scripts never had to deal with: the same
+keyboard layout can produce two completely different kinds of text.</p>
+
+<p><strong>Bijoy</strong>, developed by Mustafizur Rahman at Ananda Computers, became the de
+facto standard in Bangladesh and is still the layout used across government offices, courts
+and educational institutions. It is what the Bangladesh Public Service Commission expects
+in BCS cadre typing tests, and what NTRCA teacher-registration exams require. Bijoy output
+is ANSI — legacy encoding — so it needs its matching font installed to display as Bengali
+at all.</p>
+
+<p><strong>Avro</strong>, from OmicronLab, went the other way: phonetic input producing Unicode.
+You type <em>amar</em> and get আমার. It is the reason Bengali became usable on the open web,
+because Unicode text renders anywhere without shipping a font alongside it.</p>
+
+<p><strong>UniBijoy</strong> is the bridge, and it is the practical answer for most people
+caught between the two. It keeps Bijoy's key positions exactly — so decades of muscle
+memory still work — while emitting Unicode. Typists who learned Bijoy for an exam can move
+to modern software without relearning the board.</p>
+
+<p>In India, West Bengal government work more often uses the InScript Bengali layout, which
+shares its logic with the other Indian InScript layouts rather than with Bijoy.</p>
+
+<p>This test measures Unicode Bengali, so Avro, UniBijoy and InScript all work here
+directly. Classic Bijoy does not, because the characters it produces are not Bengali as
+far as any Unicode-aware program is concerned.</p>
+    </section>
+
+    <section class="tt-sec">
+      <h2>What this word list actually measures</h2>
+      <p>Bengali stacks nearly as hard as Devanagari and does it with a smaller letter inventory, which is why conjuncts carry so much of the load. Counted from the exact list this test serves:</p>
+      <div class="tt-stats">
+        <div class="tt-stat"><b>600</b><span>words in the test list</span></div>
+        <div class="tt-stat"><b>2.53</b><span>visual units per word</span></div>
+        <div class="tt-stat"><b>4.21</b><span>codepoints per word</span></div>
+        <div class="tt-stat"><b>228</b><span>distinct letter shapes</span></div>
+        <div class="tt-stat"><b>91%</b><span>words that stack</span></div>
+      </div>
+      <p style="margin-top:16px">The gap between those middle two numbers is the whole reason this test exists. A word here takes about 4.21 keystrokes to build but occupies 2.53 visual units on the page — a ratio of 1.66 to one. On this word list that convention would report roughly 1.7 times the words-per-minute figure shown here, because it counts the keystrokes hidden inside conjuncts as if they were separate letters.</p>
+    </section>
+
+    <section class="tt-sec">
+      <h2>Settle the layout question before you practise anything</h2>
+
+<p>Bengali is the one language here where practising before deciding is actively wasteful.
+Bijoy and Avro are not two roads to the same place: one trains finger positions for
+individual letters, the other trains you to spell in Latin and let an engine convert. Hours
+in Avro build almost no Bijoy muscle memory. If an exam is in your future, find out which
+layout it names first, and spend your practice there.</p>
+
+<p>Once that is settled, the drill that matters in Bangla is juktakkhor. Look at the
+missed-character list after a run — it will be dominated by হসন্ত sequences and by the
+dotted pairs ড় ঢ় য়. Those dotted letters deserve special attention because the failure is
+invisible: the word looks right on screen and compares as wrong, so you can practise a
+mistake for weeks without noticing it.</p>
+
+<p>Two minutes is the right length once you are past the beginner stage. Bengali words in
+this list run long, and a fifteen-second burst rewards guessing where a two-minute run
+punishes it.</p>
+    </section>
+
+    <section class="tt-sec">
+      <h2>What Bangla typing exams are actually testing</h2>
+
+<p>The thing worth knowing before you practise: BPSC and NTRCA typing tests are layout
+tests as much as speed tests. They specify Bijoy, and a candidate who is fast in Avro
+phonetic can be slow to the point of failing on a Bijoy board, because phonetic typing
+never trains finger positions for individual Bengali letters at all — the engine does the
+spelling.</p>
+
+<p>If an exam is your reason for practising, find out which layout the exam specifies
+before you put hours into any of them. If you are typing for work, email or writing, the
+Unicode question matters more than the layout question: text that is not Unicode cannot be
+searched, cannot be copied into a web form, and will not survive being sent to somebody
+who does not have your font.</p>
+
+<p>This test is useful for the second case, and for building raw speed and accuracy in the
+first. It is not a Bijoy simulator.</p>
+    </section>
+
+    <section class="tt-sec">
+      <h2>The characters Bangla typists lose time on</h2>
+      <div class="tt-miss">
+        <div class="tt-missrow"><div class="tt-glyph">্</div><div><h3>Hasanta and the juktakkhor</h3><p>ক্ষ, ঞ্চ and স্ত are single shapes built from three keystrokes each. Hasanta is the join. Miss it and you get two loose letters that look almost right and compare as wrong.</p></div></div>
+        <div class="tt-missrow"><div class="tt-glyph">ড়</div><div><h3>The dotted pair</h3><p>ড় ঢ় য় each exist as one codepoint and as base-plus-nukta. Identical on screen, different as data. This is the single most common source of a "correct" word being marked incorrect.</p></div></div>
+        <div class="tt-missrow"><div class="tt-glyph">ি</div><div><h3>The vowel that appears first</h3><p>কি shows ি to the left of ক but is typed after it. In Bijoy you type it in visual order; in Unicode you type it in logical order. Switching systems inverts the habit.</p></div></div>
+        <div class="tt-missrow"><div class="tt-glyph">ং</div><div><h3>Anusvara against ঙ</h3><p>বাংলা uses ং, not ঙ. They read similarly and sit in different places on every layout.</p></div></div>
+      </div>
+    </section>
+
+    <section class="tt-sec">
+      <h2>Sources</h2>
+      <p>Bijoy's role in Bangladesh government offices and in BPSC and NTRCA typing tests, and the UniBijoy keymap, were checked against published documentation rather than recalled.</p>
+      <div class="tt-src">Checked against: <a href="https://shaharia.com/blog/bangla-keyboard-guide/" rel="nofollow noopener" target="_blank">Bijoy in Bangladesh government offices, BPSC and NTRCA exams; UniBijoy keymap</a> · <a href="https://www.omicronlab.com/avro-keyboard.html" rel="nofollow noopener" target="_blank">Avro Keyboard — Unicode and ANSI Bangla input</a> · <a href="https://en.wikipedia.org/wiki/Bengali_input_methods" rel="nofollow noopener" target="_blank">Bengali input methods overview</a>. Word list: keyboard page word list.</div>
+    </section>
+
+    <section class="tt-sec">
+      <h2>If you came here to write, not to be measured</h2>
+      <p>If you want to write Bangla rather than be timed on it, the <a href="/bengali/">Bengali keyboard</a> is the tool — full layout, predictive text, and a juktakkhor engine that handles the conjuncts this test only measures. The other languages are on the <a href="/typing-test/">typing test hub</a>.</p>
+    </section>
+
+
+    <section class="faq-promo">
+      <div class="faq-promo-grid">
+        <div class="faq-card-brand">
+          <img src="/images/kactyl%20brand%20name-svg.svg" alt="Kactyl" class="faq-brand-logo">
+        </div>
+        <div class="faq-card-2">
+          <div class="card-hills-clip">
+            <svg class="card-hills" viewBox="0 0 560 130" preserveAspectRatio="none" aria-hidden="true">
+              <circle cx="38"  cy="135" r="74" class="hill-soft"/>
+              <circle cx="152" cy="120" r="92" class="hill-soft"/>
+              <circle cx="268" cy="144" r="58" class="hill-soft"/>
+              <circle cx="384" cy="126" r="86" class="hill-soft"/>
+              <circle cx="504" cy="138" r="70" class="hill-accent"/>
+            </svg>
+          </div>
+        </div>
+        <img src="/images/Mascot-pc.svg" alt="" class="faq-mascot">
+      </div>
+    </section>
+
+    <section class="tool-faq">
+      <div class="faq-hd-badge">FAQ</div>
+      <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
+      <details>
+        <summary>How is speed measured here?</summary>
+        <div class="faq-ans">Whole words typed correctly per minute, with visual letter units per minute shown beside it. On this word list that convention would report roughly 1.7 times the words-per-minute figure shown here, because it counts the keystrokes hidden inside conjuncts as if they were separate letters.</div>
+      </details>
+      <details>
+        <summary>Can I take this test with the Avro keyboard?</summary>
+        <div class="faq-ans">Yes. Avro produces Unicode Bengali, which is exactly what this test reads. Type as you normally would.</div>
+      </details>
+      <details>
+        <summary>Does Bijoy work here?</summary>
+        <div class="faq-ans">Classic Bijoy does not — it outputs ANSI, not Unicode, so the page receives Latin characters rather than Bengali. UniBijoy has the same key positions and does work, because it emits Unicode.</div>
+      </details>
+      <details>
+        <summary>Do I need Bengali installed to take the test?</summary>
+        <div class="faq-ans">No. The on-screen Bengali keyboard below the test is the key grid from our Bengali keyboard page and you can click through it.</div>
+      </details>
+      <details>
+        <summary>Why is my Bangla speed lower than my English speed?</summary>
+        <div class="faq-ans">A word in this list averages 2.53 visual units and 4.21 codepoints — 91% of them contain at least one cluster that takes more keystrokes than it shows. More work per finished word.</div>
+      </details>
+      <details>
+        <summary>Where do the words come from?</summary>
+        <div class="faq-ans">A Bengali frequency corpus, the same verified list our Bengali keyboard autocompletes from. Not hand-written.</div>
+      </details>
+      <details>
+        <summary>Does it handle juktakkhor correctly?</summary>
+        <div class="faq-ans">Yes, and that is most of the point of building this separately from an English typing test. ক্ষ counts as one visual unit, not three, because that is what it is.</div>
+      </details>
+      <details>
+        <summary>Is this useful for BCS typing preparation?</summary>
+        <div class="faq-ans">For speed and accuracy, yes. For the exam itself, only if you confirm the layout it requires — BCS specifies Bijoy, which this test cannot read.</div>
+      </details>
+      <details>
+        <summary>What is the longest word in the test?</summary>
+        <div class="faq-ans">সবসময়, at 5 visual units.</div>
+      </details>
+      <details>
+        <summary>Does it work on a phone?</summary>
+        <div class="faq-ans">Yes, with your phone keyboard, which will normally be phonetic.</div>
+      </details>
+      <details>
+        <summary>Is my score stored anywhere?</summary>
+        <div class="faq-ans">Only in your own browser. Nothing is sent to us.</div>
+      </details>
+      <details>
+        <summary>Is Bangla the same as Bengali here?</summary>
+        <div class="faq-ans">Same language, two names for it. The test is the same either way.</div>
+      </details>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a class="ft-logo" href="/"><div class="ft-ic"><img loading="lazy" src="/images/favicon.svg" alt="Kactyl" width="36" height="36"></div><span class="ft-name">Kactyl</span></a>
+      <div class="ft-tagline">Every Language. One Tab.<br>No download. No account.</div>
+      <div class="ft-badges"><span class="ft-badge g">✓ 100% Free</span><span class="ft-badge b">⚡ No Install</span></div>
+      <div class="ft-social">
+        <span class="ft-soc-link" aria-label="X / Twitter">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+        </span>
+        <span class="ft-soc-link" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </span>
+        <span class="ft-soc-link" aria-label="YouTube">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </span>
+        <span class="ft-soc-link" aria-label="TikTok">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </span>
+      </div></div>
+    <div class="ft-col">
+      <h4>Keyboards</h4>
+      <div class="ft-kb-grid">
+        <a href="/arabic/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
+        <a href="/japanese/">Japanese</a><a href="/chinese/">Chinese</a><a href="/turkish/">Turkish</a><a href="/russian/">Russian</a>
+        <a href="/greek/">Greek</a><a href="/thai/">Thai</a><a href="/vietnamese/">Vietnamese</a><a href="/amharic/">Amharic</a>
+      </div>
+    </div>
+        <div class="ft-col">
+      <h4>Tools</h4>
+      <div class="ft-legal">
+        <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/text-art/">Text Art</a>
+        <a href="/dot-art/">Dot Art</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/">Hijri Calendar</a>
+        <a href="/arabic-calligraphy/">Arabic Calligraphy</a>
+      </div>
+      <h4 class="ft-h4-gap">Company</h4>
+      <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
+    </div>
+    <div class="ft-col">
+      <h4>Legal</h4>
+      <div class="ft-legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+        <a href="/cookies">Cookie Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2026 Kactyl. All rights reserved.</span>
+    <div class="ft-bottom-links">
+      <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+      <a href="/cookies">Cookies</a><a href="/sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+var TOOL_I18N = {"en": {"tt.begin": "Start typing to begin","tt.time": "left","tt.wpm": "words / min","tt.cpm": "letters / min","tt.kpm": "keystrokes / min","tt.acc": "accuracy","tt.restart": "Restart","tt.result": "Your result","tt.best": "Personal best","tt.missed": "Most missed","tt.again": "Go again","tt.kbhint": "No keyboard installed? Click the keys.","tt.words": "words typed","tt.none": "nothing missed"},"ar": {"tt.begin": "ابدأ الكتابة للبدء","tt.time": "متبقٍ","tt.wpm": "كلمة / دقيقة","tt.cpm": "حرف / دقيقة","tt.kpm": "ضغطة / دقيقة","tt.acc": "الدقة","tt.restart": "إعادة","tt.result": "نتيجتك","tt.best": "أفضل نتيجة","tt.missed": "الأكثر خطأً","tt.again": "حاول مجددًا","tt.kbhint": "لا توجد لوحة مفاتيح مثبّتة؟ انقر على الأزرار.","tt.words": "كلمة مكتوبة","tt.none": "لا أخطاء"},"fr": {"tt.begin": "Commencez à taper pour démarrer","tt.time": "restant","tt.wpm": "mots / min","tt.cpm": "lettres / min","tt.kpm": "frappes / min","tt.acc": "précision","tt.restart": "Recommencer","tt.result": "Votre résultat","tt.best": "Record personnel","tt.missed": "Erreurs fréquentes","tt.again": "Relancer","tt.kbhint": "Pas de clavier installé ? Cliquez sur les touches.","tt.words": "mots tapés","tt.none": "aucune erreur"}};
+var WORDS = ["আমি", "না", "তুমি", "আমার", "কি", "এটা", "আর", "তোমার", "আছে", "সে", "এই", "আমরা", "করে", "হবে", "জন্য", "আমাদের", "করতে", "একটা", "আমাকে", "ঠিক", "আপনি", "তো", "যে", "তার", "থেকে", "কিছু", "সাথে", "কিন্তু", "এখানে", "তোমাকে", "এখন", "কোন", "কথা", "মনে", "কী", "যদি", "এবং", "হয়", "আপনার", "নিয়ে", "ছিল", "তাকে", "তারা", "নেই", "হয়ে", "তাহলে", "অনেক", "কেন", "করা", "হ্যাঁ", "করো", "তাই", "সব", "এক", "এর", "হচ্ছে", "যাও", "কাজ", "হয়েছে", "কে", "কাছে", "শুধু", "একটি", "স্যার", "দাও", "তাদের", "ভালো", "যা", "একজন", "ভাল", "জানি", "যেতে", "দিয়ে", "খুব", "কোথায়", "করবে", "যাবে", "চাই", "পারে", "শেষ", "করার", "ধন্যবাদ", "যখন", "বলতে", "কেউ", "করি", "সময়", "তুই", "গেছে", "বাবা", "ওকে", "মত", "সেটা", "হতে", "চলে", "ওহ", "নয়", "হ্যা", "একটু", "পারি", "দেখতে", "সবাই", "আগে", "দেখা", "করছি", "তিনি", "বের", "বলে", "কর", "আবার", "দিতে", "নাম", "যায়", "ওর", "পারবে", "নাকি", "কিভাবে", "মধ্যে", "তোমরা", "ফিরে", "আচ্ছা", "সাহায্য", "আপনাকে", "মানুষ", "তা", "মা", "করেছে", "দিকে", "দরকার", "সেই", "আসলে", "শুরু", "ওটা", "দুঃখিত", "দিন", "চলো", "মানে", "কিন্ত", "তোর", "তোমাদের", "করছে", "বলছি", "বিশ্বাস", "বন্ধ", "করেছি", "এমন", "অবশ্যই", "নিজের", "কারণ", "বড়", "করবো", "বেশি", "বছর", "উপর", "যাচ্ছে", "আসো", "চেষ্টা", "তারপর", "হল", "হয়", "হেই", "এসব", "দেখো", "কিছুই", "কোনো", "এটাই", "আছি", "টাকা", "যাচ্ছি", "জানো", "বুঝতে", "আজ", "ছিলো", "বলো", "মতো", "ধরে", "কখনো", "খারাপ", "কেমন", "প্লিজ", "মারা", "পছন্দ", "সেখানে", "চাও", "নাও", "সমস্যা", "দেখে", "নি", "পর", "থাকে", "এখনো", "সুন্দর", "তখন", "ভুল", "ভাই", "ওখানে", "পর্যন্ত", "করব", "নতুন", "পরে", "থাকতে", "ওরা", "যাই", "অন্য", "হলো", "খুঁজে", "ভয়", "ব্যাপারে", "ছেড়ে", "আরো", "নিতে", "থাকবে", "করুন", "লোক", "আরে", "ফোন", "বন্ধু", "হাত", "লাগবে", "এসো", "ওই", "যেন", "সত্যি", "জীবন", "বল", "চিন্তা", "সম্পর্কে", "ছেলে", "এত", "যেটা", "সামনে", "জিনিস", "খুবই", "পারবো", "এটি", "হ্যালো", "ছিলাম", "অপেক্ষা", "করবেন", "সবকিছু", "উচিত", "ব্যাপার", "নিচে", "থাকো", "পারো", "নিশ্চিত", "হলে", "এসেছে", "বা", "প্রথম", "এখান", "জলদি", "কত", "জানতে", "মেয়ে", "আসবে", "হও", "এসে", "করছ", "এরকম", "ওদের", "দুই", "দেখ", "তৈরি", "জন", "পারেন", "ছাড়া", "হাতে", "সবচেয়ে", "হয়তো", "আসছে", "একদম", "নাই", "লাগছে", "যাক", "মেরে", "সত্যিই", "বাইরে", "বেশ", "আসতে", "গুলি", "বলা", "এটার", "এসেছি", "পড়ে", "পুরো", "যান", "এগুলো", "ছোট", "দিয়েছে", "আমিও", "সবসময়", "চল", "পেয়েছি", "মিনিট", "চায়", "মজা", "আশা", "গিয়ে", "বলেছে", "তোকে", "যেখানে", "এবার", "আরও", "থামো", "পুলিশ", "কাউকে", "যাবো", "হোক", "নিজেকে", "পারব", "যারা", "শুনতে", "মানুষের", "জায়গা", "তাড়াতাড়ি", "কীভাবে", "বসে", "ফেলে", "দয়া", "জানে", "উপরে", "মাথা", "বাড়ি", "মি", "দেখি", "টা", "খুন", "আসে", "সঙ্গে", "মাত্র", "অথবা", "আসছি", "করলে", "মাঝে", "দিচ্ছি", "আপনাদের", "রাতে", "গাড়ি", "হয়েছিল", "চুপ", "ভুলে", "দাঁড়াও", "ব্যবহার", "আছো", "অবস্থা", "উচিৎ", "এখনও", "মিস", "করেন", "করছো", "যাব", "সবাইকে", "তবে", "এটাকে", "সবার", "পেতে", "বাচ্চা", "বেঁচে", "হিসেবে", "পারছি", "প্রয়োজন", "একা", "যাওয়া", "উনি", "চেয়ে", "তাঁর", "বলেছি", "এভাবে", "পাবে", "দেখেছি", "দ্রুত", "আয়", "প্রতি", "ভিতরে", "পাগল", "যাওয়ার", "কারন", "আপনারা", "দূরে", "দেয়", "যুদ্ধ", "যার", "পাওয়া", "দিবে", "নই", "জানেন", "লাগে", "শান্ত", "শুভ", "আসল", "একই", "করেছ", "খবর", "একবার", "মিঃ", "বাবার", "খুশি", "বলবে", "আগেই", "পার", "রাখো", "গেল", "চান", "নিশ্চয়ই", "সুযোগ", "কাজে", "গিয়েছে", "আসলেই", "সম্ভব", "আছেন", "হয়নি", "বলছে", "দেবে", "বিয়ে", "যথেষ্ট", "দরজা", "রেখে", "এখানেই", "এমনকি", "পথ", "হওয়ার", "কিনা", "তিন", "জানিনা", "চোখ", "ভেতরে", "যাতে", "কোথাও", "প্রশ্ন", "রাখতে", "উত্তর", "এদিকে", "ভাবে", "জায়গায়", "ব্যাপারটা", "প্রস্তুত", "আমাদেরকে", "করছেন", "দেখছি", "চমৎকার", "সোনা", "খাবার", "বলার", "দেয়া", "হাই", "আছ", "করেছিলাম", "হুম", "রয়েছে", "দে", "আহ", "ভেবেছিলাম", "করেছেন", "পানি", "গেলে", "বলি", "জ্যাক", "কেবল", "শুধুমাত্র", "দেওয়া", "দেখুন", "শব্দ", "ক্ষমা", "নষ্ট", "হত্যা", "একসাথে", "সম্ভবত", "সহজ", "ক্যাপ্টেন", "রাস্তা", "বলুন", "রে", "বলেছিলাম", "প্রায়", "আমায়", "রক্ষা", "বাকি", "দিয়েছি", "কাছ", "কারো", "তুমিই", "কঠিন", "কল", "বস", "গেলো", "নাম্বার", "খোদা", "রাজা", "এতো", "ধ্বংস", "কেনো", "জীবনের", "থাকার", "সত্য", "কষ্ট", "পিছনে", "ধরো", "মন", "শোন", "আমিই", "মুখ", "এখনই", "মিথ্যা", "চুরি", "একে", "যেমন", "থাক", "সেটাই", "ঈশ্বর", "আঘাত", "একমাত্র", "কখনোই", "আসুন", "পাচ্ছি", "কম", "থাকা", "জানতাম", "কার", "রাখা", "জান", "দিব", "কখনও", "হাজার", "গেছি", "হ্যারি", "আসার", "জিজ্ঞেস", "করেছো", "শক্তি", "সিদ্ধান্ত", "খেলা", "বেশী", "সরে", "পরিষ্কার", "করলাম", "নিরাপদ", "খেতে", "ছিলে", "দেবো", "বাদ", "বলবো", "ছবি", "পেছনে", "মহান", "এতে", "পেয়ে", "কাজের", "বললে", "সকল", "করেছিল", "কিসের", "দেরি", "আসা", "বিদায়", "জানা", "তাইনা", "বাসায়", "থাকলে", "থেকেই", "হওয়া", "অস্ত্র", "শালা", "পারবেন", "স্বাগতম", "আরেকটা", "ওহ্", "কারণে", "তাদেরকে", "খুজে", "নামে", "খুলে", "দাড়াও", "ইচ্ছা", "সঠিক", "চাচ্ছি", "তোমায়", "ঘরে", "পরিবার", "পা", "জন্যে", "মিস্টার", "পৃথিবীর", "মাফ", "বলছ", "মৃত্যুর", "দ্বারা", "চেক", "নিজে", "দেই", "ধরনের", "হারিয়ে", "বিশেষ", "আজকে", "বাড়িতে", "কাল", "ফিরিয়ে", "কখন", "ডাক্তার", "হয়েছে"];
+// ── Typing test ───────────────────────────────────────────────────────────────
+// Words are compared WHOLE, never character by character. Per-character
+// comparison is meaningless in a stacking script: half of a conjunct is not
+// something a typist can be right or wrong about. A word is right or it is not.
+// (No example glyph here on purpose -- a shipped comment is a page layer, and
+// LANGUAGE PURITY applies to it like any other.)
+var TT_LOCALE = document.getElementById('ttPassage').getAttribute('lang');
+var ttSeg = null;
+function ttMakeSeg() {
+  try { ttSeg = new Intl.Segmenter(TT_LOCALE, { granularity: 'grapheme' }); }
+  catch (e) { ttSeg = null; }
+}
+ttMakeSeg();
+
+// Visual letter units. Intl.Segmenter implements Unicode 15.1 Indic Conjunct
+// Break, so a three-codepoint conjunct counts as one unit. Without it we fall
+// back to codepoints, which over-counts.
+function ttUnits(s) {
+  if (!ttSeg) return Array.from(s);
+  var out = [];
+  var it = ttSeg.segment(s);
+  for (var i = it[Symbol.iterator](), r = i.next(); !r.done; r = i.next()) out.push(r.value.segment);
+  return out;
+}
+
+var ttPassage = document.getElementById('ttPassage');
+var ttInput   = document.getElementById('ttInput');
+var ttClock   = document.getElementById('ttClock');
+var ttResult  = document.getElementById('ttResult');
+var ttKb      = document.getElementById('ttKb');
+
+// The hub carries one key grid per language and reveals the active one, so key
+// lookups always run against what the visitor can actually see.
+function ttActiveKeys() {
+  var set = ttKb.querySelector('.tt-kbset:not([hidden])') || ttKb;
+  return set.querySelectorAll('.tt-key');
+}
+
+var ttDur = 15, ttLeft = 15, ttTimer = null, ttRunning = false;
+var ttQueue = [], ttIdx = 0, ttOk = 0, ttUnitsOk = 0, ttKeys = 0;
+var ttPrevVal = '';
+var ttAttemptUnits = 0, ttOkUnits = 0, ttMiss = {};
+
+function ttPick(n) {
+  var out = [];
+  for (var i = 0; i < n; i++) out.push(WORDS[Math.floor(Math.random() * WORDS.length)]);
+  return out;
+}
+
+function ttRender() {
+  var html = '';
+  for (var i = ttIdx; i < Math.min(ttIdx + 26, ttQueue.length); i++) {
+    var cls = i === ttIdx ? 'tt-w now' : 'tt-w';
+    html += '<span class="' + cls + '">' + ttQueue[i].replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>';
+  }
+  ttPassage.innerHTML = html;
+  ttHint();
+}
+
+// Light up the next key to press. Only the first unit of the current word --
+// highlighting a whole conjunct would mean lighting three keys at once.
+function ttHint() {
+  var keys = ttActiveKeys();
+  for (var i = 0; i < keys.length; i++) keys[i].classList.remove('hit');
+  var word = ttQueue[ttIdx];
+  if (!word) return;
+  var typed = ttInput.value;
+  var target = word.slice(typed.length);
+  var next = target ? Array.from(target)[0] : ' ';
+  for (var j = 0; j < keys.length; j++) {
+    if (keys[j].getAttribute('data-k') === next) { keys[j].classList.add('hit'); break; }
+  }
+}
+
+function ttReset() {
+  clearInterval(ttTimer);
+  ttRunning = false;
+  ttLeft = ttDur;
+  ttIdx = 0; ttOk = 0; ttUnitsOk = 0; ttKeys = 0;
+  ttPrevVal = '';
+  ttAttemptUnits = 0; ttOkUnits = 0; ttMiss = {};
+  ttQueue = ttPick(240);
+  ttInput.value = '';
+  ttClock.textContent = ttDur;
+  ttResult.hidden = true;
+  ttRender();
+}
+
+function ttStart() {
+  if (ttRunning) return;
+  ttRunning = true;
+  ttTimer = setInterval(function () {
+    ttLeft--;
+    ttClock.textContent = ttLeft;
+    if (ttLeft <= 0) ttStop();
+  }, 1000);
+}
+
+function ttScoreWord(typed, target) {
+  var t = ttUnits(typed), g = ttUnits(target);
+  ttAttemptUnits += Math.max(t.length, g.length);
+  var same = typed === target;
+  if (same) { ttOk++; ttUnitsOk += g.length; ttOkUnits += g.length; return true; }
+  // Count the units that did land, and remember which expected unit was missed.
+  var n = Math.min(t.length, g.length), hit = 0;
+  for (var i = 0; i < n; i++) if (t[i] === g[i]) hit++; else { ttMiss[g[i]] = (ttMiss[g[i]] || 0) + 1; break; }
+  ttOkUnits += hit;
+  return false;
+}
+
+function ttStop() {
+  clearInterval(ttTimer);
+  ttRunning = false;
+  var mins = ttDur / 60;
+  var wpm = Math.round(ttOk / mins);
+  var cpm = Math.round(ttUnitsOk / mins);
+  var kpm = Math.round(ttKeys / mins);
+  var acc = ttAttemptUnits ? Math.round(100 * ttOkUnits / ttAttemptUnits) : 0;
+
+  document.getElementById('ttWpm').textContent = wpm;
+  document.getElementById('ttCpm').textContent = cpm;
+  document.getElementById('ttKpm').textContent = kpm;
+  document.getElementById('ttAcc').textContent = acc + '%';
+  document.getElementById('ttWords').textContent = ttOk;
+
+  var worst = Object.keys(ttMiss).sort(function (a, b) { return ttMiss[b] - ttMiss[a]; }).slice(0, 4);
+  document.getElementById('ttMissed').textContent = worst.length ? worst.join('  ') : T('tt.none');
+
+  // Personal best is a convenience, not data we need. Every access is guarded:
+  // private windows and blocked site-data make localStorage throw outright.
+  var key = 'kactylTT.' + TT_LOCALE + '.' + ttDur, best = null;
+  try { best = localStorage.getItem(key); } catch (e) {}
+  if (best === null || wpm > +best) { try { localStorage.setItem(key, wpm); } catch (e) {} best = wpm; }
+  document.getElementById('ttBest').textContent = best;
+
+  ttResult.hidden = false;
+  ttInput.value = '';
+  ttPrevVal = '';
+}
+
+// Keystrokes are counted from what actually lands in the field, never from
+// keydown. A phone keyboard or an IME — which this page itself says is how most
+// people type these scripts — commits text without firing a keydown that
+// carries a single character. The old counter therefore reported 0 keystrokes
+// per minute for exactly the visitors this test is written for, while words per
+// minute and accuracy worked fine, so the result panel looked broken on mobile.
+// A codepoint delta covers physical keys, the on-screen keyboard and IME input
+// identically, and it matches this page's own framing, where a word that "takes
+// about N keystrokes to build" means its codepoint count.
+function ttCountKeys(v) {
+  var d = Array.from(v).length - Array.from(ttPrevVal).length;
+  if (d > 0) ttKeys += d;        // characters that arrived
+  else if (d < 0) ttKeys += 1;   // a deletion is still a keystroke
+  ttPrevVal = v;
+}
+
+ttInput.addEventListener('input', function () {
+  if (!ttRunning && ttInput.value) ttStart();
+  var v = ttInput.value;
+  ttCountKeys(v);
+  if (v.slice(-1) === ' ') {
+    var typed = v.trim();
+    if (!typed) { ttInput.value = ''; ttPrevVal = ''; return; }
+    ttScoreWord(typed, ttQueue[ttIdx]);
+    ttIdx++;
+    ttInput.value = '';
+    ttPrevVal = '';
+    if (ttIdx > ttQueue.length - 30) ttQueue = ttQueue.concat(ttPick(120));
+    ttRender();
+  } else {
+    ttHint();
+  }
+});
+
+ttKb.addEventListener('click', function (e) {
+  var b = e.target.closest('.tt-key');
+  if (!b) return;
+  var k = b.getAttribute('data-k');
+  if (k === '⌫') ttInput.value = ttInput.value.slice(0, -1);
+  else { ttInput.value += k; }   // counted by the input handler
+  ttInput.focus();
+  ttInput.dispatchEvent(new Event('input'));
+});
+
+document.querySelectorAll('.tt-dur').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.tt-dur').forEach(function (x) { x.classList.remove('active'); });
+    b.classList.add('active');
+    ttDur = +b.getAttribute('data-s');
+    ttReset();
+  });
+});
+
+document.getElementById('ttRestart').addEventListener('click', ttReset);
+document.getElementById('ttAgain').addEventListener('click', function () { ttReset(); ttInput.focus(); });
+ttPassage.addEventListener('click', function () { ttInput.focus(); });
+
+ttReset();
+
+// ── UI language ───────────────────────────────────────────────────────────
+// Interface strings only: the article prose stays in the page's declared
+// language, because that is what Google indexes and it must not be mixed.
+// Note this switcher is for visitors, not for ranking -- an indexed Arabic URL
+// is the only thing that ranks in Arabic.
+function toggleToolLang(e) {
+  e.stopPropagation();
+  var m = document.getElementById('lang-menu');
+  m.classList.toggle('show');
+  document.getElementById('lang-pill').setAttribute('aria-expanded', m.classList.contains('show'));
+}
+document.addEventListener('click', function () {
+  var m = document.getElementById('lang-menu');
+  if (m) { m.classList.remove('show'); document.getElementById('lang-pill').setAttribute('aria-expanded', 'false'); }
+});
+
+function setToolLang(code, label, el) {
+  var t = TOOL_I18N[code] || TOOL_I18N.en;
+  document.querySelectorAll('[data-i18n]').forEach(function (n) {
+    var k = n.getAttribute('data-i18n');
+    if (t[k] !== undefined) n.innerHTML = t[k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function (n) {
+    var k = n.getAttribute('data-i18n-ph');
+    if (t[k] !== undefined) n.setAttribute('placeholder', t[k]);
+  });
+  // Only the words change. The document direction is NEVER touched: flipping it
+  // mirrors the whole layout -- logo, nav, tile order, chip order -- which is a
+  // design change, not a translation. Arabic still reads right-to-left inside
+  // its own element because the Unicode bidi algorithm handles that on its own.
+  document.documentElement.lang = code;
+  document.getElementById('lang-pill').textContent = label + ' ▾';
+  document.querySelectorAll('.lang-opt').forEach(function (o) { o.classList.remove('active'); });
+  if (el) el.classList.add('active');
+  try { localStorage.setItem('kactylToolLang', code); } catch (e) {}
+  // Anything the tool renders from JS -- stat labels, script rows -- has to be
+  // redrawn, or the page ends up half-translated the moment you interact with it.
+  if (typeof window.onToolLang === 'function') window.onToolLang();
+  fitMascot();
+}
+
+
+/* ── Tool-page brand mascot: fit to the space this page actually has ── */
+function fitMascot() {
+  var m = document.querySelector('.tool-mascot');
+  if (!m) return;
+  if (window.innerWidth <= 900) { m.style.opacity = 0; return; }
+
+  /* Widest ink in the 200px band ending at footY. Factored out so the mascot can
+     compare several heights and stand where there is actually room, instead of
+     being pinned to the hero's lower edge -- on /symbols/ that left it hovering
+     in mid-hero whitespace with nothing beside it. */
+  function widestIn(scope, footY, skip) {
+    var bandTop = footY - 200, widest = 0;
+    var BOXY = ['IMG', 'SVG', 'BUTTON', 'A', 'INPUT', 'SELECT'];
+    Array.prototype.forEach.call(scope.querySelectorAll('*'), function (el) {
+      if (el === skip || el.contains(skip)) return;
+      var st = getComputedStyle(el);
+      if (st.display === 'none' || st.visibility === 'hidden' || st.position === 'absolute') return;
+      var box = el.getBoundingClientRect();
+      if (!box.width || box.bottom < bandTop || box.top > footY) return;
+      if (BOXY.indexOf(el.tagName) !== -1) {
+        if (box.right > widest) widest = box.right;
+        return;
+      }
+      if (el.children.length) return;
+      var r = document.createRange();
+      r.selectNodeContents(el);
+      Array.prototype.forEach.call(r.getClientRects(), function (line) {
+        if (line.bottom >= bandTop && line.top <= footY && line.right > widest) widest = line.right;
+      });
+    });
+    return widest;
+  }
+
+  var heroAnchored = m.classList.contains('tool-mascot-hero');
+  var host = m.offsetParent || m.parentElement;
+  if (!host) return;
+  var hostBox = host.getBoundingClientRect();
+
+  /* Where the mascot's feet land: on the hero's lower edge, or on the top edge
+     of the tool card it perches on. The band above that is what it occupies. */
+  var footY = heroAnchored ? hostBox.bottom : hostBox.top;
+  var bandTop = footY - 200;
+
+  /* One standing height: the hero's lower edge (or the card's top edge on the
+     generated tools). An earlier attempt picked the "roomiest" band automatically
+     and got it wrong -- most free space is not the same as looking right, and it
+     shifted three pages that were already fine. Pages that need a different
+     height get an explicit per-page offset instead. */
+  var hero = document.querySelector('.page-hero, .hero, .kbdir-hero') || document.body;
+  /* Read the per-page nudge FIRST: the measurement has to happen in the band the
+     mascot will actually occupy. Measuring low and then lifting is how it ended
+     up sitting on the /symbols/ headline. */
+  var lift = parseInt(m.getAttribute('data-lift') || '0', 10);
+  var baseFoot = (heroAnchored ? hero.getBoundingClientRect().bottom : hostBox.top) - lift;
+  /* margin-bottom moves an absolutely-positioned, bottom-anchored element:
+     positive lifts it, negative drops it. Apply the offset exactly -- an extra
+     constant tuck here pushed the /symbols/ mascot 14px into the grid and it
+     clipped two tiles. */
+  m.style.marginBottom = lift ? lift + 'px' : '';
+  var widest = widestIn(hero, baseFoot, m);
+
+  var edge = hostBox.right;
+  if (heroAnchored) {
+    var col = document.querySelector('.wrap, .container');
+    if (!col) {
+      var best = null, bestW = 0, vw = window.innerWidth;
+      Array.prototype.forEach.call(document.querySelectorAll('main *, body > div > *'), function (el) {
+        var r2 = el.getBoundingClientRect();
+        if (r2.width > bestW && r2.width < vw - 40 && r2.width > 420 && r2.height > 40) {
+          bestW = r2.width; best = el;
+        }
+      });
+      col = best;
+    }
+    if (col) {
+      var colRight = col.getBoundingClientRect().right;
+      if (colRight < edge - 1) { m.style.right = Math.round(edge - colRight) + 'px'; edge = colRight; }
+    }
+  }
+
+  if (!widest) { m.style.opacity = 0; return; }
+
+  var w = Math.min(164, Math.floor(edge - widest));
+  /* Floor calibrated against rendered pages, not guessed: fancy-text at 95px
+     looked squeezed, while symbols at 106 and compare at 101 read fine. Width
+     alone was never the problem -- fancy-text sat hard against a pill with no
+     air. 100 is the line where the two groups actually separate. */
+  if (w < 100) { m.style.width = '0px'; m.style.opacity = 0; return; }
+  m.style.width = w + 'px';
+  m.style.opacity = 1;
+
+}
+window.addEventListener('resize', fitMascot, {passive:true});
+if (document.readyState !== 'loading') setTimeout(fitMascot, 0);
+else document.addEventListener('DOMContentLoaded', fitMascot);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitMascot);
+
+
+// Look up a UI string from JS, falling back to English rather than showing a key.
+function T(k) {
+  var t = TOOL_I18N[document.documentElement.lang] || TOOL_I18N.en;
+  return t[k] !== undefined ? t[k] : (TOOL_I18N.en[k] !== undefined ? TOOL_I18N.en[k] : k);
+}
+
+// Restore an explicit past choice only. Never auto-switch on navigator.language:
+// Googlebot crawls from the US and must see what a US visitor sees.
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('kactylToolLang'); } catch (e) {}
+  if (!saved || saved === 'en') return;
+  var el = document.querySelector('.lang-opt[data-lang="' + saved + '"]');
+  if (el) setToolLang(saved, el.getAttribute('data-label'), el);
+})();
+function loadTheme(){const t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){if(t==='dark'){tr.classList.add('on');th.classList.add('on');}}}
+function toggleTheme(){const cur=document.documentElement.getAttribute('data-theme')||'light';const next=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('theme',next);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){tr.classList.toggle('on',next==='dark');th.classList.toggle('on',next==='dark');}}
+function showToast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
+function copyText(text){navigator.clipboard.writeText(text).then(()=>showToast('Copied!')).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('Copied!');});}
+(function(){
+  const hdr=document.querySelector('header');
+  let last=0;
+  window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>last&&y>80)hdr.classList.add('hdr-hidden');else hdr.classList.remove('hdr-hidden');last=y;},{passive:true});
+  document.querySelectorAll('.tools-btn').forEach(btn=>{
+    btn.addEventListener('click',e=>{e.stopPropagation();btn.closest('.tools-wrap').classList.toggle('open');});
+  });
+  document.addEventListener('click',()=>document.querySelectorAll('.tools-wrap.open').forEach(w=>w.classList.remove('open')));
+})();
+loadTheme();
+</script>
+<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+<script>
+/* ── Tool-page brand mascot: fit to the space this page actually has ── */
+function fitMascot() {
+  var m = document.querySelector('.tool-mascot');
+  if (!m) return;
+  if (window.innerWidth <= 900) { m.style.opacity = 0; return; }
+
+  /* Widest ink in the 200px band ending at footY. Factored out so the mascot can
+     compare several heights and stand where there is actually room, instead of
+     being pinned to the hero's lower edge -- on /symbols/ that left it hovering
+     in mid-hero whitespace with nothing beside it. */
+  function widestIn(scope, footY, skip) {
+    var bandTop = footY - 200, widest = 0;
+    var BOXY = ['IMG', 'SVG', 'BUTTON', 'A', 'INPUT', 'SELECT'];
+    Array.prototype.forEach.call(scope.querySelectorAll('*'), function (el) {
+      if (el === skip || el.contains(skip)) return;
+      var st = getComputedStyle(el);
+      if (st.display === 'none' || st.visibility === 'hidden' || st.position === 'absolute') return;
+      var box = el.getBoundingClientRect();
+      if (!box.width || box.bottom < bandTop || box.top > footY) return;
+      if (BOXY.indexOf(el.tagName) !== -1) {
+        if (box.right > widest) widest = box.right;
+        return;
+      }
+      if (el.children.length) return;
+      var r = document.createRange();
+      r.selectNodeContents(el);
+      Array.prototype.forEach.call(r.getClientRects(), function (line) {
+        if (line.bottom >= bandTop && line.top <= footY && line.right > widest) widest = line.right;
+      });
+    });
+    return widest;
+  }
+
+  var heroAnchored = m.classList.contains('tool-mascot-hero');
+  var host = m.offsetParent || m.parentElement;
+  if (!host) return;
+  var hostBox = host.getBoundingClientRect();
+
+  /* Where the mascot's feet land: on the hero's lower edge, or on the top edge
+     of the tool card it perches on. The band above that is what it occupies. */
+  var footY = heroAnchored ? hostBox.bottom : hostBox.top;
+  var bandTop = footY - 200;
+
+  /* One standing height: the hero's lower edge (or the card's top edge on the
+     generated tools). An earlier attempt picked the "roomiest" band automatically
+     and got it wrong -- most free space is not the same as looking right, and it
+     shifted three pages that were already fine. Pages that need a different
+     height get an explicit per-page offset instead. */
+  var hero = document.querySelector('.page-hero, .hero, .kbdir-hero') || document.body;
+  /* Read the per-page nudge FIRST: the measurement has to happen in the band the
+     mascot will actually occupy. Measuring low and then lifting is how it ended
+     up sitting on the /symbols/ headline. */
+  var lift = parseInt(m.getAttribute('data-lift') || '0', 10);
+  var baseFoot = (heroAnchored ? hero.getBoundingClientRect().bottom : hostBox.top) - lift;
+  m.style.marginBottom = lift ? (-14 + lift) + 'px' : '';
+  var widest = widestIn(hero, baseFoot, m);
+
+  var edge = hostBox.right;
+  if (heroAnchored) {
+    var col = document.querySelector('.wrap, .container');
+    if (!col) {
+      var best = null, bestW = 0, vw = window.innerWidth;
+      Array.prototype.forEach.call(document.querySelectorAll('main *, body > div > *'), function (el) {
+        var r2 = el.getBoundingClientRect();
+        if (r2.width > bestW && r2.width < vw - 40 && r2.width > 420 && r2.height > 40) {
+          bestW = r2.width; best = el;
+        }
+      });
+      col = best;
+    }
+    if (col) {
+      var colRight = col.getBoundingClientRect().right;
+      if (colRight < edge - 1) { m.style.right = Math.round(edge - colRight) + 'px'; edge = colRight; }
+    }
+  }
+
+  if (!widest) { m.style.opacity = 0; return; }
+
+  var w = Math.min(164, Math.floor(edge - widest));
+  /* Floor calibrated against rendered pages, not guessed: fancy-text at 95px
+     looked squeezed, while symbols at 106 and compare at 101 read fine. Width
+     alone was never the problem -- fancy-text sat hard against a pill with no
+     air. 100 is the line where the two groups actually separate. */
+  if (w < 100) { m.style.width = '0px'; m.style.opacity = 0; return; }
+  m.style.width = w + 'px';
+  m.style.opacity = 1;
+
+}
+window.addEventListener('resize', fitMascot, {passive:true});
+if (document.readyState !== 'loading') setTimeout(fitMascot, 0);
+else document.addEventListener('DOMContentLoaded', fitMascot);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitMascot);
+</script>
+</body>
+</html>

@@ -26,9 +26,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
   <link rel="canonical" href="https://kactyl.com/burmese/">
-  <link rel="alternate" hreflang="x-default" href="https://kactyl.com/">
-  <link rel="alternate" hreflang="en" href="https://kactyl.com/">
-  <link rel="alternate" hreflang="my" href="https://kactyl.com/burmese/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <!-- Open Graph -->
@@ -812,7 +809,7 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* ── KEYS ── */
 .kb-rows { display:flex; flex-direction:column; gap:7px; }
-.kb-row  { display:flex; gap:5px; }
+.kb-row  { display:flex; gap:5px; --kg:5px; }
 
 .key {
   flex:1; min-width:0; height:56px;
@@ -1553,7 +1550,7 @@ footer {
   /* ── Keyboard: fix overflow with flex:1 ── */
   .kb-card { padding:10px 8px 12px; }
   .kb-rows { gap:8px; }
-  .kb-row  { gap:2px; }
+  .kb-row  { gap:2px; --kg:2px; }
 
   /* All keys: shrink to fill row evenly */
   .key {
@@ -1624,6 +1621,8 @@ footer {
 }
 .fb-tab img { width:58px; height:58px; display:block; }
 .fb-dismiss { display:none; }
+/* FB-VISIBILITY: hidden while the keyboard is on screen; on mobile shown on the first visit only */
+body.kb-onscreen .fb-tab, body.kb-onscreen .fb-dismiss, body.fb-seen .fb-tab, body.fb-seen .fb-dismiss { display:none !important; }
 .fb-tab:hover {
   transform:translateY(-50%) translateX(-4px);
   filter:drop-shadow(-5px 6px 22px rgba(0,104,255,.52));
@@ -2065,9 +2064,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
-                                                                                                                                                                                <nav>
+                                                                                                                                                                                        <nav>
     <a href="/" class="nav-link">Home</a>
-    <a href="/franco-arab" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
       <button class="tools-btn">Tools &#9662;</button>
@@ -2084,6 +2083,8 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <a href="/calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Calligraphy</a>
         <a href="/word-counter/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 14.5V8" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 14.5V3.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.5V9.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 14.5v-3" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/></svg></span> Word Counter</a>
         <a href="/morse-code/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="3" cy="9" r="1.7" fill="#0068ff"/><rect x="7" y="7.5" width="8" height="3" rx="1.5" fill="#0068ff"/></svg></span> Morse Code</a>
+        <a href="/text-repeater/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M5 3.5h8a2 2 0 0 1 2 2v2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 14.5H5a2 2 0 0 1-2-2v-2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 9.5 15 7.5 17 9.5M5 8.5 3 10.5 1 8.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Text Repeater</a>
+        <a href="/typing-test/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="9" cy="10" r="5.5" stroke="#0068ff" stroke-width="1.6"/><path d="M9 7.5V10l1.8 1.4" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.2 2.2h3.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M9 2.2v1.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/></svg></span> Typing Test</a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -2113,26 +2114,22 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <h1 data-i18n="hero.h1">Burmese Keyboard Online<span class="h1-arabic">မြန်မာ ကီးဘုတ်</span></h1>
       <div class="hero-sub-row">
         <p class="hero-sub" data-i18n="hero.sub">The complete Burmese script with 33 consonants and floating tone/vowel marks — right in your browser. Type in Burmese Unicode and get proper encoding for Facebook, Viber, WhatsApp and every modern platform.</p>
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          100% Free &middot; No Account &middot; Works Everywhere
+      <div class="hero-stats kb-facts" data-facts="counted">
+        <div class="hero-stat">
+          <span class="hs-num">42</span>
+          <span class="hs-label">Letters on screen</span>
+        </div>
+        <div class="hs-sep"></div>
+        <div class="hero-stat">
+          <span class="hs-num">33M</span>
+          <span class="hs-label">Speakers</span>
+        </div>
+        <div class="hs-sep"></div>
+        <div class="hero-stat">
+          <span class="hs-num">Burmese</span>
+          <span class="hs-label">Script</span>
         </div>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hs-num">300+</span>
-          <span class="hs-label">Keyboards Soon</span>
-        </div>
-        <div class="hs-sep"></div>
-        <div class="hero-stat">
-          <span class="hs-num">4B+</span>
-          <span class="hs-label">Speakers Covered</span>
-        </div>
-        <div class="hs-sep"></div>
-        <div class="hero-stat">
-          <span class="hs-num">100%</span>
-          <span class="hs-label">Free Forever</span>
-        </div>
       </div>
     </div>
 
@@ -2235,9 +2232,8 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
               <div class="lang-opt" onclick="location.href='/bengali/'">
                 <span class="lo-flag">🇧🇩</span> Bengali
               </div>
-              <div class="lang-opt active" onclick="closeLangDrop()">
+              <div class="lang-opt" onclick="location.href='/burmese/'">
                 <span class="lo-flag">🇲🇲</span> Burmese
-                <span class="lo-check">✓</span>
               </div>
               <div class="lang-opt" onclick="location.href='/chinese/'">
                 <span class="lo-flag">🇨🇳</span> Chinese
@@ -2510,7 +2506,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   <div class="wrap">
     <div class="apps-hd">
       <h2 data-i18n="apps.h2">Burmese Keyboard for <span style="color:var(--blue)">Any App</span></h2>
-      <p data-i18n="apps.sub">Facebook connects Myanmar globally — paste authentic Unicode Burmese and every modern device renders it identically. (Note: Zawgyi text appears garbled on modern platforms.)<b>Copy</b> → paste into any app. No special settings needed.</p>
+      <p data-i18n="apps.sub">Type Unicode Burmese here, copy once, and paste it into any app. Zawgyi-encoded text shows up garbled on modern devices.</p>
     </div>
     <div class="apps-grid">
 
@@ -2519,7 +2515,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.sc.h3">Snapchat</h3>
-            <p data-i18n="app.sc.p">Viber is Myanmar's dominant messenger — paste Unicode Burmese and reach family and friends across Myanmar and diaspora with perfect rendering.</p>
+            <p data-i18n="app.sc.p">Caption a snap in Unicode Burmese, which displays correctly on current phones.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2530,7 +2526,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.wa.h3">WhatsApp</h3>
-            <p data-i18n="app.wa.p">WhatsApp connects Burmese diaspora worldwide — paste Unicode Burmese for authentic rendering across all devices.</p>
+            <p data-i18n="app.wa.p">Message family in Myanmar or abroad in Unicode Burmese, not the older Zawgyi encoding.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2541,7 +2537,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.ig.h3">Instagram</h3>
-            <p data-i18n="app.ig.p">YouTube's Burmese content is growing — paste video titles and descriptions in Unicode Burmese for community reach.</p>
+            <p data-i18n="app.ig.p">Captions in Unicode Burmese keep stacked consonants and vowel signs in the right order.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2552,7 +2548,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.tt.h3">TikTok</h3>
-            <p data-i18n="app.tt.p">Telegram's Burmese communities use Unicode — paste messages in proper Burmese encoding for authentic diaspora communication.</p>
+            <p data-i18n="app.tt.p">Write captions and comments in Burmese, typed here on a device with no Burmese layout.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2563,27 +2559,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 </section>
 
 <!-- BRAND -->
-<section class="brand-sec" style="display:none">
-  <div class="brand-card">
-    <div class="b-icon">
-      <img loading="lazy" id="brand-logo-img" src="../images/LOGO-Footer-Keyboardarabe-online.svg" alt="Kactyl">
-    </div>
-    <div class="b-div"></div>
-    <div class="b-info">
-      <div class="b-name">
-        <span><span class="b-en-word">Arabi</span> Keyboard</span>
-        <span class="b-ar-word">عربي كيبورد</span>
-      </div>
-      <div class="b-domain">kactyl.com</div>
-      <div class="b-tag" data-i18n="brand.tag">Type Burmese from any device without installation</div>
-      <div class="b-badges">
-        <span class="b-badge green" data-i18n="brand.badge1">✓ 100% Free</span>
-        <span class="b-badge blue"  data-i18n="brand.badge2">⚡ No Install</span>
-        <span class="b-badge red"   data-i18n="brand.badge3">📱 All Devices</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- FAQ PROMO -->
 <section class="faq-promo">
@@ -2610,7 +2585,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 <section class="seo-dark">
   <div class="seo-dark-inner">
-    <div class="seo-dark-label">Free Burmese Keyboard</div>
     <h2>Free Burmese Keyboard Online.<br>Type from any device — no download, no install.</h2>
     <div class="seo-dark-stats">
       <span><strong>100%</strong> free</span>
@@ -2622,15 +2596,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <p><strong>Burmese script descended from the ancient Mon script</strong> (Southeast Asia's writing family), distinctive with <strong>circular, curvy letter shapes</strong>. <strong>The script evolved by the 11th-12th centuries into its modern Burmese form</strong>. <strong>Burmese is left-to-right and fully phonetic</strong> with <strong>33 consonant letters organized in historically standardized groupings</strong>. <strong>The script uses floating tone marks and diacritics positioned above and below base letters</strong> — not inline like Latin or Arabic. <strong>Unicode support for Burmese was finalized in the international standard</strong>, but adoption was delayed — major platform pushes (Google, Facebook, Viber) didn't occur until <strong>2019 onward</strong>. <strong>The Zawgyi/Unicode incompatibility is Burmese's defining modern technical problem</strong> — a non-standard encoding that still dominates legacy systems, creating invisible communication barriers.</p>
     <p><strong>The critical technical challenge is Zawgyi vs Unicode — two incompatible encoding systems exist in active use simultaneously</strong>. <strong>Zawgyi (legacy, pre-Unicode) is still dominant on older devices/software; Unicode (international standard) is modern.</strong> <strong>Text sent in Zawgyi appears as garbled boxes on modern phones; Unicode renders perfectly</strong>. <strong>Burmese vowels use a combining mark system</strong> (floating diacritics above/below consonants, not inline). <strong>Tone marks and vowel diacritics require precise positioning</strong>, making font rendering critical. <strong>The script's circular, curvy letterforms are distinctive</strong> but create rendering complexity with floating marks.</p>
     <p><strong>Myanmar has 85% Facebook penetration — Facebook IS the internet for 60%+ of users accessing any online service, the highest ratio globally</strong>. <strong>Viber is the dominant messaging app (stronger than WhatsApp)</strong>. <strong>All major platforms (Facebook, Google, Viber) officially switched to Unicode support in 2019+</strong>. <strong>Result: modern platforms display Unicode Burmese correctly; legacy Zawgyi text appears broken</strong>. <strong>Conversion tools (Zawgyi↔Unicode) are widely used due to legacy text volume</strong>. <strong>Device/app compatibility: modern devices (Android 7+, iOS 10+, Windows 10+) render Unicode perfectly; legacy devices still see Zawgyi</strong>. <strong>The Zawgyi/Unicode split is Burmese's most unique technical challenge</strong> — creating a two-tier internet within Myanmar where encoding determines if messages appear or become gibberish.</p>
-    <div class="seo-dark-steps">
-      <span class="seo-dark-step">1. Open kactyl.com/burmese/</span>
-      <span class="seo-dark-arr">→</span>
-      <span class="seo-dark-step">2. Click letters</span>
-      <span class="seo-dark-arr">→</span>
-      <span class="seo-dark-step">3. Copy</span>
-      <span class="seo-dark-arr">→</span>
-      <span class="seo-dark-step">4. Paste anywhere</span>
-    </div>
   </div>
 </section>
 
@@ -2643,7 +2608,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         </div>
       </a>
     </div>
-<!-- SIGNATURE MODULE: Inside Burmese Script -->
 <section class="sig-sec">
   <style>
     .sig-sec{padding:64px 0;background:linear-gradient(180deg,rgba(156,39,176,.045),transparent 30%)}
@@ -2685,7 +2649,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <div class="sig-card">
         <span class="sig-tag">Circular letterforms</span>
         <h3>Unique visual style</h3>
-        <div class="sig-letters"><b>ခ</b><b>ဂ</b><b>ဃ</b><b>ང</b></div>
+        <div class="sig-letters"><b>ခ</b><b>ဂ</b><b>ဃ</b><b>င</b></div>
         <p>Burmese is distinctive with <b>circular, curvy letter shapes</b> (not angular like Latin/Arabic). The script descended from Mon script (Southeast Asian family) and never developed angular forms.</p>
         <div class="sig-ex">Curvy shapes: opposite of Latin's angular geometric forms</div>
       </div>
@@ -2714,7 +2678,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <div class="faq-hd-left">
         <div class="faq-hd-badge">FAQ</div>
         <h2>Frequently Asked<br><span style="color:var(--blue)">Questions</span></h2>
-        <p>Everything you need to know about the Burmese keyboard</p>
       </div>
       <div class="faq-hd-right">
         <img src="../images/Mascot-3.svg" alt="" class="faq-mascot-2">
@@ -2879,53 +2842,18 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   <div class="more-kbs-hd">
     <div>
       <p class="more-kbs-sup">Need Another <span style="color:var(--blue)">Language?</span></p>
-      <h2 class="more-kbs-title">300+ Free Keyboards, All Online</h2>
+      <h2 class="more-kbs-title">Free Keyboards, All Online</h2>
     </div>
     <a href="/keyboards/" class="more-kbs-all">View all <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
   <div class="more-kbs-grid">
-    <a href="/arabic/"        class="kb-chip"><span class="kb-chip-flag">🇸🇦</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic</span><span class="kb-chip-native">العربية</span></div></a>
-    <a href="../amazigh/"     class="kb-chip"><span class="kb-chip-flag"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;vertical-align:middle;display:inline-block"><rect width="20" height="4.67" fill="#0070B8"/><rect y="4.67" width="20" height="4.67" fill="#3CB034"/><rect y="9.33" width="20" height="4.67" fill="#FFD700"/><text x="10" y="10.8" text-anchor="middle" font-size="8" fill="#CE1126" font-family="sans-serif">ⵣ</text></svg></span><div class="kb-chip-info"><span class="kb-chip-name">Amazigh</span><span class="kb-chip-native">ⵜⴰⵎⴰⵣⵉⵖⵜ</span></div></a>
-    <a href="../amharic/"     class="kb-chip"><span class="kb-chip-flag">🇪🇹</span><div class="kb-chip-info"><span class="kb-chip-name">Amharic</span><span class="kb-chip-native">አማርኛ</span></div></a>
-    <a href="../bengali/"     class="kb-chip"><span class="kb-chip-flag">🇧🇩</span><div class="kb-chip-info"><span class="kb-chip-name">Bengali</span><span class="kb-chip-native">বাংলা</span></div></a>
-    <a href="../de/"          class="kb-chip"><span class="kb-chip-flag">🇩🇪</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (DE)</span><span class="kb-chip-native">Deutsch</span></div></a>
-    <a href="../es/"          class="kb-chip"><span class="kb-chip-flag">🇪🇸</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (ES)</span><span class="kb-chip-native">Español</span></div></a>
-    <a href="../filipino/"    class="kb-chip"><span class="kb-chip-flag">🇵🇭</span><div class="kb-chip-info"><span class="kb-chip-name">Filipino</span><span class="kb-chip-native">Filipino</span></div></a>
-    <a href="../fr/"          class="kb-chip"><span class="kb-chip-flag">🇫🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (FR)</span><span class="kb-chip-native">Français</span></div></a>
-    <a href="../greek/"       class="kb-chip"><span class="kb-chip-flag">🇬🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Greek</span><span class="kb-chip-native">Ελληνικά</span></div></a>
-    <a href="../it/"          class="kb-chip"><span class="kb-chip-flag">🇮🇹</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (IT)</span><span class="kb-chip-native">Italiano</span></div></a>
-    <a href="../kurdish/"     class="kb-chip"><span class="kb-chip-flag"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;vertical-align:middle;display:inline-block"><rect width="20" height="4.67" fill="#CE1126"/><rect y="4.67" width="20" height="4.67" fill="#FFFFFF"/><rect y="9.33" width="20" height="4.67" fill="#007A3D"/><circle cx="10" cy="7" r="3" fill="#FFD700"/><circle cx="10" cy="7" r="1.5" fill="#CE1126"/></svg></span><div class="kb-chip-info"><span class="kb-chip-name">Kurdish</span><span class="kb-chip-native">کوردی</span></div></a>
-    <a href="../marathi/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Marathi</span><span class="kb-chip-native">मराठी</span></div></a>
-    <a href="../nepali/"      class="kb-chip"><span class="kb-chip-flag">🇳🇵</span><div class="kb-chip-info"><span class="kb-chip-name">Nepali</span><span class="kb-chip-native">नेपाली</span></div></a>
-    <a href="../nl/"          class="kb-chip"><span class="kb-chip-flag">🇳🇱</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (NL)</span><span class="kb-chip-native">Nederlands</span></div></a>
-    <a href="../pashto/"      class="kb-chip"><span class="kb-chip-flag">🇦🇫</span><div class="kb-chip-info"><span class="kb-chip-name">Pashto</span><span class="kb-chip-native">پښتو</span></div></a>
-    <a href="../persian/"     class="kb-chip"><span class="kb-chip-flag">🇮🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Farsi</span><span class="kb-chip-native">فارسی</span></div></a>
-    <a href="../punjabi/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Punjabi</span><span class="kb-chip-native">ਪੰਜਾਬੀ</span></div></a>
-    <a href="../russian/"     class="kb-chip"><span class="kb-chip-flag">🇷🇺</span><div class="kb-chip-info"><span class="kb-chip-name">Russian</span><span class="kb-chip-native">Русский</span></div></a>
-    <a href="../sindhi/"      class="kb-chip"><span class="kb-chip-flag">🇵🇰</span><div class="kb-chip-info"><span class="kb-chip-name">Sindhi</span><span class="kb-chip-native">سنڌي</span></div></a>
-    <a href="../somali/"      class="kb-chip"><span class="kb-chip-flag">🇸🇴</span><div class="kb-chip-info"><span class="kb-chip-name">Somali</span><span class="kb-chip-native">Soomaali</span></div></a>
-    <a href="../tamil/"       class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Tamil</span><span class="kb-chip-native">தமிழ்</span></div></a>
-    <a href="../telugu/"      class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Telugu</span><span class="kb-chip-native">తెలుగు</span></div></a>
-    <a href="../kannada/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Kannada</span><span class="kb-chip-native">ಕನ್ನಡ</span></div></a>
-    <a href="../yoruba/"      class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Yoruba</span><span class="kb-chip-native">Yorùbá</span></div></a>
     <a href="../vietnamese/"  class="kb-chip"><span class="kb-chip-flag">🇻🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Vietnamese</span><span class="kb-chip-native">Tiếng Việt</span></div></a>
-    <a href="../tigrinya/"    class="kb-chip"><span class="kb-chip-flag">🇪🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Tigrinya</span><span class="kb-chip-native">ትግርኛ</span></div></a>
-    <a href="../thai/"        class="kb-chip"><span class="kb-chip-flag">🇹🇭</span><div class="kb-chip-info"><span class="kb-chip-name">Thai</span><span class="kb-chip-native">ภาษาไทย</span></div></a>
-    <a href="../mongolian/"   class="kb-chip"><span class="kb-chip-flag">🇲🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Mongolian</span><span class="kb-chip-native">Монгол</span></div></a>
-    <a href="../malayalam/"   class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Malayalam</span><span class="kb-chip-native">മലയാളം</span></div></a>
-    <a href="../korean/"      class="kb-chip"><span class="kb-chip-flag">🇰🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Korean</span><span class="kb-chip-native">한국어</span></div></a>
-    <a href="../japanese/"    class="kb-chip"><span class="kb-chip-flag">🇯🇵</span><div class="kb-chip-info"><span class="kb-chip-name">Japanese</span><span class="kb-chip-native">日本語</span></div></a>
-    <a href="../igbo/"        class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Igbo</span><span class="kb-chip-native">Igbo</span></div></a>
-    <a href="../hausa/"       class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Hausa</span><span class="kb-chip-native">Hausa</span></div></a>
-    <a href="../gujarati/"    class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Gujarati</span><span class="kb-chip-native">ગુજરાતી</span></div></a>
+    <a href="../filipino/"    class="kb-chip"><span class="kb-chip-flag">🇵🇭</span><div class="kb-chip-info"><span class="kb-chip-name">Filipino</span><span class="kb-chip-native">Filipino</span></div></a>
     <a href="../chinese/"     class="kb-chip"><span class="kb-chip-flag">🇨🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Chinese</span><span class="kb-chip-native">中文</span></div></a>
-    <a href="../burmese/"     class="kb-chip"><span class="kb-chip-flag">🇲🇲</span><div class="kb-chip-info"><span class="kb-chip-name">Burmese</span><span class="kb-chip-native">မြန်မာ</span></div></a>
-    <a href="../turkish/"     class="kb-chip"><span class="kb-chip-flag">🇹🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Turkish</span><span class="kb-chip-native">Türkçe</span></div></a>
-    <a href="../urdu/"        class="kb-chip"><span class="kb-chip-flag">🇵🇰</span><div class="kb-chip-info"><span class="kb-chip-name">Urdu</span><span class="kb-chip-native">اردو</span></div></a>
-    <a href="../uyghur/"      class="kb-chip"><span class="kb-chip-flag"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;vertical-align:middle;display:inline-block"><rect width="20" height="14" fill="#1F6FD0"/><circle cx="7" cy="7" r="4" fill="white"/><circle cx="8.3" cy="7" r="3.2" fill="#1F6FD0"/><polygon points="14,3.5 14.5,4.81 15.9,4.88 14.81,5.76 15.18,7.12 14,6.35 12.82,7.12 13.19,5.76 12.1,4.88 13.5,4.81" fill="white"/></svg></span><div class="kb-chip-info"><span class="kb-chip-name">Uyghur</span><span class="kb-chip-native">ئۇيغۇرچە</span></div></a>
+    <a href="../japanese/"    class="kb-chip"><span class="kb-chip-flag">🇯🇵</span><div class="kb-chip-info"><span class="kb-chip-name">Japanese</span><span class="kb-chip-native">日本語</span></div></a>
+    <a href="../korean/"      class="kb-chip"><span class="kb-chip-flag">🇰🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Korean</span><span class="kb-chip-native">한국어</span></div></a>
     <a href="/keyboards/" class="kb-discover">
       <div class="kb-discover-top">
-        <span class="kb-discover-count">+264 more</span>
         <span class="kb-discover-arr">→</span>
       </div>
       <div class="kb-discover-label">Discover all keyboards</div>
@@ -2933,183 +2861,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="kb-discover-flags-inner">🇸🇦 🇮🇳 🇮🇷 🇵🇰 🇧🇩 🇹🇷 🇷🇺 🇰🇷 🇯🇵 🇨🇳 🇩🇪 🇫🇷 🇬🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇭 🇳🇵 🇲🇦 🇸🇴 🇪🇹 🇻🇳 🇹🇭 🇲🇳 &nbsp;🇸🇦 🇮🇳 🇮🇷 🇵🇰 🇧🇩 🇹🇷 🇷🇺 🇰🇷 🇯🇵 🇨🇳 🇩🇪 🇫🇷 🇬🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇭 🇳🇵 🇲🇦 🇸🇴 🇪🇹 🇻🇳 🇹🇭 🇲🇳</div>
       </div>
     </a>
-  </div>
-</div>
-
-<!-- More Text Tools -->
-<div class="more-tools">
-  <div class="more-tools-hd">
-    <div>
-      <p class="more-tools-sup">Need More Text <span style="color:var(--blue)">Tools?</span></p>
-      <h2 class="more-tools-title">Fancy Text, Unicode &amp; More</h2>
-    </div>
-    <a href="/symbols/" class="more-kbs-all">Explore all <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div>
-  <div class="more-tools-grid" id="toolsScroll">
-
-    <!-- Symbols -->
-    <a href="/symbols/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/>
-            <path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity=".82"/>
-            <path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1l1 2.4 2.5.35-1.8 1.75.42 2.5L5.5 6.7 3.38 8l.42-2.5L2 3.75l2.5-.35Z" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Symbols</span>
-      <span class="tool-card-desc">Stars, arrows, hearts & 10K+</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Fancy Text -->
-    <a href="/fancy-text/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M3 9L5.5 2l2.5 7M4.2 6.2h2.6" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg></span>
-      </div>
-      <span class="tool-card-name">Fancy Text</span>
-      <span class="tool-card-desc">100+ Unicode styles instantly</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Kaomoji -->
-    <a href="/kaomoji/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 6Q5.5 9.5 8.5 6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="3.5" cy="3.5" r="1.1" fill="#fff"/><circle cx="7.5" cy="3.5" r="1.1" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Kaomoji</span>
-      <span class="tool-card-desc">Text emoticons for chat & Discord</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Invisible Char -->
-    <a href="/invisible-character/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/>
-            <line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".6"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><circle cx="5.5" cy="5.5" r="3.8" stroke="#fff" stroke-width="1.3"/><path d="M3 3l5 5" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-      </div>
-      <span class="tool-card-name">Invisible Char</span>
-      <span class="tool-card-desc">Zero-width blank spaces</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Zalgo Text -->
-    <a href="/zalgo-text/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".35"/>
-            <line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 7.5h6M2.5 3.5h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 3.5L4 7.5" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity=".6"/></svg></span>
-      </div>
-      <span class="tool-card-name">Zalgo Text</span>
-      <span class="tool-card-desc">G̸l̷i̴t̵c̸h̵ corrupted text</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Text Art -->
-    <a href="/text-art/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/>
-            <circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/>
-            <path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/>
-            <line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity=".38"/>
-            <line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity=".38"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1" y="1" width="3" height="3" rx=".8" fill="#fff"/><rect x="5" y="1" width="3" height="3" rx=".8" fill="#fff" opacity=".6"/><rect x="1" y="5" width="3" height="3" rx=".8" fill="#fff" opacity=".6"/><rect x="5" y="5" width="3" height="3" rx=".8" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Text Art</span>
-      <span class="tool-card-desc">ASCII art from any text</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Dot Art -->
-    <a href="/dot-art/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity=".3"/>
-            <circle cx="9" cy="4.5" r="2" fill="#0068ff"/>
-            <circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity=".5"/>
-            <circle cx="4" cy="9.5" r="2" fill="#0068ff"/>
-            <circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity=".35"/>
-            <circle cx="14" cy="9.5" r="2" fill="#0068ff"/>
-            <circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity=".5"/>
-            <circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity=".2"/>
-            <circle cx="14" cy="14.5" r="2" fill="#0068ff"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1.5" y="1.5" width="3" height="3" rx="1" fill="#fff"/><rect x="6.5" y="1.5" width="3" height="3" rx="1" fill="#fff"/><rect x="1.5" y="6.5" width="3" height="3" rx="1" fill="#fff"/><rect x="6.5" y="6.5" width="3" height="3" rx="1" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Dot Art</span>
-      <span class="tool-card-desc">Pixel art & dot illustrations</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- FF & PUBG Names -->
-    <a href="/free-fire-name/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/>
-            <line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/>
-            <line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/>
-            <circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1.5" y="4" width="3.5" height="2.5" rx=".8" fill="#fff" opacity=".6"/><rect x="2.5" y="3" width="1.5" height="4.5" rx=".8" fill="#fff" opacity=".6"/><circle cx="8" cy="4" r="1.2" fill="#fff"/><circle cx="8" cy="7" r="1.2" fill="#fff" opacity=".6"/></svg></span>
-      </div>
-      <span class="tool-card-name">FF & PUBG Names</span>
-      <span class="tool-card-desc">Stylish gaming usernames</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-  </div>
-  <div class="more-tools-dots">
-    <span class="mtd active"></span>
-    <span class="mtd"></span>
-    <span class="mtd"></span>
   </div>
 </div>
 
@@ -3130,20 +2881,19 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <span class="ft-badge b">⚡ No Install</span>
       </div>
       <div class="ft-social">
-        <a href="https://x.com/kactyl" class="ft-soc-link" aria-label="X / Twitter" target="_blank" rel="noopener">
+        <span class="ft-soc-link" aria-label="X / Twitter">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-        </a>
-        <a href="https://instagram.com/kactyl" class="ft-soc-link" aria-label="Instagram" target="_blank" rel="noopener">
+        </span>
+        <span class="ft-soc-link" aria-label="Instagram">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://youtube.com/@kactyl" class="ft-soc-link" aria-label="YouTube" target="_blank" rel="noopener">
+        </span>
+        <span class="ft-soc-link" aria-label="YouTube">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-        <a href="https://tiktok.com/@kactyl" class="ft-soc-link" aria-label="TikTok" target="_blank" rel="noopener">
+        </span>
+        <span class="ft-soc-link" aria-label="TikTok">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-        </a>
-      </div>
-    </div>
+        </span>
+      </div></div>
 
     <!-- Keyboards -->
     <div class="ft-col">
@@ -3232,9 +2982,11 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 <script>
 /* ── DATA ── */
 const ROWS = [
-  ['က','ခ','ဂ','ဃ','င','စ','ဆ','ဇ','ဈ','ည','ဉ'],
-  ['ဋ','ဌ','ဍ','ဎ','ဏ','တ','ထ','ဒ','ဓ','န','ပ'],
-  ['SHIFT','ဖ','ဗ','ဘ','မ','ယ','ရ','လ','ဝ','BSP'],
+  ['က','ခ','ဂ','ဃ','င','စ','ဆ','ဇ','ဈ','ည','ဉ','ဋ','ဌ'],
+  ['ဍ','ဎ','ဏ','တ','ထ','ဒ','ဓ','န','ပ','ဖ','ဗ','ဘ','မ'],
+  ['ယ','ရ','လ','ဝ','သ','ဟ','ဠ','အ','ဣ','ဤ','ဥ','ဦ','ဧ'],
+  ['ဩ','ဪ','ဿ','ါ','ာ','ိ','ီ','ု','ူ','ေ','ဲ','ံ','့'],
+  ['SHIFT','း','္','်','ျ','ြ','ွ','ှ','။','၊','BSP'],
   ['N123','EMOJI','TASHKEEL','SPACE','DOT','FRANCO','ENTER']
 ];
 
@@ -3242,21 +2994,19 @@ const SPEC_CHARS = ['သ','ဟ','ဠ','အ','ာ','ိ','ီ','ု','ူ','ေ',
 
 /* Phonetic hint for each key */
 const FL = {
-  'ဈ':'jh', 'ဉ':'ny2', 'ဋ':'tt', 'ဌ':'tth', 'ဍ':'dd', 'ဎ':'ddh', 'ဏ':'nn', 'က':'k', 'ခ':'kh', 'ဂ':'g', 'ဃ':'gh', 'င':'ng', 'စ':'s', 'ဆ':'hs', 'ဇ':'z', 'ည':'ny', 'တ':'t', 'ထ':'ht', 'ဒ':'d', 'ဓ':'dh', 'န':'n', 'ပ':'p', 'ဖ':'ph', 'ဗ':'b', 'ဘ':'bh', 'မ':'m', 'ယ':'y', 'ရ':'r', 'လ':'l', 'ဝ':'w', 'သ':'th', 'ဟ':'h', 'အ':'a'
+  'ဈ':'jh', 'ဉ':'ny2', 'ဋ':'tt', 'ဌ':'tth', 'ဍ':'dd', 'ဎ':'ddh', 'ဏ':'nn', 'က':'k', 'ခ':'kh', 'ဂ':'g', 'ဃ':'gh', 'င':'ng', 'စ':'s', 'ဆ':'hs', 'ဇ':'z', 'ည':'ny', 'တ':'t', 'ထ':'ht', 'ဒ':'d', 'ဓ':'dh', 'န':'n', 'ပ':'p', 'ဖ':'ph', 'ဗ':'b', 'ဘ':'bh', 'မ':'m', 'ယ':'y', 'ရ':'r', 'လ':'l', 'ဝ':'w', 'သ':'th', 'ဟ':'h', 'အ':'a', 'ဠ':'ll', 'ဥ':'u', 'ဧ':'e', 'ဣ':'i', 'ဤ':'ii', 'ဦ':'uu', 'ဩ':'aw', 'ဪ':'aw2'
 };
 
-const PHYS = {
-  'k':'က','g':'ဂ','c':'စ','j':'ဇ','t':'တ','d':'ဒ','n':'န',
-  'p':'ပ','b':'ဗ','m':'မ','y':'ယ','r':'ရ','l':'လ','w':'ဝ',
-  's':'သ','h':'ဟ','a':'အ','i':'ဣ','u':'ဥ','e':'ဧ','o':'ဩ',
-  ',':',','.':'.','/':'?'
-};
+const PHYS = {"`": "ၐ", "q": "ဆ", "w": "တ", "e": "န", "r": "မ", "t": "အ", "y": "ပ", "u": "က", "i": "င", "o": "သ", "p": "စ", "[": "ဟ", "]": "ဩ", "a": "ေ", "s": "ျ", "d": "ိ", "f": "်", "g": "ါ", "h": "့", "j": "ြ", "k": "ု", "l": "ူ", ";": "း", "z": "ဖ", "x": "ထ", "c": "ခ", "v": "လ", "b": "ဘ", "n": "ည", "m": "ာ"};
+
+const PHYS_SHIFT = {"`": "ဎ", "q": "ဈ", "w": "ဝ", "e": "ဣ", "t": "ဤ", "u": "ဥ", "o": "ဿ", "p": "ဏ", "[": "ဧ", "]": "ဪ", "a": "ဗ", "s": "ှ", "d": "ီ", "f": "္", "g": "ွ", "h": "ံ", "j": "ဲ", "k": "ဒ", "l": "ဓ", ";": "ဂ", "z": "ဇ", "x": "ဌ", "c": "ဃ", "v": "ဠ", "b": "ယ", "n": "ဉ", "m": "ဦ", "1": "ဍ", "2": "ၒ", "3": "ဋ", "4": "ၓ", "5": "ၔ", "6": "ၕ", "7": "ရ", "\\": "ၑ"};
 
 const TASH = [
   {c:'ာ',l:'aa'},{c:'ိ',l:'i'},{c:'ီ',l:'ii'},{c:'ု',l:'u'},
   {c:'ူ',l:'uu'},{c:'ေ',l:'e'},{c:'ဲ',l:'ai'},{c:'ော',l:'aw'},
   {c:'ို',l:'o'},{c:'ေး',l:'ei'},{c:'်',l:'hal'},
-  {c:'ြ',l:'r-med'},{c:'ျ',l:'y-med'},{c:'ွ',l:'w-med'}
+  {c:'ြ',l:'r-med'},{c:'ျ',l:'y-med'},{c:'ွ',l:'w-med'},
+  {c:'ါ',l:'◌ါ'},{c:'ံ',l:'◌ံ'},{c:'့',l:'◌့'},{c:'္',l:'◌္'},{c:'ဣ',l:'ဣ'},{c:'ဤ',l:'ဤ'},{c:'ဥ',l:'ဥ'},{c:'ဦ',l:'ဦ'},{c:'ဧ',l:'ဧ'},{c:'ဩ',l:'ဩ'},{c:'ဪ',l:'ဪ'},{c:'ဿ',l:'ဿ'}, {c:'၏',l:'i'},{c:'၍',l:'ywe'},{c:'၌',l:'hnaik'},{c:'၎',l:'lagaung'}
 ];
 
 const EMOJI_CATS_DATA = {
@@ -3272,7 +3022,7 @@ const EMOJI_CATS_DATA = {
   '🚩': { label:'Flags', emojis:['🇸🇦','🇦🇪','🇪🇬','🇲🇦','🇩🇿','🇹🇳','🇱🇾','🇸🇩','🇾🇪','🇸🇾','🇮🇶','🇯🇴','🇵🇸','🇱🇧','🇰🇼','🇧🇭','🇶🇦','🇴🇲','🇮🇷','🇹🇷','🇺🇸','🇨🇦','🇲🇽','🇧🇷','🇦🇷','🇨🇱','🇨🇴','🇵🇪','🇻🇪','🇬🇧','🇫🇷','🇩🇪','🇪🇸','🇮🇹','🇵🇹','🇳🇱','🇧🇪','🇨🇭','🇦🇹','🇸🇪','🇳🇴','🇩🇰','🇫🇮','🇵🇱','🇺🇦','🇷🇺','🇬🇷','🇨🇿','🇭🇺','🇷🇴','🇧🇬','🇷🇸','🇭🇷','🇸🇰','🇸🇮','🇮🇪','🇮🇸','🇨🇳','🇯🇵','🇰🇷','🇮🇳','🇵🇰','🇧🇩','🇮🇩','🇲🇾','🇸🇬','🇹🇭','🇻🇳','🇵🇭','🇰🇭','🇱🇦','🇲🇲','🇳🇵','🇱🇰','🇦🇺','🇳🇿','🇿🇦','🇳🇬','🇰🇪','🇪🇹','🇬🇭','🇹🇿','🇺🇬','🇨🇲','🏳️','🏴','🏁','🚩','🎌'] }
 };
 
-const WORDS = ['ကျွန်တော်','ကျွန်မ','နင်','ခင်ဗျား','သူ','သူမ','ကျွန်တော်တို့','သင်တို့','သူတို့','ဒီဟာ','ဟိုဟာ','ဖြစ်သည်','ရှိသည်','သွားသည်','လာသည်','ပြောသည်','ကြည့်သည်','နားထောင်သည်','စားသည်','သောက်သည်','ကြိုက်သည်','ချစ်သည်','ဘာ','ဘယ်သူ','ဘယ်မှာ','ဘာဖြစ်လို့','ဘယ်လို','ဘယ်တော့','ဘယ်လောက်','ဟုတ်ကဲ့','မဟုတ်ဘူး','အရမ်း','မင်္ဂလာပါ','နေကောင်းလား','ကျေးဇူးတင်ပါတယ်','ရပါတယ်','တောင်းပန်ပါတယ်','ကျေးဇူးပြု၍','ကြိုဆိုပါတယ်','ဂုဏ်ယူပါတယ်','မိသားစု','အဖေ','အမေ','အစ်ကို','အစ်မ','ညီ','ညီမ','အဖိုး','အဖွား','သူငယ်ချင်း','ကလေး','ဒီနေ့','မနက်ဖြန်','မနေ့က','အခု','နောက်ပိုင်း','ယခင်က','မနက်','ညနေ','နေ့လယ်','ဒီမှာ','ဟိုမှာ','အိမ်','ကျောင်း','ရုံး','မြန်မာ','ရေ','လက်ဖက်ရည်','ကော်ဖီ','ထမင်း','ခေါက်ဆွဲ','ဟင်း','သစ်သီး','မနက်စာ','နေ့လယ်စာ','ညစာ','စားလို့ကောင်းတယ်','ကောင်းတယ်','မကောင်းဘူး','ကြီးတယ်','သေးတယ်','များတယ်','နည်းတယ်','မြန်တယ်','နှေးတယ်','ပျော်တယ်','ချစ်စရာကောင်းတယ်','လှတယ်','ပျင်းတယ်','အလုပ်များတယ်','တစ်','နှစ်','သုံး','လေး','ငါး','ခြောက်','ခုနစ်','ရှစ်','ကိုး','ဆယ်','ရာ','ထောင်','ချစ်တယ်','ကျေးဇူးများစွာ','ရပါတယ်','သေချာပေါက်','အတူတူ','အားလုံးကောင်းစေ','သတိထားပါ'];
+const WORDS = ["ဖြစ်သည်။", "ရက်နေ့တွင်", "ရှိသည်။", "ခုနှစ်", "နှင့်", "ခုနှစ်၊", "လည်းကောင်း၊", "သည်", "သို့မဟုတ်", "တို့", "အတွက်", "လည်းကောင်း", "ကို", "တွင်", "ကီလိုမီတာ", "မှ", "အဖြစ်", "များကို", "ရက်", "သော", "အမိ", "ခု", "ခဲ့သည်။", "အဖ", "ကျေးရွာ", "နိုင်ငံ", "မြတ်သော", "ခုနှစ်တွင်", "နာရီ", "မေလ", "မတ်လ", "လည်း", "အောက်တိုဘာလ", "ပညာ", "ပေ", "ဖြစ်ကုန်၏။", "တို့ကို", "ဇွန်လ", "ဒီဇင်ဘာလ", "ပါဝင်သည်။", "သည်။", "နိုင်ငံရေး", "ဟူသော", "ဖြစ်ပြီး", "ရက်တွင်", "အပြည်ပြည်ဆိုင်ရာ", "အသက်", "မီတာ", "ကွယ်လွန်", "ဇန်နဝါရီလ", "တို့သည်", "ပြည်သူ့", "မြန်မာ", "ဧပြီလ", "ခု၊", "မွေးချင်း", "လူဦးရေ", "ဇူလိုင်လ", "တို့က", "နှစ်", "ဖြင့်", "တာဝန်", "ဖေဖော်ဝါရီလ", "သန်း", "အခြား", "အမေရိကန်", "အမျိုးသား", "စုစုပေါင်း", "တို့တွင်", "မွေးဖွားခဲ့သည်။", "မှာ", "သား", "အထိ", "ဟူ၍", "ပါဝင်သော", "မွေးဖွားသည်။", "ရန်ကုန်မြို့", "အနက်", "အမည်ရင်းမှာ", "ဆိုသည်မှာ", "ဖြစ်ကြသည်။", "ရန်ကုန်", "အမှတ်", "အလုပ်အကျွေး", "မိနစ်", "မြန်မာနိုင်ငံ", "ယဉ်ကျေးမှု", "ယောက်", "ဟု", "အဖွဲ့", "အဖွဲ့ဝင်", "ကွယ်လွန်သည်။", "ဆောင်ရွက်", "ဒေါ်လာ", "ပါဝင်", "ပုဒ်မ", "ပုံ", "ဘီလီယံ", "ဘုရား၏", "များတွင်", "များသည်", "ရက်နေ့", "ရာခိုင်နှုန်း", "အကြီးဆုံး", "ဦး", "ကုလသမဂ္ဂ", "ခန့်", "နိုင်ငံတကာ", "မျိုး", "ရှိပြီး", "လွှတ်တော်", "ထို့ပြင်", "နောက်ဆုံး", "ရန်ကုန်မြို့၌", "သတ်မှတ်", "သမီး", "အခြေခံ", "အလုပ်", "စသည့်", "ကမ္ဘာပေါ်တွင်", "ကွယ်လွန်ခဲ့သည်။", "စက်တင်ဘာလ", "နိုဝင်ဘာလ", "နံနက်", "ပြည့်နှစ်", "ဖြစ်၏။", "ရက်၊", "လက်မ", "သြဂုတ်လ", "အဂ္ဂဥပဋ္ဌက", "အတွင်း", "အများဆုံး", "အား", "ဥက္ကဋ္ဌ", "ဩဂုတ်လ", "ကွယ်လွန်ချိန်တွင်", "ငြိမ်းချမ်းရေး", "စာပေ", "ဆက်ဆံရေး", "ဇန်နဝါရီ", "တစ်ဦး", "ထိုသို့", "ဒီဇင်ဘာ", "ဒုတိယ", "ဒေါက်တာ", "ဖြစ်စေ၊", "ဘုရား", "မိမိ", "များ", "ရာခိုင်နှုန်း၊", "အခါ", "အလျား", "အောက်တိုဘာ", "ကမ္ဘာ့", "ကိုလည်း", "စက်တင်ဘာ", "စတုရန်းမိုင်", "တစ်ခု", "တည်ရှိသည်။", "ထို့ကြောင့်", "ထို့အပြင်", "ဒသမ", "ဒါယကာ", "ဒါယိကာမ", "ဒီမိုကရေစီ", "နယ်မြေ", "နှစ်တွင်", "ဖေဖော်ဝါရီ", "ဖွားမြင်သည်။", "မိမိ၏", "မိုင်", "ရှိသော", "လက်နက်", "လက်မမှ", "လိုက်သည်။", "ဝင်ရောက်", "သခင်", "သင်ကြား", "သို့", "အပါအဝင်", "အပိုဒ်", "အမေရိကန်ဒေါ်လာ", "အမျိုးမျိုး", "ဦး၊", "ပါး", "ကမ္ဘာ", "ကျောင်း", "ခေါင်းဆောင်", "စတင်", "စာရင်းအရ", "ဇနီး", "တက္ကသိုလ်", "ထိုမြတ်စွာ", "ထို့နောက်", "ဒုတိယမြောက်", "နိုင်ငံတော်", "နိုင်ငံပေါင်း", "နှစ်မှ", "ပါး၊", "ပြည်နယ်", "ပြန်လည်", "ဖြစ်စေ", "မိန်းမ", "မျှ", "မြန်မာပြက္ခဒိန်", "မြို့နယ်", "လူကို", "လူမျိုးစု", "သက္ကရာဇ်", "သိပ္ပံ", "သို့သော်", "သုတေသန", "သူသည်", "အဂ္ဂသာဝက", "အဂ္ဂဥပဋ္ဌိကာ", "အင်္ဂါ", "အရ", "ဧပြီ", "ခံရသည်။", "စည်းကမ်း", "စီးပွားရေး", "ဆက်လက်", "ဆိုင်ရာ", "ဆိုသည်။", "ဆူ", "ဇွန်", "ညနေ", "တပ်မဟာ", "တဦး", "ထို", "ထိုမြတ်စွာဘုရား၏", "ပတ်", "ပေါင်း", "ဗဟို", "မြို့၌", "ယောက်၊", "ရက်နေ့မှ", "ရက်။", "ရမည်။", "ရာခိုင်နှုန်းမှာ", "ရှင်", "လက်ရှိ", "လို့", "လွတ်လပ်စွာ", "သာ", "သူ၏", "အင်္ဂလိပ်", "အစိုးရ", "အဆိုပါ", "အထက်ပါ", "အဘိဇာတာ", "အမြင့်", "အသင်း", "အားလုံး", "ဥပဒေအရ", "ဥပမာ", "ကိုယ်စားလှယ်", "ကိုယ်ပိုင်", "ဂေါတမ", "စင်တီမီတာ", "စာရေးဆရာ", "စ၍", "ဆရာတော်", "တည်ရှိပြီး", "တပည့်", "တပည့်မ", "တိုင်းပြည်", "ထမ်းဆောင်ခဲ့သည်။", "ဒေါ်လာတန်၊", "နိုင်ငံတော်၏", "နေထိုင်", "ပါတီ", "ပြည့်နှစ်၊", "ဖွဲ့စည်းပုံ", "ဗြိတိသျှ", "ဘုရားကြီး", "မည်သူမျှ", "မည်၏။", "မရှိသော", "မိသားစု", "မေ", "မြို့တော်", "ယခု", "ယခုအခါ", "ရက္", "ရှိသဖြင့်", "လုပ်ကိုင်", "လုံး", "လုံးဝ", "လူတိုင်းတွင်", "လူထု", "ဝါရေ", "သတ္တဝါ", "သရ", "သားသမီး", "သို့တည်းမဟုတ်", "သော်လည်းကောင်း", "သော်လည်းကောင်း၊", "အချိန်", "အချိန်တွင်", "အဂ္ဂသာဝိကာ", "အတည်ပြု", "အတူ", "အဓိက", "အနည်းဆုံး", "အပြင်", "အဖွဲ့ချုပ်", "အဖွဲ့အစည်း", "အရေး", "အရွယ်တွင်", "အလုပ်သမား", "အလုပ်အကျွေးသည်", "အောက်ပါအတိုင်း", "ရက်ရှိသည်။", "အစည်းအဝေး", "လူ့အခွင့်အရေး", "ကကုသန်ဘုရား", "ကမ္ဘာကို", "ကုန်ဆုံးရန်", "ကောင်းစွာ", "ကျန်ရစ်သည်။", "ကျန်သေးသည်။", "ကြသည်။", "ကဿပဘုရား", "ခါ", "ခုတွင်", "ခေါ်", "ခေါ်သည်။", "ဂျီဒီပီ", "ငါးဆူမှ", "စသည်ဖြင့်", "ဆရာ", "ဆောင်ရွက်ရန်", "ဇူလိုင်", "တစ်နှစ်တာ၏", "တပ်ရင်း", "တရား", "တိုင်းရင်းသား", "ထိုင်းနိုင်ငံ", "နိုင်ငံ၏", "နောက်", "နေ့တွင်", "နေ့ရက်", "ပညာရေး", "ပတ်သက်၍", "ပထမ", "ပထမဆုံး", "ပရင့်ထုတ်ရန်", "ပါရှိသည်။", "ပို၍", "ပျမ်းမျှ", "ပြည်ထောင်စု", "ဖြစ်ကုန်လတ္တံ့။", "ဖြစ်ပါသည်။", "ဖြစ်သော", "ဖြစ်၍", "ဖွင့်လှစ်ခဲ့သည်။", "ဖွားမြင်ခဲ့သည်။", "ဗျည်း", "ဘီစီ", "မပြုရ။", "မြတ်စွာဘုရား", "မြတ်စွာဘုရားသည်", "မြန်မာ့အလင်း", "မွ", "ယင်းတစ်နှစ်တာ", "ယောက်တွင်", "ယောက်ျား", "ရက်ပေါင်း", "ရရှိခဲ့သည်။", "ရသည်။", "ရှိကြသည်။", "လက်၊", "လူမှုရေး", "လေဆိပ်", "လဲ", "လွတ်လပ်", "ဝန်ကြီး", "သက်ဆိုင်ရာ", "သင်ကြားခဲ့သည်။", "သန်းခန့်", "အက္ခရာ", "အကျယ်", "အကြောင်းကို", "အခန်း", "အခြားသော", "အခြေပြု၍", "အစေ့", "အဆင့်", "အထက်", "အဓိပ္ပါယ်", "အဖွဲ့တွင်", "အမည်ရင်း", "အရှေ့တောင်", "အလေးချိန်", "အသီး", "အီးမေးလ်ပို့ရန်", "အုပ်၊", "အောက်ပါ", "၎င်းသည်", "ကလေးများ", "ကလေးသူငယ်", "ကာ", "ကာကွယ်ရေး", "ကိရိယာ", "ကောင်း", "ကျန်", "ကျန်ရစ်ခဲ့သည်။", "ကျန်းမာရေး", "ကျော်", "ကြာခဲ့သည်။", "ကွက်၊", "ခရစ္စမတ်", "ခံခဲ့ရသည်။", "ချီးမြှင့်ခြင်း", "ငယ်စဉ်က", "ငါ", "စစ်ကိုင်းတိုင်း", "စတင်၍", "စသော", "စာတမ်းတွင်", "စာတမ်းများ၊", "စာမျက်နှာ", "စုစုပေါင်း၏", "စုံညီ", "စောင်း", "ဆည်းပူးခဲ့သည်။", "ဆရာကြီး", "ဆေးရုံကြီး၌", "ဇန္နဝါရီလ", "ညီ", "တက္ကသိုလ်သည်", "တစ်ခုတည်းသော", "တစ်ယောက်", "တည်ရှိသော", "တရားသူကြီး", "တို့မှ", "တောင်", "တွေ့ရသည်။", "ထိန်းသိမ်း", "ထောင်ဒဏ်", "ထွန်းကားခဲ့သည်။", "ဒီဂရီ", "ဒီပင်္ကရာဘုရား", "နည်းပညာ", "နာရီတွင်", "နိုဝင်ဘာ", "နေရာ", "နေရာ၊", "နဲ့", "နှစ်ကြာ", "နှစ်သား", "နှာသံ", "ပင်", "ပတ်ခဲ့ရာ", "ပါ", "ပါသည်။", "ပိတ်ပင်", "ပိုမို", "ပေါင်", "ပေါ်တွင်", "ပြည့်နှစ်တွင်", "ပြည်သူ့လွှတ်တော်", "ဖြစ်", "ဖွဲ့စည်းခဲ့သည်။", "ဗိုလ်ချုပ်ကြီး", "ဗုဒ္ဓ", "ဗောဓိပင်ကို", "ဗွိုင်ယေဂျာ", "ဘီလျံ", "ဘုရင်", "မခံစေရ။", "မည်သည့်", "မည်သူကိုမျှ", "မတ်", "မတြာ၊", "မပြုရ၊", "မိမိတို့၏", "များ၏", "မြတ်သောမင်္ဂလာဟူ၍", "မြန်မာနိုင်ငံတွင်", "မြန်မာ့", "မြို့နယ်တွင်", "မြေး", "မွန်းလွဲ", "မွေးဖွားခဲ့ပြီး", "ယင်း", "ယောက်မြောက်", "ရက်နေ့က", "ရက်နေ့အထိ", "ရည်ရွယ်၍", "ရန်ကုန်တက္ကသိုလ်", "ရုပ်ရှင်", "ရွေးချယ်", "ရှိလေသည်။", "ရှိသည့်", "ရှိသည့်အနက်", "ရှိ၍", "လက်မအထိ", "လမ်း", "လာသော", "လိုက်၍", "လိုအပ်သော", "လူမှု", "လူဦးရေမှာ", "လူ၏", "လျှင်", "ဝန်ကြီးချုပ်", "သင်မှတ်ဦးလော့။", "သတင်းစာ", "သန်းခေါင်စာရင်း", "သန်းမျှ", "သပိတ်", "သဘာဝ", "သဘောတူညီချက်", "သူ့ကို", "သံဃာတော်", "အကျိုးကို", "အကျွေး", "အကြားတွင်", "အကြောင်းပြု၍", "အခမဲ့", "အချင်း", "အချင်းချင်း", "အင်ဒိုနီးရှား", "အင်းစိန်", "အစိုးရသည်", "အဆိုတော်", "အတွင်း၌", "အရာရှိ", "အရေးပါသော", "အရွက်", "အလျောက်", "အသုံးပြုသည်။", "အာကာသ", "အာရှ", "အားဖြင့်", "အိန္ဒိယ", "အိန္ဒိယနိုင်ငံ", "အီတလီနိုင်ငံ", "အောင်ခြင်း", "ဤသို့", "ဥရောပ", "ဦးထိပ်၌", "ဦးနှင့်", "ဦးဖြင့်", "ဧကရှိ", "ဩဂုတ်", "ရေးသားခဲ့သည်။", "အခမ်းအနား", "အခွင့်အရေးများ", "ကထိက", "ကမ္ဘာပေါ်ရှိ", "ကလေး", "ကာယဗလ", "ကီလိုဂရမ်", "ကောလိပ်", "ကော်မရှင်", "ကြိမ်မြောက်", "ကြိုးတွဲဌာန်၊", "ကြောင်း", "ကြံခင်းမြို့", "ကွယ်လွန်လေသည်။", "ကွယ်လွန်သွားသည်။", "ခုနှင့်", "ခုနှစ်အထိ", "ခေါ်ဆိုခြင်း", "ခေါ်ဆိုအပ်၏။", "ခဲ့ရသည်။", "ခံစားပိုင်ခွင့်", "ဂျပန်နိုင်ငံတွင်", "ဂျာမနီ", "စင်တီမီတာမှ", "စစ်ဆင်ရေး", "စစ်တက္ကသိုလ်", "စစ်အစိုးရက", "စည်းလုံး", "စတုရန်းကီလိုမီတာ", "စနစ်", "စပိန်", "စာရေး", "စီစဉ်ထားသည်။", "စီးပွားရေး၊", "စေ၍", "ဆရာဝန်", "ဆိုတဲ့", "ဆိုပါတယ်။", "ဆိုရှယ်လစ်", "ဆောင်ရွက်ခဲ့သည်။", "တင်မြှောက်ခြင်း", "တစ်ကြိမ်", "တစ်ခုဖြစ်ပြီး", "တစ်ခုဖြစ်သည်။", "တစ်ခုသော", "တစ်နိုင်ငံ", "တည်းဟူသော", "တန်", "တန်း", "တပေါင်း", "တပ်မတော်", "တရားဝင်", "တာဝန်ခံ", "တားမြစ်", "တိုက်", "တိုင်း", "တို့ဖြစ်ကြသည်။", "တို့ဖြစ်သည်။", "တို့လည်း", "တီထွင်ခဲ့သည်။", "တူရိယာ", "တောင်ဘက်", "တံဆိပ်", "တွင်မူ", "တွေ့ရသော", "ထက်", "ထပ်မံ", "ထိပ်ဆုံး", "ထိုကြောင့်", "ထူထောင်ခဲ့သည်။", "ထံမှ", "ထွက်သည်။", "ဒီမိုကရက်တစ်", "ဒု", "ဒုက္ခာ", "ဓမ္မဒဿီ", "နည်းလမ်း", "နယ်နိမိတ်ခြင်း", "နာရီခွဲ", "နိုင်ငံဂုဏ်ရည်ဘွဲ့", "နိုင်ငံတော်သည်", "နိုင်ငံပိုင်", "နိုင်ငံများတွင်", "နိုင်ငံရေး၊", "နေထိုင်လျက်", "နေပြည်တော်", "နေမင်းကဲ့သို့", "နေအိမ်၌", "နောက်ထပ်", "နောက်ပိုင်းတွင်", "နံပတ်", "နံပါတ်", "နှစ်ကြာမျှ", "နှစ်ပေါင်း", "နှစ်ယောက်", "နှစ်အကြာ", "နှစ်အတွင်း", "ပင်စည်", "ပထမဆင့်", "ပထမဆုံးသော", "ပထမဦးဆုံး", "ပရိတ်ကြီး", "ပရော်ဖက်ဆာ", "ပအိုဝ်း", "ပါးကို", "ပါးတွင်", "ပိဋကတ်", "ပိယဒဿီ", "ပုဂ္ဂိုလ်", "ပေါက်ရောက်သည်။", "ပဲခူးတိုင်း", "ပဲ၊", "ပျဉ်းမနားမြို့၌", "ပြင်သစ်", "ပြည်တွင်းသတင်း", "ပြန်ကြားရေး", "ပြီး", "ပြောင်းရွှေ့", "ပွင့်တော်မူခဲ့သော", "ပွင့်တော်မူမည့်", "ဖက်ဆစ်", "ဖဆပလ", "ဖိလစ်ပိုင်နိုင်ငံ", "ဖုံးလွှမ်းလျက်", "ဖော်ပြထားသည်။", "ဖြစ်ကြ", "ဖြစ်ထွန်း", "ဖြစ်ပေသည်။", "ဖြစ်သော်လည်း", "ဖွဲ့စည်း", "ဖွဲ့စည်းထားသည်။", "ဖွဲ့စည်းသည်။", "ဗကပ", "ဗုဒ္ဓဘာသာ", "ဘရာဇီး", "ဘဝကို", "ဘီလျံဖြင့်", "မင်း", "မင်္ဂလာ", "မည်သူမဆို", "မန္ဈလေး", "မန္တလေး", "မန္တလေးတိုင်း", "မရှိချေ။", "မဟာဗျူဟာ", "မဟာယာန", "မဟုတ်သော", "မိနစ်ခန့်", "မိန်းမလှကျွန်း", "မီလီမီတာ", "မီလျှံ", "မဲ", "များစွာ", "များသောအားဖြင့်", "မျိုးတွင်", "မြစ်", "မြန်မာနိုင်ငံရှိ", "မြို့မ", "မွတ်စလင်", "မွေးဖွား", "မှတ်ချက်။", "မှာရှိတဲ့", "မှားယွင်း", "ယင်းသို့", "ယာဉ်ဖြင့်", "ယောက်နှင့်", "ယောကျာ်း", "ရက်က", "ရက်မစုံသောလ", "ရက်မှ", "ရင်း၊", "ရန်ကုန်မြို့တွင်", "ရဟန်း", "ရာ", "ရာခိုင်နှုန်းကို", "ရာခိုင်နှုန်းနှင့်", "ရာခိုင်နှုန်းမျှ", "ရာခိုင်နှုန်းမှ", "ရာစုမှ", "ရိုးရိုးဘွဲ့", "ရေ", "ရောက်ခဲ့သည်။", "ရောဂါဖြင့်", "ရေးသား", "ရဲ", "ရဲဘော်", "ရဲ့", "ရွေးကောက်", "ရွေးကောက်ပွဲ", "ရှည်လျားသည်။", "ရှမ်းပြည်နယ်", "ရှား", "ရှိခဲ့သည်။", "ရှိသည်ဟု", "ရှေးအခါက", "လက်ဆေးသူ", "လက်မခန့်", "လက်အောက်တွင်", "လန်ဒန်မြို့၌", "လမ်းကြား၊", "လမ်းနှင့်", "လအတွင်း", "လာစေရန်။", "လုပ်ငန်းများကို", "လုံးပါ", "လုံး၊", "လူ", "လူတိုင်းသည်", "လူအများ", "လူဦးရေ၏", "လောကုတ္တရာ", "လောက၌", "လေ့လာရာတွင်", "လွတ်လပ်ရေး", "လွတ်လပ်သော", "လှုပ်ရှား", "ဝန်ကြီးချုပ်ဟောင်း", "ဝါ", "ဝိဇ္ဇာနှင့်", "သင်ကြား၍", "သတင်းထောက်", "သတင်းရင်းမြစ်", "သထုံ", "သဘာဝဓာတ်ငွေ့", "သမိုင်း", "သမ္မတအဖြစ်", "သာသနာနှစ်", "သို့ရာတွင်", "သုံး၏", "သောင်း", "အကျဉ်းသား", "အကြမ်းအားဖြင့်", "အကြာတွင်", "အကွက်", "အကွာ", "အချက်အလက်များကို", "အခြေအနေကို", "အငယ်ဆုံးနိုင်ငံ", "အင်ဒီးယန်း", "အင်အား", "အင်္ဂလိပ်-မြန်မာ", "အငြိမ်းစား", "အစား", "အစိုးရက", "အဆောက်အအုံ", "အတန်း", "အတိုင်း", "အတော်များများကို", "အတွင်းရေးမှူး", "အတွင်းရှိ", "အထက", "အထက်တန်း", "အထက်တန်းကျောင်း", "အနိစ္စ", "အနောက်ဘက်", "အနောက်ဘက်တွင်", "အနံ", "အပြင်၊", "အပွင့်", "အဖြစ်ဖြင့်", "အဖြစ်သို့", "အဖွဲ့ကို", "အမည်", "အမေရိကန်)သည်", "အမျိုးသမီးများ", "အမြင့်ဆုံးနေရာမှာ", "အယ်ဒီတာ", "အရောင်းအဝယ်", "အရွက်ကို", "အရှင်", "အရှည်ဆုံး", "အရှေ့တောင်ဘက်", "အရှေ့အာရှ", "အလယ်ပိုင်း", "အလားတူ", "အသီးသီး", "အာကာသအတွင်း", "အာမခံ", "အာရှတွင်", "အားလုံးကို", "အိုဘယ့်ဘယ်", "အိုဘယ့်သမီးတော်", "အေးချမ်းစွာ", "ဤတရားလေးပါးကိုလည်း", "ဤဘဒ္ဒကမ္ဘာတွင်", "ဤမြတ်စွာ", "ဥက္ကဌ", "ဥပစာ", "ဥပဒေ", "ဥရောပတွင်", "ဦးအေးမောင်၊", "ဧက", "ဧရာဝတီတိုင်း", "ဧရိယာ", "ဩစတေးလျ", "ေတာ", "ေမေမ", "၏။", "ပါဝင်သည့်", "ယနေ့တွင်", "လွန်ခဲ့သည့်", "အခွင့်အရေး", "ကကြီးမှ", "ကချင်", "ကချင်ပြည်နယ်", "ကချင်ပြည်နယ်၊", "ကစထ", "ကတည်းက", "ကန့်သတ်ထားသည့်", "ကပစ", "ကဗျာ", "ကမာရွတ်မြို့နယ်", "ကမ္ပည်း", "ကမ္ဘာတွင်", "ကမ္ဘာ့နံပါတ်", "ကမ္ဘာ့ဘဏ်", "ကမ္မကိလေသတရား", "ကလေးများကို", "ကာကို", "ကာကွယ်", "ကာတွန်းဆရာ", "ကာလကတ္တားမြို့", "ကာလအတွင်း", "ကိရိယာများကို", "ကိလေသာ", "ကိုယ်ခန္ဓာ", "ကိုလိုနီ", "ကိုလိုနီတိုင်းကြီး", "ကိုအံ့ကြီးသည်", "ကိုးကွယ်သော", "ကီလိုမီတာဖြစ်သည်။", "ကုန်တန်း", "ကုလသမဂ္ဂတွင်", "ကူတောင်", "ကူးစက်ခြင်း", "ကောင်းတာဖြစ်", "ကောင်းတာဖြစ်ကာ၊", "ကောင်းတာမဖြစ်", "ကောင်း၊", "ကောလိတသည်", "ကော်မရှင်က", "ကော်ရော်လာရီ", "ကဲ့သို့", "ကဲ့သို့ပင်", "ကံ့ကော်ပင်ရင်း၌", "ကျင့်သုံးရာ", "ကျင်းပခဲ့သည်။", "ကျင်းပခွင့်", "ကျင်းပလို", "ကျင်းပသော", "ကျဆုံးသွားတဲ့", "ကျပ်", "ကျမ်းဂန်", "ကျမ်းစာတို့သည်", "ကျယ်ဝန်းသည်။", "ကျောက်ချောင်း", "ကျောက်စာ", "ကျောင်းဆရာမ", "ကျောင်းနှင့်", "ကျောင်း၌", "ကျောင်း၌၎င်း၊", "ကျေးကျွန်သဖွယ်", "ကျေးကျွန်အဖြစ်၊", "ကျေးလက်ဒေသ၌ပင်", "ကြက်ဆူဆီကို", "ကြိမ်", "ကြိုးစားခဲ့သည်။", "ကြီး", "ကြေငြာခဲ့သည်။", "ကြေညာချက်", "ကြေညာစာတမ်းကို", "ကြေညာလိုက်သည်။", "ကြောင့်", "ကြံခင်းမြို", "ကွက်", "ကွန်ဂရက်", "ကၽြန္ေတာ္", "ခနောင်းကြီး", "ခန့်မှန်းကြသည်။", "ခန့်ရှိပြီး", "ခန်း", "ခရစ္စတီးနား", "ခရစ်ယာန်", "ခရိုင်", "ခရိုင်အဆင့်", "ခရီးစဉ်ကို", "ခရီးသွား", "ခလရ", "ခလုတ်", "ခုတို့၏", "ခုနစ်", "ခုနစ်တန်း", "ခုနှစ်တွင်၊", "ခုနှစ်ထဲတွင်", "ခုနှစ်နှင့်", "ခုနှစ်များတွင်", "ခုမြောက်", "ခုမှာ", "ခုရှိသော်လည်း", "ခုအနက်", "ခေတ်တိုင်း", "ခေတ်သစ်", "ခေမာသည်", "ခေါင်းဆောင်ကြီး", "ခေါင်းဆောင်သော", "ခေါ်ဆိုသည်။", "ခဲ့ကြသည်။", "ခဲ့သည့်", "ခံစားခွင့်ရှိသည်။", "ခံစားနိုင်ခွင့်", "ခ်စ္", "ချက်နိုင်ငံ၏", "ချင်း", "ချင်းပြည်နယ်", "ချီလီ၊", "ချီးမြှင့်", "ချူပ်ဆိုခဲ့သည်မှာ", "ချောင်းဆုံ", "ချေးထိုးပိုးသည်", "ခြင်း", "ခြင်းကို", "ခြောက်သွေ့သော", "ခွင့်ပြုထားသည်။", "ခွဆုံ", "ခွေးတောက်ချောင်း", "ခွဲခြား", "ဂကူမန်", "ဂါယာက", "ဂီတသံစဉ်", "ဂီရိ", "ဂုဏ်ငယ်စေသော", "ဂုဏ်ထူး", "ဂုဏ်ပြုခဲ့သည်။", "ဂေါတမဗုဒ္ဓ", "ဂေါတမဘုရား", "ဂျင်မီနီ", "ဂျပန်", "ဂျပန်နိုင်ငံ", "ဂျာနယ်ကျော်", "ဂျာမနီနိုင်ငံတွင်", "ဂျိမ်းစ်ဝပ်", "ဂျေဒိုက်", "ဂျွန်နသန်ဝိတ်", "ဃဋိကာရသည်", "ငတောက်တူကြီး", "ငယ်စဉ်ကပင်", "ငယ်မည်", "ငါသည်", "ငါးယောက်တွင်", "ငါ၏", "ငြိမ်သက်သော", "ငွေကြေးရန်ပုံငွေ", "စကားလုံး", "စကော့လူမျိုး", "စက္ကန့်", "စက်မှုတော်လှန်ရေး", "စင်စစ်", "စစ်ကိုင်းမြို့တွင်", "စစ်ကိုင်းမြို့၌", "စစ်ဆေးခြင်း", "စစ်တပ်နှင့်", "စစ်တမ်း", "စစ်တွေမြို့", "စစ်တွေမြို့၊", "စစ်မှုထမ်းကောင်း", "စစ်ရေးနှင့်", "စစ်အစိုးရ", "စစ်အစိုးရမှ", "စစ်အစိုးရအာဘော်", "စည်", "စည်းရုံး", "စတင်ရန်", "စတုတ္ထမြောက်", "စပါးထား", "စပ်လျဉ်းသည့်", "စမုန်စပါးအတိုင်း", "စမ်းချောင်း", "စသည်တို့", "စာ", "စာစောင်များ", "စာပိ", "စာပေဆု", "စာပေများကို", "စာပေများသည်လည်း", "စာပေသည်", "စာပေအတွက်", "စာပေအပ်နှံ", "စာများ", "စာရေးဆရာမ", "စာရေးရာတွင်", "စာအဆက်အသွယ်", "စာအုပ်များ၊", "စား", "စိတ္တသည်", "စိတ္အထင္လား", "စိတ်ရှိကုန်သော", "စိုက်စနစ်", "စိုက်ရမည်။", "စိုင်ပြင်ကြီး", "စီရင်ချက်", "စီးပွား", "စီးပွားရေးနှင့်", "စုဖုရားလတ်တို့မှ", "စေခိုင်းခြင်း", "စေခိုင်းခြင်း၊", "စေရန်", "စေရမည်။", "စောက်", "စေ့", "စံတော်မူလေပြီ)။", "စွက်ဖက်ခြင်း", "စွန့်လွှတ်ခြင်း", "စွပ်စွဲချက်ဖြင့်", "စွမ်းအင်", "ဆက်", "ဆက်စပ်နေသော", "ဆက်ဆံမှု", "ဆက်တိုက်", "ဆင်ပေါင်ဝဲမြို့နယ်", "ဆင်းရဲသား", "ဆင်းသက်လာသူများ", "ဆင်းသက်လာ၍", "ဆဋ္ဌမမြောက်", "ဆန္ဒခံယူပွဲမှ", "ဆန်ရီမိုမြို့၌", "ဆမျှ", "ဆရာတော်သည်", "ဆရာမ", "ဆရာသည်", "ဆာပေါ်ထွန်းသည်", "ဆာဗေယာ", "ဆား", "ဆို", "ဆိုင်ကလုန်း", "ဆိုတာ", "ဆိုဒီယံ", "ဆိုးရော့စ်သည်", "ဆီ", "ဆီလီကိတ်", "ဆောင်ရွက်လျက်", "ဆွေးနွေးပွဲများ", "ဇနီးဖြစ်သူမှာ", "ဇနီးမှာ", "ဇန္နဝါရီ", "ဇာတိ", "ဇိနော", "ဇီဝကမ္မကို", "ဇွန်လတွင်", "ဉာဏ်ပညာ", "ဉာဏ်ပညာတံခွန်ကို", "ညီလာခံ", "ညီအစ်ကို", "ညေနဆို", "ညောင်ဖြူပင်ရွာ", "ညွှန်ကြား", "ညှဉ်းပန်း", "ဌာနများတွင်", "တကမ္ဘာလုံး", "တက္ကသိုလ်တွင်", "တက္ကသိုလ်မှ", "တကွ", "တကွသော", "တချို့ကို", "တခြား", "တင့်တယ်စေခဲ့၏။", "တင့်တယ်တော်မူ၏။", "တင်ပြခဲ့သည်။", "တင်ရွှေ", "တင်ရွှေနဲ့", "တစက္ကန့်လျှင်", "တစ်", "တစ်ခါ", "တစ်ခုလည်း", "တစ်ခု၊", "တစ်နိုင်ငံလုံးတွင်", "တစ်နှစ်လျှင်", "တစ်မျိုး", "တစ်ဦးဖြစ်သည်။", "တည်တံ့ကုန်", "တည်ရှိကြသည်။", "တည်ရှိ၍", "တတ်သည့်", "တနင်္ဂနွေနေ့", "တန်ခူး", "တန်းရောက်တော့", "တန်းအောင်ခဲ့သည်။", "တနှစ်လျှင်", "တပို့တွဲ", "တပ်တွင်", "တပ်မတော်မှ", "တပ်မှူးမှာ", "တပ်ဦး", "တဘက်ကမ်းရှိ", "တမလြန္ကို", "တရက္ေလာက္", "တရဖျား", "တရားဝင်အမည်မှာ", "တရားသန်လျက်မြတ်ကို", "တရုတ်", "တရုတ်နိုင်ငံ", "တရုတ်၊ကုလား", "တာ", "တာဝန်ကို", "တိဗက်-မြန်မာအနွယ်၊", "တိမ်မြုပ်ကြရ၏။", "တိရစ္ဆာန်", "တိုက်ကြီးများတွင်", "တိုကျို", "တိုင္", "တိုင်းကို", "တို့နှင့်", "တို့ပါဝင်သည်။", "တို့ဖြင့်", "တို့ဖြစ်ပါတယ်။", "တို့မှာ", "တို့အတွက်", "တို့၏", "တိုးချဲ့", "တိုးတက်ခဲ့သည်။", "တီထွင်ခဲ့သော", "တူညီသော", "တောက်လောင်ပြီး", "တောခိုပြီး", "တောင်ပိုင်း", "တောင်ဘက်တွင်", "တောတွင်း", "တံတား", "တံပိုးမျိုး", "တွင်လည်း", "တွေမှာ", "ထက်သော", "ထင်မြင်", "ထင်ရှား", "ထင်ရှားခဲ့သော", "ထင်ရှားသော", "ထမ်းဆောင်ခဲ့စဉ်", "ထမ်းဆောင်ခဲ့သူ", "ထရီလီယံ", "ထားပါတယ်။", "ထားသည့်", "ထိ", "ထိန်းသိမ်းရေး", "ထိုင်း", "ထိုင်းနိုင်ငံမှ", "ထိုသဘော", "ထိုသူသည်", "ထိုအချိန်က", "ထိုအတူမရှိသော", "ထို့အတူ", "ထုတ်ကုန်၏", "ထုတ်ပြန်"];
 
 /* ── PREDICTIVE TEXT ENGINE ── */
 let userFreq = {};
@@ -3317,18 +3067,22 @@ const NEXT_WORD = {
 
 let lastPickedWord = '';
 
-function getSuggestions(prefix) {
+function getSuggestions(prefix) {   /* LIVE-FIX-1013 */
   if (!prefix || prefix.length < 1) return [];
   const scored = {};
   const freq = w => userFreq[w] || 0;
 
-  // Dictionary words
+  // Dictionary words. Case-insensitive: "mor" finds German "Morgen", and "Hal" at the
+  // start of a sentence finds "hallo" (shown as "Hallo" below). (2026-10-10)
+  const _lc = x => x.toLocaleLowerCase(document.documentElement.lang || undefined);
+  const lp = _lc(prefix);
   WORDS.forEach(w => {
     if (w === prefix) return;
+    const lw = _lc(w);
     let s = 0;
-    if (w.startsWith(prefix))      s = 100 + freq(w) * 5 - w.length;
-    else if (freq(w) > 0 && w.startsWith(prefix.slice(0,-1))) s = 40 + freq(w) * 3;
-    else if (w.length >= prefix.length && editDist(w.slice(0,prefix.length+2), prefix) <= 1) s = 20 + freq(w) * 2;
+    if (lw.startsWith(lp))      s = 100 + freq(w) * 5 - w.length;
+    else if (freq(w) > 0 && lw.startsWith(lp.slice(0,-1))) s = 40 + freq(w) * 3;
+    else if (w.length >= prefix.length && editDist(lw.slice(0,prefix.length+2), lp) <= 1) s = 20 + freq(w) * 2;
     if (s > 0) scored[w] = s;
   });
 
@@ -3339,7 +3093,10 @@ function getSuggestions(prefix) {
     if (w.startsWith(prefix)) scored[w] = 80 + userFreq[w] * 5 - w.length;
   });
 
-  return Object.entries(scored).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([w])=>w);
+  // a capital the user typed is kept: "Hal" -> "Hallo" (never lowers a German noun)
+  const cap = prefix[0] !== _lc(prefix[0]);
+  return Object.entries(scored).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([w]) =>
+    cap && w[0] === _lc(w[0]) ? w[0].toLocaleUpperCase(document.documentElement.lang || undefined) + w.slice(1) : w);
 }
 
 /* ── STATE ── */
@@ -3443,10 +3200,10 @@ function buildKB() {
       } else {
         /* letter key — prefix combining chars with dotted circle so they render visibly */
         const COMBINING = new Set([]);
-        const display = COMBINING.has(k) ? '◌' + k : k;
+        const display = (COMBINING.has(k) || /^\p{M}+$/u.test(k)) ? '\u25CC' + k : k;   /* a mark alone needs a carrier to be visible */
         const hint = FL[k] || '';
+        btn.dataset.ch = k;   /* long-press reads this — textContent also holds the hidden Latin hint */
         btn.innerHTML = `<span class="fl">${hint}</span>${display}`;
-        if (k === 'لا') btn.style.fontSize = '15px';
         btn.onclick = () => ins(k);
       }
 
@@ -3469,7 +3226,6 @@ function buildSpec() {
 
 function buildNum() {
   const western  = ['1','2','3','4','5','6','7','8','9','0'];
-  const arabic   = ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'];
   const symbols  = ["?","!",",",".","(",")",":",";","@","#","+","-","×","÷","=","%","°","½","¼","¾","&","*","\"","'","/","\\","|","_","~","^","<",">","[","]","{","}","€","$","£","¥","©","®","™","•","…","—","«","»","§"/*LANG_SYMBOLS*/,"၊","။"/*END_LANG_SYMBOLS*/];
   const fill = (id, chars, extraClass='') => {
     const g = document.getElementById(id); if (!g) return;
@@ -3482,6 +3238,7 @@ function buildNum() {
     });
   };
   fill('ngrid-w', western);
+  /*NATIVE_DIGITS*/(function(){const D={"label": "Burmese digits", "digits": ["၀", "၁", "၂", "၃", "၄", "၅", "၆", "၇", "၈", "၉"], "first": true};const w=document.getElementById('ngrid-w');if(!w)return;let g=document.getElementById('ngrid-n');if(!g){const l=document.createElement('div');l.className='n-section-lbl';l.textContent=D.label;g=document.createElement('div');g.className='n-grid';g.id='ngrid-n';const h=document.querySelector('.h1-arabic');if(h)g.style.fontFamily=getComputedStyle(h).fontFamily;if(D.first){const wl=w.previousElementSibling;w.parentNode.insertBefore(l,wl);w.parentNode.insertBefore(g,wl);}else{w.parentNode.insertBefore(g,w.nextSibling);w.parentNode.insertBefore(l,g);}}fill('ngrid-n',D.digits);})();/*END_NATIVE_DIGITS*/
   const ga = document.getElementById('ngrid-a'); if(ga) ga.style.display='none';
   fill('ngrid-s', symbols);
 }
@@ -3582,34 +3339,6 @@ function closeEmoji()    { emojiOpen = false; document.getElementById('epop').cl
 function toggleTash()    { tashOpen = !tashOpen; document.getElementById('tpop').classList.toggle('show', tashOpen); if (tashOpen) { closeEmoji(); closeSpec(); closeNum(); } }
 function toggleFranco()  { francoOn = !francoOn; buildKB(); }
 
-async function aiTashkeel() {
-  const ta = document.getElementById('arabic-text');
-  const text = ta.value.trim();
-  if (!text) { toast('✏️ اكتب نصاً أولاً'); return; }
-  const btn = document.querySelector('.ai-tash-btn');
-  btn.disabled = true;
-  btn.querySelector('.ai-tash-label').textContent = '⏳ جاري التشكيل...';
-  try {
-    const res = await fetch('/.netlify/functions/tashkeel', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text })
-    });
-    if (!res.ok) throw new Error('API error ' + res.status);
-    const data = await res.json();
-    if (data.result) {
-      ta.value = data.result;
-      updateStats(); updateSugs();
-      toast('✅ تم التشكيل التلقائي');
-    } else { throw new Error('No result'); }
-  } catch (err) {
-    toast('❌ تعذّر التشكيل، حاول مجدداً');
-  } finally {
-    btn.disabled = false;
-    const t = I18N[currentLang] || I18N.en;
-    btn.querySelector('.ai-tash-label').textContent = t['btn.aitash'] || 'AI تشكيل تلقائي';
-  }
-}
 
 function closeTashkeel() { tashOpen = false; document.getElementById('tpop').classList.remove('show'); }
 function toggleNum()     { numOpen = !numOpen; document.getElementById('npop').classList.toggle('show', numOpen); if (numOpen) { closeEmoji(); closeTashkeel(); closeSpec(); } }
@@ -3741,10 +3470,13 @@ function updateSugs() {
     sugs = [el0.textContent, currentPrefix, el2.textContent];
   } else {
     // Idle mode: next-word prediction based on last word typed
-    let nextPreds = lastPickedWord ? (NEXT_WORD[lastPickedWord] || []) : [];
+    let nextPreds = lastPickedWord ? (NEXT_WORD[lastPickedWord] || []).slice() : [];   /* copy — pushing into NEXT_WORD's own array grew it forever */
     if (nextPreds.length < 3) {
-      const top = Object.entries(userFreq).sort((a,b)=>b[1]-a[1]).map(([w])=>w);
-      while (nextPreds.length < 3) nextPreds.push(top.shift() || ['ကျွန်တော်','ကျွန်မ','နင်'][nextPreds.length]);
+      /* fill from the user's frequent words, then the language's commonest — never the word
+         just typed, never the same word twice (2026-10-06) */
+      const top = [...new Set([...Object.entries(userFreq).sort((a,b)=>b[1]-a[1]).map(([w])=>w), ...WORDS])]
+        .filter(w => w !== lastPickedWord && !nextPreds.includes(w));
+      while (nextPreds.length < 3) nextPreds.push(top.shift() || ['ဖြစ်သည်။','ရက်နေ့တွင်','ရှိသည်။'][nextPreds.length]);
     }
     el0.textContent = nextPreds[0] || ''; el1.textContent = nextPreds[1] || ''; el2.textContent = nextPreds[2] || '';
     sugs = [el0.textContent, el1.textContent, el2.textContent];
@@ -3887,7 +3619,7 @@ function toggleQwerty() {
 /* ── PHYSICAL KB ── */
 /* Phonetic (Franco/Arabizi) maps, derived by inverting the on-screen hint map FL so
    every language reuses its OWN hints. 1-char latin = single, 2-char = digraph
-   (type-then-upgrade: 's'->س, then 'h' upgrades it to ش). Capitals = emphatics. */
+   (type-then-upgrade: 's' types one letter, then 'h' upgrades it to the 'sh' letter). Capitals = emphatics. */
 const PH_SINGLE = {}, PH_DIGRAPH = {};
 (function buildPhonetic(){
   for (const ar in FL) {
@@ -3914,16 +3646,41 @@ function replaceLast(newCh) {
    position, not the Latin letter printed on the key. */
 const CODE2CHAR = {};
 'qwertyuiopasdfghjklzxcvbnm'.split('').forEach(c => { CODE2CHAR['Key' + c.toUpperCase()] = c; });
-Object.assign(CODE2CHAR, {BracketLeft:'[', BracketRight:']', Semicolon:';', Quote:"'", Comma:',', Period:'.', Slash:'/', Backquote:'`'});
+Object.assign(CODE2CHAR, {BracketLeft:'[', BracketRight:']', Semicolon:';', Quote:"'", Comma:',', Period:'.', Slash:'/', Backquote:'`', Backslash:'\\'});   /* Backslash = ISO C12 (Armenian, Serbian, Macedonian letters sit there) */
+/* number row: national layouts put letters here (e.g. Kazakh puts its extra letters on 2 3 4 5 8 9 0 - =).
+   Keys with no PHYS entry on a page still type their digit/sign as normal. */
+Object.assign(CODE2CHAR, {Digit1:'1', Digit2:'2', Digit3:'3', Digit4:'4', Digit5:'5', Digit6:'6', Digit7:'7', Digit8:'8', Digit9:'9', Digit0:'0', Minus:'-', Equal:'='});
 function setupPhys() {
   const ta = document.getElementById('arabic-text');
-  ta.addEventListener('pointerdown', () => { lastPh = ''; });
+  ta.addEventListener('pointerdown', () => { lastPh = ''; deadKey = ''; });
   document.addEventListener('keydown', e => {
     if (!qwertyOn) return;
+    if (document.activeElement === ta && !e.metaKey && !francoOn && typeof PHYS_DEAD === 'object') {
+      const alt = e.altKey || (e.getModifierState && e.getModifierState('AltGraph'));
+      const layer = alt ? 'altgr' : (e.shiftKey ? 'shift' : 'base');
+      const dk = ((PHYS_DEAD.keys || {})[layer] || {})[CODE2CHAR[e.code]];
+      if (dk && (alt || !e.ctrlKey)) { e.preventDefault(); if (deadKey) ins(deadKey); deadKey = dk; return; }
+      if (deadKey && e.code === 'Space') { e.preventDefault(); ins((PHYS_DEAD.map || {})[deadKey + ' '] || deadKey); deadKey = ''; return; }
+      if (deadKey && (e.key === 'Escape' || e.key === 'Backspace')) { deadKey = ''; if (e.key === 'Escape') return; }
+    }
+    /* PHYS_ALTGR (optional, per page): letters a national layout puts on AltGr
+       (the Ukrainian letter ghe-with-upturn on AltGr). Windows AltGr = Ctrl+Alt, Mac = Option. */
+    if (document.activeElement === ta && !e.metaKey && typeof PHYS_ALTGR === 'object'
+        && (e.altKey || (e.getModifierState && e.getModifierState('AltGraph')))) {
+      let ag = PHYS_ALTGR[CODE2CHAR[e.code]];
+      if (ag) {
+        if (e.shiftKey && typeof PHYS_SHIFT !== 'object') ag = ag.toLocaleUpperCase(document.documentElement.lang || undefined);   /* PHYS_SHIFT page = Shift is not case (Georgian) */
+        e.preventDefault(); insPhys(ag); return;
+      }
+    }
     if (document.activeElement !== ta || e.ctrlKey || e.metaKey || e.altKey) return;
     const skip = ['Backspace','Delete','Tab','Enter','Arrow','Home','End'];
     if (skip.some(s => (e.key || '').startsWith(s))) { lastPh = ''; return; }
     if (francoOn) {                                   /* phonetic — sound (e.key), CASE-sensitive: Shift = emphatic */
+      /* Pages with a whole-word converter (Arabizi → Arabic) let Latin letters through
+         and convert the finished word on Space/Enter: letter-by-letter mapping can't
+         know where a script leaves out short vowels (7abibi is one Arabic word, not letter by letter). */
+      if (typeof arabiziToArabic === 'function' || typeof romajiToKana === 'function' || typeof pinyinCands === 'function') return;
       let raw = e.key || '';
       if (e.code === 'Digit2') raw = '2';
       else if (e.code === 'Digit3') raw = '3';
@@ -3934,11 +3691,39 @@ function setupPhys() {
       if (PH_SINGLE[raw]) { e.preventDefault(); ins(PH_SINGLE[raw]); lastPh = (raw === low) ? low : ''; return; }
       if (PH_SINGLE[low]) { e.preventDefault(); ins(PH_SINGLE[low]); lastPh = low; return; }
       lastPh = '';
+      if (PHYS[CODE2CHAR[e.code]] === '') e.preventDefault();   /* key deliberately empty on this page (no hieroglyph on e) - silent here too, never Latin */
     } else {                                          /* standard layout — by physical position */
-      const ch = PHYS[CODE2CHAR[e.code]];
-      if (ch) { e.preventDefault(); ins(ch); }
+      /* Japanese/Chinese: a physical keyboard types romaji/pinyin, converted per word by the
+         page's engine (cjk_engines.py) - a letter-by-letter map typed k -> ka-kana (2026-10-13) */
+      if ((typeof romajiToKana === 'function' || typeof pinyinCands === 'function') && /^[a-z]$/i.test(e.key || '')) return;
+      const pk = CODE2CHAR[e.code];
+      let ch = PHYS[pk];
+      /* PHYS_SHIFT (optional, per page): a Shift layer that is NOT a case change —
+         e.g. Egyptian Manuel de Codage, where h and H are two different signs. */
+      if (e.shiftKey && typeof PHYS_SHIFT === 'object' && PHYS_SHIFT[pk]) ch = PHYS_SHIFT[pk];
+      else if (ch && e.shiftKey) {
+        const _L = document.documentElement.lang || undefined;
+        /* Shift = capital; locale-aware (Turkish dotted capital I); no-op on caseless scripts.
+           A two-letter key (Sakha soft-n digraph) capitalises its first letter only, as the real layout does. */
+        const up = ch.length > 1 ? ch[0].toLocaleUpperCase(_L) + ch.slice(1) : ch.toLocaleUpperCase(_L);
+        if (up.length > ch.length) return;   /* no one-letter capital (German sharp s -> SS): leave the key to the real keyboard (Shift = ? on German keyboards); the capital is on screen + Special */
+        ch = up;
+      }
+      if (ch) { e.preventDefault(); insPhys(ch); }
+      else if (ch === '') e.preventDefault();
+      else if (deadKey && (e.key || '').length === 1) { ins(deadKey); deadKey = ''; }   /* no composition: accent, then the key's own char */   /* key deliberately empty (Serbian Z: no Serbian letter) — never leak Latin */
     }
   });
+}
+
+/* PHYS_DEAD (optional, per page): dead keys of the national layout, as Windows does them -
+   the accent key is silent, the next letter is composed from the CLDR table (Czech caron + d).
+   Space after a dead key types the accent itself; a key with no composition types both. */
+let deadKey = '';
+function insPhys(c) {
+  if (!deadKey) { ins(c); return; }
+  const d = deadKey; deadKey = '';
+  ins((PHYS_DEAD.map || {})[d + c] || (d + c));
 }
 
 /* ── VOICE ── */
@@ -3990,7 +3775,7 @@ function closeLang()  { document.getElementById('lang-menu')?.classList.remove('
 const I18N = {
   en: {
     'hero.h1': 'Burmese Keyboard Online<span class="h1-arabic">မြန်မာ ကီးဘုတ်</span>',
-    'hero.sub': 'Type Burmese from any device. No download, no installation.',
+    'hero.sub': 'The complete Burmese script with 33 consonants and floating tone/vowel marks — right in your browser. Type in Burmese Unicode and get proper encoding for Facebook, Viber, WhatsApp and every modern platform.',
     'nav.home':'Home','nav.faq':'FAQ','nav.contact':'Contact',
     'share.copyto':'Copy to','share.searchwith':'Search with','share.translatewith':'Translate with','share.poston':'Post on',
     'btn.download':'Download','btn.copy':'Copy','btn.clear':'Clear','btn.aitash':'AI Vowel Signs ✨',
@@ -4003,11 +3788,11 @@ const I18N = {
     'ehub.tab.popular':'⭐ Popular','ehub.tab.islamic':'☪️ Islamic','ehub.tab.culture':'🦚 Culture','ehub.tab.flags':'🏳️ Flags','ehub.tab.social':'📱 Social',
     'combo.title':'🎯 Burmese Emoji Combos <span class="combo-sub">— one click to insert into your text</span>',
     'apps.h2':'Burmese Keyboard for <span style="color:var(--blue)">Any App</span>',
-    'apps.sub':'Type your Burmese text above → tap <b>Copy</b> → paste into any app. No special settings needed.',
-    'app.wa.h3':'Burmese Keyboard for WhatsApp','app.wa.p':'Type your message → tap <b>Copy</b> → open WhatsApp → long-press to paste. Works on iPhone and Android.',
-    'app.tt.h3':'Burmese Keyboard for TikTok','app.tt.p':'Write Burmese captions or comments → Copy → paste in TikTok. Romanized mode lets you type Burmese from your QWERTY keyboard.',
-    'app.ig.h3':'Burmese Keyboard for Instagram','app.ig.p':'Write Burmese captions, bio, or DM messages → Copy → paste in Instagram.',
-    'app.sc.h3':'Burmese Keyboard for Snapchat','app.sc.p':'Type Burmese for Stories or chats → Copy → paste in Snapchat. Works on iPhone and Android.'
+    'apps.sub':'Type Unicode Burmese here, copy once, and paste it into any app. Zawgyi-encoded text shows up garbled on modern devices.',
+    'app.wa.h3':'Burmese Keyboard for WhatsApp','app.wa.p':'Message family in Myanmar or abroad in Unicode Burmese, not the older Zawgyi encoding.',
+    'app.tt.h3':'Burmese Keyboard for TikTok','app.tt.p':'Write captions and comments in Burmese, typed here on a device with no Burmese layout.',
+    'app.ig.h3':'Burmese Keyboard for Instagram','app.ig.p':'Captions in Unicode Burmese keep stacked consonants and vowel signs in the right order.',
+    'app.sc.h3':'Burmese Keyboard for Snapchat','app.sc.p':'Caption a snap in Unicode Burmese, which displays correctly on current phones.'
   },
   fr: {
     'hero.h1':'Clavier Birman en Ligne — Gratuit & Instantané',
@@ -4089,8 +3874,8 @@ function setLang(code, label) {
 const EMOJI_CATS = {
   popular: ['❤️','😊','😂','😍','🙏','👍','💪','🎉','✨','🔥','💯','😭','😘','🥰','💕','👏','🌟','😅','🤔','💙','🎊','😎','🥳','🤩','🫶','🤗','🤣','👀','💎','🌹','😤','🥺','💀','🫠','🫡','🤞','💅','👌','✌️'],
   islamic:  ['🕌','🕋','☪️','🤲','📿','🌙','⭐','🌟','🕊️','📖','🌹','🌿','🌾','💚','🤍','🧎','🧎‍♂️','🙏','🌅','✨','🕯️','🌄','🫶','🌺','🌸','🤲','🫖','🌊'],
-  culture:  ['🦚','🌾','🏏','🎵','🪔','🎆','🌅','🌺','🌸','🌻','🎊','🎉','🍛','🥘','🌶️','☕','🫖','🐅','🏔️','🌴','🛕','⛵','🦁','🏖️','🌍','🎶','🧆','🫙'],
-  flags:    ['🇮🇳','🇺🇸','🇬🇧','🇦🇺','🇨🇦','🇸🇬','🇲🇾','🇿🇦','🇶🇦','🇦🇪','🇸🇦','🇩🇪','🇫🇷','🇮🇹','🇪🇸','🇵🇹','🇳🇱','🇧🇪','🇯🇵','🇰🇷','🇨🇳','🇵🇰','🇧🇩','🇳🇵','🇱🇰','🇷🇺','🇺🇦'],
+  culture:  ['🙏','🪷','🌺','🌸','🌴','🏞️','🌊','🐘','🐅','🦚','🍜','🍛','🍚','🍵','🥭','🌶️','🥥','🏮','🎈','🎆','💦','🎶','🥁','💃','🌙','☀️','💛'],
+  flags:    ['🇲🇲','🇹🇭','🇨🇳','🇮🇳','🇧🇩','🇱🇦','🇲🇾','🇸🇬','🇯🇵','🇰🇷','🇺🇸','🇦🇺','🇬🇧'],
   social:   ['❤️‍🔥','🫀','💔','🥺','😤','😈','🙈','🙉','🙊','💀','🤡','🥹','😑','🫠','🫡','🤞','👌','✌️','🤙','☝️','🤏','🫳','🫴','🤝','💅','🫰','🙃','😏','🧢','🔑','💸','🎯']
 };
 
@@ -4323,6 +4108,25 @@ function dismissFeedbackTab() {
   if (x) x.style.display = 'none';
   setTimeout(() => { t.style.display = 'none'; }, 320);
 }
+/* FB-VISIBILITY (Aissa 2026-10-12): the feedback tab hides while the keyboard is on screen,
+   and on mobile it is shown on the first visit only - remembered in localStorage, so a refresh
+   or another keyboard page does not show it again. Storage blocked = old behaviour. */
+(function () {
+  var KEY = 'kactyl_fb_seen';
+  var mob = window.matchMedia && window.matchMedia('(max-width:640px)').matches;
+  if (mob) {
+    var seen = null;
+    try { seen = localStorage.getItem(KEY); } catch (e) {}
+    if (seen) document.body.classList.add('fb-seen');
+    else { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+  }
+  var kb = document.getElementById('kbrows');
+  if (kb && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      document.body.classList.toggle('kb-onscreen', es[0].isIntersecting);
+    }).observe(kb);
+  }
+})();
 /* swipe-right on mobile to dismiss */
 document.addEventListener('DOMContentLoaded', function() {
   const tab = document.getElementById('fbTab');
@@ -4552,9 +4356,15 @@ async function submitFeedback(e) {
     content: ''; width: 42px; height: 5px; border-radius: 3px;
     background: rgba(100,116,139,.35);
   }
+  /* the feedback bubble + its x sat ON the right-hand keys and Backspace of the docked keyboard */
+  body.kb-docked .fb-tab, body.kb-docked .fb-panel, body.kb-docked .fb-dismiss { display: none !important; }
   body.kb-docked .sug-pill { font-size: 13px; padding: 7px 8px; }
 }
 
+/* key unit: every letter key is one size (= the longest row), so a short row centres
+   instead of stretching its keys (Aissa 2026-10-05; --kn/--kg set by the script below) */
+.kb-row { justify-content: center; }
+.kb-row .key[data-ch] { flex: 0 1 calc((100% - (var(--kn,10) - 1) * var(--kg,5px)) / var(--kn,10)); }
 #kb-altpop {
   position: fixed; z-index: 10000; display: none; gap: 6px;
   background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
@@ -4566,6 +4376,9 @@ async function submitFeedback(e) {
   font-size: 24px; font-family: inherit; background: rgba(0,104,255,.08); color: inherit;
 }
 #kb-altpop button:active, #kb-altpop button:hover { background: var(--indigo, #6366F1); color: #fff; }
+.key.has-alt { position: relative; }
+.key.has-alt::after { content: ''; position: absolute; top: 4px; right: 4px; width: 4px; height: 4px;
+  border-radius: 50%; background: var(--indigo, #6366F1); pointer-events: none; }
 
 /* Matra/Roman labels: docked = native-small. Outside any media query and
    !important — the template re-sizes these keys at several widths (12px base,
@@ -4691,9 +4504,16 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
   document.body.appendChild(pop);
   let lpTimer = null, lpKey = null, suppressClick = false;
 
+  /* alternates for a key as shown (Shift on: the capital letter offers the capital variant) */
+  function altsFor(ch) {
+    if (!ch) return null;
+    if (KB_ALT[ch]) return KB_ALT[ch];
+    const lo = ch.toLocaleLowerCase(document.documentElement.lang || undefined);
+    return lo !== ch && KB_ALT[lo] ? KB_ALT[lo].map(a => a.toLocaleUpperCase(document.documentElement.lang || undefined)) : null;
+  }
   function showAlts(keyEl, ch) {
     pop.innerHTML = '';
-    KB_ALT[ch].forEach(alt => {
+    altsFor(ch).forEach(alt => {
       const b = document.createElement('button');
       b.textContent = alt;
       b.onclick = ev => { ev.stopPropagation(); ins(alt); hideAlts(); };
@@ -4701,18 +4521,30 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
     });
     const r = keyEl.getBoundingClientRect();
     pop.style.display = 'flex';
-    pop.style.left = (r.left + r.width / 2) + 'px';
-    pop.style.top  = (r.top - 62) + 'px';
+    /* stay on screen (Khmer qa holds 10 letters): wrap when wider than the screen, clamp the centre */
+    pop.style.flexWrap = 'wrap'; pop.style.justifyContent = 'center';
+    pop.style.maxWidth = (window.innerWidth - 16) + 'px';
+    pop.style.left = '0px'; pop.style.width = '';   /* measure with the whole screen width available, */
+    const pw = pop.offsetWidth, half = pw / 2;
+    pop.style.width = pw + 'px';   /* then keep that width: a fixed box shrinks to the room right of its left edge */
+    pop.style.left = Math.min(Math.max(r.left + r.width / 2, half + 8), window.innerWidth - half - 8) + 'px';
+    pop.style.top  = (r.top - Math.max(62, pop.offsetHeight + 6)) + 'px';
     suppressClick = true;
   }
   function hideAlts() { pop.style.display = 'none'; }
+  /* hold keys carry an accent dot (Aissa 2026-10-17): the same altsFor() the popup uses, so a dot means
+     a hold exists; re-marked whenever the keyboard redraws (Shift, rebuild) */
+  function markHolds() {
+    if (kbrows) kbrows.querySelectorAll('.key[data-ch]').forEach(k => k.classList.toggle('has-alt', !!altsFor(k.dataset.ch)));
+  }
+  if (kbrows) { new MutationObserver(markHolds).observe(kbrows, {childList: true}); markHolds(); }
 
   if (kbrows) {
     kbrows.addEventListener('pointerdown', e => {
       const k = e.target.closest('.key');
       if (!k) return;
-      const ch = k.textContent.trim().slice(0, 1);
-      if (!KB_ALT[ch]) return;
+      const ch = k.dataset.ch;   /* textContent also holds the hidden Latin hint (read "ye" for the letter) */
+      if (!altsFor(ch)) return;
       lpKey = k;
       lpTimer = setTimeout(() => showAlts(k, ch), 420);
     }, { passive: true });
@@ -4728,5 +4560,46 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
 })();
 </script>
 <!-- ══════════ /KBDOCK ══════════ -->
+<script>/* key unit: --kn = keys in the longest row above the space bar (--kg = row gap, set in CSS with the gap) */
+(function () {
+  const w = document.getElementById('kbrows'); if (!w) return;
+  const set = () => {
+    const rows = [...w.children].filter(r => !r.querySelector('.k-space'));
+    if (!rows.length) return;
+    w.style.setProperty('--kn', Math.max(...rows.map(r => r.children.length)));
+  };
+  set(); new MutationObserver(set).observe(w, { childList: true });
+})();</script>
+<script>/* KEYFIT: a label wider than its key (Tamil two-part vowel signs, Burmese au on a 23px phone key) shrinks to fit
+   instead of spilling over its neighbours; every other key keeps the stylesheet size */
+(function () {
+  var kb = document.getElementById('kbrows');
+  if (!kb) return;
+  var ctx = document.createElement('canvas').getContext('2d');
+  function fit() {
+    kb.querySelectorAll('.key[data-ch]').forEach(function (b) {
+      b.style.fontSize = '';
+      var t = b.lastChild;
+      if (!t || t.nodeType !== 3) return;
+      var cs = getComputedStyle(b);   /* INK width: vowel signs draw outside their advance box */
+      ctx.font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+      var m = ctx.measureText(t.nodeValue);
+      var w = Math.max(m.width, m.actualBoundingBoxLeft + m.actualBoundingBoxRight), room = b.clientWidth - 6;
+      if (w > room && room > 0) {
+        b.style.fontSize = Math.max(9, Math.floor(parseFloat(cs.fontSize) * room / w)) + 'px';
+      }
+    });
+  }
+  var q = 0;
+  function later() { if (!q) q = requestAnimationFrame(function () { q = 0; fit(); }); }
+  new MutationObserver(later).observe(kb, {childList: true});
+  if (window.ResizeObserver) new ResizeObserver(later).observe(kb);
+  if (document.fonts) {   /* web fonts arrive in unicode-range pieces after ready: re-fit on each */
+    document.fonts.ready.then(later);
+    document.fonts.addEventListener('loadingdone', later);
+  }
+  later();
+})();
+</script>
 </body>
 </html>

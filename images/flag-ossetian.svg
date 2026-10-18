@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ossetian tricolour (white-red-yellow), the shared flag of the Ossetian people; same box as flag-amazigh.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 69.92">
+  <rect width="100" height="23.31" fill="#ffffff"/>
+  <rect y="23.31" width="100" height="23.30" fill="#d52b1e"/>
+  <rect y="46.61" width="100" height="23.31" fill="#ffd100"/>
+  <rect x="0.5" y="0.5" width="99" height="68.92" fill="none" stroke="#d0d0d0" stroke-width="1"/>
+</svg>

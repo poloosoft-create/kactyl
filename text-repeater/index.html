@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-13B2Z80B92"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-13B2Z80B92');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <title>Text Repeater — Repeat Any Text, Any Language</title>
+  <meta name="description" content="Repeat text, emoji or Arabic and Hindi script up to 10,000 times. Live output, separators, and a warning when the result passes a platform limit.">
+  <link rel="canonical" href="https://kactyl.com/text-repeater/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kactyl.com/text-repeater/">
+  <meta property="og:title" content="Text Repeater — Any Text, Any Script">
+  <meta property="og:description" content="Repeat any text up to 10,000 times with live output and correct handling of Arabic, Indic and emoji. Free, no signup.">
+  <meta property="og:image" content="https://kactyl.com/images/og-images/text-repeater.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Kactyl">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Text Repeater — Any Text, Any Script">
+  <meta name="twitter:description" content="Repeat any text up to 10,000 times with live output and correct handling of Arabic, Indic and emoji. Free, no signup.">
+  <meta name="twitter:image" content="https://kactyl.com/images/og-images/text-repeater.png">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebApplication", "name": "Kactyl Text Repeater", "url": "https://kactyl.com/text-repeater/", "description": "Repeat any text, emoji or non-Latin script up to 10,000 times, with live output, separator control and platform limit warnings.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "All", "browserRequirements": "Requires JavaScript", "inLanguage": ["en"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Repeat text up to 10,000 times", "Separator control: new line, space, comma, numbered or custom", "Correct handling of Arabic, Indic scripts and emoji clusters", "Live character and word counts on input and output", "Warns when the result exceeds a platform character limit"], "publisher": {"@type": "Organization", "name": "Kactyl", "url": "https://kactyl.com"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kactyl.com/"}, {"@type": "ListItem", "position": 2, "name": "Text Repeater", "item": "https://kactyl.com/text-repeater/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "HowTo", "name": "How to repeat text online", "description": "Repeat any text or emoji as many times as you need", "totalTime": "PT1M", "step": [{"@type": "HowToStep", "position": 1, "name": "Type or paste", "text": "Put your text in the left box. The result appears on the right as you type, in any script."}, {"@type": "HowToStep", "position": 2, "name": "Set the count and separator", "text": "Use the steppers or a quick preset, then choose whether each copy sits on a new line, inline, or in a numbered list."}, {"@type": "HowToStep", "position": 3, "name": "Copy it", "text": "Copy the result. The counter warns you first if it has passed the limit of the platform you picked."}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many times can I repeat text?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 10,000 copies. The limit is about how much text a browser can hold and scroll comfortably on a phone, not a paywall — and every destination field cuts off long before that number anyway. If you need more, run the result through a second time."}}, {"@type": "Question", "name": "Does it work with emoji?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and it counts them correctly, which most repeaters do not. A family emoji like 👨‍👩‍👧 is several emoji joined by invisible zero-width joiners; tools counting raw code units report it as eight characters. Here it counts as one, so the total beside the output matches what the destination field will measure."}}, {"@type": "Question", "name": "Can I repeat Arabic, Hindi or other non-Latin text?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Type or paste any script and the box follows its natural direction automatically. One thing to know: with no separator, Arabic letters at the join between two copies can visually connect to each other, because Arabic letterforms change according to their neighbours. New line is the default separator for exactly that reason."}}, {"@type": "Question", "name": "Why is my character count different from another tool?", "acceptedAnswer": {"@type": "Answer", "text": "Because most tools count UTF-16 code units and this one counts grapheme clusters — what a reader sees as one character. They agree for plain English and diverge for emoji, accented letters and any non-Latin script. The count shown here is the one that matches what a platform character limit enforces."}}, {"@type": "Question", "name": "What does the \"Will it fit?\" panel do?", "acceptedAnswer": {"@type": "Answer", "text": "It compares the result against the real ceiling of the places people usually paste it: an X post, an Instagram caption, a LinkedIn post, a TikTok caption and a WhatsApp message. Green means it still fits and how much room is left; red means how far over you are. It updates as you type, so you find out before copying rather than after pasting."}}, {"@type": "Question", "name": "Which separator should I use?", "acceptedAnswer": {"@type": "Answer", "text": "New line for anything you want readable, and it is the safest choice in every script. Space for a running block in a chat message. Comma for spreadsheet cells or comma-separated form fields. Nothing for test strings and layout padding. Numbered list for templates — bearing in mind the numbers themselves add characters, so a thousand copies costs roughly four thousand extra."}}, {"@type": "Question", "name": "Can I use a custom separator?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — pick the custom option and type whatever you want between copies: a dash, a bullet, an emoji, a pipe. Up to twelve characters, which is more than any sensible separator needs."}}, {"@type": "Question", "name": "Will this get me banned from WhatsApp or Discord?", "acceptedAnswer": {"@type": "Answer", "text": "Flooding a chat can get you rate-limited, and repeated identical content is one of the easiest things for a platform to detect. Messaging services throttle or collapse repeated messages and can temporarily restrict an account that keeps doing it. The tool generates whatever you ask for; the platform on the other end is the constraint, and no generator changes that."}}, {"@type": "Question", "name": "Is my text sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. The repeating and counting run in your browser with JavaScript. Nothing is uploaded, nothing is logged, nothing is stored. You can watch the network tab while typing and see that nothing leaves the page."}}, {"@type": "Question", "name": "Why does the numbered list produce so much more text?", "acceptedAnswer": {"@type": "Answer", "text": "Because each line carries its own index and a separator. At ten copies the numbering adds almost nothing; at a thousand, the indexes alone are around four thousand characters, since numbers get longer as they climb. If you are close to a platform limit, the numbered mode is the first thing to drop."}}, {"@type": "Question", "name": "Can I repeat a whole paragraph, not just a word?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — there is no restriction on the input length. The output cap is on the number of copies, not on how long each one is. Repeating a paragraph a thousand times will produce a very large block of text, which the fit panel will immediately tell you is over every limit."}}, {"@type": "Question", "name": "Does it keep line breaks in my input?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Whatever you type is repeated exactly, line breaks included. If your input already spans several lines, each copy will too, and the separator you choose goes between the copies rather than inside them."}}, {"@type": "Question", "name": "Why is there no \"download as image\" option?", "acceptedAnswer": {"@type": "Answer", "text": "Because repeated text is only useful if it can be pasted, and an image cannot be. Adding the button would make the feature list longer without making the tool more useful for anything anyone actually does with the output."}}, {"@type": "Question", "name": "Does the count include the separators?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The number beside the result is the true length of what you will paste, separators included — which is the only figure that matters when you are checking it against a character limit. That is also why the same repeat count produces a different total depending on which separator you pick."}}, {"@type": "Question", "name": "Can I use it offline?", "acceptedAnswer": {"@type": "Answer", "text": "Once the page has loaded, yes. Everything runs locally, so the tool keeps working with the network disconnected. Reloading the page while offline will not work unless your browser has cached it."}}, {"@type": "Question", "name": "What happens if I type a number larger than 10,000?", "acceptedAnswer": {"@type": "Answer", "text": "It clamps to 10,000. The field also refuses values below 1, so you cannot end up with an empty result by accident."}}]}
+  </script>
+  <style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { overflow-x:clip; max-width:100%; }
+button { cursor:pointer; font-family:inherit; border:none; background:none; }
+:root {
+  --blue:#0068ff; --purple:#7C3AED; --green:#059669; --teal:#0891b2;
+  --bg:#EDF0F8; --surface:#FFFFFF; --border:#DDE3EE; --shadow:rgba(15,23,42,.07);
+  --nav:#0F172A; --text:#1E293B; --muted:#64748B; --r:16px; --rs:10px;
+}
+[data-theme="dark"] { --bg:#0F172A; --surface:#1E293B; --border:#334155; --shadow:rgba(0,0,0,.22); --text:#F1F5F9; --muted:#94A3B8; }
+body { font-family:'Inter',sans-serif; background:#fff; color:var(--text); min-height:100vh; transition:background .3s,color .3s; overflow-x:clip; }
+[data-theme="dark"] body { background:#07091A; }
+a { color:inherit; text-decoration:none; }
+.bg-shapes { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+.s { position:absolute; border-radius:50%; filter:blur(60px); }
+header { background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s; }
+header.hdr-hidden { transform:translateY(-100%); }
+[data-theme="dark"] header { background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06); }
+.logo { display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0; }
+.logo-img { height:200px;width:auto;display:block; }
+nav { display:flex;align-items:center;gap:4px; }
+.nav-link { color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s; }
+.nav-link:hover { background:var(--border); }
+[data-theme="dark"] .nav-link { color:#E2E8F0; }
+.tools-wrap { position:relative; }
+.tools-btn { cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;display:flex;align-items:center;gap:4px; }
+.tools-btn:hover { background:var(--border); }
+[data-theme="dark"] .tools-btn { color:#E2E8F0; }
+.tools-drop { display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px; }
+.tools-wrap.open .tools-drop { display:flex; }
+.tools-item { display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s; }
+.tools-item:hover { background:var(--border); }
+.tools-item .t-icon { width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center; }
+.tools-coming { font-size:10px;font-weight:700;color:#fff;background:var(--blue);border-radius:4px;padding:1px 5px;margin-left:auto;flex-shrink:0; }
+.theme-wrap { display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none; }
+.t-track { width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s; }
+.t-track.on { background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12); }
+.t-thumb { width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center; }
+.t-thumb.on { left:21px; }
+.t-lbl { font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap; }
+.wrap { max-width:860px;margin:0 auto;padding:0 24px;position:relative;z-index:1; }
+.page-hero { padding:56px 0 40px;text-align:center; }
+.hero-badge { display:inline-flex;align-items:center;gap:7px;border:1px solid;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.3px; }
+.page-hero h1 { font-size:clamp(28px,4.5vw,52px);font-weight:800;letter-spacing:-.8px;line-height:1.12;background:linear-gradient(180deg,#0A0A0A 0%,#64748B 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px; }
+[data-theme="dark"] .page-hero h1 { background:linear-gradient(180deg,#F1F5F9 0%,#94A3B8 100%);-webkit-background-clip:text;background-clip:text; }
+.hero-sub { font-size:16px;color:var(--muted);max-width:520px;margin:0 auto; }
+/* Tool card */
+.tool-about { padding:32px;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);margin-bottom:32px; }
+[data-theme="dark"] .tool-about { background:rgba(255,255,255,.04); }
+.tool-about h2 { font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:14px;letter-spacing:-.4px; }
+.tool-about p { font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:10px; }
+.tool-about p:last-child { margin-bottom:0; }
+.tool-about p strong { color:var(--text); }
+/* FAQ */
+.tool-faq { margin-bottom:48px; }
+.tool-faq > h2 { font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:16px;letter-spacing:-.4px; }
+.tool-faq details { border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden; }
+.tool-faq details summary { padding:16px 18px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;color:var(--text);display:flex;justify-content:space-between;align-items:center; }
+.tool-faq details summary::-webkit-details-marker { display:none; }
+.tool-faq details summary::after { content:"+";font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;margin-left:12px;transition:transform .2s; }
+.tool-faq details[open] summary::after { transform:rotate(45deg); }
+.tool-faq details[open] summary { color:var(--accent); }
+.tool-faq .faq-ans { padding:0 18px 16px;font-size:14px;line-height:1.75;color:var(--muted); }
+/* Toast */
+.toast { position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#1E293B;color:#fff;font-size:14px;font-weight:600;padding:10px 22px;border-radius:99px;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;z-index:999; }
+[data-theme="dark"] .toast { background:#F1F5F9;color:#0F172A; }
+.toast.show { opacity:1;transform:translateX(-50%) translateY(0); }
+/* Footer */
+footer { background:var(--nav);color:#94A3B8;padding:56px 28px 32px;margin-top:80px; }
+.ft-inner { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px; }
+.ft-brand { display:flex;flex-direction:column;gap:14px; }
+.ft-logo { display:flex;align-items:center;gap:10px; }
+.ft-ic { width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center; }
+.ft-name { font-size:17px;font-weight:800;color:#F1F5F9; }
+.ft-tagline { font-size:13px;line-height:1.6; }
+.ft-badges { display:flex;gap:8px;flex-wrap:wrap; }
+.ft-badge { font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px; }
+.ft-badge.g { background:rgba(5,150,105,.2);color:#34D399; }
+.ft-badge.b { background:rgba(0,104,255,.2);color:#60A5FA; }
+.ft-col h4 { font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748B;margin-bottom:12px; }
+.ft-h4-gap { margin-top:24px; }
+.ft-legal { display:flex;flex-direction:column;gap:8px; }
+.ft-legal a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-legal a:hover { color:#F1F5F9; }
+.ft-kb-grid { display:grid;grid-template-columns:1fr 1fr;gap:6px 16px; }
+.ft-kb-grid a { font-size:13px;color:#94A3B8;transition:color .15s; }
+.ft-kb-grid a:hover { color:#F1F5F9; }
+.ft-bottom { max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px; }
+.ft-copy { font-size:12px;color:#475569; }
+@media(max-width:700px) { .ft-inner{grid-template-columns:1fr} header{height:60px;padding:0 16px} .logo-img{height:140px} .t-lbl{display:none} nav .nav-link{display:none} }
+:root { --accent:#e11d48; --accent2:#f43f5e; }
+.s1 { width:600px;height:600px;background:rgba(225,29,72,.10);top:10%;left:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+.s2 { width:500px;height:500px;background:rgba(249,115,22,.08);top:40%;right:-160px;border-radius:50%;filter:blur(70px);position:absolute; }
+[data-theme="dark"] .s1 { background:rgba(225,29,72,.25); }
+[data-theme="dark"] .s2 { background:rgba(249,115,22,.18); }
+.hero-badge { background:rgba(225,29,72,.07);border-color:rgba(225,29,72,.2);color:#e11d48; }
+[data-theme="dark"] .hero-badge { background:rgba(225,29,72,.18);color:#fca5a5; }
+
+/* Text repeater — tool sits above the fold, hero is deliberately short */
+.rp-hero { padding:34px 0 22px; }
+.rp-hero h1 { margin-bottom:10px; }
+.rp-tool { background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:24px;margin-bottom:36px; }
+[data-theme="dark"] .rp-tool { background:rgba(255,255,255,.04); }
+.rp-grid { display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px; }
+.rp-pane { min-width:0;display:flex;flex-direction:column; }
+.rp-head { display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:7px; }
+.rp-label { font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px; }
+.rp-meta { font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap; }
+.rp-ta { width:100%;min-width:0;height:210px;padding:14px 16px;border:1.5px solid var(--border);border-radius:14px;font-size:16px;line-height:1.7;resize:vertical;font-family:inherit;background:var(--bg);color:var(--text);transition:border-color .2s; }
+.rp-ta:focus { outline:none;border-color:#e11d48; }
+[data-theme="dark"] .rp-ta { background:rgba(255,255,255,.06); }
+.rp-out { background:var(--bg);white-space:pre-wrap;overflow-wrap:anywhere; }
+.rp-quick { display:flex;flex-wrap:wrap;gap:6px;margin-top:9px; }
+.rp-chip { font-size:13px;border:1px solid var(--border);border-radius:16px;padding:4px 11px;color:var(--muted);background:transparent;transition:all .15s;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.rp-chip:hover { border-color:#e11d48;color:#e11d48; }
+.rp-copy { margin-top:9px;background:linear-gradient(135deg,#e11d48,#f43f5e);color:#fff;font-size:14.5px;font-weight:700;padding:12px 20px;border-radius:12px;box-shadow:0 4px 16px rgba(225,29,72,.28);transition:transform .15s; }
+.rp-copy:hover { transform:translateY(-1px); }
+.rp-copy:active { transform:scale(.98); }
+/* controls */
+.rp-controls { display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:20px;margin-top:22px;padding-top:20px;border-top:1px solid var(--border); }
+.rp-ctl { min-width:0; }
+.rp-ctl-hd { font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:9px; }
+.rp-stepper { display:flex;align-items:stretch;gap:5px; }
+.rp-step { flex:0 0 auto;min-width:38px;border:1.5px solid var(--border);border-radius:9px;background:transparent;color:var(--muted);font-size:13px;font-weight:700;transition:all .15s; }
+.rp-step:hover { border-color:#e11d48;color:#e11d48; }
+.rp-n { flex:1 1 auto;min-width:0;text-align:center;border:1.5px solid var(--border);border-radius:9px;background:var(--bg);color:var(--text);font-size:16px;font-weight:800;font-family:inherit;padding:7px 4px;-moz-appearance:textfield; }
+.rp-n::-webkit-outer-spin-button, .rp-n::-webkit-inner-spin-button { -webkit-appearance:none;margin:0; }
+.rp-n:focus { outline:none;border-color:#e11d48; }
+[data-theme="dark"] .rp-n { background:rgba(255,255,255,.06); }
+.rp-presets, .rp-seps { display:flex;flex-wrap:wrap;gap:6px;margin-top:9px; }
+.rp-pre, .rp-sep { font-size:12.5px;font-weight:600;border:1.5px solid var(--border);border-radius:16px;padding:5px 12px;color:var(--muted);background:transparent;transition:all .15s; }
+.rp-pre:hover, .rp-sep:hover { border-color:#e11d48;color:#e11d48; }
+.rp-sep.on { background:#e11d48;border-color:#e11d48;color:#fff; }
+.rp-custom { margin-top:8px;width:100%;border:1.5px solid var(--border);border-radius:9px;padding:6px 10px;font-size:13px;font-family:inherit;background:var(--bg);color:var(--text); }
+.rp-custom:focus { outline:none;border-color:#e11d48; }
+/* fits */
+.rp-fits { display:flex;flex-direction:column;gap:5px; }
+.rp-fit { display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);line-height:1.5; }
+.rp-dot { width:8px;height:8px;border-radius:50%;flex-shrink:0; }
+.rp-dot.ok { background:#059669; }
+.rp-dot.no { background:#e11d48; }
+.rp-fit b { color:var(--text);font-weight:600; }
+@media(max-width:720px){
+  .rp-tool { padding:16px; }
+  .rp-grid { grid-template-columns:minmax(0,1fr); }
+  .rp-ta { height:150px; }
+}
+/* content tables */
+.rp-tbl-wrap { overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0 6px;border:1px solid var(--border);border-radius:14px; }
+.rp-tbl { width:100%;border-collapse:collapse;font-size:14.5px;min-width:500px; }
+.rp-tbl th { text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);padding:12px 14px;background:var(--bg);border-bottom:1px solid var(--border);white-space:nowrap; }
+[data-theme="dark"] .rp-tbl th { background:rgba(255,255,255,.05); }
+.rp-tbl td { padding:12px 14px;border-bottom:1px solid var(--border);color:var(--muted);line-height:1.65;vertical-align:top; }
+.rp-tbl tr:last-child td { border-bottom:none; }
+.rp-tbl td:first-child { color:var(--text);font-weight:600;white-space:nowrap; }
+.rp-tbl code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:var(--bg);padding:1px 5px;border-radius:5px;color:#e11d48; }
+[data-theme="dark"] .rp-tbl code { background:rgba(255,255,255,.08); }
+.rp-src { font-size:13px;color:var(--muted);line-height:1.7;margin-top:12px; }
+
+/* Translations wrap to different line counts (AR 2 lines, EN 3, FR 4), which
+   would shove everything below up or down on every switch. Reserving the tallest
+   language's height keeps the page in exactly the same place in all three. */
+.hero-sub { min-height:80px; }
+
+/* ── Tool-page brand mascot (shared: generator + injector) ── */
+.tool-stage { position:relative; }
+/* right:0, never negative. On generated tools the hero sits inside an 880px
+   column so a negative offset was harmless, but the older pages' heroes run to
+   the viewport edge -- there a -14px tuck pushed the image to 1294px in a
+   1280px window and created horizontal scroll. */
+.tool-mascot { position:absolute;bottom:100%;right:0;width:0;height:auto;
+  z-index:0;pointer-events:none;opacity:0;margin-bottom:-14px;
+  transition:opacity .25s;filter:drop-shadow(0 6px 18px rgba(0,0,0,.13)); }
+/* Two anchors, two offsets. Generated tools hang the mascot off the TOP of the
+   tool card (bottom:100% of .tool-stage). The older pages have no consistently
+   named card, so the mascot lives inside the hero instead -- there bottom:100%
+   would throw it above the hero and off the top of the page, so it pins to the
+   hero's lower edge. */
+.tool-mascot-hero { bottom:0;margin-bottom:0; }
+/* No room beside the content on a phone, and it would force horizontal scroll. */
+@media(max-width:900px){ .tool-mascot { display:none; } }
+
+/* Arabic glyphs make a taller line box than Latin at the same font-size, which
+   pushed the badge from 27px to 29px and nudged the whole page down 2px. */
+.hero-badge { height:27px;line-height:1;box-sizing:border-box; }
+/* Without an explicit line-height the line box is sized from the font's own
+   glyph metrics, so the same label is a couple of pixels taller in Arabic and
+   the rows below drift. Fixing line-height makes the box height script-independent. */
+.wc-label, .mo-label, .wc-cap, .wc-limits-hd, .wc-density-hd,
+.wc-chip, .mo-tab, .wc-mini, .mo-mini { line-height:1.45; }
+.wc-script-note, .mo-hint { line-height:1.65; }
+@media(max-width:600px){ .hero-sub { min-height:120px; } }
+.lang-wrap { position:relative; }
+/* Fixed width on purpose: "English", "العربية" and "Français" are different
+   lengths, and without this the pill resizes and pushes the whole nav sideways
+   when the language changes. The header must sit in exactly the same place in
+   every language. */
+.lang-pill { display:flex;align-items:center;justify-content:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s;min-width:116px;box-sizing:border-box;white-space:nowrap; }
+.lang-pill:hover { border-color:#e11d48; }
+[data-theme="dark"] .lang-pill { color:#E2E8F0;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14); }
+.lang-menu { display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);box-shadow:0 8px 24px var(--shadow);min-width:150px;overflow:hidden;z-index:400; }
+.lang-menu.show { display:block; }
+.lang-opt { display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s;width:100%;text-align:left; }
+.lang-opt:hover { background:var(--bg); }
+.lang-opt.active { color:#e11d48;font-weight:600; }
+
+/* ── Canonical Header CSS ── */
+header{background:rgba(255,255,255,.38);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.4);height:88px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;gap:16px;transition:transform .35s ease,background .3s}
+header.hdr-hidden{transform:translateY(-100%)}
+[data-theme="dark"] header{background:rgba(15,23,42,.65);border-bottom-color:rgba(255,255,255,.06)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-img{height:200px;width:auto;display:block}
+nav{display:flex;align-items:center;gap:4px}
+.nav-link{padding:6px 12px;border-radius:6px;text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
+.nav-link:hover{background:var(--border)}
+[data-theme="dark"] .nav-link{color:var(--nav-txt)}
+[data-theme="dark"] .nav-link:hover{background:rgba(255,255,255,.1)}
+.tools-wrap{position:relative}
+.tools-btn{cursor:pointer;border:none;background:none;font:inherit;color:var(--text);font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.tools-btn:hover{background:var(--border)}
+[data-theme="dark"] .tools-btn{color:var(--nav-txt)}
+[data-theme="dark"] .tools-btn:hover{background:rgba(255,255,255,.1)}
+.tools-drop{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:200;flex-direction:column;gap:2px}
+.tools-wrap.open .tools-drop{display:flex}@media(pointer:fine){.tools-wrap:hover .tools-drop{display:flex}}
+.tools-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;transition:background .15s,color .18s;white-space:nowrap}
+.tools-item:hover{background:var(--border)}.tools-item.active-tool{color:var(--accent)!important;font-weight:600;background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.tools-item .t-icon{width:18px;height:18px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center}
+.theme-wrap{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
+.t-track{width:42px;height:23px;background:linear-gradient(135deg,#0068ff,#2459d8);border:1px solid #0058d6;border-radius:12px;position:relative;transition:background .3s}
+.t-track.on{background:linear-gradient(135deg,#1E293B,#0F172A);border-color:rgba(255,255,255,.12)}
+.t-thumb{width:17px;height:17px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;display:flex;align-items:center;justify-content:center}
+.t-thumb.on{left:21px}
+.t-lbl{font-size:11px;font-weight:600;color:var(--muted);line-height:1.1;white-space:nowrap}
+.lang-wrap{position:relative}
+.lang-pill{display:flex;align-items:center;gap:5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s}
+.lang-pill:hover{border-color:var(--blue)}
+[data-theme="dark"] .lang-pill{color:var(--nav-txt);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+.lang-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px var(--shadow);min-width:140px;overflow:hidden;z-index:400}
+.lang-menu.show{display:block}
+.lang-opt{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s}
+.lang-opt:hover{background:var(--bg)}
+.lang-opt.active{color:var(--blue);font-weight:600}
+@media(max-width:640px){header{padding:0 12px;height:60px}.nav-link{display:none}.logo-img{height:140px}.t-lbl{display:none}}
+/* ── Canonical Footer CSS ── */
+footer{background:#07091A;border-top:none;padding:0}
+.ft-inner{max-width:1000px;margin:0 auto;padding:56px 28px 44px;display:grid;grid-template-columns:200px 1fr 150px 130px;gap:40px;align-items:start}
+.ft-brand{display:flex;flex-direction:column;gap:14px}
+.ft-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.ft-ic{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-ic img{width:48px;height:48px;opacity:1;filter:drop-shadow(0 0 14px rgba(255,23,54,.5)) drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+.ft-name{font-size:15px;font-weight:800;color:#F1F5F9}
+.ft-tagline{font-size:13px;color:#94A3B8;line-height:1.7}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ft-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
+.ft-badge.g{background:rgba(5,150,105,.12);color:#34D399;border:1px solid rgba(5,150,105,.18)}
+.ft-badge.b{background:rgba(0,104,255,.12);color:#60A5FA;border:1px solid rgba(0,104,255,.18)}
+.ft-social{display:flex;gap:8px;margin-top:2px}
+.ft-soc-link{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;color:#94A3B8;text-decoration:none;transition:background .2s,color .2s}
+.ft-soc-link:hover{background:rgba(0,104,255,.20);border-color:rgba(0,104,255,.40);color:#60A5FA}
+.ft-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:#64748B;margin-bottom:14px}
+.ft-col h4.ft-h4-gap{margin-top:22px}
+.ft-kb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}
+.ft-kb-grid a,.ft-legal a{font-size:13px;color:#CBD5E1;text-decoration:none;padding:5px 0;display:block;transition:color .15s}
+.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}
+.ft-legal{display:flex;flex-direction:column}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;gap:12px}
+.ft-copy{font-size:11px;color:#64748B}
+.ft-bottom-links{display:flex;align-items:center;gap:16px}
+.ft-bottom-links a{font-size:11px;color:#64748B;text-decoration:none;transition:color .15s}
+.ft-bottom-links a:hover{color:#94A3B8}
+@media(max-width:860px){.ft-inner{grid-template-columns:200px 1fr 130px}.ft-inner .ft-col:last-child{grid-column:2;grid-row:2}}
+@media(max-width:640px){.ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding:40px 20px 32px}.ft-brand{grid-column:1/-1}.ft-bottom{flex-direction:column;gap:8px;text-align:center;padding:14px 20px}.ft-bottom-links{flex-wrap:wrap;justify-content:center}}
+.sec-grad{background:linear-gradient(135deg,#e11d48,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Use-case badges */
+.use-cases{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
+.uc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(225,29,72,.07);border:1px solid rgba(225,29,72,.18);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700;color:#e11d48}
+[data-theme="dark"] .uc-badge{background:rgba(225,29,72,.15);color:#fca5a5}
+.uc-badge svg{flex-shrink:0}
+
+/* How-to */
+.how-sec{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:32px;max-width:1100px;margin:0 auto 32px}
+[data-theme="dark"] .how-sec{background:rgba(255,255,255,.04)}
+.how-head{font-size:clamp(20px,2.5vw,26px);font-weight:800;margin-bottom:24px;letter-spacing:-.4px}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.how-num-bg{width:52px;height:52px;border-radius:15px;background:linear-gradient(135deg,#e11d48,#f43f5e);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.how-step-title{font-size:14px;font-weight:700;color:var(--text)}
+.how-step-desc{font-size:13px;color:var(--muted);line-height:1.6}
+@media(max-width:600px){.how-steps{grid-template-columns:1fr}}
+
+</style>
+<style>
+.faq-promo{position:relative;z-index:1;padding:70px 16px 64px}
+.faq-promo-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:16px;position:relative;max-width:760px;margin:0 auto}
+.faq-card-brand{background:#fff;border:none;border-radius:24px;padding:18px 28px;display:flex;align-items:center;justify-content:center;min-height:122px;position:relative}
+.faq-card-2{background:#fff;border:none;border-radius:24px;min-height:122px;position:relative}
+.faq-card-brand::before,.faq-card-2::before{content:'';position:absolute;bottom:-14px;left:6%;right:6%;height:26px;border-radius:14px;background:#080E1E;filter:blur(14px);opacity:.55;z-index:-1;pointer-events:none}
+.card-hills-clip{position:absolute;inset:0;border-radius:24px;overflow:hidden;z-index:1}
+.card-hills{position:absolute;left:0;bottom:0;width:100%;height:126px;display:block}
+.card-hills .hill-soft{fill:#cfe0ff}
+.card-hills .hill-accent{fill:#0068ff}
+.faq-brand-logo{width:210px;max-width:80%}
+.faq-mascot{position:absolute;top:-70px;left:74%;transform:translateX(-50%);width:210px;z-index:10;pointer-events:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.15))}
+.faq-hd-badge{display:inline-flex;align-items:center;background:#111;border-radius:50px;padding:8px 22px;font-size:13px;font-weight:800;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin-bottom:18px}
+[data-theme="dark"] .faq-hd-badge{background:#fff;color:#111}
+@media(max-width:600px){.faq-promo-grid{grid-template-columns:1fr}.faq-card-2{display:none}.faq-mascot{top:-128px;left:50%;width:170px}}
+</style>
+<style>/* unified section width — kactyl */
+.seo-sec,.ft-content,.faq-sec,.ar-sec,.more-tools,.when-sec,.intro-sec,.kcats,.related-sec,.tool-faq,.sym-about,.sym-faq,.tool-about,.ff-section,.plat-sec,.how-sec .wrap,.faq-promo .wrap{max-width:880px;margin-left:auto;margin-right:auto}</style>
+<style>
+/* ── Tool-page brand mascot (shared: generator + injector) ── */
+.tool-stage { position:relative; }
+/* right:0, never negative. On generated tools the hero sits inside an 880px
+   column so a negative offset was harmless, but the older pages' heroes run to
+   the viewport edge -- there a -14px tuck pushed the image to 1294px in a
+   1280px window and created horizontal scroll. */
+.tool-mascot { position:absolute;bottom:100%;right:0;width:0;height:auto;
+  z-index:0;pointer-events:none;opacity:0;margin-bottom:-14px;
+  transition:opacity .25s;filter:drop-shadow(0 6px 18px rgba(0,0,0,.13)); }
+/* Two anchors, two offsets. Generated tools hang the mascot off the TOP of the
+   tool card (bottom:100% of .tool-stage). The older pages have no consistently
+   named card, so the mascot lives inside the hero instead -- there bottom:100%
+   would throw it above the hero and off the top of the page, so it pins to the
+   hero's lower edge. */
+.tool-mascot-hero { bottom:0;margin-bottom:0; }
+/* No room beside the content on a phone, and it would force horizontal scroll. */
+@media(max-width:900px){ .tool-mascot { display:none; } }
+.page-hero { position:relative; }
+</style>
+</head>
+<body>
+<div class="bg-shapes"><div class="s1"></div><div class="s2"></div></div>
+
+<header>
+  <a class="logo" href="/">
+    <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
+  </a>
+                                                                                                                                                      <nav>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
+    <div class="tools-wrap">
+      <button class="tools-btn">Tools &#9662;</button>
+      <div class="tools-drop">
+        <a href="/symbols/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/><path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity="0.82"/><path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/></svg></span> Symbols</a>
+        <a href="/fancy-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/></svg></span> Fancy Text Generator</a>
+        <a href="/kaomoji/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/></svg></span> Kaomoji</a>
+        <a href="/invisible-character/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/><line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/><line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/></svg></span> Invisible Character</a>
+        <a href="/zalgo-text/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/><line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/><line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/></svg></span> Zalgo Text</a>
+        <a href="/text-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/><circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/><path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/><line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity="0.38"/></svg></span> Text Art</a>
+        <a href="/dot-art/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity="0.3"/><circle cx="9" cy="4.5" r="2" fill="#0068ff"/><circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="4" cy="9.5" r="2" fill="#0068ff"/><circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity="0.35"/><circle cx="14" cy="9.5" r="2" fill="#0068ff"/><circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity="0.5"/><circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity="0.2"/><circle cx="14" cy="14.5" r="2" fill="#0068ff"/></svg></span> Dot Art</a>
+        <a href="/free-fire-name/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/><line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/><circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/><circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/></svg></span> FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect x="2" y="3" width="14" height="13" rx="2.5" stroke="#0068ff" stroke-width="1.6"/><line x1="6" y1="1.5" x2="6" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="1.5" x2="12" y2="4.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11.5" r="1.5" fill="#0068ff"/></svg></span> Hijri Calendar</a>
+        <a href="/calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Calligraphy</a>
+        <a href="/word-counter/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 14.5V8" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 14.5V3.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.5V9.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 14.5v-3" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/></svg></span> Word Counter</a>
+        <a href="/morse-code/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="3" cy="9" r="1.7" fill="#0068ff"/><rect x="7" y="7.5" width="8" height="3" rx="1.5" fill="#0068ff"/></svg></span> Morse Code</a>
+        <a href="/text-repeater/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M5 3.5h8a2 2 0 0 1 2 2v2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 14.5H5a2 2 0 0 1-2-2v-2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 9.5 15 7.5 17 9.5M5 8.5 3 10.5 1 8.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Text Repeater</a>
+        <a href="/typing-test/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="9" cy="10" r="5.5" stroke="#0068ff" stroke-width="1.6"/><path d="M9 7.5V10l1.8 1.4" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.2 2.2h3.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M9 2.2v1.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/></svg></span> Typing Test</a>
+      </div>
+    </div>
+    <div class="lang-wrap">
+      <button class="lang-pill" id="lang-pill" onclick="toggleToolLang(event)" aria-haspopup="true" aria-expanded="false">🇬🇧 English ▾</button>
+      <div class="lang-menu" id="lang-menu">
+        <button class="lang-opt active" data-lang="en" data-label="🇬🇧 English" onclick="setToolLang('en','🇬🇧 English',this)">🇬🇧 English</button>
+        <button class="lang-opt" data-lang="ar" data-label="🇸🇦 العربية" onclick="setToolLang('ar','🇸🇦 العربية',this)">🇸🇦 العربية</button>
+        <button class="lang-opt" data-lang="fr" data-label="🇫🇷 Français" onclick="setToolLang('fr','🇫🇷 Français',this)">🇫🇷 Français</button>
+      </div>
+    </div>
+    <div class="theme-wrap" onclick="toggleTheme()">
+      <div class="t-track" id="tt">
+        <div class="t-thumb" id="th"><img id="theme-icon" src="../images/Icon-white mode-Clavierarabe-enligne.svg" alt="Toggle theme" width="13" height="13"></div>
+      </div>
+      <div class="t-lbl" id="tlbl">White<br>Mode</div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-hero rp-hero">
+      <div class="hero-badge" style="color:#e11d48;border-color:rgba(225,29,72,.28);background:rgba(225,29,72,.07)"><svg width="14" height="14" viewBox="0 0 18 18" fill="none" style="flex-shrink:0"><path d="M5 3h8a2 2 0 0 1 2 2v3" stroke="#e11d48" stroke-width="1.8" stroke-linecap="round"/><path d="M13 15H5a2 2 0 0 1-2-2v-3" stroke="#e11d48" stroke-width="1.8" stroke-linecap="round"/><path d="M12.5 10.5 15 8l2 2.5M5.5 7.5 3 10 1 7.5" stroke="#e11d48" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="hero.badge">Text Repeater</span></div>
+      <h1 data-i18n="hero.h1">Text Repeater</h1>
+      <p class="hero-sub" dir="auto" data-i18n="hero.sub">Repeat anything up to 10,000 times — words, emoji, Arabic, Hindi. The result builds as you type, and tells you when it has outgrown the box you are pasting it into.</p>
+    </div>
+
+    <div class="tool-stage">
+      <img src="../images/Mascot-joy.svg" alt="" class="tool-mascot" aria-hidden="true" width="190" height="190" loading="eager">
+    <div class="rp-tool">
+      <div class="rp-grid">
+        <div class="rp-pane">
+          <div class="rp-head">
+            <label class="rp-label" for="rp-in" data-i18n="label.in">Your text</label>
+            <span class="rp-meta" id="rp-in-meta"></span>
+          </div>
+          <textarea id="rp-in" class="rp-ta" dir="auto" spellcheck="false" oninput="rpRun()" data-i18n-ph="ph.in" placeholder="Type anything…">I love you ❤️</textarea>
+          <div class="rp-quick" id="rp-quick"></div>
+        </div>
+
+        <div class="rp-pane">
+          <div class="rp-head">
+            <label class="rp-label" for="rp-out" data-i18n="label.out">Result</label>
+            <span class="rp-meta" id="rp-out-meta"></span>
+          </div>
+          <textarea id="rp-out" class="rp-ta rp-out" dir="auto" readonly></textarea>
+          <button class="rp-copy" onclick="rpCopy()" data-i18n="btn.copy">Copy result</button>
+        </div>
+      </div>
+
+      <div class="rp-controls">
+        <div class="rp-ctl">
+          <div class="rp-ctl-hd" data-i18n="ctl.count">Repeat count</div>
+          <div class="rp-stepper">
+            <button class="rp-step" onclick="rpBump(-10)" aria-label="minus ten">−10</button>
+            <button class="rp-step" onclick="rpBump(-1)" aria-label="minus one">−</button>
+            <input id="rp-n" class="rp-n" type="number" min="1" max="10000" value="10" oninput="rpRun()" onchange="rpSettle()" onblur="rpSettle()" aria-label="Repeat count">
+            <button class="rp-step" onclick="rpBump(1)" aria-label="plus one">+</button>
+            <button class="rp-step" onclick="rpBump(10)" aria-label="plus ten">+10</button>
+          </div>
+          <div class="rp-presets" id="rp-presets"></div>
+        </div>
+
+        <div class="rp-ctl">
+          <div class="rp-ctl-hd" data-i18n="ctl.sep">Between each copy</div>
+          <div class="rp-seps" id="rp-seps"></div>
+          <input id="rp-custom" class="rp-custom" maxlength="12" placeholder="custom…" data-i18n-ph="ph.custom" oninput="rpPickSep('custom',null)" hidden>
+        </div>
+
+        <div class="rp-ctl">
+          <div class="rp-ctl-hd" data-i18n="ctl.fits">Will it fit?</div>
+          <div class="rp-fits" id="rp-fits"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="how-sec">
+      <div class="how-head">How to <span class="sec-grad">Use</span></div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-num-bg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.8"/><line x1="7" y1="10" x2="17" y2="10" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><line x1="7" y1="14" x2="13" y2="14" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.1.t">1. Type or paste</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.1.d">Put your text in the left box — any language, emoji included. The result builds on the right as you type, so there is no button to press before you see it.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-num-bg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="19" cy="17" r="3" stroke="#fff" stroke-width="1.6"/></svg></div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.2.t">2. Set the count and spacing</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.2.d">Nudge the number with the steppers or jump straight to a preset. Then choose whether each copy lands on its own line, runs inline, or comes out as a numbered list.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-num-bg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 6.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="how-step-title" dir="auto" data-i18n="howto.3.t">3. Check it fits, then copy</div>
+          <div class="how-step-desc" dir="auto" data-i18n="howto.3.d">The panel on the right shows whether the result still fits X, Instagram, LinkedIn, TikTok or a WhatsApp message — before you paste it somewhere it gets cut in half.</div>
+        </div>
+      </div>
+    </div>
+    <section class="tool-about">
+      <h2>What breaks when you repeat <span class="sec-grad">non-Latin text</span></h2>
+      <p>Repeating a string looks like the simplest operation in software, and it is — right up until the string is not English. Every text repeater online handles Latin letters correctly and then quietly mangles everything else. Here is what actually goes wrong, and what this page does instead.</p>
+      <div class="rp-tbl-wrap"><table class="rp-tbl">
+        <thead><tr><th>Input</th><th>The common failure</th><th>Here</th></tr></thead>
+        <tbody>
+          <tr><td>Emoji</td><td>A family emoji like <code>👨‍👩‍👧</code> is several emoji joined by invisible zero-width joiners. Tools that count with JavaScript’s <code>.length</code> report it as 8 characters, so a 100× repeat is reported at 800 instead of 100.</td><td>Counted as grapheme clusters — what a reader sees is what gets counted.</td></tr>
+          <tr><td>Arabic</td><td>Arabic letters change shape depending on their neighbours. Repeating <code>أحبك</code> inline with no separator can visually join the end of one copy to the start of the next, producing letterforms that were never typed.</td><td>New line is the default separator precisely because it keeps each copy a separate word. Inline is still available when you want it.</td></tr>
+          <tr><td>Hindi and other Indic scripts</td><td>Matras are combining marks. Splitting or counting them as standalone characters inflates every total and can strand a vowel sign at a boundary.</td><td>Grapheme counting keeps each syllable whole.</td></tr>
+          <tr><td>Any script beyond the basic plane</td><td>Mathematical, historic and emoji characters take two UTF-16 units each, so character counts come out roughly double.</td><td>The counts on both panes are cluster counts, so they match what the destination field will measure.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="tool-about">
+      <h2>The number that actually stops you: <span class="sec-grad">the field limit</span></h2>
+      <p>Repeating text is easy. Knowing whether the result can be pasted anywhere useful is the part every other tool leaves you to discover by failure. Ten copies of a short phrase clears every limit; a thousand copies clears almost none. The panel beside the output answers that before you copy, not after.</p>
+      <div class="rp-tbl-wrap"><table class="rp-tbl">
+        <thead><tr><th>Destination</th><th>Ceiling</th><th>Roughly how many copies of a 12-character phrase</th></tr></thead>
+        <tbody>
+          <tr><td>X / Twitter post</td><td>280 characters on the free tier</td><td>about 21</td></tr>
+          <tr><td>Instagram caption</td><td>2,200 characters</td><td>about 169</td></tr>
+          <tr><td>LinkedIn post</td><td>3,000 characters</td><td>about 230</td></tr>
+          <tr><td>TikTok caption</td><td>4,000 characters</td><td>about 307</td></tr>
+          <tr><td>WhatsApp message</td><td>65,536 characters</td><td>about 5,000</td></tr>
+        </tbody>
+      </table></div>
+      <p class="rp-src">Those counts assume a new line between copies, which costs one character each. Switch the separator to none and you fit slightly more; switch to a numbered list and you fit noticeably fewer, since every line carries its own index.</p>
+    </section>
+
+    <section class="tool-about">
+      <h2>Separators are not decoration — <span class="sec-grad">they change the result</span></h2>
+      <p>The gap between copies is the setting people skip, and it decides whether the output is usable. Five options, and each exists for a different job:</p>
+      <p><strong>New line</strong> keeps every copy on its own row. It is the safest default in any script, and the only one that reliably prevents Arabic and Indic letterforms from joining across the boundary. It costs one character per copy.</p>
+      <p><strong>Space</strong> produces a running block of text that wraps naturally — what you want for a chat message rather than a list.</p>
+      <p><strong>Comma</strong> gives you a delimited series you can paste into a spreadsheet cell or a form field that expects comma-separated values.</p>
+      <p><strong>Nothing at all</strong> concatenates the copies with no gap. This is the one to use for test strings and padding, and the one to avoid for real words — with no separator, the last letter of one copy and the first of the next are treated as neighbours by the text shaper, which changes how connected scripts render.</p>
+      <p><strong>Numbered list</strong> prefixes each copy with its index. Useful for building numbered templates, and the only option where the output grows faster than the input, because the numbers themselves take space — a thousand copies adds roughly four thousand characters of numbering alone.</p>
+    </section>
+
+    <section class="tool-about">
+      <h2>A word about <span class="sec-grad">where this gets used</span></h2>
+      <p>Most people arrive here for one of four reasons, and it is worth being honest about which ones work.</p>
+      <p><strong>Emphasis in a message</strong> — repeating a word or an emoji for effect in a chat. This works, and it is the most common use by a wide margin.</p>
+      <p><strong>Filler and test data</strong> — developers and designers padding a layout to see how it behaves with long content. The no-separator mode exists for this.</p>
+      <p><strong>Templates</strong> — generating a numbered list, a repeated line for a form, or a block to edit down afterwards. The numbered mode covers it.</p>
+      <p><strong>Flooding a chat</strong> — this is the one that does not work. Messaging platforms rate-limit repeated identical content, and pasting thousands of copies into a group typically gets the message collapsed, the send throttled, or the account temporarily restricted. The tool will happily generate 10,000 copies; the platform on the other end is the constraint, and no generator changes that.</p>
+    </section>
+
+    <section class="tool-about">
+      <h2>About this <span class="sec-grad">repeater</span></h2>
+      <p>Everything happens in your browser. The text is never uploaded and never stored, which matters more here than it might seem — people paste drafts, names and private messages into repeaters without thinking about it. Closing the tab is the entire deletion process.</p>
+      <p>The cap is 10,000 copies. That is not a licensing limit, it is a rendering one: past roughly ten thousand repetitions of a short phrase, the browser is holding a string long enough that scrolling the output box becomes visibly slow on a phone, and no destination field accepts anything near it anyway. If you genuinely need more, repeat the result a second time.</p>
+      <p>One deliberate omission: there is no “download as image” button. Repeated text is text — its value is that it can be pasted, and an image cannot be. Tools that add the button are optimising for a feature list rather than for what anyone does with the output.</p>
+    </section>
+
+
+    <section class="faq-promo">
+      <div class="faq-promo-grid">
+        <div class="faq-card-brand">
+          <img src="../images/kactyl%20brand%20name-svg.svg" alt="Kactyl" class="faq-brand-logo">
+        </div>
+        <div class="faq-card-2">
+          <div class="card-hills-clip">
+            <svg class="card-hills" viewBox="0 0 560 130" preserveAspectRatio="none" aria-hidden="true">
+              <circle cx="38"  cy="135" r="74" class="hill-soft"/>
+              <circle cx="152" cy="120" r="92" class="hill-soft"/>
+              <circle cx="268" cy="144" r="58" class="hill-soft"/>
+              <circle cx="384" cy="126" r="86" class="hill-soft"/>
+              <circle cx="504" cy="138" r="70" class="hill-accent"/>
+            </svg>
+          </div>
+        </div>
+        <img src="../images/Mascot-pc.svg" alt="" class="faq-mascot">
+      </div>
+    </section>
+
+    <section class="tool-faq">
+      <div class="faq-hd-badge">FAQ</div>
+      <h2>Frequently Asked <span class="sec-grad">Questions</span></h2>
+      <details>
+        <summary>How many times can I repeat text?</summary>
+        <div class="faq-ans">Up to 10,000 copies. The limit is about how much text a browser can hold and scroll comfortably on a phone, not a paywall — and every destination field cuts off long before that number anyway. If you need more, run the result through a second time.</div>
+      </details>
+      <details>
+        <summary>Does it work with emoji?</summary>
+        <div class="faq-ans">Yes, and it counts them correctly, which most repeaters do not. A family emoji like 👨‍👩‍👧 is several emoji joined by invisible zero-width joiners; tools counting raw code units report it as eight characters. Here it counts as one, so the total beside the output matches what the destination field will measure.</div>
+      </details>
+      <details>
+        <summary>Can I repeat Arabic, Hindi or other non-Latin text?</summary>
+        <div class="faq-ans">Yes. Type or paste any script and the box follows its natural direction automatically. One thing to know: with no separator, Arabic letters at the join between two copies can visually connect to each other, because Arabic letterforms change according to their neighbours. New line is the default separator for exactly that reason.</div>
+      </details>
+      <details>
+        <summary>Why is my character count different from another tool?</summary>
+        <div class="faq-ans">Because most tools count UTF-16 code units and this one counts grapheme clusters — what a reader sees as one character. They agree for plain English and diverge for emoji, accented letters and any non-Latin script. The count shown here is the one that matches what a platform character limit enforces.</div>
+      </details>
+      <details>
+        <summary>What does the "Will it fit?" panel do?</summary>
+        <div class="faq-ans">It compares the result against the real ceiling of the places people usually paste it: an X post, an Instagram caption, a LinkedIn post, a TikTok caption and a WhatsApp message. Green means it still fits and how much room is left; red means how far over you are. It updates as you type, so you find out before copying rather than after pasting.</div>
+      </details>
+      <details>
+        <summary>Which separator should I use?</summary>
+        <div class="faq-ans">New line for anything you want readable, and it is the safest choice in every script. Space for a running block in a chat message. Comma for spreadsheet cells or comma-separated form fields. Nothing for test strings and layout padding. Numbered list for templates — bearing in mind the numbers themselves add characters, so a thousand copies costs roughly four thousand extra.</div>
+      </details>
+      <details>
+        <summary>Can I use a custom separator?</summary>
+        <div class="faq-ans">Yes — pick the custom option and type whatever you want between copies: a dash, a bullet, an emoji, a pipe. Up to twelve characters, which is more than any sensible separator needs.</div>
+      </details>
+      <details>
+        <summary>Will this get me banned from WhatsApp or Discord?</summary>
+        <div class="faq-ans">Flooding a chat can get you rate-limited, and repeated identical content is one of the easiest things for a platform to detect. Messaging services throttle or collapse repeated messages and can temporarily restrict an account that keeps doing it. The tool generates whatever you ask for; the platform on the other end is the constraint, and no generator changes that.</div>
+      </details>
+      <details>
+        <summary>Is my text sent to a server?</summary>
+        <div class="faq-ans">No. The repeating and counting run in your browser with JavaScript. Nothing is uploaded, nothing is logged, nothing is stored. You can watch the network tab while typing and see that nothing leaves the page.</div>
+      </details>
+      <details>
+        <summary>Why does the numbered list produce so much more text?</summary>
+        <div class="faq-ans">Because each line carries its own index and a separator. At ten copies the numbering adds almost nothing; at a thousand, the indexes alone are around four thousand characters, since numbers get longer as they climb. If you are close to a platform limit, the numbered mode is the first thing to drop.</div>
+      </details>
+      <details>
+        <summary>Can I repeat a whole paragraph, not just a word?</summary>
+        <div class="faq-ans">Yes — there is no restriction on the input length. The output cap is on the number of copies, not on how long each one is. Repeating a paragraph a thousand times will produce a very large block of text, which the fit panel will immediately tell you is over every limit.</div>
+      </details>
+      <details>
+        <summary>Does it keep line breaks in my input?</summary>
+        <div class="faq-ans">Yes. Whatever you type is repeated exactly, line breaks included. If your input already spans several lines, each copy will too, and the separator you choose goes between the copies rather than inside them.</div>
+      </details>
+      <details>
+        <summary>Why is there no "download as image" option?</summary>
+        <div class="faq-ans">Because repeated text is only useful if it can be pasted, and an image cannot be. Adding the button would make the feature list longer without making the tool more useful for anything anyone actually does with the output.</div>
+      </details>
+      <details>
+        <summary>Does the count include the separators?</summary>
+        <div class="faq-ans">Yes. The number beside the result is the true length of what you will paste, separators included — which is the only figure that matters when you are checking it against a character limit. That is also why the same repeat count produces a different total depending on which separator you pick.</div>
+      </details>
+      <details>
+        <summary>Can I use it offline?</summary>
+        <div class="faq-ans">Once the page has loaded, yes. Everything runs locally, so the tool keeps working with the network disconnected. Reloading the page while offline will not work unless your browser has cached it.</div>
+      </details>
+      <details>
+        <summary>What happens if I type a number larger than 10,000?</summary>
+        <div class="faq-ans">It clamps to 10,000. The field also refuses values below 1, so you cannot end up with an empty result by accident.</div>
+      </details>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a class="ft-logo" href="/"><div class="ft-ic"><img loading="lazy" src="../images/favicon.svg" alt="Kactyl" width="36" height="36"></div><span class="ft-name">Kactyl</span></a>
+      <div class="ft-tagline">Every Language. One Tab.<br>No download. No account.</div>
+      <div class="ft-badges"><span class="ft-badge g">✓ 100% Free</span><span class="ft-badge b">⚡ No Install</span></div>
+      <div class="ft-social">
+        <span class="ft-soc-link" aria-label="X / Twitter">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+        </span>
+        <span class="ft-soc-link" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </span>
+        <span class="ft-soc-link" aria-label="YouTube">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </span>
+        <span class="ft-soc-link" aria-label="TikTok">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </span>
+      </div></div>
+    <div class="ft-col">
+      <h4>Keyboards</h4>
+      <div class="ft-kb-grid">
+        <a href="/arabic/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
+        <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
+        <a href="/japanese/">Japanese</a><a href="/chinese/">Chinese</a><a href="/turkish/">Turkish</a><a href="/russian/">Russian</a>
+        <a href="/greek/">Greek</a><a href="/thai/">Thai</a><a href="/vietnamese/">Vietnamese</a><a href="/amharic/">Amharic</a>
+      </div>
+    </div>
+        <div class="ft-col">
+      <h4>Tools</h4>
+      <div class="ft-legal">
+        <a href="/symbols/">Symbols</a>
+        <a href="/fancy-text/">Fancy Text</a>
+        <a href="/kaomoji/">Kaomoji</a>
+        <a href="/text-art/">Text Art</a>
+        <a href="/dot-art/">Dot Art</a>
+        <a href="/invisible-character/">Invisible Char</a>
+        <a href="/zalgo-text/">Zalgo Text</a>
+        <a href="/free-fire-name/">FF &amp; PUBG Names</a>
+        <a href="/hijri-calendar/">Hijri Calendar</a>
+        <a href="/arabic-calligraphy/">Arabic Calligraphy</a>
+      </div>
+      <h4 class="ft-h4-gap">Company</h4>
+      <div class="ft-legal"><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
+    </div>
+    <div class="ft-col">
+      <h4>Legal</h4>
+      <div class="ft-legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+        <a href="/cookies">Cookie Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2026 Kactyl. All rights reserved.</span>
+    <div class="ft-bottom-links">
+      <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+      <a href="/cookies">Cookies</a><a href="/sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+var TOOL_I18N = {"en": {"hero.badge": "Text Repeater","hero.h1": "Text Repeater","hero.sub": "Repeat anything up to 10,000 times — words, emoji, Arabic, Hindi. The result builds as you type, and tells you when it has outgrown the box you are pasting it into.","label.in": "Your text","label.out": "Result","ph.in": "Type anything…","ph.custom": "custom…","btn.copy": "Copy result","meta.chars": "chars","ctl.count": "Repeat count","ctl.sep": "Between each copy","ctl.fits": "Will it fit?","sep.nl": "New line","sep.space": "Space","sep.comma": "Comma","sep.none": "Nothing","sep.num": "Numbered","sep.custom": "Custom","lim.x": "X / Twitter","lim.ig": "Instagram","lim.li": "LinkedIn","lim.tt": "TikTok","lim.wa": "WhatsApp","fit.ok": "{n} left","fit.no": "{n} over","quick.1": "I love you ❤️","quick.2": "Happy Birthday 🎂","quick.3": "Thank you 🙏","quick.4": "😂","quick.5": "Good morning ☀️","quick.6": "LOL","demo": "I love you ❤️","howto.1.t": "1. Type or paste","howto.1.d": "Put your text in the left box — any language, emoji included. The result builds on the right as you type, so there is no button to press before you see it.","howto.2.t": "2. Set the count and spacing","howto.2.d": "Nudge the number with the steppers or jump straight to a preset. Then choose whether each copy lands on its own line, runs inline, or comes out as a numbered list.","howto.3.t": "3. Check it fits, then copy","howto.3.d": "The panel on the right shows whether the result still fits X, Instagram, LinkedIn, TikTok or a WhatsApp message — before you paste it somewhere it gets cut in half."},"ar": {"hero.badge": "مكرّر النصوص","hero.h1": "مكرّر النصوص","hero.sub": "كرّر أي شيء حتى 10,000 مرة — كلمات وإيموجي ونصوصاً عربية وهندية. تُبنى النتيجة أثناء الكتابة، وتخبرك حين تتجاوز حجم الحقل الذي ستلصقها فيه.","label.in": "نصّك","label.out": "النتيجة","ph.in": "اكتب أي شيء…","ph.custom": "مخصّص…","btn.copy": "نسخ النتيجة","meta.chars": "حرفاً","ctl.count": "عدد التكرار","ctl.sep": "بين كل نسخة","ctl.fits": "هل ستتّسع؟","sep.nl": "سطر جديد","sep.space": "مسافة","sep.comma": "فاصلة","sep.none": "بلا فاصل","sep.num": "مرقّمة","sep.custom": "مخصّص","lim.x": "إكس / تويتر","lim.ig": "إنستغرام","lim.li": "لينكدإن","lim.tt": "تيك توك","lim.wa": "واتساب","fit.ok": "يتبقّى {n}","fit.no": "تجاوز {n}","quick.1": "أحبك ❤️","quick.2": "عيد ميلاد سعيد 🎂","quick.3": "شكراً 🙏","quick.4": "😂","quick.5": "صباح الخير ☀️","quick.6": "الحمد لله","demo": "أحبك ❤️","howto.1.t": "١. اكتب أو الصق","howto.1.d": "ضع نصّك في المربّع الأيسر — بأي لغة، والإيموجي مشمول. تُبنى النتيجة على اليمين أثناء الكتابة، فلا زرّ تضغطه قبل أن تراها.","howto.2.t": "٢. اضبط العدد والتباعد","howto.2.d": "حرّك الرقم بالأزرار أو انتقل مباشرة إلى أحد الخيارات الجاهزة. ثم اختر أن تحلّ كل نسخة في سطرها، أو أن تتتابع في سطر واحد، أو أن تخرج في قائمة مرقّمة.","howto.3.t": "٣. تحقّق ثم انسخ","howto.3.d": "تُظهر اللوحة على اليمين ما إذا كانت النتيجة تتّسع في إكس أو إنستغرام أو لينكدإن أو تيك توك أو رسالة واتساب — قبل أن تلصقها في مكان يقصّها نصفين."},"fr": {"hero.badge": "Répéteur de texte","hero.h1": "Répéteur de texte","hero.sub": "Répétez n’importe quoi jusqu’à 10 000 fois — mots, émojis, arabe, hindi. Le résultat se construit pendant que vous tapez et vous prévient quand il dépasse la taille du champ visé.","label.in": "Votre texte","label.out": "Résultat","ph.in": "Tapez quelque chose…","ph.custom": "perso…","btn.copy": "Copier le résultat","meta.chars": "caractères","ctl.count": "Nombre de répétitions","ctl.sep": "Entre chaque copie","ctl.fits": "Est-ce que ça rentre ?","sep.nl": "Nouvelle ligne","sep.space": "Espace","sep.comma": "Virgule","sep.none": "Rien","sep.num": "Numérotée","sep.custom": "Perso","lim.x": "X / Twitter","lim.ig": "Instagram","lim.li": "LinkedIn","lim.tt": "TikTok","lim.wa": "WhatsApp","fit.ok": "{n} restants","fit.no": "{n} en trop","quick.1": "Je t’aime ❤️","quick.2": "Joyeux anniversaire 🎂","quick.3": "Merci 🙏","quick.4": "😂","quick.5": "Bonjour ☀️","quick.6": "MDR","demo": "Je t’aime ❤️","howto.1.t": "1. Tapez ou collez","howto.1.d": "Mettez votre texte dans la case de gauche — toutes les langues, émojis compris. Le résultat se construit à droite pendant la frappe, sans bouton à presser.","howto.2.t": "2. Réglez le nombre et l’espacement","howto.2.d": "Ajustez le nombre avec les boutons ou passez directement à une valeur prédéfinie. Choisissez ensuite si chaque copie occupe sa ligne, s’enchaîne, ou sort en liste numérotée.","howto.3.t": "3. Vérifiez que ça rentre, puis copiez","howto.3.d": "Le panneau de droite indique si le résultat tient encore dans X, Instagram, LinkedIn, TikTok ou un message WhatsApp — avant de le coller là où il serait coupé en deux."}};
+// ── /text-repeater/ engine ────────────────────────────────────────────────
+// Two things the competition does not do: count the result in grapheme
+// clusters (so one emoji is one character, not four), and say whether the
+// result still fits the field you are about to paste it into.
+
+var RP_SEPS = [
+  {id:'nl',    label:'sep.nl',    val:'\n'},
+  {id:'space', label:'sep.space', val:' '},
+  {id:'comma', label:'sep.comma', val:', '},
+  {id:'none',  label:'sep.none',  val:''},
+  {id:'num',   label:'sep.num',   val:null},   // numbered list
+  {id:'custom',label:'sep.custom',val:null}
+];
+
+// Same verified figures as /word-counter/ — free-tier X, and the visible
+// window rather than only the hard ceiling.
+var RP_LIMITS = [
+  {id:'x',  max:280},
+  {id:'ig', max:2200},
+  {id:'li', max:3000},
+  {id:'tt', max:4000},
+  {id:'wa', max:65536}
+];
+
+// Chips are shortcuts, not a showcase. An English visitor will never click a
+// Hindi phrase, so each language gets its own set rather than one mixed list
+// repeated on every page.
+var RP_QUICK = ['quick.1', 'quick.2', 'quick.3', 'quick.4', 'quick.5', 'quick.6'];
+var RP_PRESETS = [10, 100, 500, 1000, 10000];
+var rpSep = 'nl';
+
+function rpGraphemes(s) {
+  if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+    try { return Array.from(new Intl.Segmenter('en', {granularity:'grapheme'}).segment(s)).length; }
+    catch (e) {}
+  }
+  return Array.from(s).length;
+}
+
+function rpSepValue() {
+  if (rpSep === 'custom') {
+    var c = document.getElementById('rp-custom');
+    return c ? c.value : '';
+  }
+  for (var i = 0; i < RP_SEPS.length; i++) if (RP_SEPS[i].id === rpSep) return RP_SEPS[i].val;
+  return '\n';
+}
+
+function rpBuild(text, n) {
+  if (!text) return '';
+  if (rpSep === 'num') {
+    var lines = [];
+    for (var i = 1; i <= n; i++) lines.push(i + '. ' + text);
+    return lines.join('\n');
+  }
+  var parts = [];
+  for (var j = 0; j < n; j++) parts.push(text);
+  return parts.join(rpSepValue());
+}
+
+function rpRun() {
+  var text = document.getElementById('rp-in').value;
+  var nEl = document.getElementById('rp-n');
+  var raw = parseInt(nEl.value, 10);
+  var n = Math.max(1, Math.min(10000, raw || 1));
+  // type=number does not enforce max on typed input, only on the spinners. Without
+  // writing the clamped value back, the field reads 99999 while the output holds
+  // 10,000 -- the control showing one number and doing another.
+  if (raw > 10000) nEl.value = n;
+  var out = rpBuild(text, n);
+  document.getElementById('rp-out').value = out;
+
+  var inG = rpGraphemes(text), outG = rpGraphemes(out);
+  document.getElementById('rp-in-meta').textContent  = inG.toLocaleString() + ' ' + T('meta.chars');
+  document.getElementById('rp-out-meta').textContent = outG.toLocaleString() + ' ' + T('meta.chars');
+
+  document.getElementById('rp-fits').innerHTML = RP_LIMITS.map(function (l) {
+    var ok = outG <= l.max;
+    return '<div class="rp-fit"><span class="rp-dot ' + (ok ? 'ok' : 'no') + '"></span>' +
+           '<span><b>' + T('lim.' + l.id) + '</b> — ' +
+           (ok ? T('fit.ok').replace('{n}', (l.max - outG).toLocaleString())
+               : T('fit.no').replace('{n}', (outG - l.max).toLocaleString())) + '</span></div>';
+  }).join('');
+}
+
+function rpSettle() {
+  var el = document.getElementById('rp-n');
+  var v = parseInt(el.value, 10);
+  if (!v || v < 1) el.value = 1;
+  else if (v > 10000) el.value = 10000;
+  rpRun();
+}
+
+function rpBump(d) {
+  var el = document.getElementById('rp-n');
+  el.value = Math.max(1, Math.min(10000, (parseInt(el.value, 10) || 1) + d));
+  rpRun();
+}
+
+function rpPreset(n) { document.getElementById('rp-n').value = n; rpRun(); }
+
+function rpPickSep(id, btn) {
+  rpSep = id;
+  document.querySelectorAll('.rp-sep').forEach(function (b) { b.classList.remove('on'); });
+  if (btn) btn.classList.add('on');
+  var c = document.getElementById('rp-custom');
+  if (c) { c.hidden = (id !== 'custom'); if (id === 'custom') c.focus(); }
+  rpRun();
+}
+
+function rpCopy() { copyText(document.getElementById('rp-out').value); }
+
+function rpChrome() {
+  document.getElementById('rp-quick').innerHTML = RP_QUICK.map(function (k) {
+    return '<button class="rp-chip" dir="auto" onclick="rpSet(this.textContent)">' + T(k) + '</button>';
+  }).join('');
+  document.getElementById('rp-presets').innerHTML = RP_PRESETS.map(function (n) {
+    return '<button class="rp-pre" onclick="rpPreset(' + n + ')">' + n.toLocaleString() + '</button>';
+  }).join('');
+  document.getElementById('rp-seps').innerHTML = RP_SEPS.map(function (s) {
+    return '<button class="rp-sep' + (s.id === rpSep ? ' on' : '') + '" onclick="rpPickSep(\'' +
+           s.id + '\',this)">' + T(s.label) + '</button>';
+  }).join('');
+}
+
+function rpSet(t) { document.getElementById('rp-in').value = t.trim(); rpRun(); }
+
+// Every language's demo string, so we can tell an untouched default from
+// something the visitor actually typed.
+function rpAllDemos() {
+  var out = [];
+  for (var code in TOOL_I18N) if (TOOL_I18N[code]['demo']) out.push(TOOL_I18N[code]['demo']);
+  return out;
+}
+
+window.onToolLang = function () {
+  var el = document.getElementById('rp-in');
+  // Only swap the sample when the box still holds an untouched default. Typed
+  // text is the visitor's, and changing the interface language must never
+  // throw it away.
+  if (rpAllDemos().indexOf(el.value.trim()) !== -1 || el.value.trim() === '') {
+    el.value = T('demo');
+  }
+  rpChrome();
+  rpRun();
+};
+rpChrome();
+rpRun();
+
+// ── UI language ───────────────────────────────────────────────────────────
+// Interface strings only: the article prose stays in the page's declared
+// language, because that is what Google indexes and it must not be mixed.
+// Note this switcher is for visitors, not for ranking -- an indexed Arabic URL
+// is the only thing that ranks in Arabic.
+function toggleToolLang(e) {
+  e.stopPropagation();
+  var m = document.getElementById('lang-menu');
+  m.classList.toggle('show');
+  document.getElementById('lang-pill').setAttribute('aria-expanded', m.classList.contains('show'));
+}
+document.addEventListener('click', function () {
+  var m = document.getElementById('lang-menu');
+  if (m) { m.classList.remove('show'); document.getElementById('lang-pill').setAttribute('aria-expanded', 'false'); }
+});
+
+function setToolLang(code, label, el) {
+  var t = TOOL_I18N[code] || TOOL_I18N.en;
+  document.querySelectorAll('[data-i18n]').forEach(function (n) {
+    var k = n.getAttribute('data-i18n');
+    if (t[k] !== undefined) n.innerHTML = t[k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function (n) {
+    var k = n.getAttribute('data-i18n-ph');
+    if (t[k] !== undefined) n.setAttribute('placeholder', t[k]);
+  });
+  // Only the words change. The document direction is NEVER touched: flipping it
+  // mirrors the whole layout -- logo, nav, tile order, chip order -- which is a
+  // design change, not a translation. Arabic still reads right-to-left inside
+  // its own element because the Unicode bidi algorithm handles that on its own.
+  document.documentElement.lang = code;
+  document.getElementById('lang-pill').textContent = label + ' ▾';
+  document.querySelectorAll('.lang-opt').forEach(function (o) { o.classList.remove('active'); });
+  if (el) el.classList.add('active');
+  try { localStorage.setItem('kactylToolLang', code); } catch (e) {}
+  // Anything the tool renders from JS -- stat labels, script rows -- has to be
+  // redrawn, or the page ends up half-translated the moment you interact with it.
+  if (typeof window.onToolLang === 'function') window.onToolLang();
+  fitMascot();
+}
+
+
+/* ── Tool-page brand mascot: fit to the space this page actually has ── */
+function fitMascot() {
+  var m = document.querySelector('.tool-mascot');
+  if (!m) return;
+  if (window.innerWidth <= 900) { m.style.opacity = 0; return; }
+
+  /* Widest ink in the 200px band ending at footY. Factored out so the mascot can
+     compare several heights and stand where there is actually room, instead of
+     being pinned to the hero's lower edge -- on /symbols/ that left it hovering
+     in mid-hero whitespace with nothing beside it. */
+  function widestIn(scope, footY, skip) {
+    var bandTop = footY - 200, widest = 0;
+    var BOXY = ['IMG', 'SVG', 'BUTTON', 'A', 'INPUT', 'SELECT'];
+    Array.prototype.forEach.call(scope.querySelectorAll('*'), function (el) {
+      if (el === skip || el.contains(skip)) return;
+      var st = getComputedStyle(el);
+      if (st.display === 'none' || st.visibility === 'hidden' || st.position === 'absolute') return;
+      var box = el.getBoundingClientRect();
+      if (!box.width || box.bottom < bandTop || box.top > footY) return;
+      if (BOXY.indexOf(el.tagName) !== -1) {
+        if (box.right > widest) widest = box.right;
+        return;
+      }
+      if (el.children.length) return;
+      var r = document.createRange();
+      r.selectNodeContents(el);
+      Array.prototype.forEach.call(r.getClientRects(), function (line) {
+        if (line.bottom >= bandTop && line.top <= footY && line.right > widest) widest = line.right;
+      });
+    });
+    return widest;
+  }
+
+  var heroAnchored = m.classList.contains('tool-mascot-hero');
+  var host = m.offsetParent || m.parentElement;
+  if (!host) return;
+  var hostBox = host.getBoundingClientRect();
+
+  /* Where the mascot's feet land: on the hero's lower edge, or on the top edge
+     of the tool card it perches on. The band above that is what it occupies. */
+  var footY = heroAnchored ? hostBox.bottom : hostBox.top;
+  var bandTop = footY - 200;
+
+  /* One standing height: the hero's lower edge (or the card's top edge on the
+     generated tools). An earlier attempt picked the "roomiest" band automatically
+     and got it wrong -- most free space is not the same as looking right, and it
+     shifted three pages that were already fine. Pages that need a different
+     height get an explicit per-page offset instead. */
+  var hero = document.querySelector('.page-hero, .hero, .kbdir-hero') || document.body;
+  /* Read the per-page nudge FIRST: the measurement has to happen in the band the
+     mascot will actually occupy. Measuring low and then lifting is how it ended
+     up sitting on the /symbols/ headline. */
+  var lift = parseInt(m.getAttribute('data-lift') || '0', 10);
+  var baseFoot = (heroAnchored ? hero.getBoundingClientRect().bottom : hostBox.top) - lift;
+  m.style.marginBottom = lift ? (-14 + lift) + 'px' : '';
+  var widest = widestIn(hero, baseFoot, m);
+
+  var edge = hostBox.right;
+  if (heroAnchored) {
+    var col = document.querySelector('.wrap, .container');
+    if (!col) {
+      var best = null, bestW = 0, vw = window.innerWidth;
+      Array.prototype.forEach.call(document.querySelectorAll('main *, body > div > *'), function (el) {
+        var r2 = el.getBoundingClientRect();
+        if (r2.width > bestW && r2.width < vw - 40 && r2.width > 420 && r2.height > 40) {
+          bestW = r2.width; best = el;
+        }
+      });
+      col = best;
+    }
+    if (col) {
+      var colRight = col.getBoundingClientRect().right;
+      if (colRight < edge - 1) { m.style.right = Math.round(edge - colRight) + 'px'; edge = colRight; }
+    }
+  }
+
+  if (!widest) { m.style.opacity = 0; return; }
+
+  var w = Math.min(164, Math.floor(edge - widest));
+  /* Floor calibrated against rendered pages, not guessed: fancy-text at 95px
+     looked squeezed, while symbols at 106 and compare at 101 read fine. Width
+     alone was never the problem -- fancy-text sat hard against a pill with no
+     air. 100 is the line where the two groups actually separate. */
+  if (w < 100) { m.style.width = '0px'; m.style.opacity = 0; return; }
+  m.style.width = w + 'px';
+  m.style.opacity = 1;
+
+}
+window.addEventListener('resize', fitMascot, {passive:true});
+if (document.readyState !== 'loading') setTimeout(fitMascot, 0);
+else document.addEventListener('DOMContentLoaded', fitMascot);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitMascot);
+
+
+// Look up a UI string from JS, falling back to English rather than showing a key.
+function T(k) {
+  var t = TOOL_I18N[document.documentElement.lang] || TOOL_I18N.en;
+  return t[k] !== undefined ? t[k] : (TOOL_I18N.en[k] !== undefined ? TOOL_I18N.en[k] : k);
+}
+
+// Restore an explicit past choice only. Never auto-switch on navigator.language:
+// Googlebot crawls from the US and must see what a US visitor sees.
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('kactylToolLang'); } catch (e) {}
+  if (!saved || saved === 'en') return;
+  var el = document.querySelector('.lang-opt[data-lang="' + saved + '"]');
+  if (el) setToolLang(saved, el.getAttribute('data-label'), el);
+})();
+function loadTheme(){const t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){if(t==='dark'){tr.classList.add('on');th.classList.add('on');}}}
+function toggleTheme(){const cur=document.documentElement.getAttribute('data-theme')||'light';const next=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('theme',next);const tr=document.getElementById('t-track'),th=document.getElementById('t-thumb');if(tr&&th){tr.classList.toggle('on',next==='dark');th.classList.toggle('on',next==='dark');}}
+function showToast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
+function copyText(text){navigator.clipboard.writeText(text).then(()=>showToast('Copied!')).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('Copied!');});}
+(function(){
+  const hdr=document.querySelector('header');
+  let last=0;
+  window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>last&&y>80)hdr.classList.add('hdr-hidden');else hdr.classList.remove('hdr-hidden');last=y;},{passive:true});
+  document.querySelectorAll('.tools-btn').forEach(btn=>{
+    btn.addEventListener('click',e=>{e.stopPropagation();btn.closest('.tools-wrap').classList.toggle('open');});
+  });
+  document.addEventListener('click',()=>document.querySelectorAll('.tools-wrap.open').forEach(w=>w.classList.remove('open')));
+})();
+loadTheme();
+</script>
+<script>(function(){var p=window.location.pathname.replace(/\/$/,'');document.querySelectorAll('.tools-item').forEach(function(a){var h=(a.getAttribute('href')||'').replace(/\/$/,'');if(h&&p===h)a.classList.add('active-tool');});})();</script>
+<script>
+/* ── Tool-page brand mascot: fit to the space this page actually has ── */
+function fitMascot() {
+  var m = document.querySelector('.tool-mascot');
+  if (!m) return;
+  if (window.innerWidth <= 900) { m.style.opacity = 0; return; }
+
+  /* Widest ink in the 200px band ending at footY. Factored out so the mascot can
+     compare several heights and stand where there is actually room, instead of
+     being pinned to the hero's lower edge -- on /symbols/ that left it hovering
+     in mid-hero whitespace with nothing beside it. */
+  function widestIn(scope, footY, skip) {
+    var bandTop = footY - 200, widest = 0;
+    var BOXY = ['IMG', 'SVG', 'BUTTON', 'A', 'INPUT', 'SELECT'];
+    Array.prototype.forEach.call(scope.querySelectorAll('*'), function (el) {
+      if (el === skip || el.contains(skip)) return;
+      var st = getComputedStyle(el);
+      if (st.display === 'none' || st.visibility === 'hidden' || st.position === 'absolute') return;
+      var box = el.getBoundingClientRect();
+      if (!box.width || box.bottom < bandTop || box.top > footY) return;
+      if (BOXY.indexOf(el.tagName) !== -1) {
+        if (box.right > widest) widest = box.right;
+        return;
+      }
+      if (el.children.length) return;
+      var r = document.createRange();
+      r.selectNodeContents(el);
+      Array.prototype.forEach.call(r.getClientRects(), function (line) {
+        if (line.bottom >= bandTop && line.top <= footY && line.right > widest) widest = line.right;
+      });
+    });
+    return widest;
+  }
+
+  var heroAnchored = m.classList.contains('tool-mascot-hero');
+  var host = m.offsetParent || m.parentElement;
+  if (!host) return;
+  var hostBox = host.getBoundingClientRect();
+
+  /* Where the mascot's feet land: on the hero's lower edge, or on the top edge
+     of the tool card it perches on. The band above that is what it occupies. */
+  var footY = heroAnchored ? hostBox.bottom : hostBox.top;
+  var bandTop = footY - 200;
+
+  /* One standing height: the hero's lower edge (or the card's top edge on the
+     generated tools). An earlier attempt picked the "roomiest" band automatically
+     and got it wrong -- most free space is not the same as looking right, and it
+     shifted three pages that were already fine. Pages that need a different
+     height get an explicit per-page offset instead. */
+  var hero = document.querySelector('.page-hero, .hero, .kbdir-hero') || document.body;
+  /* Read the per-page nudge FIRST: the measurement has to happen in the band the
+     mascot will actually occupy. Measuring low and then lifting is how it ended
+     up sitting on the /symbols/ headline. */
+  var lift = parseInt(m.getAttribute('data-lift') || '0', 10);
+  var baseFoot = (heroAnchored ? hero.getBoundingClientRect().bottom : hostBox.top) - lift;
+  m.style.marginBottom = lift ? (-14 + lift) + 'px' : '';
+  var widest = widestIn(hero, baseFoot, m);
+
+  var edge = hostBox.right;
+  if (heroAnchored) {
+    var col = document.querySelector('.wrap, .container');
+    if (!col) {
+      var best = null, bestW = 0, vw = window.innerWidth;
+      Array.prototype.forEach.call(document.querySelectorAll('main *, body > div > *'), function (el) {
+        var r2 = el.getBoundingClientRect();
+        if (r2.width > bestW && r2.width < vw - 40 && r2.width > 420 && r2.height > 40) {
+          bestW = r2.width; best = el;
+        }
+      });
+      col = best;
+    }
+    if (col) {
+      var colRight = col.getBoundingClientRect().right;
+      if (colRight < edge - 1) { m.style.right = Math.round(edge - colRight) + 'px'; edge = colRight; }
+    }
+  }
+
+  if (!widest) { m.style.opacity = 0; return; }
+
+  var w = Math.min(164, Math.floor(edge - widest));
+  /* Floor calibrated against rendered pages, not guessed: fancy-text at 95px
+     looked squeezed, while symbols at 106 and compare at 101 read fine. Width
+     alone was never the problem -- fancy-text sat hard against a pill with no
+     air. 100 is the line where the two groups actually separate. */
+  if (w < 100) { m.style.width = '0px'; m.style.opacity = 0; return; }
+  m.style.width = w + 'px';
+  m.style.opacity = 1;
+
+}
+window.addEventListener('resize', fitMascot, {passive:true});
+if (document.readyState !== 'loading') setTimeout(fitMascot, 0);
+else document.addEventListener('DOMContentLoaded', fitMascot);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitMascot);
+</script>
+</body>
+</html>

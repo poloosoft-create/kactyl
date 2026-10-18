@@ -26,9 +26,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
   <link rel="canonical" href="https://kactyl.com/kurdish/">
-  <link rel="alternate" hreflang="x-default" href="https://kactyl.com/">
-  <link rel="alternate" hreflang="en" href="https://kactyl.com/">
-  <link rel="alternate" hreflang="ckb" href="https://kactyl.com/kurdish/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <!-- Open Graph -->
@@ -812,7 +809,7 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* ── KEYS ── */
 .kb-rows { display:flex; flex-direction:column; gap:7px; }
-.kb-row  { display:flex; gap:5px; }
+.kb-row  { display:flex; gap:5px; --kg:5px; }
 
 .key {
   flex:1; min-width:0; height:56px;
@@ -1553,7 +1550,7 @@ footer {
   /* ── Keyboard: fix overflow with flex:1 ── */
   .kb-card { padding:10px 8px 12px; }
   .kb-rows { gap:8px; }
-  .kb-row  { gap:2px; }
+  .kb-row  { gap:2px; --kg:2px; }
 
   /* All keys: shrink to fill row evenly */
   .key {
@@ -1624,6 +1621,8 @@ footer {
 }
 .fb-tab img { width:58px; height:58px; display:block; }
 .fb-dismiss { display:none; }
+/* FB-VISIBILITY: hidden while the keyboard is on screen; on mobile shown on the first visit only */
+body.kb-onscreen .fb-tab, body.kb-onscreen .fb-dismiss, body.fb-seen .fb-tab, body.fb-seen .fb-dismiss { display:none !important; }
 .fb-tab:hover {
   transform:translateY(-50%) translateX(-4px);
   filter:drop-shadow(-5px 6px 22px rgba(0,104,255,.52));
@@ -2065,9 +2064,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
-                                                                                                                                                                                <nav>
+                                                                                                                                                                                        <nav>
     <a href="/" class="nav-link">Home</a>
-    <a href="/franco-arab" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
+    <a href="/keyboards/" class="nav-link" style="color:var(--blue);font-weight:700;">Keyboards</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
       <button class="tools-btn">Tools &#9662;</button>
@@ -2084,6 +2083,8 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <a href="/calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Calligraphy</a>
         <a href="/word-counter/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 14.5V8" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 14.5V3.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.5V9.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 14.5v-3" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/></svg></span> Word Counter</a>
         <a href="/morse-code/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="3" cy="9" r="1.7" fill="#0068ff"/><rect x="7" y="7.5" width="8" height="3" rx="1.5" fill="#0068ff"/></svg></span> Morse Code</a>
+        <a href="/text-repeater/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M5 3.5h8a2 2 0 0 1 2 2v2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 14.5H5a2 2 0 0 1-2-2v-2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 9.5 15 7.5 17 9.5M5 8.5 3 10.5 1 8.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Text Repeater</a>
+        <a href="/typing-test/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="9" cy="10" r="5.5" stroke="#0068ff" stroke-width="1.6"/><path d="M9 7.5V10l1.8 1.4" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.2 2.2h3.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M9 2.2v1.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/></svg></span> Typing Test</a>
       </div>
     </div>
     <div class="lang-wrap">
@@ -2113,26 +2114,22 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <h1 data-i18n="hero.h1">Kurdish Keyboard Online<span class="h1-arabic">کیبۆردی کوردی</span></h1>
       <div class="hero-sub-row">
         <p class="hero-sub" data-i18n="hero.sub">The complete Sorani Kurdish alphabet — 33+ letters including unique consonants (ڤ ڵ ژ چ) and all six explicit vowels — right in your browser. Type in Sorani, Kurmanji, or phonetic transliteration and get proper script for WhatsApp, Telegram, Facebook, and every platform.</p>
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          100% Free &middot; No Account &middot; Works Everywhere
+      <div class="hero-stats kb-facts" data-facts="counted">
+        <div class="hero-stat">
+          <span class="hs-num">34</span>
+          <span class="hs-label">Letters</span>
+        </div>
+        <div class="hs-sep"></div>
+        <div class="hero-stat">
+          <span class="hs-num">35M</span>
+          <span class="hs-label">Speakers</span>
+        </div>
+        <div class="hs-sep"></div>
+        <div class="hero-stat">
+          <span class="hs-num">Sorani Kurdish</span>
+          <span class="hs-label">Script</span>
         </div>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hs-num">300+</span>
-          <span class="hs-label">Keyboards Soon</span>
-        </div>
-        <div class="hs-sep"></div>
-        <div class="hero-stat">
-          <span class="hs-num">4B+</span>
-          <span class="hs-label">Speakers Covered</span>
-        </div>
-        <div class="hs-sep"></div>
-        <div class="hero-stat">
-          <span class="hs-num">100%</span>
-          <span class="hs-label">Free Forever</span>
-        </div>
       </div>
     </div>
 
@@ -2194,7 +2191,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="card editor-card">
       <div class="textarea-wrap">
         <textarea id="arabic-text"
-          placeholder="ئێرە کوردی بنووسە…"
+          placeholder="ئێرە کوردی بنووسە... یان لە سەر پیتەکان کلیک بکە ✍️"
           oninput="onInput()" onkeydown="playClick()" spellcheck="false" inputmode="none"></textarea>
         <span class="char-num" id="char-counter">0 / 5000</span>
         <div class="char-progress" id="char-bar"></div>
@@ -2390,9 +2387,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="kb-flex"></div>
 
         <div class="sug-pills">
-          <button class="sug-pill" id="s0" onclick="pickSug(0)">شکریہ</button>
-          <button class="sug-pill" id="s1" onclick="pickSug(1)">السلام علیکم</button>
-          <button class="sug-pill" id="s2" onclick="pickSug(2)">ٹھیک ہے</button>
+          <button class="sug-pill" id="s0" onclick="pickSug(0)">لە</button>
+          <button class="sug-pill" id="s1" onclick="pickSug(1)">بە</button>
+          <button class="sug-pill" id="s2" onclick="pickSug(2)">کە</button>
         </div>
 
         <div class="kb-flex"></div>
@@ -2509,7 +2506,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   <div class="wrap">
     <div class="apps-hd">
       <h2 data-i18n="apps.h2">Kurdish Keyboard for <span style="color:var(--blue)">Any App</span></h2>
-      <p data-i18n="apps.sub">Write your Kurdish above, tap Copy, and paste it wherever Kurds connect — 35 million speakers across Middle East and global diaspora — no device support needed.<b>Copy</b> → paste into any app. No special settings needed.</p>
+      <p data-i18n="apps.sub">Write Kurdish above, tap Copy, and paste it into any app. Most devices ship without a Kurdish layout.</p>
     </div>
     <div class="apps-grid">
 
@@ -2518,7 +2515,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.sc.h3">Snapchat</h3>
-            <p data-i18n="app.sc.p">Snapchat has no Kurdish keyboard — paste from here and your stories show authentic Sorani or Kurmanji with correct vowels and unique consonants, reaching diaspora communities from Berlin to Toronto.</p>
+            <p data-i18n="app.sc.p">Caption a snap in Sorani with its own letters, such as ڕ, ڵ, ۆ and ێ, not Arabic or Persian substitutes.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2529,7 +2526,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.wa.h3">WhatsApp</h3>
-            <p data-i18n="app.wa.p">WhatsApp joins Kurds worldwide — from Erbil to Istanbul to diaspora family chats — paste Kurdish that every phone renders identically, with all six Sorani vowels perfect.</p>
+            <p data-i18n="app.wa.p">Message family from Erbil to Europe in proper Sorani, with all its vowels written out.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2540,7 +2537,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.ig.h3">Instagram</h3>
-            <p data-i18n="app.ig.p">Instagram's Kurdish communities are thriving — paste captions in authentic Sorani or Kurmanji and reach millions across the Middle East and diaspora, from the Rif mountains to European cities.</p>
+            <p data-i18n="app.ig.p">Captions in Sorani script read as Kurdish at a glance, not as Arabic or Persian.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2551,7 +2548,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.tt.h3">TikTok</h3>
-            <p data-i18n="app.tt.p">YouTube's Kurdish content explodes daily — paste comments, titles, and descriptions in proper Kurdish that displays correctly even though most devices ship without Kurdish keyboards by default.</p>
+            <p data-i18n="app.tt.p">Write captions and comments in Kurdish, typed here on a phone with no Kurdish layout.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2562,27 +2559,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 </section>
 
 <!-- BRAND -->
-<section class="brand-sec" style="display:none">
-  <div class="brand-card">
-    <div class="b-icon">
-      <img loading="lazy" id="brand-logo-img" src="../images/LOGO-Footer-Keyboardarabe-online.svg" alt="Kactyl">
-    </div>
-    <div class="b-div"></div>
-    <div class="b-info">
-      <div class="b-name">
-        <span><span class="b-en-word">Arabi</span> Keyboard</span>
-        <span class="b-ar-word">عربي كيبورد</span>
-      </div>
-      <div class="b-domain">kactyl.com</div>
-      <div class="b-tag" data-i18n="brand.tag">Type Kurdish from any device without installation</div>
-      <div class="b-badges">
-        <span class="b-badge green" data-i18n="brand.badge1">✓ 100% Free</span>
-        <span class="b-badge blue"  data-i18n="brand.badge2">⚡ No Install</span>
-        <span class="b-badge red"   data-i18n="brand.badge3">📱 All Devices</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- FAQ PROMO -->
 <section class="faq-promo">
@@ -2609,7 +2585,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 
 <section class="seo-dark">
   <div class="seo-dark-inner">
-    <div class="seo-dark-label">Free Kurdish Keyboard</div>
     <h2>Free Kurdish Keyboard Online.<br>Type from any device — no download, no install.</h2>
     <div class="seo-dark-stats">
       <span><strong>100%</strong> free</span>
@@ -2621,15 +2596,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <p>Kurdish orthography developed in two distinct paths. <strong>For Sorani (Central Kurdish)</strong>, early 20th-century intellectuals like Mulla Krekar and Muhammad Zahari developed written conventions. Kurdish journalism in Iraq during the <strong>1920s–1930s established writing norms</strong>, and <strong>in 1945, the Kurdish literary association Komalai Zarkoî formalized Sorani orthography</strong> — though no single official standardization date exists. <strong>For Kurmanji (Northern Kurdish), the 1932 Hawar gathering in Syria marked the revolutionary shift to Latin alphabet</strong>, formally replacing Ottoman/Arabic script. Kurmanji remained banned in Turkey for 37 years (1924–1991) until language restrictions were lifted. Today, <strong>Sorani uses Arabic-based script (official in Iraq and parts of Iran)</strong>, while <strong>Kurmanji uses Latin alphabet (especially in Turkey and diaspora)</strong>.</p>
     <p><strong>Sorani (Central Kurdish) writes all vowels as full letters</strong> — ە (schwa), ا (a), ی (i), ۆ (o), ێ (e), ۊ (u) — unlike Arabic/Persian where vowels are optional diacritical marks. Sorani also has <strong>unique consonants not in standard Arabic: ڤ (v), ڵ (ł/heavy l), ژ (zh), چ (ch)</strong>. <strong>Kurmanji uses the Latin alphabet with diacritics</strong> (c, ç, g, ğ, ş, û, ê, î) to represent Kurdish sounds. <strong>The Sorani–Kurmanji script split is the defining challenge</strong>: the same language uses completely different writing systems depending on geography and diaspora choice. Many diaspora users grew up speaking Kurdish but learning two distinct scripts (Sorani's Arabic-based, Kurmanji's Latin-based) remains a barrier for digital literacy.</p>
     <p><strong>WhatsApp is the dominant platform across all Kurdish regions</strong>, followed by <strong>Telegram (especially popular in Iran due to WhatsApp restrictions) and Facebook</strong> in Iraq and Syria where internet infrastructure is more developed. <strong>YouTube consumption is significant but content creation lags</strong>. <strong>The Amazigh diaspora is substantial and concentrated</strong>: Germany hosts the largest community (900,000–1.2 million Kurdish speakers), Sweden (200,000–300,000), Netherlands (100,000–150,000), France (80,000–100,000), Belgium (50,000–70,000), UK (40,000–60,000), North America (30,000–50,000 combined). <strong>Diaspora youth increasingly mix both scripts and use Latin transliteration</strong>, while older diaspora maintains Sorani Arabic script. Regional script incompatibility means users often need to switch contexts between Sorani and Kurmanji, making phonetic/transliteration keyboards particularly valuable.</p>
-    <div class="seo-dark-steps">
-      <span class="seo-dark-step">1. Open kactyl.com/kurdish/</span>
-      <span class="seo-dark-arr">→</span>
-      <span class="seo-dark-step">2. Click letters</span>
-      <span class="seo-dark-arr">→</span>
-      <span class="seo-dark-step">3. Copy</span>
-      <span class="seo-dark-arr">→</span>
-      <span class="seo-dark-step">4. Paste anywhere</span>
-    </div>
   </div>
 </section>
 
@@ -2642,7 +2608,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         </div>
       </a>
     </div>
-<!-- SIGNATURE MODULE: Inside the Kurdish alphabet (Sorani & Kurmanji) -->
 <section class="sig-sec">
   <style>
     .sig-sec{padding:64px 0;background:linear-gradient(180deg,rgba(206,17,38,.045),transparent 30%)}
@@ -2663,7 +2628,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     .sig-card p b{color:var(--text,#1E293B);font-weight:700}
     .sig-ex{margin-top:10px;font-size:14px;color:var(--text,#1E293B);background:rgba(206,17,38,.05);border-radius:10px;padding:8px 12px;display:inline-block;direction:rtl}
     .sig-hero-card{background:linear-gradient(135deg,#fef0f1 0%,#fef5f6 55%,#fef8f9 100%);border:1px solid rgba(206,17,38,.16)}.sig-hero-card .sig-letters b{background:rgba(206,17,38,.10)}.sig-hero-card .sig-ex{background:rgba(206,17,38,.08)}
-    .sig-letters b{font-family:'Tajawal', sans-serif;font-size:30px;line-height:1.5}
+    .sig-letters b{font-family:'Noto Naskh Arabic', sans-serif;font-size:30px;line-height:1.5}
   </style>
   <div class="wrap">
     <div class="sig-hd">
@@ -2713,10 +2678,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <div class="faq-hd-left">
         <div class="faq-hd-badge">FAQ</div>
         <h2>Frequently Asked<br><span style="color:var(--blue)">Questions</span></h2>
-        <p>Everything you need to know about the Kurdish keyboard</p>
       </div>
       <div class="faq-hd-right">
-        <img src="../images/mascot-thumsup.svg" alt="" class="faq-mascot-2">
+        <img src="../images/Mascot-3.svg" alt="" class="faq-mascot-2">
         <svg class="faq-sparkle" style="top:-8px;right:52px;width:28px;height:28px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#0068FF"/></svg>
         <svg class="faq-sparkle" style="top:28px;right:12px;width:18px;height:18px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#0068FF" opacity=".7"/></svg>
         <svg class="faq-sparkle" style="top:5px;right:-8px;width:12px;height:12px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#0068FF" opacity=".5"/></svg>
@@ -2878,53 +2842,18 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   <div class="more-kbs-hd">
     <div>
       <p class="more-kbs-sup">Need Another <span style="color:var(--blue)">Language?</span></p>
-      <h2 class="more-kbs-title">300+ Free Keyboards, All Online</h2>
+      <h2 class="more-kbs-title">Free Keyboards, All Online</h2>
     </div>
     <a href="/keyboards/" class="more-kbs-all">View all <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
   <div class="more-kbs-grid">
-    <a href="/arabic/"        class="kb-chip"><span class="kb-chip-flag">🇸🇦</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic</span><span class="kb-chip-native">العربية</span></div></a>
-    <a href="../amazigh/"     class="kb-chip"><span class="kb-chip-flag"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;vertical-align:middle;display:inline-block"><rect width="20" height="4.67" fill="#0070B8"/><rect y="4.67" width="20" height="4.67" fill="#3CB034"/><rect y="9.33" width="20" height="4.67" fill="#FFD700"/><text x="10" y="10.8" text-anchor="middle" font-size="8" fill="#CE1126" font-family="sans-serif">ⵣ</text></svg></span><div class="kb-chip-info"><span class="kb-chip-name">Amazigh</span><span class="kb-chip-native">ⵜⴰⵎⴰⵣⵉⵖⵜ</span></div></a>
-    <a href="../amharic/"     class="kb-chip"><span class="kb-chip-flag">🇪🇹</span><div class="kb-chip-info"><span class="kb-chip-name">Amharic</span><span class="kb-chip-native">አማርኛ</span></div></a>
-    <a href="../bengali/"     class="kb-chip"><span class="kb-chip-flag">🇧🇩</span><div class="kb-chip-info"><span class="kb-chip-name">Bengali</span><span class="kb-chip-native">বাংলা</span></div></a>
-    <a href="../de/"          class="kb-chip"><span class="kb-chip-flag">🇩🇪</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (DE)</span><span class="kb-chip-native">Deutsch</span></div></a>
-    <a href="../es/"          class="kb-chip"><span class="kb-chip-flag">🇪🇸</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (ES)</span><span class="kb-chip-native">Español</span></div></a>
-    <a href="../filipino/"    class="kb-chip"><span class="kb-chip-flag">🇵🇭</span><div class="kb-chip-info"><span class="kb-chip-name">Filipino</span><span class="kb-chip-native">Filipino</span></div></a>
-    <a href="../fr/"          class="kb-chip"><span class="kb-chip-flag">🇫🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (FR)</span><span class="kb-chip-native">Français</span></div></a>
-    <a href="../greek/"       class="kb-chip"><span class="kb-chip-flag">🇬🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Greek</span><span class="kb-chip-native">Ελληνικά</span></div></a>
-    <a href="../it/"          class="kb-chip"><span class="kb-chip-flag">🇮🇹</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (IT)</span><span class="kb-chip-native">Italiano</span></div></a>
-    <a href="../kurdish/"     class="kb-chip"><span class="kb-chip-flag"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;vertical-align:middle;display:inline-block"><rect width="20" height="4.67" fill="#CE1126"/><rect y="4.67" width="20" height="4.67" fill="#FFFFFF"/><rect y="9.33" width="20" height="4.67" fill="#007A3D"/><circle cx="10" cy="7" r="3" fill="#FFD700"/><circle cx="10" cy="7" r="1.5" fill="#CE1126"/></svg></span><div class="kb-chip-info"><span class="kb-chip-name">Kurdish</span><span class="kb-chip-native">کوردی</span></div></a>
-    <a href="../marathi/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Marathi</span><span class="kb-chip-native">मराठी</span></div></a>
-    <a href="../nepali/"      class="kb-chip"><span class="kb-chip-flag">🇳🇵</span><div class="kb-chip-info"><span class="kb-chip-name">Nepali</span><span class="kb-chip-native">नेपाली</span></div></a>
-    <a href="../nl/"          class="kb-chip"><span class="kb-chip-flag">🇳🇱</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (NL)</span><span class="kb-chip-native">Nederlands</span></div></a>
-    <a href="../pashto/"      class="kb-chip"><span class="kb-chip-flag">🇦🇫</span><div class="kb-chip-info"><span class="kb-chip-name">Pashto</span><span class="kb-chip-native">پښتو</span></div></a>
-    <a href="../persian/"     class="kb-chip"><span class="kb-chip-flag">🇮🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Farsi</span><span class="kb-chip-native">فارسی</span></div></a>
-    <a href="../punjabi/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Punjabi</span><span class="kb-chip-native">ਪੰਜਾਬੀ</span></div></a>
-    <a href="../russian/"     class="kb-chip"><span class="kb-chip-flag">🇷🇺</span><div class="kb-chip-info"><span class="kb-chip-name">Russian</span><span class="kb-chip-native">Русский</span></div></a>
-    <a href="../sindhi/"      class="kb-chip"><span class="kb-chip-flag">🇵🇰</span><div class="kb-chip-info"><span class="kb-chip-name">Sindhi</span><span class="kb-chip-native">سنڌي</span></div></a>
-    <a href="../somali/"      class="kb-chip"><span class="kb-chip-flag">🇸🇴</span><div class="kb-chip-info"><span class="kb-chip-name">Somali</span><span class="kb-chip-native">Soomaali</span></div></a>
-    <a href="../tamil/"       class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Tamil</span><span class="kb-chip-native">தமிழ்</span></div></a>
-    <a href="../telugu/"      class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Telugu</span><span class="kb-chip-native">తెలుగు</span></div></a>
-    <a href="../kannada/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Kannada</span><span class="kb-chip-native">ಕನ್ನಡ</span></div></a>
-    <a href="../yoruba/"      class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Yoruba</span><span class="kb-chip-native">Yorùbá</span></div></a>
-    <a href="../vietnamese/"  class="kb-chip"><span class="kb-chip-flag">🇻🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Vietnamese</span><span class="kb-chip-native">Tiếng Việt</span></div></a>
-    <a href="../tigrinya/"    class="kb-chip"><span class="kb-chip-flag">🇪🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Tigrinya</span><span class="kb-chip-native">ትግርኛ</span></div></a>
-    <a href="../thai/"        class="kb-chip"><span class="kb-chip-flag">🇹🇭</span><div class="kb-chip-info"><span class="kb-chip-name">Thai</span><span class="kb-chip-native">ภาษาไทย</span></div></a>
-    <a href="../mongolian/"   class="kb-chip"><span class="kb-chip-flag">🇲🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Mongolian</span><span class="kb-chip-native">Монгол</span></div></a>
-    <a href="../malayalam/"   class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Malayalam</span><span class="kb-chip-native">മലയാളം</span></div></a>
-    <a href="../korean/"      class="kb-chip"><span class="kb-chip-flag">🇰🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Korean</span><span class="kb-chip-native">한국어</span></div></a>
-    <a href="../japanese/"    class="kb-chip"><span class="kb-chip-flag">🇯🇵</span><div class="kb-chip-info"><span class="kb-chip-name">Japanese</span><span class="kb-chip-native">日本語</span></div></a>
-    <a href="../igbo/"        class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Igbo</span><span class="kb-chip-native">Igbo</span></div></a>
-    <a href="../hausa/"       class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Hausa</span><span class="kb-chip-native">Hausa</span></div></a>
-    <a href="../gujarati/"    class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Gujarati</span><span class="kb-chip-native">ગુજરાતી</span></div></a>
-    <a href="../chinese/"     class="kb-chip"><span class="kb-chip-flag">🇨🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Chinese</span><span class="kb-chip-native">中文</span></div></a>
-    <a href="../burmese/"     class="kb-chip"><span class="kb-chip-flag">🇲🇲</span><div class="kb-chip-info"><span class="kb-chip-name">Burmese</span><span class="kb-chip-native">မြန်မာ</span></div></a>
-    <a href="../turkish/"     class="kb-chip"><span class="kb-chip-flag">🇹🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Turkish</span><span class="kb-chip-native">Türkçe</span></div></a>
-    <a href="../urdu/"        class="kb-chip"><span class="kb-chip-flag">🇵🇰</span><div class="kb-chip-info"><span class="kb-chip-name">Urdu</span><span class="kb-chip-native">اردو</span></div></a>
     <a href="../uyghur/"      class="kb-chip"><span class="kb-chip-flag"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;vertical-align:middle;display:inline-block"><rect width="20" height="14" fill="#1F6FD0"/><circle cx="7" cy="7" r="4" fill="white"/><circle cx="8.3" cy="7" r="3.2" fill="#1F6FD0"/><polygon points="14,3.5 14.5,4.81 15.9,4.88 14.81,5.76 15.18,7.12 14,6.35 12.82,7.12 13.19,5.76 12.1,4.88 13.5,4.81" fill="white"/></svg></span><div class="kb-chip-info"><span class="kb-chip-name">Uyghur</span><span class="kb-chip-native">ئۇيغۇرچە</span></div></a>
+    <a href="../amazigh/"     class="kb-chip"><span class="kb-chip-flag"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;vertical-align:middle;display:inline-block"><rect width="20" height="4.67" fill="#0070B8"/><rect y="4.67" width="20" height="4.67" fill="#3CB034"/><rect y="9.33" width="20" height="4.67" fill="#FFD700"/><text x="10" y="10.8" text-anchor="middle" font-size="8" fill="#CE1126" font-family="sans-serif">ⵣ</text></svg></span><div class="kb-chip-info"><span class="kb-chip-name">Amazigh</span><span class="kb-chip-native">ⵜⴰⵎⴰⵣⵉⵖⵜ</span></div></a>
+    <a href="/arabic/"        class="kb-chip"><span class="kb-chip-flag">🇸🇦</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic</span><span class="kb-chip-native">العربية</span></div></a>
+    <a href="../persian/"     class="kb-chip"><span class="kb-chip-flag">🇮🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Farsi</span><span class="kb-chip-native">فارسی</span></div></a>
+    <a href="../urdu/"        class="kb-chip"><span class="kb-chip-flag">🇵🇰</span><div class="kb-chip-info"><span class="kb-chip-name">Urdu</span><span class="kb-chip-native">اردو</span></div></a>
     <a href="/keyboards/" class="kb-discover">
       <div class="kb-discover-top">
-        <span class="kb-discover-count">+264 more</span>
         <span class="kb-discover-arr">→</span>
       </div>
       <div class="kb-discover-label">Discover all keyboards</div>
@@ -2932,183 +2861,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="kb-discover-flags-inner">🇸🇦 🇮🇳 🇮🇷 🇵🇰 🇧🇩 🇹🇷 🇷🇺 🇰🇷 🇯🇵 🇨🇳 🇩🇪 🇫🇷 🇬🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇭 🇳🇵 🇲🇦 🇸🇴 🇪🇹 🇻🇳 🇹🇭 🇲🇳 &nbsp;🇸🇦 🇮🇳 🇮🇷 🇵🇰 🇧🇩 🇹🇷 🇷🇺 🇰🇷 🇯🇵 🇨🇳 🇩🇪 🇫🇷 🇬🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇭 🇳🇵 🇲🇦 🇸🇴 🇪🇹 🇻🇳 🇹🇭 🇲🇳</div>
       </div>
     </a>
-  </div>
-</div>
-
-<!-- More Text Tools -->
-<div class="more-tools">
-  <div class="more-tools-hd">
-    <div>
-      <p class="more-tools-sup">Need More Text <span style="color:var(--blue)">Tools?</span></p>
-      <h2 class="more-tools-title">Fancy Text, Unicode &amp; More</h2>
-    </div>
-    <a href="/symbols/" class="more-kbs-all">Explore all <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div>
-  <div class="more-tools-grid" id="toolsScroll">
-
-    <!-- Symbols -->
-    <a href="/symbols/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/>
-            <path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity=".82"/>
-            <path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1l1 2.4 2.5.35-1.8 1.75.42 2.5L5.5 6.7 3.38 8l.42-2.5L2 3.75l2.5-.35Z" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Symbols</span>
-      <span class="tool-card-desc">Stars, arrows, hearts & 10K+</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Fancy Text -->
-    <a href="/fancy-text/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M3 9L5.5 2l2.5 7M4.2 6.2h2.6" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg></span>
-      </div>
-      <span class="tool-card-name">Fancy Text</span>
-      <span class="tool-card-desc">100+ Unicode styles instantly</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Kaomoji -->
-    <a href="/kaomoji/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 6Q5.5 9.5 8.5 6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="3.5" cy="3.5" r="1.1" fill="#fff"/><circle cx="7.5" cy="3.5" r="1.1" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Kaomoji</span>
-      <span class="tool-card-desc">Text emoticons for chat & Discord</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Invisible Char -->
-    <a href="/invisible-character/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/>
-            <line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".6"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><circle cx="5.5" cy="5.5" r="3.8" stroke="#fff" stroke-width="1.3"/><path d="M3 3l5 5" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-      </div>
-      <span class="tool-card-name">Invisible Char</span>
-      <span class="tool-card-desc">Zero-width blank spaces</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Zalgo Text -->
-    <a href="/zalgo-text/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".35"/>
-            <line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 7.5h6M2.5 3.5h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 3.5L4 7.5" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity=".6"/></svg></span>
-      </div>
-      <span class="tool-card-name">Zalgo Text</span>
-      <span class="tool-card-desc">G̸l̷i̴t̵c̸h̵ corrupted text</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Text Art -->
-    <a href="/text-art/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/>
-            <circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/>
-            <path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/>
-            <line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity=".38"/>
-            <line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity=".38"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1" y="1" width="3" height="3" rx=".8" fill="#fff"/><rect x="5" y="1" width="3" height="3" rx=".8" fill="#fff" opacity=".6"/><rect x="1" y="5" width="3" height="3" rx=".8" fill="#fff" opacity=".6"/><rect x="5" y="5" width="3" height="3" rx=".8" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Text Art</span>
-      <span class="tool-card-desc">ASCII art from any text</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- Dot Art -->
-    <a href="/dot-art/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity=".3"/>
-            <circle cx="9" cy="4.5" r="2" fill="#0068ff"/>
-            <circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity=".5"/>
-            <circle cx="4" cy="9.5" r="2" fill="#0068ff"/>
-            <circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity=".35"/>
-            <circle cx="14" cy="9.5" r="2" fill="#0068ff"/>
-            <circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity=".5"/>
-            <circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity=".2"/>
-            <circle cx="14" cy="14.5" r="2" fill="#0068ff"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1.5" y="1.5" width="3" height="3" rx="1" fill="#fff"/><rect x="6.5" y="1.5" width="3" height="3" rx="1" fill="#fff"/><rect x="1.5" y="6.5" width="3" height="3" rx="1" fill="#fff"/><rect x="6.5" y="6.5" width="3" height="3" rx="1" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Dot Art</span>
-      <span class="tool-card-desc">Pixel art & dot illustrations</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-    <!-- FF & PUBG Names -->
-    <a href="/free-fire-name/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/>
-            <line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/>
-            <line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/>
-            <circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1.5" y="4" width="3.5" height="2.5" rx=".8" fill="#fff" opacity=".6"/><rect x="2.5" y="3" width="1.5" height="4.5" rx=".8" fill="#fff" opacity=".6"/><circle cx="8" cy="4" r="1.2" fill="#fff"/><circle cx="8" cy="7" r="1.2" fill="#fff" opacity=".6"/></svg></span>
-      </div>
-      <span class="tool-card-name">FF & PUBG Names</span>
-      <span class="tool-card-desc">Stylish gaming usernames</span>
-      <span class="tool-card-open">OPEN</span>
-    </a>
-
-  </div>
-  <div class="more-tools-dots">
-    <span class="mtd active"></span>
-    <span class="mtd"></span>
-    <span class="mtd"></span>
   </div>
 </div>
 
@@ -3129,20 +2881,19 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <span class="ft-badge b">⚡ No Install</span>
       </div>
       <div class="ft-social">
-        <a href="https://x.com/kactyl" class="ft-soc-link" aria-label="X / Twitter" target="_blank" rel="noopener">
+        <span class="ft-soc-link" aria-label="X / Twitter">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-        </a>
-        <a href="https://instagram.com/kactyl" class="ft-soc-link" aria-label="Instagram" target="_blank" rel="noopener">
+        </span>
+        <span class="ft-soc-link" aria-label="Instagram">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://youtube.com/@kactyl" class="ft-soc-link" aria-label="YouTube" target="_blank" rel="noopener">
+        </span>
+        <span class="ft-soc-link" aria-label="YouTube">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-        <a href="https://tiktok.com/@kactyl" class="ft-soc-link" aria-label="TikTok" target="_blank" rel="noopener">
+        </span>
+        <span class="ft-soc-link" aria-label="TikTok">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-        </a>
-      </div>
-    </div>
+        </span>
+      </div></div>
 
     <!-- Keyboards -->
     <div class="ft-col">
@@ -3231,9 +2982,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 <script>
 /* ── DATA ── */
 const ROWS = [
-  ['ق','و','ع','ر','ت','ی','پ','ا','ه','ح','ج','چ'],
-  ['ئ','س','د','ف','گ','ط','ژ','ک','ل','م','ن'],
-  ['SHIFT','ز','ش','ب','ۆ','خ','غ','ڵ','ڕ','ڤ','ێ','BSP'],
+  ['ق','و','ە','ر','ڕ','ت','ی','ێ','ئ','ح','ع','ۆ'],
+  ['پ','ا','س','ش','د','ف','گ','غ','ه','ژ','ک','ل'],
+  ['SHIFT','ڵ','ز','خ','ج','چ','ڤ','ب','ن','م','BSP'],
   ['N123','EMOJI','TASHKEEL','SPACE','DOT','FRANCO','ENTER']
 ];
 
@@ -3247,23 +2998,22 @@ const SPEC_CHARS = [
 const FL = {
   'ق':'q',  'و':'w',  'ع':"'", 'ر':'r',  'ت':'t',  'ی':'y',
   'پ':'p',  'ا':'a',  'ه':'h', 'ح':'H',  'ج':'j',  'چ':'ch',
-  'ئ':'e',  'س':'s',  'د':'d', 'ف':'f',  'گ':'g',  'ط':'T',  'ژ':'zh',
+  'ئ':'ʼ',  'س':'s',  'د':'d', 'ف':'f',  'گ':'g',  'ط':'T',  'ژ':'zh',
   'ک':'k',  'ل':'l',  'م':'m', 'ن':'n',
   'ز':'z',  'ش':'sh', 'ب':'b', 'ۆ':'o',  'خ':'kh', 'غ':'gh',
-  'ڵ':'ll', 'ڕ':'rr', 'ڤ':'v', 'ێ':'ee'
+  'ڵ':'ll', 'ڕ':'rr', 'ڤ':'v', 'ێ':'ee', 'ە':'e'
 };
 
-const PHYS = {
-  'q':'ق','w':'و','e':'ع','r':'ر','t':'ت','y':'ی','u':'ئ','i':'ه','o':'ح','p':'پ',
-  'a':'ا','s':'س','d':'د','f':'ف','g':'گ','h':'ه','j':'ج','k':'ک','l':'ل',';':'؛',"'":'ئ',
-  'z':'ز','x':'ش','c':'چ','v':'ژ','b':'ب','n':'ن','m':'م',',':'،','.':'۔','/':'؟','`':'ع'
-};
+const PHYS = {"q": "ق", "w": "و", "e": "ە", "r": "ر", "t": "ت", "y": "ی", "u": "ئ", "i": "ح", "o": "ۆ", "p": "پ", "a": "ا", "s": "س", "d": "د", "f": "ف", "g": "گ", "h": "ه", "j": "ژ", "k": "ک", "l": "ل", "z": "ز", "x": "خ", "c": "ج", "v": "ڤ", "b": "ب", "n": "ن", "m": "م"};
+
+const PHYS_SHIFT = {"w": "وو", "e": "ي", "r": "ڕ", "t": "ط", "y": "ێ", "u": "ء", "i": "ع", "o": "ؤ", "p": "ث", "a": "آ", "s": "ش", "d": "ذ", "f": "إ", "g": "غ", "j": "أ", "l": "ڵ", "z": "ض", "x": "ص", "c": "چ", "b": "ى", "n": "ة", "m": "ـ"};
 
 const TASH = [
   {c:'َ',l:'a'},{c:'ِ',l:'e'},{c:'ُ',l:'o'},
   {c:'ّ',l:'~'},{c:'ْ',l:'0'},{c:'ً',l:'an'},
   {c:'ٍ',l:'en'},{c:'ٌ',l:'on'},{c:'ـ',l:'_'},
-  {c:'آ',l:'aa'},{c:'اً',l:'n'},{c:'إ',l:'e'}
+  {c:'آ',l:'aa'},{c:'اً',l:'n'},{c:'إ',l:'e'},
+  {c:'‌',l:'‌'}, {c:'ھ',l:'h'}, {c:'ط',l:'ط'}
 ];
 
 const EMOJI_CATS_DATA = {
@@ -3279,7 +3029,7 @@ const EMOJI_CATS_DATA = {
   '🚩': { label:'Flags', emojis:['🇸🇦','🇦🇪','🇪🇬','🇲🇦','🇩🇿','🇹🇳','🇱🇾','🇸🇩','🇾🇪','🇸🇾','🇮🇶','🇯🇴','🇵🇸','🇱🇧','🇰🇼','🇧🇭','🇶🇦','🇴🇲','🇮🇷','🇹🇷','🇺🇸','🇨🇦','🇲🇽','🇧🇷','🇦🇷','🇨🇱','🇨🇴','🇵🇪','🇻🇪','🇬🇧','🇫🇷','🇩🇪','🇪🇸','🇮🇹','🇵🇹','🇳🇱','🇧🇪','🇨🇭','🇦🇹','🇸🇪','🇳🇴','🇩🇰','🇫🇮','🇵🇱','🇺🇦','🇷🇺','🇬🇷','🇨🇿','🇭🇺','🇷🇴','🇧🇬','🇷🇸','🇭🇷','🇸🇰','🇸🇮','🇮🇪','🇮🇸','🇨🇳','🇯🇵','🇰🇷','🇮🇳','🇵🇰','🇧🇩','🇮🇩','🇲🇾','🇸🇬','🇹🇭','🇻🇳','🇵🇭','🇰🇭','🇱🇦','🇲🇲','🇳🇵','🇱🇰','🇦🇺','🇳🇿','🇿🇦','🇳🇬','🇰🇪','🇪🇹','🇬🇭','🇹🇿','🇺🇬','🇨🇲','🏳️','🏴','🏁','🚩','🎌'] }
 };
 
-const WORDS = ["لە", "بە", "کە", "بۆ", "ئەم", "ئەو", "بوو", "ساڵی", "بووە", "لەگەڵ", "وەک", "دا", "بەڵام", "دوای", "کرد", "لەسەر", "یان", "ژمارەی", "ھەیە", "خۆی", "ھەروەھا", "کەس", "زۆر", "ھەر", "ئەوەی", "لەلایەن", "دوو", "دەکات", "وە", "سەر", "لەو", "تا", "ناوی", "یەکەم", "کردووە", "دواتر", "بوون", "چەند", "بەھۆی", "ھەموو", "دەبێت", "دەنگی", "کاری", "شاری", "ناو", "تر", "لەم", "پەسندکرا", "زیاتر", "ساڵ", "فیلمی", "نێوان", "بێت", "یەک", "کۆبوونەوەی", "دژ", "ناحیەی", "دروست", "دەکرێت", "بڕیارنامەیە", "کاتێک", "جار", "کەوتووەتە", "بکات", "یەکێک", "ماوەی", "دەستی", "دەست", "پێی", "ھۆی", "پێ", "بێ‌لایەن", "پێش", "بەشی", "دانیشتووانی", "ئێستا", "سێ", "بێ", "دەکەن", "ئەوە", "ھەندێک", "نییە", "یەکەمی", "گوندێکە", "گشتی", "چەندین", "فیلمەکە", "زۆربەی", "کوردستان", "سەرەکی", "باوکی", "کوردی", "دەکرد", "بوونی", "لێ", "خەڵاتی", "کۆتایی", "زۆری", "کراوە", "ھەبوو", "کاتی", "دووەمی", "زمانی", "ناوەندی", "ھیچ", "سەدەی", "بەسەر", "دەدات", "کرا", "ژیانی", "ئەگەر", "چونکە", "تەمەنی", "کردنی", "کار", "ئەمەش", "دووەم", "ئەمە", "جۆرە", "باشترین", "پلەی", "کانوونی", "ئەوا", "بۆیە", "ڕۆڵی", "لەبەر", "مرۆڤ", "تایبەت", "تشرینی", "ناوچەی", "سەرۆکی", "گەورە", "ئەمریکا", "ئێران", "تەنھا", "ھەمان", "ڕۆژی", "خۆیان", "جیھان", "بەناوی", "زانکۆی", "نزیکەی", "خەڵکی", "دێت", "جیھانی", "وەکوو", "شێوەی", "کۆچی", "چوار", "واتە", "ڕووی", "عێراق", "کەم", "زانستی", "بەرامبەر", "بواری", "بنەماڵەدا", "جۆری", "خاوەنی", "گوندە", "بەردەوام", "کورد", "شوێنی", "زەوی", "بەکار", "ساڵانی", "لای", "ئەوان", "بکەن", "تری", "یا", "سەردەمی", "دیکە", "بەم", "خێزان", "میلیۆن", "پاش", "ژێر", "تەواوی", "لەساڵی", "وەکو", "دەبێتە", "پاشان", "ئازاری", "دەکەوێتە", "وا", "بەپێی", "یاری", "یەکەمین", "مێژووی", "شێوەیەکی", "مافی", "کەسە", "نوێ", "هەروەها", "بەرەو", "تێیدا", "تەواو", "نەخۆشی", "ئەندامی", "کوڕی", "کردن", "ئەنجام", "بڵاو", "توانای", "مانگی", "لایەن", "تایبەتی", "دەبێ", "ناسراوە", "دانیشتوانی", "لەکاتی", "پێک", "ڕێژەی", "بەر", "گەرمی", "هەیە", "ئاستی", "ھەتا", "بەکارھێنانی", "توانی", "تێدا", "سەرۆک", "شێوازی", "وڵاتی", "بەو", "پەیوەندی", "بریتییە", "دایک", "جیاواز", "ھاتووە", "دەگەڕێتەوە", "بەرھەم", "نێو", "ھەردوو", "یارمەتی", "بەدەست", "لەوێ", "ئەمریکی", "تەنیا", "دوایی", "بەشێوەیەکی", "ئینگلیزی", "دژی", "لەژێر", "دەبن", "کتێبی", "گوندی", "وڵات", "نزیک", "وشەی", "یاخود", "وەرزی", "گەورەی", "باسی", "باشووری", "داوای", "بەشداری", "ژیان", "تێدایە", "بزوێنەری", "دەتوانن", "وڵاتە", "ھەبووە", "دەربارەی", "شێخ", "ڕێگەی", "گۆرانی", "من", "هەر", "سیاسی", "کات", "تووشی", "حکوومەتی", "کەوا", "یەکێکە", "ئەوەیە", "لەوانەیە", "بەرز", "خێرایی", "کردەوە", "ھێنا", "سەرەتای", "پێنج", "کاریگەری", "ھەزار", "زنجیرە", "عەرەبی", "ئەنجامی", "تاکوو", "خوێندنی", "بەشێک", "ئەویش", "کۆمەڵایەتی", "جیاوازی", "قوتابخانەی", "دایکی", "لەناو", "دەکرێ", "کارەکانی", "دامەزراوە", "یە", "لەنێوان", "گرنگی", "وایە", "کردبوو", "بی", "جگە", "دە", "لەدایکبووی", "لەدوای", "ویلایەتە", "گەورەترین", "ھێزی", "جەنگی", "دووبارە", "دادەنرێت", "داوە", "جامی", "سی", "ھەندێ", "ئاوی", "پێویستە", "کارە", "خەڵک", "وەرگرت", "بەشێکی", "دیاری", "ملیۆن", "پێشکەش", "شارەکە", "کەسی", "دەتوانێت", "ھات", "شێوە", "بن", "دەکا", "چارەسەری", "بڵاوکرایەوە", "نەبوو", "دروستکردنی", "شەڕی", "کەسێک", "ئاو", "بکرێت", "ئایاری", "باس", "مردنی", "عەلی", "پێکەوە", "دەڵێت", "ساڵیدا", "سلێمانی", "فیلم", "سیستەمی", "چاپ", "ڕۆژھەڵاتی", "کۆمەڵەی", "دی", "ئازادی", "ڕۆژاوا", "ئابووری", "دەرکەوت", "ھەبێت", "نموونە", "ئابی", "دوور", "زیاد", "پارتی", "کۆماری", "کۆمپانیای", "ھەم", "یاسای", "ئاسایی", "ئایینی", "دەبێتەوە", "دەدا", "دەڵێن", "زنجیرەی", "پێیان", "بەبێ", "دۆلار", "ناوەند", "ھەوا", "تورکیا", "زنجیرەکە", "خوێندن", "یەکگرتووەکان", "ببێتە", "قەزای", "سەربازی", "دەکاتەوە", "وتی", "تەندروستی", "ھەن", "ئەکتەر", "ئەوانەی", "بریتیە", "دۆلاری", "دەسەڵاتی", "فەرمی", "وێنەی", "پزیشکی", "ئامێری", "دەوڵەتی", "شەش", "ڕێگای", "کەسانی", "دەوترێت", "دەرەوە", "شار", "ئەیلوولی", "باری", "حوزەیرانی", "چۆن", "ھەرێمی", "قۆناغی", "کەمتر", "خۆیدا", "هەموو", "زایینی", "بەرھەمی", "خێزانی", "دەستەی", "زۆرجار", "زۆرێک", "وڵاتانی", "پێکھاتووە", "بەتایبەت", "خاڵی", "ناوچە", "پێشتر", "وای", "ژمارە", "کۆمەڵە", "نا", "چین", "دەنگ", "دەرچوو", "دامەزرا", "بڕی", "خاوەن", "سەرەتا", "نووسینی", "وزەی", "پاراستنی", "ڕووبەری", "ھونەری", "باش", "وەزیری", "ڕێکەوتی", "کەسێکی", "ھەرچەندە", "بەکاردێت", "ئەحمەد", "بدات", "درێژایی", "دەکاتە", "نوێی", "نیسانی", "ھەمیشە", "بەرزی", "شارە", "نێودەوڵەتی", "کەسایەتی", "ئەورووپا", "تەنانەت", "دایە", "نووسەر", "وەرگرتووە", "پێدرا", "درا", "ئەندامانی", "مامۆستا", "پاشا", "ڕێکخراوی", "ژنان", "کو", "گشت", "ھۆکاری", "جۆن", "نەتەوەیی", "کەسانەی", "سەری", "لی", "ئیسلامی", "نووسین", "بەهۆی", "تاکو", "تۆپی", "دەرھێنانی", "ماوەیەکی", "مەبەستی", "ناوبراو", "پلەی گەرمی", "پێشووی", "ھێشتا", "لەوانە", "مەلا", "چووە", "ئەوەش", "باشوور", "محەممەد", "ەوە", "ئیسپانیا", "بردەوە", "بازرگانی", "باکووری", "بووەتە", "دیکەی", "دەوری", "سەبارەت", "سەرچاوەی", "شتێکی", "شیعری", "کۆمەڵێک", "ھەوڵی", "سەرەتایی", "مانگ", "ناسراو", "نەتەوە", "یەکێتی", "ئێمە", "نیە", "کەنەدا", "نەبێت", "دەژین", "ئێم", "باشتر", "بڵاوکردنەوەی", "تریش", "تی", "تەممووزی", "دانی", "درووست", "دەرەوەی", "شۆڕشی", "فیلمە", "ناوە", "واتای", "پێویستی", "چالاکی", "ژمارەیەکی", "ھاوسەرگیری", "ھێنانی", "خۆر", "پشت", "یاسا", "یانەی", "سروشتی", "دەدەن", "لەدایکبووە", "دەزگای", "سوپای", "سەرەڕای", "شوباتی", "فیلمێکی", "لەکاتێکدا", "مەتر", "هۆی", "کێشەی", "ھێرشی", "بۆی", "دەروونی", "زۆرینەی", "سپی", "ئازار", "تەنها", "شتێک", "بینی", "زمان", "وەرگیراوە", "ئامانجی", "بڵاوکراوەتەوە", "بیر", "بەوە", "خۆ", "دابەش", "سووتەمەنی", "فیلمەکانی", "لەدایک", "لەنێو", "مانای", "چاوی", "چینی", "ڕەنگی", "کەمی", "ئیسلام", "بەرھەمھێنانی", "زۆرترین", "پاڵەوانی", "دێ", "چی", "کردنەوەی", "بوە", "کرایەوە", "بڵاوکردەوە", "ڕۆژھەڵات", "کراون", "دەگرێت", "بڕوانامەی", "بەشێوەی", "بەڵکو", "بەڵگەیەکی", "جێگری", "جێی", "حیزبی", "زۆرتر", "سەردانی", "لەوەی", "لەگەل", "مافەکانی", "نازناوی", "چاودێری", "ژنانی", "گەڵ", "ئێس", "ئەی", "خوێن", "دەوروبەری", "ھەست", "زانست", "یارییەکە", "کاتەدا", "کێشە", "دەڵێ", "بابەتی", "باشی", "لایەنی", "لەمەڕ", "مۆزەخانەی", "نووسراوە", "پاڵ", "پێناسە", "ڕۆڵێکی", "کاتەی", "کۆی", "ھاوکاری", "بوونە", "خودا", "ڕاستەوخۆ", "گرت", "ئەڵمانیا", "بنەماڵەی", "جیا", "ساڵێک", "چارەسەر", "ئێرانی", "ئێستادا", "دەکرا", "ھەولێر", "دامەزراند", "دراوە", "دەردەکەوێت", "مێژوو", "پێکرد", "ئاماژەی", "بریتین", "خولی", "درێژی", "دەرکەوتنی", "لەبارەی", "ناوبانگی", "ناوچەکانی", "پریانکا", "پشتگیری", "گواستنەوەی", "یەکێتیی", "دەکرێن", "شەڕ", "ڕاگەیاند", "ڕۆمانی", "حکومەتی", "خۆشەویستی", "لەندەن", "پێکدێت", "کردوە", "ساڵە", "کاتدا", "ئەدەبی", "دەگرێتەوە", "لەش", "ئاشکرا", "ئەوانی", "بنکەی", "بەدوای", "بەرگری", "بەیەکەوە", "تیشکی", "جێگیر", "سەرکردایەتی", "قسە", "مامۆستای", "ماوەیەک", "پەرلەمانی", "کردە", "ھێزە", "ھەوای", "ھەڵبژاردنی", "ھەڵبژێردرا", "ئازاد", "ئاسمانی", "بکاتەوە", "جیھاندا", "دارایی", "دامەزراندنی", "نیوەی", "چیرۆکی", "ڕاستیدا", "کارەبا", "بچووک", "بەریتانی", "جیاوازە", "دڵ", "دیارە", "لێکۆڵینەوە", "ناوچەکە", "پێویست", "دەوڵەت", "سێیەم", "کورت", "بەدەستھێنا", "ھێناوە", "بنەمای", "بڕیاری", "بەراورد", "بەمەش", "بەناوبانگی", "تۆ", "تۆمار", "دەتوانرێت", "شتی", "قسەی", "لەلای", "لەڕێی", "مرۆڤی", "نێونەتەوەیییە", "نەک", "وەزارەتی", "پڕ", "پۆستی", "پۆلیسی", "چیای", "ڕاستەقینەی", "ڕایگەیاند", "ڕۆژ", "کاتێکدا", "کچی", "کەناڵی", "گازی", "گوند", "گۆڤاری", "گەشتی", "ھێڵی", "ھەڵبژاردەی", "یاسایی", "ئەندام", "بۆتە", "خێزانەکەی", "زانیاری", "فارسی", "فێری", "لەدەست", "ناوچەیە", "وێنە", "پیشەسازی", "پەیمانگای", "ڕوو", "کۆن", "گرووپەکە", "بەریتانیا", "سەرۆکایەتی", "منداڵی", "مەبەست", "پۆلیس", "کیلۆمەتر", "ئەمریکییە", "دەدرێت", "عوسمانی", "دەسەڵات", "ئەرکی", "ئەڵقەی", "بەش", "بەڕێوە", "جارێک", "جۆرێک", "دێتە", "دەتوانێ", "دەچێتە", "زوو", "فەرمانی", "لا", "لێی", "مۆسیقای", "نیشان", "ڕێک", "ڕەنگ", "ڕەنگە", "ژووری", "کتێبە", "یەکەمجار", "ئەمڕۆ", "بۆشایی", "بەرزترین", "بەغدا", "جوان", "دەگەرێتەوە", "زانکۆ", "سەددام", "چاو", "ڕاست", "گەشە", "درێژ", "زانستە", "مۆسیقا", "ڕەش", "تاران", "نین", "ئێستاش", "بنەماڵە", "بۆئەوەی", "تاکە", "دەریای", "ساڵەکانی", "سنووری", "شوێن", "شێوازێکی", "فڕۆکەی", "لەماوەی", "مێژوویی", "ناوەڕاستی", "نزیکی", "چوارەم", "ڕێگە", "کێشی", "گرنگترین", "گرووپی", "گیانی", "گەڕایەوە", "ھەبوونی", "ھەروەک", "ھەوڵ", "یاریزانی", "یەکەی", "بەتایبەتی", "بەرنامەی", "خوا", "دووری", "سەردەمە", "ماڵی", "مایەوە", "نمایش", "هەندێک", "پێست", "ژن", "کاتە", "گەیشتە", "ھونەر", "ئەمانە", "باو", "بنەڕەتی", "تورکی", "خوارەوە", "نووسی", "نەبووە", "تایبەتە", "كە", "ئایین", "ئەنجامدانی", "بیرۆکەی", "بەردەوامی", "بەرگی", "بەشە", "بەناو", "بەھێز", "تاوەکو", "جەستەی", "خواردنی", "دەگاتە", "سالی", "سوود", "سەروو", "سەرچاوە", "شوێنێکی", "لەڕێگەی", "مزگەوتی", "مستەفا", "نێونەتەوەیی", "وەزیرانی", "پارێزگاری", "پارێزگای", "پارێزگایە", "پیاوێکی", "پەخش", "چاپی", "چوونە", "چەکی", "ڕێکخراوە", "ژمارەیەک", "کارکردن", "کاریان", "گرنگ", "ھاتە", "ھێزەکانی", "یەکگرتووەکانی", "بەجێ", "بەڕێوەبەری", "دان", "دیاریکراو", "لەخۆ", "ماوە", "مردن", "پارچە", "پەروەردە", "تۆمارکرد", "دار", "قوتابخانە", "کیمیایی", "گاز", "ئاشتی", "ئەوەشدا", "ڕوودەدات", "ھتد", "فەڕەنسا", "ئاماژە", "ئەوانیش", "بارودۆخی", "براوەی", "بریتی", "بچووکی", "بچێتە", "بیری", "بەرھەمەکانی", "بەسەردا", "بەشەکانی", "بەمەبەستی", "بەناوبانگ", "جێگای", "خەریکی", "دابین", "دیاریکردنی", "سیاسیی", "شای", "شوێنێک", "فەرھەنگی", "مۆزەخانەکە", "ناوەڕاست", "نە", "نەخۆش", "وەرگرتنی", "پەیدا", "ڕێ", "کاتژمێر", "کوردەکان", "کوشتنی", "کۆ", "گۆڵی", "گەشەی", "ھەستی", "ئەلبومەکە", "باوەڕی", "بەرچاو", "جۆر", "جێ", "لەوە", "نیو", "نیویۆرک", "وابوو", "ڕاستی", "کفری", "ھیندستان", "باکوور", "بوونەوە", "دروستکراوە", "سوور", "سۆڤیەت", "سەربەخۆیی", "ماوەتەوە", "ڕەگەز", "کارەبایی", "درێژە", "چوو", "کۆتاییدا", "ساڵدا", "ئامادەیی", "ئایا", "ئیتر", "ئەکتەری", "بابەتە", "بزوێنەر", "بەزۆری", "بەوەی", "تاوەکوو", "توشی", "توێژینەوەی", "تێکەڵ", "جۆرەکانی", "حوکمی", "حەوت", "خان", "دانانی", "دۆزینەوەی", "سەرژمێری", "شاعیری", "شوێنە", "شێوەیە", "فراوان", "لێکۆڵینەوەی", "لەوەتەی", "ماددە", "ماددەی", "مایکڵ", "نیشانەکانی", "نیشتمانی", "هیچ", "هەردوو", "وێڕای", "وەڵامی", "پلە", "چارەسەرکردنی", "چەندەھا", "ڕووباری", "ڕوودانی", "ڕۆژنامەی", "کارکردنی", "کانی", "کۆتا", "کۆمەڵگەی", "کەوتە", "کەڵکی", "ھۆزی", "ھێرش", "ھەریەک", "یاریزان", "یەکسانە", "ئاسمان", "بو", "تازە", "جۆرج", "دەرمان", "دەستیان", "زمانەکانی", "شاعیر", "عەبدوڵڵا", "ناوەکی", "نەخۆشییە", "پایتەختی", "چاک", "ڕاستەقینە", "گوندەکانی", "بدەن", "دانا", "دیار", "دەرھێنەر", "دەکەوێت", "شا", "نووسیوە", "وزە", "ڕووسیا", "کران", "کوردستانە", "سوتەمەنی", "نابێت", "پەخشکرا", "کردنەوە", "شۆڕش", "زایین", "ببێت", "ئای", "ئینتەرنێت", "ئەکتەرێکی", "بکرێ", "بەردی", "بەڕێوبەری", "تاک", "تۆماس", "تەنێک", "جارێکی", "جێبەجێ", "جەنگ", "حاجی", "حەسەن", "خاتوو", "خزمەتی", "خستە", "خێرا", "دژایەتی", "دکتۆر", "دەچێت", "سان", "ساڵانە", "شاری سلێمانی", "فەلسەفەی", "لەڕووی", "مەترسی", "نرخی", "نموونەی", "نووسەری", "نۆ", "نەبوونی", "پاشای", "پێچەوانەی", "پەستانی", "ڕادەی", "ڕۆشنبیری", "ژاپۆن", "ژنی", "ژنە", "کارێکی", "کۆتاییی", "کۆلێژی", "کۆمەڵگای", "کۆکردنەوەی", "کیلۆمەترێکی", "کەمێک", "گۆرانییەکانی", "گەر", "ھاوکات", "ھەردووکیان", "ھەرێمی کوردستان", "ھەمووان", "ئێن", "خواردن", "ناسراون", "نەبوون", "ڕوون", "گۆڕی", "ئۆسکار", "خانەقین", "شەپۆلی", "مرد", "نەوت", "وەرزشی", "ڕووناکی", "کوژران", "ئوسترالیا", "ئیتالیا", "دەرکرد", "فەڕەنسی", "یانەکە", "یۆنان", "ڕزگاری", "ئازادیی", "ئامارەکانی", "ئینجا", "ئەفسەری", "ئەگەری", "ئەڵقە", "باڵای", "بتوانێت", "بڵاوبوونەوەی", "بەرھەمە", "تردا", "تۆرۆنتۆ", "تەمەن", "حکومەت", "حەزی", "خانەی", "داھاتی", "دروستبوونی", "دوایین", "دووجادایە", "دۆلاری ئەمریکی", "دیزاینی", "دێیە", "دەستووری", "دەوترێ", "دەیەوێت", "زمانی کوردی", "زیادکردنی", "زیندانی", "سارد", "سکرتێری", "سیستمی", "سەرکەوتنی", "سەید", "شازادە", "شووباتی", "شیعر", "عوسمان", "لێرەدا", "مەزن", "پارە", "پۆلی", "ڕای", "ڕۆژئاوای", "ڕێکخستنی", "ڕێی", "ڕەگەزی", "کاروباری", "کتێبێکی", "کۆمەڵگە", "کەش", "کەمکردنەوەی", "گرووپێکی", "گۆڕینی", "گێڕا", "ھاتنی", "ھەڵکەوتووە", "ئامادە"];
+const WORDS = ["لە", "بە", "کە", "بۆ", "ئەم", "ئەو", "بوو", "ساڵی", "بووە", "لەگەڵ", "وەک", "دا", "بەڵام", "دوای", "کرد", "لەسەر", "یان", "ژمارەی", "ھەیە", "خۆی", "ھەروەھا", "کەس", "زۆر", "ھەر", "ئەوەی", "لەلایەن", "دوو", "دەکات", "وە", "سەر", "لەو", "تا", "ناوی", "یەکەم", "کردووە", "دواتر", "بوون", "چەند", "بەھۆی", "ھەموو", "دەبێت", "دەنگی", "کاری", "شاری", "ناو", "تر", "لەم", "پەسندکرا", "زیاتر", "ساڵ", "فیلمی", "نێوان", "بێت", "یەک", "کۆبوونەوەی", "دژ", "ناحیەی", "دروست", "دەکرێت", "بڕیارنامەیە", "کاتێک", "جار", "کەوتووەتە", "بکات", "یەکێک", "ماوەی", "دەستی", "دەست", "پێی", "ھۆی", "پێ", "بێ‌لایەن", "پێش", "بەشی", "دانیشتووانی", "ئێستا", "سێ", "بێ", "دەکەن", "ئەوە", "ھەندێک", "نییە", "یەکەمی", "گوندێکە", "گشتی", "چەندین", "فیلمەکە", "زۆربەی", "کوردستان", "سەرەکی", "باوکی", "کوردی", "دەکرد", "بوونی", "لێ", "خەڵاتی", "کۆتایی", "زۆری", "کراوە", "ھەبوو", "کاتی", "دووەمی", "زمانی", "ناوەندی", "ھیچ", "سەدەی", "بەسەر", "دەدات", "کرا", "ژیانی", "ئەگەر", "چونکە", "تەمەنی", "کردنی", "کار", "ئەمەش", "دووەم", "ئەمە", "جۆرە", "باشترین", "پلەی", "کانوونی", "ئەوا", "بۆیە", "ڕۆڵی", "لەبەر", "مرۆڤ", "تایبەت", "تشرینی", "ناوچەی", "سەرۆکی", "گەورە", "ئەمریکا", "ئێران", "تەنھا", "ھەمان", "ڕۆژی", "خۆیان", "جیھان", "بەناوی", "زانکۆی", "نزیکەی", "خەڵکی", "دێت", "جیھانی", "وەکوو", "شێوەی", "کۆچی", "چوار", "واتە", "ڕووی", "عێراق", "کەم", "زانستی", "بەرامبەر", "بواری", "بنەماڵەدا", "جۆری", "خاوەنی", "گوندە", "بەردەوام", "کورد", "شوێنی", "زەوی", "بەکار", "ساڵانی", "لای", "ئەوان", "بکەن", "تری", "یا", "سەردەمی", "دیکە", "بەم", "خێزان", "میلیۆن", "پاش", "ژێر", "تەواوی", "لەساڵی", "وەکو", "دەبێتە", "پاشان", "ئازاری", "دەکەوێتە", "وا", "بەپێی", "یاری", "یەکەمین", "مێژووی", "شێوەیەکی", "مافی", "کەسە", "نوێ", "هەروەها", "بەرەو", "تێیدا", "تەواو", "نەخۆشی", "ئەندامی", "کوڕی", "کردن", "ئەنجام", "بڵاو", "توانای", "مانگی", "لایەن", "تایبەتی", "دەبێ", "ناسراوە", "دانیشتوانی", "لەکاتی", "پێک", "ڕێژەی", "بەر", "گەرمی", "هەیە", "ئاستی", "ھەتا", "بەکارھێنانی", "توانی", "تێدا", "سەرۆک", "شێوازی", "وڵاتی", "بەو", "پەیوەندی", "بریتییە", "دایک", "جیاواز", "ھاتووە", "دەگەڕێتەوە", "بەرھەم", "نێو", "ھەردوو", "یارمەتی", "بەدەست", "لەوێ", "ئەمریکی", "تەنیا", "دوایی", "بەشێوەیەکی", "ئینگلیزی", "دژی", "لەژێر", "دەبن", "کتێبی", "گوندی", "وڵات", "نزیک", "وشەی", "یاخود", "وەرزی", "گەورەی", "باسی", "باشووری", "داوای", "بەشداری", "ژیان", "تێدایە", "بزوێنەری", "دەتوانن", "وڵاتە", "ھەبووە", "دەربارەی", "شێخ", "ڕێگەی", "گۆرانی", "من", "هەر", "سیاسی", "کات", "تووشی", "حکوومەتی", "کەوا", "یەکێکە", "ئەوەیە", "لەوانەیە", "بەرز", "خێرایی", "کردەوە", "ھێنا", "سەرەتای", "پێنج", "کاریگەری", "ھەزار", "زنجیرە", "عەرەبی", "ئەنجامی", "تاکوو", "خوێندنی", "بەشێک", "ئەویش", "کۆمەڵایەتی", "جیاوازی", "قوتابخانەی", "دایکی", "لەناو", "دەکرێ", "کارەکانی", "دامەزراوە", "یە", "لەنێوان", "گرنگی", "وایە", "کردبوو", "بی", "جگە", "دە", "لەدایکبووی", "لەدوای", "ویلایەتە", "گەورەترین", "ھێزی", "جەنگی", "دووبارە", "دادەنرێت", "داوە", "جامی", "سی", "ھەندێ", "ئاوی", "پێویستە", "کارە", "خەڵک", "وەرگرت", "بەشێکی", "دیاری", "ملیۆن", "پێشکەش", "شارەکە", "کەسی", "دەتوانێت", "ھات", "شێوە", "بن", "دەکا", "چارەسەری", "بڵاوکرایەوە", "نەبوو", "دروستکردنی", "شەڕی", "کەسێک", "ئاو", "بکرێت", "ئایاری", "باس", "مردنی", "عەلی", "پێکەوە", "دەڵێت", "ساڵیدا", "سلێمانی", "فیلم", "سیستەمی", "چاپ", "ڕۆژھەڵاتی", "کۆمەڵەی", "دی", "ئازادی", "ڕۆژاوا", "ئابووری", "دەرکەوت", "ھەبێت", "نموونە", "ئابی", "دوور", "زیاد", "پارتی", "کۆماری", "کۆمپانیای", "ھەم", "یاسای", "ئاسایی", "ئایینی", "دەبێتەوە", "دەدا", "دەڵێن", "زنجیرەی", "پێیان", "بەبێ", "دۆلار", "ناوەند", "ھەوا", "تورکیا", "زنجیرەکە", "خوێندن", "یەکگرتووەکان", "ببێتە", "قەزای", "سەربازی", "دەکاتەوە", "وتی", "تەندروستی", "ھەن", "ئەکتەر", "ئەوانەی", "بریتیە", "دۆلاری", "دەسەڵاتی", "فەرمی", "وێنەی", "پزیشکی", "ئامێری", "دەوڵەتی", "شەش", "ڕێگای", "کەسانی", "دەوترێت", "دەرەوە", "شار", "ئەیلوولی", "باری", "حوزەیرانی", "چۆن", "ھەرێمی", "قۆناغی", "کەمتر", "خۆیدا", "هەموو", "زایینی", "بەرھەمی", "خێزانی", "دەستەی", "زۆرجار", "زۆرێک", "وڵاتانی", "پێکھاتووە", "بەتایبەت", "خاڵی", "ناوچە", "پێشتر", "وای", "ژمارە", "کۆمەڵە", "نا", "چین", "دەنگ", "دەرچوو", "دامەزرا", "بڕی", "خاوەن", "سەرەتا", "نووسینی", "وزەی", "پاراستنی", "ڕووبەری", "ھونەری", "باش", "وەزیری", "ڕێکەوتی", "کەسێکی", "ھەرچەندە", "بەکاردێت", "ئەحمەد", "بدات", "درێژایی", "دەکاتە", "نوێی", "نیسانی", "ھەمیشە", "بەرزی", "شارە", "نێودەوڵەتی", "کەسایەتی", "ئەورووپا", "تەنانەت", "دایە", "نووسەر", "وەرگرتووە", "پێدرا", "درا", "ئەندامانی", "مامۆستا", "پاشا", "ڕێکخراوی", "ژنان", "کو", "گشت", "ھۆکاری", "جۆن", "نەتەوەیی", "کەسانەی", "سەری", "لی", "ئیسلامی", "نووسین", "بەهۆی", "تاکو", "تۆپی", "دەرھێنانی", "ماوەیەکی", "مەبەستی", "ناوبراو", "پێشووی", "ھێشتا", "لەوانە", "مەلا", "چووە", "ئەوەش", "باشوور", "محەممەد", "ەوە", "ئیسپانیا", "بردەوە", "بازرگانی", "باکووری", "بووەتە", "دیکەی", "دەوری", "سەبارەت", "سەرچاوەی", "شتێکی", "شیعری", "کۆمەڵێک", "ھەوڵی", "سەرەتایی", "مانگ", "ناسراو", "نەتەوە", "یەکێتی", "ئێمە", "نیە", "کەنەدا", "نەبێت", "دەژین", "ئێم", "باشتر", "بڵاوکردنەوەی", "تریش", "تی", "تەممووزی", "دانی", "درووست", "دەرەوەی", "شۆڕشی", "فیلمە", "ناوە", "واتای", "پێویستی", "چالاکی", "ژمارەیەکی", "ھاوسەرگیری", "ھێنانی", "خۆر", "پشت", "یاسا", "یانەی", "سروشتی", "دەدەن", "لەدایکبووە", "دەزگای", "سوپای", "سەرەڕای", "شوباتی", "فیلمێکی", "لەکاتێکدا", "مەتر", "هۆی", "کێشەی", "ھێرشی", "بۆی", "دەروونی", "زۆرینەی", "سپی", "ئازار", "تەنها", "شتێک", "بینی", "زمان", "وەرگیراوە", "ئامانجی", "بڵاوکراوەتەوە", "بیر", "بەوە", "خۆ", "دابەش", "سووتەمەنی", "فیلمەکانی", "لەدایک", "لەنێو", "مانای", "چاوی", "چینی", "ڕەنگی", "کەمی", "ئیسلام", "بەرھەمھێنانی", "زۆرترین", "پاڵەوانی", "دێ", "چی", "کردنەوەی", "بوە", "کرایەوە", "بڵاوکردەوە", "ڕۆژھەڵات", "کراون", "دەگرێت", "بڕوانامەی", "بەشێوەی", "بەڵکو", "بەڵگەیەکی", "جێگری", "جێی", "حیزبی", "زۆرتر", "سەردانی", "لەوەی", "لەگەل", "مافەکانی", "نازناوی", "چاودێری", "ژنانی", "گەڵ", "ئێس", "ئەی", "خوێن", "دەوروبەری", "ھەست", "زانست", "یارییەکە", "کاتەدا", "کێشە", "دەڵێ", "بابەتی", "باشی", "لایەنی", "لەمەڕ", "مۆزەخانەی", "نووسراوە", "پاڵ", "پێناسە", "ڕۆڵێکی", "کاتەی", "کۆی", "ھاوکاری", "بوونە", "خودا", "ڕاستەوخۆ", "گرت", "ئەڵمانیا", "بنەماڵەی", "جیا", "ساڵێک", "چارەسەر", "ئێرانی", "ئێستادا", "دەکرا", "ھەولێر", "دامەزراند", "دراوە", "دەردەکەوێت", "مێژوو", "پێکرد", "ئاماژەی", "بریتین", "خولی", "درێژی", "دەرکەوتنی", "لەبارەی", "ناوبانگی", "ناوچەکانی", "پریانکا", "پشتگیری", "گواستنەوەی", "یەکێتیی", "دەکرێن", "شەڕ", "ڕاگەیاند", "ڕۆمانی", "حکومەتی", "خۆشەویستی", "لەندەن", "پێکدێت", "کردوە", "ساڵە", "کاتدا", "ئەدەبی", "دەگرێتەوە", "لەش", "ئاشکرا", "ئەوانی", "بنکەی", "بەدوای", "بەرگری", "بەیەکەوە", "تیشکی", "جێگیر", "سەرکردایەتی", "قسە", "مامۆستای", "ماوەیەک", "پەرلەمانی", "کردە", "ھێزە", "ھەوای", "ھەڵبژاردنی", "ھەڵبژێردرا", "ئازاد", "ئاسمانی", "بکاتەوە", "جیھاندا", "دارایی", "دامەزراندنی", "نیوەی", "چیرۆکی", "ڕاستیدا", "کارەبا", "بچووک", "بەریتانی", "جیاوازە", "دڵ", "دیارە", "لێکۆڵینەوە", "ناوچەکە", "پێویست", "دەوڵەت", "سێیەم", "کورت", "بەدەستھێنا", "ھێناوە", "بنەمای", "بڕیاری", "بەراورد", "بەمەش", "بەناوبانگی", "تۆ", "تۆمار", "دەتوانرێت", "شتی", "قسەی", "لەلای", "لەڕێی", "مرۆڤی", "نێونەتەوەیییە", "نەک", "وەزارەتی", "پڕ", "پۆستی", "پۆلیسی", "چیای", "ڕاستەقینەی", "ڕایگەیاند", "ڕۆژ", "کاتێکدا", "کچی", "کەناڵی", "گازی", "گوند", "گۆڤاری", "گەشتی", "ھێڵی", "ھەڵبژاردەی", "یاسایی", "ئەندام", "بۆتە", "خێزانەکەی", "زانیاری", "فارسی", "فێری", "لەدەست", "ناوچەیە", "وێنە", "پیشەسازی", "پەیمانگای", "ڕوو", "کۆن", "گرووپەکە", "بەریتانیا", "سەرۆکایەتی", "منداڵی", "مەبەست", "پۆلیس", "کیلۆمەتر", "ئەمریکییە", "دەدرێت", "عوسمانی", "دەسەڵات", "ئەرکی", "ئەڵقەی", "بەش", "بەڕێوە", "جارێک", "جۆرێک", "دێتە", "دەتوانێ", "دەچێتە", "زوو", "فەرمانی", "لا", "لێی", "مۆسیقای", "نیشان", "ڕێک", "ڕەنگ", "ڕەنگە", "ژووری", "کتێبە", "یەکەمجار", "ئەمڕۆ", "بۆشایی", "بەرزترین", "بەغدا", "جوان", "دەگەرێتەوە", "زانکۆ", "سەددام", "چاو", "ڕاست", "گەشە", "درێژ", "زانستە", "مۆسیقا", "ڕەش", "تاران", "نین", "ئێستاش", "بنەماڵە", "بۆئەوەی", "تاکە", "دەریای", "ساڵەکانی", "سنووری", "شوێن", "شێوازێکی", "فڕۆکەی", "لەماوەی", "مێژوویی", "ناوەڕاستی", "نزیکی", "چوارەم", "ڕێگە", "کێشی", "گرنگترین", "گرووپی", "گیانی", "گەڕایەوە", "ھەبوونی", "ھەروەک", "ھەوڵ", "یاریزانی", "یەکەی", "بەتایبەتی", "بەرنامەی", "خوا", "دووری", "سەردەمە", "ماڵی", "مایەوە", "نمایش", "هەندێک", "پێست", "ژن", "کاتە", "گەیشتە", "ھونەر", "ئەمانە", "باو", "بنەڕەتی", "تورکی", "خوارەوە", "نووسی", "نەبووە", "تایبەتە", "ئایین", "ئەنجامدانی", "بیرۆکەی", "بەردەوامی", "بەرگی", "بەشە", "بەناو", "بەھێز", "تاوەکو", "جەستەی", "خواردنی", "دەگاتە", "سالی", "سوود", "سەروو", "سەرچاوە", "شوێنێکی", "لەڕێگەی", "مزگەوتی", "مستەفا", "نێونەتەوەیی", "وەزیرانی", "پارێزگاری", "پارێزگای", "پارێزگایە", "پیاوێکی", "پەخش", "چاپی", "چوونە", "چەکی", "ڕێکخراوە", "ژمارەیەک", "کارکردن", "کاریان", "گرنگ", "ھاتە", "ھێزەکانی", "یەکگرتووەکانی", "بەجێ", "بەڕێوەبەری", "دان", "دیاریکراو", "لەخۆ", "ماوە", "مردن", "پارچە", "پەروەردە", "تۆمارکرد", "دار", "قوتابخانە", "کیمیایی", "گاز", "ئاشتی", "ئەوەشدا", "ڕوودەدات", "ھتد", "فەڕەنسا", "ئاماژە", "ئەوانیش", "بارودۆخی", "براوەی", "بریتی", "بچووکی", "بچێتە", "بیری", "بەرھەمەکانی", "بەسەردا", "بەشەکانی", "بەمەبەستی", "بەناوبانگ", "جێگای", "خەریکی", "دابین", "دیاریکردنی", "سیاسیی", "شای", "شوێنێک", "فەرھەنگی", "مۆزەخانەکە", "ناوەڕاست", "نە", "نەخۆش", "وەرگرتنی", "پەیدا", "ڕێ", "کاتژمێر", "کوردەکان", "کوشتنی", "کۆ", "گۆڵی", "گەشەی", "ھەستی", "ئەلبومەکە", "باوەڕی", "بەرچاو", "جۆر", "جێ", "لەوە", "نیو", "نیویۆرک", "وابوو", "ڕاستی", "کفری", "ھیندستان", "باکوور", "بوونەوە", "دروستکراوە", "سوور", "سۆڤیەت", "سەربەخۆیی", "ماوەتەوە", "ڕەگەز", "کارەبایی", "درێژە", "چوو", "کۆتاییدا", "ساڵدا", "ئامادەیی", "ئایا", "ئیتر", "ئەکتەری", "بابەتە", "بزوێنەر", "بەزۆری", "بەوەی", "تاوەکوو", "توشی", "توێژینەوەی", "تێکەڵ", "جۆرەکانی", "حوکمی", "حەوت", "خان", "دانانی", "دۆزینەوەی", "سەرژمێری", "شاعیری", "شوێنە", "شێوەیە", "فراوان", "لێکۆڵینەوەی", "لەوەتەی", "ماددە", "ماددەی", "مایکڵ", "نیشانەکانی", "نیشتمانی", "هیچ", "هەردوو", "وێڕای", "وەڵامی", "پلە", "چارەسەرکردنی", "چەندەھا", "ڕووباری", "ڕوودانی", "ڕۆژنامەی", "کارکردنی", "کانی", "کۆتا", "کۆمەڵگەی", "کەوتە", "کەڵکی", "ھۆزی", "ھێرش", "ھەریەک", "یاریزان", "یەکسانە", "ئاسمان", "بو", "تازە", "جۆرج", "دەرمان", "دەستیان", "زمانەکانی", "شاعیر", "عەبدوڵڵا", "ناوەکی", "نەخۆشییە", "پایتەختی", "چاک", "ڕاستەقینە", "گوندەکانی", "بدەن", "دانا", "دیار", "دەرھێنەر", "دەکەوێت", "شا", "نووسیوە", "وزە", "ڕووسیا", "کران", "کوردستانە", "سوتەمەنی", "نابێت", "پەخشکرا", "کردنەوە", "شۆڕش", "زایین", "ببێت", "ئای", "ئینتەرنێت", "ئەکتەرێکی", "بکرێ", "بەردی", "بەڕێوبەری", "تاک", "تۆماس", "تەنێک", "جارێکی", "جێبەجێ", "جەنگ", "حاجی", "حەسەن", "خاتوو", "خزمەتی", "خستە", "خێرا", "دژایەتی", "دکتۆر", "دەچێت", "سان", "ساڵانە", "فەلسەفەی", "لەڕووی", "مەترسی", "نرخی", "نموونەی", "نووسەری", "نۆ", "نەبوونی", "پاشای", "پێچەوانەی", "پەستانی", "ڕادەی", "ڕۆشنبیری", "ژاپۆن", "ژنی", "ژنە", "کارێکی", "کۆتاییی", "کۆلێژی", "کۆمەڵگای", "کۆکردنەوەی", "کیلۆمەترێکی", "کەمێک", "گۆرانییەکانی", "گەر", "ھاوکات", "ھەردووکیان", "ھەمووان", "ئێن", "خواردن", "ناسراون", "نەبوون", "ڕوون", "گۆڕی", "ئۆسکار", "خانەقین", "شەپۆلی", "مرد", "نەوت", "وەرزشی", "ڕووناکی", "کوژران", "ئوسترالیا", "ئیتالیا", "دەرکرد", "فەڕەنسی", "یانەکە", "یۆنان", "ڕزگاری", "ئازادیی", "ئامارەکانی", "ئینجا", "ئەفسەری", "ئەگەری", "ئەڵقە", "باڵای", "بتوانێت", "بڵاوبوونەوەی", "بەرھەمە", "تردا", "تۆرۆنتۆ", "تەمەن", "حکومەت", "حەزی", "خانەی", "داھاتی", "دروستبوونی", "دوایین", "دووجادایە", "دیزاینی", "دێیە", "دەستووری", "دەوترێ", "دەیەوێت", "زیادکردنی", "زیندانی", "سارد", "سکرتێری", "سیستمی", "سەرکەوتنی", "سەید", "شازادە", "شووباتی", "شیعر", "عوسمان", "لێرەدا", "مەزن", "پارە", "پۆلی", "ڕای", "ڕۆژئاوای", "ڕێکخستنی", "ڕێی", "ڕەگەزی", "کاروباری", "کتێبێکی", "کۆمەڵگە", "کەش", "کەمکردنەوەی", "گرووپێکی", "گۆڕینی", "گێڕا", "ھاتنی", "ھەڵکەوتووە", "ئامادە", "برای", "بووبێت", "توانا", "جێگەی", "دانراوە", "دەبینێت"];
 
 /* ── PREDICTIVE TEXT ENGINE ── */
 let userFreq = {};
@@ -3346,18 +3096,22 @@ const NEXT_WORD = {
 
 let lastPickedWord = '';
 
-function getSuggestions(prefix) {
+function getSuggestions(prefix) {   /* LIVE-FIX-1013 */
   if (!prefix || prefix.length < 1) return [];
   const scored = {};
   const freq = w => userFreq[w] || 0;
 
-  // Dictionary words
+  // Dictionary words. Case-insensitive: "mor" finds German "Morgen", and "Hal" at the
+  // start of a sentence finds "hallo" (shown as "Hallo" below). (2026-10-10)
+  const _lc = x => x.toLocaleLowerCase(document.documentElement.lang || undefined);
+  const lp = _lc(prefix);
   WORDS.forEach(w => {
     if (w === prefix) return;
+    const lw = _lc(w);
     let s = 0;
-    if (w.startsWith(prefix))      s = 100 + freq(w) * 5 - w.length;
-    else if (freq(w) > 0 && w.startsWith(prefix.slice(0,-1))) s = 40 + freq(w) * 3;
-    else if (w.length >= prefix.length && editDist(w.slice(0,prefix.length+2), prefix) <= 1) s = 20 + freq(w) * 2;
+    if (lw.startsWith(lp))      s = 100 + freq(w) * 5 - w.length;
+    else if (freq(w) > 0 && lw.startsWith(lp.slice(0,-1))) s = 40 + freq(w) * 3;
+    else if (w.length >= prefix.length && editDist(lw.slice(0,prefix.length+2), lp) <= 1) s = 20 + freq(w) * 2;
     if (s > 0) scored[w] = s;
   });
 
@@ -3368,14 +3122,17 @@ function getSuggestions(prefix) {
     if (w.startsWith(prefix)) scored[w] = 80 + userFreq[w] * 5 - w.length;
   });
 
-  return Object.entries(scored).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([w])=>w);
+  // a capital the user typed is kept: "Hal" -> "Hallo" (never lowers a German noun)
+  const cap = prefix[0] !== _lc(prefix[0]);
+  return Object.entries(scored).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([w]) =>
+    cap && w[0] === _lc(w[0]) ? w[0].toLocaleUpperCase(document.documentElement.lang || undefined) + w.slice(1) : w);
 }
 
 /* ── STATE ── */
 let fontSize = 22, isDark = false, francoOn = false, shiftOn = false;
 let emojiOpen = false, tashOpen = false, specOpen = false, numOpen = false;
 let isRec = false, recog = null;
-let sugs = ['شکریہ','السلام علیکم','ٹھیک ہے'];
+let sugs = ['لە','بە','کە'];
 let qwertyOn = false;
 
 
@@ -3472,10 +3229,10 @@ function buildKB() {
       } else {
         /* letter key — prefix combining chars with dotted circle so they render visibly */
         const COMBINING = new Set([]);
-        const display = COMBINING.has(k) ? '◌' + k : k;
+        const display = (COMBINING.has(k) || /^\p{M}+$/u.test(k)) ? '\u25CC' + k : k;   /* a mark alone needs a carrier to be visible */
         const hint = FL[k] || '';
+        btn.dataset.ch = k;   /* long-press reads this — textContent also holds the hidden Latin hint */
         btn.innerHTML = `<span class="fl">${hint}</span>${display}`;
-        if (k === 'لا') btn.style.fontSize = '15px';
         btn.onclick = () => ins(k);
       }
 
@@ -3498,7 +3255,6 @@ function buildSpec() {
 
 function buildNum() {
   const western  = ['1','2','3','4','5','6','7','8','9','0'];
-  const arabic   = ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'];
   const symbols  = ["?","!",",",".","(",")",":",";","@","#","+","-","×","÷","=","%","°","½","¼","¾","&","*","\"","'","/","\\","|","_","~","^","<",">","[","]","{","}","€","$","£","¥","©","®","™","•","…","—","«","»","§"/*LANG_SYMBOLS*/,"،","؛","؟","٪","«","»","ـ"/*END_LANG_SYMBOLS*/];
   const fill = (id, chars, extraClass='') => {
     const g = document.getElementById(id); if (!g) return;
@@ -3511,6 +3267,8 @@ function buildNum() {
     });
   };
   fill('ngrid-w', western);
+  /*NATIVE_DIGITS*/(function(){const D={"label": "Kurdish digits", "digits": ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"], "first": true, "font": "'Noto Naskh Arabic', serif"};const w=document.getElementById('ngrid-w');if(!w)return;let g=document.getElementById('ngrid-n');if(!g){const l=document.createElement('div');l.className='n-section-lbl';l.textContent=D.label;g=document.createElement('div');g.className='n-grid';g.id='ngrid-n';if(D.font)g.style.fontFamily=D.font;if(D.first){const wl=w.previousElementSibling;w.parentNode.insertBefore(l,wl);w.parentNode.insertBefore(g,wl);}else{w.parentNode.insertBefore(g,w.nextSibling);w.parentNode.insertBefore(l,g);}}fill('ngrid-n',D.digits);})();/*END_NATIVE_DIGITS*/
+  
   const ga = document.getElementById('ngrid-a'); if(ga) ga.style.display='none';
   fill('ngrid-s', symbols);
 }
@@ -3611,34 +3369,6 @@ function closeEmoji()    { emojiOpen = false; document.getElementById('epop').cl
 function toggleTash()    { tashOpen = !tashOpen; document.getElementById('tpop').classList.toggle('show', tashOpen); if (tashOpen) { closeEmoji(); closeSpec(); closeNum(); } }
 function toggleFranco()  { francoOn = !francoOn; buildKB(); }
 
-async function aiTashkeel() {
-  const ta = document.getElementById('arabic-text');
-  const text = ta.value.trim();
-  if (!text) { toast('✏️ اكتب نصاً أولاً'); return; }
-  const btn = document.querySelector('.ai-tash-btn');
-  btn.disabled = true;
-  btn.querySelector('.ai-tash-label').textContent = '⏳ جاري التشكيل...';
-  try {
-    const res = await fetch('/.netlify/functions/tashkeel', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text })
-    });
-    if (!res.ok) throw new Error('API error ' + res.status);
-    const data = await res.json();
-    if (data.result) {
-      ta.value = data.result;
-      updateStats(); updateSugs();
-      toast('✅ تم التشكيل التلقائي');
-    } else { throw new Error('No result'); }
-  } catch (err) {
-    toast('❌ تعذّر التشكيل، حاول مجدداً');
-  } finally {
-    btn.disabled = false;
-    const t = I18N[currentLang] || I18N.en;
-    btn.querySelector('.ai-tash-label').textContent = t['btn.aitash'] || 'AI تشكيل تلقائي';
-  }
-}
 
 function closeTashkeel() { tashOpen = false; document.getElementById('tpop').classList.remove('show'); }
 function toggleNum()     { numOpen = !numOpen; document.getElementById('npop').classList.toggle('show', numOpen); if (numOpen) { closeEmoji(); closeTashkeel(); closeSpec(); } }
@@ -3770,10 +3500,13 @@ function updateSugs() {
     sugs = [el0.textContent, currentPrefix, el2.textContent];
   } else {
     // Idle mode: next-word prediction based on last word typed
-    let nextPreds = lastPickedWord ? (NEXT_WORD[lastPickedWord] || []) : [];
+    let nextPreds = lastPickedWord ? (NEXT_WORD[lastPickedWord] || []).slice() : [];   /* copy — pushing into NEXT_WORD's own array grew it forever */
     if (nextPreds.length < 3) {
-      const top = Object.entries(userFreq).sort((a,b)=>b[1]-a[1]).map(([w])=>w);
-      while (nextPreds.length < 3) nextPreds.push(top.shift() || ['سڵاو','سپاس','خۆش'][nextPreds.length]);
+      /* fill from the user's frequent words, then the language's commonest — never the word
+         just typed, never the same word twice (2026-10-06) */
+      const top = [...new Set([...Object.entries(userFreq).sort((a,b)=>b[1]-a[1]).map(([w])=>w), ...WORDS])]
+        .filter(w => w !== lastPickedWord && !nextPreds.includes(w));
+      while (nextPreds.length < 3) nextPreds.push(top.shift() || ['لە','بە','کە'][nextPreds.length]);
     }
     el0.textContent = nextPreds[0] || ''; el1.textContent = nextPreds[1] || ''; el2.textContent = nextPreds[2] || '';
     sugs = [el0.textContent, el1.textContent, el2.textContent];
@@ -3916,7 +3649,7 @@ function toggleQwerty() {
 /* ── PHYSICAL KB ── */
 /* Phonetic (Franco/Arabizi) maps, derived by inverting the on-screen hint map FL so
    every language reuses its OWN hints. 1-char latin = single, 2-char = digraph
-   (type-then-upgrade: 's'->س, then 'h' upgrades it to ش). Capitals = emphatics. */
+   (type-then-upgrade: 's' types one letter, then 'h' upgrades it to the 'sh' letter). Capitals = emphatics. */
 const PH_SINGLE = {}, PH_DIGRAPH = {};
 (function buildPhonetic(){
   for (const ar in FL) {
@@ -3943,16 +3676,41 @@ function replaceLast(newCh) {
    position, not the Latin letter printed on the key. */
 const CODE2CHAR = {};
 'qwertyuiopasdfghjklzxcvbnm'.split('').forEach(c => { CODE2CHAR['Key' + c.toUpperCase()] = c; });
-Object.assign(CODE2CHAR, {BracketLeft:'[', BracketRight:']', Semicolon:';', Quote:"'", Comma:',', Period:'.', Slash:'/', Backquote:'`'});
+Object.assign(CODE2CHAR, {BracketLeft:'[', BracketRight:']', Semicolon:';', Quote:"'", Comma:',', Period:'.', Slash:'/', Backquote:'`', Backslash:'\\'});   /* Backslash = ISO C12 (Armenian, Serbian, Macedonian letters sit there) */
+/* number row: national layouts put letters here (e.g. Kazakh puts its extra letters on 2 3 4 5 8 9 0 - =).
+   Keys with no PHYS entry on a page still type their digit/sign as normal. */
+Object.assign(CODE2CHAR, {Digit1:'1', Digit2:'2', Digit3:'3', Digit4:'4', Digit5:'5', Digit6:'6', Digit7:'7', Digit8:'8', Digit9:'9', Digit0:'0', Minus:'-', Equal:'='});
 function setupPhys() {
   const ta = document.getElementById('arabic-text');
-  ta.addEventListener('pointerdown', () => { lastPh = ''; });
+  ta.addEventListener('pointerdown', () => { lastPh = ''; deadKey = ''; });
   document.addEventListener('keydown', e => {
     if (!qwertyOn) return;
+    if (document.activeElement === ta && !e.metaKey && !francoOn && typeof PHYS_DEAD === 'object') {
+      const alt = e.altKey || (e.getModifierState && e.getModifierState('AltGraph'));
+      const layer = alt ? 'altgr' : (e.shiftKey ? 'shift' : 'base');
+      const dk = ((PHYS_DEAD.keys || {})[layer] || {})[CODE2CHAR[e.code]];
+      if (dk && (alt || !e.ctrlKey)) { e.preventDefault(); if (deadKey) ins(deadKey); deadKey = dk; return; }
+      if (deadKey && e.code === 'Space') { e.preventDefault(); ins((PHYS_DEAD.map || {})[deadKey + ' '] || deadKey); deadKey = ''; return; }
+      if (deadKey && (e.key === 'Escape' || e.key === 'Backspace')) { deadKey = ''; if (e.key === 'Escape') return; }
+    }
+    /* PHYS_ALTGR (optional, per page): letters a national layout puts on AltGr
+       (the Ukrainian letter ghe-with-upturn on AltGr). Windows AltGr = Ctrl+Alt, Mac = Option. */
+    if (document.activeElement === ta && !e.metaKey && typeof PHYS_ALTGR === 'object'
+        && (e.altKey || (e.getModifierState && e.getModifierState('AltGraph')))) {
+      let ag = PHYS_ALTGR[CODE2CHAR[e.code]];
+      if (ag) {
+        if (e.shiftKey && typeof PHYS_SHIFT !== 'object') ag = ag.toLocaleUpperCase(document.documentElement.lang || undefined);   /* PHYS_SHIFT page = Shift is not case (Georgian) */
+        e.preventDefault(); insPhys(ag); return;
+      }
+    }
     if (document.activeElement !== ta || e.ctrlKey || e.metaKey || e.altKey) return;
     const skip = ['Backspace','Delete','Tab','Enter','Arrow','Home','End'];
     if (skip.some(s => (e.key || '').startsWith(s))) { lastPh = ''; return; }
     if (francoOn) {                                   /* phonetic — sound (e.key), CASE-sensitive: Shift = emphatic */
+      /* Pages with a whole-word converter (Arabizi → Arabic) let Latin letters through
+         and convert the finished word on Space/Enter: letter-by-letter mapping can't
+         know where a script leaves out short vowels (7abibi is one Arabic word, not letter by letter). */
+      if (typeof arabiziToArabic === 'function' || typeof romajiToKana === 'function' || typeof pinyinCands === 'function') return;
       let raw = e.key || '';
       if (e.code === 'Digit2') raw = '2';
       else if (e.code === 'Digit3') raw = '3';
@@ -3963,11 +3721,39 @@ function setupPhys() {
       if (PH_SINGLE[raw]) { e.preventDefault(); ins(PH_SINGLE[raw]); lastPh = (raw === low) ? low : ''; return; }
       if (PH_SINGLE[low]) { e.preventDefault(); ins(PH_SINGLE[low]); lastPh = low; return; }
       lastPh = '';
+      if (PHYS[CODE2CHAR[e.code]] === '') e.preventDefault();   /* key deliberately empty on this page (no hieroglyph on e) - silent here too, never Latin */
     } else {                                          /* standard layout — by physical position */
-      const ch = PHYS[CODE2CHAR[e.code]];
-      if (ch) { e.preventDefault(); ins(ch); }
+      /* Japanese/Chinese: a physical keyboard types romaji/pinyin, converted per word by the
+         page's engine (cjk_engines.py) - a letter-by-letter map typed k -> ka-kana (2026-10-13) */
+      if ((typeof romajiToKana === 'function' || typeof pinyinCands === 'function') && /^[a-z]$/i.test(e.key || '')) return;
+      const pk = CODE2CHAR[e.code];
+      let ch = PHYS[pk];
+      /* PHYS_SHIFT (optional, per page): a Shift layer that is NOT a case change —
+         e.g. Egyptian Manuel de Codage, where h and H are two different signs. */
+      if (e.shiftKey && typeof PHYS_SHIFT === 'object' && PHYS_SHIFT[pk]) ch = PHYS_SHIFT[pk];
+      else if (ch && e.shiftKey) {
+        const _L = document.documentElement.lang || undefined;
+        /* Shift = capital; locale-aware (Turkish dotted capital I); no-op on caseless scripts.
+           A two-letter key (Sakha soft-n digraph) capitalises its first letter only, as the real layout does. */
+        const up = ch.length > 1 ? ch[0].toLocaleUpperCase(_L) + ch.slice(1) : ch.toLocaleUpperCase(_L);
+        if (up.length > ch.length) return;   /* no one-letter capital (German sharp s -> SS): leave the key to the real keyboard (Shift = ? on German keyboards); the capital is on screen + Special */
+        ch = up;
+      }
+      if (ch) { e.preventDefault(); insPhys(ch); }
+      else if (ch === '') e.preventDefault();
+      else if (deadKey && (e.key || '').length === 1) { ins(deadKey); deadKey = ''; }   /* no composition: accent, then the key's own char */   /* key deliberately empty (Serbian Z: no Serbian letter) — never leak Latin */
     }
   });
+}
+
+/* PHYS_DEAD (optional, per page): dead keys of the national layout, as Windows does them -
+   the accent key is silent, the next letter is composed from the CLDR table (Czech caron + d).
+   Space after a dead key types the accent itself; a key with no composition types both. */
+let deadKey = '';
+function insPhys(c) {
+  if (!deadKey) { ins(c); return; }
+  const d = deadKey; deadKey = '';
+  ins((PHYS_DEAD.map || {})[d + c] || (d + c));
 }
 
 /* ── VOICE ── */
@@ -4019,7 +3805,7 @@ function closeLang()  { document.getElementById('lang-menu')?.classList.remove('
 const I18N = {
   en: {
     'hero.h1':        'Kurdish Keyboard Online<span class="h1-arabic">کیبۆردی کوردی</span>',
-    'hero.sub':       'Type Kurdish from any device. No download or installation. | کیبۆردی کوردی ئۆنلاین',
+    'hero.sub':       'The complete Sorani Kurdish alphabet — 33+ letters including unique consonants (ڤ ڵ ژ چ) and all six explicit vowels — right in your browser. Type in Sorani, Kurmanji, or phonetic transliteration and get proper script for WhatsApp, Telegram, Facebook, and every platform.',
     'nav.home':       'Home', 'nav.bugs': 'Report Bug', 'nav.faq': 'FAQ',
     'nav.contact':    'Contact',
     'share.copyto':   'Copy to', 'share.searchwith': 'Search with',
@@ -4037,15 +3823,15 @@ const I18N = {
     'ehub.tab.social':  '📱 Social',
     'combo.title':    '🎯 Kurdish Emoji Combos <span class="combo-sub">— add to text in one click</span>',
     'apps.h2':        'Kurdish Keyboard for <span style="color:var(--blue)">Any App</span>',
-    'apps.sub':       'Type Kurdish above → <b>Copy</b> → Paste into any app',
+    'apps.sub':       'Write Kurdish above, tap Copy, and paste it into any app. Most devices ship without a Kurdish layout.',
     'app.wa.h3':      'Kurdish Keyboard for WhatsApp',
-    'app.wa.p':       'Type message → Copy → Open WhatsApp → Paste.',
+    'app.wa.p':       'Message family from Erbil to Europe in proper Sorani, with all its vowels written out.',
     'app.tt.h3':      'Kurdish Keyboard for TikTok',
-    'app.tt.p':       'Type caption → Copy → Paste into TikTok.',
+    'app.tt.p':       'Write captions and comments in Kurdish, typed here on a phone with no Kurdish layout.',
     'app.ig.h3':      'Kurdish Keyboard for Instagram',
-    'app.ig.p':       'Type bio or post → Copy → Paste into Instagram.',
+    'app.ig.p':       'Captions in Sorani script read as Kurdish at a glance, not as Arabic or Persian.',
     'app.sc.h3':      'Kurdish Keyboard for Snapchat',
-    'app.sc.p':       'Type story or chat → Copy → Paste into Snapchat.'
+    'app.sc.p':       'Caption a snap in Sorani with its own letters, such as ڕ, ڵ, ۆ and ێ, not Arabic or Persian substitutes.'
   },
   fr: {
     'hero.h1':        'Clavier Kurde en Ligne <span class="h1-arabic">— Gratuit &amp; Instantané</span>',
@@ -4136,8 +3922,8 @@ function setLang(code, label) {
 const EMOJI_CATS = {
   popular: ['❤️','😂','😍','🙏','👍','💪','🎉','✨','🔥','💯','😭','😘','🥰','💕','👏','🌟','😅','🤔','💙','🎊','😎','🥳','🤩','🫶','🤗','😊','🤣','👀','💎','🌹','😤','🥺','💀','🫠','😶‍🌫️','🫡','🤌','💅','👌','✌️'],
   islamic:  ['🕌','🕋','☪️','🤲','📿','🌙','⭐','🌟','🕊️','📖','🌹','🌿','🌾','💚','🤍','🧎','🧎‍♂️','🙏','🌅','✨','🕯️','🌄','🫶','🌙','🌺','🌸','🤲','🫖','🌊'],
-  culture:  ['🐪','🏜️','🌴','🫖','☕','🥘','🫕','🏺','🌊','🏔️','☀️','🌺','🌸','🦁','🦅','🐎','🎶','🎵','🥁','🪘','🪔','🌅','🏛️','⛵','🗺️','🌍','🎪','🫙','🌻','🐠'],
-  flags:    ['🇮🇶','🇮🇷','🇸🇾','🇹🇷','🇸🇦','🇦🇪','🇦🇲','🇦🇿','🇺🇸','🇬🇧','🇩🇪','🇫🇷','🇸🇪','🇳🇴','🇩🇰','🇳🇱','🇧🇪','🇨🇦','🇦🇺','🇦🇫','🇵🇸','🇯🇴','🇰🇼','🇶🇦','🇧🇭','🇴🇲'],
+  culture:  ['🔥','🌷','🌸','🏔️','⛰️','🌄','🌾','🍇','🍎','🌰','🫖','🍵','🥘','🫓','🥁','🪘','🎶','💃','🕺','🦅','🐎','☀️','💚','❤️','💛','🌙','⭐','🎆'],
+  flags:    ['🇮🇶','🇹🇷','🇮🇷','🇸🇾','🇩🇪','🇸🇪','🇬🇧','🇫🇷','🇳🇱','🇦🇹','🇧🇪','🇩🇰','🇳🇴','🇨🇭','🇺🇸','🇨🇦','🇦🇺','🇦🇲'],
   social:   ['❤️‍🔥','🫀','💔','🥺','😤','😈','🙈','🙉','🙊','💀','🤡','🥹','😑','🫠','🫡','🤌','👌','✌️','🤙','☝️','🤏','🫳','🫴','🤝','💅','🫰','🙃','😏','🧢','🔑','💸','🎯']
 };
 
@@ -4370,6 +4156,25 @@ function dismissFeedbackTab() {
   if (x) x.style.display = 'none';
   setTimeout(() => { t.style.display = 'none'; }, 320);
 }
+/* FB-VISIBILITY (Aissa 2026-10-12): the feedback tab hides while the keyboard is on screen,
+   and on mobile it is shown on the first visit only - remembered in localStorage, so a refresh
+   or another keyboard page does not show it again. Storage blocked = old behaviour. */
+(function () {
+  var KEY = 'kactyl_fb_seen';
+  var mob = window.matchMedia && window.matchMedia('(max-width:640px)').matches;
+  if (mob) {
+    var seen = null;
+    try { seen = localStorage.getItem(KEY); } catch (e) {}
+    if (seen) document.body.classList.add('fb-seen');
+    else { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+  }
+  var kb = document.getElementById('kbrows');
+  if (kb && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      document.body.classList.toggle('kb-onscreen', es[0].isIntersecting);
+    }).observe(kb);
+  }
+})();
 /* swipe-right on mobile to dismiss */
 document.addEventListener('DOMContentLoaded', function() {
   const tab = document.getElementById('fbTab');
@@ -4599,9 +4404,15 @@ async function submitFeedback(e) {
     content: ''; width: 42px; height: 5px; border-radius: 3px;
     background: rgba(100,116,139,.35);
   }
+  /* the feedback bubble + its x sat ON the right-hand keys and Backspace of the docked keyboard */
+  body.kb-docked .fb-tab, body.kb-docked .fb-panel, body.kb-docked .fb-dismiss { display: none !important; }
   body.kb-docked .sug-pill { font-size: 13px; padding: 7px 8px; }
 }
 
+/* key unit: every letter key is one size (= the longest row), so a short row centres
+   instead of stretching its keys (Aissa 2026-10-05; --kn/--kg set by the script below) */
+.kb-row { justify-content: center; }
+.kb-row .key[data-ch] { flex: 0 1 calc((100% - (var(--kn,10) - 1) * var(--kg,5px)) / var(--kn,10)); }
 #kb-altpop {
   position: fixed; z-index: 10000; display: none; gap: 6px;
   background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
@@ -4613,6 +4424,9 @@ async function submitFeedback(e) {
   font-size: 24px; font-family: inherit; background: rgba(0,104,255,.08); color: inherit;
 }
 #kb-altpop button:active, #kb-altpop button:hover { background: var(--indigo, #6366F1); color: #fff; }
+.key.has-alt { position: relative; }
+.key.has-alt::after { content: ''; position: absolute; top: 4px; right: 4px; width: 4px; height: 4px;
+  border-radius: 50%; background: var(--indigo, #6366F1); pointer-events: none; }
 
 /* Matra/Roman labels: docked = native-small. Outside any media query and
    !important — the template re-sizes these keys at several widths (12px base,
@@ -4732,15 +4546,22 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
   }
 
   /* long-press alternates — per-language data from tools/kb_lang_data.py */
-  const KB_ALT = {};
+  const KB_ALT = {"ت": ["ط"]};
   const pop = document.createElement('div');
   pop.id = 'kb-altpop';
   document.body.appendChild(pop);
   let lpTimer = null, lpKey = null, suppressClick = false;
 
+  /* alternates for a key as shown (Shift on: the capital letter offers the capital variant) */
+  function altsFor(ch) {
+    if (!ch) return null;
+    if (KB_ALT[ch]) return KB_ALT[ch];
+    const lo = ch.toLocaleLowerCase(document.documentElement.lang || undefined);
+    return lo !== ch && KB_ALT[lo] ? KB_ALT[lo].map(a => a.toLocaleUpperCase(document.documentElement.lang || undefined)) : null;
+  }
   function showAlts(keyEl, ch) {
     pop.innerHTML = '';
-    KB_ALT[ch].forEach(alt => {
+    altsFor(ch).forEach(alt => {
       const b = document.createElement('button');
       b.textContent = alt;
       b.onclick = ev => { ev.stopPropagation(); ins(alt); hideAlts(); };
@@ -4748,18 +4569,30 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
     });
     const r = keyEl.getBoundingClientRect();
     pop.style.display = 'flex';
-    pop.style.left = (r.left + r.width / 2) + 'px';
-    pop.style.top  = (r.top - 62) + 'px';
+    /* stay on screen (Khmer qa holds 10 letters): wrap when wider than the screen, clamp the centre */
+    pop.style.flexWrap = 'wrap'; pop.style.justifyContent = 'center';
+    pop.style.maxWidth = (window.innerWidth - 16) + 'px';
+    pop.style.left = '0px'; pop.style.width = '';   /* measure with the whole screen width available, */
+    const pw = pop.offsetWidth, half = pw / 2;
+    pop.style.width = pw + 'px';   /* then keep that width: a fixed box shrinks to the room right of its left edge */
+    pop.style.left = Math.min(Math.max(r.left + r.width / 2, half + 8), window.innerWidth - half - 8) + 'px';
+    pop.style.top  = (r.top - Math.max(62, pop.offsetHeight + 6)) + 'px';
     suppressClick = true;
   }
   function hideAlts() { pop.style.display = 'none'; }
+  /* hold keys carry an accent dot (Aissa 2026-10-17): the same altsFor() the popup uses, so a dot means
+     a hold exists; re-marked whenever the keyboard redraws (Shift, rebuild) */
+  function markHolds() {
+    if (kbrows) kbrows.querySelectorAll('.key[data-ch]').forEach(k => k.classList.toggle('has-alt', !!altsFor(k.dataset.ch)));
+  }
+  if (kbrows) { new MutationObserver(markHolds).observe(kbrows, {childList: true}); markHolds(); }
 
   if (kbrows) {
     kbrows.addEventListener('pointerdown', e => {
       const k = e.target.closest('.key');
       if (!k) return;
-      const ch = k.textContent.trim().slice(0, 1);
-      if (!KB_ALT[ch]) return;
+      const ch = k.dataset.ch;   /* textContent also holds the hidden Latin hint (read "ye" for the letter) */
+      if (!altsFor(ch)) return;
       lpKey = k;
       lpTimer = setTimeout(() => showAlts(k, ch), 420);
     }, { passive: true });
@@ -4775,5 +4608,46 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
 })();
 </script>
 <!-- ══════════ /KBDOCK ══════════ -->
+<script>/* key unit: --kn = keys in the longest row above the space bar (--kg = row gap, set in CSS with the gap) */
+(function () {
+  const w = document.getElementById('kbrows'); if (!w) return;
+  const set = () => {
+    const rows = [...w.children].filter(r => !r.querySelector('.k-space'));
+    if (!rows.length) return;
+    w.style.setProperty('--kn', Math.max(...rows.map(r => r.children.length)));
+  };
+  set(); new MutationObserver(set).observe(w, { childList: true });
+})();</script>
+<script>/* KEYFIT: a label wider than its key (Tamil two-part vowel signs, Burmese au on a 23px phone key) shrinks to fit
+   instead of spilling over its neighbours; every other key keeps the stylesheet size */
+(function () {
+  var kb = document.getElementById('kbrows');
+  if (!kb) return;
+  var ctx = document.createElement('canvas').getContext('2d');
+  function fit() {
+    kb.querySelectorAll('.key[data-ch]').forEach(function (b) {
+      b.style.fontSize = '';
+      var t = b.lastChild;
+      if (!t || t.nodeType !== 3) return;
+      var cs = getComputedStyle(b);   /* INK width: vowel signs draw outside their advance box */
+      ctx.font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+      var m = ctx.measureText(t.nodeValue);
+      var w = Math.max(m.width, m.actualBoundingBoxLeft + m.actualBoundingBoxRight), room = b.clientWidth - 6;
+      if (w > room && room > 0) {
+        b.style.fontSize = Math.max(9, Math.floor(parseFloat(cs.fontSize) * room / w)) + 'px';
+      }
+    });
+  }
+  var q = 0;
+  function later() { if (!q) q = requestAnimationFrame(function () { q = 0; fit(); }); }
+  new MutationObserver(later).observe(kb, {childList: true});
+  if (window.ResizeObserver) new ResizeObserver(later).observe(kb);
+  if (document.fonts) {   /* web fonts arrive in unicode-range pieces after ready: re-fit on each */
+    document.fonts.ready.then(later);
+    document.fonts.addEventListener('loadingdone', later);
+  }
+  later();
+})();
+</script>
 </body>
 </html>

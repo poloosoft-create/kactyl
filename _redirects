@@ -6,6 +6,16 @@ https://www.arabikeyboard.com/ https://kactyl.com/arabic/ 301!
 https://arabikeyboard.com/* https://kactyl.com/:splat 301!
 https://www.arabikeyboard.com/* https://kactyl.com/:splat 301!
 
+# /template/ is a BUILD INPUT, not a page. rebuild_keyboards.py reads it as the
+# donor skeleton for every keyboard rebuild, so it has to stay tracked in git —
+# but Netlify publishes whatever is tracked, so it was being served at 200.
+# It carries noindex + canonical -> /hindi/, so it was never an indexing risk;
+# this makes it unreachable, which is what "template pages are not to deploy"
+# actually means. Must sit ABOVE the /*/index.html rule: first match wins, and
+# that rule would otherwise swallow /template/index.html.
+/template/*         /hindi/         301!
+/template           /hindi/         301!
+
 # Catch all .html and /index.html variants BEFORE serving files
 # Redirect /slug/index.html → /slug/ for all keyboard/tool pages
 /*/index.html       /:splat/        301!

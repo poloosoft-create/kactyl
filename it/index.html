@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tastiera Araba Online 2026 — Gratuita [Mobile] | عربي</title>
   <meta name="description" content="Tastiera araba online gratuita. Scrivi arabo senza installazione. Modalità Franco, tashkeel & scrittura vocale. Ideale per WhatsApp & TikTok.">
-  <meta name="keywords" content="tastiera araba online, tastiera araba gratis, scrivere arabo online, clavier arabe sans installation, clavier arabe iphone, clavier arabe algérien, clavier arabe marocain, كلافيي عربي, لوحة مفاتيح عربية">
+  <meta name="keywords" content="tastiera araba online, tastiera araba gratis, scrivere arabo online, tastiera araba senza installazione, لوحة مفاتيح عربية">
 
   <!-- Pinterest verification -->
   <meta name="p:domain_verify" content="d032b623f4b35de3973a5303e0c84902">
@@ -26,9 +26,13 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
   <link rel="canonical" href="https://kactyl.com/it/">
-  <link rel="alternate" hreflang="x-default" href="https://kactyl.com/">
-  <link rel="alternate" hreflang="en" href="https://kactyl.com/">
+  <link rel="alternate" hreflang="en" href="https://kactyl.com/arabic/">
+  <link rel="alternate" hreflang="es" href="https://kactyl.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://kactyl.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://kactyl.com/de/">
   <link rel="alternate" hreflang="it" href="https://kactyl.com/it/">
+  <link rel="alternate" hreflang="nl" href="https://kactyl.com/nl/">
+  <link rel="alternate" hreflang="x-default" href="https://kactyl.com/arabic/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <!-- Open Graph -->
@@ -428,6 +432,7 @@ nav { display:flex; align-items:center; gap:4px; }
   display:flex; align-items:center; gap:8px;
   padding:10px 14px; font-size:13px; font-weight:500;
   color:var(--text); cursor:pointer; transition: background .15s;
+  text-decoration:none;   /* options are <a> on the Arabic cluster (2026-10-04) */
 }
 .lang-opt:hover { background:var(--bg); }
 .lang-opt.active { color:var(--indigo); font-weight:600; }
@@ -896,7 +901,7 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* ── KEYS ── */
 .kb-rows { display:flex; flex-direction:column; gap:7px; }
-.kb-row  { display:flex; gap:5px; }
+.kb-row  { display:flex; gap:5px; --kg:5px; }
 
 .key {
   flex:1; min-width:0; height:56px;
@@ -1637,7 +1642,7 @@ footer {
   /* ── Keyboard: fix overflow with flex:1 ── */
   .kb-card { padding:10px 8px 12px; }
   .kb-rows { gap:8px; }
-  .kb-row  { gap:2px; }
+  .kb-row  { gap:2px; --kg:2px; }
 
   /* All keys: shrink to fill row evenly */
   .key {
@@ -1708,6 +1713,8 @@ footer {
 }
 .fb-tab img { width:58px; height:58px; display:block; }
 .fb-dismiss { display:none; }
+/* FB-VISIBILITY: hidden while the keyboard is on screen; on mobile shown on the first visit only */
+body.kb-onscreen .fb-tab, body.kb-onscreen .fb-dismiss, body.fb-seen .fb-tab, body.fb-seen .fb-dismiss { display:none !important; }
 .fb-tab:hover {
   transform:translateY(-50%) translateX(-4px);
   filter:drop-shadow(-5px 6px 22px rgba(0,104,255,.52));
@@ -2149,10 +2156,10 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <img class="logo-img" id="logo-img" src="../images/LOGO-Arabickeyboard-online.svg" alt="Kactyl Logo">
   </a>
 
-                                                                                                                                                                                <nav>
+                                                                                                                                                                                        <nav>
     <a href="/" class="nav-link">Home</a>
-    <a href="/keyboards/" class="nav-link">Keyboards</a>
-    <a href="/franco-arab" class="nav-link" style="color:var(--blue);font-weight:700;">Franco Mode</a>
+    <a href="/franco-arab" class="nav-link" style="color:var(--blue);font-weight:700;">Modalità Franco</a>
+    <a href="#faq" class="nav-link">FAQ</a>
     <div class="tools-wrap">
       <button class="tools-btn">Tools &#9662;</button>
       <div class="tools-drop">
@@ -2168,14 +2175,19 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <a href="/calligraphy/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 13.5 Q6 8 9 10 Q12 12 15 4.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="9" cy="10" r="1.5" fill="#0068ff" opacity="0.5"/><path d="M5 15.5 Q9 14 13 15.5" stroke="#0068ff" stroke-width="1.2" stroke-linecap="round" opacity="0.45" fill="none"/></svg></span> Calligraphy</a>
         <a href="/word-counter/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M3 14.5V8" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 14.5V3.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14.5V9.5" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 14.5v-3" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/></svg></span> Word Counter</a>
         <a href="/morse-code/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="3" cy="9" r="1.7" fill="#0068ff"/><rect x="7" y="7.5" width="8" height="3" rx="1.5" fill="#0068ff"/></svg></span> Morse Code</a>
+        <a href="/text-repeater/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M5 3.5h8a2 2 0 0 1 2 2v2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 14.5H5a2 2 0 0 1-2-2v-2" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M13 9.5 15 7.5 17 9.5M5 8.5 3 10.5 1 8.5" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Text Repeater</a>
+        <a href="/typing-test/" class="tools-item"><span class="t-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><circle cx="9" cy="10" r="5.5" stroke="#0068ff" stroke-width="1.6"/><path d="M9 7.5V10l1.8 1.4" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.2 2.2h3.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/><path d="M9 2.2v1.6" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round"/></svg></span> Typing Test</a>
       </div>
     </div>
     <div class="lang-wrap">
       <button class="lang-pill" id="lang-btn" onclick="toggleLang()">🇮🇹 Italiano ▾</button>
       <div class="lang-menu" id="lang-menu">
-        <div class="lang-opt" onclick="setLang('en','🇺🇸 English')">🇺🇸 English</div>
-        <div class="lang-opt active" onclick="setLang('it','🇮🇹 Italiano')">🇮🇹 Italiano</div>
-        <div class="lang-opt" onclick="setLang('fr','🇫🇷 Français')">🇫🇷 Français</div>
+        <a class="lang-opt" href="/arabic/">🇺🇸 English</a>
+        <a class="lang-opt" href="/es/">🇪🇸 Español</a>
+        <a class="lang-opt" href="/fr/">🇫🇷 Français</a>
+        <a class="lang-opt" href="/de/">🇩🇪 Deutsch</a>
+        <a class="lang-opt active" href="/it/">🇮🇹 Italiano</a>
+        <a class="lang-opt" href="/nl/">🇳🇱 Nederlands</a>
         <div class="lang-opt" onclick="setLang('ar','🇸🇦 العربية')">🇸🇦 العربية</div>
       </div>
     </div>
@@ -2197,26 +2209,22 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <h1 data-i18n="hero.h1">Tastiera Araba Online <span class="h1-arabic">لوحة المفاتيح العربية</span></h1>
       <div class="hero-sub-row">
         <p class="hero-sub" data-i18n="hero.sub">Scrivi in arabo da qualsiasi dispositivo. Nessun download, nessuna installazione.</p>
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          100% Gratis &middot; Nessun Account &middot; Ovunque
+      <div class="hero-stats kb-facts" data-facts="counted">
+        <div class="hero-stat">
+          <span class="hs-num">28</span>
+          <span class="hs-label">Lettere</span>
+        </div>
+        <div class="hs-sep"></div>
+        <div class="hero-stat">
+          <span class="hs-num">411M</span>
+          <span class="hs-label">Parlanti</span>
+        </div>
+        <div class="hs-sep"></div>
+        <div class="hero-stat">
+          <span class="hs-num">Araba</span>
+          <span class="hs-label">Scrittura</span>
         </div>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hs-num">300+</span>
-          <span class="hs-label">Tastiere presto</span>
-        </div>
-        <div class="hs-sep"></div>
-        <div class="hero-stat">
-          <span class="hs-num">4B+</span>
-          <span class="hs-label">Parlanti coperti</span>
-        </div>
-        <div class="hs-sep"></div>
-        <div class="hero-stat">
-          <span class="hs-num">100%</span>
-          <span class="hs-label">Gratis per sempre</span>
-        </div>
       </div>
     </div>
 
@@ -2278,7 +2286,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="card editor-card">
       <div class="textarea-wrap">
         <textarea id="arabic-text"
-          placeholder="اكتب هنا…"
+          placeholder="اكتب هنا... أو انقر على الأحرف أدناه ✍️"
           oninput="onInput()" onkeydown="playClick()" spellcheck="false" inputmode="none"></textarea>
         <span class="char-num" id="char-counter">0 / 5000</span>
         <div class="char-progress" id="char-bar"></div>
@@ -2548,7 +2556,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="combo-section-hd">
       <div class="combo-hd-inner">
         <div class="combo-hd-text">
-          <p class="combo-section-sup" data-i18n="combo.title">Combo <span>Arabi pronti</span></p>
+          <p class="combo-section-sup" data-i18n="combo.title">Combo <span>pronti</span></p>
           <h2 class="combo-section-sub">Un clic per inserire — o copia direttamente</h2>
         </div>
         <img src="../images/Mascot-1.svg" alt="Emoji mascot" class="combo-mascot">
@@ -2657,27 +2665,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 </section>
 
 <!-- BRAND -->
-<section class="brand-sec" style="display:none">
-  <div class="brand-card">
-    <div class="b-icon">
-      <img loading="lazy" id="brand-logo-img" src="../images/LOGO-Footer-Keyboardarabe-online.svg" alt="Kactyl">
-    </div>
-    <div class="b-div"></div>
-    <div class="b-info">
-      <div class="b-name">
-        <span><span class="b-en-word">Arabi</span> Keyboard</span>
-        <span class="b-ar-word">عربي كيبورد</span>
-      </div>
-      <div class="b-domain">kactyl.com</div>
-      <div class="b-tag" data-i18n="brand.tag">Scrivi in arabo da qualsiasi dispositivo, senza installazione</div>
-      <div class="b-badges">
-        <span class="b-badge green" data-i18n="brand.badge1">✓ 100% Gratuito</span>
-        <span class="b-badge blue"  data-i18n="brand.badge2">⚡ Nessuna installazione</span>
-        <span class="b-badge red"   data-i18n="brand.badge3">📱 Tutti i dispositivi</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- FAQ PROMO -->
 <section class="faq-promo">
@@ -2727,16 +2714,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <p>Google Traduttore è uno strumento di traduzione, non di digitazione. Kactyl ti permette di scrivere testo arabo direttamente e copiarlo in qualsiasi app: WhatsApp, Instagram, TikTok, Snapchat. Perfetto se parli già arabo e hai bisogno solo di un modo semplice per digitarlo su una tastiera QWERTY italiana.</p>
   </div>
 </section>
-
-    <div class="blog-guide-link" style="max-width:860px;margin:0 auto 24px;padding:0 20px;">
-      <div style="opacity:.55;cursor:default;pointer-events:none">
-        <span class="bgl-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:block;flex-shrink:0"><defs><linearGradient id="bgl-g" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#0068ff"/><stop offset="100%" stop-color="#6366F1"/></linearGradient></defs><rect x="3" y="5" width="18" height="15" rx="2" fill="#0068ff" opacity="0.10"/><path d="M12 6.5C10.2 5.2 7.4 5 4 6V18.5C7.4 17.5 10.2 17.7 12 19V6.5Z" fill="url(#bgl-g)"/><path d="M12 6.5C13.8 5.2 16.6 5 20 6V18.5C16.6 17.5 13.8 17.7 12 19V6.5Z" fill="url(#bgl-g)" opacity="0.72"/><line x1="12" y1="6.5" x2="12" y2="19" stroke="white" stroke-width="0.8" opacity="0.55"/><line x1="5.5" y1="9.5" x2="10.5" y2="9" stroke="white" stroke-width="1.1" stroke-linecap="round" opacity="0.9"/><line x1="5.5" y1="12" x2="10.5" y2="11.5" stroke="white" stroke-width="1.1" stroke-linecap="round" opacity="0.9"/><line x1="5.5" y1="14.5" x2="9" y2="14.2" stroke="white" stroke-width="1.1" stroke-linecap="round" opacity="0.9"/><line x1="13.5" y1="9" x2="18.5" y2="9.5" stroke="white" stroke-width="1.1" stroke-linecap="round" opacity="0.9"/><line x1="13.5" y1="11.5" x2="18.5" y2="12" stroke="white" stroke-width="1.1" stroke-linecap="round" opacity="0.9"/><line x1="13.5" y1="14.2" x2="17" y2="14.5" stroke="white" stroke-width="1.1" stroke-linecap="round" opacity="0.9"/></svg></span>
-        <div class="bgl-text">
-          <span class="bgl-title">Guida completa alla scrittura araba</span>
-          <span class="bgl-sub">Guida in arrivo</span>
-        </div>
-      </div>
-    </div>
 <section class="sig-sec">
   <style>
     .sig-sec{padding:64px 0;background:linear-gradient(180deg,rgba(0,102,204,.045),transparent 30%)}
@@ -2807,10 +2784,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <div class="faq-hd-left">
         <div class="faq-hd-badge">FAQ</div>
         <h2>Domande <span style="color:var(--blue)">Frequenti</span></h2>
-        <p>Tutto quello che devi sapere sulla tastiera araba online</p>
       </div>
       <div class="faq-hd-right">
-        <img src="../images/Mascot-pc.svg" alt="" class="faq-mascot-2">
+        <img src="../images/Mascot-3.svg" alt="" class="faq-mascot-2">
         <svg class="faq-sparkle" style="top:-8px;right:52px;width:28px;height:28px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#0068FF"/></svg>
         <svg class="faq-sparkle" style="top:28px;right:12px;width:18px;height:18px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#0068FF" opacity=".7"/></svg>
         <svg class="faq-sparkle" style="top:5px;right:-8px;width:12px;height:12px" viewBox="0 0 28 28" fill="none"><path d="M14 0l2.5 11.5L28 14l-11.5 2.5L14 28l-2.5-11.5L0 14l11.5-2.5Z" fill="#0068FF" opacity=".5"/></svg>
@@ -2948,53 +2924,18 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   <div class="more-kbs-hd">
     <div>
       <p class="more-kbs-sup">Un'altra <span style="color:var(--blue)">lingua?</span></p>
-      <h2 class="more-kbs-title">300+ tastiere gratuite, tutte online</h2>
+      <h2 class="more-kbs-title">Free Keyboards, All Online</h2>
     </div>
     <a href="/keyboards/" class="more-kbs-all">Vedi tutte <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
   <div class="more-kbs-grid">
-    <a href="/arabic/"        class="kb-chip"><span class="kb-chip-flag">🇸🇦</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic</span><span class="kb-chip-native">العربية</span></div></a>
-    <a href="../amazigh/"     class="kb-chip"><span class="kb-chip-flag"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;vertical-align:middle;display:inline-block"><rect width="20" height="4.67" fill="#0070B8"/><rect y="4.67" width="20" height="4.67" fill="#3CB034"/><rect y="9.33" width="20" height="4.67" fill="#FFD700"/><text x="10" y="10.8" text-anchor="middle" font-size="8" fill="#CE1126" font-family="sans-serif">ⵣ</text></svg></span><div class="kb-chip-info"><span class="kb-chip-name">Amazigh</span><span class="kb-chip-native">ⵜⴰⵎⴰⵣⵉⵖⵜ</span></div></a>
-    <a href="../amharic/"     class="kb-chip"><span class="kb-chip-flag">🇪🇹</span><div class="kb-chip-info"><span class="kb-chip-name">Amharic</span><span class="kb-chip-native">አማርኛ</span></div></a>
-    <a href="../bengali/"     class="kb-chip"><span class="kb-chip-flag">🇧🇩</span><div class="kb-chip-info"><span class="kb-chip-name">Bengali</span><span class="kb-chip-native">বাংলা</span></div></a>
-    <a href="../de/"          class="kb-chip"><span class="kb-chip-flag">🇩🇪</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (DE)</span><span class="kb-chip-native">Deutsch</span></div></a>
-    <a href="../es/"          class="kb-chip"><span class="kb-chip-flag">🇪🇸</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (ES)</span><span class="kb-chip-native">Español</span></div></a>
-    <a href="../filipino/"    class="kb-chip"><span class="kb-chip-flag">🇵🇭</span><div class="kb-chip-info"><span class="kb-chip-name">Filipino</span><span class="kb-chip-native">Filipino</span></div></a>
-    <a href="../fr/"          class="kb-chip"><span class="kb-chip-flag">🇫🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (FR)</span><span class="kb-chip-native">Français</span></div></a>
-    <a href="../greek/"       class="kb-chip"><span class="kb-chip-flag">🇬🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Greek</span><span class="kb-chip-native">Ελληνικά</span></div></a>
-    <a href="../it/"          class="kb-chip"><span class="kb-chip-flag">🇮🇹</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (IT)</span><span class="kb-chip-native">Italiano</span></div></a>
-    <a href="../kurdish/"     class="kb-chip"><span class="kb-chip-flag"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;vertical-align:middle;display:inline-block"><rect width="20" height="4.67" fill="#CE1126"/><rect y="4.67" width="20" height="4.67" fill="#FFFFFF"/><rect y="9.33" width="20" height="4.67" fill="#007A3D"/><circle cx="10" cy="7" r="3" fill="#FFD700"/><circle cx="10" cy="7" r="1.5" fill="#CE1126"/></svg></span><div class="kb-chip-info"><span class="kb-chip-name">Kurdish</span><span class="kb-chip-native">کوردی</span></div></a>
-    <a href="../marathi/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Marathi</span><span class="kb-chip-native">मराठी</span></div></a>
-    <a href="../nepali/"      class="kb-chip"><span class="kb-chip-flag">🇳🇵</span><div class="kb-chip-info"><span class="kb-chip-name">Nepali</span><span class="kb-chip-native">नेपाली</span></div></a>
-    <a href="../nl/"          class="kb-chip"><span class="kb-chip-flag">🇳🇱</span><div class="kb-chip-info"><span class="kb-chip-name">Arabic (NL)</span><span class="kb-chip-native">Nederlands</span></div></a>
-    <a href="../pashto/"      class="kb-chip"><span class="kb-chip-flag">🇦🇫</span><div class="kb-chip-info"><span class="kb-chip-name">Pashto</span><span class="kb-chip-native">پښتو</span></div></a>
     <a href="../persian/"     class="kb-chip"><span class="kb-chip-flag">🇮🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Farsi</span><span class="kb-chip-native">فارسی</span></div></a>
-    <a href="../punjabi/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Punjabi</span><span class="kb-chip-native">ਪੰਜਾਬੀ</span></div></a>
-    <a href="../russian/"     class="kb-chip"><span class="kb-chip-flag">🇷🇺</span><div class="kb-chip-info"><span class="kb-chip-name">Russian</span><span class="kb-chip-native">Русский</span></div></a>
-    <a href="../sindhi/"      class="kb-chip"><span class="kb-chip-flag">🇵🇰</span><div class="kb-chip-info"><span class="kb-chip-name">Sindhi</span><span class="kb-chip-native">سنڌي</span></div></a>
-    <a href="../somali/"      class="kb-chip"><span class="kb-chip-flag">🇸🇴</span><div class="kb-chip-info"><span class="kb-chip-name">Somali</span><span class="kb-chip-native">Soomaali</span></div></a>
-    <a href="../tamil/"       class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Tamil</span><span class="kb-chip-native">தமிழ்</span></div></a>
-    <a href="../telugu/"      class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Telugu</span><span class="kb-chip-native">తెలుగు</span></div></a>
-    <a href="../kannada/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Kannada</span><span class="kb-chip-native">ಕನ್ನಡ</span></div></a>
-    <a href="../yoruba/"      class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Yoruba</span><span class="kb-chip-native">Yorùbá</span></div></a>
-    <a href="../vietnamese/"  class="kb-chip"><span class="kb-chip-flag">🇻🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Vietnamese</span><span class="kb-chip-native">Tiếng Việt</span></div></a>
-    <a href="../tigrinya/"    class="kb-chip"><span class="kb-chip-flag">🇪🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Tigrinya</span><span class="kb-chip-native">ትግርኛ</span></div></a>
-    <a href="../thai/"        class="kb-chip"><span class="kb-chip-flag">🇹🇭</span><div class="kb-chip-info"><span class="kb-chip-name">Thai</span><span class="kb-chip-native">ภาษาไทย</span></div></a>
-    <a href="../mongolian/"   class="kb-chip"><span class="kb-chip-flag">🇲🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Mongolian</span><span class="kb-chip-native">Монгол</span></div></a>
-    <a href="../malayalam/"   class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Malayalam</span><span class="kb-chip-native">മലയാളം</span></div></a>
-    <a href="../korean/"      class="kb-chip"><span class="kb-chip-flag">🇰🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Korean</span><span class="kb-chip-native">한국어</span></div></a>
-    <a href="../japanese/"    class="kb-chip"><span class="kb-chip-flag">🇯🇵</span><div class="kb-chip-info"><span class="kb-chip-name">Japanese</span><span class="kb-chip-native">日本語</span></div></a>
-    <a href="../igbo/"        class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Igbo</span><span class="kb-chip-native">Igbo</span></div></a>
-    <a href="../hausa/"       class="kb-chip"><span class="kb-chip-flag">🇳🇬</span><div class="kb-chip-info"><span class="kb-chip-name">Hausa</span><span class="kb-chip-native">Hausa</span></div></a>
-    <a href="../gujarati/"    class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Gujarati</span><span class="kb-chip-native">ગુજરાતી</span></div></a>
-    <a href="../chinese/"     class="kb-chip"><span class="kb-chip-flag">🇨🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Chinese</span><span class="kb-chip-native">中文</span></div></a>
-    <a href="../burmese/"     class="kb-chip"><span class="kb-chip-flag">🇲🇲</span><div class="kb-chip-info"><span class="kb-chip-name">Burmese</span><span class="kb-chip-native">မြန်မာ</span></div></a>
-    <a href="../turkish/"     class="kb-chip"><span class="kb-chip-flag">🇹🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Turkish</span><span class="kb-chip-native">Türkçe</span></div></a>
     <a href="../urdu/"        class="kb-chip"><span class="kb-chip-flag">🇵🇰</span><div class="kb-chip-info"><span class="kb-chip-name">Urdu</span><span class="kb-chip-native">اردو</span></div></a>
-    <a href="../uyghur/"      class="kb-chip"><span class="kb-chip-flag"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;vertical-align:middle;display:inline-block"><rect width="20" height="14" fill="#1F6FD0"/><circle cx="7" cy="7" r="4" fill="white"/><circle cx="8.3" cy="7" r="3.2" fill="#1F6FD0"/><polygon points="14,3.5 14.5,4.81 15.9,4.88 14.81,5.76 15.18,7.12 14,6.35 12.82,7.12 13.19,5.76 12.1,4.88 13.5,4.81" fill="white"/></svg></span><div class="kb-chip-info"><span class="kb-chip-name">Uyghur</span><span class="kb-chip-native">ئۇيغۇرچە</span></div></a>
+    <a href="../pashto/"      class="kb-chip"><span class="kb-chip-flag">🇦🇫</span><div class="kb-chip-info"><span class="kb-chip-name">Pashto</span><span class="kb-chip-native">پښتو</span></div></a>
+    <a href="../sindhi/"      class="kb-chip"><span class="kb-chip-flag">🇵🇰</span><div class="kb-chip-info"><span class="kb-chip-name">Sindhi</span><span class="kb-chip-native">سنڌي</span></div></a>
+    <a href="../kurdish/"     class="kb-chip"><span class="kb-chip-flag"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;vertical-align:middle;display:inline-block"><rect width="20" height="4.67" fill="#CE1126"/><rect y="4.67" width="20" height="4.67" fill="#FFFFFF"/><rect y="9.33" width="20" height="4.67" fill="#007A3D"/><circle cx="10" cy="7" r="3" fill="#FFD700"/><circle cx="10" cy="7" r="1.5" fill="#CE1126"/></svg></span><div class="kb-chip-info"><span class="kb-chip-name">Kurdish</span><span class="kb-chip-native">کوردی</span></div></a>
     <a href="/keyboards/" class="kb-discover">
       <div class="kb-discover-top">
-        <span class="kb-discover-count">+264 altre</span>
         <span class="kb-discover-arr">→</span>
       </div>
       <div class="kb-discover-label">Scopri tutte le tastiere</div>
@@ -3002,183 +2943,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="kb-discover-flags-inner">🇸🇦 🇮🇳 🇮🇷 🇵🇰 🇧🇩 🇹🇷 🇷🇺 🇰🇷 🇯🇵 🇨🇳 🇩🇪 🇫🇷 🇬🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇭 🇳🇵 🇲🇦 🇸🇴 🇪🇹 🇻🇳 🇹🇭 🇲🇳 &nbsp;🇸🇦 🇮🇳 🇮🇷 🇵🇰 🇧🇩 🇹🇷 🇷🇺 🇰🇷 🇯🇵 🇨🇳 🇩🇪 🇫🇷 🇬🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇭 🇳🇵 🇲🇦 🇸🇴 🇪🇹 🇻🇳 🇹🇭 🇲🇳</div>
       </div>
     </a>
-  </div>
-</div>
-
-<!-- More Text Tools -->
-<div class="more-tools">
-  <div class="more-tools-hd">
-    <div>
-      <p class="more-tools-sup">Altri strumenti di <span style="color:var(--blue)">testo?</span></p>
-      <h2 class="more-tools-title">Testo elegante, Unicode e altro</h2>
-    </div>
-    <a href="/symbols/" class="more-kbs-all">Vedi tutto <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div>
-  <div class="more-tools-grid" id="toolsScroll">
-
-    <!-- Symbols -->
-    <a href="/symbols/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M4.5 2L5.1 3.8H7L5.7 4.8L6.2 6.6L4.5 5.5L2.8 6.6L3.3 4.8L2 3.8H3.9Z" fill="#0068ff"/>
-            <path d="M11.5 4.8C11.5 4 12.1 3.3 12.9 3.3C13.5 3.3 14 3.7 14.2 4.2C14.4 3.7 14.9 3.3 15.5 3.3C16.3 3.3 16.9 4 16.9 4.8C16.9 6.4 14.2 8.2 14.2 8.2C14.2 8.2 11.5 6.4 11.5 4.8Z" fill="#0068ff" opacity=".82"/>
-            <path d="M2.5 13H6.5M5 11.5L6.5 13L5 14.5" stroke="#0068ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="13.5" cy="13" r="2.5" stroke="#0068ff" stroke-width="1.5"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1l1 2.4 2.5.35-1.8 1.75.42 2.5L5.5 6.7 3.38 8l.42-2.5L2 3.75l2.5-.35Z" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Symbols</span>
-      <span class="tool-card-desc">Stelle, frecce, cuori & 10K+</span>
-      <span class="tool-card-open">APRI</span>
-    </a>
-
-    <!-- Fancy Text -->
-    <a href="/fancy-text/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M3.5 14.5L7 4h2l3.5 10.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5 10.5h6" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M14 2l.45 1.35L15.8 3.8l-1.35.45L14 5.6l-.45-1.35L12.2 3.8l1.35-.45z" fill="#0068ff"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M3 9L5.5 2l2.5 7M4.2 6.2h2.6" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg></span>
-      </div>
-      <span class="tool-card-name">Fancy Text</span>
-      <span class="tool-card-desc">100+ stili Unicode istantanei</span>
-      <span class="tool-card-open">APRI</span>
-    </a>
-
-    <!-- Kaomoji -->
-    <a href="/kaomoji/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M3.5 9.5Q6 5.5 8.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M9.5 9.5Q12 5.5 14.5 9.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M4.5 12Q9 16.5 13.5 12" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 6Q5.5 9.5 8.5 6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="3.5" cy="3.5" r="1.1" fill="#fff"/><circle cx="7.5" cy="3.5" r="1.1" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Kaomoji</span>
-      <span class="tool-card-desc">Emoticon di testo per chat & Discord</span>
-      <span class="tool-card-open">APRI</span>
-    </a>
-
-    <!-- Invisible Char -->
-    <a href="/invisible-character/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="#0068ff" stroke-width="1.7" stroke-dasharray="2.8 2"/>
-            <line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#0068ff" stroke-width="1.7" stroke-linecap="round"/>
-            <line x1="7" y1="6.5" x2="11" y2="6.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".6"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><circle cx="5.5" cy="5.5" r="3.8" stroke="#fff" stroke-width="1.3"/><path d="M3 3l5 5" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-      </div>
-      <span class="tool-card-name">Invisible Char</span>
-      <span class="tool-card-desc">Spazi vuoti invisibili</span>
-      <span class="tool-card-open">APRI</span>
-    </a>
-
-    <!-- Zalgo Text -->
-    <a href="/zalgo-text/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <path d="M4.5 6.5h9L4.5 13h9" stroke="#0068ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="7.5" y1="2" x2="7.5" y2="4" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="11" y1="1.5" x2="10.2" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="9" y1="1" x2="9" y2="3.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".35"/>
-            <line x1="8" y1="14.5" x2="8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="11" y1="14.5" x2="11.8" y2="16.5" stroke="#0068ff" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 7.5h6M2.5 3.5h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 3.5L4 7.5" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity=".6"/></svg></span>
-      </div>
-      <span class="tool-card-name">Zalgo Text</span>
-      <span class="tool-card-desc">G̸l̷i̴t̵c̸h̵ testo corrotto</span>
-      <span class="tool-card-open">APRI</span>
-    </a>
-
-    <!-- Text Art -->
-    <a href="/text-art/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <circle cx="6.5" cy="7.5" r="1.4" fill="#0068ff"/>
-            <circle cx="11.5" cy="7.5" r="1.4" fill="#0068ff"/>
-            <path d="M5.5 11Q9 14 12.5 11" stroke="#0068ff" stroke-width="1.6" stroke-linecap="round" fill="none"/>
-            <line x1="3.5" y1="2.5" x2="14.5" y2="2.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity=".38"/>
-            <line x1="3.5" y1="15.5" x2="14.5" y2="15.5" stroke="#0068ff" stroke-width="1.1" stroke-linecap="round" opacity=".38"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1" y="1" width="3" height="3" rx=".8" fill="#fff"/><rect x="5" y="1" width="3" height="3" rx=".8" fill="#fff" opacity=".6"/><rect x="1" y="5" width="3" height="3" rx=".8" fill="#fff" opacity=".6"/><rect x="5" y="5" width="3" height="3" rx=".8" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Text Art</span>
-      <span class="tool-card-desc">Arte ASCII da qualsiasi testo</span>
-      <span class="tool-card-open">APRI</span>
-    </a>
-
-    <!-- Dot Art -->
-    <a href="/dot-art/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <circle cx="4" cy="4.5" r="2" fill="#0068ff" opacity=".3"/>
-            <circle cx="9" cy="4.5" r="2" fill="#0068ff"/>
-            <circle cx="14" cy="4.5" r="2" fill="#0068ff" opacity=".5"/>
-            <circle cx="4" cy="9.5" r="2" fill="#0068ff"/>
-            <circle cx="9" cy="9.5" r="2" fill="#0068ff" opacity=".35"/>
-            <circle cx="14" cy="9.5" r="2" fill="#0068ff"/>
-            <circle cx="4" cy="14.5" r="2" fill="#0068ff" opacity=".5"/>
-            <circle cx="9" cy="14.5" r="2" fill="#0068ff" opacity=".2"/>
-            <circle cx="14" cy="14.5" r="2" fill="#0068ff"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1.5" y="1.5" width="3" height="3" rx="1" fill="#fff"/><rect x="6.5" y="1.5" width="3" height="3" rx="1" fill="#fff"/><rect x="1.5" y="6.5" width="3" height="3" rx="1" fill="#fff"/><rect x="6.5" y="6.5" width="3" height="3" rx="1" fill="#fff"/></svg></span>
-      </div>
-      <span class="tool-card-name">Dot Art</span>
-      <span class="tool-card-desc">Pixel art & illustrazioni a punti</span>
-      <span class="tool-card-open">APRI</span>
-    </a>
-
-    <!-- FF & PUBG Names -->
-    <a href="/free-fire-name/" class="tool-card">
-      <div class="tool-card-visual">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="3" y="3" width="50" height="50" rx="13" fill="#EEF4FF"/>
-          <g transform="translate(7,7) scale(2.33)">
-            <rect x="2" y="6.5" width="14" height="7" rx="3.5" stroke="#0068ff" stroke-width="1.5"/>
-            <line x1="5.5" y1="10" x2="7.5" y2="10" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/>
-            <line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#0068ff" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="11.5" cy="9.5" r="0.85" fill="#0068ff"/>
-            <circle cx="13" cy="10.5" r="0.85" fill="#0068ff"/>
-          </g>
-        </svg>
-        <span class="tool-card-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="1.5" y="4" width="3.5" height="2.5" rx=".8" fill="#fff" opacity=".6"/><rect x="2.5" y="3" width="1.5" height="4.5" rx=".8" fill="#fff" opacity=".6"/><circle cx="8" cy="4" r="1.2" fill="#fff"/><circle cx="8" cy="7" r="1.2" fill="#fff" opacity=".6"/></svg></span>
-      </div>
-      <span class="tool-card-name">FF & PUBG Names</span>
-      <span class="tool-card-desc">Nomi gaming di stile</span>
-      <span class="tool-card-open">APRI</span>
-    </a>
-
-  </div>
-  <div class="more-tools-dots">
-    <span class="mtd active"></span>
-    <span class="mtd"></span>
-    <span class="mtd"></span>
   </div>
 </div>
 
@@ -3199,20 +2963,19 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <span class="ft-badge b">⚡ Nessuna Installazione</span>
       </div>
       <div class="ft-social">
-        <a href="https://x.com/kactyl" class="ft-soc-link" aria-label="X / Twitter" target="_blank" rel="noopener">
+        <span class="ft-soc-link" aria-label="X / Twitter">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-        </a>
-        <a href="https://instagram.com/kactyl" class="ft-soc-link" aria-label="Instagram" target="_blank" rel="noopener">
+        </span>
+        <span class="ft-soc-link" aria-label="Instagram">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://youtube.com/@kactyl" class="ft-soc-link" aria-label="YouTube" target="_blank" rel="noopener">
+        </span>
+        <span class="ft-soc-link" aria-label="YouTube">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-        <a href="https://tiktok.com/@kactyl" class="ft-soc-link" aria-label="TikTok" target="_blank" rel="noopener">
+        </span>
+        <span class="ft-soc-link" aria-label="TikTok">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-        </a>
-      </div>
-    </div>
+        </span>
+      </div></div>
 
     <!-- Keyboards -->
     <div class="ft-col">
@@ -3303,7 +3066,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 const ROWS = [
   ['ض','ص','ث','ق','ف','غ','ع','ه','خ','ح','ج','د'],
   ['ش','س','ي','ب','ل','ا','ت','ن','م','ك','ط','ظ'],
-  ['SHIFT','ئ','ء','ؤ','ر','لا','ى','ة','و','ز',',','BSP'],
+  ['SHIFT','ئ','ء','ؤ','ر','لا','ى','ة','و','ز','ذ','BSP'],
   ['N123','EMOJI','TASHKEEL','SPACE','DOT','FRANCO','ENTER']
 ];
 
@@ -3311,21 +3074,20 @@ const SPEC_CHARS = ['.', '-', '#', '+', '"', '§', '$', '%', '&', '/', '…', '(
 
 /* Phonetic hint for each key */
 const FL = {
-  'ص':'ss', 'ث':'th', 'ق':'q', 'ف':'f', 'غ':'gh', 'ع':'3', 'ه':'h', 'خ':'kh', 'ح':'7', 'ج':'j', 'د':'d', 'ش':'sh', 'س':'s', 'ي':'y', 'ب':'b', 'ل':'l', 'ا':'a', 'ت':'t', 'ن':'n', 'م':'m', 'ك':'k', 'ط':'tt', 'ئ':'y2', 'ء':'2', 'ؤ':'w2', 'ر':'r', 'لا':'la', 'ى':'a2', 'ة':'ẗ', 'و':'w', 'ز':'z', ',':','
+  'ص':'ss', 'ث':'th', 'ق':'q', 'ف':'f', 'غ':'gh', 'ع':'3', 'ه':'h', 'خ':'kh', 'ح':'7', 'ج':'j', 'د':'d', 'ش':'sh', 'س':'s', 'ي':'y', 'ب':'b', 'ل':'l', 'ا':'a', 'ت':'t', 'ن':'n', 'م':'m', 'ك':'k', 'ط':'tt', 'ئ':'y2', 'ء':'2', 'ؤ':'w2', 'ر':'r', 'لا':'la', 'ى':'a2', 'ة':'ẗ', 'و':'w', 'ز':'z', ',':',', 'ذ':'dh'
 };
 
-const PHYS = {
-  'q':'ض','w':'ص','e':'ث','r':'ق','t':'ف','y':'غ','u':'ع','i':'ه','o':'خ','p':'ح',
-  '[':'ج',']':'د',
-  'a':'ش','s':'س','d':'ي','f':'ب','g':'ل','h':'ا','j':'ت','k':'ن','l':'م',';':'ك',"'":'ط',
-  'z':'ئ','x':'ء','c':'ؤ','v':'ر','b':'لا','n':'ى','m':'ة',',':'و','.':'ز','/':'ظ','`':'ذ'
-};
+const PHYS = {"`": "ذ", "q": "ض", "w": "ص", "e": "ث", "r": "ق", "t": "ف", "y": "غ", "u": "ع", "i": "ه", "o": "خ", "p": "ح", "[": "ج", "]": "د", "a": "ش", "s": "س", "d": "ي", "f": "ب", "g": "ل", "h": "ا", "j": "ت", "k": "ن", "l": "م", ";": "ك", "'": "ط", "z": "ئ", "x": "ء", "c": "ؤ", "v": "ر", "b": "لا", "n": "ى", "m": "ة", ",": "و", ".": "ز", "/": "ظ", "\\": "ذ"};
+
+const PHYS_SHIFT = {"`": "ّ", "q": "َ", "w": "ً", "e": "ُ", "r": "ٌ", "t": "لإ", "y": "إ", "u": "‘", "i": "÷", "o": "×", "p": "؛", "a": "ِ", "s": "ٍ", "g": "لأ", "h": "أ", "j": "ـ", "k": "،", "x": "ْ", "b": "لآ", "n": "آ", "m": "’", "/": "؟", "\\": "ّ"};
 
 const TASH = [
   {c:'َ',l:'فتحة'},{c:'ً',l:'تنوين فتح'},{c:'ُ',l:'ضمة'},{c:'ٌ',l:'تنوين ضم'},
   {c:'ِ',l:'كسرة'},{c:'ٍ',l:'تنوين كسر'},{c:'ّ',l:'شدة'},{c:'ْ',l:'سكون'},
   {c:'أ',l:'أ'},{c:'إ',l:'إ'},{c:'آ',l:'آ'},{c:'ة',l:'ة'},
   {c:'ى',l:'مقصورة'},{c:'،',l:'فاصلة'},{c:'؟',l:'استفهام'},{c:'؛',l:'منقوطة'},
+
+  {c:'ٰ',l:'◌ٰ'},{c:'ذ',l:'ذ'}
 ];
 
 const EMOJI_CATS_DATA = {
@@ -3392,18 +3154,22 @@ const NEXT_WORD = {
 
 let lastPickedWord = '';
 
-function getSuggestions(prefix) {
+function getSuggestions(prefix) {   /* LIVE-FIX-1013 */
   if (!prefix || prefix.length < 1) return [];
   const scored = {};
   const freq = w => userFreq[w] || 0;
 
-  // Dictionary words
+  // Dictionary words. Case-insensitive: "mor" finds German "Morgen", and "Hal" at the
+  // start of a sentence finds "hallo" (shown as "Hallo" below). (2026-10-10)
+  const _lc = x => x.toLocaleLowerCase(document.documentElement.lang || undefined);
+  const lp = _lc(prefix);
   WORDS.forEach(w => {
     if (w === prefix) return;
+    const lw = _lc(w);
     let s = 0;
-    if (w.startsWith(prefix))      s = 100 + freq(w) * 5 - w.length;
-    else if (freq(w) > 0 && w.startsWith(prefix.slice(0,-1))) s = 40 + freq(w) * 3;
-    else if (w.length >= prefix.length && editDist(w.slice(0,prefix.length+2), prefix) <= 1) s = 20 + freq(w) * 2;
+    if (lw.startsWith(lp))      s = 100 + freq(w) * 5 - w.length;
+    else if (freq(w) > 0 && lw.startsWith(lp.slice(0,-1))) s = 40 + freq(w) * 3;
+    else if (w.length >= prefix.length && editDist(lw.slice(0,prefix.length+2), lp) <= 1) s = 20 + freq(w) * 2;
     if (s > 0) scored[w] = s;
   });
 
@@ -3414,7 +3180,10 @@ function getSuggestions(prefix) {
     if (w.startsWith(prefix)) scored[w] = 80 + userFreq[w] * 5 - w.length;
   });
 
-  return Object.entries(scored).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([w])=>w);
+  // a capital the user typed is kept: "Hal" -> "Hallo" (never lowers a German noun)
+  const cap = prefix[0] !== _lc(prefix[0]);
+  return Object.entries(scored).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([w]) =>
+    cap && w[0] === _lc(w[0]) ? w[0].toLocaleUpperCase(document.documentElement.lang || undefined) + w.slice(1) : w);
 }
 
 /* ── STATE ── */
@@ -3569,8 +3338,9 @@ function buildKB() {
       } else {
         /* letter key — prefix combining chars with dotted circle so they render visibly */
         const COMBINING = new Set(['ً','ٌ','ٍ','َ','ُ','ِ','ّ','ْ']);
-        const display = COMBINING.has(k) ? '◌' + k : k;
+        const display = (COMBINING.has(k) || /^\p{M}+$/u.test(k)) ? '\u25CC' + k : k;   /* a mark alone needs a carrier to be visible */
         const hint = FL[k] || '';
+        btn.dataset.ch = k;   /* long-press reads this — textContent also holds the hidden Latin hint */
         btn.innerHTML = `<span class="fl">${hint}</span>${display}`;
         if (k === 'لا') btn.style.fontSize = '15px';
         btn.onclick = () => ins(k);
@@ -3595,7 +3365,6 @@ function buildSpec() {
 
 function buildNum() {
   const western  = ['1','2','3','4','5','6','7','8','9','0'];
-  const arabic   = ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'];
   const symbols  = ["?","!",",",".","(",")",":",";","@","#","+","-","×","÷","=","%","°","½","¼","¾","&","*","\"","'","/","\\","|","_","~","^","<",">","[","]","{","}","€","$","£","¥","©","®","™","•","…","—","«","»","§"/*LANG_SYMBOLS*/,"،","؛","؟","٪","«","»","ـ"/*END_LANG_SYMBOLS*/];
   const fill = (id, chars, extraClass='') => {
     const g = document.getElementById(id); if (!g) return;
@@ -3608,6 +3377,7 @@ function buildNum() {
     });
   };
   fill('ngrid-w', western);
+  /*NATIVE_DIGITS*/(function(){const D={"label": "Arabic digits", "digits": ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"], "first": true, "font": "'Tajawal', sans-serif"};const w=document.getElementById('ngrid-w');if(!w)return;let g=document.getElementById('ngrid-n');if(!g){const l=document.createElement('div');l.className='n-section-lbl';l.textContent=D.label;g=document.createElement('div');g.className='n-grid';g.id='ngrid-n';if(D.font)g.style.fontFamily=D.font;if(D.first){const wl=w.previousElementSibling;w.parentNode.insertBefore(l,wl);w.parentNode.insertBefore(g,wl);}else{w.parentNode.insertBefore(g,w.nextSibling);w.parentNode.insertBefore(l,g);}}fill('ngrid-n',D.digits);})();/*END_NATIVE_DIGITS*/
   const ga = document.getElementById('ngrid-a'); if(ga) ga.style.display='none';
   fill('ngrid-s', symbols);
 }
@@ -3716,7 +3486,7 @@ function toggleTash()    { tashOpen = !tashOpen; document.getElementById('tpop')
 async function aiTashkeel() {
   const ta = document.getElementById('arabic-text');
   const text = ta.value.trim();
-  if (!text) { toast('✏️ Scrivi prima un testo'); return; }
+  if (!text) { toast('✏️ اكتب نصاً أولاً'); return; }
   const btn = document.querySelector('.ai-tash-btn');
   btn.disabled = true;
   btn.querySelector('.ai-tash-label').textContent = '⏳ جاري التشكيل...';
@@ -3731,16 +3501,17 @@ async function aiTashkeel() {
     if (data.result) {
       ta.value = data.result;
       updateStats(); updateSugs();
-      toast('✅ Tashkeel automatico applicato');
+      toast('✅ تم التشكيل التلقائي');
     } else { throw new Error('No result'); }
   } catch (err) {
-    toast('❌ Tashkeel non riuscito, riprova');
+    toast('❌ تعذّر التشكيل، حاول مجدداً');
   } finally {
     btn.disabled = false;
     const t = I18N[currentLang] || I18N.en;
     btn.querySelector('.ai-tash-label').textContent = t['btn.aitash'] || 'AI تشكيل تلقائي';
   }
 }
+
 
 function closeTashkeel() { tashOpen = false; document.getElementById('tpop').classList.remove('show'); }
 function toggleNum()     { numOpen = !numOpen; document.getElementById('npop').classList.toggle('show', numOpen); if (numOpen) { closeEmoji(); closeTashkeel(); closeSpec(); } }
@@ -3872,9 +3643,12 @@ function updateSugs() {
     sugs = [el0.textContent, currentPrefix, el2.textContent];
   } else {
     // Idle mode: next-word prediction based on last word typed
-    let nextPreds = lastPickedWord ? (NEXT_WORD[lastPickedWord] || []) : [];
+    let nextPreds = lastPickedWord ? (NEXT_WORD[lastPickedWord] || []).slice() : [];   /* copy — pushing into NEXT_WORD's own array grew it forever */
     if (nextPreds.length < 3) {
-      const top = Object.entries(userFreq).sort((a,b)=>b[1]-a[1]).map(([w])=>w);
+      /* fill from the user's frequent words, then the language's commonest — never the word
+         just typed, never the same word twice (2026-10-06) */
+      const top = [...new Set([...Object.entries(userFreq).sort((a,b)=>b[1]-a[1]).map(([w])=>w), ...WORDS])]
+        .filter(w => w !== lastPickedWord && !nextPreds.includes(w));
       while (nextPreds.length < 3) nextPreds.push(top.shift() || ['لا','من','في'][nextPreds.length]);
     }
     el0.textContent = nextPreds[0] || ''; el1.textContent = nextPreds[1] || ''; el2.textContent = nextPreds[2] || '';
@@ -4018,7 +3792,7 @@ function toggleQwerty() {
 /* ── PHYSICAL KB ── */
 /* Phonetic (Franco/Arabizi) maps, derived by inverting the on-screen hint map FL so
    every language reuses its OWN hints. 1-char latin = single, 2-char = digraph
-   (type-then-upgrade: 's'->س, then 'h' upgrades it to ش). Capitals = emphatics. */
+   (type-then-upgrade: 's' types one letter, then 'h' upgrades it to the 'sh' letter). Capitals = emphatics. */
 const PH_SINGLE = {}, PH_DIGRAPH = {};
 (function buildPhonetic(){
   for (const ar in FL) {
@@ -4045,16 +3819,41 @@ function replaceLast(newCh) {
    position, not the Latin letter printed on the key. */
 const CODE2CHAR = {};
 'qwertyuiopasdfghjklzxcvbnm'.split('').forEach(c => { CODE2CHAR['Key' + c.toUpperCase()] = c; });
-Object.assign(CODE2CHAR, {BracketLeft:'[', BracketRight:']', Semicolon:';', Quote:"'", Comma:',', Period:'.', Slash:'/', Backquote:'`'});
+Object.assign(CODE2CHAR, {BracketLeft:'[', BracketRight:']', Semicolon:';', Quote:"'", Comma:',', Period:'.', Slash:'/', Backquote:'`', Backslash:'\\'});   /* Backslash = ISO C12 (Armenian, Serbian, Macedonian letters sit there) */
+/* number row: national layouts put letters here (e.g. Kazakh puts its extra letters on 2 3 4 5 8 9 0 - =).
+   Keys with no PHYS entry on a page still type their digit/sign as normal. */
+Object.assign(CODE2CHAR, {Digit1:'1', Digit2:'2', Digit3:'3', Digit4:'4', Digit5:'5', Digit6:'6', Digit7:'7', Digit8:'8', Digit9:'9', Digit0:'0', Minus:'-', Equal:'='});
 function setupPhys() {
   const ta = document.getElementById('arabic-text');
-  ta.addEventListener('pointerdown', () => { lastPh = ''; });
+  ta.addEventListener('pointerdown', () => { lastPh = ''; deadKey = ''; });
   document.addEventListener('keydown', e => {
     if (!qwertyOn) return;
+    if (document.activeElement === ta && !e.metaKey && !francoOn && typeof PHYS_DEAD === 'object') {
+      const alt = e.altKey || (e.getModifierState && e.getModifierState('AltGraph'));
+      const layer = alt ? 'altgr' : (e.shiftKey ? 'shift' : 'base');
+      const dk = ((PHYS_DEAD.keys || {})[layer] || {})[CODE2CHAR[e.code]];
+      if (dk && (alt || !e.ctrlKey)) { e.preventDefault(); if (deadKey) ins(deadKey); deadKey = dk; return; }
+      if (deadKey && e.code === 'Space') { e.preventDefault(); ins((PHYS_DEAD.map || {})[deadKey + ' '] || deadKey); deadKey = ''; return; }
+      if (deadKey && (e.key === 'Escape' || e.key === 'Backspace')) { deadKey = ''; if (e.key === 'Escape') return; }
+    }
+    /* PHYS_ALTGR (optional, per page): letters a national layout puts on AltGr
+       (the Ukrainian letter ghe-with-upturn on AltGr). Windows AltGr = Ctrl+Alt, Mac = Option. */
+    if (document.activeElement === ta && !e.metaKey && typeof PHYS_ALTGR === 'object'
+        && (e.altKey || (e.getModifierState && e.getModifierState('AltGraph')))) {
+      let ag = PHYS_ALTGR[CODE2CHAR[e.code]];
+      if (ag) {
+        if (e.shiftKey && typeof PHYS_SHIFT !== 'object') ag = ag.toLocaleUpperCase(document.documentElement.lang || undefined);   /* PHYS_SHIFT page = Shift is not case (Georgian) */
+        e.preventDefault(); insPhys(ag); return;
+      }
+    }
     if (document.activeElement !== ta || e.ctrlKey || e.metaKey || e.altKey) return;
     const skip = ['Backspace','Delete','Tab','Enter','Arrow','Home','End'];
     if (skip.some(s => (e.key || '').startsWith(s))) { lastPh = ''; return; }
     if (francoOn) {                                   /* phonetic — sound (e.key), CASE-sensitive: Shift = emphatic */
+      /* Pages with a whole-word converter (Arabizi → Arabic) let Latin letters through
+         and convert the finished word on Space/Enter: letter-by-letter mapping can't
+         know where a script leaves out short vowels (7abibi is one Arabic word, not letter by letter). */
+      if (typeof arabiziToArabic === 'function' || typeof romajiToKana === 'function' || typeof pinyinCands === 'function') return;
       let raw = e.key || '';
       if (e.code === 'Digit2') raw = '2';
       else if (e.code === 'Digit3') raw = '3';
@@ -4065,11 +3864,39 @@ function setupPhys() {
       if (PH_SINGLE[raw]) { e.preventDefault(); ins(PH_SINGLE[raw]); lastPh = (raw === low) ? low : ''; return; }
       if (PH_SINGLE[low]) { e.preventDefault(); ins(PH_SINGLE[low]); lastPh = low; return; }
       lastPh = '';
+      if (PHYS[CODE2CHAR[e.code]] === '') e.preventDefault();   /* key deliberately empty on this page (no hieroglyph on e) - silent here too, never Latin */
     } else {                                          /* standard layout — by physical position */
-      const ch = PHYS[CODE2CHAR[e.code]];
-      if (ch) { e.preventDefault(); ins(ch); }
+      /* Japanese/Chinese: a physical keyboard types romaji/pinyin, converted per word by the
+         page's engine (cjk_engines.py) - a letter-by-letter map typed k -> ka-kana (2026-10-13) */
+      if ((typeof romajiToKana === 'function' || typeof pinyinCands === 'function') && /^[a-z]$/i.test(e.key || '')) return;
+      const pk = CODE2CHAR[e.code];
+      let ch = PHYS[pk];
+      /* PHYS_SHIFT (optional, per page): a Shift layer that is NOT a case change —
+         e.g. Egyptian Manuel de Codage, where h and H are two different signs. */
+      if (e.shiftKey && typeof PHYS_SHIFT === 'object' && PHYS_SHIFT[pk]) ch = PHYS_SHIFT[pk];
+      else if (ch && e.shiftKey) {
+        const _L = document.documentElement.lang || undefined;
+        /* Shift = capital; locale-aware (Turkish dotted capital I); no-op on caseless scripts.
+           A two-letter key (Sakha soft-n digraph) capitalises its first letter only, as the real layout does. */
+        const up = ch.length > 1 ? ch[0].toLocaleUpperCase(_L) + ch.slice(1) : ch.toLocaleUpperCase(_L);
+        if (up.length > ch.length) return;   /* no one-letter capital (German sharp s -> SS): leave the key to the real keyboard (Shift = ? on German keyboards); the capital is on screen + Special */
+        ch = up;
+      }
+      if (ch) { e.preventDefault(); insPhys(ch); }
+      else if (ch === '') e.preventDefault();
+      else if (deadKey && (e.key || '').length === 1) { ins(deadKey); deadKey = ''; }   /* no composition: accent, then the key's own char */   /* key deliberately empty (Serbian Z: no Serbian letter) — never leak Latin */
     }
   });
+}
+
+/* PHYS_DEAD (optional, per page): dead keys of the national layout, as Windows does them -
+   the accent key is silent, the next letter is composed from the CLDR table (Czech caron + d).
+   Space after a dead key types the accent itself; a key with no composition types both. */
+let deadKey = '';
+function insPhys(c) {
+  if (!deadKey) { ins(c); return; }
+  const d = deadKey; deadKey = '';
+  ins((PHYS_DEAD.map || {})[d + c] || (d + c));
 }
 
 /* ── VOICE ── */
@@ -4277,22 +4104,46 @@ const ARABIZI = [
 
 
 function arabiziToArabic(text) {
-  let result = '';
-  let i = 0;
+  const ARABIZI_LEX = ["حبيبي", "حبيبتي", "حبي", "سلام", "كيفك", "كيفكم", "كيف", "حالك", "انا", "انت", "انتي", "احبك", "بحبك", "شكرا", "مرحبا", "اهلا", "يلا", "والله", "انشالله", "الحمدلله", "ماشي", "تمام", "طيب", "ايوه", "لا", "نعم", "مش", "مافي", "فيه", "شو", "ايش", "وين", "ليش", "كتير", "كثير", "شوي", "حلو", "زين", "بس", "خلاص", "يعني", "صباح", "مساء", "الخير", "اخي", "اختي", "ماما", "بابا", "صديقي", "عمري", "قلبي", "روحي", "صباح", "حياتي", "الله", "ان", "شاء"];
+  /* Arabizi → Arabic (canonical, tools/arabizi_engine.py). Arabizi is ambiguous:
+     short vowels aren't written in Arabic (so a single a/e/i/o/u inside a word is
+     optional) and some Latin letters stand for two Arabic ones (h = ه/ح, s = س/ص,
+     t = ت/ط, d = د/ض, z = ز/ظ). Every reading is tried (capped) and the first real
+     word wins — this page's WORDS list plus common chat words. No match → the most
+     common reading: drop medial a/e/o, keep i/u; final "-an" → ا (shukran → شكرا). */
+  const ALT = { h: ['ه', 'ح'], s: ['س', 'ص'], t: ['ت', 'ط'], d: ['د', 'ض'], z: ['ز', 'ظ'] };
+  const wl = typeof WORDS !== 'undefined' ? WORDS : [];
+  const low = text.toLowerCase();
+  const units = []; let i = 0;
   while (i < text.length) {
-    let matched = false;
-    const remaining = text.slice(i).toLowerCase();
+    let hit = null;
     for (const [from, to] of ARABIZI) {
-      if (remaining.startsWith(from.toLowerCase())) {
-        result += to;
-        i += from.length;
-        matched = true;
-        break;
-      }
+      if (low.startsWith(from.toLowerCase(), i)) { hit = [from, to]; break; }
     }
-    if (!matched) { result += text[i]; i++; }
+    if (!hit) { units.push({ alts: [text[i]], dflt: text[i] }); i++; continue; }
+    const f = hit[0].toLowerCase(), first = i === 0, last = i + f.length >= text.length;
+    let alts = ALT[f] ? ALT[f].slice() : [hit[1]], dflt = hit[1];
+    if (f.length === 1 && 'aeiou'.includes(f)) {
+      if (first) { alts = [hit[1], 'ا']; }
+      else if (!last) { alts = ['', hit[1]]; dflt = 'iu'.includes(f) ? hit[1] : ''; }
+    }
+    units.push({ alts: [...new Set(alts)], dflt });
+    i += hit[0].length;
   }
-  return result;
+  let best = null, bestRank = Infinity, n = 0;
+  const consider = w => {
+    const r = ARABIZI_LEX.includes(w) ? -1 : wl.indexOf(w);
+    if (r > -2 && (ARABIZI_LEX.includes(w) || r >= 0) && r < bestRank) { best = w; bestRank = r; }
+  };
+  const walk = (k, acc) => {
+    if (n > 4096) return;
+    if (k === units.length) { n++; consider(acc); if (/an$/i.test(text)) consider(acc.replace(/ان$/, 'ا')); return; }
+    for (const a of units[k].alts) walk(k + 1, acc + a);
+  };
+  walk(0, '');
+  if (best) return best;
+  const d = units.map(u => u.dflt).join('');
+  return /an$/i.test(text) ? d.replace(/ان$/, 'ا') : d;
 }
 
 
@@ -4300,8 +4151,8 @@ function arabiziToArabic(text) {
 const EMOJI_CATS = {
   popular: ['❤️','😂','😍','🙏','👍','💪','🎉','✨','🔥','💯','😭','😘','🥰','💕','👏','🌟','😅','🤔','💙','🎊','😎','🥳','🤩','🫶','🤗','😊','🤣','👀','💎','🌹','😤','🥺','💀','🫠','😶‍🌫️','🫡','🤌','💅','👌','✌️'],
   islamic:  ['🕌','🕋','☪️','🤲','📿','🌙','⭐','🌟','🕊️','📖','🌹','🌿','🌾','💚','🤍','🧎','🧎‍♂️','🙏','🌅','✨','🕯️','🌄','🫶','🌙','🌺','🌸','🤲','🫖','🌊'],
-  culture:  ['🐪','🏜️','🌴','🫖','☕','🥘','🫕','🏺','🌊','🏔️','☀️','🌺','🌸','🦁','🦅','🐎','🎶','🎵','🥁','🪘','🪔','🌅','🏛️','⛵','🗺️','🌍','🎪','🫙','🌻','🐠'],
-  flags:    ['🇩🇿','🇲🇦','🇹🇳','🇱🇾','🇸🇦','🇦🇪','🇶🇦','🇰🇼','🇧🇭','🇯🇴','🇪🇬','🇮🇶','🇸🇾','🇾🇪','🇴🇲','🇵🇸','🇱🇧','🇩🇯','🇸🇩','🇸🇴','🇲🇷','🇫🇷','🇧🇪','🇨🇦','🇩🇪','🇸🇪'],
+  culture:  ['🐪','🏜️','🌴','🫖','☕','🥘','🫕','🏺','🕌','🌙','⭐','📿','🤲','🌊','🏔️','☀️','🌹','🌸','🦅','🐎','🎶','🎵','🥁','🪘','🌅','🏛️','⛵','🗺️','🌍','🫒','🍯','🫙'],
+  flags:    ['🇸🇦','🇪🇬','🇲🇦','🇩🇿','🇹🇳','🇱🇾','🇮🇶','🇸🇾','🇯🇴','🇱🇧','🇵🇸','🇦🇪','🇶🇦','🇰🇼','🇧🇭','🇴🇲','🇾🇪','🇸🇩','🇲🇷','🇫🇷','🇩🇪','🇪🇸','🇮🇹','🇳🇱','🇧🇪','🇬🇧','🇺🇸','🇨🇦','🇹🇷','🇸🇪'],
   social:   ['❤️‍🔥','🫀','💔','🥺','😤','😈','🙈','🙉','🙊','💀','🤡','🥹','😑','🫠','🫡','🤌','👌','✌️','🤙','☝️','🤏','🫳','🫴','🤝','💅','🫰','🙃','😏','🧢','🔑','💸','🎯']
 };
 
@@ -4530,6 +4381,25 @@ function dismissFeedbackTab() {
   if (x) x.style.display = 'none';
   setTimeout(() => { t.style.display = 'none'; }, 320);
 }
+/* FB-VISIBILITY (Aissa 2026-10-12): the feedback tab hides while the keyboard is on screen,
+   and on mobile it is shown on the first visit only - remembered in localStorage, so a refresh
+   or another keyboard page does not show it again. Storage blocked = old behaviour. */
+(function () {
+  var KEY = 'kactyl_fb_seen';
+  var mob = window.matchMedia && window.matchMedia('(max-width:640px)').matches;
+  if (mob) {
+    var seen = null;
+    try { seen = localStorage.getItem(KEY); } catch (e) {}
+    if (seen) document.body.classList.add('fb-seen');
+    else { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+  }
+  var kb = document.getElementById('kbrows');
+  if (kb && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      document.body.classList.toggle('kb-onscreen', es[0].isIntersecting);
+    }).observe(kb);
+  }
+})();
 /* swipe-right on mobile to dismiss */
 document.addEventListener('DOMContentLoaded', function() {
   const tab = document.getElementById('fbTab');
@@ -4759,9 +4629,15 @@ async function submitFeedback(e) {
     content: ''; width: 42px; height: 5px; border-radius: 3px;
     background: rgba(100,116,139,.35);
   }
+  /* the feedback bubble + its x sat ON the right-hand keys and Backspace of the docked keyboard */
+  body.kb-docked .fb-tab, body.kb-docked .fb-panel, body.kb-docked .fb-dismiss { display: none !important; }
   body.kb-docked .sug-pill { font-size: 13px; padding: 7px 8px; }
 }
 
+/* key unit: every letter key is one size (= the longest row), so a short row centres
+   instead of stretching its keys (Aissa 2026-10-05; --kn/--kg set by the script below) */
+.kb-row { justify-content: center; }
+.kb-row .key[data-ch] { flex: 0 1 calc((100% - (var(--kn,10) - 1) * var(--kg,5px)) / var(--kn,10)); }
 #kb-altpop {
   position: fixed; z-index: 10000; display: none; gap: 6px;
   background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
@@ -4773,6 +4649,9 @@ async function submitFeedback(e) {
   font-size: 24px; font-family: inherit; background: rgba(0,104,255,.08); color: inherit;
 }
 #kb-altpop button:active, #kb-altpop button:hover { background: var(--indigo, #6366F1); color: #fff; }
+.key.has-alt { position: relative; }
+.key.has-alt::after { content: ''; position: absolute; top: 4px; right: 4px; width: 4px; height: 4px;
+  border-radius: 50%; background: var(--indigo, #6366F1); pointer-events: none; }
 
 /* Matra/Roman labels: docked = native-small. Outside any media query and
    !important — the template re-sizes these keys at several widths (12px base,
@@ -4892,15 +4771,22 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
   }
 
   /* long-press alternates — per-language data from tools/kb_lang_data.py */
-  const KB_ALT = {"ا": ["أ", "إ", "آ"], "و": ["ؤ"], "ي": ["ئ", "ى"], "ه": ["ة"]};
+  const KB_ALT = {"ا": ["أ", "إ", "آ"]};
   const pop = document.createElement('div');
   pop.id = 'kb-altpop';
   document.body.appendChild(pop);
   let lpTimer = null, lpKey = null, suppressClick = false;
 
+  /* alternates for a key as shown (Shift on: the capital letter offers the capital variant) */
+  function altsFor(ch) {
+    if (!ch) return null;
+    if (KB_ALT[ch]) return KB_ALT[ch];
+    const lo = ch.toLocaleLowerCase(document.documentElement.lang || undefined);
+    return lo !== ch && KB_ALT[lo] ? KB_ALT[lo].map(a => a.toLocaleUpperCase(document.documentElement.lang || undefined)) : null;
+  }
   function showAlts(keyEl, ch) {
     pop.innerHTML = '';
-    KB_ALT[ch].forEach(alt => {
+    altsFor(ch).forEach(alt => {
       const b = document.createElement('button');
       b.textContent = alt;
       b.onclick = ev => { ev.stopPropagation(); ins(alt); hideAlts(); };
@@ -4908,18 +4794,30 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
     });
     const r = keyEl.getBoundingClientRect();
     pop.style.display = 'flex';
-    pop.style.left = (r.left + r.width / 2) + 'px';
-    pop.style.top  = (r.top - 62) + 'px';
+    /* stay on screen (Khmer qa holds 10 letters): wrap when wider than the screen, clamp the centre */
+    pop.style.flexWrap = 'wrap'; pop.style.justifyContent = 'center';
+    pop.style.maxWidth = (window.innerWidth - 16) + 'px';
+    pop.style.left = '0px'; pop.style.width = '';   /* measure with the whole screen width available, */
+    const pw = pop.offsetWidth, half = pw / 2;
+    pop.style.width = pw + 'px';   /* then keep that width: a fixed box shrinks to the room right of its left edge */
+    pop.style.left = Math.min(Math.max(r.left + r.width / 2, half + 8), window.innerWidth - half - 8) + 'px';
+    pop.style.top  = (r.top - Math.max(62, pop.offsetHeight + 6)) + 'px';
     suppressClick = true;
   }
   function hideAlts() { pop.style.display = 'none'; }
+  /* hold keys carry an accent dot (Aissa 2026-10-17): the same altsFor() the popup uses, so a dot means
+     a hold exists; re-marked whenever the keyboard redraws (Shift, rebuild) */
+  function markHolds() {
+    if (kbrows) kbrows.querySelectorAll('.key[data-ch]').forEach(k => k.classList.toggle('has-alt', !!altsFor(k.dataset.ch)));
+  }
+  if (kbrows) { new MutationObserver(markHolds).observe(kbrows, {childList: true}); markHolds(); }
 
   if (kbrows) {
     kbrows.addEventListener('pointerdown', e => {
       const k = e.target.closest('.key');
       if (!k) return;
-      const ch = k.textContent.trim().slice(0, 1);
-      if (!KB_ALT[ch]) return;
+      const ch = k.dataset.ch;   /* textContent also holds the hidden Latin hint (read "ye" for the letter) */
+      if (!altsFor(ch)) return;
       lpKey = k;
       lpTimer = setTimeout(() => showAlts(k, ch), 420);
     }, { passive: true });
@@ -4935,5 +4833,46 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
 })();
 </script>
 <!-- ══════════ /KBDOCK ══════════ -->
+<script>/* key unit: --kn = keys in the longest row above the space bar (--kg = row gap, set in CSS with the gap) */
+(function () {
+  const w = document.getElementById('kbrows'); if (!w) return;
+  const set = () => {
+    const rows = [...w.children].filter(r => !r.querySelector('.k-space'));
+    if (!rows.length) return;
+    w.style.setProperty('--kn', Math.max(...rows.map(r => r.children.length)));
+  };
+  set(); new MutationObserver(set).observe(w, { childList: true });
+})();</script>
+<script>/* KEYFIT: a label wider than its key (Tamil two-part vowel signs, Burmese au on a 23px phone key) shrinks to fit
+   instead of spilling over its neighbours; every other key keeps the stylesheet size */
+(function () {
+  var kb = document.getElementById('kbrows');
+  if (!kb) return;
+  var ctx = document.createElement('canvas').getContext('2d');
+  function fit() {
+    kb.querySelectorAll('.key[data-ch]').forEach(function (b) {
+      b.style.fontSize = '';
+      var t = b.lastChild;
+      if (!t || t.nodeType !== 3) return;
+      var cs = getComputedStyle(b);   /* INK width: vowel signs draw outside their advance box */
+      ctx.font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+      var m = ctx.measureText(t.nodeValue);
+      var w = Math.max(m.width, m.actualBoundingBoxLeft + m.actualBoundingBoxRight), room = b.clientWidth - 6;
+      if (w > room && room > 0) {
+        b.style.fontSize = Math.max(9, Math.floor(parseFloat(cs.fontSize) * room / w)) + 'px';
+      }
+    });
+  }
+  var q = 0;
+  function later() { if (!q) q = requestAnimationFrame(function () { q = 0; fit(); }); }
+  new MutationObserver(later).observe(kb, {childList: true});
+  if (window.ResizeObserver) new ResizeObserver(later).observe(kb);
+  if (document.fonts) {   /* web fonts arrive in unicode-range pieces after ready: re-fit on each */
+    document.fonts.ready.then(later);
+    document.fonts.addEventListener('loadingdone', later);
+  }
+  later();
+})();
+</script>
 </body>
 </html>
