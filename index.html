@@ -122,7 +122,7 @@
   }
   </script>
 
-  <!-- ItemList schema — 40 keyboards as rich result candidates -->
+  <!-- ItemList schema — 50 keyboards as rich result candidates -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -170,7 +170,17 @@
       {"@type":"ListItem","position":37,"name":"Serbian Keyboard Online",   "url":"https://kactyl.com/serbian/"},
       {"@type":"ListItem","position":38,"name":"Bulgarian Keyboard Online", "url":"https://kactyl.com/bulgarian/"},
       {"@type":"ListItem","position":39,"name":"Macedonian Keyboard Online","url":"https://kactyl.com/macedonian/"},
-      {"@type":"ListItem","position":40,"name":"Belarusian Keyboard Online","url":"https://kactyl.com/belarusian/"}
+      {"@type":"ListItem","position":40,"name":"Belarusian Keyboard Online","url":"https://kactyl.com/belarusian/"},
+      {"@type":"ListItem","position":41, "name":"Armenian Keyboard Online", "url":"https://kactyl.com/armenian/"},
+      {"@type":"ListItem","position":42, "name":"Assamese Keyboard Online", "url":"https://kactyl.com/assamese/"},
+      {"@type":"ListItem","position":43, "name":"Dhivehi Keyboard Online", "url":"https://kactyl.com/dhivehi/"},
+      {"@type":"ListItem","position":44, "name":"Georgian Keyboard Online", "url":"https://kactyl.com/georgian/"},
+      {"@type":"ListItem","position":45, "name":"Hebrew Keyboard Online", "url":"https://kactyl.com/hebrew/"},
+      {"@type":"ListItem","position":46, "name":"Kazakh Keyboard Online", "url":"https://kactyl.com/kazakh/"},
+      {"@type":"ListItem","position":47, "name":"Khmer Keyboard Online", "url":"https://kactyl.com/khmer/"},
+      {"@type":"ListItem","position":48, "name":"Lao Keyboard Online", "url":"https://kactyl.com/lao/"},
+      {"@type":"ListItem","position":49, "name":"Odia Keyboard Online", "url":"https://kactyl.com/odia/"},
+      {"@type":"ListItem","position":50, "name":"Sinhala Keyboard Online", "url":"https://kactyl.com/sinhala/"}
     ]
   }
   </script>
@@ -186,7 +196,7 @@
             "name": "How many languages does Kactyl support?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Kactyl has 40 keyboards live right now — Arabic, Hindi, Chinese, Japanese, Korean, Russian, Bengali, Persian, Turkish and many more — and is building toward 300+ languages and scripts. Every keyboard works the same way: pick your language, type, copy, and paste anywhere."
+                  "text": "Kactyl has 52 keyboards live right now — Arabic, Hindi, Chinese, Japanese, Korean, Russian, Bengali, Persian, Turkish and many more — and is building toward 300+ languages and scripts. Every keyboard works the same way: pick your language, type, copy, and paste anywhere."
             }
       },
       {
@@ -234,7 +244,7 @@
             "name": "Which keyboards are available right now?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "40 keyboards are live today, spanning Arabic, Indic scripts (Hindi, Bengali, Tamil, Telugu…), East Asian (Chinese, Japanese, Korean), Cyrillic (Russian, Ukrainian, Serbian…) and African scripts (Amharic, Tigrinya, Yoruba…). Use the grid or the search bar to jump straight to yours."
+                  "text": "52 keyboards are live today, spanning Arabic, Indic scripts (Hindi, Bengali, Tamil, Telugu…), East Asian (Chinese, Japanese, Korean), Cyrillic (Russian, Ukrainian, Serbian…) and African scripts (Amharic, Tigrinya, Yoruba…). Use the grid or the search bar to jump straight to yours."
             }
       },
       {
@@ -2540,7 +2550,17 @@ document.addEventListener('DOMContentLoaded', function() {
     { name:"French",     native:"Français",    flag:"🇫🇷", path:"/fr/" },
     { name:"Spanish",    native:"Español",     flag:"🇪🇸", path:"/es/" },
     { name:"Italian",    native:"Italiano",    flag:"🇮🇹", path:"/it/" },
-    { name:"Dutch",      native:"Nederlands",  flag:"🇳🇱", path:"/nl/" }
+    { name:"Dutch",      native:"Nederlands",  flag:"🇳🇱", path:"/nl/" },
+    { name:"Armenian", native:"Հայերեն", flag:"🇦🇲", path:"/armenian/" },
+    { name:"Assamese", native:"অসমীয়া", flag:"🇮🇳", path:"/assamese/" },
+    { name:"Dhivehi", native:"ދިވެހި", flag:"🇲🇻", path:"/dhivehi/" },
+    { name:"Georgian", native:"ქართული", flag:"🇬🇪", path:"/georgian/" },
+    { name:"Hebrew", native:"עברית", flag:"🇮🇱", path:"/hebrew/" },
+    { name:"Kazakh", native:"Қазақша", flag:"🇰🇿", path:"/kazakh/" },
+    { name:"Khmer", native:"ភាសាខ្មែរ", flag:"🇰🇭", path:"/khmer/" },
+    { name:"Lao", native:"ພາສາລາວ", flag:"🇱🇦", path:"/lao/" },
+    { name:"Odia", native:"ଓଡ଼ିଆ", flag:"🇮🇳", path:"/odia/" },
+    { name:"Sinhala", native:"සිංහල", flag:"🇱🇰", path:"/sinhala/" },
   ];
 
   function clearSearch() {
@@ -3184,7 +3204,7 @@ document.addEventListener('DOMContentLoaded', function() {
           How many languages does Kactyl support?
           <span class="faq-icon"><svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5L6.5 6.5L11.5 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
-        <div class="faq-a">Kactyl has 40 keyboards live right now — Arabic, Hindi, Chinese, Japanese, Korean, Russian, Bengali, Persian, Turkish and many more — and is building toward 300+ languages and scripts. Every keyboard works the same way: pick your language, type, copy, and paste anywhere.</div>
+        <div class="faq-a">Kactyl has 52 keyboards live right now — Arabic, Hindi, Chinese, Japanese, Korean, Russian, Bengali, Persian, Turkish and many more — and is building toward 300+ languages and scripts. Every keyboard works the same way: pick your language, type, copy, and paste anywhere.</div>
       </div>
 
       <div class="faq-item">
@@ -3232,7 +3252,7 @@ document.addEventListener('DOMContentLoaded', function() {
           Which keyboards are available right now?
           <span class="faq-icon"><svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5L6.5 6.5L11.5 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
-        <div class="faq-a">40 keyboards are live today, spanning Arabic, Indic scripts (Hindi, Bengali, Tamil, Telugu…), East Asian (Chinese, Japanese, Korean), Cyrillic (Russian, Ukrainian, Serbian…) and African scripts (Amharic, Tigrinya, Yoruba…). Use the grid or the search bar to jump straight to yours.</div>
+        <div class="faq-a">52 keyboards are live today, spanning Arabic, Indic scripts (Hindi, Bengali, Tamil, Telugu…), East Asian (Chinese, Japanese, Korean), Cyrillic (Russian, Ukrainian, Serbian…) and African scripts (Amharic, Tigrinya, Yoruba…). Use the grid or the search bar to jump straight to yours.</div>
       </div>
 
       <div class="faq-item">
@@ -3422,46 +3442,19 @@ document.addEventListener('DOMContentLoaded', function() {
       <h4>Keyboards</h4>
       <div class="ft-kb-grid">
         <a href="/arabic/">Arabic</a>
-        <a href="/hindi/">Hindi</a>
-        <a href="/persian/">Persian</a>
-        <a href="/urdu/">Urdu</a>
-        <a href="/bengali/">Bengali</a>
-        <a href="/tamil/">Tamil</a>
-        <a href="/telugu/">Telugu</a>
         <a href="/korean/">Korean</a>
-        <a href="/japanese/">Japanese</a>
-        <a href="/chinese/">Chinese</a>
-        <a href="/turkish/">Turkish</a>
-        <a href="/russian/">Russian</a>
-        <a href="/amharic/">Amharic</a>
-        <a href="/greek/">Greek</a>
-        <a href="/punjabi/">Punjabi</a>
-        <a href="/kannada/">Kannada</a>
-        <a href="/gujarati/">Gujarati</a>
-        <a href="/malayalam/">Malayalam</a>
-        <a href="/nepali/">Nepali</a>
-        <a href="/marathi/">Marathi</a>
-        <a href="/pashto/">Pashto</a>
         <a href="/sindhi/">Sindhi</a>
+        <a href="/marathi/">Marathi</a>
         <a href="/kurdish/">Kurdish</a>
-        <a href="/amazigh/">Amazigh</a>
-        <a href="/thai/">Thai</a>
-        <a href="/vietnamese/">Vietnamese</a>
-        <a href="/burmese/">Burmese</a>
-        <a href="/mongolian/">Mongolian</a>
-        <a href="/filipino/">Filipino</a>
-        <a href="/uyghur/">Uyghur</a>
-        <a href="/somali/">Somali</a>
-        <a href="/hausa/">Hausa</a>
-        <a href="/igbo/">Igbo</a>
-        <a href="/yoruba/">Yoruba</a>
-        <a href="/tigrinya/">Tigrinya</a>
-        <a href="/ukrainian/">Ukrainian</a>
         <a href="/serbian/">Serbian</a>
-        <a href="/bulgarian/">Bulgarian</a>
-        <a href="/macedonian/">Macedonian</a>
-        <a href="/belarusian/">Belarusian</a>
+        <a href="/amharic/">Amharic</a>
+        <a href="/persian/">Persian</a>
+        <a href="/amazigh/">Amazigh</a>
+        <a href="/bengali/">Bengali</a>
+        <a href="/urdu/">Urdu</a>
+        <a href="/japanese/">Japanese</a>
       </div>
+      <a class="ft-view-all" href="/keyboards/">All 52 keyboards →</a>
     </div>
 
     <!-- Tools & Company -->
@@ -4093,6 +4086,16 @@ async function submitFeedback(e) {
     { name:"Greek",      native:"Ελληνικά",        flag:"gr", path:"/greek/"     },
     { name:"Turkish",    native:"Türkçe",          flag:"tr", path:"/turkish/"   },
     { name:"Amazigh",    native:"ⵜⴰⵎⴰⵣⵉⵖⵜ",      flag:"ma", path:"/amazigh/"   },
+    { name:"Armenian", native:"Հայերեն", flag:"am", path:"/armenian/" },
+    { name:"Assamese", native:"অসমীয়া", flag:"in", path:"/assamese/" },
+    { name:"Dhivehi", native:"ދިވެހި", flag:"mv", path:"/dhivehi/" },
+    { name:"Georgian", native:"ქართული", flag:"ge", path:"/georgian/" },
+    { name:"Hebrew", native:"עברית", flag:"il", path:"/hebrew/" },
+    { name:"Kazakh", native:"Қазақша", flag:"kz", path:"/kazakh/" },
+    { name:"Khmer", native:"ភាសាខ្មែរ", flag:"kh", path:"/khmer/" },
+    { name:"Lao", native:"ພາສາລາວ", flag:"la", path:"/lao/" },
+    { name:"Odia", native:"ଓଡ଼ିଆ", flag:"in", path:"/odia/" },
+    { name:"Sinhala", native:"සිංහල", flag:"lk", path:"/sinhala/" },
   ];
 
   var SVG_FLAGS = {

@@ -1396,6 +1396,9 @@ footer {
   padding:5px 0; display:block; transition:color .15s;
 }
 .ft-kb-grid a:hover, .ft-legal a:hover { color:#60A5FA; }
+.ft-view-all { display:inline-block; margin-top:10px; font-size:12px; font-weight:600; color:#60A5FA; text-decoration:none; transition:color .15s; }
+.ft-view-all:hover { color:#93C5FD; }
+
 .ft-legal { display:flex; flex-direction:column; }
 
 .ft-bottom {
@@ -2168,10 +2171,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="sh-ic"><img loading="lazy" src="../images/Icon-google-Clavierarabe-online.svg" alt="Google"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.searchwith">Search with</span><span class="sh-name">Google</span></div>
       </button>
-      <button class="sh-btn" onclick="translateText()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-Translate-Clavierarabe-online.svg" alt="Translate" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:22px&quot;>🌐</span>'"></div>
-        <div class="sh-txt"><span class="sh-action" data-i18n="share.translatewith">Translate with</span><span class="sh-name">Google</span></div>
-      </button>
       <button class="sh-btn" onclick="shareInstagram()">
         <div class="sh-ic"><img loading="lazy" src="../images/Icon-Instagram-Clavierarabe-online%20Kopie.svg" alt="Instagram"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.copyto">Copy to</span><span class="sh-name">Instagram</span></div>
@@ -2232,103 +2231,55 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
               <span class="lang-arrow">▾</span>
             </button>
                                                 <div class="lang-dropdown" id="langDropdown">
-              <div class="lang-opt" onclick="location.href='/arabic/'">
-                <span class="lo-flag">🇸🇦</span> Arabic
-              </div>
-              <div class="lang-opt" onclick="location.href='/amazigh/'">
-                <span class="lo-flag"><span class="lo-flag"><img loading="lazy" src="../images/flag-amazigh.svg" width="21" height="15" alt="ⵣ" style="vertical-align:middle;border-radius:2px;display:inline-block"></span></span> Amazigh
-              </div>
-              <div class="lang-opt" onclick="location.href='/amharic/'">
-                <span class="lo-flag">🇪🇹</span> Amharic
-              </div>
-              <div class="lang-opt" onclick="location.href='/bengali/'">
-                <span class="lo-flag">🇧🇩</span> Bengali
-              </div>
-              <div class="lang-opt" onclick="location.href='/burmese/'">
-                <span class="lo-flag">🇲🇲</span> Burmese
-              </div>
-              <div class="lang-opt" onclick="location.href='/chinese/'">
-                <span class="lo-flag">🇨🇳</span> Chinese
-              </div>
-              <div class="lang-opt" onclick="location.href='/filipino/'">
-                <span class="lo-flag">🇵🇭</span> Filipino
-              </div>
-              <div class="lang-opt" onclick="location.href='/greek/'">
-                <span class="lo-flag">🇬🇷</span> Greek
-              </div>
-              <div class="lang-opt" onclick="location.href='/gujarati/'">
-                <span class="lo-flag">🇮🇳</span> Gujarati
-              </div>
-              <div class="lang-opt" onclick="location.href='/hausa/'">
-                <span class="lo-flag">🇳🇬</span> Hausa
-              </div>
-              <div class="lang-opt" onclick="location.href='../hindi/'">
-                <span class="lo-flag">🇮🇳</span> Hindi
-              </div>
-              
-              <div class="lang-opt" onclick="location.href='/igbo/'">
-                <span class="lo-flag">🇳🇬</span> Igbo
-              </div>
-              <div class="lang-opt" onclick="location.href='/japanese/'">
-                <span class="lo-flag">🇯🇵</span> Japanese
-              </div>
-              <div class="lang-opt" onclick="location.href='/kannada/'">
-                <span class="lo-flag">🇮🇳</span> Kannada
-              </div>
-              <div class="lang-opt" onclick="location.href='/korean/'">
-                <span class="lo-flag">🇰🇷</span> Korean
-              </div>
-              <div class="lang-opt" onclick="location.href='/kurdish/'">
-                <span class="lo-flag"><img loading="lazy" src="../images/flag-kurdish.svg" alt="Kurdistan" style="height:1.1em;width:auto;vertical-align:middle;border-radius:2px;display:inline-block"></span> Kurdish
-              </div>
-              <div class="lang-opt" onclick="location.href='/malayalam/'">
-                <span class="lo-flag">🇮🇳</span> Malayalam
-              </div>
-              <div class="lang-opt" onclick="location.href='/marathi/'">
-                <span class="lo-flag">🇮🇳</span> Marathi
-              </div>
-              <div class="lang-opt" onclick="location.href='/mongolian/'">
-                <span class="lo-flag">🇲🇳</span> Mongolian
-              </div>
-              <div class="lang-opt" onclick="location.href='/nepali/'">
-                <span class="lo-flag">🇳🇵</span> Nepali
-              </div>
-              <div class="lang-opt" onclick="location.href='/pashto/'">
-                <span class="lo-flag">🇦🇫</span> Pashto
-              </div>
-              <div class="lang-opt" onclick="location.href='/persian/'">
-                <span class="lo-flag">🇮🇷</span> Persian
-              </div>
-              <div class="lang-opt" onclick="location.href='/punjabi/'">
-                <span class="lo-flag">🇮🇳</span> Punjabi
-              </div>
-              <div class="lang-opt" onclick="location.href='/russian/'">
-                <span class="lo-flag">🇷🇺</span> Russian
-              </div>
-              <div class="lang-opt" onclick="location.href='/sindhi/'">
-                <span class="lo-flag">🇵🇰</span> Sindhi
-              </div>
-              <div class="lang-opt" onclick="location.href='/somali/'">
-                <span class="lo-flag">🇸🇴</span> Somali
-              </div>
-              <div class="lang-opt" onclick="location.href='/tamil/'">
-                <span class="lo-flag">🇮🇳</span> Tamil
-              </div>
-              <div class="lang-opt" onclick="location.href='/telugu/'">
-                <span class="lo-flag">🇮🇳</span> Telugu
-              </div>
-              <div class="lang-opt" onclick="location.href='/thai/'">
-                <span class="lo-flag">🇹🇭</span> Thai
-              </div>
-              <div class="lang-opt" onclick="location.href='/tigrinya/'">
-                <span class="lo-flag">🇪🇷</span> Tigrinya
-              </div>
-              <div class="lang-opt" onclick="location.href='/turkish/'">
-                <span class="lo-flag">🇹🇷</span> Turkish
-              </div>
-              <div class="lang-opt" onclick="location.href='/urdu/'">
-                <span class="lo-flag">🇵🇰</span> Urdu
-              </div>
+              <div class="lang-opt" onclick="location.href='/arabic/'"><span class="lo-flag">🇸🇦</span> Arabic</div>
+              <div class="lang-opt" onclick="location.href='/amazigh/'"><span class="lo-flag"><img loading="lazy" src="../images/flag-amazigh.svg" width="21" height="15" alt="ⵣ" style="vertical-align:middle;border-radius:2px;display:inline-block"></span> Amazigh</div>
+              <div class="lang-opt" onclick="location.href='/amharic/'"><span class="lo-flag">🇪🇹</span> Amharic</div>
+              <div class="lang-opt" onclick="location.href='/armenian/'"><span class="lo-flag">🇦🇲</span> Armenian</div>
+              <div class="lang-opt" onclick="location.href='/assamese/'"><span class="lo-flag">🇮🇳</span> Assamese</div>
+              <div class="lang-opt" onclick="location.href='/belarusian/'"><span class="lo-flag">🇧🇾</span> Belarusian</div>
+              <div class="lang-opt" onclick="location.href='/bengali/'"><span class="lo-flag">🇧🇩</span> Bengali</div>
+              <div class="lang-opt" onclick="location.href='/bulgarian/'"><span class="lo-flag">🇧🇬</span> Bulgarian</div>
+              <div class="lang-opt" onclick="location.href='/burmese/'"><span class="lo-flag">🇲🇲</span> Burmese</div>
+              <div class="lang-opt" onclick="location.href='/chinese/'"><span class="lo-flag">🇨🇳</span> Chinese</div>
+              <div class="lang-opt" onclick="location.href='/dhivehi/'"><span class="lo-flag">🇲🇻</span> Dhivehi</div>
+              <div class="lang-opt" onclick="location.href='/egyptian-hieroglyphics/'"><span class="lo-flag">🇪🇬</span> Egyptian Hieroglyphics</div>
+              <div class="lang-opt" onclick="location.href='/filipino/'"><span class="lo-flag">🇵🇭</span> Filipino</div>
+              <div class="lang-opt" onclick="location.href='/georgian/'"><span class="lo-flag">🇬🇪</span> Georgian</div>
+              <div class="lang-opt" onclick="location.href='/greek/'"><span class="lo-flag">🇬🇷</span> Greek</div>
+              <div class="lang-opt" onclick="location.href='/gujarati/'"><span class="lo-flag">🇮🇳</span> Gujarati</div>
+              <div class="lang-opt" onclick="location.href='/hausa/'"><span class="lo-flag">🇳🇬</span> Hausa</div>
+              <div class="lang-opt" onclick="location.href='/hebrew/'"><span class="lo-flag">🇮🇱</span> Hebrew</div>
+              <div class="lang-opt" onclick="location.href='/hindi/'"><span class="lo-flag">🇮🇳</span> Hindi</div>
+              <div class="lang-opt" onclick="location.href='/igbo/'"><span class="lo-flag">🇳🇬</span> Igbo</div>
+              <div class="lang-opt" onclick="location.href='/japanese/'"><span class="lo-flag">🇯🇵</span> Japanese</div>
+              <div class="lang-opt" onclick="location.href='/kannada/'"><span class="lo-flag">🇮🇳</span> Kannada</div>
+              <div class="lang-opt" onclick="location.href='/kazakh/'"><span class="lo-flag">🇰🇿</span> Kazakh</div>
+              <div class="lang-opt" onclick="location.href='/khmer/'"><span class="lo-flag">🇰🇭</span> Khmer</div>
+              <div class="lang-opt" onclick="location.href='/korean/'"><span class="lo-flag">🇰🇷</span> Korean</div>
+              <div class="lang-opt" onclick="location.href='/kurdish/'"><span class="lo-flag"><img loading="lazy" src="../images/flag-kurdish.svg" alt="Kurdistan" style="height:1.1em;width:auto;vertical-align:middle;border-radius:2px;display:inline-block"></span> Kurdish</div>
+              <div class="lang-opt" onclick="location.href='/lao/'"><span class="lo-flag">🇱🇦</span> Lao</div>
+              <div class="lang-opt" onclick="location.href='/macedonian/'"><span class="lo-flag">🇲🇰</span> Macedonian</div>
+              <div class="lang-opt" onclick="location.href='/malayalam/'"><span class="lo-flag">🇮🇳</span> Malayalam</div>
+              <div class="lang-opt" onclick="location.href='/marathi/'"><span class="lo-flag">🇮🇳</span> Marathi</div>
+              <div class="lang-opt" onclick="location.href='/minecraft-enchantment/'"><span class="lo-flag">🎮</span> Minecraft Enchantment</div>
+              <div class="lang-opt" onclick="location.href='/mongolian/'"><span class="lo-flag">🇲🇳</span> Mongolian</div>
+              <div class="lang-opt" onclick="location.href='/nepali/'"><span class="lo-flag">🇳🇵</span> Nepali</div>
+              <div class="lang-opt" onclick="location.href='/odia/'"><span class="lo-flag">🇮🇳</span> Odia</div>
+              <div class="lang-opt" onclick="location.href='/pashto/'"><span class="lo-flag">🇦🇫</span> Pashto</div>
+              <div class="lang-opt" onclick="location.href='/persian/'"><span class="lo-flag">🇮🇷</span> Persian</div>
+              <div class="lang-opt" onclick="location.href='/punjabi/'"><span class="lo-flag">🇮🇳</span> Punjabi</div>
+              <div class="lang-opt" onclick="location.href='/russian/'"><span class="lo-flag">🇷🇺</span> Russian</div>
+              <div class="lang-opt" onclick="location.href='/serbian/'"><span class="lo-flag">🇷🇸</span> Serbian</div>
+              <div class="lang-opt" onclick="location.href='/sindhi/'"><span class="lo-flag">🇵🇰</span> Sindhi</div>
+              <div class="lang-opt" onclick="location.href='/sinhala/'"><span class="lo-flag">🇱🇰</span> Sinhala</div>
+              <div class="lang-opt" onclick="location.href='/somali/'"><span class="lo-flag">🇸🇴</span> Somali</div>
+              <div class="lang-opt" onclick="location.href='/tamil/'"><span class="lo-flag">🇮🇳</span> Tamil</div>
+              <div class="lang-opt" onclick="location.href='/telugu/'"><span class="lo-flag">🇮🇳</span> Telugu</div>
+              <div class="lang-opt" onclick="location.href='/thai/'"><span class="lo-flag">🇹🇭</span> Thai</div>
+              <div class="lang-opt" onclick="location.href='/tigrinya/'"><span class="lo-flag">🇪🇷</span> Tigrinya</div>
+              <div class="lang-opt" onclick="location.href='/turkish/'"><span class="lo-flag">🇹🇷</span> Turkish</div>
+              <div class="lang-opt" onclick="location.href='/ukrainian/'"><span class="lo-flag">🇺🇦</span> Ukrainian</div>
+              <div class="lang-opt" onclick="location.href='/urdu/'"><span class="lo-flag">🇵🇰</span> Urdu</div>
               <div class="lang-opt" onclick="location.href='/uyghur/'"><span class="lo-flag"><img loading="lazy" src="../images/flag-uyghur.svg" alt="East Turkestan" style="height:1.1em;width:auto;vertical-align:middle;border-radius:2px;display:inline-block"></span> Uyghur</div>
               <div class="lang-opt" onclick="location.href='/vietnamese/'"><span class="lo-flag">🇻🇳</span> Vietnamese</div>
               <div class="lang-opt" onclick="location.href='/yoruba/'"><span class="lo-flag">🇳🇬</span> Yoruba</div>
@@ -2405,10 +2356,6 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         </div>
 
         <div class="kb-flex"></div>
-
-        <button class="mic-btn" id="micbtn" onclick="toggleVoice()" title="Voice input">
-          <img loading="lazy" src="../images/Icon-Mic-Clavierarabe-online.svg" alt="Mic">
-        </button>
       </div>
 
 
@@ -2493,7 +2440,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <img class="how-step-icon" src="../images/Type.svg" alt="Type">
         <div class="how-step">
           <h3>Type</h3>
-          <p>Click the keys or type phonetically — Minecraft Enchantment letters appear instantly as you go.</p>
+          <p>Type ordinary English on your keyboard or tap the runes: every Latin letter becomes its Standard Galactic sign, so hello turns into the same kind of glyph line the enchanting table shows.</p>
           <div class="how-num">1</div>
         </div>
       </div>
@@ -2502,7 +2449,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <img class="how-step-icon" src="../images/Copy.svg" alt="Copy">
         <div class="how-step">
           <h3>Copy</h3>
-          <p>Hit the Copy button — your full Minecraft Enchantment text is saved to clipboard in one tap.</p>
+          <p>Hit Copy and the runes go to your clipboard as Unicode look-alike symbols (ᔑ for a, ʖ for b, ᓵ for c), so they paste as text, not as an image or a screenshot.</p>
           <div class="how-num">2</div>
         </div>
       </div>
@@ -2511,7 +2458,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <img class="how-step-icon" src="../images/Past.svg" alt="Paste">
         <div class="how-step">
           <h3>Paste</h3>
-          <p>Open any app — WhatsApp, TikTok, Instagram — and long-press to paste.</p>
+          <p>Paste the runes into Discord, a bio or a video caption. Players who know the cipher can read them; everyone else sees the same mystery script as the enchanting table.</p>
           <div class="how-num">3</div>
         </div>
       </div>
@@ -2525,7 +2472,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   <div class="wrap">
     <div class="apps-hd">
       <h2 data-i18n="apps.h2">Minecraft Enchantment Keyboard for <span style="color:var(--blue)">Any App</span></h2>
-      <p data-i18n="apps.sub">Type your Minecraft Enchantment text above → tap <b>Copy</b> → paste into any app. No special settings needed.</p>
+      <p data-i18n="apps.sub">Write a line in Standard Galactic, the alphabet Tom Hall drew for Commander Keen in 1990 and Minecraft put on its enchanting table, then paste it into any app.</p>
     </div>
     <div class="apps-grid">
 
@@ -2534,7 +2481,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.sc.h3">Snapchat</h3>
-            <p data-i18n="app.sc.p">Type your text → tap Copy → paste in Snapchat Stories or chats. Works on iPhone and Android. No settings change needed.</p>
+            <p data-i18n="app.sc.p">Caption a snap of your enchanting setup in the same runes, and see which friends can still decode the alphabet from memory.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2545,7 +2492,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.wa.h3">WhatsApp</h3>
-            <p data-i18n="app.wa.p">Type your message → tap Copy → open WhatsApp → long-press to paste. Works on iPhone and Android. No settings change needed.</p>
+            <p data-i18n="app.wa.p">Send your server group a message in enchanting-table runes; anyone with this keyboard reads it back by typing the letters again.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2556,7 +2503,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.ig.h3">Instagram</h3>
-            <p data-i18n="app.ig.p">Write captions, bio, or DMs → Copy → paste in Instagram. Looks great on any post or story.</p>
+            <p data-i18n="app.ig.p">Put a rune line in your bio or under a build screenshot: Minecraft players recognise the enchanting-table glyphs at a glance.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2567,7 +2514,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="app-card">
           <div class="app-info">
             <h3 data-i18n="app.tt.h3">TikTok</h3>
-            <p data-i18n="app.tt.p">Write captions or comments → Copy → paste in TikTok. QWERTY → SGA lets you type from your English QWERTY keyboard.</p>
+            <p data-i18n="app.tt.p">Add Standard Galactic text to a Minecraft clip and ask viewers to decode it in the comments, a classic enchanting-table challenge.</p>
             <div class="app-dots"><span></span><span></span><span></span></div>
           </div>
         </div>
@@ -2806,9 +2753,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   <div class="more-kbs-grid">
     <a href="../greek/"       class="kb-chip"><span class="kb-chip-flag">🇬🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Greek</span><span class="kb-chip-native">Ελληνικά</span></div></a>
     <a href="../turkish/"     class="kb-chip"><span class="kb-chip-flag">🇹🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Turkish</span><span class="kb-chip-native">Türkçe</span></div></a>
-    <a href="../amharic/"     class="kb-chip"><span class="kb-chip-flag">🇪🇹</span><div class="kb-chip-info"><span class="kb-chip-name">Amharic</span><span class="kb-chip-native">አማርኛ</span></div></a>
-    <a href="../tigrinya/"    class="kb-chip"><span class="kb-chip-flag">🇪🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Tigrinya</span><span class="kb-chip-native">ትግርኛ</span></div></a>
-    <a href="../somali/"      class="kb-chip"><span class="kb-chip-flag">🇸🇴</span><div class="kb-chip-info"><span class="kb-chip-name">Somali</span><span class="kb-chip-native">Soomaali</span></div></a>
+    <a href="../armenian/" class="kb-chip"><span class="kb-chip-flag">🇦🇲</span><div class="kb-chip-info"><span class="kb-chip-name">Armenian</span><span class="kb-chip-native">Հայերեն</span></div></a>
+    <a href="../georgian/" class="kb-chip"><span class="kb-chip-flag">🇬🇪</span><div class="kb-chip-info"><span class="kb-chip-name">Georgian</span><span class="kb-chip-native">ქართული</span></div></a>
+    <a href="../hebrew/" class="kb-chip"><span class="kb-chip-flag">🇮🇱</span><div class="kb-chip-info"><span class="kb-chip-name">Hebrew</span><span class="kb-chip-native">עברית</span></div></a>
     <a href="/keyboards/" class="kb-discover">
       <div class="kb-discover-top">
         <span class="kb-discover-arr">→</span>
@@ -2857,41 +2804,19 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <h4>Keyboards</h4>
       <div class="ft-kb-grid">
         <a href="/arabic/">Arabic</a>
-        <a href="/hindi/">Hindi</a>
-        <a href="/persian/">Persian</a>
-        <a href="/urdu/">Urdu</a>
-        <a href="/bengali/">Bengali</a>
-        <a href="/tamil/">Tamil</a>
-        <a href="/telugu/">Telugu</a>
         <a href="/korean/">Korean</a>
-        <a href="/japanese/">Japanese</a>
-        <a href="/chinese/">Chinese</a>
-        <a href="/turkish/">Turkish</a>
-        <a href="/russian/">Russian</a>
-        <a href="/amharic/">Amharic</a>
-        <a href="/greek/">Greek</a>
-        <a href="/punjabi/">Punjabi</a>
-        <a href="/kannada/">Kannada</a>
-        <a href="/gujarati/">Gujarati</a>
-        <a href="/malayalam/">Malayalam</a>
-        <a href="/nepali/">Nepali</a>
-        <a href="/marathi/">Marathi</a>
-        <a href="/pashto/">Pashto</a>
         <a href="/sindhi/">Sindhi</a>
+        <a href="/marathi/">Marathi</a>
         <a href="/kurdish/">Kurdish</a>
+        <a href="/serbian/">Serbian</a>
+        <a href="/amharic/">Amharic</a>
+        <a href="/persian/">Persian</a>
         <a href="/amazigh/">Amazigh</a>
-        <a href="/thai/">Thai</a>
-        <a href="/vietnamese/">Vietnamese</a>
-        <a href="/burmese/">Burmese</a>
-        <a href="/mongolian/">Mongolian</a>
-        <a href="/filipino/">Filipino</a>
-        <a href="/uyghur/">Uyghur</a>
-        <a href="/somali/">Somali</a>
-        <a href="/hausa/">Hausa</a>
-        <a href="/igbo/">Igbo</a>
-        <a href="/yoruba/">Yoruba</a>
-        <a href="/tigrinya/">Tigrinya</a>
+        <a href="/bengali/">Bengali</a>
+        <a href="/urdu/">Urdu</a>
+        <a href="/japanese/">Japanese</a>
       </div>
+      <a class="ft-view-all" href="/keyboards/">All 52 keyboards →</a>
     </div>
 
     <!-- Tools & Company -->
@@ -3771,15 +3696,15 @@ const I18N = {
     'ehub.tab.social':  '📱 Social',
     'combo.title':    '🎯 Minecraft Enchantment Combos <span class="combo-sub">— one click to insert into your text</span>',
     'apps.h2':        'Minecraft Enchantment Keyboard for <span style="color:var(--blue)">Any App</span>',
-    'apps.sub':       'Type your Minecraft Enchantment text above → tap <b>Copy</b> → paste into any app. No special settings needed.',
+    'apps.sub':       'Write a line in Standard Galactic, the alphabet Tom Hall drew for Commander Keen in 1990 and Minecraft put on its enchanting table, then paste it into any app.',
     'app.wa.h3':      'Minecraft Enchantment Keyboard for WhatsApp',
-    'app.wa.p':       'Type your message → tap <b>Copy</b> → open WhatsApp → long-press to paste. Works on iPhone and Android.',
+    'app.wa.p':       'Send your server group a message in enchanting-table runes; anyone with this keyboard reads it back by typing the letters again.',
     'app.tt.h3':      'Minecraft Enchantment Keyboard for TikTok',
-    'app.tt.p':       'Write enchanted captions or comments → Copy → paste in TikTok. Roman mode converts your English QWERTY typing into SGA glyphs.',
+    'app.tt.p':       'Add Standard Galactic text to a Minecraft clip and ask viewers to decode it in the comments, a classic enchanting-table challenge.',
     'app.ig.h3':      'Minecraft Enchantment Keyboard for Instagram',
-    'app.ig.p':       'Write enchanted captions, bio, or DM messages → Copy → paste in Instagram. SGA text stands out on any post.',
+    'app.ig.p':       'Put a rune line in your bio or under a build screenshot: Minecraft players recognise the enchanting-table glyphs at a glance.',
     'app.sc.h3':      'Minecraft Enchantment Keyboard for Snapchat',
-    'app.sc.p':       'Type SGA for Stories or chats → Copy → paste in Snapchat. Works on iPhone and Android.'
+    'app.sc.p':       'Caption a snap of your enchanting setup in the same runes, and see which friends can still decode the alphabet from memory.'
   },
   fr: {
     "hero.h1":        "Clavier Enchantement Minecraft en Ligne — Gratuit & Instantané",

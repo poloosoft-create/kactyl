@@ -163,6 +163,8 @@ footer {
   padding:5px 0; display:block; transition:color .15s;
 }
 .ft-kb-grid a:hover, .ft-legal a:hover { color:#60A5FA; }
+.ft-view-all { display:inline-block; margin-top:10px; font-size:12px; font-weight:600; color:#60A5FA; text-decoration:none; transition:color .15s; }
+.ft-view-all:hover { color:#93C5FD; }
 .ft-legal { display:flex; flex-direction:column; }
 
 .ft-bottom {

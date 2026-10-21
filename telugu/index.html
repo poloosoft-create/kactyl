@@ -1382,6 +1382,9 @@ footer {
   padding:5px 0; display:block; transition:color .15s;
 }
 .ft-kb-grid a:hover, .ft-legal a:hover { color:#60A5FA; }
+.ft-view-all { display:inline-block; margin-top:10px; font-size:12px; font-weight:600; color:#60A5FA; text-decoration:none; transition:color .15s; }
+.ft-view-all:hover { color:#93C5FD; }
+
 .ft-legal { display:flex; flex-direction:column; }
 
 .ft-bottom {
@@ -2116,7 +2119,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <p class="hero-sub" data-i18n="hero.sub">All 16 vowels and 35 consonants of the Telugu alphabet, with the virama for conjuncts like క్క and స్త, right in your browser. Type Telugu from an office laptop or a borrowed phone and paste it anywhere.</p>
       <div class="hero-stats kb-facts" data-facts="counted">
         <div class="hero-stat">
-          <span class="hs-num">54</span>
+          <span class="hs-num">42</span>
           <span class="hs-label">Letters on screen</span>
         </div>
         <div class="hs-sep"></div>
@@ -2220,103 +2223,55 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
               <span class="lang-arrow">▾</span>
             </button>
                                                 <div class="lang-dropdown" id="langDropdown">
-              <div class="lang-opt" onclick="location.href='/arabic/'">
-                <span class="lo-flag">🇸🇦</span> Arabic
-              </div>
-              <div class="lang-opt" onclick="location.href='/amazigh/'">
-                <span class="lo-flag"><span class="lo-flag"><img loading="lazy" src="../images/flag-amazigh.svg" width="21" height="15" alt="ⵣ" style="vertical-align:middle;border-radius:2px;display:inline-block"></span></span> Amazigh
-              </div>
-              <div class="lang-opt" onclick="location.href='/amharic/'">
-                <span class="lo-flag">🇪🇹</span> Amharic
-              </div>
-              <div class="lang-opt" onclick="location.href='/bengali/'">
-                <span class="lo-flag">🇧🇩</span> Bengali
-              </div>
-              <div class="lang-opt" onclick="location.href='/burmese/'">
-                <span class="lo-flag">🇲🇲</span> Burmese
-              </div>
-              <div class="lang-opt" onclick="location.href='/chinese/'">
-                <span class="lo-flag">🇨🇳</span> Chinese
-              </div>
-              <div class="lang-opt" onclick="location.href='/filipino/'">
-                <span class="lo-flag">🇵🇭</span> Filipino
-              </div>
-              <div class="lang-opt" onclick="location.href='/greek/'">
-                <span class="lo-flag">🇬🇷</span> Greek
-              </div>
-              <div class="lang-opt" onclick="location.href='/gujarati/'">
-                <span class="lo-flag">🇮🇳</span> Gujarati
-              </div>
-              <div class="lang-opt" onclick="location.href='/hausa/'">
-                <span class="lo-flag">🇳🇬</span> Hausa
-              </div>
-              <div class="lang-opt" onclick="location.href='../hindi/'">
-                <span class="lo-flag">🇮🇳</span> Hindi
-              </div>
-              
-              <div class="lang-opt" onclick="location.href='/igbo/'">
-                <span class="lo-flag">🇳🇬</span> Igbo
-              </div>
-              <div class="lang-opt" onclick="location.href='/japanese/'">
-                <span class="lo-flag">🇯🇵</span> Japanese
-              </div>
-              <div class="lang-opt" onclick="location.href='/kannada/'">
-                <span class="lo-flag">🇮🇳</span> Kannada
-              </div>
-              <div class="lang-opt" onclick="location.href='/korean/'">
-                <span class="lo-flag">🇰🇷</span> Korean
-              </div>
-              <div class="lang-opt" onclick="location.href='/kurdish/'">
-                <span class="lo-flag"><img loading="lazy" src="../images/flag-kurdish.svg" alt="Kurdistan" style="height:1.1em;width:auto;vertical-align:middle;border-radius:2px;display:inline-block"></span> Kurdish
-              </div>
-              <div class="lang-opt" onclick="location.href='/malayalam/'">
-                <span class="lo-flag">🇮🇳</span> Malayalam
-              </div>
-              <div class="lang-opt" onclick="location.href='/marathi/'">
-                <span class="lo-flag">🇮🇳</span> Marathi
-              </div>
-              <div class="lang-opt" onclick="location.href='/mongolian/'">
-                <span class="lo-flag">🇲🇳</span> Mongolian
-              </div>
-              <div class="lang-opt" onclick="location.href='/nepali/'">
-                <span class="lo-flag">🇳🇵</span> Nepali
-              </div>
-              <div class="lang-opt" onclick="location.href='/pashto/'">
-                <span class="lo-flag">🇦🇫</span> Pashto
-              </div>
-              <div class="lang-opt" onclick="location.href='/persian/'">
-                <span class="lo-flag">🇮🇷</span> Persian
-              </div>
-              <div class="lang-opt" onclick="location.href='/punjabi/'">
-                <span class="lo-flag">🇮🇳</span> Punjabi
-              </div>
-              <div class="lang-opt" onclick="location.href='/russian/'">
-                <span class="lo-flag">🇷🇺</span> Russian
-              </div>
-              <div class="lang-opt" onclick="location.href='/sindhi/'">
-                <span class="lo-flag">🇵🇰</span> Sindhi
-              </div>
-              <div class="lang-opt" onclick="location.href='/somali/'">
-                <span class="lo-flag">🇸🇴</span> Somali
-              </div>
-              <div class="lang-opt" onclick="location.href='/tamil/'">
-                <span class="lo-flag">🇮🇳</span> Tamil
-              </div>
-              <div class="lang-opt" onclick="location.href='/telugu/'">
-                <span class="lo-flag">🇮🇳</span> Telugu
-              </div>
-              <div class="lang-opt" onclick="location.href='/thai/'">
-                <span class="lo-flag">🇹🇭</span> Thai
-              </div>
-              <div class="lang-opt" onclick="location.href='/tigrinya/'">
-                <span class="lo-flag">🇪🇷</span> Tigrinya
-              </div>
-              <div class="lang-opt" onclick="location.href='/turkish/'">
-                <span class="lo-flag">🇹🇷</span> Turkish
-              </div>
-              <div class="lang-opt" onclick="location.href='/urdu/'">
-                <span class="lo-flag">🇵🇰</span> Urdu
-              </div>
+              <div class="lang-opt" onclick="location.href='/arabic/'"><span class="lo-flag">🇸🇦</span> Arabic</div>
+              <div class="lang-opt" onclick="location.href='/amazigh/'"><span class="lo-flag"><img loading="lazy" src="../images/flag-amazigh.svg" width="21" height="15" alt="ⵣ" style="vertical-align:middle;border-radius:2px;display:inline-block"></span> Amazigh</div>
+              <div class="lang-opt" onclick="location.href='/amharic/'"><span class="lo-flag">🇪🇹</span> Amharic</div>
+              <div class="lang-opt" onclick="location.href='/armenian/'"><span class="lo-flag">🇦🇲</span> Armenian</div>
+              <div class="lang-opt" onclick="location.href='/assamese/'"><span class="lo-flag">🇮🇳</span> Assamese</div>
+              <div class="lang-opt" onclick="location.href='/belarusian/'"><span class="lo-flag">🇧🇾</span> Belarusian</div>
+              <div class="lang-opt" onclick="location.href='/bengali/'"><span class="lo-flag">🇧🇩</span> Bengali</div>
+              <div class="lang-opt" onclick="location.href='/bulgarian/'"><span class="lo-flag">🇧🇬</span> Bulgarian</div>
+              <div class="lang-opt" onclick="location.href='/burmese/'"><span class="lo-flag">🇲🇲</span> Burmese</div>
+              <div class="lang-opt" onclick="location.href='/chinese/'"><span class="lo-flag">🇨🇳</span> Chinese</div>
+              <div class="lang-opt" onclick="location.href='/dhivehi/'"><span class="lo-flag">🇲🇻</span> Dhivehi</div>
+              <div class="lang-opt" onclick="location.href='/egyptian-hieroglyphics/'"><span class="lo-flag">🇪🇬</span> Egyptian Hieroglyphics</div>
+              <div class="lang-opt" onclick="location.href='/filipino/'"><span class="lo-flag">🇵🇭</span> Filipino</div>
+              <div class="lang-opt" onclick="location.href='/georgian/'"><span class="lo-flag">🇬🇪</span> Georgian</div>
+              <div class="lang-opt" onclick="location.href='/greek/'"><span class="lo-flag">🇬🇷</span> Greek</div>
+              <div class="lang-opt" onclick="location.href='/gujarati/'"><span class="lo-flag">🇮🇳</span> Gujarati</div>
+              <div class="lang-opt" onclick="location.href='/hausa/'"><span class="lo-flag">🇳🇬</span> Hausa</div>
+              <div class="lang-opt" onclick="location.href='/hebrew/'"><span class="lo-flag">🇮🇱</span> Hebrew</div>
+              <div class="lang-opt" onclick="location.href='/hindi/'"><span class="lo-flag">🇮🇳</span> Hindi</div>
+              <div class="lang-opt" onclick="location.href='/igbo/'"><span class="lo-flag">🇳🇬</span> Igbo</div>
+              <div class="lang-opt" onclick="location.href='/japanese/'"><span class="lo-flag">🇯🇵</span> Japanese</div>
+              <div class="lang-opt" onclick="location.href='/kannada/'"><span class="lo-flag">🇮🇳</span> Kannada</div>
+              <div class="lang-opt" onclick="location.href='/kazakh/'"><span class="lo-flag">🇰🇿</span> Kazakh</div>
+              <div class="lang-opt" onclick="location.href='/khmer/'"><span class="lo-flag">🇰🇭</span> Khmer</div>
+              <div class="lang-opt" onclick="location.href='/korean/'"><span class="lo-flag">🇰🇷</span> Korean</div>
+              <div class="lang-opt" onclick="location.href='/kurdish/'"><span class="lo-flag"><img loading="lazy" src="../images/flag-kurdish.svg" alt="Kurdistan" style="height:1.1em;width:auto;vertical-align:middle;border-radius:2px;display:inline-block"></span> Kurdish</div>
+              <div class="lang-opt" onclick="location.href='/lao/'"><span class="lo-flag">🇱🇦</span> Lao</div>
+              <div class="lang-opt" onclick="location.href='/macedonian/'"><span class="lo-flag">🇲🇰</span> Macedonian</div>
+              <div class="lang-opt" onclick="location.href='/malayalam/'"><span class="lo-flag">🇮🇳</span> Malayalam</div>
+              <div class="lang-opt" onclick="location.href='/marathi/'"><span class="lo-flag">🇮🇳</span> Marathi</div>
+              <div class="lang-opt" onclick="location.href='/minecraft-enchantment/'"><span class="lo-flag">🎮</span> Minecraft Enchantment</div>
+              <div class="lang-opt" onclick="location.href='/mongolian/'"><span class="lo-flag">🇲🇳</span> Mongolian</div>
+              <div class="lang-opt" onclick="location.href='/nepali/'"><span class="lo-flag">🇳🇵</span> Nepali</div>
+              <div class="lang-opt" onclick="location.href='/odia/'"><span class="lo-flag">🇮🇳</span> Odia</div>
+              <div class="lang-opt" onclick="location.href='/pashto/'"><span class="lo-flag">🇦🇫</span> Pashto</div>
+              <div class="lang-opt" onclick="location.href='/persian/'"><span class="lo-flag">🇮🇷</span> Persian</div>
+              <div class="lang-opt" onclick="location.href='/punjabi/'"><span class="lo-flag">🇮🇳</span> Punjabi</div>
+              <div class="lang-opt" onclick="location.href='/russian/'"><span class="lo-flag">🇷🇺</span> Russian</div>
+              <div class="lang-opt" onclick="location.href='/serbian/'"><span class="lo-flag">🇷🇸</span> Serbian</div>
+              <div class="lang-opt" onclick="location.href='/sindhi/'"><span class="lo-flag">🇵🇰</span> Sindhi</div>
+              <div class="lang-opt" onclick="location.href='/sinhala/'"><span class="lo-flag">🇱🇰</span> Sinhala</div>
+              <div class="lang-opt" onclick="location.href='/somali/'"><span class="lo-flag">🇸🇴</span> Somali</div>
+              <div class="lang-opt" onclick="location.href='/tamil/'"><span class="lo-flag">🇮🇳</span> Tamil</div>
+              <div class="lang-opt" onclick="location.href='/telugu/'"><span class="lo-flag">🇮🇳</span> Telugu</div>
+              <div class="lang-opt" onclick="location.href='/thai/'"><span class="lo-flag">🇹🇭</span> Thai</div>
+              <div class="lang-opt" onclick="location.href='/tigrinya/'"><span class="lo-flag">🇪🇷</span> Tigrinya</div>
+              <div class="lang-opt" onclick="location.href='/turkish/'"><span class="lo-flag">🇹🇷</span> Turkish</div>
+              <div class="lang-opt" onclick="location.href='/ukrainian/'"><span class="lo-flag">🇺🇦</span> Ukrainian</div>
+              <div class="lang-opt" onclick="location.href='/urdu/'"><span class="lo-flag">🇵🇰</span> Urdu</div>
               <div class="lang-opt" onclick="location.href='/uyghur/'"><span class="lo-flag"><img loading="lazy" src="../images/flag-uyghur.svg" alt="East Turkestan" style="height:1.1em;width:auto;vertical-align:middle;border-radius:2px;display:inline-block"></span> Uyghur</div>
               <div class="lang-opt" onclick="location.href='/vietnamese/'"><span class="lo-flag">🇻🇳</span> Vietnamese</div>
               <div class="lang-opt" onclick="location.href='/yoruba/'"><span class="lo-flag">🇳🇬</span> Yoruba</div>
@@ -2818,9 +2773,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
   <div class="more-kbs-grid">
     <a href="../kannada/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Kannada</span><span class="kb-chip-native">ಕನ್ನಡ</span></div></a>
     <a href="../malayalam/"   class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Malayalam</span><span class="kb-chip-native">മലയാളം</span></div></a>
-    <a href="../hindi/" class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Hindi</span><span class="kb-chip-native">हिन्दी</span></div></a>
-    <a href="../marathi/"     class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Marathi</span><span class="kb-chip-native">मराठी</span></div></a>
-    <a href="../nepali/"      class="kb-chip"><span class="kb-chip-flag">🇳🇵</span><div class="kb-chip-info"><span class="kb-chip-name">Nepali</span><span class="kb-chip-native">नेपाली</span></div></a>
+    <a href="../sinhala/" class="kb-chip"><span class="kb-chip-flag">🇱🇰</span><div class="kb-chip-info"><span class="kb-chip-name">Sinhala</span><span class="kb-chip-native">සිංහල</span></div></a>
+    <a href="../odia/" class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Odia</span><span class="kb-chip-native">ଓଡ଼ିଆ</span></div></a>
+    <a href="../assamese/" class="kb-chip"><span class="kb-chip-flag">🇮🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Assamese</span><span class="kb-chip-native">অসমীয়া</span></div></a>
     <a href="/keyboards/" class="kb-discover">
       <div class="kb-discover-top">
         <span class="kb-discover-arr">→</span>
@@ -2869,41 +2824,19 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <h4>Keyboards</h4>
       <div class="ft-kb-grid">
         <a href="/arabic/">Arabic</a>
-        <a href="/hindi/">Hindi</a>
-        <a href="/persian/">Persian</a>
-        <a href="/urdu/">Urdu</a>
-        <a href="/bengali/">Bengali</a>
-        <a href="/tamil/">Tamil</a>
-        <a href="/telugu/">Telugu</a>
         <a href="/korean/">Korean</a>
-        <a href="/japanese/">Japanese</a>
-        <a href="/chinese/">Chinese</a>
-        <a href="/turkish/">Turkish</a>
-        <a href="/russian/">Russian</a>
-        <a href="/amharic/">Amharic</a>
-        <a href="/greek/">Greek</a>
-        <a href="/punjabi/">Punjabi</a>
-        <a href="/kannada/">Kannada</a>
-        <a href="/gujarati/">Gujarati</a>
-        <a href="/malayalam/">Malayalam</a>
-        <a href="/nepali/">Nepali</a>
-        <a href="/marathi/">Marathi</a>
-        <a href="/pashto/">Pashto</a>
         <a href="/sindhi/">Sindhi</a>
+        <a href="/marathi/">Marathi</a>
         <a href="/kurdish/">Kurdish</a>
+        <a href="/serbian/">Serbian</a>
+        <a href="/amharic/">Amharic</a>
+        <a href="/persian/">Persian</a>
         <a href="/amazigh/">Amazigh</a>
-        <a href="/thai/">Thai</a>
-        <a href="/vietnamese/">Vietnamese</a>
-        <a href="/burmese/">Burmese</a>
-        <a href="/mongolian/">Mongolian</a>
-        <a href="/filipino/">Filipino</a>
-        <a href="/uyghur/">Uyghur</a>
-        <a href="/somali/">Somali</a>
-        <a href="/hausa/">Hausa</a>
-        <a href="/igbo/">Igbo</a>
-        <a href="/yoruba/">Yoruba</a>
-        <a href="/tigrinya/">Tigrinya</a>
+        <a href="/bengali/">Bengali</a>
+        <a href="/urdu/">Urdu</a>
+        <a href="/japanese/">Japanese</a>
       </div>
+      <a class="ft-view-all" href="/keyboards/">All 52 keyboards →</a>
     </div>
 
     <!-- Tools & Company -->
@@ -2951,12 +2884,11 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 <script>
 /* ── DATA ── */
 const ROWS = [
-  ['అ','ఆ','ఇ','ఈ','ఉ','ఊ','ఋ','ఌ','ఎ','ఏ','ఐ','ఒ','ఓ'],
-  ['ఔ','క','ఖ','గ','ఘ','ఙ','చ','ఛ','జ','ఝ','ఞ','ట','ఠ'],
-  ['డ','ఢ','ణ','త','థ','ద','ధ','న','ప','ఫ','బ','భ','మ'],
-  ['య','ర','ఱ','ల','వ','శ','ష','స','హ','ౠ','ౡ','ళ','ా'],
-  ['ి','ీ','ు','ూ','ృ','ౄ','ె','ే','ై','ొ','ో','ౌ','ఁ'],
-  ['SHIFT','ం','ః','్','ౕ','ౖ','క్ష','జ్ఞ','శ్రీ','₹','BSP'],
+  ['అ','ఆ','ఇ','ఈ','ఉ','ఎ','ఏ','ఐ','ఒ','ఓ','క','ఖ'],
+  ['గ','ఘ','చ','ఛ','జ','ఞ','ట','ఠ','డ','ఢ','ణ','త'],
+  ['థ','ద','ధ','న','ప','ఫ','బ','భ','మ','య','ర','ల'],
+  ['వ','శ','ష','స','హ','ళ','ా','ి','ీ','ు','ూ','ృ'],
+  ['SHIFT','ె','ే','ై','ొ','ో','ౌ','ం','్','BSP'],
   ['N123','EMOJI','TASHKEEL','SPACE','DOT','FRANCO','ENTER']
 ];
 
@@ -2979,7 +2911,8 @@ const TASH = [
   {c:'ొ',l:'o'},{c:'ో',l:'oo'},{c:'ౌ',l:'au'},{c:'్',l:'hal'},
   {c:'ం',l:'am'},{c:'ః',l:'ah'},
   {c:'ఙ',l:'ṅ'},{c:'ఞ',l:'ñ'},{c:'ఋ',l:'ru'},{c:'ఱ',l:'ṟ'},
-  {c:'ఁ',l:'◌ఁ'},{c:'ౄ',l:'◌ౄ'},{c:'ౕ',l:'◌ౕ'},{c:'ౠ',l:'ౠ'},{c:'ౡ',l:'ౡ'}
+  {c:'ఁ',l:'◌ఁ'},{c:'ౄ',l:'◌ౄ'},{c:'ౕ',l:'◌ౕ'},{c:'ౠ',l:'ౠ'},{c:'ౡ',l:'ౡ'},
+  {c:'ఊ',l:'uu'}, {c:'ఌ',l:'li'}, {c:'ఔ',l:'au'}, {c:'ఝ',l:'jh'}, {c:'ౖ',l:'ౖ'}
 ];
 
 const EMOJI_CATS_DATA = {
@@ -3208,6 +3141,7 @@ function buildNum() {
   };
   fill('ngrid-w', western);
   /*NATIVE_DIGITS*/(function(){const D={"label": "Telugu digits", "digits": ["౦", "౧", "౨", "౩", "౪", "౫", "౬", "౭", "౮", "౯"], "first": false, "font": "'Baloo Tammudu 2', sans-serif"};const w=document.getElementById('ngrid-w');if(!w)return;let g=document.getElementById('ngrid-n');if(!g){const l=document.createElement('div');l.className='n-section-lbl';l.textContent=D.label;g=document.createElement('div');g.className='n-grid';g.id='ngrid-n';if(D.font)g.style.fontFamily=D.font;if(D.first){const wl=w.previousElementSibling;w.parentNode.insertBefore(l,wl);w.parentNode.insertBefore(g,wl);}else{w.parentNode.insertBefore(g,w.nextSibling);w.parentNode.insertBefore(l,g);}}fill('ngrid-n',D.digits);})();/*END_NATIVE_DIGITS*/
+  
   
   const ga = document.getElementById('ngrid-a'); if(ga) ga.style.display='none';
   fill('ngrid-s', symbols);
@@ -4439,7 +4373,7 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
   }
 
   /* long-press alternates — per-language data from tools/kb_lang_data.py */
-  const KB_ALT = {};
+  const KB_ALT = {"ఉ": ["ఊ"], "ృ": ["ఋ", "ౠ", "ౄ"], "ల": ["ఌ", "ౡ"], "ఒ": ["ఔ"], "ం": ["ఁ", "ః"], "న": ["ఙ"], "జ": ["ఝ"], "ర": ["ఱ"], "ే": ["ౕ"], "ై": ["ౖ"]};
   const pop = document.createElement('div');
   pop.id = 'kb-altpop';
   document.body.appendChild(pop);

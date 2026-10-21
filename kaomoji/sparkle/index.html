@@ -110,7 +110,10 @@ footer{background:#07091A;padding:0}.ft-inner{max-width:1000px;margin:0 auto;pad
 .ft-soc-link:hover{background:rgba(0,104,255,.20);border-color:rgba(0,104,255,.40);color:#60A5FA}
 .ft-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:#64748B;margin-bottom:14px}.ft-col h4.ft-h4-gap{margin-top:22px}
 .ft-kb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}.ft-kb-grid a,.ft-legal a{font-size:13px;color:#CBD5E1;text-decoration:none;padding:5px 0;display:block;transition:color .15s}
-.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}.ft-legal{display:flex;flex-direction:column}
+.ft-kb-grid a:hover,.ft-legal a:hover{color:#60A5FA}
+.ft-view-all { display:inline-block; margin-top:10px; font-size:12px; font-weight:600; color:#60A5FA; text-decoration:none; transition:color .15s; }
+.ft-view-all:hover { color:#93C5FD; }
+.ft-legal{display:flex;flex-direction:column}
 .ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;gap:12px}
 .ft-copy{font-size:11px;color:#64748B}.ft-bottom-links{display:flex;align-items:center;gap:16px}.ft-bottom-links a{font-size:11px;color:#64748B;text-decoration:none;transition:color .15s}.ft-bottom-links a:hover{color:#94A3B8}
 @media(max-width:860px){.ft-inner{grid-template-columns:200px 1fr 130px}.ft-inner .ft-col:last-child{grid-column:2;grid-row:2}}
@@ -397,11 +400,20 @@ function updateThemeUI(t){
     <div class="ft-col">
       <h4>Keyboards</h4>
       <div class="ft-kb-grid">
-        <a href="/arabic/">Arabic</a><a href="/hindi/">Hindi</a><a href="/persian/">Persian</a><a href="/urdu/">Urdu</a>
-        <a href="/bengali/">Bengali</a><a href="/tamil/">Tamil</a><a href="/telugu/">Telugu</a><a href="/korean/">Korean</a>
-        <a href="/japanese/">Japanese</a><a href="/chinese/">Chinese</a><a href="/turkish/">Turkish</a><a href="/russian/">Russian</a>
-        <a href="/greek/">Greek</a><a href="/thai/">Thai</a><a href="/vietnamese/">Vietnamese</a><a href="/amharic/">Amharic</a>
+        <a href="/arabic/">Arabic</a>
+        <a href="/korean/">Korean</a>
+        <a href="/sindhi/">Sindhi</a>
+        <a href="/marathi/">Marathi</a>
+        <a href="/kurdish/">Kurdish</a>
+        <a href="/serbian/">Serbian</a>
+        <a href="/amharic/">Amharic</a>
+        <a href="/persian/">Persian</a>
+        <a href="/amazigh/">Amazigh</a>
+        <a href="/bengali/">Bengali</a>
+        <a href="/urdu/">Urdu</a>
+        <a href="/japanese/">Japanese</a>
       </div>
+      <a class="ft-view-all" href="/keyboards/">All 52 keyboards →</a>
     </div>
         <div class="ft-col">
       <h4>Tools</h4>
