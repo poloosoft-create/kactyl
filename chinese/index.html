@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chinese Keyboard Online — Pinyin Typing | 中文键盘</title>
-  <meta name="description" content="Free Chinese keyboard online — type Chinese characters (Hanzi) for WeChat, TikTok & Instagram. Common characters grid + Pinyin mode. No download. Works">
+  <meta name="description" content="Free Chinese keyboard online — type Chinese characters (Hanzi) for WeChat, TikTok & Instagram. Common characters grid + Pinyin mode. No download. Works on phone &amp; PC.">
   <meta name="keywords" content="chinese keyboard, chinese keyboard online, type chinese online, 中文键盘, chinese characters keyboard, pinyin keyboard, type hanzi online, chinese keyboard free, simplified chinese keyboard">
 
   <!-- Pinterest verification -->
@@ -32,7 +32,7 @@
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://kactyl.com/chinese/">
   <meta property="og:title"       content="Chinese Keyboard Online — Pinyin Typing | 中文键盘">
-  <meta property="og:description" content="Type Chinese from your phone or PC — no app, no download. Chinese keyboard for WhatsApp, TikTok, Instagram. Pinyin mode converts English letters to Chinese instantly.">
+  <meta property="og:description" content="Type Chinese from your phone or PC — no app, no download. Chinese keyboard for WhatsApp, TikTok, Instagram, where you type Pinyin and pick each character from a candidate bar.">
   <meta property="og:image"       content="https://kactyl.com/images/og-images/chinese.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -42,7 +42,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Chinese Keyboard Online — Pinyin Typing | 中文键盘">
-  <meta name="twitter:description" content="Free Chinese keyboard — Pinyin mode, vowel signs &amp; voice typing. Type Chinese for WhatsApp &amp; TikTok. No download, works on all devices.">
+  <meta name="twitter:description" content="Free Chinese keyboard — Pinyin input &amp; voice typing. Type Chinese for WhatsApp &amp; TikTok. No download, works on all devices.">
   <meta name="twitter:image"       content="https://kactyl.com/images/og-images/chinese.png">
 
   <!-- Schema.org structured data -->
@@ -54,11 +54,11 @@
     "url": "https://kactyl.com/chinese/",
     "datePublished": "2026-05-19",
     "dateModified":  "2026-06-15",
-    "description": "Free Chinese keyboard online. Type Chinese from any device without installation. Pinyin mode, vowel signs, predictive text.",
+    "description": "Free Chinese keyboard online. Type Chinese characters from any device without installation. Pinyin input, character grid, predictive text.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "browserRequirements": "Requires JavaScript",
-    "inLanguage": ["te", "en"],
+    "inLanguage": ["zh", "en"],
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -79,7 +79,7 @@
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "How does Pinyin mode work on this keyboard?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Turn on Pinyin (Roman) mode and type a syllable by sound, e.g. \"ni\". A candidate bar shows the matching characters ranked by frequency — 你, 尼, 泥… — and you press Space (or a number 1-5) to choose one. Type the next syllable and pick again: \"ni\" → 你, \"hao\" → 好 gives 你好. It's the same syllable-by-syllable flow as a phone IME." } },
+        "acceptedAnswer": { "@type": "Answer", "text": "Type a syllable by sound on your own keyboard, e.g. \"ni\". A candidate bar shows the matching characters ranked by frequency — 你, 尼, 泥… — and you press Space (or a number 1-5) to choose one. Type the next syllable and pick again: \"ni\" → 你, \"hao\" → 好 gives 你好. Phone IMEs can also convert a whole word or phrase in one pick; this keyboard keeps to one syllable per pick." } },
       { "@type": "Question", "name": "Do I need to install a Chinese IME to use this?",
         "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs in your browser. Tap the character grid or use Pinyin mode, then Copy and paste. Nothing is installed and no system language settings change — ideal on a borrowed laptop, a hotel PC or a phone set to English." } },
       { "@type": "Question", "name": "Is this simplified or traditional Chinese?",
@@ -89,7 +89,7 @@
       { "@type": "Question", "name": "What are the four tones?",
         "acceptedAnswer": { "@type": "Answer", "text": "Mandarin uses pitch to distinguish words. The syllable \"ma\" means four different things by tone: mā 妈 (mother), má 麻 (hemp), mǎ 马 (horse), mà 骂 (scold), plus a neutral tone. You don't type tone marks here — you pick the intended character from the candidate bar." } },
       { "@type": "Question", "name": "How many characters do I need to read Chinese?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Dictionaries list over 54,000, but everyday literacy needs about 3,000–3,500 characters. This keyboard's grid covers the most frequent ones, and Pinyin mode reaches thousands more through the candidate bar." } },
+        "acceptedAnswer": { "@type": "Answer", "text": "Dictionaries list over 54,000, but everyday literacy needs about 3,000–3,500 characters. This keyboard's grid covers the most frequent ones, and Pinyin mode reaches more through the candidate bar: the most frequent characters of every syllable." } },
       { "@type": "Question", "name": "Will the Chinese I copy paste correctly into WeChat and Weibo?",
         "acceptedAnswer": { "@type": "Answer", "text": "Yes — the keyboard outputs standard Unicode, so characters paste cleanly into WeChat, Weibo, Xiaohongshu, TikTok/Douyin, email and documents on any device." } },
       { "@type": "Question", "name": "Can I type a whole word at once in Pinyin?",
@@ -341,6 +341,7 @@ nav { display:flex; align-items:center; gap:4px; }
   display:flex; align-items:center; gap:8px;
   padding:10px 14px; font-size:13px; font-weight:500;
   color:var(--text); cursor:pointer; transition: background .15s;
+  text-decoration:none;   /* options are <a> on the Arabic cluster (2026-10-04) */
 }
 .lang-opt:hover { background:var(--bg); }
 .lang-opt.active { color:var(--indigo); font-weight:600; }
@@ -809,7 +810,10 @@ main { padding:36px 16px 64px; position:relative; overflow-x:clip; }
 
 /* ── KEYS ── */
 .kb-rows { display:flex; flex-direction:column; gap:7px; }
-.kb-row  { display:flex; gap:5px; --kg:5px; }
+.kb-row  { display:flex; gap:5px; --kg:5px; justify-content:center; }
+/* One size for every letter key (set by the longest row, --kn from buildKB):
+   a short row stays centred at normal key size instead of stretching. */
+.kb-row .key.k-ch { flex:0 1 calc((100% - (var(--kn,10) - 1) * var(--kg)) / var(--kn,10)); position:relative; }
 
 .key {
   flex:1; min-width:0; height:56px;
@@ -2011,6 +2015,8 @@ body { background: #F8FAFC; }
   box-shadow: 0 4px 24px rgba(0,0,0,.45);
 }
 [data-theme="dark"] #key-callout::after { border-top-color: #4B5563; }
+/* kflag (tools/apply_flags.py) */
+.kflag{width:24px;height:18px;object-fit:cover;border-radius:3px;vertical-align:middle;display:inline-block}.card-flag .kflag,.hero-flag .kflag,.kb-chip-flag .kflag,.kb-card-flag .kflag,.rel-kb-flag .kflag,.hp-search-result-flag .kflag,.lang-filter-btn .kflag,.lang-pill .kflag,.kb-discover-flags-inner .kflag,.lang-flag .kflag,.flt .kflag,.wa-avatar .kflag,.h-stat-num .kflag{width:1.1em;height:.825em;border-radius:.14em}.lang-menu .kflag{width:1.1em;height:.825em;border-radius:.14em;margin-right:2px}.lang-pill .kflag,.lang-filter-btn .kflag,.lang-menu .kflag{vertical-align:-.1em}.lang-opt .lo-flag{display:inline-flex;justify-content:center;flex:none;width:24px;font-size:18px;line-height:1}#langDropdown{min-width:0;width:max-content;max-width:calc(100vw - 32px)}#langDropdown .lang-opt{gap:8px;padding:8px 10px}.lang-opt .lo-native{margin-left:auto;padding-left:8px;font-size:12px;font-weight:400;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}@media(max-width:600px){#langDropdown{left:auto;right:0;transform:none;min-width:0;width:max-content}}#langDropdown .lang-opt:hover,#langDropdown .lang-opt.lo-hl{background:rgba(0,104,255,.08)}[data-theme="dark"] #langDropdown .lang-opt:hover,[data-theme="dark"] #langDropdown .lang-opt.lo-hl{background:rgba(96,165,250,.14)}#langDropdown{isolation:isolate;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;border:1px solid rgba(255,255,255,.75);box-shadow:0 18px 48px rgba(15,23,42,.16),0 2px 8px rgba(15,23,42,.06),inset 0 1px 0 rgba(255,255,255,.8)}#langDropdown::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(28px) saturate(180%);backdrop-filter:blur(28px) saturate(180%)}#langDropdown.lo-port{position:fixed;right:auto;transform:none;z-index:1000}[data-theme="dark"] #langDropdown{background:none;border-color:rgba(255,255,255,.10);box-shadow:0 18px 48px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.06)}[data-theme="dark"] #langDropdown::before{background:rgba(15,23,42,.58)}#langDropdown{padding:0;overflow:hidden;max-height:none}#langDropdown .lo-list{overflow-y:auto;overscroll-behavior:contain;padding:52px 6px 6px;scroll-padding-top:52px;max-height:346px}.lo-search{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;align-items:center;gap:10px;padding:12px 16px 11px;background:linear-gradient(180deg,rgba(255,255,255,.70),rgba(255,255,255,.48));-webkit-backdrop-filter:blur(14px) saturate(180%);backdrop-filter:blur(14px) saturate(180%);box-shadow:inset 0 1px 0 rgba(255,255,255,.9);border-bottom:1px solid rgba(15,23,42,.07);color:#8A96A8}[data-theme="dark"] .lo-search{background:linear-gradient(180deg,rgba(15,23,42,.62),rgba(15,23,42,.42));box-shadow:inset 0 1px 0 rgba(255,255,255,.08);border-bottom-color:rgba(255,255,255,.08);color:#7C8AA0}.lo-search svg{flex:none}.lo-search input{flex:1;min-width:0;padding:0;border:0;outline:0;background:none;box-shadow:none;font:inherit;font-size:13.5px;font-weight:500;color:var(--text);-webkit-appearance:none;appearance:none}.lo-search input::placeholder{color:#B1BBC9;font-size:13px;font-weight:400;opacity:1}[data-theme="dark"] .lo-search input::placeholder{color:#5F6D82}.lo-search input::-webkit-search-cancel-button{display:none}.lo-search kbd{flex:none;font:600 10.5px/1 Inter,sans-serif;color:#A3AEBE;padding:4px 6px;border:1px solid rgba(15,23,42,.10);border-radius:6px;background:rgba(255,255,255,.5)}[data-theme="dark"] .lo-search kbd{border-color:rgba(255,255,255,.12);background:none}@media(hover:none){.lo-search kbd{display:none}}.lo-empty{display:none;padding:14px 16px;font-size:12.5px;color:var(--muted)}.ls-short{display:none}@media(max-width:480px){#langSelLabel .ls-long{display:none}#langSelLabel .ls-short{display:inline}}@media(max-width:600px){.lo-search input{font-size:16px}.lo-search input::placeholder{font-size:13px}}
 </style>
 
   <!-- BreadcrumbList structured data -->
@@ -2048,6 +2054,9 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
 [data-theme=dark] .pc-btn{background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)}
 [data-theme=dark] .mic-btn{background:rgba(255,255,255,.06)}
 </style>
+<style>/* KEYTAP:start (tools/apply_keytap.py) — long-press never selects a key label on iPhone */
+#kbrows, #kbrows *, #kb-altpop, #kb-altpop * { -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; }
+/* KEYTAP:end */</style>
 </head>
 <body>
 <div class="top-aura" aria-hidden="true"></div>
@@ -2091,17 +2100,17 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       </div>
     </div>
     <div class="lang-wrap">
-      <button class="lang-pill" id="lang-btn" onclick="toggleLang()">🇺🇸 English ▾</button>
+      <button class="lang-pill" id="lang-btn" onclick="toggleLang()"><img class="kflag" src="/flags/us.webp" width="24" height="18" alt="" loading="lazy"> English ▾</button>
       <div class="lang-menu" id="lang-menu">
-        <div class="lang-opt active" onclick="setLang('en','🇺🇸 English')">🇺🇸 English</div>
-        <div class="lang-opt" onclick="setLang('fr','🇫🇷 Français')">🇫🇷 Français</div>
-        <div class="lang-opt" onclick="setLang('zh','🇨🇳 Chinese')">🇨🇳 Chinese</div>
-        <div class="lang-opt" onclick="setLang('ar','🇸🇦 العربية')">🇸🇦 العربية</div>
+        <div class="lang-opt active" onclick="setLang('en','🇺🇸 English')"><img class="kflag" src="/flags/us.webp" width="24" height="18" alt="" loading="lazy"> English</div>
+        <div class="lang-opt" onclick="setLang('fr','🇫🇷 Français')"><img class="kflag" src="/flags/fr.webp" width="24" height="18" alt="" loading="lazy"> Français</div>
+        <div class="lang-opt" onclick="setLang('zh','🇨🇳 Chinese')"><img class="kflag" src="/flags/cn.webp" width="24" height="18" alt="" loading="lazy"> Chinese</div>
+        <div class="lang-opt" onclick="setLang('ar','🇸🇦 العربية')"><img class="kflag" src="/flags/sa.webp" width="24" height="18" alt="" loading="lazy"> العربية</div>
       </div>
     </div>
     <div class="theme-wrap" onclick="toggleTheme()">
       <div class="t-track" id="tt">
-        <div class="t-thumb" id="th"><img id="theme-icon" src="../images/Icon-white mode-Clavierarabe-enligne.svg" alt="Toggle theme" width="13" height="13"></div>
+        <div class="t-thumb" id="th"><img id="theme-icon" src="../images/kactyl-icon-light-mode.svg" alt="Toggle theme" width="13" height="13"></div>
       </div>
       <div class="t-lbl" id="tlbl">White<br>Mode</div>
     </div>
@@ -2116,7 +2125,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="hero-hd">
       <h1 data-i18n="hero.h1">Chinese Keyboard Online<span class="h1-arabic">中文键盘</span></h1>
       <div class="hero-sub-row">
-        <p class="hero-sub" data-i18n="hero.sub">Type Chinese by tapping common characters, or switch on Pinyin mode — type nihao, pick 你好 from the candidate bar, exactly like a phone IME.</p>
+        <p class="hero-sub" data-i18n="hero.sub">Type Chinese by tapping common characters, or type Pinyin on your own keyboard — type ni and pick 你, then hao and pick 好, from the candidate bar.</p>
       <div class="hero-stats kb-facts" data-facts="counted">
         <div class="hero-stat">
           <span class="hs-num">8,105</span>
@@ -2125,7 +2134,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="hs-sep"></div>
         <div class="hero-stat">
           <span class="hs-num">1.1B</span>
-          <span class="hs-label">Speakers</span>
+          <span class="hs-label">Mandarin speakers</span>
         </div>
         <div class="hs-sep"></div>
         <div class="hero-stat">
@@ -2140,47 +2149,47 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="sh-outer">
     <div class="share-bar">
       <button class="sh-btn" onclick="shareSnapchat()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-Snapchat-Clavierarabe-online.svg" alt="Snapchat"></div>
+        <div class="sh-ic"><img loading="lazy" src="../images/kactyl-icon-snapchat.svg" alt="Snapchat"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.copyto">Copy to</span><span class="sh-name">Snapchat</span></div>
       </button>
       <button class="sh-btn" onclick="searchChatGPT()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-Chatgpt-Clavierarabe-online.svg" alt="ChatGPT"></div>
+        <div class="sh-ic"><img loading="lazy" src="../images/kactyl-icon-chatgpt.svg" alt="ChatGPT"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.searchwith">Search with</span><span class="sh-name">ChatGPT</span></div>
       </button>
       <button class="sh-btn" onclick="shareWhatsApp()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-Whatsapp-Clavierarabe-online.svg" alt="WhatsApp"></div>
+        <div class="sh-ic"><img loading="lazy" src="../images/kactyl-icon-whatsapp.svg" alt="WhatsApp"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.copyto">Copy to</span><span class="sh-name">WhatsApp</span></div>
       </button>
       <button class="sh-btn" onclick="searchYouTube()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-Youtube-Clavierarabe-online.svg" alt="YouTube"></div>
+        <div class="sh-ic"><img loading="lazy" src="../images/kactyl-icon-youtube.svg" alt="YouTube"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.searchwith">Search with</span><span class="sh-name">YouTube</span></div>
       </button>
       <button class="sh-btn" onclick="searchGoogle()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-google-Clavierarabe-online.svg" alt="Google"></div>
+        <div class="sh-ic"><img loading="lazy" src="../images/kactyl-icon-google.svg" alt="Google"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.searchwith">Search with</span><span class="sh-name">Google</span></div>
       </button>
       <button class="sh-btn" onclick="translateText()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-Translate-Clavierarabe-online.svg" alt="Translate" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:22px&quot;>🌐</span>'"></div>
+        <div class="sh-ic"><img loading="lazy" src="../images/kactyl-icon-translate.svg" alt="Translate" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:22px&quot;>🌐</span>'"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.translatewith">Translate with</span><span class="sh-name">Google</span></div>
       </button>
       <button class="sh-btn" onclick="shareInstagram()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-Instagram-Clavierarabe-online%20Kopie.svg" alt="Instagram"></div>
+        <div class="sh-ic"><img loading="lazy" src="../images/kactyl-icon-instagram.svg" alt="Instagram"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.copyto">Copy to</span><span class="sh-name">Instagram</span></div>
       </button>
       <button class="sh-btn" onclick="shareFacebook()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-Facebook-Clavierarabe-online.svg" alt="Facebook"></div>
+        <div class="sh-ic"><img loading="lazy" src="../images/kactyl-icon-facebook.svg" alt="Facebook"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.copyto">Copy to</span><span class="sh-name">Facebook</span></div>
       </button>
       <button class="sh-btn" onclick="shareTikTok()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-TikTok-Clavierarabe-online.svg" alt="TikTok"></div>
+        <div class="sh-ic"><img loading="lazy" src="../images/kactyl-icon-tiktok.svg" alt="TikTok"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.copyto">Copy to</span><span class="sh-name">TikTok</span></div>
       </button>
       <button class="sh-btn" onclick="shareTelegram()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-Telegram-Clavierarabe-online.svg" alt="Telegram"></div>
+        <div class="sh-ic"><img loading="lazy" src="../images/kactyl-icon-telegram.svg" alt="Telegram"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.copyto">Copy to</span><span class="sh-name">Telegram</span></div>
       </button>
       <button class="sh-btn" onclick="shareTwitterX()">
-        <div class="sh-ic"><img loading="lazy" src="../images/Icon-X-Clavierarabe-online.svg" alt="X"></div>
+        <div class="sh-ic"><img loading="lazy" src="../images/kactyl-icon-x.svg" alt="X"></div>
         <div class="sh-txt"><span class="sh-action" data-i18n="share.poston">Post on</span><span class="sh-name">X</span></div>
       </button>
     </div>
@@ -2203,78 +2212,91 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <div class="editor-bar">
         <div class="bar-center">
           <button class="t-btn t-dl" onclick="dlText()">
-            <img loading="lazy" src="../images/Icon-Telecharger-Clavierarabe-online.svg" alt="Download">
+            <img loading="lazy" src="../images/kactyl-icon-download.svg" alt="Download">
             <span data-i18n="btn.download">Download</span>
           </button>
           <button class="t-btn t-cp" onclick="cpText()">
-            <img loading="lazy" src="../images/Icon-Copy-Clavier-arabe-online.svg" alt="Copy text">
+            <img loading="lazy" src="../images/kactyl-icon-copy.svg" alt="Copy text">
             <span data-i18n="btn.copy">Copy</span>
           </button>
           <button class="t-btn t-clr" onclick="clrText()">
-            <img loading="lazy" src="../images/Icon-Clear-Clavierarabe-enligne.svg" alt="Clear text">
+            <img loading="lazy" src="../images/kactyl-icon-clear.svg" alt="Clear text">
             <span data-i18n="btn.clear">Clear</span>
           </button>
 
           <!-- Language selector -->
           <div class="lang-sel-wrap">
             <button class="lang-sel-btn" id="langSelBtn" onclick="toggleLangDrop()">
-              <img loading="lazy" src="../images/Icon-Select languge-Clavierarabe-enligne.svg" alt="Select language">
+              <img loading="lazy" src="../images/kactyl-icon-language.svg" alt="Select language">
               <span id="langSelLabel">Chinese</span>
               <span class="lang-arrow">▾</span>
             </button>
                                                 <div class="lang-dropdown" id="langDropdown">
-              <div class="lang-opt" onclick="location.href='/arabic/'"><span class="lo-flag">🇸🇦</span> Arabic</div>
-              <div class="lang-opt" onclick="location.href='/amazigh/'"><span class="lo-flag"><img loading="lazy" src="../images/flag-amazigh.svg" width="21" height="15" alt="ⵣ" style="vertical-align:middle;border-radius:2px;display:inline-block"></span> Amazigh</div>
-              <div class="lang-opt" onclick="location.href='/amharic/'"><span class="lo-flag">🇪🇹</span> Amharic</div>
-              <div class="lang-opt" onclick="location.href='/armenian/'"><span class="lo-flag">🇦🇲</span> Armenian</div>
-              <div class="lang-opt" onclick="location.href='/assamese/'"><span class="lo-flag">🇮🇳</span> Assamese</div>
-              <div class="lang-opt" onclick="location.href='/belarusian/'"><span class="lo-flag">🇧🇾</span> Belarusian</div>
-              <div class="lang-opt" onclick="location.href='/bengali/'"><span class="lo-flag">🇧🇩</span> Bengali</div>
-              <div class="lang-opt" onclick="location.href='/bulgarian/'"><span class="lo-flag">🇧🇬</span> Bulgarian</div>
-              <div class="lang-opt" onclick="location.href='/burmese/'"><span class="lo-flag">🇲🇲</span> Burmese</div>
-              <div class="lang-opt" onclick="location.href='/chinese/'"><span class="lo-flag">🇨🇳</span> Chinese</div>
-              <div class="lang-opt" onclick="location.href='/dhivehi/'"><span class="lo-flag">🇲🇻</span> Dhivehi</div>
-              <div class="lang-opt" onclick="location.href='/egyptian-hieroglyphics/'"><span class="lo-flag">🇪🇬</span> Egyptian Hieroglyphics</div>
-              <div class="lang-opt" onclick="location.href='/filipino/'"><span class="lo-flag">🇵🇭</span> Filipino</div>
-              <div class="lang-opt" onclick="location.href='/georgian/'"><span class="lo-flag">🇬🇪</span> Georgian</div>
-              <div class="lang-opt" onclick="location.href='/greek/'"><span class="lo-flag">🇬🇷</span> Greek</div>
-              <div class="lang-opt" onclick="location.href='/gujarati/'"><span class="lo-flag">🇮🇳</span> Gujarati</div>
-              <div class="lang-opt" onclick="location.href='/hausa/'"><span class="lo-flag">🇳🇬</span> Hausa</div>
-              <div class="lang-opt" onclick="location.href='/hebrew/'"><span class="lo-flag">🇮🇱</span> Hebrew</div>
-              <div class="lang-opt" onclick="location.href='/hindi/'"><span class="lo-flag">🇮🇳</span> Hindi</div>
-              <div class="lang-opt" onclick="location.href='/igbo/'"><span class="lo-flag">🇳🇬</span> Igbo</div>
-              <div class="lang-opt" onclick="location.href='/japanese/'"><span class="lo-flag">🇯🇵</span> Japanese</div>
-              <div class="lang-opt" onclick="location.href='/kannada/'"><span class="lo-flag">🇮🇳</span> Kannada</div>
-              <div class="lang-opt" onclick="location.href='/kazakh/'"><span class="lo-flag">🇰🇿</span> Kazakh</div>
-              <div class="lang-opt" onclick="location.href='/khmer/'"><span class="lo-flag">🇰🇭</span> Khmer</div>
-              <div class="lang-opt" onclick="location.href='/korean/'"><span class="lo-flag">🇰🇷</span> Korean</div>
-              <div class="lang-opt" onclick="location.href='/kurdish/'"><span class="lo-flag"><img loading="lazy" src="../images/flag-kurdish.svg" alt="Kurdistan" style="height:1.1em;width:auto;vertical-align:middle;border-radius:2px;display:inline-block"></span> Kurdish</div>
-              <div class="lang-opt" onclick="location.href='/lao/'"><span class="lo-flag">🇱🇦</span> Lao</div>
-              <div class="lang-opt" onclick="location.href='/macedonian/'"><span class="lo-flag">🇲🇰</span> Macedonian</div>
-              <div class="lang-opt" onclick="location.href='/malayalam/'"><span class="lo-flag">🇮🇳</span> Malayalam</div>
-              <div class="lang-opt" onclick="location.href='/marathi/'"><span class="lo-flag">🇮🇳</span> Marathi</div>
-              <div class="lang-opt" onclick="location.href='/minecraft-enchantment/'"><span class="lo-flag">🎮</span> Minecraft Enchantment</div>
-              <div class="lang-opt" onclick="location.href='/mongolian/'"><span class="lo-flag">🇲🇳</span> Mongolian</div>
-              <div class="lang-opt" onclick="location.href='/nepali/'"><span class="lo-flag">🇳🇵</span> Nepali</div>
-              <div class="lang-opt" onclick="location.href='/odia/'"><span class="lo-flag">🇮🇳</span> Odia</div>
-              <div class="lang-opt" onclick="location.href='/pashto/'"><span class="lo-flag">🇦🇫</span> Pashto</div>
-              <div class="lang-opt" onclick="location.href='/persian/'"><span class="lo-flag">🇮🇷</span> Persian</div>
-              <div class="lang-opt" onclick="location.href='/punjabi/'"><span class="lo-flag">🇮🇳</span> Punjabi</div>
-              <div class="lang-opt" onclick="location.href='/russian/'"><span class="lo-flag">🇷🇺</span> Russian</div>
-              <div class="lang-opt" onclick="location.href='/serbian/'"><span class="lo-flag">🇷🇸</span> Serbian</div>
-              <div class="lang-opt" onclick="location.href='/sindhi/'"><span class="lo-flag">🇵🇰</span> Sindhi</div>
-              <div class="lang-opt" onclick="location.href='/sinhala/'"><span class="lo-flag">🇱🇰</span> Sinhala</div>
-              <div class="lang-opt" onclick="location.href='/somali/'"><span class="lo-flag">🇸🇴</span> Somali</div>
-              <div class="lang-opt" onclick="location.href='/tamil/'"><span class="lo-flag">🇮🇳</span> Tamil</div>
-              <div class="lang-opt" onclick="location.href='/telugu/'"><span class="lo-flag">🇮🇳</span> Telugu</div>
-              <div class="lang-opt" onclick="location.href='/thai/'"><span class="lo-flag">🇹🇭</span> Thai</div>
-              <div class="lang-opt" onclick="location.href='/tigrinya/'"><span class="lo-flag">🇪🇷</span> Tigrinya</div>
-              <div class="lang-opt" onclick="location.href='/turkish/'"><span class="lo-flag">🇹🇷</span> Turkish</div>
-              <div class="lang-opt" onclick="location.href='/ukrainian/'"><span class="lo-flag">🇺🇦</span> Ukrainian</div>
-              <div class="lang-opt" onclick="location.href='/urdu/'"><span class="lo-flag">🇵🇰</span> Urdu</div>
-              <div class="lang-opt" onclick="location.href='/uyghur/'"><span class="lo-flag"><img loading="lazy" src="../images/flag-uyghur.svg" alt="East Turkestan" style="height:1.1em;width:auto;vertical-align:middle;border-radius:2px;display:inline-block"></span> Uyghur</div>
-              <div class="lang-opt" onclick="location.href='/vietnamese/'"><span class="lo-flag">🇻🇳</span> Vietnamese</div>
-              <div class="lang-opt" onclick="location.href='/yoruba/'"><span class="lo-flag">🇳🇬</span> Yoruba</div>
+              <div class="lo-search"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5"/><line x1="10.4" y1="10.4" x2="14" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><input type="search" id="loSearch" autocomplete="off" spellcheck="false" enterkeyhint="go"><kbd>esc</kbd></div>
+              <div class="lo-list">
+              <div class="lang-opt" data-q="arabic العربية arabic" onclick="location.href='/arabic/'"><span class="lo-flag"><img class="kflag" src="/flags/sa.webp" width="24" height="18" alt="" loading="lazy"></span> Arabic<span class="lo-native" dir="auto">العربية</span></div>
+              <div class="lang-opt" data-q="amazigh ⵜⴰⵎⴰⵣⵉⵖⵜ amazigh" onclick="location.href='/amazigh/'"><span class="lo-flag"><img class="kflag" src="/flags/amazigh.webp" width="24" height="18" alt="" loading="lazy"></span> Amazigh<span class="lo-native" dir="auto">ⵜⴰⵎⴰⵣⵉⵖⵜ</span></div>
+              <div class="lang-opt" data-q="amharic አማርኛ amharic" onclick="location.href='/amharic/'"><span class="lo-flag"><img class="kflag" src="/flags/et.webp" width="24" height="18" alt="" loading="lazy"></span> Amharic<span class="lo-native" dir="auto">አማርኛ</span></div>
+              <div class="lang-opt" data-q="armenian հայերեն armenian" onclick="location.href='/armenian/'"><span class="lo-flag"><img class="kflag" src="/flags/am.webp" width="24" height="18" alt="" loading="lazy"></span> Armenian<span class="lo-native" dir="auto">Հայերեն</span></div>
+              <div class="lang-opt" data-q="assamese অসমীয়া assamese" onclick="location.href='/assamese/'"><span class="lo-flag"><img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"></span> Assamese<span class="lo-native" dir="auto">অসমীয়া</span></div>
+              <div class="lang-opt" data-q="belarusian беларуская belarusian" onclick="location.href='/belarusian/'"><span class="lo-flag"><img class="kflag" src="/flags/by.webp" width="24" height="18" alt="" loading="lazy"></span> Belarusian<span class="lo-native" dir="auto">Беларуская</span></div>
+              <div class="lang-opt" data-q="bengali বাংলা bengali" onclick="location.href='/bengali/'"><span class="lo-flag"><img class="kflag" src="/flags/bd.webp" width="24" height="18" alt="" loading="lazy"></span> Bengali<span class="lo-native" dir="auto">বাংলা</span></div>
+              <div class="lang-opt" data-q="bulgarian български bulgarian" onclick="location.href='/bulgarian/'"><span class="lo-flag"><img class="kflag" src="/flags/bg.webp" width="24" height="18" alt="" loading="lazy"></span> Bulgarian<span class="lo-native" dir="auto">Български</span></div>
+              <div class="lang-opt" data-q="burmese မြန်မာဘာသာ burmese" onclick="location.href='/burmese/'"><span class="lo-flag"><img class="kflag" src="/flags/mm.webp" width="24" height="18" alt="" loading="lazy"></span> Burmese<span class="lo-native" dir="auto">မြန်မာဘာသာ</span></div>
+              <div class="lang-opt" data-q="chinese 中文 chinese" onclick="location.href='/chinese/'"><span class="lo-flag"><img class="kflag" src="/flags/cn.webp" width="24" height="18" alt="" loading="lazy"></span> Chinese<span class="lo-native" dir="auto">中文</span></div>
+              <div class="lang-opt" data-q="czech čeština czech" onclick="location.href='/czech/'"><span class="lo-flag"><img class="kflag" src="/flags/cz.webp" width="24" height="18" alt="" loading="lazy"></span> Czech<span class="lo-native" dir="auto">Čeština</span></div>
+              <div class="lang-opt" data-q="danish dansk danish" onclick="location.href='/danish/'"><span class="lo-flag"><img class="kflag" src="/flags/dk.webp" width="24" height="18" alt="" loading="lazy"></span> Danish<span class="lo-native" dir="auto">Dansk</span></div>
+              <div class="lang-opt" data-q="dhivehi ދިވެހި dhivehi" onclick="location.href='/dhivehi/'"><span class="lo-flag"><img class="kflag" src="/flags/mv.webp" width="24" height="18" alt="" loading="lazy"></span> Dhivehi<span class="lo-native" dir="auto">ދިވެހި</span></div>
+              <div class="lang-opt" data-q="egyptian hieroglyphs 𓂀 egyptian-hieroglyphics" onclick="location.href='/egyptian-hieroglyphics/'"><span class="lo-flag"><img class="kflag" src="/flags/eg.webp" width="24" height="18" alt="" loading="lazy"></span> Egyptian Hieroglyphs<span class="lo-native" dir="auto">𓂀</span></div>
+              <div class="lang-opt" data-q="filipino wikang filipino filipino filipino" onclick="location.href='/filipino/'"><span class="lo-flag"><img class="kflag" src="/flags/ph.webp" width="24" height="18" alt="" loading="lazy"></span> Filipino<span class="lo-native" dir="auto">Wikang Filipino</span></div>
+              <div class="lang-opt" data-q="french français french" onclick="location.href='/french/'"><span class="lo-flag"><img class="kflag" src="/flags/fr.webp" width="24" height="18" alt="" loading="lazy"></span> French<span class="lo-native" dir="auto">Français</span></div>
+              <div class="lang-opt" data-q="georgian ქართული georgian" onclick="location.href='/georgian/'"><span class="lo-flag"><img class="kflag" src="/flags/ge.webp" width="24" height="18" alt="" loading="lazy"></span> Georgian<span class="lo-native" dir="auto">ქართული</span></div>
+              <div class="lang-opt" data-q="german deutsch german" onclick="location.href='/german/'"><span class="lo-flag"><img class="kflag" src="/flags/de.webp" width="24" height="18" alt="" loading="lazy"></span> German<span class="lo-native" dir="auto">Deutsch</span></div>
+              <div class="lang-opt" data-q="greek ελληνικά greek" onclick="location.href='/greek/'"><span class="lo-flag"><img class="kflag" src="/flags/gr.webp" width="24" height="18" alt="" loading="lazy"></span> Greek<span class="lo-native" dir="auto">Ελληνικά</span></div>
+              <div class="lang-opt" data-q="gujarati ગુજરાતી gujarati" onclick="location.href='/gujarati/'"><span class="lo-flag"><img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"></span> Gujarati<span class="lo-native" dir="auto">ગુજરાતી</span></div>
+              <div class="lang-opt" data-q="hausa harshen hausa hausa hausa" onclick="location.href='/hausa/'"><span class="lo-flag"><img class="kflag" src="/flags/ng.webp" width="24" height="18" alt="" loading="lazy"></span> Hausa<span class="lo-native" dir="auto">Harshen Hausa</span></div>
+              <div class="lang-opt" data-q="hebrew עברית hebrew" onclick="location.href='/hebrew/'"><span class="lo-flag"><img class="kflag" src="/flags/il.webp" width="24" height="18" alt="" loading="lazy"></span> Hebrew<span class="lo-native" dir="auto">עברית</span></div>
+              <div class="lang-opt" data-q="hindi हिन्दी hindi" onclick="location.href='/hindi/'"><span class="lo-flag"><img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"></span> Hindi<span class="lo-native" dir="auto">हिन्दी</span></div>
+              <div class="lang-opt" data-q="hungarian magyar hungarian" onclick="location.href='/hungarian/'"><span class="lo-flag"><img class="kflag" src="/flags/hu.webp" width="24" height="18" alt="" loading="lazy"></span> Hungarian<span class="lo-native" dir="auto">Magyar</span></div>
+              <div class="lang-opt" data-q="igbo asụsụ igbo igbo igbo" onclick="location.href='/igbo/'"><span class="lo-flag"><img class="kflag" src="/flags/ng.webp" width="24" height="18" alt="" loading="lazy"></span> Igbo<span class="lo-native" dir="auto">Asụsụ Igbo</span></div>
+              <div class="lang-opt" data-q="irish gaeilge irish" onclick="location.href='/irish/'"><span class="lo-flag"><img class="kflag" src="/flags/ie.webp" width="24" height="18" alt="" loading="lazy"></span> Irish<span class="lo-native" dir="auto">Gaeilge</span></div>
+              <div class="lang-opt" data-q="japanese 日本語 japanese" onclick="location.href='/japanese/'"><span class="lo-flag"><img class="kflag" src="/flags/jp.webp" width="24" height="18" alt="" loading="lazy"></span> Japanese<span class="lo-native" dir="auto">日本語</span></div>
+              <div class="lang-opt" data-q="kannada ಕನ್ನಡ kannada" onclick="location.href='/kannada/'"><span class="lo-flag"><img class="kflag" src="/flags/kannada.webp" width="24" height="18" alt="" loading="lazy"></span> Kannada<span class="lo-native" dir="auto">ಕನ್ನಡ</span></div>
+              <div class="lang-opt" data-q="kazakh қазақша kazakh" onclick="location.href='/kazakh/'"><span class="lo-flag"><img class="kflag" src="/flags/kz.webp" width="24" height="18" alt="" loading="lazy"></span> Kazakh<span class="lo-native" dir="auto">Қазақша</span></div>
+              <div class="lang-opt" data-q="khmer ភាសាខ្មែរ khmer" onclick="location.href='/khmer/'"><span class="lo-flag"><img class="kflag" src="/flags/kh.webp" width="24" height="18" alt="" loading="lazy"></span> Khmer<span class="lo-native" dir="auto">ភាសាខ្មែរ</span></div>
+              <div class="lang-opt" data-q="korean 한국어 korean" onclick="location.href='/korean/'"><span class="lo-flag"><img class="kflag" src="/flags/kr.webp" width="24" height="18" alt="" loading="lazy"></span> Korean<span class="lo-native" dir="auto">한국어</span></div>
+              <div class="lang-opt" data-q="kurdish کوردی kurdish" onclick="location.href='/kurdish/'"><span class="lo-flag"><img class="kflag" src="/flags/kurdistan.webp" width="24" height="18" alt="" loading="lazy"></span> Kurdish<span class="lo-native" dir="auto">کوردی</span></div>
+              <div class="lang-opt" data-q="lao ພາສາລາວ lao" onclick="location.href='/lao/'"><span class="lo-flag"><img class="kflag" src="/flags/la.webp" width="24" height="18" alt="" loading="lazy"></span> Lao<span class="lo-native" dir="auto">ພາສາລາວ</span></div>
+              <div class="lang-opt" data-q="macedonian македонски macedonian" onclick="location.href='/macedonian/'"><span class="lo-flag"><img class="kflag" src="/flags/mk.webp" width="24" height="18" alt="" loading="lazy"></span> Macedonian<span class="lo-native" dir="auto">Македонски</span></div>
+              <div class="lang-opt" data-q="malayalam മലയാളം malayalam" onclick="location.href='/malayalam/'"><span class="lo-flag"><img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"></span> Malayalam<span class="lo-native" dir="auto">മലയാളം</span></div>
+              <div class="lang-opt" data-q="marathi मराठी marathi" onclick="location.href='/marathi/'"><span class="lo-flag"><img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"></span> Marathi<span class="lo-native" dir="auto">मराठी</span></div>
+              <div class="lang-opt" data-q="minecraft enchantment ᔑ minecraft-enchantment" onclick="location.href='/minecraft-enchantment/'"><span class="lo-flag">🎮</span> Minecraft Enchantment<span class="lo-native" dir="auto">ᔑ</span></div>
+              <div class="lang-opt" data-q="mongolian монгол mongolian" onclick="location.href='/mongolian/'"><span class="lo-flag"><img class="kflag" src="/flags/mn.webp" width="24" height="18" alt="" loading="lazy"></span> Mongolian<span class="lo-native" dir="auto">Монгол</span></div>
+              <div class="lang-opt" data-q="nepali नेपाली nepali" onclick="location.href='/nepali/'"><span class="lo-flag"><img class="kflag" src="/flags/np.webp" width="24" height="18" alt="" loading="lazy"></span> Nepali<span class="lo-native" dir="auto">नेपाली</span></div>
+              <div class="lang-opt" data-q="norwegian norsk norwegian" onclick="location.href='/norwegian/'"><span class="lo-flag"><img class="kflag" src="/flags/no.webp" width="24" height="18" alt="" loading="lazy"></span> Norwegian<span class="lo-native" dir="auto">Norsk</span></div>
+              <div class="lang-opt" data-q="odia ଓଡ଼ିଆ odia" onclick="location.href='/odia/'"><span class="lo-flag"><img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"></span> Odia<span class="lo-native" dir="auto">ଓଡ଼ିଆ</span></div>
+              <div class="lang-opt" data-q="pashto پښتو pashto" onclick="location.href='/pashto/'"><span class="lo-flag"><img class="kflag" src="/flags/af.webp" width="24" height="18" alt="" loading="lazy"></span> Pashto<span class="lo-native" dir="auto">پښتو</span></div>
+              <div class="lang-opt" data-q="persian فارسی persian" onclick="location.href='/persian/'"><span class="lo-flag"><img class="kflag" src="/flags/ir.webp" width="24" height="18" alt="" loading="lazy"></span> Persian<span class="lo-native" dir="auto">فارسی</span></div>
+              <div class="lang-opt" data-q="polish polski polish" onclick="location.href='/polish/'"><span class="lo-flag"><img class="kflag" src="/flags/pl.webp" width="24" height="18" alt="" loading="lazy"></span> Polish<span class="lo-native" dir="auto">Polski</span></div>
+              <div class="lang-opt" data-q="portuguese português portuguese" onclick="location.href='/portuguese/'"><span class="lo-flag"><img class="kflag" src="/flags/br.webp" width="24" height="18" alt="" loading="lazy"></span> Portuguese<span class="lo-native" dir="auto">Português</span></div>
+              <div class="lang-opt" data-q="punjabi ਪੰਜਾਬੀ punjabi" onclick="location.href='/punjabi/'"><span class="lo-flag"><img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"></span> Punjabi<span class="lo-native" dir="auto">ਪੰਜਾਬੀ</span></div>
+              <div class="lang-opt" data-q="russian русский russian" onclick="location.href='/russian/'"><span class="lo-flag"><img class="kflag" src="/flags/ru.webp" width="24" height="18" alt="" loading="lazy"></span> Russian<span class="lo-native" dir="auto">Русский</span></div>
+              <div class="lang-opt" data-q="serbian српски serbian" onclick="location.href='/serbian/'"><span class="lo-flag"><img class="kflag" src="/flags/rs.webp" width="24" height="18" alt="" loading="lazy"></span> Serbian<span class="lo-native" dir="auto">Српски</span></div>
+              <div class="lang-opt" data-q="sindhi سنڌي sindhi" onclick="location.href='/sindhi/'"><span class="lo-flag"><img class="kflag" src="/flags/pk.webp" width="24" height="18" alt="" loading="lazy"></span> Sindhi<span class="lo-native" dir="auto">سنڌي</span></div>
+              <div class="lang-opt" data-q="sinhala සිංහල sinhala" onclick="location.href='/sinhala/'"><span class="lo-flag"><img class="kflag" src="/flags/lk.webp" width="24" height="18" alt="" loading="lazy"></span> Sinhala<span class="lo-native" dir="auto">සිංහල</span></div>
+              <div class="lang-opt" data-q="somali soomaali somali" onclick="location.href='/somali/'"><span class="lo-flag"><img class="kflag" src="/flags/so.webp" width="24" height="18" alt="" loading="lazy"></span> Somali<span class="lo-native" dir="auto">Soomaali</span></div>
+              <div class="lang-opt" data-q="swedish svenska swedish" onclick="location.href='/swedish/'"><span class="lo-flag"><img class="kflag" src="/flags/se.webp" width="24" height="18" alt="" loading="lazy"></span> Swedish<span class="lo-native" dir="auto">Svenska</span></div>
+              <div class="lang-opt" data-q="tamil தமிழ் tamil" onclick="location.href='/tamil/'"><span class="lo-flag"><img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"></span> Tamil<span class="lo-native" dir="auto">தமிழ்</span></div>
+              <div class="lang-opt" data-q="telugu తెలుగు telugu" onclick="location.href='/telugu/'"><span class="lo-flag"><img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"></span> Telugu<span class="lo-native" dir="auto">తెలుగు</span></div>
+              <div class="lang-opt" data-q="thai ภาษาไทย thai" onclick="location.href='/thai/'"><span class="lo-flag"><img class="kflag" src="/flags/th.webp" width="24" height="18" alt="" loading="lazy"></span> Thai<span class="lo-native" dir="auto">ภาษาไทย</span></div>
+              <div class="lang-opt" data-q="tigrinya ትግርኛ tigrinya" onclick="location.href='/tigrinya/'"><span class="lo-flag"><img class="kflag" src="/flags/er.webp" width="24" height="18" alt="" loading="lazy"></span> Tigrinya<span class="lo-native" dir="auto">ትግርኛ</span></div>
+              <div class="lang-opt" data-q="turkish türkçe turkish" onclick="location.href='/turkish/'"><span class="lo-flag"><img class="kflag" src="/flags/tr.webp" width="24" height="18" alt="" loading="lazy"></span> Turkish<span class="lo-native" dir="auto">Türkçe</span></div>
+              <div class="lang-opt" data-q="ukrainian українська ukrainian" onclick="location.href='/ukrainian/'"><span class="lo-flag"><img class="kflag" src="/flags/ua.webp" width="24" height="18" alt="" loading="lazy"></span> Ukrainian<span class="lo-native" dir="auto">Українська</span></div>
+              <div class="lang-opt" data-q="urdu اردو urdu" onclick="location.href='/urdu/'"><span class="lo-flag"><img class="kflag" src="/flags/pk.webp" width="24" height="18" alt="" loading="lazy"></span> Urdu<span class="lo-native" dir="auto">اردو</span></div>
+              <div class="lang-opt" data-q="uyghur ئۇيغۇرچە uyghur" onclick="location.href='/uyghur/'"><span class="lo-flag"><img class="kflag" src="/flags/east-turkestan.webp" width="24" height="18" alt="" loading="lazy"></span> Uyghur<span class="lo-native" dir="auto">ئۇيغۇرچە</span></div>
+              <div class="lang-opt" data-q="vietnamese tiếng việt vietnamese" onclick="location.href='/vietnamese/'"><span class="lo-flag"><img class="kflag" src="/flags/vn.webp" width="24" height="18" alt="" loading="lazy"></span> Vietnamese<span class="lo-native" dir="auto">Tiếng Việt</span></div>
+              <div class="lang-opt" data-q="yoruba yorùbá yoruba" onclick="location.href='/yoruba/'"><span class="lo-flag"><img class="kflag" src="/flags/ng.webp" width="24" height="18" alt="" loading="lazy"></span> Yoruba<span class="lo-native" dir="auto">Yorùbá</span></div>
+              <div class="lo-empty" id="loEmpty"></div></div>
             </div>
 
 
@@ -2350,7 +2372,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <div class="kb-flex"></div>
 
         <button class="mic-btn" id="micbtn" onclick="toggleVoice()" title="Voice input">
-          <img loading="lazy" src="../images/Icon-Mic-Clavierarabe-online.svg" alt="Mic">
+          <img loading="lazy" src="../images/kactyl-icon-mic.svg" alt="Mic">
         </button>
       </div>
 
@@ -2429,7 +2451,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <img class="how-step-icon" src="../images/Type.svg" alt="Type">
         <div class="how-step">
           <h3>Type</h3>
-          <p>Tap the common-character grid to type Chinese directly, or switch on Pinyin mode to type by sound.</p>
+          <p>Tap the common-character grid to type Chinese directly, or type Pinyin by sound on your own keyboard.</p>
           <div class="how-num">1</div>
         </div>
       </div>
@@ -2437,7 +2459,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <div class="how-step-wrap">
         <img class="how-step-icon" src="../images/Copy.svg" alt="Copy">
         <div class="how-step">
-          <h3>Copy</h3>
+          <h3>Pinyin mode</h3>
           <p>In Pinyin mode, type a syllable like <b>ni</b> — a candidate bar shows 你 尼 泥…; press <b>Space</b> or a number to pick one, then type the next syllable (<b>hao</b> → 好) to build 你好.</p>
           <div class="how-num">2</div>
         </div>
@@ -2446,7 +2468,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <div class="how-step-wrap">
         <img class="how-step-icon" src="../images/Past.svg" alt="Paste">
         <div class="how-step">
-          <h3>Paste</h3>
+          <h3>Copy & paste</h3>
           <p>Press Copy and paste your Chinese into WeChat, Weibo, TikTok or any app — real Unicode, no installation.</p>
           <div class="how-num">3</div>
         </div>
@@ -2544,12 +2566,12 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <div class="seo-dark-stats">
       <span><strong>100%</strong> free</span>
       <span class="seo-dark-dot">·</span>
-      <span><strong>1.1 billion</strong> speakers</span>
+      <span><strong>1.1 billion Mandarin</strong> speakers</span>
       <span class="seo-dark-dot">·</span>
       <span><strong>All</strong> devices</span>
     </div>
-    <p>Chinese is the <strong>oldest writing system still in daily use</strong>, with an unbroken line back more than three thousand years to characters carved on oracle bones. Unlike an alphabet, it is <strong>logographic</strong>: each character stands for a word or idea rather than a sound. Reference dictionaries record over <strong>54,000 characters</strong>, yet everyday literacy rests on roughly <strong>3,500</strong>, and China's adult literacy rate now sits near <strong>97%</strong>. In the 20th century the writing was reshaped twice for accessibility — the mainland's <strong>simplified characters</strong> reduced the stroke count of many common forms, while Taiwan and Hong Kong kept the traditional shapes. Then, in <strong>1958</strong>, the government adopted <strong>Hanyu Pinyin</strong> — the Roman-letter spelling system devised under Zhou Youguang — to teach pronunciation and drive literacy. Pinyin is why a billion people can type thousands of characters from a plain QWERTY keyboard today.</p>
-    <p>Chinese has no alphabet — it writes with <strong>thousands of individual characters</strong>, so the real question for any keyboard is how you reach them. This one gives you a grid of the most common characters to tap directly, plus a true <strong>Pinyin input mode</strong>: type the romanized sound and a <strong>candidate bar</strong> shows the matching characters ranked by frequency, so you pick 你 for <em>ni</em> and 好 for <em>hao</em> to build 你好 — the exact workflow of every phone and desktop IME in China. Tones are what make the sounds meaningful: the syllable <em>ma</em> alone spans 妈 (mother), 麻 (hemp), 马 (horse) and 骂 (scold) depending on pitch.</p>
+    <p>Chinese is the <strong>oldest writing system still in daily use</strong>, with an unbroken line back more than three thousand years to characters carved on oracle bones. Unlike an alphabet, it is <strong>logographic</strong>: each character generally writes one morpheme, a syllable with a meaning, and most characters include a component that hints at the sound. Reference dictionaries record over <strong>54,000 characters</strong>, yet everyday literacy rests on roughly <strong>3,500</strong>, and China's adult literacy rate now sits near <strong>97%</strong>. In the 20th century the mainland <strong>simplified</strong> the writing — the 1956 scheme and the 1964 General List cut the stroke count of many common characters — while Taiwan and Hong Kong kept the traditional shapes. In <strong>1958</strong> the government also adopted <strong>Hanyu Pinyin</strong> — the Roman-letter spelling system devised under Zhou Youguang — to teach pronunciation and drive literacy. Pinyin is why a billion people can type thousands of characters from a plain QWERTY keyboard today.</p>
+    <p>Chinese has no alphabet — it writes with <strong>thousands of individual characters</strong>, so the real question for any keyboard is how you reach them. This one gives you a grid of the most common characters to tap directly, plus a true <strong>Pinyin input mode</strong>: type the romanized sound and a <strong>candidate bar</strong> shows the matching characters ranked by frequency, so you pick 你 for <em>ni</em> and 好 for <em>hao</em> to build 你好 — the same candidate-bar idea Chinese phone and desktop IMEs use, though those can also convert whole words and phrases in one pick. Tones are what make the sounds meaningful: the syllable <em>ma</em> alone spans 妈 (mother), 麻 (hemp), 马 (horse) and 骂 (scold) depending on pitch.</p>
     <p>In China, <strong>WeChat is not just a chat app — it's the operating system of daily life</strong>, with over <strong>1.38 billion monthly users</strong> as of 2024 handling messages, payments, mini-programs and official accounts. Weibo, Xiaohongshu (RED) and Douyin fill the rest of the screen, and every one of them needs Chinese input. Outside mainland China the picture flips: a diaspora student on a borrowed laptop, a traveler at a hotel PC, or anyone on a phone set to English suddenly has <strong>no Chinese IME installed</strong> and no simple way to add one. A browser keyboard closes that gap instantly — tap common characters or type Pinyin, choose from the candidate bar, copy, and paste clean Chinese into <strong>WeChat</strong>, <strong>Weibo</strong>, <strong>TikTok</strong>, email or a form, with nothing installed and no system settings touched.</p>
   </div>
 </section>
@@ -2591,14 +2613,14 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
       <p>Chinese doesn't spell words from sounds — it builds them from thousands of meaning-carrying characters, four tones and a set of shared roots. Here's how it fits together.</p>
     </div>
     <div class="sig-stats">
-      <span>~3,500 everyday characters</span><span>4 tones</span><span>Pinyin since 1958</span><span>1.1B speakers</span>
+      <span>~3,500 everyday characters</span><span>4 tones</span><span>Pinyin since 1958</span><span>1.1B Mandarin speakers</span>
     </div>
     <div class="sig-grid">
       <div class="sig-card sig-hero-card">
-        <span class="sig-tag">Meaning, not sound</span>
+        <span class="sig-tag">Meaning and sound</span>
         <h3>Hanzi 汉字</h3>
         <div class="sig-letters"><b>人</b><b>山</b><b>水</b><b>火</b></div>
-        <p>Each character is a <b>whole word or idea</b>, not a letter. Dictionaries list over <b>54,000</b>, but around <b>3,500</b> cover everyday reading — and China's adult literacy sits near 97%. 人 is "person", 山 "mountain", drawn from the shapes they once pictured.</p>
+        <p>Each character writes <b>a syllable with a meaning</b>, not a single letter. Dictionaries list over <b>54,000</b>, but around <b>3,500</b> cover everyday reading — and China's adult literacy sits near 97%. 人 is "person", 山 "mountain", drawn from the shapes they once pictured.</p>
         <div class="sig-ex">中国 — China &nbsp;·&nbsp; 学生 — student</div>
       </div>
       <div class="sig-card">
@@ -2619,7 +2641,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <span class="sig-tag">The keyboard bridge</span>
         <h3>Pinyin 拼音</h3>
         <div class="sig-letters"><b>n</b><b>ǐ</b><b>h</b><b>ǎo</b></div>
-        <p>Romanization officially adopted in <b>1958</b> (architect Zhou Youguang) — it's how the whole country types. Our <b>Pinyin mode</b> works the same way: type <b>ni</b>, pick 你 from the candidate bar; type <b>hao</b>, pick 好 → 你好.</p>
+        <p>Romanization officially adopted in <b>1958</b> (architect Zhou Youguang) — it's the most widely used way to type Chinese in China. Our <b>Pinyin mode</b> works the same way: type <b>ni</b>, pick 你 from the candidate bar; type <b>hao</b>, pick 好 → 你好.</p>
         <div class="sig-ex">nǐ → 你 &nbsp;·&nbsp; hǎo → 好 &nbsp;·&nbsp; 你好 hello</div>
       </div>
     </div>
@@ -2648,7 +2670,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
           How does Pinyin mode work on this keyboard? <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          Turn on Pinyin (Roman) mode and type a syllable by sound, e.g. "ni". A candidate bar shows the matching characters ranked by frequency — 你, 尼, 泥… — and you press Space (or a number 1-5) to choose one. Type the next syllable and pick again: "ni" → 你, "hao" → 好 gives 你好. It's the same syllable-by-syllable flow as a phone IME.
+          Type a syllable by sound on your own keyboard, e.g. "ni". A candidate bar shows the matching characters ranked by frequency — 你, 尼, 泥… — and you press Space (or a number 1-5) to choose one. Type the next syllable and pick again: "ni" → 你, "hao" → 好 gives 你好. Phone IMEs can also convert a whole word or phrase in one pick; this keyboard keeps to one syllable per pick.
         </div>
       </div>
       <div class="faq-item">
@@ -2688,7 +2710,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
           How many characters do I need to read Chinese? <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          Dictionaries list over 54,000, but everyday literacy needs about 3,000–3,500 characters. This keyboard's grid covers the most frequent ones, and Pinyin mode reaches thousands more through the candidate bar.
+          Dictionaries list over 54,000, but everyday literacy needs about 3,000–3,500 characters. This keyboard's grid covers the most frequent ones, and Pinyin mode reaches more through the candidate bar: the most frequent characters of every syllable.
         </div>
       </div>
       <div class="faq-item">
@@ -2802,18 +2824,18 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
     <a href="/keyboards/" class="more-kbs-all">View all <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
   <div class="more-kbs-grid">
-    <a href="../japanese/"    class="kb-chip"><span class="kb-chip-flag">🇯🇵</span><div class="kb-chip-info"><span class="kb-chip-name">Japanese</span><span class="kb-chip-native">日本語</span></div></a>
-    <a href="../korean/"      class="kb-chip"><span class="kb-chip-flag">🇰🇷</span><div class="kb-chip-info"><span class="kb-chip-name">Korean</span><span class="kb-chip-native">한국어</span></div></a>
-    <a href="../thai/"        class="kb-chip"><span class="kb-chip-flag">🇹🇭</span><div class="kb-chip-info"><span class="kb-chip-name">Thai</span><span class="kb-chip-native">ภาษาไทย</span></div></a>
-    <a href="../burmese/"     class="kb-chip"><span class="kb-chip-flag">🇲🇲</span><div class="kb-chip-info"><span class="kb-chip-name">Burmese</span><span class="kb-chip-native">မြန်မာ</span></div></a>
-    <a href="../vietnamese/"  class="kb-chip"><span class="kb-chip-flag">🇻🇳</span><div class="kb-chip-info"><span class="kb-chip-name">Vietnamese</span><span class="kb-chip-native">Tiếng Việt</span></div></a>
+    <a href="../japanese/"    class="kb-chip"><span class="kb-chip-flag"><img class="kflag" src="/flags/jp.webp" width="24" height="18" alt="" loading="lazy"></span><div class="kb-chip-info"><span class="kb-chip-name">Japanese</span><span class="kb-chip-native">日本語</span></div></a>
+    <a href="../korean/"      class="kb-chip"><span class="kb-chip-flag"><img class="kflag" src="/flags/kr.webp" width="24" height="18" alt="" loading="lazy"></span><div class="kb-chip-info"><span class="kb-chip-name">Korean</span><span class="kb-chip-native">한국어</span></div></a>
+    <a href="../thai/"        class="kb-chip"><span class="kb-chip-flag"><img class="kflag" src="/flags/th.webp" width="24" height="18" alt="" loading="lazy"></span><div class="kb-chip-info"><span class="kb-chip-name">Thai</span><span class="kb-chip-native">ภาษาไทย</span></div></a>
+    <a href="../burmese/"     class="kb-chip"><span class="kb-chip-flag"><img class="kflag" src="/flags/mm.webp" width="24" height="18" alt="" loading="lazy"></span><div class="kb-chip-info"><span class="kb-chip-name">Burmese</span><span class="kb-chip-native">မြန်မာ</span></div></a>
+    <a href="../vietnamese/"  class="kb-chip"><span class="kb-chip-flag"><img class="kflag" src="/flags/vn.webp" width="24" height="18" alt="" loading="lazy"></span><div class="kb-chip-info"><span class="kb-chip-name">Vietnamese</span><span class="kb-chip-native">Tiếng Việt</span></div></a>
     <a href="/keyboards/" class="kb-discover">
       <div class="kb-discover-top">
         <span class="kb-discover-arr">→</span>
       </div>
       <div class="kb-discover-label">Discover all keyboards</div>
       <div class="kb-discover-flags">
-        <div class="kb-discover-flags-inner">🇸🇦 🇮🇳 🇮🇷 🇵🇰 🇧🇩 🇹🇷 🇷🇺 🇰🇷 🇯🇵 🇨🇳 🇩🇪 🇫🇷 🇬🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇭 🇳🇵 🇲🇦 🇸🇴 🇪🇹 🇻🇳 🇹🇭 🇲🇳 &nbsp;🇸🇦 🇮🇳 🇮🇷 🇵🇰 🇧🇩 🇹🇷 🇷🇺 🇰🇷 🇯🇵 🇨🇳 🇩🇪 🇫🇷 🇬🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇭 🇳🇵 🇲🇦 🇸🇴 🇪🇹 🇻🇳 🇹🇭 🇲🇳</div>
+        <div class="kb-discover-flags-inner"><img class="kflag" src="/flags/sa.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/amazigh.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/et.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/am.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/by.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/bd.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/bg.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/mm.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/cn.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/mv.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/eg.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/ph.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/ge.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/gr.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/ng.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/il.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/jp.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/kannada.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/kz.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/kh.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/kr.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/kurdistan.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/la.webp" width="24" height="18" alt="" loading="lazy"> &nbsp;<img class="kflag" src="/flags/sa.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/amazigh.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/et.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/am.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/by.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/bd.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/bg.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/mm.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/cn.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/mv.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/eg.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/ph.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/ge.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/gr.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/ng.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/il.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/jp.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/kannada.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/kz.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/kh.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/kr.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/kurdistan.webp" width="24" height="18" alt="" loading="lazy"> <img class="kflag" src="/flags/la.webp" width="24" height="18" alt="" loading="lazy"></div>
       </div>
     </a>
   </div>
@@ -2836,18 +2858,18 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <span class="ft-badge b">⚡ No Install</span>
       </div>
       <div class="ft-social">
-        <span class="ft-soc-link" aria-label="X / Twitter">
+        <a href="https://x.com/kactyl_tools" class="ft-soc-link" aria-label="X / Twitter" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-        </span>
-        <span class="ft-soc-link" aria-label="Instagram">
+        </a>
+        <a href="https://www.instagram.com/kactyl_tools/" class="ft-soc-link" aria-label="Instagram" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </span>
-        <span class="ft-soc-link" aria-label="YouTube">
+        </a>
+        <a href="https://www.youtube.com/@Kactyl_tools" class="ft-soc-link" aria-label="YouTube" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </span>
-        <span class="ft-soc-link" aria-label="TikTok">
+        </a>
+        <a href="https://www.tiktok.com/@kactyl" class="ft-soc-link" aria-label="TikTok" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-        </span>
+        </a>
       </div></div>
 
     <!-- Keyboards -->
@@ -2867,7 +2889,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
         <a href="/urdu/">Urdu</a>
         <a href="/japanese/">Japanese</a>
       </div>
-      <a class="ft-view-all" href="/keyboards/">All 52 keyboards →</a>
+      <a class="ft-view-all" href="/keyboards/">All 62 keyboards →</a>
     </div>
 
     <!-- Tools & Company -->
@@ -2956,7 +2978,7 @@ const EMOJI_CATS_DATA = {
   '🚩': { label:'Flags', emojis:['🇸🇦','🇦🇪','🇪🇬','🇲🇦','🇩🇿','🇹🇳','🇱🇾','🇸🇩','🇾🇪','🇸🇾','🇮🇶','🇯🇴','🇵🇸','🇱🇧','🇰🇼','🇧🇭','🇶🇦','🇴🇲','🇮🇷','🇹🇷','🇺🇸','🇨🇦','🇲🇽','🇧🇷','🇦🇷','🇨🇱','🇨🇴','🇵🇪','🇻🇪','🇬🇧','🇫🇷','🇩🇪','🇪🇸','🇮🇹','🇵🇹','🇳🇱','🇧🇪','🇨🇭','🇦🇹','🇸🇪','🇳🇴','🇩🇰','🇫🇮','🇵🇱','🇺🇦','🇷🇺','🇬🇷','🇨🇿','🇭🇺','🇷🇴','🇧🇬','🇷🇸','🇭🇷','🇸🇰','🇸🇮','🇮🇪','🇮🇸','🇨🇳','🇯🇵','🇰🇷','🇮🇳','🇵🇰','🇧🇩','🇮🇩','🇲🇾','🇸🇬','🇹🇭','🇻🇳','🇵🇭','🇰🇭','🇱🇦','🇲🇲','🇳🇵','🇱🇰','🇦🇺','🇳🇿','🇿🇦','🇳🇬','🇰🇪','🇪🇹','🇬🇭','🇹🇿','🇺🇬','🇨🇲','🏳️','🏴','🏁','🚩','🎌'] }
 };
 
-const WORDS = ["我", "的", "你", "了", "是", "不", "在", "他", "我们", "好", "这", "有", "吗", "要", "什么", "一", "就", "吧", "她", "想", "知道", "说", "很", "那", "去", "人", "都", "会", "来", "啊", "他们", "和", "也", "一个", "个", "没有", "做", "把", "对", "给", "到", "让", "得", "能", "没", "上", "还", "可以", "着", "看", "你们", "过", "但", "事", "走", "呢", "怎么", "现在", "它", "跟", "这个", "就是", "如果", "别", "被", "这里", "这样", "們", "太", "多", "自己", "谁", "快", "不会", "像", "再", "告诉", "里", "真的", "先生", "不能", "只是", "为什么", "這", "因为", "不要", "死", "找", "大", "已经", "哦", "谢谢", "天", "需要", "真", "这么", "听", "叫", "点", "可能", "喜欢", "等", "但是", "用", "又", "从", "所以", "下", "东西", "觉得", "個", "时候", "还有", "为", "那个", "两", "次", "请", "我会", "一下", "一起", "來", "最", "而", "孩子", "吃", "这些", "只", "应该", "才", "小", "打", "看到", "更", "出", "中", "帮", "爱", "拿", "那么", "您", "哪", "当", "干", "會", "嘿", "工作", "所有", "问题", "该", "时间", "呀", "钱", "带", "嗯", "还是", "可", "将", "沒", "一样", "回", "开始", "看看", "嗎", "比", "朋友", "们", "嘛", "然后", "年", "希望", "地方", "一定", "今天", "回来", "啦", "一切", "相信", "說", "事情", "找到", "当然", "一直", "起来", "地", "爸爸", "非常", "没事", "麼", "那些", "见", "什麼", "杀", "离开", "明白", "妈妈", "出来", "一点", "你好", "时", "前", "三", "发生", "对不起", "认为", "真是", "之", "必须", "抱歉", "那里", "住", "也许", "行", "有人", "哪里", "后", "意思", "过来", "先", "件", "几", "并", "大家", "准备", "還", "一些", "与", "妈", "新", "所", "问", "女人", "怎", "这儿", "出去", "得到", "喝", "起", "為", "些", "不过", "很多", "第一", "生活", "任何", "为了", "對", "只有", "向", "以为", "坐", "怎么样", "开", "或", "噢", "位", "已", "是不是", "放", "嗨", "车", "男人", "而且", "不错", "感觉", "发现", "这种", "世界", "過", "家", "话", "上帝", "买", "名字", "之前", "不用", "喂", "可是", "快点", "搞", "以", "的话", "玩", "肯定", "记得", "跑", "下来", "最好", "没错", "电话", "等等", "不行", "手", "亲爱的", "活", "回家", "女孩", "错", "掉", "如何", "成", "高兴", "穿", "有点", "干什么", "么", "认识", "担心", "給", "小姐", "棒", "警察", "号", "正在", "送", "继续", "家伙", "最后", "拉", "完", "到底", "樣", "弄", "过去", "那样", "再见", "父亲", "重要", "听到", "写", "懂", "多少", "只要", "以前", "明天", "回去", "現", "医生", "點", "今晚", "种", "救", "它们", "好像", "儿子", "该死", "哪儿", "美国", "怎样", "说话", "却", "漂亮", "讓", "条", "永远", "完全", "站", "看起来", "长", "进", "高", "枪", "清楚", "如此", "分钟", "马上", "伙计", "或者", "晚上", "睡", "不到", "其他", "看见", "敢", "開", "者", "岁", "兄弟", "小心", "张", "米", "变", "小时", "著", "之后", "正", "美", "別", "够", "名", "宝贝", "刚", "生", "另", "情况", "留", "不好", "别人", "早", "见到", "本", "下去", "因", "公司", "琌", "花", "每", "房子", "心", "机会", "安全", "总是", "无法", "月", "份", "马", "久", "呃", "好好", "成为", "了解", "结束", "混蛋", "爸", "停", "打电话", "狗", "没什么", "确定", "查", "谈", "里面", "忙", "进来", "水", "杯", "有些", "拜托", "帮助", "信", "根本", "决定", "晚", "四", "衣服", "女儿", "抓", "怎么办", "长官", "办法", "不管", "个人", "于", "头", "忘", "讲", "关于", "动", "进去", "麻烦", "接", "五", "每个", "唯一", "夫人", "猜", "计划", "神", "老", "故事", "场", "甚至", "其实", "来说", "挺", "消息", "全", "見", "時", "真正", "待", "鬼", "女士", "连", "由", "人们", "喔", "疯", "那边", "门", "跳", "拍", "愿意", "經", "房间", "那儿", "求", "德", "後", "史", "就要", "听说", "女", "害怕", "二", "派", "注意", "哇", "啥", "酒", "笑", "路", "都会", "打算", "母亲", "西", "改变", "妻子", "关系", "戴", "没关系", "怕", "结婚", "此", "回到", "往", "生命", "以后", "失去", "接受", "欢迎", "妳", "从来", "教", "是否", "坏", "电影", "这次", "倒", "感谢", "内", "眼睛", "定", "原因", "話", "偷", "可不", "远", "恩", "第二", "裡", "受", "保护", "使", "至少", "加", "无", "她们", "想到", "选择", "少", "法", "外面", "身上", "还要", "当时", "太太", "成功", "整个", "块", "丈夫", "刚才", "行动", "俩", "出现", "算", "小子", "特别", "保证", "很快", "学校", "不同", "试", "感到", "該", "国家", "开心", "或许", "赢", "难", "發", "卖", "谈谈", "换", "奇怪", "危险", "照片", "方式", "句", "哥", "克", "曾", "保持", "聽", "难道", "看来", "做到", "才能", "处理", "周", "刚刚", "完成", "覺", "呆", "样子", "变成", "半", "十", "而已", "船", "靠", "從", "金", "声音", "别的", "帮忙", "快乐", "管", "那种", "各位", "黑", "直到", "比赛", "关", "球", "总", "飞", "只能", "最近", "容易", "通过", "打开", "间", "进行", "卡", "替", "娜", "书", "绝对", "虽然", "六", "段", "有趣", "艾", "同意", "哭", "罗", "不好意思", "这边", "硂", "照顾", "留下", "参加", "控制", "晚安", "誰", "特", "飞机", "醒", "男孩", "兒", "上面", "為什麼", "片", "自由", "主意", "其", "闭嘴", "放在", "达", "解释", "调查", "要求", "老婆", "曾经", "死亡", "作为", "学", "努力", "解决", "愛", "床", "开玩笑", "伤害", "游戏", "自", "唱", "部", "作", "不再", "越", "任何人", "小孩", "收到", "发", "辆", "脸", "每天", "秘密", "音乐", "抓住", "全部", "讨厌", "战争", "常", "休息", "杰克", "乔", "多久", "理解", "大人", "存在", "父母", "黑体", "冷静", "重", "结果", "回答", "咱们", "昨晚", "幫", "糟糕", "离", "进入", "知", "简单", "可爱", "除了", "早上", "當", "声", "於", "突然", "其中", "碰", "读", "考虑", "這樣", "因此", "老师", "指", "之间", "为何", "停止", "人类", "约翰", "后面", "医院", "血", "家人", "律师", "身体", "儿", "想想", "嘴", "光", "滚", "证明", "家里", "家庭", "确实", "祝", "睡觉", "想法", "老板", "提", "王", "道", "操", "時候", "請", "包", "昨天", "咖啡", "進", "如", "检查", "耶", "分", "陪", "奇", "任务", "装", "大概", "武器", "幹", "政府", "年轻", "等待", "其他人", "便", "丢", "来自", "雷", "告訴", "带来", "怪", "媽", "开枪", "来到", "画", "博士", "星期", "種", "照", "总统", "能够", "哥哥", "就算", "糟", "终于", "命", "联系", "正常", "洗", "若", "办公室", "方法", "加油", "同", "謝", "不见", "重新", "聪明", "歌", "介意", "座", "哈", "首", "搬", "队", "可怕", "放弃", "命令", "办", "再也", "直接", "放下", "這個", "再说", "步", "拿到", "目标", "面", "使用", "伊", "生意", "疯狂", "殺", "生日", "答应", "無", "店", "阻止", "美元", "算了", "病", "证据", "帶", "完美", "火", "原谅", "屁股", "报告", "即使", "精神", "对于", "城市", "痛苦", "组", "上去", "极了", "國", "不然", "坐下", "似乎", "正确", "负责", "否则", "盾", "根", "老兄", "伟大", "那天", "姑娘", "遍", "令人", "波", "梦", "消失", "按", "忘记", "腿", "藏", "七", "研究", "纽约", "付", "丝", "骗", "白", "事实", "痛", "李", "令", "群", "入", "紧张", "錯", "本来", "系统", "拥有", "大学", "附近", "开车", "未来", "从没", "脚", "翻译", "吓", "酷", "遇到", "字幕", "主", "何", "謝謝", "慢", "口", "地球", "臭", "饿", "外", "可怜", "仍然", "尸体", "顿", "美丽", "处", "叔叔", "反正", "加入", "安排", "监狱", "比较", "代表", "力量", "身", "整", "身边", "并且", "不够", "傻", "未", "逃", "扔", "以及", "問", "姐姐", "选", "动物", "电视", "男", "間", "食物", "转", "药", "收", "位置", "除非", "許", "元", "追", "原来", "随便", "什", "手机", "布", "妹妹", "假", "跳舞", "乱", "发誓", "借", "表演", "法官", "人生", "車", "瞧", "再次", "支持", "生气", "钥匙", "记住", "錢", "必要", "安", "恨", "礼物", "犯", "厉害", "下面", "超", "呼吸", "挂", "错误", "组织", "刀", "性", "谢", "简直", "兩", "套", "另外", "杀死", "理由", "安静", "国王", "提供", "躲", "吹", "放开", "信息", "到处", "听见", "案子", "關", "舒服", "坚持", "累", "認", "放松", "有关", "日子", "班", "德国", "弟弟", "约会", "几乎", "打扰", "英国", "意味", "慢慢", "日本", "非", "幸运", "天哪", "破", "首先", "鱼", "面前", "幸福", "银行", "伤", "象", "事实上", "建议", "不必", "老爸", "见面", "记录", "严重", "記", "差", "不得不", "吃饭", "字", "交给", "值得", "新闻", "能力", "将军", "认真", "意义", "不知", "约", "塞", "下午", "房", "热", "應", "老天", "救命", "喜", "近", "中心", "恐怖", "馬", "猫", "攻击", "正是", "信任", "关心", "電", "事件", "的确", "头发", "歡", "早就", "许多", "長", "差不多", "璶", "经常", "脱", "人家", "看上去", "之一", "想象", "目前", "试试", "琳", "记", "搞定", "英雄", "每次", "白痴", "砸", "警官", "不如", "始", "后来", "深", "法律", "边", "住手", "有时", "那时", "夜", "理", "法国", "红", "八", "道歉", "交易", "合作", "表现", "第三", "行为", "意外", "封", "走开", "学生", "愿", "酒吧", "眼", "通知", "寻找", "辦", "嫁", "肉", "取", "介绍", "受到", "實", "逼", "强", "躺", "冷", "動", "受伤", "撞", "欠", "而是", "气", "利用", "号码", "女朋友", "全都", "吻", "剩下", "或是", "开门", "属于", "学习", "杀人", "地狱", "真相", "犯罪", "说是", "承认", "摆", "下次", "架", "好多", "抱", "穦", "支", "混", "我家"];
+const WORDS = ["我", "的", "你", "了", "是", "不", "在", "他", "我们", "好", "这", "有", "吗", "要", "什么", "一", "就", "吧", "她", "想", "知道", "说", "很", "那", "去", "人", "都", "会", "来", "啊", "他们", "和", "也", "一个", "个", "没有", "做", "把", "对", "给", "到", "让", "得", "能", "没", "上", "还", "可以", "着", "看", "你们", "过", "但", "事", "走", "呢", "怎么", "现在", "它", "跟", "这个", "就是", "如果", "别", "被", "这里", "这样", "們", "太", "多", "自己", "谁", "快", "不会", "像", "再", "告诉", "里", "真的", "先生", "不能", "只是", "为什么", "這", "因为", "不要", "死", "找", "大", "已经", "哦", "谢谢", "天", "需要", "真", "这么", "听", "叫", "点", "可能", "喜欢", "等", "但是", "用", "又", "从", "所以", "下", "东西", "觉得", "個", "时候", "还有", "为", "那个", "两", "次", "请", "我会", "一下", "一起", "來", "最", "而", "孩子", "吃", "这些", "只", "应该", "才", "小", "打", "看到", "更", "出", "中", "帮", "爱", "拿", "那么", "您", "哪", "当", "干", "會", "嘿", "工作", "所有", "问题", "该", "时间", "呀", "钱", "带", "嗯", "还是", "可", "将", "沒", "一样", "回", "开始", "看看", "嗎", "比", "朋友", "们", "嘛", "然后", "年", "希望", "地方", "一定", "今天", "回来", "啦", "一切", "相信", "說", "事情", "找到", "当然", "一直", "起来", "地", "爸爸", "非常", "没事", "麼", "那些", "见", "什麼", "杀", "离开", "明白", "妈妈", "出来", "一点", "你好", "时", "前", "三", "发生", "对不起", "认为", "真是", "之", "必须", "抱歉", "那里", "住", "也许", "行", "有人", "哪里", "后", "意思", "过来", "先", "件", "几", "并", "大家", "准备", "還", "一些", "与", "妈", "新", "所", "问", "女人", "怎", "这儿", "出去", "得到", "喝", "起", "為", "些", "不过", "很多", "第一", "生活", "任何", "为了", "對", "只有", "向", "以为", "坐", "怎么样", "开", "或", "噢", "位", "已", "是不是", "放", "嗨", "车", "男人", "而且", "不错", "感觉", "发现", "这种", "世界", "過", "家", "话", "上帝", "买", "名字", "之前", "不用", "喂", "可是", "快点", "搞", "以", "的话", "玩", "肯定", "记得", "跑", "下来", "最好", "没错", "电话", "等等", "不行", "手", "亲爱的", "活", "回家", "女孩", "错", "掉", "如何", "成", "高兴", "他妈的", "穿", "有点", "干什么", "么", "认识", "担心", "給", "小姐", "棒", "警察", "号", "正在", "送", "继续", "家伙", "最后", "拉", "完", "到底", "樣", "弄", "过去", "那样", "再见", "父亲", "重要", "听到", "写", "懂", "多少", "只要", "以前", "明天", "回去", "現", "医生", "點", "今晚", "种", "救", "它们", "好像", "儿子", "该死", "哪儿", "美国", "怎样", "说话", "却", "漂亮", "讓", "条", "永远", "完全", "站", "看起来", "长", "进", "高", "枪", "清楚", "如此", "分钟", "马上", "伙计", "或者", "晚上", "睡", "不到", "其他", "看见", "敢", "開", "者", "岁", "兄弟", "小心", "张", "米", "变", "小时", "著", "之后", "正", "美", "別", "够", "名", "宝贝", "刚", "生", "另", "情况", "留", "不好", "别人", "早", "见到", "本", "下去", "因", "公司", "琌", "花", "每", "房子", "心", "机会", "安全", "总是", "无法", "月", "份", "马", "久", "呃", "好好", "成为", "了解", "结束", "混蛋", "爸", "停", "打电话", "狗", "没什么", "确定", "查", "谈", "里面", "忙", "进来", "水", "杯", "有些", "拜托", "帮助", "信", "根本", "决定", "晚", "四", "衣服", "女儿", "抓", "怎么办", "长官", "办法", "不管", "个人", "于", "头", "忘", "讲", "关于", "动", "进去", "麻烦", "接", "五", "每个", "唯一", "夫人", "猜", "计划", "神", "老", "故事", "场", "甚至", "其实", "来说", "挺", "消息", "全", "見", "時", "真正", "待", "鬼", "女士", "连", "由", "人们", "喔", "疯", "那边", "门", "跳", "拍", "愿意", "經", "房间", "那儿", "求", "德", "後", "史", "就要", "听说", "女", "害怕", "二", "派", "注意", "哇", "啥", "酒", "笑", "路", "都会", "打算", "母亲", "西", "改变", "妻子", "关系", "戴", "没关系", "怕", "结婚", "此", "回到", "往", "生命", "以后", "失去", "接受", "欢迎", "妳", "从来", "教", "是否", "坏", "电影", "这次", "倒", "感谢", "内", "眼睛", "定", "原因", "話", "偷", "可不", "远", "恩", "第二", "裡", "受", "保护", "使", "至少", "加", "无", "她们", "想到", "选择", "少", "法", "外面", "身上", "还要", "当时", "太太", "成功", "整个", "块", "丈夫", "刚才", "行动", "俩", "出现", "算", "小子", "特别", "保证", "很快", "学校", "不同", "试", "感到", "該", "国家", "开心", "或许", "赢", "难", "發", "卖", "谈谈", "换", "奇怪", "危险", "照片", "方式", "句", "哥", "克", "曾", "保持", "聽", "难道", "看来", "做到", "才能", "处理", "周", "刚刚", "完成", "覺", "呆", "样子", "变成", "半", "十", "而已", "船", "靠", "從", "金", "声音", "别的", "帮忙", "快乐", "管", "那种", "各位", "黑", "直到", "比赛", "关", "球", "总", "飞", "只能", "最近", "容易", "通过", "打开", "间", "进行", "卡", "替", "娜", "书", "绝对", "虽然", "六", "段", "有趣", "艾", "同意", "哭", "罗", "不好意思", "这边", "硂", "照顾", "留下", "参加", "控制", "晚安", "誰", "特", "飞机", "醒", "男孩", "兒", "上面", "為什麼", "片", "自由", "主意", "其", "闭嘴", "放在", "达", "解释", "调查", "要求", "老婆", "曾经", "死亡", "作为", "学", "努力", "解决", "愛", "床", "开玩笑", "伤害", "游戏", "自", "唱", "部", "作", "不再", "越", "任何人", "小孩", "收到", "发", "辆", "脸", "每天", "秘密", "音乐", "抓住", "全部", "讨厌", "战争", "常", "休息", "杰克", "乔", "多久", "理解", "大人", "存在", "父母", "黑体", "冷静", "重", "结果", "回答", "咱们", "昨晚", "幫", "糟糕", "离", "进入", "知", "简单", "可爱", "除了", "早上", "當", "声", "於", "突然", "其中", "碰", "读", "考虑", "這樣", "因此", "老师", "指", "之间", "为何", "停止", "人类", "约翰", "后面", "医院", "血", "家人", "律师", "身体", "儿", "想想", "嘴", "光", "滚", "证明", "家里", "家庭", "确实", "祝", "睡觉", "想法", "老板", "提", "王", "道", "操", "時候", "請", "包", "昨天", "咖啡", "進", "如", "检查", "耶", "分", "陪", "奇", "任务", "装", "大概", "武器", "幹", "政府", "年轻", "等待", "其他人", "便", "丢", "来自", "雷", "告訴", "带来", "怪", "媽", "开枪", "来到", "画", "博士", "星期", "種", "照", "总统", "能够", "哥哥", "就算", "糟", "终于", "命", "联系", "正常", "洗", "若", "办公室", "方法", "加油", "同", "謝", "不见", "重新", "聪明", "歌", "介意", "座", "哈", "首", "搬", "队", "可怕", "放弃", "命令", "办", "再也", "直接", "放下", "這個", "再说", "步", "拿到", "目标", "面", "使用", "伊", "生意", "疯狂", "殺", "生日", "答应", "無", "店", "阻止", "美元", "算了", "病", "证据", "帶", "完美", "火", "原谅", "屁股", "报告", "即使", "精神", "对于", "城市", "痛苦", "组", "上去", "极了", "國", "不然", "坐下", "似乎", "正确", "负责", "否则", "盾", "根", "老兄", "伟大", "那天", "姑娘", "遍", "令人", "波", "梦", "消失", "按", "忘记", "腿", "藏", "七", "研究", "纽约", "付", "丝", "骗", "白", "事实", "痛", "李", "令", "群", "入", "紧张", "錯", "本来", "系统", "拥有", "大学", "附近", "开车", "未来", "从没", "脚", "翻译", "吓", "酷", "遇到", "字幕", "主", "何", "謝謝", "慢", "口", "地球", "臭", "饿", "外", "可怜", "仍然", "尸体", "顿", "美丽", "处", "叔叔", "反正", "加入", "安排", "监狱", "比较", "代表", "力量", "身", "整", "身边", "并且", "不够", "傻", "未", "逃", "扔", "以及", "問", "姐姐", "选", "动物", "电视", "男", "間", "食物", "转", "药", "收", "位置", "除非", "許", "元", "追", "原来", "随便", "什", "手机", "布", "妹妹", "假", "跳舞", "乱", "发誓", "借", "表演", "法官", "人生", "車", "瞧", "再次", "支持", "生气", "钥匙", "记住", "錢", "必要", "安", "恨", "礼物", "犯", "厉害", "下面", "超", "呼吸", "挂", "错误", "组织", "刀", "性", "谢", "简直", "兩", "套", "另外", "杀死", "理由", "安静", "国王", "提供", "躲", "吹", "放开", "信息", "到处", "听见", "案子", "關", "舒服", "坚持", "累", "認", "放松", "有关", "日子", "班", "德国", "弟弟", "约会", "几乎", "打扰", "英国", "意味", "慢慢", "日本", "非", "幸运", "天哪", "破", "首先", "鱼", "面前", "幸福", "银行", "伤", "象", "事实上", "建议", "不必", "老爸", "见面", "记录", "严重", "記", "差", "不得不", "吃饭", "字", "交给", "值得", "新闻", "能力", "将军", "认真", "意义", "不知", "约", "塞", "下午", "房", "热", "應", "老天", "救命", "喜", "近", "中心", "恐怖", "馬", "猫", "攻击", "正是", "信任", "关心", "電", "事件", "的确", "头发", "歡", "早就", "许多", "長", "差不多", "璶", "经常", "脱", "人家", "看上去", "之一", "想象", "目前", "试试", "琳", "记", "搞定", "英雄", "每次", "白痴", "砸", "警官", "不如", "始", "后来", "深", "法律", "边", "住手", "有时", "那时", "夜", "理", "法国", "红", "八", "道歉", "交易", "合作", "表现", "第三", "行为", "意外", "封", "走开", "学生", "愿", "酒吧", "眼", "通知", "寻找", "辦", "嫁", "肉", "取", "介绍", "受到", "實", "逼", "强", "躺", "冷", "動", "受伤", "撞", "欠", "而是", "气", "利用", "号码", "女朋友", "全都", "吻", "剩下", "或是", "开门", "属于", "学习", "杀人", "地狱", "真相", "犯罪", "说是", "承认", "摆", "下次", "架", "好多", "抱", "穦", "支", "混", "我家"];
 
 /* ── PREDICTIVE TEXT ENGINE ── */
 let userFreq = {};
@@ -3023,7 +3045,7 @@ const NEXT_WORD = {
 
 let lastPickedWord = '';
 
-function getSuggestions(prefix) {   /* LIVE-FIX-1013 */
+function getSuggestions(prefix) {
   if (!prefix || prefix.length < 1) return [];
   const scored = {};
   const freq = w => userFreq[w] || 0;
@@ -3158,8 +3180,9 @@ function buildKB() {
         const COMBINING = new Set([]);
         const display = (COMBINING.has(k) || /^\p{M}+$/u.test(k)) ? '\u25CC' + k : k;   /* a mark alone needs a carrier to be visible */
         const hint = FL[k] || '';
-        btn.dataset.ch = k;   /* long-press reads this — textContent also holds the hidden Latin hint */
         btn.innerHTML = `<span class="fl">${hint}</span>${display}`;
+        btn.classList.add('k-ch');
+        btn.dataset.ch = k;
         btn.onclick = () => ins(k);
       }
 
@@ -3167,6 +3190,9 @@ function buildKB() {
     });
     wrap.appendChild(rowEl);
   });
+  /* key unit = longest row above the space bar row */
+  const letterRows = [...wrap.children].filter(r => !r.querySelector('.k-space'));
+  wrap.style.setProperty('--kn', Math.max(...letterRows.map(r => r.children.length)));
 }
 
 function buildSpec() {
@@ -3194,7 +3220,8 @@ function buildNum() {
     });
   };
   fill('ngrid-w', western);
-  /*NATIVE_DIGITS*/(function(){const D={"label": "Chinese numerals", "digits": ["〇", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "百", "千", "万", "亿"], "first": false};const w=document.getElementById('ngrid-w');if(!w)return;let g=document.getElementById('ngrid-n');if(!g){const l=document.createElement('div');l.className='n-section-lbl';l.textContent=D.label;g=document.createElement('div');g.className='n-grid';g.id='ngrid-n';const h=document.querySelector('.h1-arabic');if(h)g.style.fontFamily=getComputedStyle(h).fontFamily;if(D.first){const wl=w.previousElementSibling;w.parentNode.insertBefore(l,wl);w.parentNode.insertBefore(g,wl);}else{w.parentNode.insertBefore(g,w.nextSibling);w.parentNode.insertBefore(l,g);}}fill('ngrid-n',D.digits);})();/*END_NATIVE_DIGITS*/
+  /*NATIVE_DIGITS*/(function(){const D={"label": "Chinese numerals", "digits": ["〇", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "百", "千", "万", "亿"], "first": false, "font": "'Noto Sans SC', sans-serif"};const w=document.getElementById('ngrid-w');if(!w)return;let g=document.getElementById('ngrid-n');if(!g){const l=document.createElement('div');l.className='n-section-lbl';l.textContent=D.label;g=document.createElement('div');g.className='n-grid';g.id='ngrid-n';if(D.font)g.style.fontFamily=D.font;if(D.first){const wl=w.previousElementSibling;w.parentNode.insertBefore(l,wl);w.parentNode.insertBefore(g,wl);}else{w.parentNode.insertBefore(g,w.nextSibling);w.parentNode.insertBefore(l,g);}}fill('ngrid-n',D.digits);})();/*END_NATIVE_DIGITS*/
+  
   const ga = document.getElementById('ngrid-a'); if(ga) ga.style.display='none';
   fill('ngrid-s', symbols);
 }
@@ -3340,7 +3367,7 @@ function ins(ch, snd) {
   const s = ta.selectionStart, e = ta.selectionEnd;
   ta.value = ta.value.slice(0,s) + ch + ta.value.slice(e);
   ta.selectionStart = ta.selectionEnd = s + ch.length;
-  ta.focus({preventScroll:true}); updateStats(); updateSugs(); playClick(snd || 'normal');
+  ta.focus({preventScroll:true}); (window.kbUI ? kbUI() : (updateStats(), updateSugs())); playClick(snd || 'normal');
 }
 
 function bsp() {
@@ -3348,7 +3375,7 @@ function bsp() {
   const s = ta.selectionStart, e = ta.selectionEnd;
   if (s !== e) { ta.value = ta.value.slice(0,s) + ta.value.slice(e); ta.selectionStart = ta.selectionEnd = s; }
   else if (s > 0) { ta.value = ta.value.slice(0,s-1) + ta.value.slice(s); ta.selectionStart = ta.selectionEnd = s-1; }
-  ta.focus({preventScroll:true}); updateStats(); updateSugs(); playClick('special');
+  ta.focus({preventScroll:true}); (window.kbUI ? kbUI() : (updateStats(), updateSugs())); playClick('special');
 }
 
 function onInput() { updateStats(); updateSugs(); localStorage.setItem(DRAFT_KEY, document.getElementById('arabic-text').value); }
@@ -3429,7 +3456,7 @@ function updateSugs() {
     let nextPreds = lastPickedWord ? (NEXT_WORD[lastPickedWord] || []).slice() : [];   /* copy — pushing into NEXT_WORD's own array grew it forever */
     if (nextPreds.length < 3) {
       /* fill from the user's frequent words, then the language's commonest — never the word
-         just typed, never the same word twice (2026-10-06) */
+         just typed, never the same word twice (Kazakh showed the picked word again, 2026-10-05) */
       const top = [...new Set([...Object.entries(userFreq).sort((a,b)=>b[1]-a[1]).map(([w])=>w), ...WORDS])]
         .filter(w => w !== lastPickedWord && !nextPreds.includes(w));
       while (nextPreds.length < 3) nextPreds.push(top.shift() || ['我','的','你'][nextPreds.length]);
@@ -3586,6 +3613,7 @@ const PH_SINGLE = {}, PH_DIGRAPH = {};
   }
   for (const d in PH_DIGRAPH) { if (!PH_SINGLE[d[0]]) PH_SINGLE[d[0]] = PH_DIGRAPH[d]; }
 })();
+const PH_NONLATIN = Object.values(PH_SINGLE).some(v => /[^\u0000-\u02FF\u1E00-\u1EFF]/.test(v));   /* page script is not Latin */
 let lastPh = '';
 function replaceLast(newCh) {
   const ta = document.getElementById('arabic-text');
@@ -3606,6 +3634,15 @@ Object.assign(CODE2CHAR, {BracketLeft:'[', BracketRight:']', Semicolon:';', Quot
 /* number row: national layouts put letters here (e.g. Kazakh puts its extra letters on 2 3 4 5 8 9 0 - =).
    Keys with no PHYS entry on a page still type their digit/sign as normal. */
 Object.assign(CODE2CHAR, {Digit1:'1', Digit2:'2', Digit3:'3', Digit4:'4', Digit5:'5', Digit6:'6', Digit7:'7', Digit8:'8', Digit9:'9', Digit0:'0', Minus:'-', Equal:'='});
+/* PHYS_DEAD (optional, per page): dead keys of the national layout, as Windows does them -
+   the accent key is silent, the next letter is composed from the CLDR table (Czech caron + d).
+   Space after a dead key types the accent itself; a key with no composition types both. */
+let deadKey = '';
+function insPhys(c) {
+  if (!deadKey) { ins(c); return; }
+  const d = deadKey; deadKey = '';
+  ins((PHYS_DEAD.map || {})[d + c] || (d + c));
+}
 function setupPhys() {
   const ta = document.getElementById('arabic-text');
   ta.addEventListener('pointerdown', () => { lastPh = ''; deadKey = ''; });
@@ -3648,6 +3685,7 @@ function setupPhys() {
       if (PH_SINGLE[low]) { e.preventDefault(); ins(PH_SINGLE[low]); lastPh = low; return; }
       lastPh = '';
       if (PHYS[CODE2CHAR[e.code]] === '') e.preventDefault();   /* key deliberately empty on this page (no hieroglyph on e) - silent here too, never Latin */
+      else if (PH_NONLATIN && /^[a-z]$/i.test(raw)) e.preventDefault();   /* Latin key with no letter here types nothing: Latin never leaks into the script (Urdu "mera" gave a Latin e, 2026-11-03) */
     } else {                                          /* standard layout — by physical position */
       /* Japanese/Chinese: a physical keyboard types romaji/pinyin, converted per word by the
          page's engine (cjk_engines.py) - a letter-by-letter map typed k -> ka-kana (2026-10-13) */
@@ -3672,16 +3710,6 @@ function setupPhys() {
   });
 }
 
-/* PHYS_DEAD (optional, per page): dead keys of the national layout, as Windows does them -
-   the accent key is silent, the next letter is composed from the CLDR table (Czech caron + d).
-   Space after a dead key types the accent itself; a key with no composition types both. */
-let deadKey = '';
-function insPhys(c) {
-  if (!deadKey) { ins(c); return; }
-  const d = deadKey; deadKey = '';
-  ins((PHYS_DEAD.map || {})[d + c] || (d + c));
-}
-
 /* ── VOICE ── */
 function toggleVoice() {
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -3700,7 +3728,7 @@ function startVoice(SR) {
   isRec=true; recog = new SR(); recog.lang='zh-CN'; recog.continuous=true; recog.interimResults=false;
   recog.onstart  = () => { document.getElementById('micbtn').classList.add('rec'); toast('🎤 Listening... speak Chinese'); };
   recog.onresult = e => { for(let i=e.resultIndex;i<e.results.length;i++) if(e.results[i].isFinal) ins(e.results[i][0].transcript); };
-  recog.onerror  = e => { const msgs={'not-allowed':'🎤 Microphone access denied','no-speech':'🎤 No speech detected — try again','network':'🎤 Network error','aborted':null}; if(msgs[e.error]!==null) toast(msgs[e.error]||'Error: '+e.error); stopVoice(); };
+  recog.onerror  = e => { const msgs={'language-not-supported':'🎤 Voice input is not available for this language in your browser yet','not-allowed':'🎤 Microphone access denied','no-speech':'🎤 No speech detected — try again','network':'🎤 Network error','aborted':null}; if(msgs[e.error]!==null) toast(msgs[e.error]||'Error: '+e.error); stopVoice(); };
   recog.onend    = () => { if(isRec) recog.start(); };
   recog.start();
 }
@@ -3731,7 +3759,7 @@ function closeLang()  { document.getElementById('lang-menu')?.classList.remove('
 const I18N = {
   en: {
     'hero.h1': 'Chinese Keyboard Online<span class="h1-arabic">中文键盘</span>',
-    'hero.sub': 'Type Chinese by tapping common characters, or switch on Pinyin mode — type nihao, pick 你好 from the candidate bar, exactly like a phone IME.',
+    'hero.sub': 'Type Chinese by tapping common characters, or type Pinyin on your own keyboard — type ni and pick 你, then hao and pick 好, from the candidate bar.',
     'nav.home':'Home','nav.faq':'FAQ','nav.contact':'Contact',
     'share.copyto':'Copy to','share.searchwith':'Search with','share.translatewith':'Translate with','share.poston':'Post on',
     'btn.download':'Download','btn.copy':'Copy','btn.clear':'Clear','btn.aitash':'AI Vowel Signs ✨',
@@ -3804,7 +3832,7 @@ const I18N = {
 };
 
 function setLang(code, label) {
-  document.getElementById('lang-btn').textContent = label + ' ▾';
+  var lo = window.event && event.target.closest('.lang-opt'); document.getElementById('lang-btn').innerHTML = (lo ? lo.innerHTML : label) + ' ▾';
   document.querySelectorAll('.lang-opt').forEach(el => el.classList.remove('active'));
   event.target.classList.add('active');
   closeLang();
@@ -3999,7 +4027,7 @@ function applyTheme() {
   const tr=document.getElementById('tt'), th=document.getElementById('th'), lb=document.getElementById('tlbl');
   tr.classList.toggle('on', isDark); th.classList.toggle('on', isDark);
   const ic = document.getElementById('theme-icon');
-  if (ic) ic.src = isDark ? '../images/Icon-Dark mode-Clavierarabe-enligne.svg' : '../images/Icon-white mode-Clavierarabe-enligne.svg';
+  if (ic) ic.src = isDark ? '../images/kactyl-icon-dark-mode.svg' : '../images/kactyl-icon-light-mode.svg';
   lb.innerHTML   = isDark ? 'Dark<br>Mode' : 'White<br>Mode';
   const logo = document.getElementById('logo-img');
   if (logo) logo.src = isDark ? '../images/LOGO-Dark-Arabickeyboard-online.svg' : '../images/LOGO-Arabickeyboard-online.svg';
@@ -4201,7 +4229,7 @@ async function submitFeedback(e) {
 </script>
 <!-- ── FEEDBACK WIDGET ── -->
 <button class="fb-tab" id="fbTab" onclick="toggleFeedback()" aria-label="Send Feedback">
-  <img loading="lazy" src="../images/Icon-Feedback-Clavierarabe-online.svg" alt="Feedback">
+  <img loading="lazy" src="../images/kactyl-icon-feedback.svg" alt="Feedback">
 </button>
 <button class="fb-dismiss" id="fbDismiss" onclick="dismissFeedbackTab()" aria-label="Dismiss feedback">✕</button>
 <div class="fb-overlay" id="fbOverlay" onclick="closeFeedback()"></div>
@@ -4312,15 +4340,11 @@ async function submitFeedback(e) {
     content: ''; width: 42px; height: 5px; border-radius: 3px;
     background: rgba(100,116,139,.35);
   }
-  /* the feedback bubble + its x sat ON the right-hand keys and Backspace of the docked keyboard */
-  body.kb-docked .fb-tab, body.kb-docked .fb-panel, body.kb-docked .fb-dismiss { display: none !important; }
   body.kb-docked .sug-pill { font-size: 13px; padding: 7px 8px; }
+  /* the feedback bubble sat ON the right-hand keys + Backspace of the docked keyboard (2026-10-06) */
+  body.kb-docked .fb-tab, body.kb-docked .fb-panel, body.kb-docked .fb-dismiss { display: none !important; }   /* incl. its ✕ button */
 }
 
-/* key unit: every letter key is one size (= the longest row), so a short row centres
-   instead of stretching its keys (Aissa 2026-10-05; --kn/--kg set by the script below) */
-.kb-row { justify-content: center; }
-.kb-row .key[data-ch] { flex: 0 1 calc((100% - (var(--kn,10) - 1) * var(--kg,5px)) / var(--kn,10)); }
 #kb-altpop {
   position: fixed; z-index: 10000; display: none; gap: 6px;
   background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
@@ -4497,9 +4521,10 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
 
   if (kbrows) {
     kbrows.addEventListener('pointerdown', e => {
+      suppressClick = false;   /* KEYTAP: a hold only swallows its OWN click, never the next tap */
       const k = e.target.closest('.key');
       if (!k) return;
-      const ch = k.dataset.ch;   /* textContent also holds the hidden Latin hint (read "ye" for the letter) */
+      const ch = k.dataset.ch;   /* textContent also holds the hidden Latin hint (read "ye" for the Cyrillic e) */
       if (!altsFor(ch)) return;
       lpKey = k;
       lpTimer = setTimeout(() => showAlts(k, ch), 420);
@@ -4516,12 +4541,43 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
 })();
 </script>
 <!-- ══════════ /KBDOCK ══════════ -->
+<script>/* KEYFIT: a label wider than its key (Tamil two-part vowel signs, Burmese au on a 23px phone key) shrinks to fit
+   instead of spilling over its neighbours; every other key keeps the stylesheet size */
+(function () {
+  var kb = document.getElementById('kbrows');
+  if (!kb) return;
+  var ctx = document.createElement('canvas').getContext('2d');
+  function fit() {
+    kb.querySelectorAll('.key[data-ch]').forEach(function (b) {
+      b.style.fontSize = '';
+      var t = b.lastChild;
+      if (!t || t.nodeType !== 3) return;
+      var cs = getComputedStyle(b);   /* INK width: vowel signs draw outside their advance box */
+      ctx.font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+      var m = ctx.measureText(t.nodeValue);
+      var w = Math.max(m.width, m.actualBoundingBoxLeft + m.actualBoundingBoxRight), room = b.clientWidth - 6;
+      if (w > room && room > 0) {
+        b.style.fontSize = Math.max(9, Math.floor(parseFloat(cs.fontSize) * room / w)) + 'px';
+      }
+    });
+  }
+  var q = 0;
+  function later() { if (!q) q = requestAnimationFrame(function () { q = 0; fit(); }); }
+  new MutationObserver(later).observe(kb, {childList: true});
+  if (window.ResizeObserver) new ResizeObserver(later).observe(kb);
+  if (document.fonts) {   /* web fonts arrive in unicode-range pieces after ready: re-fit on each */
+    document.fonts.ready.then(later);
+    document.fonts.addEventListener('loadingdone', later);
+  }
+  later();
+})();
+</script>
 <script>
 /* PINYIN → HANZI candidate IME — canonical (rebuild_keyboards.py injects this).
    400 pinyin syllables → most-frequent Hanzi (Jun Da frequency list / hanziDB).
    Type pinyin in Roman mode → a candidate bar appears → Space or 1-5 picks a Hanzi,
    syllable by syllable (ni→你, hao→好 ⇒ 你好). No homophone guessing. */
-const PINYIN = {a:"阿啊呵嗄锕",ai:"爱埃艾碍哀癌",an:"安案按暗岸俺",ang:"昂肮盎骯",ao:"奥澳傲熬凹懊",ba:"把八吧巴爸罢",bai:"白百败摆拜柏",ban:"办半般版班板",bang:"帮邦膀棒绑镑",bao:"报保包宝暴抱",bei:"被北备背贝悲",ben:"本奔笨苯贲畚",beng:"崩蹦绷迸甭泵",bi:"比必笔避毕币",bian:"变便边编遍辩",biao:"表标彪镖飙婊",bie:"别憋瘪鳖蹩鼈",bin:"宾斌滨彬濒鬓",bing:"并兵病冰柄饼",bo:"波伯博播勃玻",bu:"不部步布补捕",ca:"擦嚓礤",cai:"才采财材彩裁",can:"参残餐惨灿蚕",cang:"藏苍舱仓沧伧",cao:"草操曹槽糙嘈",ce:"策测侧册厕恻",cen:"岑涔",ceng:"曾层蹭噌",cha:"查察差茶插叉",chai:"柴拆钗豺侪虿",chan:"产颤缠禅阐蝉",chang:"常场厂唱偿昌",chao:"朝超潮吵抄巢",che:"车彻撤扯澈掣",chen:"陈沉臣晨沈尘",cheng:"成程城称承诚",chi:"持吃迟尺赤池",chong:"充冲虫崇宠忡",chou:"抽仇筹丑酬臭",chu:"出处除初楚础",chuai:"揣啜踹嘬搋膗",chuan:"传船穿川串喘",chuang:"创床窗闯幢疮",chui:"吹垂椎锤炊捶",chun:"春纯唇蠢醇淳",chuo:"绰戳辍龊踔辵",ci:"此次词刺辞慈",cong:"从匆聪丛葱囱",cou:"凑辏腠輳",cu:"促粗簇醋猝蹙",cuan:"窜篡蹿撺爨汆",cui:"粹脆催摧翠崔",cun:"存村寸忖邨皴",cuo:"错措挫搓磋撮",da:"大打达答搭嗒",dai:"代带待戴袋呆",dan:"但单弹担丹淡",dang:"当党荡档挡裆",dao:"到道导倒岛刀",de:"的地得德锝脦",deng:"等登灯邓瞪凳",di:"第敌底低帝弟",dia:"嗲",dian:"点电店典殿颠",diao:"调掉雕吊钓刁",die:"跌爹叠蝶谍碟",ding:"定顶丁订盯钉",diu:"丢铥",dong:"动东洞懂冬董",dou:"都斗抖豆陡兜",du:"度独读督毒杜",duan:"断段短端锻缎",dui:"对队堆兑怼碓",dun:"顿盾吨敦蹲钝",duo:"多夺朵躲堕踱",e:"恶额俄饿鹅厄",ei:"诶",en:"恩摁蒽",er:"而二儿尔耳饵",fa:"发法罚乏伐阀",fan:"反范犯饭凡翻",fang:"方放房防访仿",fei:"非飞费废菲肥",fen:"分份纷奋粉愤",feng:"风封丰奉峰凤",fiao:"覅",fou:"否缶缻",fu:"服夫府复父福",ga:"尬嘎噶呷旮尕",gai:"该改概盖丐钙",gan:"感干敢赶甘肝",gang:"刚港钢岗纲冈",gao:"高告搞稿糕膏",ge:"个各格革哥歌",gei:"给給",gen:"根跟亘艮哏茛",geng:"更耕耿梗庚哽",gong:"公工共功供攻",gou:"构够购狗沟勾",gu:"古故股顾固姑",gua:"挂瓜寡刮卦褂",guai:"怪拐乖掴",guan:"关管观官馆惯",guang:"光广逛胱咣犷",gui:"规贵归鬼轨桂",gun:"滚棍衮鲧绲辊",guo:"国过果郭锅裹",ha:"哈蛤铪",hai:"还海孩害咳骇",han:"汉含喊韩寒汗",hang:"航杭夯珩沆颃",hao:"好号毫豪耗浩",he:"和合何河核喝",hei:"黑嘿黒",hen:"很恨狠痕鞎詪",heng:"横衡恒哼亨桁",hong:"红轰洪宏鸿虹",hou:"后候厚侯喉後",hu:"乎护户胡互呼",hua:"话化花华划画",huai:"怀坏淮徊槐踝",huan:"环欢换缓患幻",huang:"黄皇荒慌晃谎",hui:"会回挥毁汇灰",hun:"婚混魂昏浑荤",huo:"或活火获货伙",ji:"机己及几计基",jia:"家加价假架甲",jian:"间见建件简检",jiang:"将讲江降蒋奖",jiao:"教交叫较角脚",jie:"解结接界节阶",jin:"进金今近尽仅",jing:"经精京境惊警",jiong:"炯窘迥颎炅扃",jiu:"就究九久酒救",ju:"据具局举居句",juan:"卷捐倦绢娟眷",jue:"决觉绝爵掘嚼",jun:"军均君菌俊郡",ka:"卡咖喀咔胩佧",kai:"开凯慨恺楷揩",kan:"看刊堪砍坎勘",kang:"抗康慷炕扛亢",kao:"考靠烤拷铐犒",ke:"可克科客刻课",ken:"肯恳垦啃龈裉",keng:"坑吭铿硁",kong:"空控恐孔崆倥",kou:"口扣寇叩抠蔻",ku:"苦库哭酷裤枯",kua:"跨夸垮挎胯侉",kuai:"快块筷蒯脍侩",kuan:"款宽髋窾臗",kuang:"况狂矿框旷眶",kui:"亏溃愧魁奎窥",kun:"困昆捆坤琨锟",kuo:"括扩阔廓蛞闊",la:"拉啦腊辣蜡垃",lai:"来莱赖睐籁濑",lan:"兰蓝烂览拦栏",lang:"浪朗郎狼廊琅",lao:"老劳牢捞姥佬",le:"了乐肋叻泐饹",lei:"类雷勒泪累垒",leng:"冷愣棱楞塄稜",li:"里理力利立离",lia:"俩",lian:"联连脸练恋怜",liang:"两量良亮粮辆",liao:"料疗聊辽僚廖",lie:"列烈裂猎劣咧",lin:"林临邻淋琳麟",ling:"领令另灵零龄",liu:"流六留刘柳溜",long:"龙隆笼垄拢胧",lou:"楼漏陋搂喽髅",lu:"路律率陆露鲁",luan:"乱卵挛峦鸾銮",lue:"略掠锊",lun:"论伦轮仑沦纶",luo:"罗落洛络逻裸",ma:"马吗妈麻玛码",mai:"买卖麦脉埋迈",man:"满慢曼漫蛮瞒",mang:"忙茫盲芒莽氓",mao:"毛贸冒矛貌猫",me:"么麼",mei:"没美每梅妹眉",men:"们门闷扪懑焖",meng:"梦蒙猛盟孟朦",mi:"米密秘迷弥蜜",mian:"面免棉眠勉绵",miao:"描妙庙苗秒瞄",mie:"灭蔑咩篾乜蠛",min:"民敏悯闽闵抿",ming:"明名命鸣铭冥",miu:"谬謬",mo:"模莫默摩末魔",mou:"某谋牟缪眸鍪",mu:"目母木姆幕牧",n:"嗯",na:"那拿哪纳娜呐",nai:"乃奶耐奈氖艿",nan:"难南男喃楠囡",nang:"囊囔馕曩攮",nao:"脑闹恼挠瑙淖",ne:"呢讷眲",nei:"内馁脮鮾錗餒",nen:"嫩恁",neng:"能",ni:"你尼泥拟逆妮",nian:"年念廿捻辗拈",niang:"娘酿釀",niao:"鸟尿袅茑脲嬲",nie:"涅捏聂孽蹑嗫",nin:"您",ning:"宁凝拧狞泞柠",niu:"牛纽扭钮妞忸",nong:"农弄浓侬脓哝",nou:"耨羺",nu:"女努怒奴弩钕",nuan:"暖",nue:"虐疟",nuo:"诺挪懦傩喏糯",o:"哦噢喔筽",ou:"欧偶呕殴鸥藕",pa:"怕爬帕啪趴琶",pai:"派排拍牌徘湃",pan:"判盘叛潘盼攀",pang:"旁庞胖乓螃滂",pao:"跑炮抛泡袍咆",pei:"配培佩陪赔胚",pen:"喷盆湓翸",peng:"朋碰彭鹏捧蓬",pi:"批皮疲匹披辟",pian:"片篇偏骗翩谝",piao:"票飘漂嫖瞟瓢",pie:"瞥撇苤氕",pin:"品贫频拼聘嫔",ping:"平评凭瓶屏萍",po:"破迫婆坡颇泊",pou:"剖掊裒",pu:"普扑铺仆朴葡",qi:"起其气期器企",qia:"恰洽掐髂葜硈",qian:"前千钱潜签迁",qiang:"强枪墙抢腔跄",qiao:"巧桥悄乔瞧敲",qie:"且切窃怯妾惬",qin:"亲侵秦勤琴钦",qing:"情清请轻青倾",qiong:"穷琼穹邛蛩芎",qiu:"求球秋丘邱囚",qu:"去区取趣曲趋",quan:"全权圈券劝泉",que:"却确缺雀阙鹊",qun:"群裙逡",ran:"然染燃冉髯苒",rang:"让嚷壤攘瓤穰",rao:"扰绕饶荛桡娆",re:"热惹",ren:"人任认忍仁刃",reng:"仍扔礽",ri:"日鈤",rong:"容荣融溶绒蓉",rou:"肉柔揉蹂鞣糅",ru:"如入乳辱儒汝",ruan:"软阮朊軟緛耎",rui:"瑞锐蕊睿芮蚋",run:"润闰膶閏",ruo:"若弱偌箬鶸蒻",sa:"萨撒洒卅飒仨",sai:"赛塞腮鳃噻簺",san:"三散伞叁霰馓",sang:"丧桑嗓搡颡磉",sao:"扫嫂骚搔臊缫",se:"色瑟涩啬穑铯",sen:"森",seng:"僧鬙",sha:"杀沙傻啥莎刹",shai:"晒筛閷篩酾繺",shan:"山善闪扇衫陕",shang:"上商伤尚赏晌",shao:"少烧绍稍哨梢",she:"社设射涉舍摄",shen:"什身神深甚审",sheng:"生声省胜升圣",shi:"是时事实十使",shou:"手受收首守授",shu:"数书术属述树",shua:"刷耍唰",shuai:"衰帅摔甩蟀",shuan:"栓拴闩涮腨",shuang:"双爽霜孀雙騻",shui:"水谁税睡瞓稅",shun:"顺瞬舜吮順蕣",shuo:"说硕烁朔說槊",si:"斯四司思死私",song:"送松宋讼耸颂",sou:"艘搜嗽嗖叟擞",su:"苏诉速素俗肃",suan:"算酸蒜狻笇筭",sui:"随虽岁碎遂绥",sun:"损孙笋荪隼飧",suo:"所索缩锁梭琐",ta:"他她它塔踏拓",tai:"太台态泰抬胎",tan:"谈探坦叹坛贪",tang:"唐堂躺汤糖倘",tao:"讨逃套陶桃涛",te:"特忒忑慝螣铽",teng:"腾疼藤滕誊膯",ti:"体提题替梯踢",tian:"天田添填甜舔",tiao:"条跳挑眺迢窕",tie:"铁贴帖餮萜貼",ting:"听停庭厅艇挺",tong:"同通统痛童铜",tou:"头投透偷骰頭",tu:"图突土徒途吐",tuan:"团湍抟疃彖糰",tui:"推退腿颓褪蜕",tun:"吞屯臀豚饨鲀",tuo:"托脱拖妥陀驼",wa:"瓦娃挖哇蛙袜",wai:"外歪崴",wan:"完万晚湾玩弯",wang:"王望往网亡忘",wei:"为位未委维围",wen:"问文闻温稳纹",weng:"翁嗡瓮蕹聬蓊",wo:"我握沃卧窝涡",wu:"无物务五武误",xi:"西系息希细喜",xia:"下夏侠吓辖峡",xian:"现先线显限险",xiang:"想向相像象响",xiao:"小笑消效校销",xie:"些写协谢胁邪",xin:"心新信辛欣薪",xing:"行性形兴星型",xiong:"雄兄胸凶熊匈",xiu:"修休秀袖羞绣",xu:"许需须续序虚",xuan:"选宣旋玄悬璇",xue:"学血雪削穴薛",xun:"寻训迅讯巡询",ya:"亚压呀牙雅押",yan:"眼言研验严演",yang:"样阳养央洋杨",yao:"要药摇腰咬遥",ye:"也业夜野叶爷",yi:"一以意已义议",yin:"因引音印银阴",ying:"应英影营迎硬",yo:"哟唷",yong:"用永拥勇涌庸",you:"有又由友游优",yu:"于与语育预余",yuan:"原员院元远愿",yue:"月约越阅跃曰",yun:"运云允孕晕韵",za:"杂砸咋咂匝雜",zai:"在再载灾宰栽",zan:"赞咱暂攒瓒簪",zang:"脏葬赃臧奘臟",zao:"造早遭糟躁燥",ze:"则责泽择啧仄",zei:"贼鲗蠈賊鯽",zen:"怎谮",zeng:"增赠憎锃甑缯",zha:"炸扎眨诈乍栅",zhai:"债宅摘窄寨斋",zhan:"战展站占粘沾",zhang:"长张章掌障丈",zhao:"照找招赵召罩",zhe:"这着者著哲折",zhen:"真阵镇震针振",zheng:"正政争证整征",zhi:"之只知制直指",zhong:"中种重众终钟",zhou:"周洲州宙皱骤",zhu:"主住注助逐诸",zhua:"抓簻膼髽",zhuai:"拽",zhuan:"转专赚撰砖篆",zhuang:"装状庄壮撞桩",zhui:"追坠缀锥赘惴",zhun:"准谆肫窀諄迍",zhuo:"桌捉卓拙灼酌",zi:"子自资字仔紫",zong:"总宗纵综踪棕",zou:"走奏邹揍诹鲰",zu:"组足族祖阻租",zuan:"钻纂攥缵躜纘",zui:"最罪嘴醉蕞纗",zun:"尊遵樽鳟撙鶎",zuo:"作做坐左座昨"};
+const PINYIN = {a:"阿啊呵嗄锕",ai:"爱埃艾碍哀癌",an:"安案按暗岸俺",ang:"昂肮盎骯",ao:"奥澳傲熬凹懊",ba:"把八吧巴爸罢",bai:"白百败摆拜柏",ban:"办半般版班板",bang:"帮邦膀棒绑镑",bao:"报保包宝暴抱",bei:"被北备背贝悲",ben:"本奔笨苯贲畚",beng:"崩蹦绷迸甭泵",bi:"比必笔避毕币",bian:"变便边编遍辩",biao:"表标彪镖飙婊",bie:"别憋瘪鳖蹩鼈",bin:"宾斌滨彬濒鬓",bing:"并兵病冰柄饼",bo:"波伯博播勃玻",bu:"不部步布补捕",ca:"擦嚓礤",cai:"才采财材彩裁",can:"参残餐惨灿蚕",cang:"藏苍舱仓沧伧",cao:"草操曹槽糙嘈",ce:"策测侧册厕恻",cen:"岑涔",ceng:"曾层蹭噌",cha:"查察差茶插叉",chai:"柴拆钗豺侪虿",chan:"产颤缠禅阐蝉",chang:"常场厂唱偿昌",chao:"朝超潮吵抄巢",che:"车彻撤扯澈掣",chen:"陈沉臣晨沈尘",cheng:"成程城称承诚",chi:"持吃迟尺赤池",chong:"充冲虫崇宠忡",chou:"抽仇筹丑酬臭",chu:"出处除初楚础",chuai:"揣啜踹嘬搋膗",chuan:"传船穿川串喘",chuang:"创床窗闯幢疮",chui:"吹垂椎锤炊捶",chun:"春纯唇蠢醇淳",chuo:"绰戳辍龊踔辵",ci:"此次词刺辞慈",cong:"从匆聪丛葱囱",cou:"凑辏腠輳",cu:"促粗簇醋猝蹙",cuan:"窜篡蹿撺爨汆",cui:"粹脆催摧翠崔",cun:"存村寸忖邨皴",cuo:"错措挫搓磋撮",da:"大打达答搭嗒",dai:"代带待戴袋呆",dan:"但单弹担丹淡",dang:"当党荡档挡裆",dao:"到道导倒岛刀",de:"的地得德锝脦",deng:"等登灯邓瞪凳",di:"第敌底低帝弟",dia:"嗲",dian:"点电店典殿颠",diao:"调掉雕吊钓刁",die:"跌爹叠蝶谍碟",ding:"定顶丁订盯钉",diu:"丢铥",dong:"动东洞懂冬董",dou:"都斗抖豆陡兜",du:"度独读督毒杜",duan:"断段短端锻缎",dui:"对队堆兑怼碓",dun:"顿盾吨敦蹲钝",duo:"多夺朵躲堕踱",e:"恶额俄饿鹅厄",ei:"诶",en:"恩摁蒽",er:"而二儿尔耳饵",fa:"发法罚乏伐阀",fan:"反范犯饭凡翻",fang:"方放房防访仿",fei:"非飞费废菲肥",fen:"分份纷奋粉愤",feng:"风封丰奉峰凤",fiao:"覅",fou:"否缶缻",fu:"服夫府复父福",ga:"尬嘎噶呷旮尕",gai:"该改概盖丐钙",gan:"感干敢赶甘肝",gang:"刚港钢岗纲冈",gao:"高告搞稿糕膏",ge:"个各格革哥歌",gei:"给給",gen:"根跟亘艮哏茛",geng:"更耕耿梗庚哽",gong:"公工共功供攻",gou:"构够购狗沟勾",gu:"古故股顾固姑",gua:"挂瓜寡刮卦褂",guai:"怪拐乖掴",guan:"关管观官馆惯",guang:"光广逛胱咣犷",gui:"规贵归鬼轨桂",gun:"滚棍衮鲧绲辊",guo:"国过果郭锅裹",ha:"哈蛤铪",hai:"还海孩害咳骇",han:"汉含喊韩寒汗",hang:"航杭夯珩沆颃",hao:"好号毫豪耗浩",he:"和合何河核喝",hei:"黑嘿黒",hen:"很恨狠痕鞎詪",heng:"横衡恒哼亨桁",hong:"红轰洪宏鸿虹",hou:"后候厚侯喉後",hu:"乎护户胡互呼",hua:"话化花华划画",huai:"怀坏淮徊槐踝",huan:"环欢换缓患幻",huang:"黄皇荒慌晃谎",hui:"会回挥毁汇灰",hun:"婚混魂昏浑荤",huo:"或活火获货伙",ji:"机己及几计基",jia:"家加价假架甲",jian:"间见建件简检",jiang:"将讲江降蒋奖",jiao:"教交叫较角脚",jie:"解结接界节阶",jin:"进金今近尽仅",jing:"经精京境惊警",jiong:"炯窘迥颎炅扃",jiu:"就究九久酒救",ju:"据具局举居句",juan:"卷捐倦绢娟眷",jue:"决觉绝爵掘嚼",jun:"军均君菌俊郡",ka:"卡咖喀咔胩佧",kai:"开凯慨恺楷揩",kan:"看刊堪砍坎勘",kang:"抗康慷炕扛亢",kao:"考靠烤拷铐犒",ke:"可克科客刻课",ken:"肯恳垦啃龈裉",keng:"坑吭铿硁",kong:"空控恐孔崆倥",kou:"口扣寇叩抠蔻",ku:"苦库哭酷裤枯",kua:"跨夸垮挎胯侉",kuai:"快块筷蒯脍侩",kuan:"款宽髋窾臗",kuang:"况狂矿框旷眶",kui:"亏溃愧魁奎窥",kun:"困昆捆坤琨锟",kuo:"括扩阔廓蛞闊",la:"拉啦腊辣蜡垃",lai:"来莱赖睐籁濑",lan:"兰蓝烂览拦栏",lang:"浪朗郎狼廊琅",lao:"老劳牢捞姥佬",le:"了乐肋叻泐饹",lei:"类雷勒泪累垒",leng:"冷愣棱楞塄稜",li:"里理力利立离",lia:"俩",lian:"联连脸练恋怜",liang:"两量良亮粮辆",liao:"料疗聊辽僚廖",lie:"列烈裂猎劣咧",lin:"林临邻淋琳麟",ling:"领令另灵零龄",liu:"流六留刘柳溜",long:"龙隆笼垄拢胧",lou:"楼漏陋搂喽髅",lu:"路律率陆露鲁",luan:"乱卵挛峦鸾銮",lue:"略掠锊",lun:"论伦轮仑沦纶",luo:"罗落洛络逻裸",ma:"马吗妈麻骂玛码",mai:"买卖麦脉埋迈",man:"满慢曼漫蛮瞒",mang:"忙茫盲芒莽氓",mao:"毛贸冒矛貌猫",me:"么麼",mei:"没美每梅妹眉",men:"们门闷扪懑焖",meng:"梦蒙猛盟孟朦",mi:"米密秘迷弥蜜",mian:"面免棉眠勉绵",miao:"描妙庙苗秒瞄",mie:"灭蔑咩篾乜蠛",min:"民敏悯闽闵抿",ming:"明名命鸣铭冥",miu:"谬謬",mo:"模莫默摩末魔",mou:"某谋牟缪眸鍪",mu:"目母木姆幕牧",n:"嗯",na:"那拿哪纳娜呐",nai:"乃奶耐奈氖艿",nan:"难南男喃楠囡",nang:"囊囔馕曩攮",nao:"脑闹恼挠瑙淖",ne:"呢讷眲",nei:"内馁脮鮾錗餒",nen:"嫩恁",neng:"能",ni:"你尼泥拟逆妮",nian:"年念廿捻辗拈",niang:"娘酿釀",niao:"鸟尿袅茑脲嬲",nie:"涅捏聂孽蹑嗫",nin:"您",ning:"宁凝拧狞泞柠",niu:"牛纽扭钮妞忸",nong:"农弄浓侬脓哝",nou:"耨羺",nu:"女努怒奴弩钕",nuan:"暖",nue:"虐疟",nuo:"诺挪懦傩喏糯",o:"哦噢喔筽",ou:"欧偶呕殴鸥藕",pa:"怕爬帕啪趴琶",pai:"派排拍牌徘湃",pan:"判盘叛潘盼攀",pang:"旁庞胖乓螃滂",pao:"跑炮抛泡袍咆",pei:"配培佩陪赔胚",pen:"喷盆湓翸",peng:"朋碰彭鹏捧蓬",pi:"批皮疲匹披辟",pian:"片篇偏骗翩谝",piao:"票飘漂嫖瞟瓢",pie:"瞥撇苤氕",pin:"品贫频拼聘嫔",ping:"平评凭瓶屏萍",po:"破迫婆坡颇泊",pou:"剖掊裒",pu:"普扑铺仆朴葡",qi:"起其气期器企",qia:"恰洽掐髂葜硈",qian:"前千钱潜签迁",qiang:"强枪墙抢腔跄",qiao:"巧桥悄乔瞧敲",qie:"且切窃怯妾惬",qin:"亲侵秦勤琴钦",qing:"情清请轻青倾",qiong:"穷琼穹邛蛩芎",qiu:"求球秋丘邱囚",qu:"去区取趣曲趋",quan:"全权圈券劝泉",que:"却确缺雀阙鹊",qun:"群裙逡",ran:"然染燃冉髯苒",rang:"让嚷壤攘瓤穰",rao:"扰绕饶荛桡娆",re:"热惹",ren:"人任认忍仁刃",reng:"仍扔礽",ri:"日鈤",rong:"容荣融溶绒蓉",rou:"肉柔揉蹂鞣糅",ru:"如入乳辱儒汝",ruan:"软阮朊軟緛耎",rui:"瑞锐蕊睿芮蚋",run:"润闰膶閏",ruo:"若弱偌箬鶸蒻",sa:"萨撒洒卅飒仨",sai:"赛塞腮鳃噻簺",san:"三散伞叁霰馓",sang:"丧桑嗓搡颡磉",sao:"扫嫂骚搔臊缫",se:"色瑟涩啬穑铯",sen:"森",seng:"僧鬙",sha:"杀沙傻啥莎刹",shai:"晒筛閷篩酾繺",shan:"山善闪扇衫陕",shang:"上商伤尚赏晌",shao:"少烧绍稍哨梢",she:"社设射涉舍摄",shen:"什身神深甚审",sheng:"生声省胜升圣",shi:"是时事实十使",shou:"手受收首守授",shu:"数书术属述树",shua:"刷耍唰",shuai:"衰帅摔甩蟀",shuan:"栓拴闩涮腨",shuang:"双爽霜孀雙騻",shui:"水谁税睡瞓稅",shun:"顺瞬舜吮順蕣",shuo:"说硕烁朔說槊",si:"斯四司思死私",song:"送松宋讼耸颂",sou:"艘搜嗽嗖叟擞",su:"苏诉速素俗肃",suan:"算酸蒜狻笇筭",sui:"随虽岁碎遂绥",sun:"损孙笋荪隼飧",suo:"所索缩锁梭琐",ta:"他她它塔踏拓",tai:"太台态泰抬胎",tan:"谈探坦叹坛贪",tang:"唐堂躺汤糖倘",tao:"讨逃套陶桃涛",te:"特忒忑慝螣铽",teng:"腾疼藤滕誊膯",ti:"体提题替梯踢",tian:"天田添填甜舔",tiao:"条跳挑眺迢窕",tie:"铁贴帖餮萜貼",ting:"听停庭厅艇挺",tong:"同通统痛童铜",tou:"头投透偷骰頭",tu:"图突土徒途吐",tuan:"团湍抟疃彖糰",tui:"推退腿颓褪蜕",tun:"吞屯臀豚饨鲀",tuo:"托脱拖妥陀驼",wa:"瓦娃挖哇蛙袜",wai:"外歪崴",wan:"完万晚湾玩弯",wang:"王望往网亡忘",wei:"为位未委维围",wen:"问文闻温稳纹",weng:"翁嗡瓮蕹聬蓊",wo:"我握沃卧窝涡",wu:"无物务五武误",xi:"西系息希细喜",xia:"下夏侠吓辖峡",xian:"现先线显限险",xiang:"想向相像象响",xiao:"小笑消效校销",xie:"些写协谢胁邪",xin:"心新信辛欣薪",xing:"行性形兴星型",xiong:"雄兄胸凶熊匈",xiu:"修休秀袖羞绣",xu:"许需须续序虚",xuan:"选宣旋玄悬璇",xue:"学血雪削穴薛",xun:"寻训迅讯巡询",ya:"亚压呀牙雅押",yan:"眼言研验严演",yang:"样阳养央洋杨",yao:"要药摇腰咬遥",ye:"也业夜野叶爷",yi:"一以意已义议",yin:"因引音印银阴",ying:"应英影营迎硬",yo:"哟唷",yong:"用永拥勇涌庸",you:"有又由友游优",yu:"于与语育预余",yuan:"原员院元远愿",yue:"月约越阅跃曰",yun:"运云允孕晕韵",za:"杂砸咋咂匝雜",zai:"在再载灾宰栽",zan:"赞咱暂攒瓒簪",zang:"脏葬赃臧奘臟",zao:"造早遭糟躁燥",ze:"则责泽择啧仄",zei:"贼鲗蠈賊鯽",zen:"怎谮",zeng:"增赠憎锃甑缯",zha:"炸扎眨诈乍栅",zhai:"债宅摘窄寨斋",zhan:"战展站占粘沾",zhang:"长张章掌障丈",zhao:"照找招赵召罩",zhe:"这着者著哲折",zhen:"真阵镇震针振",zheng:"正政争证整征",zhi:"之只知制直指",zhong:"中种重众终钟",zhou:"周洲州宙皱骤",zhu:"主住注助逐诸",zhua:"抓簻膼髽",zhuai:"拽",zhuan:"转专赚撰砖篆",zhuang:"装状庄壮撞桩",zhui:"追坠缀锥赘惴",zhun:"准谆肫窀諄迍",zhuo:"桌捉卓拙灼酌",zi:"子自资字仔紫",zong:"总宗纵综踪棕",zou:"走奏邹揍诹鲰",zu:"组足族祖阻租",zuan:"钻纂攥缵躜纘",zui:"最罪嘴醉蕞纗",zun:"尊遵樽鳟撙鶎",zuo:"作做坐左座昨"};
 function pySyl(b){ for(var L=Math.min(6,b.length);L>=1;L--){ if(PINYIN[b.slice(0,L)]) return b.slice(0,L); } return ""; }
 function pinyinCands(buf,n){ var s=pySyl((buf||"").toLowerCase()); if(!s) return []; return PINYIN[s].split("").slice(0,n||5).map(function(h){return {h:h,len:s.length};}); }
 (function(){
@@ -4580,46 +4636,95 @@ function pinyinCands(buf,n){ var s=pySyl((buf||"").toLowerCase()); if(!s) return
   if(document.readyState!=="loading") wire(); else document.addEventListener("DOMContentLoaded",wire);
 })();
 </script>
-<script>/* key unit: --kn = keys in the longest row above the space bar (--kg = row gap, set in CSS with the gap) */
+<script>/* KEYTAP:start (tools/apply_keytap.py) — phone-keyboard tapping: every finger types, nothing types twice */
 (function () {
-  const w = document.getElementById('kbrows'); if (!w) return;
-  const set = () => {
-    const rows = [...w.children].filter(r => !r.querySelector('.k-space'));
-    if (!rows.length) return;
-    w.style.setProperty('--kn', Math.max(...rows.map(r => r.children.length)));
-  };
-  set(); new MutationObserver(set).observe(w, { childList: true });
-})();</script>
-<script>/* KEYFIT: a label wider than its key (Tamil two-part vowel signs, Burmese au on a 23px phone key) shrinks to fit
-   instead of spilling over its neighbours; every other key keeps the stylesheet size */
-(function () {
+  /* counter + suggestions: one update per frame, after the letter is on screen */
+  var pend = 0;
+  function run() { pend = 0; if (typeof updateStats === 'function') updateStats(); if (typeof updateSugs === 'function') updateSugs(); }
+  window.kbUI = function () { if (!pend) pend = requestAnimationFrame(run); };
+  window.kbUIFlush = function () { if (pend) { cancelAnimationFrame(pend); run(); } };
+  if (typeof pickSug === 'function') { var ps = pickSug; pickSug = function () { kbUIFlush(); return ps.apply(this, arguments); }; }
+
   var kb = document.getElementById('kbrows');
-  if (!kb) return;
-  var ctx = document.createElement('canvas').getContext('2d');
-  function fit() {
-    kb.querySelectorAll('.key[data-ch]').forEach(function (b) {
-      b.style.fontSize = '';
-      var t = b.lastChild;
-      if (!t || t.nodeType !== 3) return;
-      var cs = getComputedStyle(b);   /* INK width: vowel signs draw outside their advance box */
-      ctx.font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
-      var m = ctx.measureText(t.nodeValue);
-      var w = Math.max(m.width, m.actualBoundingBoxLeft + m.actualBoundingBoxRight), room = b.clientWidth - 6;
-      if (w > room && room > 0) {
-        b.style.fontSize = Math.max(9, Math.floor(parseFloat(cs.fontSize) * room / w)) + 'px';
-      }
-    });
+  if (!kb || kb.dataset.keytap) return;
+  kb.dataset.keytap = '1';
+  kb.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+
+  /* touch/pen: each pointer types its own key on lift; mouse keeps the native click */
+  var down = {}, synth = [], SLIDE = 28;
+  kb.addEventListener('pointerdown', function (e) {
+    if (e.pointerType === 'mouse') return;
+    var k = e.target.closest('button');
+    if (k && kb.contains(k)) down[e.pointerId] = {k: k, x: e.clientX, y: e.clientY};
+  }, {passive: true});
+  function end(e, fire) {
+    var d = down[e.pointerId];
+    if (!d) return;
+    delete down[e.pointerId];
+    if (!fire || !d.k.isConnected) return;                       /* keyboard redrew (Shift) */
+    if (Math.abs(e.clientX - d.x) > SLIDE || Math.abs(e.clientY - d.y) > SLIDE) return;
+    if (d.k.classList.contains('k-bsp')) return;                 /* backspace acts on press */
+    synth.push({k: d.k, t: performance.now()});
+    d.k.click();                                                 /* same path as a real click */
   }
-  var q = 0;
-  function later() { if (!q) q = requestAnimationFrame(function () { q = 0; fit(); }); }
-  new MutationObserver(later).observe(kb, {childList: true});
-  if (window.ResizeObserver) new ResizeObserver(later).observe(kb);
-  if (document.fonts) {   /* web fonts arrive in unicode-range pieces after ready: re-fit on each */
-    document.fonts.ready.then(later);
-    document.fonts.addEventListener('loadingdone', later);
-  }
-  later();
+  kb.addEventListener('pointerup', function (e) { end(e, true); }, {passive: true});
+  kb.addEventListener('pointercancel', function (e) { end(e, false); }, {passive: true});
+  /* a finger that started on a key never gets the browser's delayed click: the lift above
+     already typed it (or the finger slid away = cancelled, like a phone keyboard) */
+  kb.addEventListener('touchend', function (e) {
+    if (e.cancelable && e.target.closest && e.target.closest('button')) e.preventDefault();
+  }, {passive: false});
+  /* backup for a browser that still sends that click: swallow it (no timing race — 2.5 s) */
+  kb.addEventListener('click', function (e) {
+    if (!e.isTrusted) return;
+    var now = performance.now();
+    synth = synth.filter(function (s) { return now - s.t < 2500; });
+    var k = e.target.closest('button');
+    for (var i = 0; i < synth.length; i++) {
+      if (synth[i].k === k) { synth.splice(i, 1); e.stopPropagation(); e.preventDefault(); return; }
+    }
+  }, true);
 })();
-</script>
+/* KEYTAP:end */</script>
+<script>/* switcher search (tools/apply_flags.py) */
+(function(){
+var d=document.getElementById('langDropdown'),q=document.getElementById('loSearch'),em=document.getElementById('loEmpty');
+if(!d||!q)return;
+var t=['Search keyboards','No keyboard found'];q.placeholder=t[0];q.setAttribute('aria-label',t[0]);em.textContent=t[1];
+var rows=[].slice.call(d.querySelectorAll('.lang-opt[data-q]')),hl=-1;
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+rows.forEach(function(r){r._q=norm(r.getAttribute('data-q'));});
+function vis(){return rows.filter(function(r){return r.style.display!=='none';});}
+function mark(i){var v=vis();rows.forEach(function(r){r.classList.remove('lo-hl');});hl=i;
+if(v[i]){v[i].classList.add('lo-hl');v[i].scrollIntoView({block:'nearest'});}}
+function filter(){var s=norm(q.value.trim()),n=0;rows.forEach(function(r){var on=!s||r._q.indexOf(s)>-1;r.style.display=on?'':'none';if(on)n++;});
+em.style.display=n?'none':'block';
+/* best row: the name STARTS with it (hi -> Hindi), else a word starts with it (ru -> Russian, not Belarusian) */
+var v=vis(),best=v.findIndex(function(r){return r._q.indexOf(s)===0;});
+if(best<0)best=v.findIndex(function(r){return (' '+r._q).indexOf(' '+s)>-1;});
+mark(s&&n?Math.max(best,0):-1);}
+q.addEventListener('input',filter);
+q.addEventListener('click',function(e){e.stopPropagation();});
+q.addEventListener('keydown',function(e){var v=vis();
+if(e.key==='ArrowDown'){e.preventDefault();mark(Math.min(hl+1,v.length-1));}
+else if(e.key==='ArrowUp'){e.preventDefault();mark(Math.max(hl-1,0));}
+else if(e.key==='Enter'){e.preventDefault();var r=v[hl>-1?hl:0];if(r)r.click();}
+else if(e.key==='Escape'){if(typeof closeLangDrop==='function')closeLangDrop();}});
+/* glass needs the menu at the top level: inside .editor-card (itself a backdrop-filter glass) the browser
+   cannot blur what lies behind the card, so the keys showed through sharp. Open = moved to <body>,
+   fixed under its button (right-aligned on phones, centred above 600px), kept on screen while scrolling. */
+var btn=document.getElementById('langSelBtn'),ls=d.querySelector('.lo-list')||d;
+d.addEventListener('click',function(e){e.stopPropagation();});   /* the page closes the menu on outside clicks */
+function place(){if(!btn||!d.classList.contains('show'))return;var r=btn.getBoundingClientRect(),w=d.offsetWidth,vw=innerWidth;
+var x=vw<=600?r.right-w:r.left+r.width/2-w/2;x=Math.max(16,Math.min(x,vw-16-w));
+d.style.left=x+'px';d.style.top=(r.bottom+6)+'px';
+var hd=d.querySelector('.lo-search'),h=hd?hd.offsetHeight:0;   /* the list runs under the glass search bar */
+if(hd){ls.style.paddingTop=(h+6)+'px';ls.style.scrollPaddingTop=h+'px';}
+ls.style.maxHeight=Math.max(150+h,Math.min(300+h,innerHeight-r.bottom-18))+'px';}
+addEventListener('scroll',place,{passive:true,capture:true});addEventListener('resize',place);
+new MutationObserver(function(){if(d.classList.contains('show')){if(d.parentNode!==document.body){document.body.appendChild(d);d.classList.add('lo-port');}
+place();q.value='';filter();ls.scrollTop=0;
+if(matchMedia('(hover:hover) and (pointer:fine)').matches)setTimeout(function(){q.focus({preventScroll:true});},30);}}).observe(d,{attributes:true,attributeFilter:['class']});
+})();</script>
 </body>
 </html>

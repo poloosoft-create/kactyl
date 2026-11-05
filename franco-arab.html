@@ -60,7 +60,7 @@
       {
         "@type": "Question",
         "name": "C'est quoi le franco arabe?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Le franco arabe (ou arabizi) est un système d'écriture qui utilise des lettres latines et des chiffres pour représenter les sons arabes. Le chiffre 3 = ع (ain), 7 = ح (ha), 9 = ق (qaf), 2 = ء (hamza). Il est très utilisé par les Algériens, Marocains et Tunisiens sur WhatsApp, TikTok et les réseaux sociaux." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Le franco arabe (ou arabizi) est un système d'écriture qui utilise des lettres latines et des chiffres pour représenter les sons arabes. Le chiffre 3 = ع (ain), 7 = ح (ha), 9 = ق (qaf) au Maghreb ou ص (sad) dans le Golfe et au Levant, 2 = ء (hamza). Il est utilisé dans tout le monde arabe, du Maghreb à l'Égypte, au Levant et au Golfe, sur WhatsApp, TikTok et les réseaux sociaux." }
       },
       {
         "@type": "Question",
@@ -70,17 +70,17 @@
       {
         "@type": "Question",
         "name": "What do the numbers 2, 3, 7, 9 mean in franco arab?",
-        "acceptedAnswer": { "@type": "Answer", "text": "In Franco Arab / Arabizi, numbers represent Arabic letters that have no Latin equivalent: 2 = ء (hamza/glottal stop), 3 = ع (ain), 7 = ح (ha), 9 = ق (qaf). So '7abibi' becomes حبيبي, '3ayb' becomes عيب, '9al' becomes قال, and '2ana' becomes أنا." }
+        "acceptedAnswer": { "@type": "Answer", "text": "In Franco Arab / Arabizi, numbers represent Arabic letters that have no Latin equivalent: 2 = ء (hamza/glottal stop), 3 = ع (ain), 7 = ح (ha), and 9 = ق (qaf) in North Africa or ص (sad) in the Gulf and the Levant. So '7abibi' becomes حبيبي, '3ayb' becomes عيب, '2ana' becomes أنا, and '9alb' is قلب in Morocco while '9ba7' is صباح in the Gulf. The codes vary by region: 8 is غ in Lebanon, for example." }
       },
       {
         "@type": "Question",
         "name": "What is Arabizi?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Arabizi (also called Franco Arab, Franco-Arab, or Arab Chat alphabet) is a system of writing Arabic using Latin letters and numerals. It developed when Arabic script was not supported on early mobile phones. Today it is widely used on social media by Arabic speakers in North Africa and the Middle East." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Arabizi (also called Franco Arab, Franco-Arab, or Arab Chat alphabet) is a system of writing Arabic using Latin letters and numerals. It took shape in the 1990s in internet chat, email and SMS, when computers and phones could not display Arabic script. Today it is used on social media by Arabic speakers across the Arab world, from North Africa to the Gulf." }
       },
       {
         "@type": "Question",
         "name": "كيف أكتب بالفرانكو عربي؟",
-        "acceptedAnswer": { "@type": "Answer", "text": "في صفحة kactyl.com/franco-arab وضع الفرانكو مفعّل تلقائياً. اكتب كلماتك باللاتيني (مثل: salam, 7abibi, wesh) واضغط على مسافة لتحويلها فوراً إلى العربي. الأرقام تمثل حروفاً عربية: 3=ع، 7=ح، 9=ق، 2=ء." }
+        "acceptedAnswer": { "@type": "Answer", "text": "في صفحة kactyl.com/franco-arab وضع الفرانكو مفعّل تلقائياً. اكتب كلماتك باللاتيني (مثل: salam, 7abibi, wesh) واضغط على مسافة لتحويلها فوراً إلى العربي. الأرقام تمثل حروفاً عربية: 3=ع، 7=ح، 2=ء، و9=ق في المغرب العربي أو ص في الخليج والشام." }
       },
       {
         "@type": "Question",
@@ -90,7 +90,7 @@
       {
         "@type": "Question",
         "name": "Is franco arab the same as arabizi?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes — Franco Arab, Arabizi, Arab Chat, and Arabish all refer to the same writing system: using Latin letters and numbers to write Arabic. 'Franco Arab' is most common in North Africa (Algeria, Morocco, Tunisia), while 'Arabizi' is more used in the Middle East." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — Franco Arab, Arabizi, Arab Chat, and Arabish all refer to the same writing system: using Latin letters and numbers to write Arabic. 'Franco' or 'Franco-Arab' (فرانكو) is above all the Egyptian name, while 'Arabizi' is the general term in the Levant, the Gulf and the Maghreb. The number codes differ by region: 9 is ق in North Africa but ص in the Gulf and the Levant." }
       },
       {
         "@type": "Question",
@@ -100,7 +100,7 @@
       {
         "@type": "Question",
         "name": "Clavier franco arabe algérien — quel est le meilleur?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Le clavier franco arabe de Kactyl (kactyl.com/franco-arab) est spécialement optimisé pour le darija algérien. Il reconnaît les expressions typiques comme 'wesh rak', 'bzaf', 'sahbi', 'khoya' et les convertit en arabe automatiquement. 100% gratuit, aucune installation requise." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Le clavier franco arabe de Kactyl (kactyl.com/franco-arab) reconnaît les mots courants du darija algérien comme 'wesh rak', 'bzaf', 'sahbi', 'khoya' et les convertit en arabe automatiquement, avec 9 = ق par défaut, comme en Algérie. 100% gratuit, aucune installation requise." }
       },
       {
         "@type": "Question",
@@ -296,6 +296,13 @@ main { padding:32px 16px 64px; }
 .mic-btn.rec img { filter:brightness(0) invert(1); }
 
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+/* the digit 9 is regional: ق (Maghreb) or ص (Gulf, Levant) - segmented switch next to "Franco ON" */
+.nine-sw { display:flex; align-items:center; gap:2px; padding:3px; border-radius:50px; background:var(--bg); border:1.5px solid var(--border); font-size:13px; font-weight:600; color:var(--muted); }
+.nine-sw .nine-lbl { padding:0 6px 0 8px; font-family:'Inter',sans-serif; }
+.nine-sw button { border:none; background:none; cursor:pointer; color:var(--text); font:600 15px 'Tajawal',sans-serif; line-height:1; padding:6px 12px; border-radius:50px; transition:background .2s, color .2s; touch-action:manipulation; }
+.nine-sw button.on { background:var(--blue); color:#fff; }
+.nine-sw button small { font:500 10px 'Inter',sans-serif; opacity:.8; margin-left:4px; }
+@media (max-width:480px) { .nine-sw button small { display:none; } }
 
 /* Franco hint */
 .franco-hint {
@@ -709,6 +716,8 @@ footer {
   .hs-num { font-size:18px; }
   .num-digit { font-size:56px; }
 }
+/* kflag (tools/apply_flags.py) */
+.kflag{width:24px;height:18px;object-fit:cover;border-radius:3px;vertical-align:middle;display:inline-block}.card-flag .kflag,.hero-flag .kflag,.kb-chip-flag .kflag,.kb-card-flag .kflag,.rel-kb-flag .kflag,.hp-search-result-flag .kflag,.lang-filter-btn .kflag,.lang-pill .kflag,.kb-discover-flags-inner .kflag,.lang-flag .kflag,.flt .kflag,.wa-avatar .kflag,.h-stat-num .kflag{width:1.1em;height:.825em;border-radius:.14em}.lang-menu .kflag{width:1.1em;height:.825em;border-radius:.14em;margin-right:2px}.lang-pill .kflag,.lang-filter-btn .kflag,.lang-menu .kflag{vertical-align:-.1em}
 </style>
 </head>
 
@@ -753,7 +762,7 @@ footer {
     <div class="theme-wrap" onclick="toggleTheme()">
       <div class="t-track" id="tt">
         <div class="t-thumb" id="th">
-          <img id="theme-icon" src="images/Icon-white mode-Clavierarabe-enligne.svg" alt="Toggle theme" width="13" height="13">
+          <img id="theme-icon" src="images/kactyl-icon-light-mode.svg" alt="Toggle theme" width="13" height="13">
         </div>
       </div>
       <div class="t-lbl" id="tlbl">White<br>Mode</div>
@@ -780,12 +789,12 @@ footer {
       <p>Tapez en franco arabe et convertissez en arabe automatiquement. Type Arabic with Latin letters — press Space after each word. No install. Works on iPhone, Android, WhatsApp & TikTok.</p>
       <div class="hero-stats">
         <div class="hs-item">
-          <div class="hs-num">1M+</div>
-          <div class="hs-lbl">Conversions / Month</div>
+          <div class="hs-num">4</div>
+          <div class="hs-lbl">Darija · Égyptien · Levantin · Golfe</div>
         </div>
         <div class="hs-item">
-          <div class="hs-num">3</div>
-          <div class="hs-lbl">Dialects Supported</div>
+          <div class="hs-num" style="font-family:'Tajawal',sans-serif">ق / ص</div>
+          <div class="hs-lbl">9 selon votre région</div>
         </div>
         <div class="hs-item">
           <div class="hs-num">100%</div>
@@ -806,15 +815,15 @@ footer {
         </div>
         <div class="bar-btns">
           <button class="t-btn t-dl" onclick="dlText()">
-            <img src="images/Icon-Telecharger-Clavierarabe-online.svg" alt="Download">
+            <img src="images/kactyl-icon-download.svg" alt="Download">
             <span>Download</span>
           </button>
           <button class="t-btn t-cp" onclick="cpText()">
-            <img src="images/Icon-Copy-Clavier-arabe-online.svg" alt="Copy text">
+            <img src="images/kactyl-icon-copy.svg" alt="Copy text">
             <span>Copy</span>
           </button>
           <button class="t-btn t-clr" onclick="clrText()">
-            <img src="images/Icon-Clear-Clavierarabe-enligne.svg" alt="Clear text">
+            <img src="images/kactyl-icon-clear.svg" alt="Clear text">
             <span>Clear</span>
           </button>
         </div>
@@ -826,6 +835,11 @@ footer {
       <div class="kb-top">
         <div class="franco-status">
           <span class="dot"></span> Franco ON
+        </div>
+        <div class="nine-sw" role="group" aria-label="Le chiffre 9">
+          <span class="nine-lbl">9 =</span>
+          <button type="button" data-n="ق" title="Maghreb : 9alb → قلب">ق<small>Maghreb</small></button>
+          <button type="button" data-n="ص" title="Golfe, Levant : 9ba7 → صباح">ص<small>Golfe · Levant</small></button>
         </div>
         <button class="mic-btn" id="micbtn" onclick="toggleVoice()" title="Voice input — Arabic">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -878,7 +892,7 @@ footer {
   <div class="wrap">
     <div class="sec-hd">
       <h2>The Number <span class="red">Code System</span></h2>
-      <p>Franco-Arab uses numbers to represent Arabic sounds that have no Latin equivalent.</p>
+      <p>Franco-Arab uses numbers for Arabic sounds that have no Latin equivalent. The codes vary by region: 9 is ق in North Africa and ص in the Gulf and the Levant — pick yours with the <b>9 =</b> switch above the keyboard.</p>
     </div>
     <div class="num-grid">
       <div class="num-card nc-2">
@@ -905,9 +919,9 @@ footer {
       <div class="num-card nc-9">
         <div class="num-digit">9</div>
         <div class="num-eq">sounds like</div>
-        <div class="num-letter">ق</div>
-        <div class="num-name">Qaf<br>deep K</div>
-        <div class="num-example">9al = قال</div>
+        <div class="num-letter">ق / ص</div>
+        <div class="num-name">Qaf in North Africa<br>Sad in the Gulf &amp; Levant</div>
+        <div class="num-example">9alb = قلب · 9ba7 = صباح</div>
       </div>
     </div>
   </div>
@@ -918,46 +932,46 @@ footer {
   <div class="wrap">
     <div class="sec-hd">
       <h2>Clavier Franco Arabe pour <span class="red">WhatsApp, TikTok & Instagram</span></h2>
-      <p>Utilisé chaque jour par des millions d'Algériens, Marocains, Tunisiens et Libanais pour leurs messages en arabizi.</p>
+      <p>L'arabizi s'écrit dans tout le monde arabe, du Maghreb au Golfe : tapez en franco, copiez l'arabe, collez-le dans votre appli.</p>
     </div>
     <div class="apps-grid">
       <div class="app-card">
-        <div class="app-ic"><img src="images/Icon-Whatsapp-Clavierarabe-online.svg" alt="WhatsApp" width="36" height="36"></div>
+        <div class="app-ic"><img src="images/kactyl-icon-whatsapp.svg" alt="WhatsApp" width="36" height="36"></div>
         <div class="app-body">
           <div class="app-name">WhatsApp</div>
           <div class="app-desc">Tapez en franco, copiez et collez dans WhatsApp. سلام كيفاك en 2 secondes.</div>
         </div>
       </div>
       <div class="app-card">
-        <div class="app-ic"><img src="images/Icon-TikTok-Clavierarabe-online.svg" alt="TikTok" width="36" height="36"></div>
+        <div class="app-ic"><img src="images/kactyl-icon-tiktok.svg" alt="TikTok" width="36" height="36"></div>
         <div class="app-body">
           <div class="app-name">TikTok</div>
           <div class="app-desc">Commentaires et légendes en arabe pour vos vidéos TikTok algériennes et marocaines.</div>
         </div>
       </div>
       <div class="app-card">
-        <div class="app-ic"><img src="images/Icon-Instagram-Clavierarabe-online Kopie.svg" alt="Instagram" width="36" height="36"></div>
+        <div class="app-ic"><img src="images/kactyl-icon-instagram.svg" alt="Instagram" width="36" height="36"></div>
         <div class="app-body">
           <div class="app-name">Instagram</div>
           <div class="app-desc">Bio, stories et commentaires Instagram en arabe. Copier-coller en un clic.</div>
         </div>
       </div>
       <div class="app-card">
-        <div class="app-ic"><img src="images/Icon-Snapchat-Clavierarabe-online.svg" alt="Snapchat" width="36" height="36"></div>
+        <div class="app-ic"><img src="images/kactyl-icon-snapchat.svg" alt="Snapchat" width="36" height="36"></div>
         <div class="app-body">
           <div class="app-name">Snapchat</div>
           <div class="app-desc">Snaps et stories Snap avec du texte arabe. Conversion instantanée depuis le franco.</div>
         </div>
       </div>
       <div class="app-card">
-        <div class="app-ic"><img src="images/Icon-Telegram-Clavierarabe-online.svg" alt="Telegram" width="36" height="36"></div>
+        <div class="app-ic"><img src="images/kactyl-icon-telegram.svg" alt="Telegram" width="36" height="36"></div>
         <div class="app-body">
           <div class="app-name">Telegram</div>
           <div class="app-desc">Messages et groupes Telegram en arabe. Copie instantanée depuis le clavier franco.</div>
         </div>
       </div>
       <div class="app-card">
-        <div class="app-ic"><img src="images/Icon-Facebook-Clavierarabe-online.svg" alt="Facebook" width="36" height="36"></div>
+        <div class="app-ic"><img src="images/kactyl-icon-facebook.svg" alt="Facebook" width="36" height="36"></div>
         <div class="app-body">
           <div class="app-name">Facebook</div>
           <div class="app-desc">Posts, commentaires et Messenger en arabe. Fonctionne sur iPhone, Android et PC.</div>
@@ -978,7 +992,7 @@ footer {
         </div>
         <div class="app-body">
           <div class="app-name">PC &amp; Mac</div>
-          <div class="app-desc">Tapez sur votre clavier QWERTY — les touches physiques sont mappées en arabe automatiquement.</div>
+          <div class="app-desc">Tapez en franco sur votre clavier d'ordinateur ; désactivez Franco et chaque touche tape directement une lettre arabe.</div>
         </div>
       </div>
     </div>
@@ -990,8 +1004,8 @@ footer {
   <div class="wrap">
     <h2>Clavier Franco Arabe en Ligne Gratuit — <span class="red">Le Guide Complet</span></h2>
     <p>Le <strong>clavier franco arabe</strong> (aussi appelé arabizi, franco, ou clavier arabizi) est la façon dont des millions de personnes écrivent l'arabe en ligne sans avoir besoin d'un clavier arabe. Plutôt que de changer la langue de votre téléphone ou d'installer une application, vous tapez avec votre clavier QWERTY habituel et la conversion se fait automatiquement.</p>
-    <p>Ce système est né dans les années 2000, quand les téléphones ne supportaient pas encore l'écriture arabe. Les jeunes Algériens, Marocains, Tunisiens et Libanais ont inventé un code : des lettres latines + des chiffres spéciaux pour les sons arabes sans équivalent en latin. Aujourd'hui, le franco arabe est omniprésent sur <strong>WhatsApp</strong>, <strong>TikTok</strong>, <strong>Instagram</strong> et <strong>Twitter/X</strong>.</p>
-    <p>Le clavier franco arabe de Kactyl reconnaît automatiquement les mots courants du <strong>darija algérien</strong>, du <strong>darija marocain</strong>, et de l'<strong>arabe leventin</strong>. Tapez <em>inchallah</em> → إن شاء الله, <em>hamdullah</em> → الحمد لله, <em>wesh rak</em> → واش راك — en un clic. Aucune installation, aucun compte, 100% gratuit.</p>
+    <p>Ce système est né dans les années 1990, avec les premiers chats (IRC, MSN), les e-mails et les SMS, quand ordinateurs et téléphones n'affichaient pas encore l'arabe. Dans tout le monde arabe, les jeunes ont adopté le même principe : des lettres latines + des chiffres pour les sons arabes sans équivalent en latin. Les chiffres varient selon la région : au Maghreb, 9 = ق (<em>9alb</em> → قلب) ; dans le Golfe et au Levant, 9 = ص (<em>9ba7</em> → صباح). Aujourd'hui, le franco arabe est omniprésent sur <strong>WhatsApp</strong>, <strong>TikTok</strong>, <strong>Instagram</strong> et <strong>Twitter/X</strong>.</p>
+    <p>Le clavier franco arabe de Kactyl reconnaît les mots courants de quatre familles de dialectes : le <strong>darija</strong> (Algérie, Maroc, Tunisie), l'<strong>arabe égyptien</strong>, l'<strong>arabe levantin</strong> et l'<strong>arabe du Golfe</strong>. Les autres mots sont convertis lettre par lettre. Tapez <em>inchallah</em> → إن شاء الله, <em>hamdullah</em> → الحمد لله, <em>wesh rak</em> → واش راك — en un clic. Aucune installation, aucun compte, 100% gratuit.</p>
 
     <h3>Comment utiliser le clavier franco arabe — Guide étape par étape</h3>
     <ol class="step-list">
@@ -1002,10 +1016,10 @@ footer {
     </ol>
 
     <h3>Franco Arab Keyboard — How It Works (English)</h3>
-    <p>The <strong>Arabizi keyboard</strong> (Franco Arab) lets you type Arabic using your regular QWERTY keyboard. Numbers replace Arabic sounds that have no Latin equivalent: <strong>2</strong> = ء, <strong>3</strong> = ع, <strong>7</strong> = ح, <strong>9</strong> = ق. Type a word like <em>7abibi</em> and press Space — it becomes حبيبي instantly. Used by millions of Arabic speakers in Algeria, Morocco, Tunisia, Lebanon, and Egypt on WhatsApp, TikTok, and social media every day.</p>
+    <p>The <strong>Arabizi keyboard</strong> (Franco Arab) lets you type Arabic using your regular QWERTY keyboard. Numbers replace Arabic sounds that have no Latin equivalent: <strong>2</strong> = ء, <strong>3</strong> = ع, <strong>7</strong> = ح, and <strong>9</strong> = ق in North Africa or ص in the Gulf and the Levant (use the 9 switch). Type a word like <em>7abibi</em> and press Space — it becomes حبيبي instantly. Arabizi is written across the Arab world, from the Maghreb to Egypt, the Levant and the Gulf.</p>
 
     <h3>كيبورد فرانكو عربي — شرح بالعربي</h3>
-    <p>كيبورد الفرانكو من Kactyl يتيح لك كتابة العربي باستخدام الحروف اللاتينية والأرقام. اكتب كلماتك بالفرانكو واضغط على مسافة — تتحول فوراً إلى نص عربي. الأرقام تمثل حروفاً عربية: <strong>2</strong>=ء، <strong>3</strong>=ع، <strong>7</strong>=ح، <strong>9</strong>=ق. يعمل على الآيفون والأندرويد والكمبيوتر. مجاني 100% بدون تسجيل.</p>
+    <p>كيبورد الفرانكو من Kactyl يتيح لك كتابة العربي باستخدام الحروف اللاتينية والأرقام. اكتب كلماتك بالفرانكو واضغط على مسافة — تتحول فوراً إلى نص عربي. الأرقام تمثل حروفاً عربية: <strong>2</strong>=ء، <strong>3</strong>=ع، <strong>7</strong>=ح، و<strong>9</strong>=ق في المغرب العربي أو ص في الخليج والشام (اختر من زر 9 فوق الكيبورد). يعمل على الآيفون والأندرويد والكمبيوتر. مجاني 100% بدون تسجيل.</p>
   </div>
 </section>
 
@@ -1014,11 +1028,11 @@ footer {
   <div class="wrap">
     <div class="rel-kbs-hd">
       <h2>More Free Online <span>Keyboards</span></h2>
-      <p>35 keyboards available — no install, no account, works on any device</p>
+      <p>62 keyboards available — no install, no account, works on any device</p>
     </div>
     <div class="rel-kbs-grid">
       <a href="./" class="rel-kb-card">
-        <div class="rel-kb-flag">🇸🇦</div>
+        <div class="rel-kb-flag"><img class="kflag" src="/flags/sa.webp" width="24" height="18" alt="" loading="lazy"></div>
         <div class="rel-kb-info">
           <div class="rel-kb-name">Arabic</div>
           <div class="rel-kb-native">العربية</div>
@@ -1027,7 +1041,7 @@ footer {
         <div class="rel-kb-arrow">→</div>
       </a>
       <a href="persian/" class="rel-kb-card">
-        <div class="rel-kb-flag">🇮🇷</div>
+        <div class="rel-kb-flag"><img class="kflag" src="/flags/ir.webp" width="24" height="18" alt="" loading="lazy"></div>
         <div class="rel-kb-info">
           <div class="rel-kb-name">Persian</div>
           <div class="rel-kb-native">فارسی</div>
@@ -1036,7 +1050,7 @@ footer {
         <div class="rel-kb-arrow">→</div>
       </a>
       <a href="urdu/" class="rel-kb-card">
-        <div class="rel-kb-flag">🇵🇰</div>
+        <div class="rel-kb-flag"><img class="kflag" src="/flags/pk.webp" width="24" height="18" alt="" loading="lazy"></div>
         <div class="rel-kb-info">
           <div class="rel-kb-name">Urdu</div>
           <div class="rel-kb-native">اردو</div>
@@ -1045,7 +1059,7 @@ footer {
         <div class="rel-kb-arrow">→</div>
       </a>
       <a href="pashto/" class="rel-kb-card">
-        <div class="rel-kb-flag">🇦🇫</div>
+        <div class="rel-kb-flag"><img class="kflag" src="/flags/af.webp" width="24" height="18" alt="" loading="lazy"></div>
         <div class="rel-kb-info">
           <div class="rel-kb-name">Pashto</div>
           <div class="rel-kb-native">پښتو</div>
@@ -1054,7 +1068,7 @@ footer {
         <div class="rel-kb-arrow">→</div>
       </a>
       <a href="kurdish/" class="rel-kb-card">
-        <div class="rel-kb-flag">🇮🇶</div>
+        <div class="rel-kb-flag"><img class="kflag" src="/flags/kurdistan.webp" width="24" height="18" alt="" loading="lazy"></div>
         <div class="rel-kb-info">
           <div class="rel-kb-name">Kurdish</div>
           <div class="rel-kb-native">کوردی</div>
@@ -1063,7 +1077,7 @@ footer {
         <div class="rel-kb-arrow">→</div>
       </a>
       <a href="hindi/" class="rel-kb-card">
-        <div class="rel-kb-flag">🇮🇳</div>
+        <div class="rel-kb-flag"><img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"></div>
         <div class="rel-kb-info">
           <div class="rel-kb-name">Hindi</div>
           <div class="rel-kb-native">हिन्दी</div>
@@ -1072,7 +1086,7 @@ footer {
         <div class="rel-kb-arrow">→</div>
       </a>
       <a href="turkish/" class="rel-kb-card">
-        <div class="rel-kb-flag">🇹🇷</div>
+        <div class="rel-kb-flag"><img class="kflag" src="/flags/tr.webp" width="24" height="18" alt="" loading="lazy"></div>
         <div class="rel-kb-info">
           <div class="rel-kb-name">Turkish</div>
           <div class="rel-kb-native">Türkçe</div>
@@ -1081,7 +1095,7 @@ footer {
         <div class="rel-kb-arrow">→</div>
       </a>
       <a href="russian/" class="rel-kb-card">
-        <div class="rel-kb-flag">🇷🇺</div>
+        <div class="rel-kb-flag"><img class="kflag" src="/flags/ru.webp" width="24" height="18" alt="" loading="lazy"></div>
         <div class="rel-kb-info">
           <div class="rel-kb-name">Russian</div>
           <div class="rel-kb-native">Русский</div>
@@ -1090,7 +1104,7 @@ footer {
         <div class="rel-kb-arrow">→</div>
       </a>
       <div class="rel-kb-all">
-        <a href="keyboards/" class="rel-kb-all-btn">View All 35 Keyboards →</a>
+        <a href="keyboards/" class="rel-kb-all-btn">View All 62 Keyboards →</a>
       </div>
     </div>
   </div>
@@ -1114,15 +1128,15 @@ footer {
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" onclick="openFaq(this)">C'est quoi le franco arabe (Arabizi)? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Le franco arabe est un système d'écriture qui utilise des lettres latines et des chiffres pour représenter les sons arabes. Le 3 = ع, 7 = ح, 9 = ق, 2 = ء. Inventé dans les années 2000 quand les téléphones ne supportaient pas l'arabe, il est aujourd'hui omniprésent chez les Algériens, Marocains, Tunisiens et Libanais sur WhatsApp et TikTok.</p></div>
+        <div class="faq-a"><p>Le franco arabe est un système d'écriture qui utilise des lettres latines et des chiffres pour représenter les sons arabes. Le 3 = ع, 7 = ح, 2 = ء, et 9 = ق au Maghreb ou ص dans le Golfe et au Levant. Né dans les années 1990 avec les chats, les e-mails et les SMS, quand les écrans n'affichaient pas l'arabe, il est aujourd'hui utilisé dans tout le monde arabe sur WhatsApp et TikTok.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="openFaq(this)">Comment fonctionne la conversion automatique? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Tapez un mot en franco (comme <em>salam</em>, <em>7abibi</em>, <em>inchallah</em>) et appuyez sur <strong>Espace</strong>. Le mot se convertit instantanément en arabe. Le système reconnaît les mots courants du darija algérien et marocain, et translitère lettre par lettre pour les mots inconnus.</p></div>
+        <div class="faq-a"><p>Tapez un mot en franco (comme <em>salam</em>, <em>7abibi</em>, <em>inchallah</em>) et appuyez sur <strong>Espace</strong>. Le mot se convertit instantanément en arabe. Le système reconnaît les mots courants du darija (Algérie, Maroc, Tunisie), de l'arabe égyptien, levantin et du Golfe, et convertit lettre par lettre les mots inconnus.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="openFaq(this)">What do the numbers 2, 3, 7, 9 mean in franco arab? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>In Franco Arab / Arabizi, numbers represent Arabic letters with no Latin equivalent: <strong>2</strong> = ء (hamza/glottal stop), <strong>3</strong> = ع (ain — deep throat sound), <strong>7</strong> = ح (ha — breathy H), <strong>9</strong> = ق (qaf — deep K). So "7abibi" = حبيبي, "3ayb" = عيب, "9al" = قال, "2ana" = أنا.</p></div>
+        <div class="faq-a"><p>In Franco Arab / Arabizi, numbers represent Arabic letters with no Latin equivalent: <strong>2</strong> = ء (hamza/glottal stop), <strong>3</strong> = ع (ain — deep throat sound), <strong>7</strong> = ح (ha — breathy H), <strong>9</strong> = ق (qaf — deep K) in North Africa, but ص (sad) in the Gulf and the Levant. So "7abibi" = حبيبي, "3ayb" = عيب, "2ana" = أنا, "9alb" = قلب in Morocco and "9ba7" = صباح in the Gulf. Other codes vary too: 8 is غ in Lebanon.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="openFaq(this)">Clavier franco arabe sur iPhone et Android? <span class="faq-icon">+</span></button>
@@ -1134,11 +1148,11 @@ footer {
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="openFaq(this)">Is franco arab the same as arabizi? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Yes — Franco Arab, Arabizi, Arab Chat, and Arabish all refer to the same writing system. "Franco Arab" is most common in North Africa (Algeria, Morocco, Tunisia), while "Arabizi" is used more in the Middle East (Lebanon, Jordan, Egypt). The number codes are the same everywhere.</p></div>
+        <div class="faq-a"><p>Yes — Franco Arab, Arabizi, Arab Chat, and Arabish all refer to the same writing system. "Franco" or "Franco-Arab" (فرانكو) is above all the Egyptian name, while "Arabizi" is the general term in the Levant, the Gulf and the Maghreb, where many also say "l'arabe en lettres latines". The number codes are not the same everywhere: 9 is ق in North Africa but ص in the Gulf and the Levant.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="openFaq(this)">Clavier franco arabe algérien — quel est le meilleur? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Le clavier franco arabe de Kactyl est spécialement optimisé pour le <strong>darija algérien</strong>. Il reconnaît des expressions typiques comme <em>wesh rak</em>, <em>bzaf</em>, <em>sahbi</em>, <em>khoya</em>, <em>kayen</em> et les convertit directement en arabe. 100% gratuit, aucune installation, fonctionne depuis n'importe quel navigateur.</p></div>
+        <div class="faq-a"><p>Le clavier franco arabe de Kactyl reconnaît le <strong>darija algérien</strong>, avec 9 = ق par défaut comme en Algérie. Il connaît des expressions typiques comme <em>wesh rak</em>, <em>bzaf</em>, <em>sahbi</em>, <em>khoya</em>, <em>kayen</em> et les convertit directement en arabe. 100% gratuit, aucune installation, fonctionne depuis n'importe quel navigateur.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="openFaq(this)">Franco arabe Maroc — clavier pour darija marocain? <span class="faq-icon">+</span></button>
@@ -1154,7 +1168,7 @@ footer {
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="openFaq(this)">هل الفرانكو هو نفسه الأرابيزي؟ <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>نعم — الفرانكو والأرابيزي وعرب تشات كلها تشير إلى نفس نظام الكتابة: استخدام الحروف اللاتينية والأرقام لكتابة العربي. "الفرانكو" أكثر شيوعاً في المغرب العربي (الجزائر والمغرب وتونس)، بينما "الأرابيزي" أكثر استخداماً في المشرق (لبنان ومصر والأردن).</p></div>
+        <div class="faq-a"><p>نعم — الفرانكو والأرابيزي وعرب تشات كلها تشير إلى نفس نظام الكتابة: استخدام الحروف اللاتينية والأرقام لكتابة العربي. "الفرانكو" هو الاسم الشائع في مصر أساساً، بينما "الأرابيزي" هو الاسم العام في الشام والخليج والمغرب العربي. والأرقام تختلف حسب المنطقة: 9 = ق في المغرب العربي و9 = ص في الخليج والشام.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="openFaq(this)">Comment convertir franco arabe en arabe automatiquement? <span class="faq-icon">+</span></button>
@@ -1180,18 +1194,18 @@ footer {
         <span class="ft-badge b">⚡ No Install</span>
       </div>
       <div class="ft-social">
-        <span class="ft-soc-link" aria-label="X / Twitter">
+        <a href="https://x.com/kactyl_tools" class="ft-soc-link" aria-label="X / Twitter" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-        </span>
-        <span class="ft-soc-link" aria-label="Instagram">
+        </a>
+        <a href="https://www.instagram.com/kactyl_tools/" class="ft-soc-link" aria-label="Instagram" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </span>
-        <span class="ft-soc-link" aria-label="YouTube">
+        </a>
+        <a href="https://www.youtube.com/@Kactyl_tools" class="ft-soc-link" aria-label="YouTube" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </span>
-        <span class="ft-soc-link" aria-label="TikTok">
+        </a>
+        <a href="https://www.tiktok.com/@kactyl" class="ft-soc-link" aria-label="TikTok" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-        </span>
+        </a>
       </div></div>
     <div class="ft-col">
       <h4>Keyboards</h4>
@@ -1209,7 +1223,7 @@ footer {
         <a href="/urdu/">Urdu</a>
         <a href="/japanese/">Japanese</a>
       </div>
-      <a class="ft-view-all" href="/keyboards/">All 52 keyboards →</a>
+      <a class="ft-view-all" href="/keyboards/">All 62 keyboards →</a>
     </div>
         <div class="ft-col">
       <h4>Tools</h4>
@@ -1321,7 +1335,7 @@ const FRANCO_CHIPS = [
 const EXAMPLES = [
   {f:'salam',     a:'سلام',     fr:'Salut'},
   {f:'marhaba',   a:'مرحبا',    fr:'Bienvenue'},
-  {f:'chokran',   a:'شكراً',    fr:'Merci'},
+  {f:'chokran',   a:'شكرا',    fr:'Merci'},
   {f:'inchallah', a:'إن شاء الله', fr:'Si Dieu le veut'},
   {f:'7amdullah', a:'الحمد لله', fr:'Dieu merci'},
   {f:'7abibi',    a:'حبيبي',    fr:'Mon amour'},
@@ -1341,54 +1355,114 @@ const EXAMPLES = [
   {f:'rabi',      a:'ربي',      fr:'Mon Dieu'},
 ];
 
-/* ── ARABIZI → ARABIC ── */
-function arabiziToArabic(word) {
-  const map = [
-    ['inchallah','إن شاء الله'],['inch','إن شاء'],
-    ['allah','الله'],['bismillah','بسم الله'],
-    ['hamdullah','الحمد لله'],['7amdullah','الحمد لله'],
-    ['marhaba','مرحبا'],['marhab','مرحبا'],
-    ['chokran','شكراً'],['shokran','شكراً'],['chkran','شكراً'],
-    ['salam','سلام'],['salamo','سلامو'],
-    ['kifak','كيفك'],['kifek','كيفك'],['kif','كيف'],
-    ['wesh','واش'],['wach','واش'],
-    ['7abibi','حبيبي'],['habibi','حبيبي'],
-    ['yallah','يلا'],['yalla','يلا'],
-    ['khoya','خويا'],['khouya','خويا'],
-    ['sahbi','صاحبي'],['sa7bi','صاحبي'],
-    ['bzaf','بزاف'],['bezzaf','بزاف'],
-    ['chwiya','شوية'],['chwiya','شوية'],
-    ['mabsout','مبسوط'],['mabsouta','مبسوطة'],
-    ['ya3ni','يعني'],['ya3ny','يعني'],
-    ['3ayb','عيب'],['3eib','عيب'],
-    ['9al','قال'],['9allek','قالك'],
-    ['kayen','كاين'],['kanch','كانش'],
-    ['rabi','ربي'],['rabbi','ربي'],
-    ['baraka','بركة'],
-    ['2ana','أنا'],['ana','أنا'],
-    ['nta','نتا'],['nti','نتي'],
-  ];
-  const lower = word.toLowerCase();
-  for (const [fr, ar] of map) {
-    if (lower === fr) return ar;
-  }
-  // Letter-by-letter fallback
-  const letterMap = {
-    'a':'ا','b':'ب','t':'ت','th':'ث','j':'ج','7':'ح','kh':'خ',
-    'd':'د','r':'ر','z':'ز','s':'س','sh':'ش','9':'ق',
-    'f':'ف','gh':'غ','k':'ك','l':'ل','m':'م','n':'ن',
-    'h':'ه','w':'و','y':'ي','3':'ع','2':'ء','q':'ق',
-    'ch':'ش','ss':'ص','tt':'ط',
-  };
-  let result = '', i = 0;
-  while (i < lower.length) {
-    let matched = false;
-    for (const [lat, ar] of Object.entries(letterMap).sort((a,b)=>b[0].length-a[0].length)) {
-      if (lower.startsWith(lat, i)) { result += ar; i += lat.length; matched = true; break; }
+/* ── ARABIZI → ARABIC ──
+   1. FRANCO_WORDS: whole chat words people really type, per dialect family (Maghrebi Darija, Egyptian,
+      Levantine, Gulf) - the exact Arabic spelling, so "wesh" is واش and not وش.
+   2. Any other word: the shared engine of the Arabic keyboard (tools/arabizi_engine.py) - every reading
+      is tried, a real word wins, no Latin letter is ever left inside the Arabic.
+   The digit 9 is regional (Aissa 2026-11-03): ق in North Africa (9alb = قلب), ص in the Gulf and the
+   Levant (9ba7 = صباح). The 9 switch above the keyboard picks it; North Africa is the default here. */
+const FRANCO_WORDS = {
+  /* everywhere */
+  inchallah:'إن شاء الله', inshallah:'إن شاء الله', inch:'إن شاء', allah:'الله', bismillah:'بسم الله',
+  hamdullah:'الحمد لله', '7amdullah':'الحمد لله', hamdoulah:'الحمد لله', marhaba:'مرحبا', marhab:'مرحبا',
+  mar7aba:'مرحبا', ahlan:'أهلا', chokran:'شكرا', shokran:'شكرا', chkran:'شكرا', choukran:'شكرا',
+  salam:'سلام', salamo:'سلامو', '7abibi':'حبيبي', habibi:'حبيبي', '7abibti':'حبيبتي', yallah:'يلا',
+  yalla:'يلا', wallah:'والله', wellah:'والله', ya3ni:'يعني', ya3ny:'يعني', '3ayb':'عيب', '3eib':'عيب',
+  rabi:'ربي', rabbi:'ربي', baraka:'بركة', '2ana':'أنا', ana:'أنا', mabsout:'مبسوط', mabsouta:'مبسوطة',
+  /* Maghrebi Darija (Algeria, Morocco, Tunisia) */
+  wesh:'واش', wach:'واش', rak:'راك', raki:'راكي', khoya:'خويا', khouya:'خويا', sahbi:'صاحبي',
+  sa7bi:'صاحبي', bzaf:'بزاف', bezzaf:'بزاف', chwiya:'شوية', kayen:'كاين', kanch:'كانش', nta:'نتا',
+  nti:'نتي', labas:'لاباس', mzyan:'مزيان', mezyan:'مزيان', bghit:'بغيت', '3lach':'علاش', kifach:'كيفاش',
+  chhal:'شحال', zwin:'زوين', zwina:'زوينة', saha:'صحة', sa7a:'صحة', barcha:'برشا', behi:'باهي',
+  '9al':'قال', '9allek':'قالك', '9alb':'قلب', kifak:'كيفك', kifek:'كيفك', kif:'كيف',
+  /* Egyptian */
+  ezayak:'ازيك', izzayak:'ازيك', ezayek:'ازيك', '3amel':'عامل', keda:'كده', kda:'كده', 'la2':'لأ',
+  mashy:'ماشي', mashi:'ماشي', tamam:'تمام', '5alas':'خلاص', khalas:'خلاص', '7elw':'حلو', 'delwa2ty':'دلوقتي',
+  /* Levantine */
+  shu:'شو', chou:'شو', badde:'بدي', baddi:'بدي', kteer:'كتير', ktir:'كتير', hek:'هيك', mnih:'منيح',
+  yislamo:'يسلمو', 'ma3lesh':'معلش',
+  /* Gulf */
+  shlonak:'شلونك', zain:'زين', wayed:'وايد', '9ba7':'صباح', '9a7bi':'صاحبي',
+};
+/* words that only exist with one reading of 9 */
+const NINE_Q = ['9al', '9allek', '9alb'], NINE_S = ['9ba7', '9a7bi'];
+let nineIs = 'ق';
+try { if (localStorage.getItem('franco-nine') === 'ص') nineIs = 'ص'; } catch (e) {}
+
+/* the 1,200 most common Arabic words, same list as /arabic/: an unknown Franco word takes the reading that is a real word */
+const WORDS = ["لا", "من", "في", "أن", "هذا", "على", "ما", "أنا", "هل", "يا", "ذلك", "لقد", "لم", "ماذا", "كان", "هنا", "إلى", "أنت", "هو", "هذه", "عن", "نعم", "ان", "هناك", "كل", "حسناً", "ليس", "كنت", "فقط", "شيء", "الآن", "مع", "الذي", "لكن", "أجل", "لك", "يجب", "لن", "كيف", "حسنا", "انا", "لي", "إنه", "سوف", "نحن", "إذا", "كانت", "عندما", "أي", "قد", "لماذا", "هي", "الأمر", "أنه", "فى", "حتى", "بعد", "كذلك", "أو", "ولكن", "قبل", "التي", "انه", "إنها", "لو", "ربما", "أين", "هيا", "تلك", "أعرف", "الى", "إن", "يكون", "بعض", "أريد", "أعتقد", "انت", "عليك", "مثل", "صحيح", "به", "أنك", "الوقت", "بخير", "أعلم", "أحد", "شخص", "جداً", "رجل", "شكراً", "لذا", "يمكن", "كما", "كلا", "أكثر", "يبدو", "جيد", "تكون", "علي", "اليوم", "يمكنك", "انها", "أليس", "مرحباً", "لدي", "عليه", "آخر", "لست", "منذ", "غير", "أيها", "لديك", "حقاً", "أنتِ", "تريد", "أستطيع", "الرجل", "تعرف", "له", "مرة", "لدينا", "أنها", "يمكنني", "بأن", "واحد", "أنني", "أوه", "سيكون", "الناس", "ليست", "حدث", "بها", "أيضاً", "أفضل", "الكثير", "علينا", "سيدي", "مكان", "تفعل", "وقت", "يكن", "شئ", "بهذا", "وأنا", "اذا", "جدا", "بي", "أخرى", "آسف", "بك", "رائع", "بذلك", "كم", "إذاً", "ثم", "شيئاً", "يوجد", "واحدة", "ولا", "قلت", "يحدث", "بالطبع", "شكرا", "مرحبا", "يوم", "أبي", "معك", "لها", "معي", "سيد", "تعلم", "إذن", "العمل", "تم", "المكان", "الليلة", "إلهي", "لهذا", "فعل", "هكذا", "أمي", "لذلك", "ألا", "لـ", "الان", "حول", "بما", "حقا", "الحقيقة", "الجميع", "يمكننا", "بالتأكيد", "لأن", "لديه", "لنا", "خلال", "بشكل", "العالم", "فحسب", "حال", "الذهاب", "عليها", "بـ", "أعني", "فعلت", "قال", "هم", "المنزل", "عنه", "ها", "بشأن", "أفعل", "أكون", "اللعنة", "للغاية", "فيه", "بين", "أننا", "منك", "وهذا", "لكِ", "جيدة", "يعني", "مجرد", "أظن", "انك", "مني", "أنّ", "بالنسبة", "الأمور", "فكرة", "أم", "متى", "الشيء", "المال", "كنا", "أقول", "عمل", "أبداً", "ستكون", "عليّ", "أيّ", "أمر", "تقول", "توقف", "هؤلاء", "السيد", "انظر", "لما", "منه", "الطريق", "أشعر", "حصلت", "الحياة", "أني", "نفس", "معه", "بحاجة", "بسبب", "الذين", "تستطيع", "بأس", "اي", "بدون", "لكم", "تبدو", "أرى", "الجحيم", "تكن", "اعتقد", "عند", "آسفة", "حيث", "دائماً", "وأنت", "تحت", "حسنًا", "تعال", "بالفعل", "بل", "فضلك", "الأشياء", "ليلة", "نفسك", "لكي", "تعتقد", "وهو", "بحق", "مشكلة", "شيئا", "أرجوك", "أذهب", "يريد", "تماماً", "الـ", "الوحيد", "قتل", "إنهم", "الشخص", "رأيت", "عزيزتي", "طوال", "بهذه", "الشرطة", "الأن", "أحب", "الذى", "أيضا", "بنا", "أردت", "أكن", "كلّ", "النار", "سمعت", "اجل", "جميع", "أَنْ", "قليلاً", "مالذي", "بأنه", "والآن", "إلي", "انتظر", "فتاة", "كبير", "يعرف", "او", "فيها", "حسنٌ", "الرجال", "اريد", "لأنه", "السبب", "سنوات", "الباب", "نذهب", "دون", "حياتي", "لابد", "السيارة", "تريدين", "خارج", "ومن", "ثلاثة", "فعله", "تذهب", "كانوا", "اذهب", "الحصول", "يقول", "الواقع", "كثيراً", "اعرف", "أنهم", "سبب", "كبيرة", "مما", "أحتاج", "قمت", "إنّه", "منها", "كنتُ", "للتو", "استطيع", "نوع", "هنالك", "تعرفين", "جميلة", "بكل", "دولار", "بأنك", "لأنني", "الأفضل", "دائما", "جديد", "الامر", "اين", "بالضبط", "جون", "دعنا", "أنظر", "المدينة", "الخاص", "تعلمين", "جميل", "بسرعة", "الأرض", "لحظة", "الطريقة", "طريقة", "رائعة", "سعيد", "دقيقة", "لكنه", "غرفة", "إليه", "التحدث", "ثانية", "دعني", "لكنني", "الفتاة", "لمَ", "ولم", "أنتم", "عظيم", "انهم", "اوه", "جيداً", "لديّ", "بينما", "نفسي", "إليك", "قام", "لديها", "عام", "اعلم", "يعمل", "سأكون", "عيد", "رفاق", "ألم", "لهم", "تعمل", "تتحدث", "القيام", "الله", "ساعة", "المرة", "هيّا", "ترى", "مهلاً", "جاك", "أنتَ", "الخير", "متأكد", "جميعاً", "أحاول", "شيئ", "الموت", "رقم", "منهم", "سيارة", "مجدداً", "ايها", "عنك", "يفعل", "فقد", "ذهبت", "المزيد", "أتمنى", "مات", "يتم", "لكني", "طريق", "وجدت", "وقد", "أول", "معها", "سعيدة", "لدى", "أقصد", "إلا", "صباح", "الرئيس", "احد", "فرصة", "الأولى", "تباً", "يرام", "عليكِ", "يكفي", "علاقة", "صغيرة", "الأقل", "لأنك", "غريب", "لنذهب", "المدرسة", "ــ", "الصباح", "أفهم", "حين", "صديقي", "سأذهب", "أنكِ", "تأتي", "الخاصة", "أخبرني", "تقوم", "نستطيع", "نفسه", "التى", "الأطفال", "حالة", "لى", "هى", "يستطيع", "يجري", "سنة", "نفعل", "أتعلم", "نهاية", "أفكر", "أود", "عشر", "شىء", "أقوم", "الحب", "أنّه", "كنتِ", "معاً", "أى", "انني", "لديهم", "جديدة", "يعلم", "قالت", "بدأت", "الأول", "دقائق", "عني", "سيدة", "حالك", "إنني", "عزيزي", "رجال", "نعرف", "الجنس", "رؤية", "ينبغي", "الي", "حصل", "معنا", "الطفل", "وليس", "كي", "تحتاج", "قليلا", "حياة", "اسمع", "الساعة", "أكبر", "اليس", "فهمت", "عنها", "أريدك", "رجاءً", "تفعله", "وماذا", "ظننت", "سيدتي", "البعض", "الصغير", "تعني", "إنّها", "البيت", "رأيك", "تكوني", "هُنا", "والدك", "مهما", "العودة", "تماما", "لطيف", "يقوم", "السجن", "الليل", "السيدة", "أخي", "بأنني", "طويلة", "والدي", "وهي", "حان", "أقل", "الهاتف", "عبر", "مهلا", "ترجمة", "نحتاج", "أيتها", "وما", "اكثر", "أتحدث", "أيام", "أحدهم", "أولاً", "الماضي", "أحبك", "الطعام", "البقاء", "معرفة", "العام", "أية", "أصبح", "ذات", "الجديد", "مِنْ", "لكنك", "أبدا", "وضع", "سيئة", "طفل", "فوق", "حياتك", "داخل", "وكان", "نكون", "خطأ", "سام", "ونحن", "منزل", "تشعر", "عليهم", "المفترض", "نتحدث", "طويل", "نصف", "فريق", "أخذ", "الماء", "لاحقاً", "حق", "يأتي", "صديق", "غداً", "سأفعل", "منا", "الصغيرة", "نريد", "وانا", "للمنزل", "ايضا", "آه", "خذ", "جزء", "لكنها", "جو", "أشياء", "كلمة", "تفعلين", "أعمل", "يمكنه", "الآخر", "تحاول", "هَلْ", "صغير", "لستُ", "بخصوص", "أخبرك", "الحال", "بأي", "نظرة", "لأجل", "الخروج", "تظن", "النوم", "الماضية", "دكتور", "المرأة", "انظري", "بد", "لمدة", "وجود", "الحرب", "ذا", "تقلق", "بلا", "عرفت", "ثلاث", "هلا", "أدري", "اللعين", "ذهب", "الا", "المشكلة", "الأسبوع", "الوحيدة", "كله", "تعالي", "مايكل", "إنك", "كلاّ", "حاولت", "أهلاً", "دعونا", "اخرى", "أنّك", "وشك", "فعلاً", "وسوف", "عائلة", "افعل", "عدم", "أخبرتك", "كثيرا", "سيدى", "رئيس", "فأنا", "الغرفة", "وحسب", "المساعدة", "الخارج", "بعيداً", "أعطني", "اذن", "سيء", "العديد", "أصبحت", "الطبيب", "رسالة", "خمسة", "كَانَ", "يذهب", "العشاء", "الفتيات", "النساء", "ضد", "تحصل", "نقوم", "جيدا", "يهم", "بهم", "الموضوع", "وفي", "الممكن", "اخر", "الفتى", "مباشرة", "بالأمر", "أتذكر", "بيت", "مايك", "لأني", "بطريقة", "ساعات", "حينما", "فترة", "الأشخاص", "نيويورك", "أراك", "أنتي", "شكرًا", "اسم", "قصة", "توجد", "القادمة", "امرأة", "فتى", "أَنا", "افضل", "حقيقي", "بواسطة", "مجنون", "زوجتي", "أهذا", "متأكدة", "ذاهب", "يحصل", "تحب", "أتعرف", "النهاية", "مكتب", "ولن", "مثلك", "اننا", "بالخارج", "لهذه", "الحق", "بلى", "أصدق", "أخر", "آمل", "اه", "أنْ", "الإطلاق", "فرانك", "طلب", "بدأ", "لعبة", "مرحبًا", "جورج", "قريباً", "اني", "مجموعة", "أمام", "الحديث", "جي", "مساعدتك", "حاول", "شخصاً", "حقيقة", "جميعا", "اللقاء", "وبعد", "مدى", "صورة", "بأنها", "سوى", "التفكير", "الملك", "الأخيرة", "الثانية", "فهو", "مِن", "تحدث", "فيما", "الوضع", "عدد", "حفلة", "ولكني", "لسنا", "تبقى", "بشيء", "مدينة", "كهذا", "كلها", "انتهى", "كُلّ", "يحاول", "نحو", "أشهر", "مثير", "شركة", "تفهم", "اسف", "الجديدة", "لكل", "أصدقاء", "النوع", "الجيد", "اى", "إليها", "بأني", "ميت", "بيننا", "الرب", "عملية", "ذو", "بيتر", "بعضنا", "القضية", "وكل", "أحضر", "قيد", "تشارلي", "أخرج", "قادم", "الواضح", "دعيني", "تفضل", "توم", "أتيت", "أيضًا", "أسمع", "تأخذ", "قول", "العائلة", "بنفسك", "موعد", "عندي", "أثناء", "ممكن", "تخبرني", "إذًا", "الكبير", "صاح", "إنتظر", "الزواج", "فعلته", "بكِ", "ولكنه", "حبيبتي", "تذكر", "أمك", "مستحيل", "اعتقدت", "مليون", "إليّ", "علم", "قل", "طلبت", "ربّما", "ذاك", "حسن", "الأخرى", "يحتاج", "تعود", "الهي", "زلت", "نسيت", "وصلت", "انتظري", "نعلم", "أنّي", "النظر", "إذهب", "أتريد", "عدة", "سيحدث", "ابن", "لديكِ", "الصعب", "تقريباً", "الحظ", "ألف", "مساعدة", "تصبح", "سأقوم", "جين", "جئت", "خلف", "خمس", "الحقيقي", "منكم", "دي", "يمكنكِ", "أربعة", "القليل", "يزال", "الدم", "إننا", "أسرع", "البداية", "سأعود", "صعب", "بعيدا", "كن", "عرض", "بكثير", "وعندما", "اسمه", "تفكر", "آنسة", "تعتقدين", "فقدت", "مهم", "يتحدث", "بتلك", "لأي", "بعدها", "يريدون", "يوماً", "يعود", "جاء", "هُناك", "أتعلمين", "ترك", "المناسب", "السؤال", "اكون", "الآخرين", "تقصد", "اتصل", "تبدين", "للعمل", "معهم", "التالي", "شرطة", "قط", "جريمة", "أبحث", "توقفي", "بنفسي", "الشمس", "فكرت", "يفترض", "السماء", "الوصول", "الجانب", "أحصل", "عشرة", "معا", "الداخل", "أعود", "المعلومات", "تحمل", "حَسناً", "أطفال", "الثاني", "جيّد", "هذة", "ببعض", "يارجل", "ماري", "بكم", "وداعاً", "يعد", "الأيام", "أسوأ", "مشاكل", "البحث", "ستفعل", "اسمي", "واضح", "جهاز", "حتّى", "أيّها", "الدخول", "الحلقة", "قتلت", "مستعد", "يقولون", "سؤال", "ايضاً", "لأنها", "فعلا", "بضعة", "نوعاً", "عما", "أمس", "بول", "الجزء", "اقول", "اللحظة", "القديمة", "لويس", "مَن", "كرة", "المخدرات", "محق", "ستة", "بيل", "وهذه", "المستشفى", "صوت", "نرى", "الكلام", "رجاء", "سنذهب", "وانت", "قضية", "كامل", "أكره", "الجريمة", "مختلف", "خاصة", "اتفقنا", "أخذت", "انتي", "خطر", "قطعة", "يمكننى", "رائعاً", "طالما", "زال", "أحياناً", "أأنت", "مقابل", "ماكس", "قم", "عليكم", "مركز", "بإمكاني", "وأن", "الدكتور", "القائد", "بأننا", "المنطقة", "يُمْكِنُ", "الخطأ", "أطلب", "انتِ", "تعيش", "الاشياء", "لفترة", "زوجتك", "يحب", "المعذرة", "عالم", "طبيب", "الفريق", "الصورة", "نفسها", "لكننا", "الاتصال", "حيال", "والذي", "جيمي", "مفهوم", "وبعدها", "فلا", "بأنّ", "مختلفة", "جدًا", "شعرت", "حقًا", "الشارع", "بإمكانك", "غدا", "مضحك", "الطائرة", "بوب", "فعلها", "ينتهي", "ولكنني", "منتصف", "القانون", "رأيته", "هنري", "أنتظر", "الهواء", "بعمل", "الكتاب", "قسم", "سنكون", "فيلم", "أهتم", "موجود", "بشدة", "القتل", "ممتاز", "العثور", "مرات", "يَجِبُ", "كثير", "ابني", "لطيفة", "أقسم", "الشعور", "وجه", "وإذا", "أولئك", "إني", "أجد", "معكِ", "حوالي", "ثانيةً", "قليل", "أحداً", "حاجة", "لمْ", "يعيش", "أخيراً", "إعادة", "أنتما", "حالاً", "دليل", "إنّي", "فإن", "السنة", "مازال", "القاتل", "ولقد", "ميلاد", "شهر", "تعلمون", "السيطرة", "قوة", "رحلة", "ستعمل", "أسفل", "يعتقد", "زوجي", "علمت", "عملي", "القادم", "وهل", "تزال", "العرض", "الصحيح", "أحمق", "القصة", "هراء", "مساء", "تركت", "يموت", "أنظري", "جاهز", "المكتب", "تفعلي", "اخرج", "محاولة", "الصور", "عدت", "اللعبة", "عاد", "ترغب", "وكيف", "اسمك", "الوغد", "داني", "تبحث", "اسمعي", "ولكنك", "خطة", "سارة", "أننى", "وراء", "السفينة", "قائمة", "وضعت", "ابي", "حقيقية", "تنظر", "بأنّك", "تود", "موقع", "بالكامل", "مهمة"];
+const ARABIZI = [
+  // Digraphs & number combos — must come BEFORE single chars
+  ["3'", 'غ'], ["6'", 'ظ'], ["7'", 'خ'], ["9'", 'ض'],
+  ['sh', 'ش'], ['SS', 'ص'], ['TT', 'ط'], ['DH', 'ذ'],
+  ['th', 'ث'], ['kh', 'خ'], ['gh', 'غ'], ['dh', 'ذ'],
+  ['ch', 'ش'], ['aa', 'ا'],
+  // Numbers
+  ['2', 'أ'], ['3', 'ع'], ['5', 'خ'],
+  ['6', 'ط'], ['7', 'ح'], ['8', 'غ'], ['9', 'ق'],
+  // Letters
+  ['a', 'ا'], ['b', 'ب'], ['t', 'ت'], ['j', 'ج'],
+  ['d', 'د'], ['r', 'ر'], ['z', 'ز'], ['s', 'س'],
+  ['f', 'ف'], ['q', 'ق'], ['k', 'ك'], ['l', 'ل'],
+  ['m', 'م'], ['n', 'ن'], ['h', 'ه'], ['w', 'و'],
+  ['y', 'ي'], ['e', 'ي'], ['i', 'ي'], ['o', 'و'],
+  ['u', 'و'], ['p', 'ب'], ['c', 'ك'], ['g', 'ج'],
+  ['v', 'ف'], ['x', 'كس'],
+];
+function arabiziTable() {
+  return ARABIZI.map(([f, a]) => f === '9' ? ['9', nineIs] : [f, a]);
+}
+const ARABIZI_LEX = ['حبيبي', 'حبيبتي', 'حبي', 'سلام', 'كيفك', 'كيفكم', 'كيف', 'حالك', 'انا', 'انت', 'انتي', 'احبك', 'بحبك', 'شكرا', 'مرحبا', 'اهلا', 'يلا', 'والله', 'انشالله', 'الحمدلله', 'ماشي', 'تمام', 'طيب', 'ايوه', 'لا', 'نعم', 'مش', 'مافي', 'فيه', 'شو', 'ايش', 'وين', 'ليش', 'كتير', 'كثير', 'شوي', 'حلو', 'زين', 'بس', 'خلاص', 'يعني', 'صباح', 'مساء', 'الخير', 'اخي', 'اختي', 'ماما', 'بابا', 'صديقي', 'عمري', 'قلبي', 'روحي', 'حياتي', 'الله', 'ان', 'شاء', 'قلب', 'صباح', 'صاحبي', 'قال', 'صح', 'صحة'];
+function arabiziEngine(text) {
+  const ARABIZI_LEX = ["حبيبي", "حبيبتي", "حبي", "سلام", "كيفك", "كيفكم", "كيف", "حالك", "انا", "انت", "انتي", "احبك", "بحبك", "شكرا", "مرحبا", "اهلا", "يلا", "والله", "انشالله", "الحمدلله", "ماشي", "تمام", "طيب", "ايوه", "لا", "نعم", "مش", "مافي", "فيه", "شو", "ايش", "وين", "ليش", "كتير", "كثير", "شوي", "حلو", "زين", "بس", "خلاص", "يعني", "صباح", "مساء", "الخير", "اخي", "اختي", "ماما", "بابا", "صديقي", "عمري", "قلبي", "روحي", "صباح", "حياتي", "الله", "ان", "شاء"];
+  /* Arabizi → Arabic (canonical, tools/arabizi_engine.py). Arabizi is ambiguous:
+     short vowels aren't written in Arabic (so a single a/e/i/o/u inside a word is
+     optional) and some Latin letters stand for two Arabic ones (h = ه/ح, s = س/ص,
+     t = ت/ط, d = د/ض, z = ز/ظ). Every reading is tried (capped) and the first real
+     word wins — this page's WORDS list plus common chat words. No match → the most
+     common reading: drop medial a/e/o, keep i/u; final "-an" → ا (shukran → شكرا). */
+  const ALT = { h: ['ه', 'ح'], s: ['س', 'ص'], t: ['ت', 'ط'], d: ['د', 'ض'], z: ['ز', 'ظ'] };
+  const wl = typeof WORDS !== 'undefined' ? WORDS : [];
+  const low = text.toLowerCase();
+  const units = []; let i = 0;
+  while (i < text.length) {
+    let hit = null;
+    for (const [from, to] of arabiziTable()) {
+      if (low.startsWith(from.toLowerCase(), i)) { hit = [from, to]; break; }
     }
-    if (!matched) { result += lower[i]; i++; }
+    if (!hit) { units.push({ alts: [text[i]], dflt: text[i] }); i++; continue; }
+    const f = hit[0].toLowerCase(), first = i === 0, last = i + f.length >= text.length;
+    let alts = ALT[f] ? ALT[f].slice() : [hit[1]], dflt = hit[1];
+    if (f.length === 1 && 'aeiou'.includes(f)) {
+      if (first) { alts = [hit[1], 'ا']; }
+      else if (!last) { alts = ['', hit[1]]; dflt = 'iu'.includes(f) ? hit[1] : ''; }
+    }
+    units.push({ alts: [...new Set(alts)], dflt });
+    i += hit[0].length;
   }
-  return result || word;
+  let best = null, bestRank = Infinity, n = 0;
+  const consider = w => {
+    const r = ARABIZI_LEX.includes(w) ? -1 : wl.indexOf(w);
+    if (r > -2 && (ARABIZI_LEX.includes(w) || r >= 0) && r < bestRank) { best = w; bestRank = r; }
+  };
+  const walk = (k, acc) => {
+    if (n > 4096) return;
+    if (k === units.length) { n++; consider(acc); if (/an$/i.test(text)) consider(acc.replace(/ان$/, 'ا')); return; }
+    for (const a of units[k].alts) walk(k + 1, acc + a);
+  };
+  walk(0, '');
+  if (best) return best;
+  const d = units.map(u => u.dflt).join('');
+  return /an$/i.test(text) ? d.replace(/ان$/, 'ا') : d;
+}
+
+function arabiziToArabic(word) {
+  const low = word.toLowerCase();
+  if (FRANCO_WORDS[low] && !(nineIs === 'ص' && NINE_Q.includes(low)) && !(nineIs === 'ق' && NINE_S.includes(low)))
+    return FRANCO_WORDS[low];
+  if (!/[a-z0-9']/i.test(word)) return word;
+  return arabiziEngine(word);
 }
 
 /* ── STATE ── */
@@ -1420,12 +1494,41 @@ window.addEventListener('DOMContentLoaded', () => {
     ta.selectionStart = ta.selectionEnd = newBefore.length + sep.length;
     updateStats();
   });
+  /* phones: Android keyboards report Space as key "Unidentified", so keydown above never sees it -
+     convert when the space itself arrives */
+  document.getElementById('arabic-text').addEventListener('input', function(e) {
+    if (!francoOn || !e.data || !/^\s$/.test(e.data.slice(-1))) return;
+    const ta = this, pos = ta.selectionStart;
+    const before = ta.value.slice(0, pos - 1), after = ta.value.slice(pos - 1);
+    const lastBreak = Math.max(before.lastIndexOf(' '), before.lastIndexOf('\n'));
+    const lastWord = before.slice(lastBreak + 1);
+    if (!lastWord) return;
+    const converted = arabiziToArabic(lastWord);
+    if (converted === lastWord) return;
+    const newBefore = before.slice(0, lastBreak + 1) + converted;
+    ta.value = newBefore + after;
+    ta.selectionStart = ta.selectionEnd = newBefore.length + 1;
+    updateStats();
+  });
 
   document.addEventListener('click', e => {
     if (!e.target.closest('#epop') && !e.target.closest('.k-emoji')) closeEmoji();
     if (!e.target.closest('#tpop') && !e.target.closest('.k-tashkeel')) closeTashkeel();
   });
 });
+
+function paintNine() {
+  document.querySelectorAll('.nine-sw button').forEach(b => b.classList.toggle('on', b.dataset.n === nineIs));
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.nine-sw button');
+  if (!b) return;
+  nineIs = b.dataset.n;
+  try { localStorage.setItem('franco-nine', nineIs); } catch (x) {}
+  paintNine();
+  toast(nineIs === 'ق' ? '9 = ق · 9alb → قلب' : '9 = ص · 9ba7 → صباح');
+});
+document.addEventListener('DOMContentLoaded', paintNine);
 
 function buildKB() {
   const wrap = document.getElementById('kbrows');

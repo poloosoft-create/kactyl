@@ -1,0 +1,46 @@
+# Kactyl
+
+> Kactyl (kactyl.com) makes elegant online keyboards, complete to the last letter: every letter can be typed (common ones on their own key, rarer ones on a long press and in the Special panel), and every keyboard follows the official layout of its language wherever one exists. 62 keyboards and 14 text tools that run in the browser on phones and computers. No download, no account. Built toward 300+ languages; more keyboards are in final testing.
+
+## What every keyboard includes
+
+- Real-keyboard typing on the official layout of each language that has one, with Shift and AltGr layers (InScript for Hindi, Marathi, Tamil, Telugu, Kannada and Malayalam; Kedmanee for Thai; IRCAM for Tifinagh; M.B. Sindhi for Sindhi)
+- Every letter on its own key; rare letters on long press and in a Special panel. The letter set comes from the Unicode CLDR alphabet plus real-text letter frequency.
+- Latin key guide
+- Voice input (microphone), in every language the browser's speech recognition supports
+- Word suggestions and next-word prediction
+- Emoji panel and ready-made combos (phrases and emoji sets)
+- Copy, clear, download as text, live character counter
+- One-tap search on Google, YouTube and ChatGPT, translate, and share to WhatsApp, Telegram, X, Facebook, Instagram, TikTok and Snapchat
+- Phone-style docked keyboard on mobile, key sound, vibration on Android, dark mode, fast keyboard switcher
+- A font chosen and checked for each script
+
+## Typing engines
+
+- [Arabic keyboard](https://kactyl.com/arabic/): Franco (Arabizi) to Arabic, AI tashkeel (adds vowel marks)
+- [Korean keyboard](https://kactyl.com/korean/): Hangul composer that builds syllable blocks
+- [Japanese keyboard](https://kactyl.com/japanese/): romaji to Japanese, word by word
+- [Chinese keyboard](https://kactyl.com/chinese/): pinyin to Chinese characters
+- [Egyptian hieroglyphs keyboard](https://kactyl.com/egyptian-hieroglyphics/): Manuel de Codage input
+
+## Main pages
+
+- [All keyboards](https://kactyl.com/keyboards/): the full list of live keyboards
+- [About Kactyl](https://kactyl.com/about/): features and how each keyboard is built
+
+## Tools
+
+- [Symbols](https://kactyl.com/symbols/): 671+ symbols in 20 categories
+- [Fancy Text Generator](https://kactyl.com/fancy-text/): 38 font styles
+- [Kaomoji Keyboard](https://kactyl.com/kaomoji/): build your own or copy one of 889
+- [Text Art](https://kactyl.com/text-art/): 210+ pieces
+- [Dot Art and Braille Art](https://kactyl.com/dot-art/): 240+ pieces
+- [Calligraphy Generators](https://kactyl.com/calligraphy/): 104 styles across 5 scripts
+- [Typing Test](https://kactyl.com/typing-test/): typing test in your own script
+- [Hijri Calendar](https://kactyl.com/hijri-calendar/): today's Islamic date
+- [Free Fire and PUBG Name Generator](https://kactyl.com/free-fire-name/)
+- [Invisible Character](https://kactyl.com/invisible-character/)
+- [Zalgo Text](https://kactyl.com/zalgo-text/)
+- [Morse Code Translator](https://kactyl.com/morse-code/)
+- [Word Counter](https://kactyl.com/word-counter/): words and characters in any script
+- [Text Repeater](https://kactyl.com/text-repeater/)

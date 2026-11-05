@@ -787,6 +787,8 @@ body.photo-tab .dt-add,body.photo-tab .dt-extras{display:none}
 .photo-change{flex:0 0 auto;padding:7px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font:600 12.5px Inter,sans-serif;cursor:pointer}
 @media(max-width:640px){.photo-row{flex-direction:column;align-items:stretch;text-align:center}.mode-tab{padding:8px 14px}}
 /* ═══ end Calligraphy UI v2 ═══ */
+/* kflag (tools/apply_flags.py) */
+.kflag{width:24px;height:18px;object-fit:cover;border-radius:3px;vertical-align:middle;display:inline-block}.card-flag .kflag,.hero-flag .kflag,.kb-chip-flag .kflag,.kb-card-flag .kflag,.rel-kb-flag .kflag,.hp-search-result-flag .kflag,.lang-filter-btn .kflag,.lang-pill .kflag,.kb-discover-flags-inner .kflag,.lang-flag .kflag,.flt .kflag,.wa-avatar .kflag,.h-stat-num .kflag{width:1.1em;height:.825em;border-radius:.14em}.lang-menu .kflag{width:1.1em;height:.825em;border-radius:.14em;margin-right:2px}.lang-pill .kflag,.lang-filter-btn .kflag,.lang-menu .kflag{vertical-align:-.1em}
 </style>
 <style>
 .faq-promo{position:relative;z-index:1;padding:70px 16px 64px}
@@ -871,10 +873,10 @@ body.photo-tab .dt-add,body.photo-tab .dt-extras{display:none}
       </div>
     </div>
     <div class="lang-wrap">
-      <button class="lang-pill" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Change language" onclick="toggleLang()">🇺🇸<span class="lp-label"> English</span><span class="lp-caret"> ▾</span></button>
+      <button class="lang-pill" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Change language" onclick="toggleLang()"><img class="kflag" src="/flags/us.webp" width="24" height="18" alt="" loading="lazy"><span class="lp-label"> English</span><span class="lp-caret"> ▾</span></button>
       <div class="lang-menu" id="lang-menu" role="menu">
-        <div class="lang-opt active" onclick="setLang('en')">🇺🇸 English</div>
-        <a class="lang-opt" href="/ar/arabic-calligraphy/" style="text-decoration:none">🇸🇦 العربية</a>
+        <div class="lang-opt active" onclick="setLang('en')"><img class="kflag" src="/flags/us.webp" width="24" height="18" alt="" loading="lazy"> English</div>
+        <a class="lang-opt" href="/ar/arabic-calligraphy/" style="text-decoration:none"><img class="kflag" src="/flags/sa.webp" width="24" height="18" alt="" loading="lazy"> العربية</a>
       </div>
     </div>
     <div class="theme-wrap" onclick="toggleTheme()">
@@ -1467,7 +1469,7 @@ body.photo-tab .dt-add,body.photo-tab .dt-extras{display:none}
         <a href="/urdu/">Urdu</a>
         <a href="/japanese/">Japanese</a>
       </div>
-      <a class="ft-view-all" href="/keyboards/">All 52 keyboards →</a>
+      <a class="ft-view-all" href="/keyboards/">All 62 keyboards →</a>
     </div>
     <div class="ft-col">
       <h4>Tools</h4>
