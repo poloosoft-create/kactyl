@@ -2281,7 +2281,7 @@ header{background:rgba(255,255,255,.42)!important;backdrop-filter:blur(28px)!imp
               <div class="lang-opt" data-q="pashto پښتو pashto" onclick="location.href='/pashto/'"><span class="lo-flag"><img class="kflag" src="/flags/af.webp" width="24" height="18" alt="" loading="lazy"></span> Pashto<span class="lo-native" dir="auto">پښتو</span></div>
               <div class="lang-opt" data-q="persian فارسی persian" onclick="location.href='/persian/'"><span class="lo-flag"><img class="kflag" src="/flags/ir.webp" width="24" height="18" alt="" loading="lazy"></span> Persian<span class="lo-native" dir="auto">فارسی</span></div>
               <div class="lang-opt" data-q="polish polski polish" onclick="location.href='/polish/'"><span class="lo-flag"><img class="kflag" src="/flags/pl.webp" width="24" height="18" alt="" loading="lazy"></span> Polish<span class="lo-native" dir="auto">Polski</span></div>
-              <div class="lang-opt" data-q="portuguese português portuguese" onclick="location.href='/portuguese/'"><span class="lo-flag"><img class="kflag" src="/flags/br.webp" width="24" height="18" alt="" loading="lazy"></span> Portuguese<span class="lo-native" dir="auto">Português</span></div>
+              <div class="lang-opt" data-q="portuguese português portuguese" onclick="location.href='/portuguese/'"><span class="lo-flag"><img class="kflag" src="/flags/pt.webp" width="24" height="18" alt="" loading="lazy"></span> Portuguese<span class="lo-native" dir="auto">Português</span></div>
               <div class="lang-opt" data-q="punjabi ਪੰਜਾਬੀ punjabi" onclick="location.href='/punjabi/'"><span class="lo-flag"><img class="kflag" src="/flags/in.webp" width="24" height="18" alt="" loading="lazy"></span> Punjabi<span class="lo-native" dir="auto">ਪੰਜਾਬੀ</span></div>
               <div class="lang-opt" data-q="russian русский russian" onclick="location.href='/russian/'"><span class="lo-flag"><img class="kflag" src="/flags/ru.webp" width="24" height="18" alt="" loading="lazy"></span> Russian<span class="lo-native" dir="auto">Русский</span></div>
               <div class="lang-opt" data-q="serbian српски serbian" onclick="location.href='/serbian/'"><span class="lo-flag"><img class="kflag" src="/flags/rs.webp" width="24" height="18" alt="" loading="lazy"></span> Serbian<span class="lo-native" dir="auto">Српски</span></div>
@@ -4546,5 +4546,45 @@ body.kb-docked .k-tashkeel .ks, body.kb-docked .k-franco .ks { font-size: 6px !i
   }, true);
 })();
 /* KEYTAP:end */</script>
+<script>/* switcher search (tools/apply_flags.py) */
+(function(){
+var d=document.getElementById('langDropdown'),q=document.getElementById('loSearch'),em=document.getElementById('loEmpty');
+if(!d||!q)return;
+var t=['Search keyboards','No keyboard found'];q.placeholder=t[0];q.setAttribute('aria-label',t[0]);em.textContent=t[1];
+var rows=[].slice.call(d.querySelectorAll('.lang-opt[data-q]')),hl=-1;
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+rows.forEach(function(r){r._q=norm(r.getAttribute('data-q'));});
+function vis(){return rows.filter(function(r){return r.style.display!=='none';});}
+function mark(i){var v=vis();rows.forEach(function(r){r.classList.remove('lo-hl');});hl=i;
+if(v[i]){v[i].classList.add('lo-hl');v[i].scrollIntoView({block:'nearest'});}}
+function filter(){var s=norm(q.value.trim()),n=0;rows.forEach(function(r){var on=!s||r._q.indexOf(s)>-1;r.style.display=on?'':'none';if(on)n++;});
+em.style.display=n?'none':'block';
+/* best row: the name STARTS with it (hi -> Hindi), else a word starts with it (ru -> Russian, not Belarusian) */
+var v=vis(),best=v.findIndex(function(r){return r._q.indexOf(s)===0;});
+if(best<0)best=v.findIndex(function(r){return (' '+r._q).indexOf(' '+s)>-1;});
+mark(s&&n?Math.max(best,0):-1);}
+q.addEventListener('input',filter);
+q.addEventListener('click',function(e){e.stopPropagation();});
+q.addEventListener('keydown',function(e){var v=vis();
+if(e.key==='ArrowDown'){e.preventDefault();mark(Math.min(hl+1,v.length-1));}
+else if(e.key==='ArrowUp'){e.preventDefault();mark(Math.max(hl-1,0));}
+else if(e.key==='Enter'){e.preventDefault();var r=v[hl>-1?hl:0];if(r)r.click();}
+else if(e.key==='Escape'){if(typeof closeLangDrop==='function')closeLangDrop();}});
+/* glass needs the menu at the top level: inside .editor-card (itself a backdrop-filter glass) the browser
+   cannot blur what lies behind the card, so the keys showed through sharp. Open = moved to <body>,
+   fixed under its button (right-aligned on phones, centred above 600px), kept on screen while scrolling. */
+var btn=document.getElementById('langSelBtn'),ls=d.querySelector('.lo-list')||d;
+d.addEventListener('click',function(e){e.stopPropagation();});   /* the page closes the menu on outside clicks */
+function place(){if(!btn||!d.classList.contains('show'))return;var r=btn.getBoundingClientRect(),w=d.offsetWidth,vw=innerWidth;
+var x=vw<=600?r.right-w:r.left+r.width/2-w/2;x=Math.max(16,Math.min(x,vw-16-w));
+d.style.left=x+'px';d.style.top=(r.bottom+6)+'px';
+var hd=d.querySelector('.lo-search'),h=hd?hd.offsetHeight:0;   /* the list runs under the glass search bar */
+if(hd){ls.style.paddingTop=(h+6)+'px';ls.style.scrollPaddingTop=h+'px';}
+ls.style.maxHeight=Math.max(150+h,Math.min(300+h,innerHeight-r.bottom-18))+'px';}
+addEventListener('scroll',place,{passive:true,capture:true});addEventListener('resize',place);
+new MutationObserver(function(){if(d.classList.contains('show')){if(d.parentNode!==document.body){document.body.appendChild(d);d.classList.add('lo-port');}
+place();q.value='';filter();ls.scrollTop=0;
+if(matchMedia('(hover:hover) and (pointer:fine)').matches)setTimeout(function(){q.focus({preventScroll:true});},30);}}).observe(d,{attributes:true,attributeFilter:['class']});
+})();</script>
 </body>
 </html>
