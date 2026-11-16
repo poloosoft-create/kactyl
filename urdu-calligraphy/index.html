@@ -1666,7 +1666,7 @@ function resetColors() {
   applyTextColor();
   const stage = document.getElementById('preview-stage');
   stage.style.background = '';
-  stage.className = 'preview-stage stage-' + currentTheme;
+  stage.classList.remove(...[...stage.classList].filter(c => c.startsWith('stage-'))); stage.classList.add('stage-' + currentTheme);   // swap only the theme class: keeps is-pinned (mobile pin) + round-on (Circle)
   syncColorUI();
 }
 // the Colors row mirrors the state: dots (the text dot shows the gradient), pop-up swatches, codes, bar
@@ -2085,7 +2085,7 @@ function applyFrameColor(){
 function setColorTheme(theme, el) {
   currentTheme = theme; customFrameColor = null;
   const stage = document.getElementById('preview-stage');
-  stage.className = 'preview-stage stage-' + theme;
+  stage.classList.remove(...[...stage.classList].filter(c => c.startsWith('stage-'))); stage.classList.add('stage-' + theme);   // swap only the theme class: keeps is-pinned (mobile pin) + round-on (Circle)
   stage.style.setProperty('--frame-col', frameCol('#D97706'));
   stage.style.setProperty('--pattern-col', THEME_PATTERN[theme] || '#FCD34D');
   // frame overlay + corners recolour automatically via var(--frame-col); re-apply mask/attrs
@@ -3428,7 +3428,7 @@ window.addEventListener('scroll', () => {
     return ps && ps.classList.contains('has-photo') && !ps.classList.contains('choosing') ? ps : null;
   };
   const pin = el => {
-    if (holds.has(el)) return;
+    if (holds.has(el)) { el.classList.add('is-pinned'); return; }   // self-heal if a class rewrite dropped it
     const h = document.createElement('div'); h.className = 'pin-hold'; h.style.height = el.offsetHeight + 'px';
     el.style.width = el.offsetWidth + 'px'; el.before(h); el.classList.add('is-pinned'); holds.set(el, h);
   };
